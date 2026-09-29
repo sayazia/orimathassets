@@ -4582,7 +4582,7 @@
     "sheet": "foldlings",
     "file": "foldlings/foldling_fox.glb",
     "unit": "m",
-    "triangles": 280,
+    "triangles": 438,
     "outline_triangles": 0,
     "bounds": {
       "min": [
@@ -4591,7 +4591,7 @@
         -0.0115
       ],
       "max": [
-        0.0386,
+        0.0384,
         0.059,
         0.0115
       ]
@@ -4683,16 +4683,16 @@
     "sheet": "foldlings",
     "file": "foldlings/foldling_rabbit.glb",
     "unit": "m",
-    "triangles": 376,
+    "triangles": 566,
     "outline_triangles": 0,
     "bounds": {
       "min": [
-        -0.026,
+        -0.0258,
         0,
         -0.016
       ],
       "max": [
-        0.0262,
+        0.0265,
         0.0703,
         0.016
       ]
@@ -4783,7 +4783,7 @@
     "sheet": "foldlings",
     "file": "foldlings/foldling_crane.glb",
     "unit": "m",
-    "triangles": 136,
+    "triangles": 232,
     "outline_triangles": 0,
     "bounds": {
       "min": [
@@ -4881,7 +4881,7 @@
     "sheet": "foldlings",
     "file": "foldlings/foldling_turtle.glb",
     "unit": "m",
-    "triangles": 178,
+    "triangles": 274,
     "outline_triangles": 0,
     "bounds": {
       "min": [
@@ -4980,7 +4980,7 @@
     "sheet": "foldlings",
     "file": "foldlings/foldling_frog.glb",
     "unit": "m",
-    "triangles": 236,
+    "triangles": 392,
     "outline_triangles": 0,
     "bounds": {
       "min": [
@@ -5075,7 +5075,7 @@
     "sheet": "foldlings",
     "file": "foldlings/foldling_fish.glb",
     "unit": "m",
-    "triangles": 122,
+    "triangles": 218,
     "outline_triangles": 0,
     "bounds": {
       "min": [
@@ -5172,7 +5172,7 @@
     "sheet": "foldlings",
     "file": "foldlings/foldling_cat.glb",
     "unit": "m",
-    "triangles": 232,
+    "triangles": 392,
     "outline_triangles": 0,
     "bounds": {
       "min": [
@@ -5181,7 +5181,7 @@
         -0.013
       ],
       "max": [
-        0.0186,
+        0.0189,
         0.065,
         0.013
       ]
@@ -5269,7 +5269,7 @@
     "sheet": "foldlings",
     "file": "foldlings/foldling_elephant.glb",
     "unit": "m",
-    "triangles": 310,
+    "triangles": 406,
     "outline_triangles": 0,
     "bounds": {
       "min": [
@@ -5370,7 +5370,7 @@
     "sheet": "foldlings",
     "file": "foldlings/paper_bird.glb",
     "unit": "m",
-    "triangles": 90,
+    "triangles": 186,
     "outline_triangles": 0,
     "bounds": {
       "min": [
@@ -5451,18 +5451,18 @@
     "sheet": "foldlings",
     "file": "foldlings/flag_small.glb",
     "unit": "m",
-    "triangles": 60,
+    "triangles": 96,
     "outline_triangles": 0,
     "bounds": {
       "min": [
-        -0.002,
+        -0.0025,
         0,
-        -0.0022
+        -0.0026
       ],
       "max": [
         0.0516,
         0.0926,
-        0.002
+        0.0026
       ]
     },
     "anchors": {
@@ -7554,7 +7554,7 @@
     "sheet": "characters",
     "file": "characters/pip_owl.glb",
     "unit": "m",
-    "triangles": 606,
+    "triangles": 1142,
     "outline_triangles": 0,
     "bounds": {
       "min": [
@@ -7606,7 +7606,7 @@
     "sheet": "characters",
     "file": "characters/great_crumple.glb",
     "unit": "m",
-    "triangles": 1157,
+    "triangles": 1309,
     "outline_triangles": 0,
     "bounds": {
       "min": [
@@ -7617,7 +7617,7 @@
       "max": [
         0.1048,
         0.2021,
-        0.121
+        0.117
       ]
     },
     "anchors": {
@@ -7665,16 +7665,16 @@
     "sheet": "characters",
     "file": "characters/robot_partner_a.glb",
     "unit": "m",
-    "triangles": 306,
+    "triangles": 508,
     "outline_triangles": 0,
     "bounds": {
       "min": [
-        -0.0235,
+        -0.0233,
         0,
         -0.011
       ],
       "max": [
-        0.0227,
+        0.0233,
         0.0785,
         0.014
       ]
@@ -7715,16 +7715,16 @@
     "sheet": "characters",
     "file": "characters/robot_partner_b.glb",
     "unit": "m",
-    "triangles": 390,
+    "triangles": 510,
     "outline_triangles": 0,
     "bounds": {
       "min": [
-        -0.0245,
+        -0.0243,
         0,
         -0.0148
       ],
       "max": [
-        0.0237,
+        0.0243,
         0.083,
         0.017
       ]
@@ -7765,7 +7765,7 @@
     "sheet": "characters",
     "file": "characters/robot_partner_c.glb",
     "unit": "m",
-    "triangles": 354,
+    "triangles": 496,
     "outline_triangles": 0,
     "bounds": {
       "min": [

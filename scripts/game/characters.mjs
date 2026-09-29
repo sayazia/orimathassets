@@ -1,5 +1,5 @@
 // B5: supporting characters. They face the player (+Z); their left hand is at +x.
-import { plate, eye, happyEye, blob, surf } from '../lib/origami.mjs';
+import { plate, eye, happyEye, blob, surf, disc, hoop } from '../lib/origami.mjs';
 
 const both = (f) => { f(1); f(-1); };
 const loop = (period, n, f) => [...Array(n + 1).keys()].map((i) => [+(period * i / n).toFixed(4), f(i / n)]);
@@ -60,12 +60,8 @@ function pip(rig) {
     m.hull(OR, [[-3.5, 82, 21], [3.5, 82, 21], [0, 84, 20], [0, 74, 25], [0, 80, 27]]); // beak
     both((s) => { // facial discs and round folded glasses
       const c = surf(headPts, [s * 11, 86, 60], [0, 0, -1]).p;
-      m.hull(CR, blob([c[0], c[1], c[2] - 2], 9, 8.5, 3, 8));
-      for (let i = 0; i < 8; i++) {
-        const a0 = (i / 8) * Math.PI * 2, a1 = ((i + 1) / 8) * Math.PI * 2;
-        const p = (a, r, z) => [c[0] + Math.cos(a) * r, c[1] + Math.sin(a) * r, c[2] + z];
-        m.hull(GL, [p(a0, 9, 0.2), p(a1, 9, 0.2), p(a0, 11.4, 0.2), p(a1, 11.4, 0.2), p(a0, 9, 2.4), p(a1, 9, 2.4), p(a0, 11.4, 2.4), p(a1, 11.4, 2.4)]);
-      }
+      disc(m, CR, [c[0], c[1], c[2] - 1], [0, 0, 1], 9, 8.5, { h: 1.6, sides: 20 }); // facial disc
+      hoop(m, GL, [c[0], c[1], c[2] + 0.2], [0, 0, 1], 9, 11.4);
     });
     m.hull(GL, [[-2.5, 88, 23.5], [2.5, 88, 23.5], [-2.5, 90.4, 23.5], [2.5, 90.4, 23.5], [-2.5, 88, 25.5], [2.5, 88, 25.5], [-2.5, 90.4, 25.5], [2.5, 90.4, 25.5]]); // bridge
   });
@@ -131,8 +127,8 @@ function greatCrumple(rig) {
   const eyes = rig.root.add('eyes', [0, 130, 112]);
   eyes.mesh((m) => {
     both((s) => {
-      m.hull('cream', blob([s * 26, 132, 110], 17, 20, 8, 8)); // big paper eye whites
-      m.hull('ink', blob([s * 22, 128, 118], 7.5, 8.5, 3, 6)); // pupils looking at the player
+      disc(m, 'cream', [s * 26, 132, 112], [0, 0, 1], 17, 20, { h: 4, sink: 4, sides: 24 }); // big round paper eye whites
+      disc(m, 'ink', [s * 22, 128, 116], [0, 0, 1], 7.5, 8.5, { h: 1, sink: 1, sides: 18 }); // pupils looking at the player
       m.hull('cream', [[s * 10, 158, 110], [s * 40, 163, 108], [s * 12, 164, 113], [s * 40, 169, 111], [s * 26, 171, 112]]); // folded brows, slightly worried
     });
   });
@@ -209,12 +205,12 @@ function robot(kind) {
         antennaBase = [0, headY + 20, 0]; eyesAt = headY + 10;
       }
     });
-    if (eyesAt) head.mesh((m) => both((s) => m.box('ink', [s * 4.5 - 2.2, eyesAt - 2.2, 11.5], [s * 4.5 + 2.2, eyesAt + 2.2, 13])));
+    if (eyesAt) head.mesh((m) => both((s) => disc(m, 'ink', [s * 4.5, eyesAt, 12.2], [0, 0, 1], 2.3, 2.3, { sink: 2 })));
     const antenna = head.add('antenna', antennaBase);
     antenna.mesh((m) => {
-      if (kind === 'b') both((s) => { m.beam(S, [s * 4, antennaBase[1], 0], [s * 8, antennaBase[1] + 12, 0], 2.2); m.hull(L, blob([s * 8, antennaBase[1] + 14, 0], 3, 3, 3, 5)); });
-      else if (kind === 'c') { for (let i = 0; i < 3; i++) m.beam(S, [i % 2 ? 2.5 : -2.5, antennaBase[1] + i * 4, 0], [i % 2 ? -2.5 : 2.5, antennaBase[1] + (i + 1) * 4, 0], 2.2); m.hull(L, blob([0, antennaBase[1] + 15, 0], 3.5, 3.5, 3.5, 5)); }
-      else { m.prism(S, [0, 0], 1.2, antennaBase[1], antennaBase[1] + 10, 4); m.hull(L, blob([0, antennaBase[1] + 13, 0], 3.5, 3.5, 3.5, 5)); } // head light
+      if (kind === 'b') both((s) => { m.beam(S, [s * 4, antennaBase[1], 0], [s * 8, antennaBase[1] + 12, 0], 2.2); m.hull(L, blob([s * 8, antennaBase[1] + 14, 0], 3, 3, 3, 10)); });
+      else if (kind === 'c') { for (let i = 0; i < 3; i++) m.beam(S, [i % 2 ? 2.5 : -2.5, antennaBase[1] + i * 4, 0], [i % 2 ? -2.5 : 2.5, antennaBase[1] + (i + 1) * 4, 0], 2.2); m.hull(L, blob([0, antennaBase[1] + 15, 0], 3.5, 3.5, 3.5, 10)); }
+      else { m.prism(S, [0, 0], 1.2, antennaBase[1], antennaBase[1] + 10, 4); m.hull(L, blob([0, antennaBase[1] + 13, 0], 3.5, 3.5, 3.5, 10)); } // head light
     });
     both((s) => {
       const arm = body.add(s > 0 ? 'arm_l' : 'arm_r', [s * shoulderX, shoulderY, 0]);
@@ -223,7 +219,7 @@ function robot(kind) {
         m.box(S, [Math.min(x0, x0 + s * 5), shoulderY - 4, -4], [Math.max(x0, x0 + s * 5), shoulderY + 3, 4]); // shoulder joint
         m.box(kind === 'b' ? S : M, [Math.min(x0 + s * 2, x0 + s * 7), shoulderY - 24, -3.5], [Math.max(x0 + s * 2, x0 + s * 7), shoulderY - 4, 3.5]);
         if (kind === 'c') both((q) => m.box(S, [Math.min(x0 + s * 2, x0 + s * 7), shoulderY - 31, q > 0 ? 1 : -3.5], [Math.max(x0 + s * 2, x0 + s * 7), shoulderY - 24, q > 0 ? 3.5 : -1])); // claw
-        else m.hull(S, blob([x0 + s * 4.5, shoulderY - 27, 0], 4, 4, 4, 5)); // hand
+        else m.hull(S, blob([x0 + s * 4.5, shoulderY - 27, 0], 4, 4, 4, 10)); // hand
       });
     });
     rig.root.anchorAt('label_anchor', [0, 100, 0]);

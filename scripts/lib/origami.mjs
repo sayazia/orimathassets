@@ -40,27 +40,43 @@ function basis(n, upHint = [0, 1, 0]) {
 }
 
 // Ink dot eye sitting on a surface at `at` with outward normal `n`.
-export function eye(m, at, n, d = 4.4) {
+// Small round detail (eye, nose, button): a flat disc facing n, sunk 1.2 mm into the surface and
+// standing `h` proud of it. Small parts stay plain and round rather than folded (rx, ry: radii along u, v).
+export function disc(m, colour, at, n, rx, ry = rx, { h = 0.8, sides = 18, sink = 1.2 } = {}) {
   n = norm(n);
   const [u, v] = basis(n);
-  const ring = (off) => [...Array(6).keys()].map((i) => {
-    const a = (i / 6) * Math.PI * 2 + Math.PI / 6;
-    return add(add(at, mul(n, off)), add(mul(u, Math.cos(a) * d / 2), mul(v, Math.sin(a) * d / 2)));
+  const ring = (off) => [...Array(sides).keys()].map((i) => {
+    const a = (i / sides) * Math.PI * 2;
+    return add(add(at, mul(n, off)), add(mul(u, Math.cos(a) * rx), mul(v, Math.sin(a) * ry)));
   });
-  m.hull('ink', [...ring(-1.2), ...ring(0.8)]);
+  m.hull(colour, [...ring(-sink), ...ring(h)]);
+}
+// Flat round ring (glasses rims), built from short straight segments around the circle.
+export function hoop(m, colour, at, n, r0, r1, { h = 2.2, sides = 24 } = {}) {
+  n = norm(n);
+  const [u, v] = basis(n);
+  const p = (a, r, o) => add(add(at, mul(n, o)), add(mul(u, Math.cos(a) * r), mul(v, Math.sin(a) * r)));
+  for (let i = 0; i < sides; i++) {
+    const a0 = (i / sides) * Math.PI * 2, a1 = ((i + 1) / sides) * Math.PI * 2;
+    m.hull(colour, [p(a0, r0, 0), p(a1, r0, 0), p(a0, r1, 0), p(a1, r1, 0), p(a0, r0, h), p(a1, r0, h), p(a0, r1, h), p(a1, r1, h)]);
+  }
 }
 
-// Happy (closed, upward arc) eye: two short ink bars forming a soft ^.
+// Open eye: a round ink dot.
+export function eye(m, at, n, d = 4.4) {
+  disc(m, 'ink', at, n, d / 2);
+}
+
+// Happy (closed) eye: a smooth upward arc of ink, like a drawn "∩".
 export function happyEye(m, at, n, d = 5) {
   n = norm(n);
   const [u, v] = basis(n);
   const pt = (x, y, o) => add(add(at, mul(n, o)), add(mul(u, x), mul(v, y)));
-  for (const s of [-1, 1]) {
-    const a = [s * d * 0.5, -d * 0.2], b = [0, d * 0.25];
-    m.hull('ink', [
-      pt(a[0], a[1] - 1, -1.2), pt(a[0], a[1] + 1, -1.2), pt(b[0], b[1] - 1, -1.2), pt(b[0], b[1] + 1, -1.2),
-      pt(a[0], a[1] - 1, 0.8), pt(a[0], a[1] + 1, 0.8), pt(b[0], b[1] - 1, 0.8), pt(b[0], b[1] + 1, 0.8),
-    ]);
+  const r = d * 0.42, t = 0.6, steps = 7, cy = -d * 0.18;
+  for (let i = 0; i < steps; i++) {
+    const a0 = (i / steps) * Math.PI, a1 = ((i + 1) / steps) * Math.PI;
+    const q = (a, rr, o) => pt(Math.cos(a) * rr, cy + Math.sin(a) * rr, o);
+    m.hull('ink', [q(a0, r - t, -1.2), q(a1, r - t, -1.2), q(a0, r + t, -1.2), q(a1, r + t, -1.2), q(a0, r - t, 0.8), q(a1, r - t, 0.8), q(a0, r + t, 0.8), q(a1, r + t, 0.8)]);
   }
 }
 

@@ -1,6 +1,6 @@
 // Foldlings: origami animals that carry a number flag. Head points to +x, the flat
 // profile faces the player (+z), feet stand on y = 0. Authored in millimetres.
-import { plate, eye, happyEye, leg, surf, blob, kite } from '../lib/origami.mjs';
+import { plate, eye, happyEye, leg, surf, blob, kite, disc } from '../lib/origami.mjs';
 import { creatureClips } from '../lib/clips.mjs';
 import { MISSIONS, ROLES } from '../lib/palette.mjs';
 
@@ -45,7 +45,7 @@ function fox(rig, { main, trim }) {
   head.mesh((m) => {
     m.hull(M, headPts);
     m.hull(T, [[20, 32.5, 8.5], [20, 32.5, -8.5], [18, 29.2, 0], [35.5, 30.8, 0], [28, 31.4, 4.5], [28, 31.4, -4.5]]); // muzzle
-    m.hull('ink', [[34, 30.4, 2.4], [34, 30.4, -2.4], [38.6, 31.6, 0], [34.6, 34.2, 0], [33.4, 32.4, 0]]); // nose
+    disc(m, 'ink', [37.2, 32.2, 0], [1, 0.25, 0], 1.9, 1.6); // nose
   });
   eyes(head, headPts, [23, 39], { size: 4.6 });
   both((s) => {
@@ -74,14 +74,14 @@ function rabbit(rig, { main, trim }) {
   body.mesh((m) => {
     m.hull(M, blob([-5, 18, 0], 15, 17, 13, 6, 0.3));
     m.hull(T, [[4, 30, 0], [9, 22, 6], [9, 22, -6], [8, 10, 5], [8, 10, -5], [12, 18, 0], [4, 8, 0]]); // cream belly flap
-    m.hull(T, blob([-21, 16, 0], 5, 5, 5, 5)); // pom tail
+    m.hull(T, blob([-21, 16, 0], 5, 5, 5, 10)); // pom tail
   });
   const head = body.add('head', [6, 33, 0]);
   const headPts = [...blob([12, 40, 0], 11, 10, 11, 6, 0.26), [25, 37, 0], [23, 41, 3], [23, 41, -3]];
   head.mesh((m) => {
     m.hull(M, headPts);
     m.hull(T, [[18, 34, 6], [18, 34, -6], [25.4, 36.6, 0], [22, 33.2, 0], [23, 38, 3.5], [23, 38, -3.5]]); // muzzle
-    m.hull('ink', [[24.4, 37.2, 1.8], [24.4, 37.2, -1.8], [26.2, 38.2, 0], [24.8, 39.6, 0]]); // nose
+    disc(m, 'ink', [25.4, 38.4, 0], [1, 0.25, 0], 1.6, 1.3); // nose
   });
   eyes(head, headPts, [17, 42], { size: 4.6 });
   both((s) => {
@@ -168,10 +168,10 @@ function frog(rig, { main, trim }) {
   body.mesh((m) => {
     m.hull(M, bodyPts);
     m.hull(T, [[21, 14, 0], [14, 5.6, 8.6], [14, 5.6, -8.6], [-2, 3, 8], [-2, 3, -8], [17, 10, 5], [17, 10, -5]]); // cream throat and belly
-    both((s) => m.hull(M, blob([8, 27, s * 7], 5, 5, 5, 5))); // eye bumps
+    both((s) => m.hull(M, blob([8, 27, s * 7], 5, 5, 5, 10))); // eye bumps
     both((s) => leg(m, M, [10, 10, s * 9], [15, 0, s * 13], 6, 5, 4, 1)); // front legs
   });
-  eyes(body, (s) => blob([8, 27, s * 7], 5, 5, 5, 5), [8, 28], { size: 4.4, tilt: [-0.6, -0.4, 1], zc: 7 });
+  eyes(body, (s) => blob([8, 27, s * 7], 5, 5, 5, 10), [8, 28], { size: 4.4, tilt: [-0.6, -0.4, 1], zc: 7 });
   both((s) => {
     body.add(s > 0 ? 'leg_bl' : 'leg_br', [-12, 9, s * 12]).mesh((m) => {
       m.hull(M, [[-16, 12, s * 10], [-10, 5, s * 11], [-8, 13, s * 11], [4, 9, s * 19], [2, 6, s * 20], [-12, 8, s * 14]]); // thigh forward
@@ -218,7 +218,7 @@ function cat(rig, { main, trim }) {
   head.mesh((m) => {
     m.hull(M, headPts);
     m.hull(T, [[13, 40.6, 6], [13, 40.6, -6], [17.6, 44, 0], [15, 39.2, 0], [16, 43, 3.6], [16, 43, -3.6]]); // muzzle
-    m.hull('ink', [[16.8, 44.4, 1.6], [16.8, 44.4, -1.6], [18.6, 45.2, 0], [17, 46.8, 0]]); // nose
+    disc(m, 'ink', [17.8, 45.4, 0], [1, 0.25, 0], 1.5, 1.2); // nose
   });
   eyes(head, headPts, [11, 48], { size: 4.6 });
   both((s) => {
@@ -304,7 +304,7 @@ function flag(rig) {
   const pole = rig.root.add('pole', [0, 0, 0]);
   pole.mesh((m) => {
     m.prism('wood*', [0, 0], 1.6, 0, 88, 4, Math.PI / 4);
-    m.hull('wood*', blob([0, 90, 0], 2.6, 2.6, 2.6, 4)); // finial
+    m.hull('wood*', blob([0, 90, 0], 2.6, 2.6, 2.6, 10)); // finial
   });
   const cloth = pole.add('cloth', [1.5, 86, 0]);
   cloth.mesh((m) => {

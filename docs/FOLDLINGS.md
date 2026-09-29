@@ -26,6 +26,8 @@ Batch status and per-asset numbers are in [`CATALOG.md`](CATALOG.md) (Indonesian
   `flag_anchor` (foot of the number flag), `spawn_anchor`, `exit_anchor`, `town_origin`.
 - **Hidden states** (`eyes_happy`) have scale 0 and `extras.hidden_by_default: true`. Set scale to 1 to show
   them (and hide `eyes` by swapping, or simply let the happy eyes cover them).
+- **Small details stay plain**: eyes, noses, pupils and glasses are round discs and rings (`disc`, `hoop` in
+  `scripts/lib/origami.mjs`), not folded facets; happy eyes are a smooth arc.
 - **No ink outline**: the set ships without dark contours, because real folded paper has none; folds read from
   the lit and `_shade` faces. `FOLDLINGS_OUTLINES=1 npm run build` adds an `ink_outline` child mesh (an
   inverted hull 0.6 mm thick) under every part, for a cartoon look. three.js renames duplicates to
@@ -70,8 +72,8 @@ Because materials are named after palette keys, a game may also recolour one fil
 | try_again | orange | #F8961E |
 | reward_gold | gold | #E8B64C |
 
-`<key>_shade` is generated: each sRGB channel multiplied by 0.80 / 0.77 / 0.72 (about 22% darker, a touch
-warmer, so folds read crisply without outlines). Faces are assigned the lit colour or the shade automatically from their direction relative to a
+`<key>_shade` is generated: each sRGB channel multiplied by 0.91 / 0.89 / 0.86 (about 11% darker, a touch
+warmer): enough to read each fold without outlines, light enough that no face turns near black under scene lighting. Faces are assigned the lit colour or the shade automatically from their direction relative to a
 key light at the upper front left, so every fold reads even under flat lighting.
 
 ### Colour-vision check

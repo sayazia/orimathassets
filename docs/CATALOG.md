@@ -220,21 +220,22 @@ Status: ✅ selesai · 🟡 sebagian · ⬜ direncanakan.
 
 Segitiga = geometri utama; "+garis" = segitiga `ink_outline`. Sejak 29 September 2026 garis tinta dimatikan (0) atas
 masukan bahwa garis tebal gelap membuat aset tidak terasa seperti kertas; lipatan kini dibaca dari sisi terang dan
-sisi `_shade` yang lebih gelap (sekitar 22%). `FOLDLINGS_OUTLINES=1 npm run build` bisa menyalakannya lagi.
+sisi `_shade` (sekitar 11% lebih gelap, supaya tidak ada sisi yang tampak hitam). Detail kecil seperti mata, hidung,
+pupil, dan kacamata dibuat sebagai lingkaran polos, bukan bentuk lipatan. `FOLDLINGS_OUTLINES=1 npm run build` bisa menyalakannya lagi.
 Ukuran = kotak batas nyata (x × z × y, meter). Semua lolos validator (0 error, 0 warning).
 
 | File | Segitiga | +garis | KB | Ukuran (x×z×y) | Anchor | Klip |
 |---|---|---|---|---|---|---|
-| foldlings/foldling_fox | 280 | 0 | 45.2 | 0.077×0.023×0.059 | flag_anchor, label_anchor | idle, hop, cheer, bounce, fold |
-| foldlings/foldling_rabbit | 376 | 0 | 49.3 | 0.052×0.032×0.070 | flag_anchor, label_anchor | idle, hop, cheer, bounce, fold |
-| foldlings/foldling_crane | 136 | 0 | 29.1 | 0.072×0.071×0.055 | flag_anchor, label_anchor | idle, hop, cheer, bounce, fold |
-| foldlings/foldling_turtle | 178 | 0 | 30.5 | 0.076×0.052×0.028 | flag_anchor, label_anchor | idle, hop, cheer, bounce, fold |
-| foldlings/foldling_frog | 236 | 0 | 28.8 | 0.043×0.048×0.032 | flag_anchor, label_anchor | idle, hop, cheer, bounce, fold |
-| foldlings/foldling_fish | 122 | 0 | 24.9 | 0.069×0.029×0.036 | flag_anchor, label_anchor | idle, hop, cheer, bounce, fold |
-| foldlings/foldling_cat | 232 | 0 | 37.3 | 0.045×0.026×0.065 | flag_anchor, label_anchor | idle, hop, cheer, bounce, fold |
-| foldlings/foldling_elephant | 310 | 0 | 44.9 | 0.077×0.044×0.055 | flag_anchor, label_anchor | idle, hop, cheer, bounce, fold |
-| foldlings/paper_bird | 90 | 0 | 13.6 | 0.060×0.070×0.012 | (tidak ada) | flap (0.4 s) |
-| foldlings/flag_small | 60 | 0 | 6.9 | 0.054×0.004×0.093 | label_anchor | wave |
+| foldlings/foldling_fox | 438 | 0 | 57.1 | 0.077×0.023×0.059 | flag_anchor, label_anchor | idle, hop, cheer, bounce, fold |
+| foldlings/foldling_rabbit | 566 | 0 | 63.6 | 0.052×0.032×0.070 | flag_anchor, label_anchor | idle, hop, cheer, bounce, fold |
+| foldlings/foldling_crane | 232 | 0 | 38.5 | 0.072×0.071×0.055 | flag_anchor, label_anchor | idle, hop, cheer, bounce, fold |
+| foldlings/foldling_turtle | 274 | 0 | 39.9 | 0.076×0.052×0.028 | flag_anchor, label_anchor | idle, hop, cheer, bounce, fold |
+| foldlings/foldling_frog | 392 | 0 | 42.8 | 0.043×0.048×0.032 | flag_anchor, label_anchor | idle, hop, cheer, bounce, fold |
+| foldlings/foldling_fish | 218 | 0 | 34.2 | 0.069×0.029×0.036 | flag_anchor, label_anchor | idle, hop, cheer, bounce, fold |
+| foldlings/foldling_cat | 392 | 0 | 49.3 | 0.045×0.026×0.065 | flag_anchor, label_anchor | idle, hop, cheer, bounce, fold |
+| foldlings/foldling_elephant | 406 | 0 | 54.2 | 0.077×0.044×0.055 | flag_anchor, label_anchor | idle, hop, cheer, bounce, fold |
+| foldlings/paper_bird | 186 | 0 | 23.0 | 0.060×0.070×0.012 | (tidak ada) | flap (0.4 s) |
+| foldlings/flag_small | 96 | 0 | 9.6 | 0.054×0.004×0.093 | label_anchor | wave |
 | book/popup_book | 380 | 0 | 26.4 | 0.360×0.240×0.025 | spawn_anchor, exit_anchor, town_origin | |
 | book/popup_book_closed | 184 | 0 | 14.0 | 0.182×0.240×0.033 | | |
 | book/page_popup_frame | 164 | 0 | 12.9 | 0.298×0.019×0.118 | | |
@@ -377,11 +378,11 @@ Pratinjau: `previews/characters/`, `previews/sheet_characters.png`, `previews/cl
 
 | File | Segitiga | +garis | KB | Ukuran | Anchor | Bagian |
 |---|---|---|---|---|---|---|
-| characters/pip_owl | 606 | 0 | 52.4 | 0.069×0.050×0.108 | label_anchor | body, head, eyes, eyes_happy, wing_l, wing_r |
-| characters/great_crumple | 1157 | 0 | 97.6 | 0.193×0.224×0.174 | label_anchor_0, label_anchor_1, label_anchor_2 | stage_1, stage_2, stage_3, core, eyes |
-| characters/robot_partner_a | 306 | 0 | 32.4 | 0.046×0.025×0.079 | label_anchor | body, head, antenna, arm_l, arm_r |
-| characters/robot_partner_b | 390 | 0 | 36.3 | 0.048×0.032×0.083 | label_anchor | body, head, antenna, arm_l, arm_r |
-| characters/robot_partner_c | 354 | 0 | 33.2 | 0.048×0.025×0.086 | label_anchor | body, head, antenna, arm_l, arm_r |
+| characters/pip_owl | 1142 | 0 | 78.2 | 0.069×0.050×0.108 | label_anchor | body, head, eyes, eyes_happy, wing_l, wing_r |
+| characters/great_crumple | 1309 | 0 | 98.5 | 0.193×0.224×0.174 | label_anchor_0, label_anchor_1, label_anchor_2 | stage_1, stage_2, stage_3, core, eyes |
+| characters/robot_partner_a | 508 | 0 | 43.9 | 0.046×0.025×0.079 | label_anchor | body, head, antenna, arm_l, arm_r |
+| characters/robot_partner_b | 510 | 0 | 45.5 | 0.048×0.032×0.083 | label_anchor | body, head, antenna, arm_l, arm_r |
+| characters/robot_partner_c | 496 | 0 | 40.1 | 0.048×0.025×0.086 | label_anchor | body, head, antenna, arm_l, arm_r |
 
 Catatan:
 - **Pip**: burung hantu kertas warna pasir, kacamata bundar dari delapan lipatan navy (bentuk umum, bukan merek),

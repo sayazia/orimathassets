@@ -159,7 +159,7 @@ window.renderTable = async ({ items, table = 'wood', width = 1280, height = 800,
   top.receiveShadow = true;
   scene.add(top);
   for (const it of items) scene.add(await instance(it.file, it));
-  scene.add(new THREE.HemisphereLight('#fff7ea', '#8a7a66', 1.5));
+  scene.add(new THREE.HemisphereLight('#fff7ea', '#b8a78e', 1.6));
   const sun = new THREE.DirectionalLight('#ffffff', 2.0);
   sun.position.set(-0.4, 1.0, 0.5);
   sun.castShadow = true;
