@@ -1,0 +1,247 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Foldlings preview renderer</title>
+<style>html,body{margin:0;background:#FDF6E9}</style>
+<script type="importmap">
+{ "imports": {
+  "three": "/node_modules/three/build/three.module.js",
+  "three/addons/": "/node_modules/three/examples/jsm/"
+} }
+</script>
+</head>
+<body>
+<script type="module">
+import * as THREE from 'three';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+
+const renderer = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true });
+renderer.outputColorSpace = THREE.SRGBColorSpace;
+renderer.shadowMap.enabled = true;
+renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+document.body.appendChild(renderer.domElement);
+
+const loader = new GLTFLoader();
+const cache = new Map();
+const load = (file) => {
+  if (!cache.has(file)) cache.set(file, loader.loadAsync('/models/' + file));
+  return cache.get(file);
+};
+const BG = '#FDF6E9';
+const INK = new THREE.MeshBasicMaterial({ color: '#111111' });
+
+// Instantiates a model, optionally posed at `time` seconds into `clip`.
+async function instance(file, { clip, time = 0, silhouette = false, x = 0, y = 0, z = 0, ry = 0, s = 1 } = {}) {
+  const gltf = await load(file);
+  const obj = gltf.scene.clone(true);
+  if (clip) {
+    const c = gltf.animations.find((a) => a.name === clip);
+    const mixer = new THREE.AnimationMixer(obj);
+    mixer.clipAction(c).play();
+    mixer.setTime(Math.min(time, c.duration - 1e-4));
+  }
+  obj.position.set(x, y, z);
+  obj.rotation.y = ry;
+  obj.scale.setScalar(s);
+  obj.traverse((o) => {
+    if (!o.isMesh) return;
+    o.castShadow = o.receiveShadow = !silhouette && !o.name.includes('ink_outline');
+    if (silhouette) o.material = INK;
+  });
+  return obj;
+}
+
+function lights(scene, centre, size) {
+  scene.add(new THREE.HemisphereLight('#fffaf0', '#c9b79a', 1.6));
+  const sun = new THREE.DirectionalLight('#ffffff', 2.2);
+  sun.position.copy(centre).add(new THREE.Vector3(-0.6, 1.4, 0.9).normalize().multiplyScalar(size * 2));
+  sun.target.position.copy(centre);
+  sun.castShadow = true;
+  sun.shadow.mapSize.set(2048, 2048);
+  sun.shadow.bias = -0.0002;
+  sun.shadow.normalBias = size * 0.004;
+  sun.shadow.radius = 3;
+  Object.assign(sun.shadow.camera, { left: -size * 1.6, right: size * 1.6, top: size * 1.6, bottom: -size * 1.6, near: size * 0.01, far: size * 5 });
+  scene.add(sun, sun.target);
+}
+
+function fitOrtho(scene, box, view, width, height, pad) {
+  const centre = box.getCenter(new THREE.Vector3());
+  const size = box.getSize(new THREE.Vector3()).length();
+  const dir = new THREE.Vector3(...view).normalize();
+  const cam = new THREE.OrthographicCamera(-1, 1, 1, -1, size * 0.01, size * 10);
+  cam.position.copy(centre).addScaledVector(dir, size * 3);
+  cam.lookAt(centre);
+  cam.updateMatrixWorld();
+  let minX = Infinity, maxX = -Infinity, minY = Infinity, maxY = -Infinity;
+  for (let i = 0; i < 8; i++) {
+    const p = new THREE.Vector3(i & 1 ? box.max.x : box.min.x, i & 2 ? box.max.y : box.min.y, i & 4 ? box.max.z : box.min.z).applyMatrix4(cam.matrixWorldInverse);
+    minX = Math.min(minX, p.x); maxX = Math.max(maxX, p.x); minY = Math.min(minY, p.y); maxY = Math.max(maxY, p.y);
+  }
+  let w = maxX - minX, h = maxY - minY;
+  if (w / h > width / height) h = w / (width / height); else w = h * (width / height);
+  const cx = (minX + maxX) / 2, cy = (minY + maxY) / 2, k = 1 + pad * 2;
+  Object.assign(cam, { left: cx - (w * k) / 2, right: cx + (w * k) / 2, top: cy + (h * k) / 2, bottom: cy - (h * k) / 2 });
+  cam.updateProjectionMatrix();
+  return cam;
+}
+
+// One orthographic render. opts: { items: [{file, clip, time, x, y, z, ry}], view, width, height, pad, silhouette, fitTo }
+window.render = async ({ items, view = [0.8, 0.6, 1], width = 400, height = 400, pad = 0.1, silhouette = false, fitTo = null, ground = true }) => {
+  const scene = new THREE.Scene();
+  scene.background = new THREE.Color(silhouette ? '#ffffff' : BG);
+  for (const it of items) scene.add(await instance(it.file, { ...it, silhouette }));
+  scene.updateMatrixWorld(true);
+  const box = fitTo ? new THREE.Box3(new THREE.Vector3(...fitTo.min), new THREE.Vector3(...fitTo.max)) : new THREE.Box3().setFromObject(scene);
+  const size = box.getSize(new THREE.Vector3()).length();
+  if (!silhouette) {
+    lights(scene, box.getCenter(new THREE.Vector3()), size);
+    if (ground) {
+      const g = new THREE.Mesh(new THREE.PlaneGeometry(size * 20, size * 20), new THREE.ShadowMaterial({ opacity: 0.18 }));
+      g.rotation.x = -Math.PI / 2;
+      g.position.y = box.min.y - size * 0.0005;
+      g.receiveShadow = true;
+      scene.add(g);
+    }
+  }
+  const cam = fitOrtho(scene, box, view, width, height, pad);
+  renderer.setPixelRatio(1);
+  renderer.setSize(width, height);
+  renderer.render(scene, cam);
+  return renderer.domElement.toDataURL('image/png');
+};
+
+// Procedural table tops (no photos): warm wood planks or a white laminate.
+function tableTexture(kind) {
+  const c = document.createElement('canvas');
+  c.width = c.height = 1024;
+  const g = c.getContext('2d');
+  if (kind === 'wood') {
+    const planks = ['#B98556', '#AE7A4C', '#C08D5E', '#B3804F'];
+    for (let i = 0; i < 6; i++) {
+      g.fillStyle = planks[i % 4];
+      g.fillRect(0, i * 171, 1024, 171);
+      for (let k = 0; k < 40; k++) {
+        g.strokeStyle = `rgba(90,55,30,${0.05 + ((k * 37) % 10) / 120})`;
+        g.lineWidth = 1 + (k % 3);
+        g.beginPath();
+        const y0 = i * 171 + ((k * 53) % 171);
+        g.moveTo(0, y0);
+        for (let x = 0; x <= 1024; x += 64) g.lineTo(x, y0 + Math.sin(x / 140 + k) * 4);
+        g.stroke();
+      }
+      g.fillStyle = 'rgba(60,35,20,0.35)';
+      g.fillRect(0, i * 171, 1024, 3);
+    }
+  } else {
+    g.fillStyle = '#F4F4F2';
+    g.fillRect(0, 0, 1024, 1024);
+    for (let k = 0; k < 3000; k++) {
+      g.fillStyle = `rgba(0,0,0,${((k * 7919) % 100) / 5000})`;
+      g.fillRect((k * 7919) % 1024, (k * 104729) % 1024, 2, 2);
+    }
+  }
+  const t = new THREE.CanvasTexture(c);
+  t.colorSpace = THREE.SRGBColorSpace;
+  t.wrapS = t.wrapT = THREE.RepeatWrapping;
+  return t;
+}
+
+// Table-scale view: perspective camera at a seated child's eye (about 45 cm above, 45 cm in front).
+window.renderTable = async ({ items, table = 'wood', width = 1280, height = 800, eye = [0, 0.45, 0.45], target = [0, 0.02, 0], fov = 50 }) => {
+  const scene = new THREE.Scene();
+  scene.background = new THREE.Color(table === 'wood' ? '#5d4a3a' : '#d9d6d0');
+  const tex = tableTexture(table);
+  tex.repeat.set(2, 2);
+  const top = new THREE.Mesh(new THREE.PlaneGeometry(1.6, 1.2), new THREE.MeshStandardMaterial({ map: tex, roughness: 0.8 }));
+  top.rotation.x = -Math.PI / 2;
+  top.receiveShadow = true;
+  scene.add(top);
+  for (const it of items) scene.add(await instance(it.file, it));
+  scene.add(new THREE.HemisphereLight('#fff7ea', '#b8a78e', 1.6));
+  const sun = new THREE.DirectionalLight('#ffffff', 2.0);
+  sun.position.set(-0.4, 1.0, 0.5);
+  sun.castShadow = true;
+  sun.shadow.mapSize.set(4096, 4096);
+  sun.shadow.bias = -0.0002;
+  sun.shadow.normalBias = 0.0006;
+  sun.shadow.radius = 2;
+  Object.assign(sun.shadow.camera, { left: -0.4, right: 0.4, top: 0.4, bottom: -0.4, near: 0.1, far: 3 });
+  scene.add(sun);
+  const cam = new THREE.PerspectiveCamera(fov, width / height, 0.01, 10);
+  cam.position.set(...eye);
+  cam.lookAt(new THREE.Vector3(...target));
+  renderer.setPixelRatio(1);
+  renderer.setSize(width, height);
+  renderer.render(scene, cam);
+  return renderer.domElement.toDataURL('image/png');
+};
+
+// Machado et al. (2009) colour-vision-deficiency simulation (severity 1.0), applied in linear RGB.
+const CVD = {
+  deuteranopia: [0.367322, 0.860646, -0.227968, 0.280085, 0.672501, 0.047413, -0.01182, 0.04294, 0.968881],
+  protanopia: [0.152286, 1.052583, -0.204868, 0.114503, 0.786281, 0.099216, -0.003882, -0.048116, 1.051998],
+  tritanopia: [1.255528, -0.076749, -0.178779, -0.078411, 0.930809, 0.147602, 0.004733, 0.691367, 0.3039],
+};
+window.simulate = async ({ png, kind }) => {
+  const img = new Image(); img.src = png; await img.decode();
+  const c = document.createElement('canvas'); c.width = img.width; c.height = img.height;
+  const g = c.getContext('2d'); g.drawImage(img, 0, 0);
+  const d = g.getImageData(0, 0, c.width, c.height), m = CVD[kind];
+  const lin = (v) => { v /= 255; return v <= 0.04045 ? v / 12.92 : ((v + 0.055) / 1.055) ** 2.4; };
+  const enc = (v) => { v = Math.min(1, Math.max(0, v)); return 255 * (v <= 0.0031308 ? v * 12.92 : 1.055 * v ** (1 / 2.4) - 0.055); };
+  for (let i = 0; i < d.data.length; i += 4) {
+    const r = lin(d.data[i]), gg = lin(d.data[i + 1]), b = lin(d.data[i + 2]);
+    d.data[i] = enc(m[0] * r + m[1] * gg + m[2] * b);
+    d.data[i + 1] = enc(m[3] * r + m[4] * gg + m[5] * b);
+    d.data[i + 2] = enc(m[6] * r + m[7] * gg + m[8] * b);
+  }
+  g.putImageData(d, 0, 0);
+  return c.toDataURL('image/png');
+};
+
+// Grid of already-rendered PNGs with an optional title, column captions and row captions.
+window.grid = async ({ tiles, cols, cell = [256, 256], title = '', captions = true, rowLabels = null, rowLabelW = 0 }) => {
+  const [cw, ch] = cell, rows = Math.ceil(tiles.length / cols), head = title ? 56 : 8, label = captions ? 28 : 0;
+  const c = document.createElement('canvas');
+  c.width = rowLabelW + cols * cw; c.height = head + rows * (ch + label);
+  const g = c.getContext('2d');
+  g.fillStyle = BG; g.fillRect(0, 0, c.width, c.height);
+  g.fillStyle = '#3A3F4B'; g.textAlign = 'center';
+  if (title) { g.font = 'bold 26px sans-serif'; g.fillText(title, c.width / 2, 38); }
+  g.font = '16px sans-serif';
+  for (let i = 0; i < tiles.length; i++) {
+    const x = rowLabelW + (i % cols) * cw, y = head + Math.floor(i / cols) * (ch + label);
+    if (tiles[i].png) {
+      const img = new Image(); img.src = tiles[i].png; await img.decode();
+      g.drawImage(img, x, y, cw, ch);
+    }
+    if (captions && tiles[i].name) g.fillText(tiles[i].name, x + cw / 2, y + ch + 19);
+  }
+  if (rowLabels) {
+    g.textAlign = 'left'; g.font = 'bold 16px sans-serif';
+    rowLabels.forEach((l, r) => g.fillText(l, 10, head + r * (ch + label) + ch / 2));
+  }
+  return c.toDataURL('image/png');
+};
+
+window.clipInfo = async (file) => (await load(file)).animations.map((a) => ({ name: a.name, duration: a.duration }));
+// 2D helpers: rasterise an SVG string at a size, or draw SVG layers over a rendered PNG.
+const svgImage = async (svg) => { const img = new Image(); img.src = 'data:image/svg+xml;base64,' + btoa(unescape(encodeURIComponent(svg))); await img.decode(); return img; };
+window.rasterize = async ({ svg, width, height }) => {
+  const c = document.createElement('canvas'); c.width = width; c.height = height;
+  c.getContext('2d').drawImage(await svgImage(svg), 0, 0, width, height);
+  return c.toDataURL('image/png');
+};
+window.compose = async ({ png, layers }) => {
+  const base = new Image(); base.src = png; await base.decode();
+  const c = document.createElement('canvas'); c.width = base.width; c.height = base.height;
+  const g = c.getContext('2d'); g.drawImage(base, 0, 0);
+  for (const l of layers) g.drawImage(await svgImage(l.svg), l.x, l.y, l.w, l.h);
+  return c.toDataURL('image/png');
+};
+window.ready = true;
+</script>
+</body>
+</html>

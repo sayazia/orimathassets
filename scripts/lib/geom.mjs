@@ -25,6 +25,35 @@ const sub = (a, b) => [a[0] - b[0], a[1] - b[1], a[2] - b[2]];
 const cross = (a, b) => [a[1] * b[2] - a[2] * b[1], a[2] * b[0] - a[0] * b[2], a[0] * b[1] - a[1] * b[0]];
 const dot = (a, b) => a[0] * b[0] + a[1] * b[1] + a[2] * b[2];
 
+// Key light used for automatic fold shading (upper front left, like the preview sun).
+const LIGHT = (() => { const v = [-0.45, 0.85, 0.4]; const l = Math.hypot(...v); return v.map((x) => x / l); })();
+
+// Outward face planes {n, d} (n·p = d) of the convex hull of a point cloud.
+export function hullPlanes(pts) {
+  const eps = 1e-6 * Math.max(...pts.flat().map(Math.abs), 1);
+  const planes = [];
+  for (let i = 0; i < pts.length; i++) for (let j = i + 1; j < pts.length; j++) for (let k = j + 1; k < pts.length; k++) {
+    let n = cross(sub(pts[j], pts[i]), sub(pts[k], pts[i]));
+    const l = Math.hypot(...n);
+    if (l < eps) continue;
+    n = n.map((x) => x / l);
+    const d = dot(n, pts[i]);
+    let pos = false, neg = false;
+    for (const p of pts) {
+      const s = dot(n, p) - d;
+      if (s > eps * 10) pos = true;
+      else if (s < -eps * 10) neg = true;
+      if (pos && neg) break;
+    }
+    if (pos && neg) continue;
+    if (pos) n = n.map((x) => -x);
+    const dd = dot(n, pts[i]);
+    if (planes.some((p) => dot(p.n, n) > 1 - 1e-9 && Math.abs(p.d - dd) < eps * 10)) continue;
+    planes.push({ n, d: dd });
+  }
+  return { planes, eps };
+}
+
 export class Model {
   constructor(name) {
     this.name = name;
@@ -61,11 +90,20 @@ export class Model {
   solid(verts, faces) {
     const w = verts.map((p) => apply(this.m, p));
     const centre = w.reduce((a, p) => [a[0] + p[0], a[1] + p[1], a[2] + p[2]], [0, 0, 0]).map((v) => v / w.length);
-    for (const { c, v } of faces) {
+    const log = this.solids ? { verts: w, faces: [], ink: faces.every(({ c }) => c === 'ink') } : null;
+    for (const { c: key, v } of faces) {
       const pts = v.map((i) => w[i]);
       const n = cross(sub(pts[1], pts[0]), sub(pts[2], pts[0]));
       const out = dot(n, sub(pts[0], centre)) >= 0;
       const ordered = out ? pts : [...pts].reverse();
+      if (log) log.faces.push(out ? v : [...v].reverse());
+      // A trailing '*' picks the lit colour or its `_shade` twin from the face direction.
+      let c = key;
+      if (key.endsWith('*')) {
+        const nn = out ? n : n.map((x) => -x);
+        const lit = dot(nn, LIGHT) / (Math.hypot(...nn) || 1) > 0.12;
+        c = lit ? key.slice(0, -1) : key.slice(0, -1) + '_shade';
+      }
       if (!this.groups.has(c)) this.groups.set(c, []);
       const g = this.groups.get(c);
       for (let i = 1; i < ordered.length - 1; i++) {
@@ -75,7 +113,22 @@ export class Model {
         g.push(...a, ...b, ...d);
       }
     }
+    if (log) this.solids.push(log);
     return this;
+  }
+
+  // Convex hull of a point cloud, faces found automatically (coplanar points merge into one polygon).
+  hull(colour, pts) {
+    const { planes, eps } = hullPlanes(pts);
+    const faces = [];
+    for (const { n, d } of planes) {
+      const on = pts.map((p, i) => [p, i]).filter(([p]) => Math.abs(dot(n, p) - d) < eps * 10);
+      const c = on.reduce((a, [p]) => a.map((v, q) => v + p[q] / on.length), [0, 0, 0]);
+      const u = sub(on[0][0], c), w = cross(n, u);
+      on.sort(([a], [b]) => Math.atan2(dot(sub(a, c), w), dot(sub(a, c), u)) - Math.atan2(dot(sub(b, c), w), dot(sub(b, c), u)));
+      faces.push({ c: colour, v: on.map(([, i]) => i) });
+    }
+    return this.solid(pts, faces);
   }
 
   // Axis-aligned box. colour may be a string or {top, bottom, sides, front(+z), back, left(-x), right}.

@@ -4575,5 +4575,4465 @@
         0.22
       ]
     }
+  },
+  {
+    "name": "foldling_fox",
+    "category": "foldlings",
+    "sheet": "foldlings",
+    "file": "foldlings/foldling_fox.glb",
+    "unit": "m",
+    "triangles": 412,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.0408,
+        0,
+        -0.0116
+      ],
+      "max": [
+        0.0385,
+        0.0581,
+        0.0116
+      ]
+    },
+    "anchors": {
+      "flag_anchor": [
+        -0.004,
+        0.038,
+        0
+      ],
+      "label_anchor": [
+        0,
+        0.072,
+        0
+      ]
+    },
+    "parts": [
+      "body",
+      "head",
+      "eyes_happy",
+      "ear_l",
+      "ear_r",
+      "tail",
+      "leg_fl",
+      "leg_fr",
+      "leg_bl",
+      "leg_br"
+    ],
+    "materials": [
+      "coral",
+      "coral_shade",
+      "cream",
+      "cream_shade",
+      "ink",
+      "pink"
+    ],
+    "clips": [
+      "idle",
+      "hop",
+      "cheer",
+      "bounce",
+      "fold"
+    ],
+    "variants": [
+      "place_value",
+      "multiply_divide",
+      "fractions",
+      "decimals",
+      "measurement",
+      "rare"
+    ],
+    "variant_files": {
+      "place_value": "foldlings/foldling_fox.glb",
+      "multiply_divide": "foldlings/foldling_fox_multiply_divide.glb",
+      "fractions": "foldlings/foldling_fox_fractions.glb",
+      "decimals": "foldlings/foldling_fox_decimals.glb",
+      "measurement": "foldlings/foldling_fox_measurement.glb",
+      "rare": "foldlings/foldling_fox_rare.glb"
+    },
+    "variant_colours": {
+      "place_value": {
+        "main": "coral",
+        "trim": "cream"
+      },
+      "multiply_divide": {
+        "main": "cobalt",
+        "trim": "cream"
+      },
+      "fractions": {
+        "main": "teal",
+        "trim": "cream"
+      },
+      "decimals": {
+        "main": "sunflower",
+        "trim": "cream"
+      },
+      "measurement": {
+        "main": "violet",
+        "trim": "cream"
+      },
+      "rare": {
+        "main": "gold",
+        "trim": "paper"
+      }
+    }
+  },
+  {
+    "name": "foldling_rabbit",
+    "category": "foldlings",
+    "sheet": "foldlings",
+    "file": "foldlings/foldling_rabbit.glb",
+    "unit": "m",
+    "triangles": 446,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.0268,
+        -0.0001,
+        -0.015
+      ],
+      "max": [
+        0.026,
+        0.0722,
+        0.015
+      ]
+    },
+    "anchors": {
+      "flag_anchor": [
+        -0.008,
+        0.034,
+        0
+      ],
+      "label_anchor": [
+        0,
+        0.082,
+        0
+      ]
+    },
+    "parts": [
+      "body",
+      "head",
+      "eyes_happy",
+      "ear_l",
+      "ear_r",
+      "leg_bl",
+      "leg_fl",
+      "leg_br",
+      "leg_fr"
+    ],
+    "materials": [
+      "coral",
+      "coral_shade",
+      "cream",
+      "cream_shade",
+      "ink",
+      "pink"
+    ],
+    "clips": [
+      "idle",
+      "hop",
+      "cheer",
+      "bounce",
+      "fold"
+    ],
+    "variants": [
+      "place_value",
+      "multiply_divide",
+      "fractions",
+      "decimals",
+      "measurement",
+      "rare"
+    ],
+    "variant_files": {
+      "place_value": "foldlings/foldling_rabbit.glb",
+      "multiply_divide": "foldlings/foldling_rabbit_multiply_divide.glb",
+      "fractions": "foldlings/foldling_rabbit_fractions.glb",
+      "decimals": "foldlings/foldling_rabbit_decimals.glb",
+      "measurement": "foldlings/foldling_rabbit_measurement.glb",
+      "rare": "foldlings/foldling_rabbit_rare.glb"
+    },
+    "variant_colours": {
+      "place_value": {
+        "main": "coral",
+        "trim": "cream"
+      },
+      "multiply_divide": {
+        "main": "cobalt",
+        "trim": "cream"
+      },
+      "fractions": {
+        "main": "teal",
+        "trim": "cream"
+      },
+      "decimals": {
+        "main": "sunflower",
+        "trim": "cream"
+      },
+      "measurement": {
+        "main": "violet",
+        "trim": "cream"
+      },
+      "rare": {
+        "main": "gold",
+        "trim": "paper"
+      }
+    }
+  },
+  {
+    "name": "foldling_crane",
+    "category": "foldlings",
+    "sheet": "foldlings",
+    "file": "foldlings/foldling_crane.glb",
+    "unit": "m",
+    "triangles": 232,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.035,
+        0,
+        -0.0355
+      ],
+      "max": [
+        0.037,
+        0.055,
+        0.0355
+      ]
+    },
+    "anchors": {
+      "flag_anchor": [
+        -0.004,
+        0.026,
+        0
+      ],
+      "label_anchor": [
+        0,
+        0.072,
+        0
+      ]
+    },
+    "parts": [
+      "body",
+      "wing_l",
+      "wing_r",
+      "neck",
+      "head",
+      "eyes_happy",
+      "tail"
+    ],
+    "materials": [
+      "coral",
+      "coral_shade",
+      "cream",
+      "cream_shade",
+      "ink"
+    ],
+    "clips": [
+      "idle",
+      "hop",
+      "cheer",
+      "bounce",
+      "fold"
+    ],
+    "variants": [
+      "place_value",
+      "multiply_divide",
+      "fractions",
+      "decimals",
+      "measurement",
+      "rare"
+    ],
+    "variant_files": {
+      "place_value": "foldlings/foldling_crane.glb",
+      "multiply_divide": "foldlings/foldling_crane_multiply_divide.glb",
+      "fractions": "foldlings/foldling_crane_fractions.glb",
+      "decimals": "foldlings/foldling_crane_decimals.glb",
+      "measurement": "foldlings/foldling_crane_measurement.glb",
+      "rare": "foldlings/foldling_crane_rare.glb"
+    },
+    "variant_colours": {
+      "place_value": {
+        "main": "coral",
+        "trim": "cream"
+      },
+      "multiply_divide": {
+        "main": "cobalt",
+        "trim": "cream"
+      },
+      "fractions": {
+        "main": "teal",
+        "trim": "cream"
+      },
+      "decimals": {
+        "main": "sunflower",
+        "trim": "cream"
+      },
+      "measurement": {
+        "main": "violet",
+        "trim": "cream"
+      },
+      "rare": {
+        "main": "gold",
+        "trim": "paper"
+      }
+    }
+  },
+  {
+    "name": "foldling_turtle",
+    "category": "foldlings",
+    "sheet": "foldlings",
+    "file": "foldlings/foldling_turtle.glb",
+    "unit": "m",
+    "triangles": 260,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.0352,
+        0,
+        -0.026
+      ],
+      "max": [
+        0.042,
+        0.028,
+        0.026
+      ]
+    },
+    "anchors": {
+      "flag_anchor": [
+        -0.002,
+        0.028,
+        0
+      ],
+      "label_anchor": [
+        0,
+        0.048,
+        0
+      ]
+    },
+    "parts": [
+      "body",
+      "head",
+      "eyes_happy",
+      "leg_fl",
+      "leg_fr",
+      "leg_bl",
+      "leg_br",
+      "tail"
+    ],
+    "materials": [
+      "coral",
+      "coral_shade",
+      "cream",
+      "cream_shade",
+      "ink"
+    ],
+    "clips": [
+      "idle",
+      "hop",
+      "cheer",
+      "bounce",
+      "fold"
+    ],
+    "variants": [
+      "place_value",
+      "multiply_divide",
+      "fractions",
+      "decimals",
+      "measurement",
+      "rare"
+    ],
+    "variant_files": {
+      "place_value": "foldlings/foldling_turtle.glb",
+      "multiply_divide": "foldlings/foldling_turtle_multiply_divide.glb",
+      "fractions": "foldlings/foldling_turtle_fractions.glb",
+      "decimals": "foldlings/foldling_turtle_decimals.glb",
+      "measurement": "foldlings/foldling_turtle_measurement.glb",
+      "rare": "foldlings/foldling_turtle_rare.glb"
+    },
+    "variant_colours": {
+      "place_value": {
+        "main": "coral",
+        "trim": "cream"
+      },
+      "multiply_divide": {
+        "main": "cobalt",
+        "trim": "cream"
+      },
+      "fractions": {
+        "main": "teal",
+        "trim": "cream"
+      },
+      "decimals": {
+        "main": "sunflower",
+        "trim": "cream"
+      },
+      "measurement": {
+        "main": "violet",
+        "trim": "cream"
+      },
+      "rare": {
+        "main": "gold",
+        "trim": "paper"
+      }
+    }
+  },
+  {
+    "name": "foldling_frog",
+    "category": "foldlings",
+    "sheet": "foldlings",
+    "file": "foldlings/foldling_frog.glb",
+    "unit": "m",
+    "triangles": 424,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.021,
+        -0.0003,
+        -0.024
+      ],
+      "max": [
+        0.022,
+        0.032,
+        0.024
+      ]
+    },
+    "anchors": {
+      "flag_anchor": [
+        -0.006,
+        0.02,
+        0
+      ],
+      "label_anchor": [
+        0,
+        0.05,
+        0
+      ]
+    },
+    "parts": [
+      "body",
+      "eyes_happy",
+      "leg_bl",
+      "leg_br"
+    ],
+    "materials": [
+      "coral",
+      "coral_shade",
+      "cream",
+      "cream_shade",
+      "ink"
+    ],
+    "clips": [
+      "idle",
+      "hop",
+      "cheer",
+      "bounce",
+      "fold"
+    ],
+    "variants": [
+      "place_value",
+      "multiply_divide",
+      "fractions",
+      "decimals",
+      "measurement",
+      "rare"
+    ],
+    "variant_files": {
+      "place_value": "foldlings/foldling_frog.glb",
+      "multiply_divide": "foldlings/foldling_frog_multiply_divide.glb",
+      "fractions": "foldlings/foldling_frog_fractions.glb",
+      "decimals": "foldlings/foldling_frog_decimals.glb",
+      "measurement": "foldlings/foldling_frog_measurement.glb",
+      "rare": "foldlings/foldling_frog_rare.glb"
+    },
+    "variant_colours": {
+      "place_value": {
+        "main": "coral",
+        "trim": "cream"
+      },
+      "multiply_divide": {
+        "main": "cobalt",
+        "trim": "cream"
+      },
+      "fractions": {
+        "main": "teal",
+        "trim": "cream"
+      },
+      "decimals": {
+        "main": "sunflower",
+        "trim": "cream"
+      },
+      "measurement": {
+        "main": "violet",
+        "trim": "cream"
+      },
+      "rare": {
+        "main": "gold",
+        "trim": "paper"
+      }
+    }
+  },
+  {
+    "name": "foldling_fish",
+    "category": "foldlings",
+    "sheet": "foldlings",
+    "file": "foldlings/foldling_fish.glb",
+    "unit": "m",
+    "triangles": 218,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.038,
+        0.009,
+        -0.0147
+      ],
+      "max": [
+        0.031,
+        0.045,
+        0.0147
+      ]
+    },
+    "anchors": {
+      "flag_anchor": [
+        0,
+        0.038,
+        0
+      ],
+      "label_anchor": [
+        0,
+        0.058,
+        0
+      ]
+    },
+    "parts": [
+      "body",
+      "eyes_happy",
+      "tail",
+      "fin_l",
+      "fin_r"
+    ],
+    "materials": [
+      "coral",
+      "coral_shade",
+      "cream",
+      "cream_shade",
+      "ink"
+    ],
+    "clips": [
+      "idle",
+      "hop",
+      "cheer",
+      "bounce",
+      "fold"
+    ],
+    "variants": [
+      "place_value",
+      "multiply_divide",
+      "fractions",
+      "decimals",
+      "measurement",
+      "rare"
+    ],
+    "variant_files": {
+      "place_value": "foldlings/foldling_fish.glb",
+      "multiply_divide": "foldlings/foldling_fish_multiply_divide.glb",
+      "fractions": "foldlings/foldling_fish_fractions.glb",
+      "decimals": "foldlings/foldling_fish_decimals.glb",
+      "measurement": "foldlings/foldling_fish_measurement.glb",
+      "rare": "foldlings/foldling_fish_rare.glb"
+    },
+    "variant_colours": {
+      "place_value": {
+        "main": "coral",
+        "trim": "cream"
+      },
+      "multiply_divide": {
+        "main": "cobalt",
+        "trim": "cream"
+      },
+      "fractions": {
+        "main": "teal",
+        "trim": "cream"
+      },
+      "decimals": {
+        "main": "sunflower",
+        "trim": "cream"
+      },
+      "measurement": {
+        "main": "violet",
+        "trim": "cream"
+      },
+      "rare": {
+        "main": "gold",
+        "trim": "paper"
+      }
+    },
+    "notes": "Floats: belly 1 cm above the table; the origin stays on the table top."
+  },
+  {
+    "name": "foldling_cat",
+    "category": "foldlings",
+    "sheet": "foldlings",
+    "file": "foldlings/foldling_cat.glb",
+    "unit": "m",
+    "triangles": 370,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.0284,
+        -0.0001,
+        -0.0125
+      ],
+      "max": [
+        0.019,
+        0.0661,
+        0.0125
+      ]
+    },
+    "anchors": {
+      "flag_anchor": [
+        -0.008,
+        0.034,
+        0
+      ],
+      "label_anchor": [
+        0,
+        0.078,
+        0
+      ]
+    },
+    "parts": [
+      "body",
+      "head",
+      "eyes_happy",
+      "ear_l",
+      "ear_r",
+      "tail"
+    ],
+    "materials": [
+      "coral",
+      "coral_shade",
+      "cream",
+      "cream_shade",
+      "ink",
+      "pink"
+    ],
+    "clips": [
+      "idle",
+      "hop",
+      "cheer",
+      "bounce",
+      "fold"
+    ],
+    "variants": [
+      "place_value",
+      "multiply_divide",
+      "fractions",
+      "decimals",
+      "measurement",
+      "rare"
+    ],
+    "variant_files": {
+      "place_value": "foldlings/foldling_cat.glb",
+      "multiply_divide": "foldlings/foldling_cat_multiply_divide.glb",
+      "fractions": "foldlings/foldling_cat_fractions.glb",
+      "decimals": "foldlings/foldling_cat_decimals.glb",
+      "measurement": "foldlings/foldling_cat_measurement.glb",
+      "rare": "foldlings/foldling_cat_rare.glb"
+    },
+    "variant_colours": {
+      "place_value": {
+        "main": "coral",
+        "trim": "cream"
+      },
+      "multiply_divide": {
+        "main": "cobalt",
+        "trim": "cream"
+      },
+      "fractions": {
+        "main": "teal",
+        "trim": "cream"
+      },
+      "decimals": {
+        "main": "sunflower",
+        "trim": "cream"
+      },
+      "measurement": {
+        "main": "violet",
+        "trim": "cream"
+      },
+      "rare": {
+        "main": "gold",
+        "trim": "paper"
+      }
+    }
+  },
+  {
+    "name": "foldling_elephant",
+    "category": "foldlings",
+    "sheet": "foldlings",
+    "file": "foldlings/foldling_elephant.glb",
+    "unit": "m",
+    "triangles": 390,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.0345,
+        0,
+        -0.0198
+      ],
+      "max": [
+        0.0423,
+        0.0581,
+        0.0198
+      ]
+    },
+    "anchors": {
+      "flag_anchor": [
+        -0.008,
+        0.048,
+        0
+      ],
+      "label_anchor": [
+        0,
+        0.072,
+        0
+      ]
+    },
+    "parts": [
+      "body",
+      "head",
+      "eyes_happy",
+      "trunk",
+      "ear_l",
+      "ear_r",
+      "leg_fl",
+      "leg_fr",
+      "leg_bl",
+      "leg_br"
+    ],
+    "materials": [
+      "coral",
+      "coral_shade",
+      "cream",
+      "cream_shade",
+      "ink"
+    ],
+    "clips": [
+      "idle",
+      "hop",
+      "cheer",
+      "bounce",
+      "fold"
+    ],
+    "variants": [
+      "place_value",
+      "multiply_divide",
+      "fractions",
+      "decimals",
+      "measurement",
+      "rare"
+    ],
+    "variant_files": {
+      "place_value": "foldlings/foldling_elephant.glb",
+      "multiply_divide": "foldlings/foldling_elephant_multiply_divide.glb",
+      "fractions": "foldlings/foldling_elephant_fractions.glb",
+      "decimals": "foldlings/foldling_elephant_decimals.glb",
+      "measurement": "foldlings/foldling_elephant_measurement.glb",
+      "rare": "foldlings/foldling_elephant_rare.glb"
+    },
+    "variant_colours": {
+      "place_value": {
+        "main": "coral",
+        "trim": "cream"
+      },
+      "multiply_divide": {
+        "main": "cobalt",
+        "trim": "cream"
+      },
+      "fractions": {
+        "main": "teal",
+        "trim": "cream"
+      },
+      "decimals": {
+        "main": "sunflower",
+        "trim": "cream"
+      },
+      "measurement": {
+        "main": "violet",
+        "trim": "cream"
+      },
+      "rare": {
+        "main": "gold",
+        "trim": "paper"
+      }
+    }
+  },
+  {
+    "name": "paper_bird",
+    "category": "foldlings",
+    "sheet": "foldlings",
+    "file": "foldlings/paper_bird.glb",
+    "unit": "m",
+    "triangles": 186,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.03,
+        -0.0035,
+        -0.0351
+      ],
+      "max": [
+        0.03,
+        0.009,
+        0.0351
+      ]
+    },
+    "anchors": {},
+    "parts": [
+      "body",
+      "eyes_happy",
+      "wing_l",
+      "wing_r"
+    ],
+    "materials": [
+      "coral",
+      "coral_shade",
+      "cream",
+      "cream_shade",
+      "ink"
+    ],
+    "clips": [
+      "flap"
+    ],
+    "variants": [
+      "place_value",
+      "multiply_divide",
+      "fractions",
+      "decimals",
+      "measurement",
+      "rare"
+    ],
+    "variant_files": {
+      "place_value": "foldlings/paper_bird.glb",
+      "multiply_divide": "foldlings/paper_bird_multiply_divide.glb",
+      "fractions": "foldlings/paper_bird_fractions.glb",
+      "decimals": "foldlings/paper_bird_decimals.glb",
+      "measurement": "foldlings/paper_bird_measurement.glb",
+      "rare": "foldlings/paper_bird_rare.glb"
+    },
+    "variant_colours": {
+      "place_value": {
+        "main": "coral",
+        "trim": "cream"
+      },
+      "multiply_divide": {
+        "main": "cobalt",
+        "trim": "cream"
+      },
+      "fractions": {
+        "main": "teal",
+        "trim": "cream"
+      },
+      "decimals": {
+        "main": "sunflower",
+        "trim": "cream"
+      },
+      "measurement": {
+        "main": "violet",
+        "trim": "cream"
+      },
+      "rare": {
+        "main": "gold",
+        "trim": "paper"
+      }
+    },
+    "notes": "Flying form after a correct answer. Origin at the body centre; flies towards +x."
+  },
+  {
+    "name": "flag_small",
+    "category": "foldlings",
+    "sheet": "foldlings",
+    "file": "foldlings/flag_small.glb",
+    "unit": "m",
+    "triangles": 96,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.0025,
+        0,
+        -0.0026
+      ],
+      "max": [
+        0.0516,
+        0.0926,
+        0.0026
+      ]
+    },
+    "anchors": {
+      "label_anchor": [
+        0.0265,
+        0.0685,
+        0.0018
+      ]
+    },
+    "parts": [
+      "pole",
+      "cloth"
+    ],
+    "materials": [
+      "cream",
+      "cream_shade",
+      "wood",
+      "wood_shade"
+    ],
+    "clips": [
+      "wave"
+    ],
+    "notes": "Origin at the foot of the pole; attach to a Foldling flag_anchor. Plain cream cloth, the game draws the number at label_anchor."
+  },
+  {
+    "name": "popup_book",
+    "category": "book",
+    "sheet": "book",
+    "file": "book/popup_book.glb",
+    "unit": "m",
+    "triangles": 380,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.18,
+        -0.0015,
+        -0.12
+      ],
+      "max": [
+        0.18,
+        0.0234,
+        0.12
+      ]
+    },
+    "anchors": {
+      "spawn_anchor": [
+        -0.09,
+        0.0217,
+        0
+      ],
+      "exit_anchor": [
+        0,
+        0.06,
+        0
+      ],
+      "town_origin": [
+        0.09,
+        0.0217,
+        0
+      ]
+    },
+    "parts": [
+      "spine",
+      "cover_left",
+      "pages_left",
+      "page_hinge_left",
+      "cover_right",
+      "pages_right",
+      "page_hinge_right"
+    ],
+    "materials": [
+      "gold",
+      "navy",
+      "navy_shade",
+      "paper",
+      "paper_shade"
+    ],
+    "notes": "Open flat. spawn_anchor: centre of the left page; town_origin: centre of the right page; exit_anchor: 6 cm above the spine. page_hinge_* hold the top leaf (rotate about z to turn a page)."
+  },
+  {
+    "name": "popup_book_closed",
+    "category": "book",
+    "sheet": "book",
+    "file": "book/popup_book_closed.glb",
+    "unit": "m",
+    "triangles": 184,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.0925,
+        0,
+        -0.12
+      ],
+      "max": [
+        0.09,
+        0.0326,
+        0.12
+      ]
+    },
+    "anchors": {},
+    "parts": [
+      "spine",
+      "cover_back",
+      "cover_front"
+    ],
+    "materials": [
+      "gold",
+      "navy",
+      "navy_shade",
+      "paper",
+      "paper_shade"
+    ],
+    "notes": "Spine on the -x side; cover_front opens about z at its spine edge."
+  },
+  {
+    "name": "page_popup_frame",
+    "category": "book",
+    "sheet": "book",
+    "file": "book/page_popup_frame.glb",
+    "unit": "m",
+    "triangles": 164,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.149,
+        0,
+        -0.001
+      ],
+      "max": [
+        0.149,
+        0.118,
+        0.018
+      ]
+    },
+    "anchors": {},
+    "parts": [
+      "panel_left",
+      "panel_back",
+      "panel_right"
+    ],
+    "materials": [
+      "leaf",
+      "mint",
+      "mint_shade",
+      "paper",
+      "sky"
+    ],
+    "notes": "Panels hinge on their bottom edge: rotate about x from -90 (flat) to 0 (upright, rest pose). Place at the back of the open book."
+  },
+  {
+    "name": "crystal",
+    "category": "game",
+    "sheet": "orb_forge",
+    "file": "game/orb_forge/crystal.glb",
+    "unit": "m",
+    "triangles": 48,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.0175,
+        -0.025,
+        -0.0175
+      ],
+      "max": [
+        0.0175,
+        0.025,
+        0.0175
+      ]
+    },
+    "anchors": {
+      "label_anchor": [
+        0,
+        0,
+        0.019
+      ],
+      "hand_anchor": [
+        0,
+        0,
+        0
+      ]
+    },
+    "parts": [
+      "gem"
+    ],
+    "materials": [
+      "lavender",
+      "lavender_shade"
+    ],
+    "notes": "Neutral lavender; the game recolours the lavender materials. Origin at the centre."
+  },
+  {
+    "name": "orb",
+    "category": "game",
+    "sheet": "orb_forge",
+    "file": "game/orb_forge/orb.glb",
+    "unit": "m",
+    "triangles": 174,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.027,
+        -0.025,
+        -0.027
+      ],
+      "max": [
+        0.027,
+        0.0285,
+        0.027
+      ]
+    },
+    "anchors": {
+      "label_anchor": [
+        0,
+        0,
+        0.028
+      ],
+      "hand_anchor": [
+        0,
+        0,
+        0
+      ]
+    },
+    "parts": [
+      "core"
+    ],
+    "materials": [
+      "gold",
+      "gold_shade",
+      "lavender",
+      "lavender_shade"
+    ],
+    "notes": "Origin at the centre."
+  },
+  {
+    "name": "crystal_tray",
+    "category": "game",
+    "sheet": "orb_forge",
+    "file": "game/orb_forge/crystal_tray.glb",
+    "unit": "m",
+    "triangles": 200,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.232,
+        0,
+        -0.037
+      ],
+      "max": [
+        0.232,
+        0.015,
+        0.037
+      ]
+    },
+    "anchors": {
+      "slot_0": [
+        -0.18,
+        0.009,
+        0
+      ],
+      "slot_1": [
+        -0.09,
+        0.009,
+        0
+      ],
+      "slot_2": [
+        0,
+        0.009,
+        0
+      ],
+      "slot_3": [
+        0.09,
+        0.009,
+        0
+      ],
+      "slot_4": [
+        0.18,
+        0.009,
+        0
+      ]
+    },
+    "parts": [
+      "tray"
+    ],
+    "materials": [
+      "cream",
+      "cream_shade",
+      "sand",
+      "sand_shade"
+    ],
+    "notes": "slot_0..4 sit 0.09 m apart on the seat tops."
+  },
+  {
+    "name": "shield_badge",
+    "category": "game",
+    "sheet": "orb_forge",
+    "file": "game/orb_forge/shield_badge.glb",
+    "unit": "m",
+    "triangles": 52,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.025,
+        0,
+        -0.005
+      ],
+      "max": [
+        0.025,
+        0.06,
+        0.005
+      ]
+    },
+    "anchors": {
+      "label_anchor": [
+        0,
+        0.036,
+        0.0055
+      ]
+    },
+    "parts": [
+      "badge"
+    ],
+    "materials": [
+      "cream",
+      "cream_shade",
+      "gold",
+      "gold_shade"
+    ]
+  },
+  {
+    "name": "balloon_round",
+    "category": "game",
+    "sheet": "balloon",
+    "file": "game/balloon/balloon_round.glb",
+    "unit": "m",
+    "triangles": 104,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.0319,
+        -0.0001,
+        -0.0319
+      ],
+      "max": [
+        0.0319,
+        0.12,
+        0.0319
+      ]
+    },
+    "anchors": {
+      "label_anchor": [
+        0,
+        0.0875,
+        0.0335
+      ]
+    },
+    "parts": [
+      "skin",
+      "knot",
+      "string"
+    ],
+    "materials": [
+      "paper",
+      "paper_shade",
+      "sky",
+      "sky_shade"
+    ],
+    "notes": "Origin at the bottom end of the string. Sky blue; the game recolours sky/sky_shade."
+  },
+  {
+    "name": "balloon_long",
+    "category": "game",
+    "sheet": "balloon",
+    "file": "game/balloon/balloon_long.glb",
+    "unit": "m",
+    "triangles": 104,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.0216,
+        -0.0001,
+        -0.0216
+      ],
+      "max": [
+        0.0216,
+        0.13,
+        0.0216
+      ]
+    },
+    "anchors": {
+      "label_anchor": [
+        0,
+        0.09,
+        0.023
+      ]
+    },
+    "parts": [
+      "skin",
+      "knot",
+      "string"
+    ],
+    "materials": [
+      "paper",
+      "paper_shade",
+      "sky",
+      "sky_shade"
+    ],
+    "notes": "Origin at the bottom end of the string."
+  },
+  {
+    "name": "balloon_heart",
+    "category": "game",
+    "sheet": "balloon",
+    "file": "game/balloon/balloon_heart.glb",
+    "unit": "m",
+    "triangles": 154,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.0326,
+        -0.0001,
+        -0.0155
+      ],
+      "max": [
+        0.0324,
+        0.115,
+        0.017
+      ]
+    },
+    "anchors": {
+      "label_anchor": [
+        0,
+        0.092,
+        0.018
+      ]
+    },
+    "parts": [
+      "skin",
+      "knot",
+      "string"
+    ],
+    "materials": [
+      "paper",
+      "paper_shade",
+      "sky",
+      "sky_shade"
+    ],
+    "notes": "Origin at the bottom end of the string."
+  },
+  {
+    "name": "balloon_pop_pieces",
+    "category": "game",
+    "sheet": "balloon",
+    "file": "game/balloon/balloon_pop_pieces.glb",
+    "unit": "m",
+    "triangles": 64,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.0378,
+        0.0094,
+        -0.0352
+      ],
+      "max": [
+        0.0351,
+        0.0424,
+        0.0403
+      ]
+    },
+    "anchors": {},
+    "parts": [
+      "piece_0",
+      "piece_1",
+      "piece_2",
+      "piece_3",
+      "piece_4",
+      "piece_5",
+      "piece_6",
+      "piece_7"
+    ],
+    "materials": [
+      "sky",
+      "sky_shade"
+    ],
+    "notes": "Each piece_N has its origin at its own centre, laid out in a ring for the burst effect."
+  },
+  {
+    "name": "conveyor_straight",
+    "category": "game",
+    "sheet": "factory",
+    "file": "game/factory/conveyor_straight.glb",
+    "unit": "m",
+    "triangles": 148,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.06,
+        0,
+        -0.032
+      ],
+      "max": [
+        0.06,
+        0.031,
+        0.032
+      ]
+    },
+    "anchors": {},
+    "parts": [
+      "frame",
+      "belt"
+    ],
+    "materials": [
+      "orange",
+      "orange_shade",
+      "slate",
+      "slate_shade",
+      "stone"
+    ],
+    "notes": "Tiles end to end along x (0.12 m pitch). Belt top at y = 0.028."
+  },
+  {
+    "name": "conveyor_start",
+    "category": "game",
+    "sheet": "factory",
+    "file": "game/factory/conveyor_start.glb",
+    "unit": "m",
+    "triangles": 144,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.04,
+        0,
+        -0.032
+      ],
+      "max": [
+        0.04,
+        0.05,
+        0.032
+      ]
+    },
+    "anchors": {
+      "spawn_anchor": [
+        -0.026,
+        0.026,
+        0
+      ]
+    },
+    "parts": [
+      "frame"
+    ],
+    "materials": [
+      "lavender",
+      "orange",
+      "orange_shade",
+      "slate",
+      "violet"
+    ],
+    "notes": "Its belt end at x = +0.04 joins a conveyor_straight whose centre is at x = +0.1."
+  },
+  {
+    "name": "sort_gate",
+    "category": "game",
+    "sheet": "factory",
+    "file": "game/factory/sort_gate.glb",
+    "unit": "m",
+    "triangles": 88,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.032,
+        0,
+        -0.032
+      ],
+      "max": [
+        0.032,
+        0.121,
+        0.032
+      ]
+    },
+    "anchors": {
+      "label_anchor": [
+        0,
+        0.107,
+        0.005
+      ]
+    },
+    "parts": [
+      "arch",
+      "sign",
+      "chute"
+    ],
+    "materials": [
+      "coral",
+      "coral_shade",
+      "cream",
+      "cream_shade",
+      "paper"
+    ],
+    "variants": [
+      "1",
+      "2",
+      "3"
+    ],
+    "variant_files": {
+      "1": "game/factory/sort_gate.glb",
+      "2": "game/factory/sort_gate_2.glb",
+      "3": "game/factory/sort_gate_3.glb"
+    },
+    "variant_colours": {
+      "1": {
+        "main": "coral"
+      },
+      "2": {
+        "main": "cobalt"
+      },
+      "3": {
+        "main": "sunflower"
+      }
+    },
+    "notes": "Stands across the belt (items travel along x). Gates 1 to 3 in coral, cobalt, sunflower."
+  },
+  {
+    "name": "sort_bin",
+    "category": "game",
+    "sheet": "factory",
+    "file": "game/factory/sort_bin.glb",
+    "unit": "m",
+    "triangles": 60,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.042,
+        0,
+        -0.0315
+      ],
+      "max": [
+        0.042,
+        0.04,
+        0.0315
+      ]
+    },
+    "anchors": {
+      "drop_anchor": [
+        0,
+        0.04,
+        0
+      ]
+    },
+    "parts": [
+      "bin"
+    ],
+    "materials": [
+      "sand",
+      "sand_shade"
+    ]
+  },
+  {
+    "name": "item_token",
+    "category": "game",
+    "sheet": "factory",
+    "file": "game/factory/item_token.glb",
+    "unit": "m",
+    "triangles": 68,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.02,
+        -0.01,
+        -0.02
+      ],
+      "max": [
+        0.02,
+        0.0105,
+        0.02
+      ]
+    },
+    "anchors": {
+      "label_anchor": [
+        0,
+        0.011,
+        0.008
+      ],
+      "hand_anchor": [
+        0,
+        0,
+        0
+      ]
+    },
+    "parts": [
+      "token"
+    ],
+    "materials": [
+      "cream",
+      "cream_shade",
+      "sand",
+      "sand_shade"
+    ],
+    "notes": "Origin at the centre."
+  },
+  {
+    "name": "gap_cliffs",
+    "category": "game",
+    "sheet": "bridge",
+    "file": "game/bridge/gap_cliffs.glb",
+    "unit": "m",
+    "triangles": 56,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.2,
+        0,
+        -0.05
+      ],
+      "max": [
+        0.2,
+        0.06,
+        0.05
+      ]
+    },
+    "anchors": {
+      "socket_plank_start": [
+        -0.12,
+        0.06,
+        0
+      ],
+      "socket_plank_end": [
+        0.12,
+        0.06,
+        0
+      ]
+    },
+    "parts": [
+      "cliff_right",
+      "cliff_left"
+    ],
+    "materials": [
+      "grass",
+      "grass_shade",
+      "stone",
+      "stone_shade"
+    ],
+    "notes": "Gap 0.24 m = one bridge unit, between the two sockets."
+  },
+  {
+    "name": "plank_1",
+    "category": "game",
+    "sheet": "bridge",
+    "file": "game/bridge/plank_1.glb",
+    "unit": "m",
+    "triangles": 40,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.12,
+        -0.003,
+        -0.02
+      ],
+      "max": [
+        0.12,
+        0.003,
+        0.02
+      ]
+    },
+    "anchors": {
+      "label_anchor": [
+        0,
+        0.0032,
+        0.01
+      ],
+      "hand_anchor": [
+        0,
+        0,
+        0
+      ]
+    },
+    "parts": [
+      "plank"
+    ],
+    "materials": [
+      "sand",
+      "wood",
+      "wood_shade"
+    ],
+    "notes": "Exactly 240.0 mm long (1/1 of the 0.24 m unit). Origin at the centre. No ink outline so the length reads exactly."
+  },
+  {
+    "name": "plank_1_2",
+    "category": "game",
+    "sheet": "bridge",
+    "file": "game/bridge/plank_1_2.glb",
+    "unit": "m",
+    "triangles": 40,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.06,
+        -0.003,
+        -0.02
+      ],
+      "max": [
+        0.06,
+        0.003,
+        0.02
+      ]
+    },
+    "anchors": {
+      "label_anchor": [
+        0,
+        0.0032,
+        0.01
+      ],
+      "hand_anchor": [
+        0,
+        0,
+        0
+      ]
+    },
+    "parts": [
+      "plank"
+    ],
+    "materials": [
+      "sand",
+      "wood",
+      "wood_shade"
+    ],
+    "notes": "Exactly 120.0 mm long (1/2 of the 0.24 m unit). Origin at the centre. No ink outline so the length reads exactly."
+  },
+  {
+    "name": "plank_1_3",
+    "category": "game",
+    "sheet": "bridge",
+    "file": "game/bridge/plank_1_3.glb",
+    "unit": "m",
+    "triangles": 40,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.04,
+        -0.003,
+        -0.02
+      ],
+      "max": [
+        0.04,
+        0.003,
+        0.02
+      ]
+    },
+    "anchors": {
+      "label_anchor": [
+        0,
+        0.0032,
+        0.01
+      ],
+      "hand_anchor": [
+        0,
+        0,
+        0
+      ]
+    },
+    "parts": [
+      "plank"
+    ],
+    "materials": [
+      "sand",
+      "wood",
+      "wood_shade"
+    ],
+    "notes": "Exactly 80.0 mm long (1/3 of the 0.24 m unit). Origin at the centre. No ink outline so the length reads exactly."
+  },
+  {
+    "name": "plank_1_4",
+    "category": "game",
+    "sheet": "bridge",
+    "file": "game/bridge/plank_1_4.glb",
+    "unit": "m",
+    "triangles": 40,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.03,
+        -0.003,
+        -0.02
+      ],
+      "max": [
+        0.03,
+        0.003,
+        0.02
+      ]
+    },
+    "anchors": {
+      "label_anchor": [
+        0,
+        0.0032,
+        0.01
+      ],
+      "hand_anchor": [
+        0,
+        0,
+        0
+      ]
+    },
+    "parts": [
+      "plank"
+    ],
+    "materials": [
+      "sand",
+      "wood",
+      "wood_shade"
+    ],
+    "notes": "Exactly 60.0 mm long (1/4 of the 0.24 m unit). Origin at the centre. No ink outline so the length reads exactly."
+  },
+  {
+    "name": "plank_1_5",
+    "category": "game",
+    "sheet": "bridge",
+    "file": "game/bridge/plank_1_5.glb",
+    "unit": "m",
+    "triangles": 40,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.024,
+        -0.003,
+        -0.02
+      ],
+      "max": [
+        0.024,
+        0.003,
+        0.02
+      ]
+    },
+    "anchors": {
+      "label_anchor": [
+        0,
+        0.0032,
+        0.01
+      ],
+      "hand_anchor": [
+        0,
+        0,
+        0
+      ]
+    },
+    "parts": [
+      "plank"
+    ],
+    "materials": [
+      "sand",
+      "wood",
+      "wood_shade"
+    ],
+    "notes": "Exactly 48.0 mm long (1/5 of the 0.24 m unit). Origin at the centre. No ink outline so the length reads exactly."
+  },
+  {
+    "name": "plank_1_6",
+    "category": "game",
+    "sheet": "bridge",
+    "file": "game/bridge/plank_1_6.glb",
+    "unit": "m",
+    "triangles": 40,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.02,
+        -0.003,
+        -0.02
+      ],
+      "max": [
+        0.02,
+        0.003,
+        0.02
+      ]
+    },
+    "anchors": {
+      "label_anchor": [
+        0,
+        0.0032,
+        0.01
+      ],
+      "hand_anchor": [
+        0,
+        0,
+        0
+      ]
+    },
+    "parts": [
+      "plank"
+    ],
+    "materials": [
+      "sand",
+      "wood",
+      "wood_shade"
+    ],
+    "notes": "Exactly 40.0 mm long (1/6 of the 0.24 m unit). Origin at the centre. No ink outline so the length reads exactly."
+  },
+  {
+    "name": "plank_1_8",
+    "category": "game",
+    "sheet": "bridge",
+    "file": "game/bridge/plank_1_8.glb",
+    "unit": "m",
+    "triangles": 40,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.015,
+        -0.003,
+        -0.02
+      ],
+      "max": [
+        0.015,
+        0.003,
+        0.02
+      ]
+    },
+    "anchors": {
+      "label_anchor": [
+        0,
+        0.0032,
+        0.01
+      ],
+      "hand_anchor": [
+        0,
+        0,
+        0
+      ]
+    },
+    "parts": [
+      "plank"
+    ],
+    "materials": [
+      "sand",
+      "wood",
+      "wood_shade"
+    ],
+    "notes": "Exactly 30.0 mm long (1/8 of the 0.24 m unit). Origin at the centre. No ink outline so the length reads exactly."
+  },
+  {
+    "name": "plank_1_10",
+    "category": "game",
+    "sheet": "bridge",
+    "file": "game/bridge/plank_1_10.glb",
+    "unit": "m",
+    "triangles": 40,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.012,
+        -0.003,
+        -0.02
+      ],
+      "max": [
+        0.012,
+        0.003,
+        0.02
+      ]
+    },
+    "anchors": {
+      "label_anchor": [
+        0,
+        0.0032,
+        0.01
+      ],
+      "hand_anchor": [
+        0,
+        0,
+        0
+      ]
+    },
+    "parts": [
+      "plank"
+    ],
+    "materials": [
+      "sand",
+      "wood",
+      "wood_shade"
+    ],
+    "notes": "Exactly 24.0 mm long (1/10 of the 0.24 m unit). Origin at the centre. No ink outline so the length reads exactly."
+  },
+  {
+    "name": "bridge_post",
+    "category": "game",
+    "sheet": "bridge",
+    "file": "game/bridge/bridge_post.glb",
+    "unit": "m",
+    "triangles": 56,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.0074,
+        0,
+        -0.0074
+      ],
+      "max": [
+        0.0074,
+        0.05,
+        0.0074
+      ]
+    },
+    "anchors": {},
+    "parts": [
+      "post"
+    ],
+    "materials": [
+      "sand",
+      "sand_shade",
+      "wood",
+      "wood_shade"
+    ]
+  },
+  {
+    "name": "scale",
+    "category": "game",
+    "sheet": "balance",
+    "file": "game/balance/scale.glb",
+    "unit": "m",
+    "triangles": 234,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.1473,
+        0,
+        -0.04
+      ],
+      "max": [
+        0.1473,
+        0.142,
+        0.04
+      ]
+    },
+    "anchors": {
+      "socket_right_pan": [
+        0.114,
+        0.058,
+        0
+      ],
+      "label_anchor_right": [
+        0.114,
+        0.04,
+        0.03
+      ],
+      "socket_left_pan": [
+        -0.114,
+        0.058,
+        0
+      ],
+      "label_anchor_left": [
+        -0.114,
+        0.04,
+        0.03
+      ]
+    },
+    "parts": [
+      "base",
+      "pillar",
+      "beam",
+      "pan_right",
+      "pan_left"
+    ],
+    "materials": [
+      "cobalt",
+      "cobalt_shade",
+      "cream",
+      "gold",
+      "gold_shade"
+    ],
+    "notes": "Rotate beam about z (0 to 20 degrees); rotate pan_left/pan_right by the opposite angle so the pans hang level."
+  },
+  {
+    "name": "weight_block",
+    "category": "game",
+    "sheet": "balance",
+    "file": "game/balance/weight_block.glb",
+    "unit": "m",
+    "triangles": 40,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.0175,
+        0,
+        -0.0175
+      ],
+      "max": [
+        0.0175,
+        0.03,
+        0.0187
+      ]
+    },
+    "anchors": {
+      "label_anchor": [
+        0,
+        0.015,
+        0.019
+      ],
+      "hand_anchor": [
+        0,
+        0.015,
+        0
+      ]
+    },
+    "parts": [
+      "block"
+    ],
+    "materials": [
+      "cream",
+      "stone",
+      "stone_shade"
+    ],
+    "notes": "Origin at the bottom centre; stacks every 0.03 m (safe up to 4)."
+  },
+  {
+    "name": "gate",
+    "category": "game",
+    "sheet": "balance",
+    "file": "game/balance/gate.glb",
+    "unit": "m",
+    "triangles": 120,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.07,
+        0,
+        -0.015
+      ],
+      "max": [
+        0.07,
+        0.14,
+        0.0175
+      ]
+    },
+    "anchors": {
+      "exit_anchor": [
+        0,
+        0,
+        -0.03
+      ]
+    },
+    "parts": [
+      "frame",
+      "door_right",
+      "door_left"
+    ],
+    "materials": [
+      "cobalt",
+      "cobalt_shade",
+      "cream",
+      "cream_shade",
+      "gold"
+    ],
+    "notes": "Doors hinge at their outer edges: rotate door_left by +y, door_right by -y to open."
+  },
+  {
+    "name": "tape_measure",
+    "category": "game",
+    "sheet": "measure",
+    "file": "game/measure/tape_measure.glb",
+    "unit": "m",
+    "triangles": 300,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.025,
+        0,
+        -0.025
+      ],
+      "max": [
+        0.048,
+        0.0215,
+        0.025
+      ]
+    },
+    "anchors": {
+      "hand_anchor": [
+        0,
+        0.01,
+        0
+      ]
+    },
+    "parts": [
+      "housing",
+      "tape",
+      "tape_end"
+    ],
+    "materials": [
+      "ink",
+      "slate",
+      "slate_shade",
+      "sunflower",
+      "sunflower_shade"
+    ],
+    "notes": "tape is 1 m long at scale x = 1 (rest scale 0.02). Keep tape_end at x = 0.025 + 1.0 * scale. Marks every 5 cm (long at 10 cm), no numbers."
+  },
+  {
+    "name": "ruler_30",
+    "category": "game",
+    "sheet": "measure",
+    "file": "game/measure/ruler_30.glb",
+    "unit": "m",
+    "triangles": 500,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.155,
+        0,
+        -0.015
+      ],
+      "max": [
+        0.155,
+        0.0045,
+        0.015
+      ]
+    },
+    "anchors": {},
+    "parts": [
+      "ruler"
+    ],
+    "materials": [
+      "ink",
+      "lemon",
+      "lemon_shade"
+    ],
+    "notes": "0 to 30 cm scale (marks every 5 mm, longer at 1 cm and 5 cm, exact spacing) on a 0.31 m board. mm marks omitted: they would be thinner than the 2 mm minimum. Origin at the centre = 15 cm mark."
+  },
+  {
+    "name": "marker_pin",
+    "category": "game",
+    "sheet": "measure",
+    "file": "game/measure/marker_pin.glb",
+    "unit": "m",
+    "triangles": 90,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.009,
+        0,
+        -0.009
+      ],
+      "max": [
+        0.009,
+        0.0505,
+        0.009
+      ]
+    },
+    "anchors": {
+      "hand_anchor": [
+        0,
+        0.042,
+        0
+      ]
+    },
+    "parts": [
+      "pin"
+    ],
+    "materials": [
+      "coral",
+      "coral_shade",
+      "stone",
+      "stone_shade"
+    ],
+    "variants": [
+      "a",
+      "b"
+    ],
+    "variant_files": {
+      "a": "game/measure/marker_pin.glb",
+      "b": "game/measure/marker_pin_b.glb"
+    },
+    "variant_colours": {
+      "a": {
+        "main": "coral"
+      },
+      "b": {
+        "main": "cobalt"
+      }
+    },
+    "notes": "Point A coral (base file), point B cobalt (_b)."
+  },
+  {
+    "name": "treasure_chest",
+    "category": "game",
+    "sheet": "measure",
+    "file": "game/measure/treasure_chest.glb",
+    "unit": "m",
+    "triangles": 108,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.035,
+        0,
+        -0.0258
+      ],
+      "max": [
+        0.035,
+        0.0488,
+        0.027
+      ]
+    },
+    "anchors": {
+      "reward_anchor": [
+        0,
+        0.012,
+        0
+      ]
+    },
+    "parts": [
+      "chest",
+      "lid"
+    ],
+    "materials": [
+      "gold",
+      "gold_shade",
+      "wood",
+      "wood_shade"
+    ],
+    "notes": "lid hinges at the back top edge: rotate about x (negative opens)."
+  },
+  {
+    "name": "base10_unit",
+    "category": "hints",
+    "sheet": "hints",
+    "file": "hints/base10_unit.glb",
+    "unit": "m",
+    "triangles": 44,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.005,
+        0,
+        -0.005
+      ],
+      "max": [
+        0.005,
+        0.01,
+        0.005
+      ]
+    },
+    "anchors": {},
+    "parts": [
+      "cube"
+    ],
+    "materials": [
+      "coral",
+      "coral_shade"
+    ],
+    "notes": "Origin at the bottom centre. All base-10 blocks share this 10 mm unit."
+  },
+  {
+    "name": "base10_rod",
+    "category": "hints",
+    "sheet": "hints",
+    "file": "hints/base10_rod.glb",
+    "unit": "m",
+    "triangles": 336,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.05,
+        0,
+        -0.0056
+      ],
+      "max": [
+        0.05,
+        0.0106,
+        0.0056
+      ]
+    },
+    "anchors": {},
+    "parts": [
+      "rod"
+    ],
+    "materials": [
+      "coral",
+      "coral_shade"
+    ],
+    "notes": "Ten 10 mm cubes along x; shaded creases mark each cube."
+  },
+  {
+    "name": "base10_flat",
+    "category": "hints",
+    "sheet": "hints",
+    "file": "hints/base10_flat.glb",
+    "unit": "m",
+    "triangles": 408,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.05,
+        0,
+        -0.05
+      ],
+      "max": [
+        0.0506,
+        0.0106,
+        0.0506
+      ]
+    },
+    "anchors": {},
+    "parts": [
+      "flat"
+    ],
+    "materials": [
+      "coral",
+      "coral_shade"
+    ],
+    "notes": "Ten rods side by side with unit creases across."
+  },
+  {
+    "name": "number_line",
+    "category": "hints",
+    "sheet": "hints",
+    "file": "hints/number_line.glb",
+    "unit": "m",
+    "triangles": 112,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.15,
+        0,
+        -0.01
+      ],
+      "max": [
+        0.15,
+        0.0048,
+        0.01
+      ]
+    },
+    "anchors": {
+      "tick_0": [
+        -0.14,
+        0.004,
+        0
+      ],
+      "label_anchor_0": [
+        -0.14,
+        0.0048,
+        0.009
+      ],
+      "tick_1": [
+        -0.112,
+        0.004,
+        0
+      ],
+      "label_anchor_1": [
+        -0.112,
+        0.0048,
+        0.009
+      ],
+      "tick_2": [
+        -0.084,
+        0.004,
+        0
+      ],
+      "label_anchor_2": [
+        -0.084,
+        0.0048,
+        0.009
+      ],
+      "tick_3": [
+        -0.056,
+        0.004,
+        0
+      ],
+      "label_anchor_3": [
+        -0.056,
+        0.0048,
+        0.009
+      ],
+      "tick_4": [
+        -0.028,
+        0.004,
+        0
+      ],
+      "label_anchor_4": [
+        -0.028,
+        0.0048,
+        0.009
+      ],
+      "tick_5": [
+        0,
+        0.004,
+        0
+      ],
+      "label_anchor_5": [
+        0,
+        0.0048,
+        0.009
+      ],
+      "tick_6": [
+        0.028,
+        0.004,
+        0
+      ],
+      "label_anchor_6": [
+        0.028,
+        0.0048,
+        0.009
+      ],
+      "tick_7": [
+        0.056,
+        0.004,
+        0
+      ],
+      "label_anchor_7": [
+        0.056,
+        0.0048,
+        0.009
+      ],
+      "tick_8": [
+        0.084,
+        0.004,
+        0
+      ],
+      "label_anchor_8": [
+        0.084,
+        0.0048,
+        0.009
+      ],
+      "tick_9": [
+        0.112,
+        0.004,
+        0
+      ],
+      "label_anchor_9": [
+        0.112,
+        0.0048,
+        0.009
+      ],
+      "tick_10": [
+        0.14,
+        0.004,
+        0
+      ],
+      "label_anchor_10": [
+        0.14,
+        0.0048,
+        0.009
+      ]
+    },
+    "parts": [
+      "line"
+    ],
+    "materials": [
+      "paper",
+      "paper_shade",
+      "slate"
+    ],
+    "notes": "tick_0..10 every 0.028 m (longer at 0, 5, 10); label_anchor_N just in front of each tick. Ends are plain so lines can be chained."
+  },
+  {
+    "name": "bar_strip",
+    "category": "hints",
+    "sheet": "hints",
+    "file": "hints/bar_strip.glb",
+    "unit": "m",
+    "triangles": 20,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        0,
+        0,
+        -0.015
+      ],
+      "max": [
+        0.24,
+        0.0048,
+        0.015
+      ]
+    },
+    "anchors": {},
+    "parts": [
+      "strip"
+    ],
+    "materials": [
+      "teal",
+      "teal_shade"
+    ],
+    "notes": "Origin at the left end: scale x to cut it (1 = the whole unit, 0.24 m)."
+  },
+  {
+    "name": "area_grid",
+    "category": "hints",
+    "sheet": "hints",
+    "file": "hints/area_grid.glb",
+    "unit": "m",
+    "triangles": 188,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.076,
+        0,
+        -0.076
+      ],
+      "max": [
+        0.076,
+        0.003,
+        0.076
+      ]
+    },
+    "anchors": {
+      "cell_origin": [
+        -0.0675,
+        0.003,
+        -0.0675
+      ]
+    },
+    "parts": [
+      "grid"
+    ],
+    "materials": [
+      "mint",
+      "mint_shade",
+      "paper"
+    ],
+    "notes": "10 x 10 cells of 15 mm. cell_origin = centre of the -x/-z corner cell; step 0.015 m."
+  },
+  {
+    "name": "pie_slice_2",
+    "category": "hints",
+    "sheet": "hints",
+    "file": "hints/pie_slice_2.glb",
+    "unit": "m",
+    "triangles": 195,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        0,
+        0,
+        -0.06
+      ],
+      "max": [
+        0.06,
+        0.007,
+        0.06
+      ]
+    },
+    "anchors": {},
+    "parts": [
+      "slice"
+    ],
+    "materials": [
+      "cream",
+      "cream_shade",
+      "teal",
+      "teal_shade"
+    ],
+    "notes": "One of 2 slices of a 0.12 m pie. Origin at the pie centre, slice points along +x; rotate by k*180.0 deg about y to assemble."
+  },
+  {
+    "name": "pie_slice_3",
+    "category": "hints",
+    "sheet": "hints",
+    "file": "hints/pie_slice_3.glb",
+    "unit": "m",
+    "triangles": 132,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        0,
+        0,
+        -0.052
+      ],
+      "max": [
+        0.06,
+        0.007,
+        0.052
+      ]
+    },
+    "anchors": {},
+    "parts": [
+      "slice"
+    ],
+    "materials": [
+      "cream",
+      "cream_shade",
+      "teal",
+      "teal_shade"
+    ],
+    "notes": "One of 3 slices of a 0.12 m pie. Origin at the pie centre, slice points along +x; rotate by k*120.0 deg about y to assemble."
+  },
+  {
+    "name": "pie_slice_4",
+    "category": "hints",
+    "sheet": "hints",
+    "file": "hints/pie_slice_4.glb",
+    "unit": "m",
+    "triangles": 100,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        0,
+        0,
+        -0.0424
+      ],
+      "max": [
+        0.06,
+        0.007,
+        0.0424
+      ]
+    },
+    "anchors": {},
+    "parts": [
+      "slice"
+    ],
+    "materials": [
+      "cream",
+      "cream_shade",
+      "teal",
+      "teal_shade"
+    ],
+    "notes": "One of 4 slices of a 0.12 m pie. Origin at the pie centre, slice points along +x; rotate by k*90.0 deg about y to assemble."
+  },
+  {
+    "name": "pie_slice_5",
+    "category": "hints",
+    "sheet": "hints",
+    "file": "hints/pie_slice_5.glb",
+    "unit": "m",
+    "triangles": 84,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        0,
+        0,
+        -0.0353
+      ],
+      "max": [
+        0.0595,
+        0.007,
+        0.0353
+      ]
+    },
+    "anchors": {},
+    "parts": [
+      "slice"
+    ],
+    "materials": [
+      "cream",
+      "cream_shade",
+      "teal",
+      "teal_shade"
+    ],
+    "notes": "One of 5 slices of a 0.12 m pie. Origin at the pie centre, slice points along +x; rotate by k*72.0 deg about y to assemble."
+  },
+  {
+    "name": "pie_slice_6",
+    "category": "hints",
+    "sheet": "hints",
+    "file": "hints/pie_slice_6.glb",
+    "unit": "m",
+    "triangles": 68,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        0,
+        0,
+        -0.03
+      ],
+      "max": [
+        0.06,
+        0.007,
+        0.03
+      ]
+    },
+    "anchors": {},
+    "parts": [
+      "slice"
+    ],
+    "materials": [
+      "cream",
+      "cream_shade",
+      "teal",
+      "teal_shade"
+    ],
+    "notes": "One of 6 slices of a 0.12 m pie. Origin at the pie centre, slice points along +x; rotate by k*60.0 deg about y to assemble."
+  },
+  {
+    "name": "pie_slice_8",
+    "category": "hints",
+    "sheet": "hints",
+    "file": "hints/pie_slice_8.glb",
+    "unit": "m",
+    "triangles": 52,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        0,
+        0,
+        -0.023
+      ],
+      "max": [
+        0.0595,
+        0.007,
+        0.023
+      ]
+    },
+    "anchors": {},
+    "parts": [
+      "slice"
+    ],
+    "materials": [
+      "cream",
+      "cream_shade",
+      "teal",
+      "teal_shade"
+    ],
+    "notes": "One of 8 slices of a 0.12 m pie. Origin at the pie centre, slice points along +x; rotate by k*45.0 deg about y to assemble."
+  },
+  {
+    "name": "pie_slice_10",
+    "category": "hints",
+    "sheet": "hints",
+    "file": "hints/pie_slice_10.glb",
+    "unit": "m",
+    "triangles": 52,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        0,
+        0,
+        -0.0185
+      ],
+      "max": [
+        0.0597,
+        0.007,
+        0.0185
+      ]
+    },
+    "anchors": {},
+    "parts": [
+      "slice"
+    ],
+    "materials": [
+      "cream",
+      "cream_shade",
+      "teal",
+      "teal_shade"
+    ],
+    "notes": "One of 10 slices of a 0.12 m pie. Origin at the pie centre, slice points along +x; rotate by k*36.0 deg about y to assemble."
+  },
+  {
+    "name": "pie_slice_12",
+    "category": "hints",
+    "sheet": "hints",
+    "file": "hints/pie_slice_12.glb",
+    "unit": "m",
+    "triangles": 36,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        0,
+        0,
+        -0.0155
+      ],
+      "max": [
+        0.06,
+        0.007,
+        0.0155
+      ]
+    },
+    "anchors": {},
+    "parts": [
+      "slice"
+    ],
+    "materials": [
+      "cream",
+      "cream_shade",
+      "teal",
+      "teal_shade"
+    ],
+    "notes": "One of 12 slices of a 0.12 m pie. Origin at the pie centre, slice points along +x; rotate by k*30.0 deg about y to assemble."
+  },
+  {
+    "name": "portal_main",
+    "category": "game",
+    "sheet": "portal",
+    "file": "game/portal/portal_main.glb",
+    "unit": "m",
+    "triangles": 364,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.07,
+        0,
+        -0.01
+      ],
+      "max": [
+        0.07,
+        0.142,
+        0.01
+      ]
+    },
+    "anchors": {
+      "spawn_anchor": [
+        0,
+        0,
+        0.014
+      ]
+    },
+    "parts": [
+      "ring_outer",
+      "ring_inner"
+    ],
+    "materials": [
+      "gold",
+      "lavender",
+      "navy",
+      "violet",
+      "violet_shade"
+    ],
+    "notes": "Stands upright on its feet at the edge of the book. ring_inner spins about z around the portal centre (0, 0.072, 0). spawn_anchor on the table just in front."
+  },
+  {
+    "name": "partner_window",
+    "category": "game",
+    "sheet": "portal",
+    "file": "game/portal/partner_window.glb",
+    "unit": "m",
+    "triangles": 64,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.09,
+        -0.06,
+        -0.005
+      ],
+      "max": [
+        0.09,
+        0.06,
+        0.0065
+      ]
+    },
+    "anchors": {
+      "view_anchor": [
+        0,
+        0,
+        0
+      ],
+      "label_anchor": [
+        0,
+        0.068,
+        0
+      ]
+    },
+    "parts": [
+      "frame"
+    ],
+    "materials": [
+      "cream",
+      "cream_shade",
+      "violet",
+      "violet_shade"
+    ],
+    "notes": "Floating frame, origin at its centre. view_anchor: centre of the opening (0.16 x 0.1 m) where the game renders the partner table; label_anchor above for the bot name."
+  },
+  {
+    "name": "help_orb_trail",
+    "category": "game",
+    "sheet": "portal",
+    "file": "game/portal/help_orb_trail.glb",
+    "unit": "m",
+    "triangles": 60,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.0874,
+        -0.0063,
+        -0.001
+      ],
+      "max": [
+        0.001,
+        0.0092,
+        0.001
+      ]
+    },
+    "anchors": {},
+    "parts": [
+      "trail"
+    ],
+    "materials": [
+      "gold",
+      "gold_shade",
+      "lemon",
+      "lemon_shade"
+    ],
+    "notes": "Origin at the head of the trail; it streams back along -x behind a flying help orb."
+  },
+  {
+    "name": "pip_owl",
+    "category": "characters",
+    "sheet": "characters",
+    "file": "characters/pip_owl.glb",
+    "unit": "m",
+    "triangles": 1088,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.0344,
+        0,
+        -0.022
+      ],
+      "max": [
+        0.0344,
+        0.1103,
+        0.027
+      ]
+    },
+    "anchors": {
+      "label_anchor": [
+        0.03,
+        0.12,
+        0
+      ]
+    },
+    "parts": [
+      "body",
+      "head",
+      "eyes",
+      "eyes_happy",
+      "wing_l",
+      "wing_r"
+    ],
+    "materials": [
+      "cream",
+      "ink",
+      "navy",
+      "orange",
+      "sand",
+      "sand_shade"
+    ],
+    "clips": [
+      "idle",
+      "wave",
+      "cheer",
+      "point",
+      "think"
+    ],
+    "notes": "Faces the player. label_anchor marks the speech bubble, up and to Pip's left. eyes_happy hidden by default."
+  },
+  {
+    "name": "great_crumple",
+    "category": "characters",
+    "sheet": "characters",
+    "file": "characters/great_crumple.glb",
+    "unit": "m",
+    "triangles": 1309,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.0883,
+        0.0282,
+        -0.1031
+      ],
+      "max": [
+        0.1048,
+        0.2021,
+        0.117
+      ]
+    },
+    "anchors": {
+      "label_anchor_0": [
+        -0.07,
+        0.2,
+        0.04
+      ],
+      "label_anchor_1": [
+        0,
+        0.192,
+        0.06
+      ],
+      "label_anchor_2": [
+        0.07,
+        0.184,
+        0.04
+      ]
+    },
+    "parts": [
+      "stage_1",
+      "stage_2",
+      "stage_3",
+      "core",
+      "eyes"
+    ],
+    "materials": [
+      "cream",
+      "gold",
+      "ink",
+      "lavender",
+      "lavender_shade",
+      "violet"
+    ],
+    "clips": [
+      "idle",
+      "hit",
+      "unfold"
+    ],
+    "notes": "stage_1 is the outer shell (opens first), stage_3 the inner one. core (the tidy crane) rests at scale 0.001; unfold grows it. label_anchor_0..2 for the three numbers."
+  },
+  {
+    "name": "robot_partner_a",
+    "category": "characters",
+    "sheet": "characters",
+    "file": "characters/robot_partner_a.glb",
+    "unit": "m",
+    "triangles": 508,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.0233,
+        0,
+        -0.011
+      ],
+      "max": [
+        0.0233,
+        0.0785,
+        0.014
+      ]
+    },
+    "anchors": {
+      "label_anchor": [
+        0,
+        0.1,
+        0
+      ]
+    },
+    "parts": [
+      "body",
+      "head",
+      "antenna",
+      "arm_l",
+      "arm_r"
+    ],
+    "materials": [
+      "cobalt",
+      "cobalt_shade",
+      "ink",
+      "lemon",
+      "stone",
+      "stone_shade"
+    ],
+    "clips": [
+      "idle",
+      "wave",
+      "cheer",
+      "help"
+    ],
+    "notes": "Boxy robot, cobalt."
+  },
+  {
+    "name": "robot_partner_b",
+    "category": "characters",
+    "sheet": "characters",
+    "file": "characters/robot_partner_b.glb",
+    "unit": "m",
+    "triangles": 510,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.0243,
+        0,
+        -0.0148
+      ],
+      "max": [
+        0.0243,
+        0.083,
+        0.017
+      ]
+    },
+    "anchors": {
+      "label_anchor": [
+        0,
+        0.1,
+        0
+      ]
+    },
+    "parts": [
+      "body",
+      "head",
+      "antenna",
+      "arm_l",
+      "arm_r"
+    ],
+    "materials": [
+      "ink",
+      "lemon",
+      "stone",
+      "stone_shade",
+      "teal",
+      "teal_shade"
+    ],
+    "clips": [
+      "idle",
+      "wave",
+      "cheer",
+      "help"
+    ],
+    "notes": "Round robot on a wheel, teal."
+  },
+  {
+    "name": "robot_partner_c",
+    "category": "characters",
+    "sheet": "characters",
+    "file": "characters/robot_partner_c.glb",
+    "unit": "m",
+    "triangles": 496,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.024,
+        0,
+        -0.012
+      ],
+      "max": [
+        0.024,
+        0.0865,
+        0.013
+      ]
+    },
+    "anchors": {
+      "label_anchor": [
+        0,
+        0.1,
+        0
+      ]
+    },
+    "parts": [
+      "body",
+      "head",
+      "antenna",
+      "arm_l",
+      "arm_r"
+    ],
+    "materials": [
+      "ink",
+      "lemon",
+      "orange",
+      "orange_shade",
+      "stone",
+      "stone_shade"
+    ],
+    "clips": [
+      "idle",
+      "wave",
+      "cheer",
+      "help"
+    ],
+    "notes": "Tall robot on springs, orange."
+  },
+  {
+    "name": "skill_fraction_bridge_t1",
+    "category": "buildings",
+    "sheet": "foldtown",
+    "file": "buildings/skill_fraction_bridge_t1.glb",
+    "unit": "tile",
+    "footprint": [
+      2,
+      1
+    ],
+    "triangles": 264,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -1,
+        0,
+        -0.5
+      ],
+      "max": [
+        1,
+        0.215,
+        0.5
+      ]
+    },
+    "anchors": {},
+    "parts": [
+      "base",
+      "grow_deck",
+      "grow_rails"
+    ],
+    "materials": [
+      "grass",
+      "leaf",
+      "paper",
+      "teal",
+      "teal_shade"
+    ],
+    "notes": "grow_* parts appear in order (deck, rails / arch / towers, cables)."
+  },
+  {
+    "name": "skill_fraction_bridge_t2",
+    "category": "buildings",
+    "sheet": "foldtown",
+    "file": "buildings/skill_fraction_bridge_t2.glb",
+    "unit": "tile",
+    "footprint": [
+      2,
+      1
+    ],
+    "triangles": 504,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -1,
+        0,
+        -0.5
+      ],
+      "max": [
+        1,
+        0.435,
+        0.5
+      ]
+    },
+    "anchors": {},
+    "parts": [
+      "base",
+      "grow_arch",
+      "grow_deck",
+      "grow_rails"
+    ],
+    "materials": [
+      "grass",
+      "leaf",
+      "paper",
+      "teal",
+      "teal_shade"
+    ],
+    "notes": "grow_* parts appear in order (deck, rails / arch / towers, cables)."
+  },
+  {
+    "name": "skill_fraction_bridge_t3",
+    "category": "buildings",
+    "sheet": "foldtown",
+    "file": "buildings/skill_fraction_bridge_t3.glb",
+    "unit": "tile",
+    "footprint": [
+      2,
+      1
+    ],
+    "triangles": 768,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -1,
+        0,
+        -0.5
+      ],
+      "max": [
+        1,
+        0.84,
+        0.5
+      ]
+    },
+    "anchors": {},
+    "parts": [
+      "base",
+      "grow_towers",
+      "grow_deck",
+      "grow_cables"
+    ],
+    "materials": [
+      "grass",
+      "leaf",
+      "paper",
+      "teal",
+      "teal_shade"
+    ],
+    "notes": "grow_* parts appear in order (deck, rails / arch / towers, cables)."
+  },
+  {
+    "name": "skill_multiply_tower_t1",
+    "category": "buildings",
+    "sheet": "foldtown",
+    "file": "buildings/skill_multiply_tower_t1.glb",
+    "unit": "tile",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 258,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.5,
+        0,
+        -0.5
+      ],
+      "max": [
+        0.5,
+        0.58,
+        0.5
+      ]
+    },
+    "anchors": {},
+    "parts": [
+      "base",
+      "floor_1",
+      "floor_2",
+      "roof"
+    ],
+    "materials": [
+      "cobalt",
+      "cobalt_shade",
+      "grass",
+      "leaf",
+      "paper"
+    ],
+    "notes": "floor_1..2 bottom to top, then roof."
+  },
+  {
+    "name": "skill_multiply_tower_t2",
+    "category": "buildings",
+    "sheet": "foldtown",
+    "file": "buildings/skill_multiply_tower_t2.glb",
+    "unit": "tile",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 498,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.5,
+        0,
+        -0.5
+      ],
+      "max": [
+        0.5,
+        0.96,
+        0.5
+      ]
+    },
+    "anchors": {},
+    "parts": [
+      "base",
+      "floor_1",
+      "floor_2",
+      "floor_3",
+      "floor_4",
+      "roof"
+    ],
+    "materials": [
+      "cobalt",
+      "cobalt_shade",
+      "grass",
+      "leaf",
+      "paper"
+    ],
+    "notes": "floor_1..4 bottom to top, then roof."
+  },
+  {
+    "name": "skill_multiply_tower_t3",
+    "category": "buildings",
+    "sheet": "foldtown",
+    "file": "buildings/skill_multiply_tower_t3.glb",
+    "unit": "tile",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 756,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.5,
+        0,
+        -0.5
+      ],
+      "max": [
+        0.5,
+        1.62,
+        0.5
+      ]
+    },
+    "anchors": {},
+    "parts": [
+      "base",
+      "floor_1",
+      "floor_2",
+      "floor_3",
+      "floor_4",
+      "floor_5",
+      "floor_6",
+      "roof"
+    ],
+    "materials": [
+      "cobalt",
+      "cobalt_shade",
+      "grass",
+      "leaf",
+      "paper"
+    ],
+    "notes": "floor_1..6 bottom to top, then roof."
+  },
+  {
+    "name": "skill_placevalue_hall_t1",
+    "category": "buildings",
+    "sheet": "foldtown",
+    "file": "buildings/skill_placevalue_hall_t1.glb",
+    "unit": "tile",
+    "footprint": [
+      2,
+      1
+    ],
+    "triangles": 136,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -1,
+        0,
+        -0.5
+      ],
+      "max": [
+        1,
+        0.53,
+        0.5
+      ]
+    },
+    "anchors": {},
+    "parts": [
+      "base",
+      "wing_center"
+    ],
+    "materials": [
+      "coral",
+      "coral_shade",
+      "grass",
+      "leaf",
+      "paper"
+    ],
+    "notes": "wing_center, then wing_left/right, then wing_dome at tier 3."
+  },
+  {
+    "name": "skill_placevalue_hall_t2",
+    "category": "buildings",
+    "sheet": "foldtown",
+    "file": "buildings/skill_placevalue_hall_t2.glb",
+    "unit": "tile",
+    "footprint": [
+      2,
+      1
+    ],
+    "triangles": 344,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -1,
+        0,
+        -0.5
+      ],
+      "max": [
+        1,
+        0.62,
+        0.5
+      ]
+    },
+    "anchors": {},
+    "parts": [
+      "base",
+      "wing_center",
+      "wing_left",
+      "wing_right"
+    ],
+    "materials": [
+      "coral",
+      "coral_shade",
+      "grass",
+      "leaf",
+      "paper"
+    ],
+    "notes": "wing_center, then wing_left/right, then wing_dome at tier 3."
+  },
+  {
+    "name": "skill_placevalue_hall_t3",
+    "category": "buildings",
+    "sheet": "foldtown",
+    "file": "buildings/skill_placevalue_hall_t3.glb",
+    "unit": "tile",
+    "footprint": [
+      2,
+      1
+    ],
+    "triangles": 420,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -1,
+        0,
+        -0.5
+      ],
+      "max": [
+        1,
+        1.04,
+        0.5
+      ]
+    },
+    "anchors": {},
+    "parts": [
+      "base",
+      "wing_center",
+      "wing_left",
+      "wing_right",
+      "wing_dome"
+    ],
+    "materials": [
+      "coral",
+      "coral_shade",
+      "grass",
+      "leaf",
+      "paper"
+    ],
+    "notes": "wing_center, then wing_left/right, then wing_dome at tier 3."
+  },
+  {
+    "name": "skill_decimal_market_t1",
+    "category": "buildings",
+    "sheet": "foldtown",
+    "file": "buildings/skill_decimal_market_t1.glb",
+    "unit": "tile",
+    "footprint": [
+      2,
+      1
+    ],
+    "triangles": 256,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -1,
+        0,
+        -0.5
+      ],
+      "max": [
+        1,
+        0.4,
+        0.5
+      ]
+    },
+    "anchors": {},
+    "parts": [
+      "base",
+      "plaza",
+      "stall_1",
+      "stall_2"
+    ],
+    "materials": [
+      "grass",
+      "leaf",
+      "paper",
+      "sunflower",
+      "sunflower_shade"
+    ],
+    "notes": "stall_1..N (2, 4, 6) and a central stall_canopy at tier 3."
+  },
+  {
+    "name": "skill_decimal_market_t2",
+    "category": "buildings",
+    "sheet": "foldtown",
+    "file": "buildings/skill_decimal_market_t2.glb",
+    "unit": "tile",
+    "footprint": [
+      2,
+      1
+    ],
+    "triangles": 488,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -1,
+        0,
+        -0.5
+      ],
+      "max": [
+        1,
+        0.4,
+        0.5
+      ]
+    },
+    "anchors": {},
+    "parts": [
+      "base",
+      "plaza",
+      "stall_1",
+      "stall_2",
+      "stall_3",
+      "stall_4"
+    ],
+    "materials": [
+      "grass",
+      "leaf",
+      "paper",
+      "sunflower",
+      "sunflower_shade"
+    ],
+    "notes": "stall_1..N (2, 4, 6) and a central stall_canopy at tier 3."
+  },
+  {
+    "name": "skill_decimal_market_t3",
+    "category": "buildings",
+    "sheet": "foldtown",
+    "file": "buildings/skill_decimal_market_t3.glb",
+    "unit": "tile",
+    "footprint": [
+      2,
+      1
+    ],
+    "triangles": 812,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -1,
+        0,
+        -0.5
+      ],
+      "max": [
+        1,
+        0.69,
+        0.5
+      ]
+    },
+    "anchors": {},
+    "parts": [
+      "base",
+      "plaza",
+      "stall_1",
+      "stall_2",
+      "stall_3",
+      "stall_4",
+      "stall_5",
+      "stall_6",
+      "stall_canopy"
+    ],
+    "materials": [
+      "grass",
+      "leaf",
+      "paper",
+      "sunflower",
+      "sunflower_shade"
+    ],
+    "notes": "stall_1..N (2, 4, 6) and a central stall_canopy at tier 3."
+  },
+  {
+    "name": "skill_measure_clocktower_t1",
+    "category": "buildings",
+    "sheet": "foldtown",
+    "file": "buildings/skill_measure_clocktower_t1.glb",
+    "unit": "tile",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 286,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.5,
+        0,
+        -0.5
+      ],
+      "max": [
+        0.5,
+        0.87,
+        0.5
+      ]
+    },
+    "anchors": {},
+    "parts": [
+      "base",
+      "tower",
+      "clock_face",
+      "hand_hour",
+      "hand_minute"
+    ],
+    "materials": [
+      "grass",
+      "ink",
+      "leaf",
+      "paper",
+      "violet",
+      "violet_shade"
+    ],
+    "notes": "hand_hour and hand_minute rotate about z around the clock centre; the face has 12 marks, no numbers."
+  },
+  {
+    "name": "skill_measure_clocktower_t2",
+    "category": "buildings",
+    "sheet": "foldtown",
+    "file": "buildings/skill_measure_clocktower_t2.glb",
+    "unit": "tile",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 310,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.5,
+        0,
+        -0.5
+      ],
+      "max": [
+        0.5,
+        1.3,
+        0.5
+      ]
+    },
+    "anchors": {},
+    "parts": [
+      "base",
+      "tower",
+      "clock_face",
+      "hand_hour",
+      "hand_minute"
+    ],
+    "materials": [
+      "grass",
+      "ink",
+      "leaf",
+      "paper",
+      "violet",
+      "violet_shade"
+    ],
+    "notes": "hand_hour and hand_minute rotate about z around the clock centre; the face has 12 marks, no numbers."
+  },
+  {
+    "name": "skill_measure_clocktower_t3",
+    "category": "buildings",
+    "sheet": "foldtown",
+    "file": "buildings/skill_measure_clocktower_t3.glb",
+    "unit": "tile",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 322,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.5,
+        0,
+        -0.5
+      ],
+      "max": [
+        0.5,
+        1.6,
+        0.5
+      ]
+    },
+    "anchors": {},
+    "parts": [
+      "base",
+      "tower",
+      "clock_face",
+      "hand_hour",
+      "hand_minute"
+    ],
+    "materials": [
+      "grass",
+      "ink",
+      "leaf",
+      "paper",
+      "violet",
+      "violet_shade"
+    ],
+    "notes": "hand_hour and hand_minute rotate about z around the clock centre; the face has 12 marks, no numbers."
+  },
+  {
+    "name": "town_page_grid",
+    "category": "areas",
+    "sheet": "foldtown",
+    "file": "areas/town_page_grid.glb",
+    "unit": "tile",
+    "footprint": [
+      10,
+      7
+    ],
+    "triangles": 132,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -5,
+        0,
+        -3.5
+      ],
+      "max": [
+        5,
+        0.046,
+        3.5
+      ]
+    },
+    "anchors": {
+      "cell_origin": [
+        -4.5,
+        0.04,
+        -3
+      ]
+    },
+    "parts": [
+      "page"
+    ],
+    "materials": [
+      "cream",
+      "cream_shade",
+      "paper"
+    ],
+    "notes": "Fits the right-hand page of popup_book at 0.03 m per tile. cell_origin = centre of the -x/-z corner cell; cells step 1 tile."
+  },
+  {
+    "name": "star",
+    "category": "rewards",
+    "sheet": "rewards",
+    "file": "rewards/star.glb",
+    "unit": "m",
+    "triangles": 30,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.0238,
+        -0.0202,
+        -0.008
+      ],
+      "max": [
+        0.0238,
+        0.025,
+        0.008
+      ]
+    },
+    "anchors": {},
+    "parts": [
+      "star"
+    ],
+    "materials": [
+      "gold",
+      "gold_shade"
+    ],
+    "notes": "Origin at the centre; faces +Z."
+  },
+  {
+    "name": "star_empty",
+    "category": "rewards",
+    "sheet": "rewards",
+    "file": "rewards/star_empty.glb",
+    "unit": "m",
+    "triangles": 120,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.0248,
+        -0.0215,
+        -0.0015
+      ],
+      "max": [
+        0.0248,
+        0.0256,
+        0.0015
+      ]
+    },
+    "anchors": {},
+    "parts": [
+      "star"
+    ],
+    "materials": [
+      "cream",
+      "cream_shade"
+    ],
+    "notes": "Paper outline of the same star (not yet earned)."
+  },
+  {
+    "name": "badge_best_save",
+    "category": "rewards",
+    "sheet": "rewards",
+    "file": "rewards/badge_best_save.glb",
+    "unit": "m",
+    "triangles": 272,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.03,
+        -0.046,
+        -0.004
+      ],
+      "max": [
+        0.03,
+        0.03,
+        0.0075
+      ]
+    },
+    "anchors": {},
+    "parts": [
+      "badge",
+      "ribbon"
+    ],
+    "materials": [
+      "coral",
+      "coral_shade",
+      "cream",
+      "gold",
+      "gold_shade"
+    ],
+    "notes": "Symbol only, no text. Origin at the disc centre; ribbon hangs below."
+  },
+  {
+    "name": "badge_most_improved",
+    "category": "rewards",
+    "sheet": "rewards",
+    "file": "rewards/badge_most_improved.glb",
+    "unit": "m",
+    "triangles": 228,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.03,
+        -0.046,
+        -0.004
+      ],
+      "max": [
+        0.03,
+        0.03,
+        0.007
+      ]
+    },
+    "anchors": {},
+    "parts": [
+      "badge",
+      "ribbon"
+    ],
+    "materials": [
+      "cream",
+      "gold",
+      "gold_shade",
+      "leaf",
+      "leaf_shade"
+    ],
+    "notes": "Symbol only, no text. Origin at the disc centre; ribbon hangs below."
+  },
+  {
+    "name": "badge_sharpest_aim",
+    "category": "rewards",
+    "sheet": "rewards",
+    "file": "rewards/badge_sharpest_aim.glb",
+    "unit": "m",
+    "triangles": 500,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.03,
+        -0.046,
+        -0.004
+      ],
+      "max": [
+        0.03,
+        0.03,
+        0.0075
+      ]
+    },
+    "anchors": {},
+    "parts": [
+      "badge",
+      "ribbon"
+    ],
+    "materials": [
+      "cobalt",
+      "cobalt_shade",
+      "cream",
+      "gold",
+      "gold_shade"
+    ],
+    "notes": "Symbol only, no text. Origin at the disc centre; ribbon hangs below."
+  },
+  {
+    "name": "badge_steady_streak",
+    "category": "rewards",
+    "sheet": "rewards",
+    "file": "rewards/badge_steady_streak.glb",
+    "unit": "m",
+    "triangles": 352,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.03,
+        -0.046,
+        -0.004
+      ],
+      "max": [
+        0.03,
+        0.03,
+        0.0068
+      ]
+    },
+    "anchors": {},
+    "parts": [
+      "badge",
+      "ribbon"
+    ],
+    "materials": [
+      "cream",
+      "gold",
+      "gold_shade",
+      "violet",
+      "violet_shade"
+    ],
+    "notes": "Symbol only, no text. Origin at the disc centre; ribbon hangs below."
+  },
+  {
+    "name": "badge_brave_try",
+    "category": "rewards",
+    "sheet": "rewards",
+    "file": "rewards/badge_brave_try.glb",
+    "unit": "m",
+    "triangles": 232,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.03,
+        -0.046,
+        -0.004
+      ],
+      "max": [
+        0.03,
+        0.03,
+        0.0082
+      ]
+    },
+    "anchors": {},
+    "parts": [
+      "badge",
+      "ribbon"
+    ],
+    "materials": [
+      "cream",
+      "gold",
+      "gold_shade",
+      "orange",
+      "orange_shade"
+    ],
+    "notes": "Symbol only, no text. Origin at the disc centre; ribbon hangs below."
+  },
+  {
+    "name": "streak_shield",
+    "category": "rewards",
+    "sheet": "rewards",
+    "file": "rewards/streak_shield.glb",
+    "unit": "m",
+    "triangles": 104,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.022,
+        -0.025,
+        -0.003
+      ],
+      "max": [
+        0.022,
+        0.025,
+        0.0065
+      ]
+    },
+    "anchors": {},
+    "parts": [
+      "shield"
+    ],
+    "materials": [
+      "cream",
+      "gold",
+      "gold_shade",
+      "orange",
+      "orange_shade"
+    ],
+    "notes": "Origin at the centre."
+  },
+  {
+    "name": "trophy_paper",
+    "category": "rewards",
+    "sheet": "rewards",
+    "file": "rewards/trophy_paper.glb",
+    "unit": "m",
+    "triangles": 218,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.0309,
+        0,
+        -0.0203
+      ],
+      "max": [
+        0.0309,
+        0.076,
+        0.024
+      ]
+    },
+    "anchors": {},
+    "parts": [
+      "trophy"
+    ],
+    "materials": [
+      "cream",
+      "cream_shade",
+      "gold",
+      "gold_shade"
+    ],
+    "notes": "Stands on the table."
+  },
+  {
+    "name": "paper_button",
+    "category": "ui",
+    "sheet": "ui",
+    "file": "ui/paper_button.glb",
+    "unit": "m",
+    "triangles": 36,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.05,
+        0,
+        -0.006
+      ],
+      "max": [
+        0.05,
+        0.065,
+        0.006
+      ]
+    },
+    "anchors": {
+      "label_anchor": [
+        0,
+        0.0325,
+        0.0065
+      ]
+    },
+    "parts": [
+      "card",
+      "press"
+    ],
+    "materials": [
+      "cream",
+      "cream_shade",
+      "sky",
+      "sky_shade"
+    ],
+    "notes": "Poke from the front. press moves back along -z by up to 0.005 m; the game recolours sky."
+  },
+  {
+    "name": "paper_panel",
+    "category": "ui",
+    "sheet": "ui",
+    "file": "ui/paper_panel.glb",
+    "unit": "m",
+    "triangles": 56,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.15,
+        0,
+        -0.005
+      ],
+      "max": [
+        0.15,
+        0.2,
+        0.008
+      ]
+    },
+    "anchors": {
+      "label_anchor": [
+        0,
+        0.1,
+        0.0035
+      ]
+    },
+    "parts": [
+      "panel"
+    ],
+    "materials": [
+      "cream",
+      "cream_shade",
+      "paper",
+      "paper_shade"
+    ],
+    "notes": "Background for recap and menu text drawn at label_anchor."
+  },
+  {
+    "name": "palm_menu_disc",
+    "category": "ui",
+    "sheet": "ui",
+    "file": "ui/palm_menu_disc.glb",
+    "unit": "m",
+    "triangles": 92,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.04,
+        -0.04,
+        -0.002
+      ],
+      "max": [
+        0.04,
+        0.04,
+        0.004
+      ]
+    },
+    "anchors": {
+      "slot_0": [
+        0,
+        0.026,
+        0.003
+      ],
+      "slot_1": [
+        0.026,
+        0,
+        0.003
+      ],
+      "slot_2": [
+        0,
+        -0.026,
+        0.003
+      ],
+      "slot_3": [
+        -0.026,
+        0,
+        0.003
+      ]
+    },
+    "parts": [
+      "disc"
+    ],
+    "materials": [
+      "lavender",
+      "paper",
+      "violet",
+      "violet_shade"
+    ],
+    "notes": "Faces +Z (towards the eyes when held up in the palm). slot_0 at the top, then clockwise."
+  },
+  {
+    "name": "confetti_pieces",
+    "category": "fx",
+    "sheet": "fx",
+    "file": "fx/confetti_pieces.glb",
+    "unit": "m",
+    "triangles": 234,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.035,
+        -0.0057,
+        -0.0015
+      ],
+      "max": [
+        0.035,
+        0.047,
+        0.0015
+      ]
+    },
+    "anchors": {},
+    "parts": [
+      "piece_0",
+      "piece_1",
+      "piece_2",
+      "piece_3",
+      "piece_4",
+      "piece_5",
+      "piece_6",
+      "piece_7",
+      "piece_8",
+      "piece_9",
+      "piece_10",
+      "piece_11"
+    ],
+    "materials": [
+      "cobalt",
+      "coral",
+      "sunflower",
+      "teal",
+      "violet"
+    ],
+    "notes": "piece_0..11: squares, triangles, small stars and circles in the five mission colours, each with its origin at its centre."
+  },
+  {
+    "name": "paper_scraps",
+    "category": "fx",
+    "sheet": "fx",
+    "file": "fx/paper_scraps.glb",
+    "unit": "m",
+    "triangles": 148,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.0312,
+        -0.008,
+        -0.001
+      ],
+      "max": [
+        0.0321,
+        0.0291,
+        0.0025
+      ]
+    },
+    "anchors": {},
+    "parts": [
+      "scrap_0",
+      "scrap_1",
+      "scrap_2",
+      "scrap_3",
+      "scrap_4",
+      "scrap_5"
+    ],
+    "materials": [
+      "cream",
+      "cream_shade",
+      "paper",
+      "paper_shade"
+    ],
+    "notes": "scrap_0..5: gently bent torn pieces for a wrong answer (funny, not destructive)."
+  },
+  {
+    "name": "fold_crease",
+    "category": "fx",
+    "sheet": "fx",
+    "file": "fx/fold_crease.glb",
+    "unit": "m",
+    "triangles": 102,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.054,
+        -0.0022,
+        -0.002
+      ],
+      "max": [
+        0.054,
+        0.005,
+        0.0037
+      ]
+    },
+    "anchors": {},
+    "parts": [
+      "crease"
+    ],
+    "materials": [
+      "gold",
+      "lemon"
+    ],
+    "notes": "Shiny crease strip along x for fold animations; no ink outline."
+  },
+  {
+    "name": "sparkle",
+    "category": "fx",
+    "sheet": "fx",
+    "file": "fx/sparkle.glb",
+    "unit": "m",
+    "triangles": 24,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.015,
+        -0.015,
+        -0.0025
+      ],
+      "max": [
+        0.015,
+        0.015,
+        0.0025
+      ]
+    },
+    "anchors": {},
+    "parts": [
+      "sparkle"
+    ],
+    "materials": [
+      "gold",
+      "lemon"
+    ],
+    "notes": "Four-point sparkle, origin at the centre; no ink outline."
   }
 ]

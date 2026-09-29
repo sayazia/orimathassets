@@ -35,3 +35,43 @@ export const PALETTE = {
   maroon: '#9C3D48',
   slate: '#5A6C8C', // slate roofs
 };
+
+// Extra hues for the Foldlings mission colours. The city's `blue` and `purple` look alike to
+// people with protanopia/deuteranopia, so missions use `cobalt` (darker) and `violet` (lighter)
+// instead; see docs/FOLDLINGS.md for the simulation numbers.
+PALETTE.cobalt = '#3469C4';
+PALETTE.violet = '#B198EA';
+
+// Game roles -> palette keys. The Foldlings game reads colours through these names.
+export const ROLES = {
+  paper: 'paper',
+  paper_back: 'cream',
+  ink: 'dark',
+  place_value: 'coral',
+  multiply_divide: 'cobalt',
+  fractions: 'teal',
+  decimals: 'sunflower',
+  measurement: 'violet',
+  correct: 'leaf',
+  try_again: 'orange',
+  reward_gold: 'gold',
+};
+
+export const MISSIONS = ['place_value', 'multiply_divide', 'fractions', 'decimals', 'measurement'];
+
+// `<key>_shade`: the side of a fold that faces away from the light. About 11% darker,
+// with blue pulled down a little more than red so shadows stay warm like lit paper.
+export function shade(hex) {
+  const n = parseInt(hex.slice(1), 16);
+  const rgb = [(n >> 16) & 255, (n >> 8) & 255, n & 255];
+  const warm = [0.91, 0.89, 0.86];
+  return '#' + rgb.map((v, i) => Math.round(v * warm[i]).toString(16).padStart(2, '0')).join('').toUpperCase();
+}
+
+// Resolves a material key: a palette key, `<key>_shade`, or a role name (`ink`, `paper_back`, ...).
+export function colourOf(key) {
+  const base = key.endsWith('_shade') ? key.slice(0, -6) : key;
+  const hex = PALETTE[base] ?? PALETTE[ROLES[base]];
+  if (!hex) return undefined;
+  return key.endsWith('_shade') ? shade(hex) : hex;
+}
