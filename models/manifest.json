@@ -4583,7 +4583,7 @@
     "file": "foldlings/foldling_fox.glb",
     "unit": "m",
     "triangles": 280,
-    "outline_triangles": 234,
+    "outline_triangles": 0,
     "bounds": {
       "min": [
         -0.038,
@@ -4684,7 +4684,7 @@
     "file": "foldlings/foldling_rabbit.glb",
     "unit": "m",
     "triangles": 376,
-    "outline_triangles": 332,
+    "outline_triangles": 0,
     "bounds": {
       "min": [
         -0.026,
@@ -4784,7 +4784,7 @@
     "file": "foldlings/foldling_crane.glb",
     "unit": "m",
     "triangles": 136,
-    "outline_triangles": 96,
+    "outline_triangles": 0,
     "bounds": {
       "min": [
         -0.035,
@@ -4882,7 +4882,7 @@
     "file": "foldlings/foldling_turtle.glb",
     "unit": "m",
     "triangles": 178,
-    "outline_triangles": 138,
+    "outline_triangles": 0,
     "bounds": {
       "min": [
         -0.034,
@@ -4981,7 +4981,7 @@
     "file": "foldlings/foldling_frog.glb",
     "unit": "m",
     "triangles": 236,
-    "outline_triangles": 196,
+    "outline_triangles": 0,
     "bounds": {
       "min": [
         -0.021,
@@ -5076,7 +5076,7 @@
     "file": "foldlings/foldling_fish.glb",
     "unit": "m",
     "triangles": 122,
-    "outline_triangles": 82,
+    "outline_triangles": 0,
     "bounds": {
       "min": [
         -0.038,
@@ -5173,7 +5173,7 @@
     "file": "foldlings/foldling_cat.glb",
     "unit": "m",
     "triangles": 232,
-    "outline_triangles": 188,
+    "outline_triangles": 0,
     "bounds": {
       "min": [
         -0.026,
@@ -5270,7 +5270,7 @@
     "file": "foldlings/foldling_elephant.glb",
     "unit": "m",
     "triangles": 310,
-    "outline_triangles": 270,
+    "outline_triangles": 0,
     "bounds": {
       "min": [
         -0.033,
@@ -5371,7 +5371,7 @@
     "file": "foldlings/paper_bird.glb",
     "unit": "m",
     "triangles": 90,
-    "outline_triangles": 50,
+    "outline_triangles": 0,
     "bounds": {
       "min": [
         -0.03,
@@ -5452,7 +5452,7 @@
     "file": "foldlings/flag_small.glb",
     "unit": "m",
     "triangles": 60,
-    "outline_triangles": 60,
+    "outline_triangles": 0,
     "bounds": {
       "min": [
         -0.002,
@@ -5479,7 +5479,6 @@
     "materials": [
       "cream",
       "cream_shade",
-      "ink",
       "wood",
       "wood_shade"
     ],
@@ -5495,7 +5494,7 @@
     "file": "book/popup_book.glb",
     "unit": "m",
     "triangles": 380,
-    "outline_triangles": 284,
+    "outline_triangles": 0,
     "bounds": {
       "min": [
         -0.18,
@@ -5536,7 +5535,6 @@
     ],
     "materials": [
       "gold",
-      "ink",
       "navy",
       "navy_shade",
       "paper",
@@ -5551,7 +5549,7 @@
     "file": "book/popup_book_closed.glb",
     "unit": "m",
     "triangles": 184,
-    "outline_triangles": 184,
+    "outline_triangles": 0,
     "bounds": {
       "min": [
         -0.0925,
@@ -5572,7 +5570,6 @@
     ],
     "materials": [
       "gold",
-      "ink",
       "navy",
       "navy_shade",
       "paper",
@@ -5587,7 +5584,7 @@
     "file": "book/page_popup_frame.glb",
     "unit": "m",
     "triangles": 164,
-    "outline_triangles": 164,
+    "outline_triangles": 0,
     "bounds": {
       "min": [
         -0.149,
@@ -5607,7 +5604,6 @@
       "panel_right"
     ],
     "materials": [
-      "ink",
       "leaf",
       "mint",
       "mint_shade",
@@ -5623,7 +5619,7 @@
     "file": "game/orb_forge/crystal.glb",
     "unit": "m",
     "triangles": 48,
-    "outline_triangles": 48,
+    "outline_triangles": 0,
     "bounds": {
       "min": [
         -0.0175,
@@ -5652,7 +5648,6 @@
       "gem"
     ],
     "materials": [
-      "ink",
       "lavender",
       "lavender_shade"
     ],
@@ -5665,7 +5660,7 @@
     "file": "game/orb_forge/orb.glb",
     "unit": "m",
     "triangles": 174,
-    "outline_triangles": 174,
+    "outline_triangles": 0,
     "bounds": {
       "min": [
         -0.027,
@@ -5696,7 +5691,6 @@
     "materials": [
       "gold",
       "gold_shade",
-      "ink",
       "lavender",
       "lavender_shade"
     ],
@@ -5709,7 +5703,7 @@
     "file": "game/orb_forge/crystal_tray.glb",
     "unit": "m",
     "triangles": 200,
-    "outline_triangles": 200,
+    "outline_triangles": 0,
     "bounds": {
       "min": [
         -0.232,
@@ -5755,7 +5749,6 @@
     "materials": [
       "cream",
       "cream_shade",
-      "ink",
       "sand",
       "sand_shade"
     ],
@@ -5768,7 +5761,7 @@
     "file": "game/orb_forge/shield_badge.glb",
     "unit": "m",
     "triangles": 52,
-    "outline_triangles": 52,
+    "outline_triangles": 0,
     "bounds": {
       "min": [
         -0.025,
@@ -5795,8 +5788,7 @@
       "cream",
       "cream_shade",
       "gold",
-      "gold_shade",
-      "ink"
+      "gold_shade"
     ]
   },
   {
@@ -5806,7 +5798,7 @@
     "file": "game/balloon/balloon_round.glb",
     "unit": "m",
     "triangles": 104,
-    "outline_triangles": 104,
+    "outline_triangles": 0,
     "bounds": {
       "min": [
         -0.0319,
@@ -5832,7 +5824,6 @@
       "string"
     ],
     "materials": [
-      "ink",
       "paper",
       "paper_shade",
       "sky",
@@ -5847,7 +5838,7 @@
     "file": "game/balloon/balloon_long.glb",
     "unit": "m",
     "triangles": 104,
-    "outline_triangles": 104,
+    "outline_triangles": 0,
     "bounds": {
       "min": [
         -0.0216,
@@ -5873,7 +5864,6 @@
       "string"
     ],
     "materials": [
-      "ink",
       "paper",
       "paper_shade",
       "sky",
@@ -5888,7 +5878,7 @@
     "file": "game/balloon/balloon_heart.glb",
     "unit": "m",
     "triangles": 154,
-    "outline_triangles": 154,
+    "outline_triangles": 0,
     "bounds": {
       "min": [
         -0.0326,
@@ -5914,7 +5904,6 @@
       "string"
     ],
     "materials": [
-      "ink",
       "paper",
       "paper_shade",
       "sky",
@@ -5929,7 +5918,7 @@
     "file": "game/balloon/balloon_pop_pieces.glb",
     "unit": "m",
     "triangles": 64,
-    "outline_triangles": 64,
+    "outline_triangles": 0,
     "bounds": {
       "min": [
         -0.0378,
@@ -5954,7 +5943,6 @@
       "piece_7"
     ],
     "materials": [
-      "ink",
       "sky",
       "sky_shade"
     ],
@@ -5967,7 +5955,7 @@
     "file": "game/factory/conveyor_straight.glb",
     "unit": "m",
     "triangles": 148,
-    "outline_triangles": 148,
+    "outline_triangles": 0,
     "bounds": {
       "min": [
         -0.06,
@@ -5986,7 +5974,6 @@
       "belt"
     ],
     "materials": [
-      "ink",
       "orange",
       "orange_shade",
       "slate",
@@ -6002,7 +5989,7 @@
     "file": "game/factory/conveyor_start.glb",
     "unit": "m",
     "triangles": 144,
-    "outline_triangles": 144,
+    "outline_triangles": 0,
     "bounds": {
       "min": [
         -0.04,
@@ -6026,7 +6013,6 @@
       "frame"
     ],
     "materials": [
-      "ink",
       "lavender",
       "orange",
       "orange_shade",
@@ -6042,7 +6028,7 @@
     "file": "game/factory/sort_gate.glb",
     "unit": "m",
     "triangles": 88,
-    "outline_triangles": 88,
+    "outline_triangles": 0,
     "bounds": {
       "min": [
         -0.032,
@@ -6072,7 +6058,6 @@
       "coral_shade",
       "cream",
       "cream_shade",
-      "ink",
       "paper"
     ],
     "variants": [
@@ -6105,7 +6090,7 @@
     "file": "game/factory/sort_bin.glb",
     "unit": "m",
     "triangles": 60,
-    "outline_triangles": 60,
+    "outline_triangles": 0,
     "bounds": {
       "min": [
         -0.042,
@@ -6129,7 +6114,6 @@
       "bin"
     ],
     "materials": [
-      "ink",
       "sand",
       "sand_shade"
     ]
@@ -6141,7 +6125,7 @@
     "file": "game/factory/item_token.glb",
     "unit": "m",
     "triangles": 68,
-    "outline_triangles": 68,
+    "outline_triangles": 0,
     "bounds": {
       "min": [
         -0.02,
@@ -6172,7 +6156,6 @@
     "materials": [
       "cream",
       "cream_shade",
-      "ink",
       "sand",
       "sand_shade"
     ],
@@ -6185,7 +6168,7 @@
     "file": "game/bridge/gap_cliffs.glb",
     "unit": "m",
     "triangles": 56,
-    "outline_triangles": 56,
+    "outline_triangles": 0,
     "bounds": {
       "min": [
         -0.2,
@@ -6217,7 +6200,6 @@
     "materials": [
       "grass",
       "grass_shade",
-      "ink",
       "stone",
       "stone_shade"
     ],
@@ -6566,7 +6548,7 @@
     "file": "game/bridge/bridge_post.glb",
     "unit": "m",
     "triangles": 56,
-    "outline_triangles": 56,
+    "outline_triangles": 0,
     "bounds": {
       "min": [
         -0.0074,
@@ -6584,7 +6566,6 @@
       "post"
     ],
     "materials": [
-      "ink",
       "sand",
       "sand_shade",
       "wood",
@@ -6598,7 +6579,7 @@
     "file": "game/balance/scale.glb",
     "unit": "m",
     "triangles": 234,
-    "outline_triangles": 234,
+    "outline_triangles": 0,
     "bounds": {
       "min": [
         -0.1473,
@@ -6645,8 +6626,7 @@
       "cobalt_shade",
       "cream",
       "gold",
-      "gold_shade",
-      "ink"
+      "gold_shade"
     ],
     "notes": "Rotate beam about z (0 to 20 degrees); rotate pan_left/pan_right by the opposite angle so the pans hang level."
   },
@@ -6657,7 +6637,7 @@
     "file": "game/balance/weight_block.glb",
     "unit": "m",
     "triangles": 40,
-    "outline_triangles": 40,
+    "outline_triangles": 0,
     "bounds": {
       "min": [
         -0.0175,
@@ -6687,7 +6667,6 @@
     ],
     "materials": [
       "cream",
-      "ink",
       "stone",
       "stone_shade"
     ],
@@ -6700,7 +6679,7 @@
     "file": "game/balance/gate.glb",
     "unit": "m",
     "triangles": 120,
-    "outline_triangles": 120,
+    "outline_triangles": 0,
     "bounds": {
       "min": [
         -0.07,
@@ -6730,8 +6709,7 @@
       "cobalt_shade",
       "cream",
       "cream_shade",
-      "gold",
-      "ink"
+      "gold"
     ],
     "notes": "Doors hinge at their outer edges: rotate door_left by +y, door_right by -y to open."
   },
@@ -6742,7 +6720,7 @@
     "file": "game/measure/tape_measure.glb",
     "unit": "m",
     "triangles": 300,
-    "outline_triangles": 72,
+    "outline_triangles": 0,
     "bounds": {
       "min": [
         -0.025,
@@ -6783,7 +6761,7 @@
     "file": "game/measure/ruler_30.glb",
     "unit": "m",
     "triangles": 500,
-    "outline_triangles": 12,
+    "outline_triangles": 0,
     "bounds": {
       "min": [
         -0.155,
@@ -6814,7 +6792,7 @@
     "file": "game/measure/marker_pin.glb",
     "unit": "m",
     "triangles": 90,
-    "outline_triangles": 96,
+    "outline_triangles": 0,
     "bounds": {
       "min": [
         -0.009,
@@ -6840,7 +6818,6 @@
     "materials": [
       "coral",
       "coral_shade",
-      "ink",
       "stone",
       "stone_shade"
     ],
@@ -6869,7 +6846,7 @@
     "file": "game/measure/treasure_chest.glb",
     "unit": "m",
     "triangles": 108,
-    "outline_triangles": 108,
+    "outline_triangles": 0,
     "bounds": {
       "min": [
         -0.035,
@@ -6896,7 +6873,6 @@
     "materials": [
       "gold",
       "gold_shade",
-      "ink",
       "wood",
       "wood_shade"
     ],
@@ -6909,7 +6885,7 @@
     "file": "hints/base10_unit.glb",
     "unit": "m",
     "triangles": 44,
-    "outline_triangles": 44,
+    "outline_triangles": 0,
     "bounds": {
       "min": [
         -0.005,
@@ -6928,8 +6904,7 @@
     ],
     "materials": [
       "coral",
-      "coral_shade",
-      "ink"
+      "coral_shade"
     ],
     "notes": "Origin at the bottom centre. All base-10 blocks share this 10 mm unit."
   },
@@ -6939,18 +6914,18 @@
     "sheet": "hints",
     "file": "hints/base10_rod.glb",
     "unit": "m",
-    "triangles": 120,
-    "outline_triangles": 120,
+    "triangles": 336,
+    "outline_triangles": 0,
     "bounds": {
       "min": [
         -0.05,
         0,
-        -0.005
+        -0.0056
       ],
       "max": [
         0.05,
-        0.01,
-        0.005
+        0.0106,
+        0.0056
       ]
     },
     "anchors": {},
@@ -6959,10 +6934,9 @@
     ],
     "materials": [
       "coral",
-      "coral_shade",
-      "ink"
+      "coral_shade"
     ],
-    "notes": "Ten 10 mm cubes along x; outlines mark each cube."
+    "notes": "Ten 10 mm cubes along x; shaded creases mark each cube."
   },
   {
     "name": "base10_flat",
@@ -6970,8 +6944,8 @@
     "sheet": "hints",
     "file": "hints/base10_flat.glb",
     "unit": "m",
-    "triangles": 192,
-    "outline_triangles": 192,
+    "triangles": 408,
+    "outline_triangles": 0,
     "bounds": {
       "min": [
         -0.05,
@@ -6979,9 +6953,9 @@
         -0.05
       ],
       "max": [
-        0.05,
+        0.0506,
         0.0106,
-        0.05
+        0.0506
       ]
     },
     "anchors": {},
@@ -6990,8 +6964,7 @@
     ],
     "materials": [
       "coral",
-      "coral_shade",
-      "ink"
+      "coral_shade"
     ],
     "notes": "Ten rods side by side with unit creases across."
   },
@@ -7002,7 +6975,7 @@
     "file": "hints/number_line.glb",
     "unit": "m",
     "triangles": 112,
-    "outline_triangles": 112,
+    "outline_triangles": 0,
     "bounds": {
       "min": [
         -0.15,
@@ -7131,7 +7104,6 @@
       "line"
     ],
     "materials": [
-      "ink",
       "paper",
       "paper_shade",
       "slate"
@@ -7145,7 +7117,7 @@
     "file": "hints/bar_strip.glb",
     "unit": "m",
     "triangles": 20,
-    "outline_triangles": 20,
+    "outline_triangles": 0,
     "bounds": {
       "min": [
         0,
@@ -7163,7 +7135,6 @@
       "strip"
     ],
     "materials": [
-      "ink",
       "teal",
       "teal_shade"
     ],
@@ -7176,7 +7147,7 @@
     "file": "hints/area_grid.glb",
     "unit": "m",
     "triangles": 188,
-    "outline_triangles": 188,
+    "outline_triangles": 0,
     "bounds": {
       "min": [
         -0.076,
@@ -7200,7 +7171,6 @@
       "grid"
     ],
     "materials": [
-      "ink",
       "mint",
       "mint_shade",
       "paper"
@@ -7214,7 +7184,7 @@
     "file": "hints/pie_slice_2.glb",
     "unit": "m",
     "triangles": 195,
-    "outline_triangles": 196,
+    "outline_triangles": 0,
     "bounds": {
       "min": [
         0,
@@ -7234,7 +7204,6 @@
     "materials": [
       "cream",
       "cream_shade",
-      "ink",
       "teal",
       "teal_shade"
     ],
@@ -7247,7 +7216,7 @@
     "file": "hints/pie_slice_3.glb",
     "unit": "m",
     "triangles": 132,
-    "outline_triangles": 132,
+    "outline_triangles": 0,
     "bounds": {
       "min": [
         0,
@@ -7267,7 +7236,6 @@
     "materials": [
       "cream",
       "cream_shade",
-      "ink",
       "teal",
       "teal_shade"
     ],
@@ -7280,7 +7248,7 @@
     "file": "hints/pie_slice_4.glb",
     "unit": "m",
     "triangles": 100,
-    "outline_triangles": 100,
+    "outline_triangles": 0,
     "bounds": {
       "min": [
         0,
@@ -7300,7 +7268,6 @@
     "materials": [
       "cream",
       "cream_shade",
-      "ink",
       "teal",
       "teal_shade"
     ],
@@ -7313,7 +7280,7 @@
     "file": "hints/pie_slice_5.glb",
     "unit": "m",
     "triangles": 84,
-    "outline_triangles": 84,
+    "outline_triangles": 0,
     "bounds": {
       "min": [
         0,
@@ -7333,7 +7300,6 @@
     "materials": [
       "cream",
       "cream_shade",
-      "ink",
       "teal",
       "teal_shade"
     ],
@@ -7346,7 +7312,7 @@
     "file": "hints/pie_slice_6.glb",
     "unit": "m",
     "triangles": 68,
-    "outline_triangles": 68,
+    "outline_triangles": 0,
     "bounds": {
       "min": [
         0,
@@ -7366,7 +7332,6 @@
     "materials": [
       "cream",
       "cream_shade",
-      "ink",
       "teal",
       "teal_shade"
     ],
@@ -7379,7 +7344,7 @@
     "file": "hints/pie_slice_8.glb",
     "unit": "m",
     "triangles": 52,
-    "outline_triangles": 52,
+    "outline_triangles": 0,
     "bounds": {
       "min": [
         0,
@@ -7399,7 +7364,6 @@
     "materials": [
       "cream",
       "cream_shade",
-      "ink",
       "teal",
       "teal_shade"
     ],
@@ -7412,7 +7376,7 @@
     "file": "hints/pie_slice_10.glb",
     "unit": "m",
     "triangles": 52,
-    "outline_triangles": 52,
+    "outline_triangles": 0,
     "bounds": {
       "min": [
         0,
@@ -7432,7 +7396,6 @@
     "materials": [
       "cream",
       "cream_shade",
-      "ink",
       "teal",
       "teal_shade"
     ],
@@ -7445,7 +7408,7 @@
     "file": "hints/pie_slice_12.glb",
     "unit": "m",
     "triangles": 36,
-    "outline_triangles": 36,
+    "outline_triangles": 0,
     "bounds": {
       "min": [
         0,
@@ -7465,7 +7428,6 @@
     "materials": [
       "cream",
       "cream_shade",
-      "ink",
       "teal",
       "teal_shade"
     ],
@@ -7478,7 +7440,7 @@
     "file": "game/portal/portal_main.glb",
     "unit": "m",
     "triangles": 364,
-    "outline_triangles": 364,
+    "outline_triangles": 0,
     "bounds": {
       "min": [
         -0.07,
@@ -7504,7 +7466,6 @@
     ],
     "materials": [
       "gold",
-      "ink",
       "lavender",
       "navy",
       "violet",
@@ -7519,7 +7480,7 @@
     "file": "game/portal/partner_window.glb",
     "unit": "m",
     "triangles": 64,
-    "outline_triangles": 64,
+    "outline_triangles": 0,
     "bounds": {
       "min": [
         -0.09,
@@ -7550,7 +7511,6 @@
     "materials": [
       "cream",
       "cream_shade",
-      "ink",
       "violet",
       "violet_shade"
     ],
@@ -7563,7 +7523,7 @@
     "file": "game/portal/help_orb_trail.glb",
     "unit": "m",
     "triangles": 60,
-    "outline_triangles": 60,
+    "outline_triangles": 0,
     "bounds": {
       "min": [
         -0.0874,
@@ -7583,7 +7543,6 @@
     "materials": [
       "gold",
       "gold_shade",
-      "ink",
       "lemon",
       "lemon_shade"
     ],
@@ -7596,7 +7555,7 @@
     "file": "characters/pip_owl.glb",
     "unit": "m",
     "triangles": 606,
-    "outline_triangles": 566,
+    "outline_triangles": 0,
     "bounds": {
       "min": [
         -0.0344,
@@ -7648,7 +7607,7 @@
     "file": "characters/great_crumple.glb",
     "unit": "m",
     "triangles": 1157,
-    "outline_triangles": 1085,
+    "outline_triangles": 0,
     "bounds": {
       "min": [
         -0.0883,
@@ -7707,7 +7666,7 @@
     "file": "characters/robot_partner_a.glb",
     "unit": "m",
     "triangles": 306,
-    "outline_triangles": 282,
+    "outline_triangles": 0,
     "bounds": {
       "min": [
         -0.0235,
@@ -7757,7 +7716,7 @@
     "file": "characters/robot_partner_b.glb",
     "unit": "m",
     "triangles": 390,
-    "outline_triangles": 378,
+    "outline_triangles": 0,
     "bounds": {
       "min": [
         -0.0245,
@@ -7807,7 +7766,7 @@
     "file": "characters/robot_partner_c.glb",
     "unit": "m",
     "triangles": 354,
-    "outline_triangles": 330,
+    "outline_triangles": 0,
     "bounds": {
       "min": [
         -0.024,
@@ -7861,7 +7820,7 @@
       1
     ],
     "triangles": 264,
-    "outline_triangles": 264,
+    "outline_triangles": 0,
     "bounds": {
       "min": [
         -1,
@@ -7882,7 +7841,6 @@
     ],
     "materials": [
       "grass",
-      "ink",
       "leaf",
       "paper",
       "teal",
@@ -7901,7 +7859,7 @@
       1
     ],
     "triangles": 504,
-    "outline_triangles": 504,
+    "outline_triangles": 0,
     "bounds": {
       "min": [
         -1,
@@ -7923,7 +7881,6 @@
     ],
     "materials": [
       "grass",
-      "ink",
       "leaf",
       "paper",
       "teal",
@@ -7942,7 +7899,7 @@
       1
     ],
     "triangles": 768,
-    "outline_triangles": 768,
+    "outline_triangles": 0,
     "bounds": {
       "min": [
         -1,
@@ -7964,7 +7921,6 @@
     ],
     "materials": [
       "grass",
-      "ink",
       "leaf",
       "paper",
       "teal",
@@ -7983,7 +7939,7 @@
       1
     ],
     "triangles": 258,
-    "outline_triangles": 258,
+    "outline_triangles": 0,
     "bounds": {
       "min": [
         -0.5,
@@ -8007,7 +7963,6 @@
       "cobalt",
       "cobalt_shade",
       "grass",
-      "ink",
       "leaf",
       "paper"
     ],
@@ -8024,7 +7979,7 @@
       1
     ],
     "triangles": 498,
-    "outline_triangles": 498,
+    "outline_triangles": 0,
     "bounds": {
       "min": [
         -0.5,
@@ -8050,7 +8005,6 @@
       "cobalt",
       "cobalt_shade",
       "grass",
-      "ink",
       "leaf",
       "paper"
     ],
@@ -8067,7 +8021,7 @@
       1
     ],
     "triangles": 756,
-    "outline_triangles": 756,
+    "outline_triangles": 0,
     "bounds": {
       "min": [
         -0.5,
@@ -8095,7 +8049,6 @@
       "cobalt",
       "cobalt_shade",
       "grass",
-      "ink",
       "leaf",
       "paper"
     ],
@@ -8112,7 +8065,7 @@
       1
     ],
     "triangles": 136,
-    "outline_triangles": 136,
+    "outline_triangles": 0,
     "bounds": {
       "min": [
         -1,
@@ -8134,7 +8087,6 @@
       "coral",
       "coral_shade",
       "grass",
-      "ink",
       "leaf",
       "paper"
     ],
@@ -8151,7 +8103,7 @@
       1
     ],
     "triangles": 344,
-    "outline_triangles": 344,
+    "outline_triangles": 0,
     "bounds": {
       "min": [
         -1,
@@ -8175,7 +8127,6 @@
       "coral",
       "coral_shade",
       "grass",
-      "ink",
       "leaf",
       "paper"
     ],
@@ -8192,7 +8143,7 @@
       1
     ],
     "triangles": 420,
-    "outline_triangles": 420,
+    "outline_triangles": 0,
     "bounds": {
       "min": [
         -1,
@@ -8217,7 +8168,6 @@
       "coral",
       "coral_shade",
       "grass",
-      "ink",
       "leaf",
       "paper"
     ],
@@ -8234,7 +8184,7 @@
       1
     ],
     "triangles": 256,
-    "outline_triangles": 256,
+    "outline_triangles": 0,
     "bounds": {
       "min": [
         -1,
@@ -8256,7 +8206,6 @@
     ],
     "materials": [
       "grass",
-      "ink",
       "leaf",
       "paper",
       "sunflower",
@@ -8275,7 +8224,7 @@
       1
     ],
     "triangles": 488,
-    "outline_triangles": 488,
+    "outline_triangles": 0,
     "bounds": {
       "min": [
         -1,
@@ -8299,7 +8248,6 @@
     ],
     "materials": [
       "grass",
-      "ink",
       "leaf",
       "paper",
       "sunflower",
@@ -8318,7 +8266,7 @@
       1
     ],
     "triangles": 812,
-    "outline_triangles": 812,
+    "outline_triangles": 0,
     "bounds": {
       "min": [
         -1,
@@ -8345,7 +8293,6 @@
     ],
     "materials": [
       "grass",
-      "ink",
       "leaf",
       "paper",
       "sunflower",
@@ -8364,7 +8311,7 @@
       1
     ],
     "triangles": 286,
-    "outline_triangles": 126,
+    "outline_triangles": 0,
     "bounds": {
       "min": [
         -0.5,
@@ -8406,7 +8353,7 @@
       1
     ],
     "triangles": 310,
-    "outline_triangles": 150,
+    "outline_triangles": 0,
     "bounds": {
       "min": [
         -0.5,
@@ -8448,7 +8395,7 @@
       1
     ],
     "triangles": 322,
-    "outline_triangles": 162,
+    "outline_triangles": 0,
     "bounds": {
       "min": [
         -0.5,
@@ -8490,7 +8437,7 @@
       7
     ],
     "triangles": 132,
-    "outline_triangles": 132,
+    "outline_triangles": 0,
     "bounds": {
       "min": [
         -5,
@@ -8516,7 +8463,6 @@
     "materials": [
       "cream",
       "cream_shade",
-      "ink",
       "paper"
     ],
     "notes": "Fits the right-hand page of popup_book at 0.03 m per tile. cell_origin = centre of the -x/-z corner cell; cells step 1 tile."
@@ -8528,7 +8474,7 @@
     "file": "rewards/star.glb",
     "unit": "m",
     "triangles": 30,
-    "outline_triangles": 30,
+    "outline_triangles": 0,
     "bounds": {
       "min": [
         -0.0238,
@@ -8547,8 +8493,7 @@
     ],
     "materials": [
       "gold",
-      "gold_shade",
-      "ink"
+      "gold_shade"
     ],
     "notes": "Origin at the centre; faces +Z."
   },
@@ -8559,7 +8504,7 @@
     "file": "rewards/star_empty.glb",
     "unit": "m",
     "triangles": 120,
-    "outline_triangles": 120,
+    "outline_triangles": 0,
     "bounds": {
       "min": [
         -0.0248,
@@ -8578,8 +8523,7 @@
     ],
     "materials": [
       "cream",
-      "cream_shade",
-      "ink"
+      "cream_shade"
     ],
     "notes": "Paper outline of the same star (not yet earned)."
   },
@@ -8590,7 +8534,7 @@
     "file": "rewards/badge_best_save.glb",
     "unit": "m",
     "triangles": 272,
-    "outline_triangles": 272,
+    "outline_triangles": 0,
     "bounds": {
       "min": [
         -0.03,
@@ -8613,8 +8557,7 @@
       "coral_shade",
       "cream",
       "gold",
-      "gold_shade",
-      "ink"
+      "gold_shade"
     ],
     "notes": "Symbol only, no text. Origin at the disc centre; ribbon hangs below."
   },
@@ -8625,7 +8568,7 @@
     "file": "rewards/badge_most_improved.glb",
     "unit": "m",
     "triangles": 228,
-    "outline_triangles": 228,
+    "outline_triangles": 0,
     "bounds": {
       "min": [
         -0.03,
@@ -8647,7 +8590,6 @@
       "cream",
       "gold",
       "gold_shade",
-      "ink",
       "leaf",
       "leaf_shade"
     ],
@@ -8660,7 +8602,7 @@
     "file": "rewards/badge_sharpest_aim.glb",
     "unit": "m",
     "triangles": 500,
-    "outline_triangles": 500,
+    "outline_triangles": 0,
     "bounds": {
       "min": [
         -0.03,
@@ -8683,8 +8625,7 @@
       "cobalt_shade",
       "cream",
       "gold",
-      "gold_shade",
-      "ink"
+      "gold_shade"
     ],
     "notes": "Symbol only, no text. Origin at the disc centre; ribbon hangs below."
   },
@@ -8695,7 +8636,7 @@
     "file": "rewards/badge_steady_streak.glb",
     "unit": "m",
     "triangles": 352,
-    "outline_triangles": 352,
+    "outline_triangles": 0,
     "bounds": {
       "min": [
         -0.03,
@@ -8717,7 +8658,6 @@
       "cream",
       "gold",
       "gold_shade",
-      "ink",
       "violet",
       "violet_shade"
     ],
@@ -8730,7 +8670,7 @@
     "file": "rewards/badge_brave_try.glb",
     "unit": "m",
     "triangles": 232,
-    "outline_triangles": 232,
+    "outline_triangles": 0,
     "bounds": {
       "min": [
         -0.03,
@@ -8752,7 +8692,6 @@
       "cream",
       "gold",
       "gold_shade",
-      "ink",
       "orange",
       "orange_shade"
     ],
@@ -8765,7 +8704,7 @@
     "file": "rewards/streak_shield.glb",
     "unit": "m",
     "triangles": 104,
-    "outline_triangles": 104,
+    "outline_triangles": 0,
     "bounds": {
       "min": [
         -0.022,
@@ -8786,7 +8725,6 @@
       "cream",
       "gold",
       "gold_shade",
-      "ink",
       "orange",
       "orange_shade"
     ],
@@ -8799,7 +8737,7 @@
     "file": "rewards/trophy_paper.glb",
     "unit": "m",
     "triangles": 218,
-    "outline_triangles": 218,
+    "outline_triangles": 0,
     "bounds": {
       "min": [
         -0.0309,
@@ -8820,8 +8758,7 @@
       "cream",
       "cream_shade",
       "gold",
-      "gold_shade",
-      "ink"
+      "gold_shade"
     ],
     "notes": "Stands on the table."
   },
@@ -8832,7 +8769,7 @@
     "file": "ui/paper_button.glb",
     "unit": "m",
     "triangles": 36,
-    "outline_triangles": 36,
+    "outline_triangles": 0,
     "bounds": {
       "min": [
         -0.05,
@@ -8859,7 +8796,6 @@
     "materials": [
       "cream",
       "cream_shade",
-      "ink",
       "sky",
       "sky_shade"
     ],
@@ -8872,7 +8808,7 @@
     "file": "ui/paper_panel.glb",
     "unit": "m",
     "triangles": 56,
-    "outline_triangles": 56,
+    "outline_triangles": 0,
     "bounds": {
       "min": [
         -0.15,
@@ -8898,7 +8834,6 @@
     "materials": [
       "cream",
       "cream_shade",
-      "ink",
       "paper",
       "paper_shade"
     ],
@@ -8911,7 +8846,7 @@
     "file": "ui/palm_menu_disc.glb",
     "unit": "m",
     "triangles": 92,
-    "outline_triangles": 92,
+    "outline_triangles": 0,
     "bounds": {
       "min": [
         -0.04,
@@ -8950,7 +8885,6 @@
       "disc"
     ],
     "materials": [
-      "ink",
       "lavender",
       "paper",
       "violet",
@@ -8965,7 +8899,7 @@
     "file": "fx/confetti_pieces.glb",
     "unit": "m",
     "triangles": 234,
-    "outline_triangles": 234,
+    "outline_triangles": 0,
     "bounds": {
       "min": [
         -0.035,
@@ -8996,7 +8930,6 @@
     "materials": [
       "cobalt",
       "coral",
-      "ink",
       "sunflower",
       "teal",
       "violet"
@@ -9010,7 +8943,7 @@
     "file": "fx/paper_scraps.glb",
     "unit": "m",
     "triangles": 148,
-    "outline_triangles": 148,
+    "outline_triangles": 0,
     "bounds": {
       "min": [
         -0.0312,
@@ -9035,7 +8968,6 @@
     "materials": [
       "cream",
       "cream_shade",
-      "ink",
       "paper",
       "paper_shade"
     ],

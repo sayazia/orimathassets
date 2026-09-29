@@ -17,13 +17,26 @@ function unit(rig) {
 }
 function rod(rig) {
   const r = rig.root.add('rod', [0, 0, 0]);
-  r.mesh((m) => { for (let i = 0; i < 10; i++) m.box('coral*', [-50 + i * 10, 0, -5], [-40 + i * 10, 10, 5]); });
+  r.mesh((m) => {
+    for (let i = 0; i < 10; i++) m.box('coral*', [-50 + i * 10, 0, -5], [-40 + i * 10, 10, 5]);
+    for (let i = 1; i < 10; i++) { // unit creases on the top, front and back
+      const x = -50 + i * 10;
+      m.hull('coral_shade', [[x - 1, 10, -5], [x + 1, 10, -5], [x - 1, 10, 5], [x + 1, 10, 5], [x, 10.6, -5], [x, 10.6, 5]]);
+      for (const z of [5, -5]) m.hull('coral_shade', [[x - 1, 0, z], [x + 1, 0, z], [x - 1, 10, z], [x + 1, 10, z], [x, 0, z + Math.sign(z) * 0.6], [x, 10, z + Math.sign(z) * 0.6]]);
+    }
+  });
 }
 function flat(rig) {
   const f = rig.root.add('flat', [0, 0, 0]);
   f.mesh((m) => {
     for (let i = 0; i < 10; i++) m.box('coral*', [-50, 0, -50 + i * 10], [50, 10, -40 + i * 10]); // ten rods side by side
     for (let i = 1; i < 10; i++) m.hull('coral_shade', [[-50 + i * 10 - 1, 10, -50], [-50 + i * 10 + 1, 10, -50], [-50 + i * 10 - 1, 10, 50], [-50 + i * 10 + 1, 10, 50], [-50 + i * 10, 10.6, -50], [-50 + i * 10, 10.6, 50]]); // unit creases
+    for (let i = 1; i < 10; i++) { // rod seams across the top, and creases down the front and right side
+      const c = -50 + i * 10;
+      m.hull('coral_shade', [[-50, 10, c - 1], [-50, 10, c + 1], [50, 10, c - 1], [50, 10, c + 1], [-50, 10.6, c], [50, 10.6, c]]);
+      m.hull('coral_shade', [[c - 1, 0, 50], [c + 1, 0, 50], [c - 1, 10, 50], [c + 1, 10, 50], [c, 0, 50.6], [c, 10, 50.6]]);
+      m.hull('coral_shade', [[50, 0, c - 1], [50, 0, c + 1], [50, 10, c - 1], [50, 10, c + 1], [50.6, 0, c], [50.6, 10, c]]);
+    }
   });
 }
 
@@ -124,7 +137,7 @@ const P = (name, size, build, notes) => ({ name, dir: 'game/portal', category: '
 
 export const hints = [
   H('base10_unit', [0.01, 0.01, 0.01], unit, 'Origin at the bottom centre. All base-10 blocks share this 10 mm unit.'),
-  H('base10_rod', [0.1, 0.01, 0.01], rod, 'Ten 10 mm cubes along x; outlines mark each cube.'),
+  H('base10_rod', [0.1, 0.01, 0.01], rod, 'Ten 10 mm cubes along x; shaded creases mark each cube.'),
   H('base10_flat', [0.1, 0.1, 0.01], flat, 'Ten rods side by side with unit creases across.'),
   H('number_line', [0.3, 0.02, 0.004], numberLine, 'tick_0..10 every 0.028 m (longer at 0, 5, 10); label_anchor_N just in front of each tick. Ends are plain so lines can be chained.'),
   H('bar_strip', [0.24, 0.03, 0.004], barStrip, 'Origin at the left end: scale x to cut it (1 = the whole unit, 0.24 m).'),

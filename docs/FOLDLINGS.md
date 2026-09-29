@@ -15,7 +15,7 @@ Batch status and per-asset numbers are in [`CATALOG.md`](CATALOG.md) (Indonesian
 | Creatures | Flat profile faces the player (+Z), head points to +X |
 | Pivots | Origin where the object touches the table; `paper_bird` at its body centre; `flag_small` at the foot of the pole |
 | Materials | Plain PBR (metallic 0, roughness 0.95), named after palette keys (`coral`, `coral_shade`, `cream`, `ink`...), at most 6 per asset, no textures |
-| `ink` | Unlit (`KHR_materials_unlit`), used for eyes, noses and outlines |
+| `ink` | Unlit (`KHR_materials_unlit`), used for eyes and noses |
 | Normals | Flat, per face; geometry is indexed |
 | Validation | `npm run validate`: Khronos glTF validator, 0 errors and 0 warnings (infos for empty anchor nodes are expected) |
 
@@ -26,8 +26,9 @@ Batch status and per-asset numbers are in [`CATALOG.md`](CATALOG.md) (Indonesian
   `flag_anchor` (foot of the number flag), `spawn_anchor`, `exit_anchor`, `town_origin`.
 - **Hidden states** (`eyes_happy`) have scale 0 and `extras.hidden_by_default: true`. Set scale to 1 to show
   them (and hide `eyes` by swapping, or simply let the happy eyes cover them).
-- **`ink_outline`**: each part with geometry has a child mesh named `ink_outline`, an inverted hull
-  0.6 mm thick. Toggle all of them to switch the ink contour on or off. three.js renames duplicates to
+- **No ink outline**: the set ships without dark contours, because real folded paper has none; folds read from
+  the lit and `_shade` faces. `FOLDLINGS_OUTLINES=1 npm run build` adds an `ink_outline` child mesh (an
+  inverted hull 0.6 mm thick) under every part, for a cartoon look. three.js renames duplicates to
   `ink_outline_1`, `ink_outline_2`..., so match by prefix.
 
 ### Animation clips
@@ -69,8 +70,8 @@ Because materials are named after palette keys, a game may also recolour one fil
 | try_again | orange | #F8961E |
 | reward_gold | gold | #E8B64C |
 
-`<key>_shade` is generated: each sRGB channel multiplied by 0.88 / 0.86 / 0.82 (about 13% darker, a touch
-warmer). Faces are assigned the lit colour or the shade automatically from their direction relative to a
+`<key>_shade` is generated: each sRGB channel multiplied by 0.80 / 0.77 / 0.72 (about 22% darker, a touch
+warmer, so folds read crisply without outlines). Faces are assigned the lit colour or the shade automatically from their direction relative to a
 key light at the upper front left, so every fold reads even under flat lighting.
 
 ### Colour-vision check
@@ -118,5 +119,6 @@ so run `npm run build` first.
 | `icons/game_<type>.svg` (badge style) | `_128`, `_256.png` |
 | `icons/mission_<id>.svg` (symbol only) | `.png` 128 |
 
-The logo letters are folded paper ribbons: each letter is a centre line offset to a strip with mitred
+No 2D asset has a dark contour: each piece of paper casts a faint soft shadow down and to the right,
+and the dark-background logo gets a thin paper edge instead. The logo letters are folded paper ribbons: each letter is a centre line offset to a strip with mitred
 corners, alternate strips in the lit and `_shade` tone, and the letters cycle through the five mission colours.

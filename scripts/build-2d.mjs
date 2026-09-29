@@ -6,7 +6,7 @@ import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs';
 import { dirname, extname, join, normalize } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { chromium } from 'playwright';
-import { C, S, poly, ngon, svg, g, outline, twoTone, crane, book } from './2d/svg.mjs';
+import { C, S, poly, ngon, svg, g, outline, edge, twoTone, crane, book } from './2d/svg.mjs';
 import { HEADS } from './2d/heads.mjs';
 import { PICTURES, gameBadge, GAME_COLOURS, missionIcon, word } from './2d/symbols.mjs';
 import { MISSIONS } from './lib/palette.mjs';
@@ -41,7 +41,7 @@ for (const sp of SPECIES) for (const m of MISSIONS) {
 for (const [name, draw] of Object.entries(PICTURES)) {
   const card = poly([[4, 4], [96, 4], [96, 78], [78, 96], [4, 96]], C('paper')) + poly([[96, 78], [78, 78], [78, 96]], C('cream'));
   const sym = draw();
-  const body = outline(card, 3, C('stone')) + card + fit(outline(sym, 4) + sym, 0.8, 10, 8);
+  const body = outline(card, 3) + card + fit(outline(sym, 4) + sym, 0.8, 10, 8);
   emit(`picture_password/pp_${name}`, 100, 100, body, [[256, 256]], true);
 }
 
@@ -50,12 +50,13 @@ const w = word('FOLDLINGS', MISSIONS);
 function logo(contour) {
   const u = 10, pad = 12, craneW = 7.2 * u; // letter unit in px before scaling
   const W = pad * 2 + craneW + 1.4 * u + w.width * u, H = pad * 2 + w.height * u;
-  const letters = g(outline(w.under, 0.5, contour) + w.body, `translate(${pad + craneW + 1.4 * u} ${pad}) scale(${u})`);
+  const under = (b, wd) => (contour ? edge(b, wd, contour) : outline(b, wd));
+  const letters = g(under(w.under, contour ? 0.3 : 0.9) + w.body, `translate(${pad + craneW + 1.4 * u} ${pad}) scale(${u})`);
   const cr = crane('coral', 'cream', false);
-  const craneG = fit(outline(cr, 5, contour) + cr, craneW / 100, pad, pad - 6);
+  const craneG = fit(under(cr, contour ? 3 : 8) + cr, craneW / 100, pad, pad - 6);
   return { W, H, body: craneG + letters };
 }
-for (const [id, contour] of [['logo_foldlings', C('ink')], ['logo_foldlings_dark', C('paper')]]) {
+for (const [id, contour] of [['logo_foldlings', null], ['logo_foldlings_dark', C('paper')]]) {
   const { W, H, body } = logo(contour);
   emit(`brand/${id}`, Math.round(W), Math.round(H), body, [[1200, Math.round((1200 * H) / W)]], true);
 }
@@ -95,7 +96,7 @@ console.log(`exported ${jobs.length} PNG files`);
 if (!only || only === 'brand') {
   const manifest = JSON.parse(readFileSync(join(root, 'models/manifest.json'), 'utf8'));
   const items = TABLE_SCENES.find((s) => s.name === 'b1').items.map((it) => ({ ...it, file: manifest.find((a) => a.name === it.name)?.file ?? it.file }));
-  const { W, H, body } = logo(C('ink'));
+  const { W, H, body } = logo(null);
   // Logo on a paper banner with folded ends, placed along the top.
   const banner = (bw) => {
     const bh = (bw * H) / W, e = bh * 0.35;

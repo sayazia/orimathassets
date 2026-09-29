@@ -3,6 +3,10 @@
 // Everything is authored in millimetres in rest-pose model space; the writer converts to metres.
 import { Model } from './geom.mjs';
 
+// Inverted-hull `ink_outline` meshes are off: real folded paper has no dark contour, the folds are
+// read from the lit and `_shade` faces. `FOLDLINGS_OUTLINES=1 npm run build` brings them back.
+export const INK_OUTLINES = process.env.FOLDLINGS_OUTLINES === '1';
+
 const add3 = (a, b) => [a[0] + b[0], a[1] + b[1], a[2] + b[2]];
 const sub3 = (a, b) => [a[0] - b[0], a[1] - b[1], a[2] - b[2]];
 
@@ -16,7 +20,7 @@ export class Node {
     this.hidden = !!opts.hidden;
     this.r = opts.r ?? null; // rest rotation in degrees (anchors only)
     this.anchor = !!opts.anchor;
-    this.outline = opts.outline ?? true;
+    this.outline = INK_OUTLINES && (opts.outline ?? true);
     this.s = null; // rest scale (leaf nodes only), number or [x, y, z]
   }
 

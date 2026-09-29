@@ -68,7 +68,11 @@ export function facets(cx, cy, radii, n, key, rot = -Math.PI / 2) {
   const m = radii.length, pts = ngon(cx, cy, 1, n * m, rot).map(([x, y], i) => [cx + (x - cx) * radii[i % m], cy + (y - cy) * radii[i % m]]);
   return pts.map((p, i) => poly([[cx, cy], p, pts[(i + 1) % pts.length]], i % 2 ? S(key) : C(key))).join('');
 }
-// The same drawing flattened to one colour and fattened, drawn under it as a contour.
-export const outline = (body, w = 5, colour = C('ink')) =>
-  body.replace(/fill="[^"]+"/g, `fill="${colour}" stroke="${colour}" stroke-width="${w}" stroke-linejoin="round"`);
+// A soft paper shadow under a drawing: the same shapes in faint ink, nudged down and right, so the
+// pieces read as cut paper laid on a surface rather than stickers with a dark contour.
+export const outline = (body, w = 5) =>
+  `<g transform="translate(${w * 0.3} ${w * 0.45})" opacity="0.2">${body.replace(/fill="[^"]+"/g, `fill="${C('ink')}"`)}</g>`;
 export const rect = (x, y, w, h) => [[x, y], [x + w, y], [x + w, y + h], [x, y + h]];
+// A thin paper-coloured edge, for drawings placed on dark backgrounds.
+export const edge = (body, w, colour = C('paper')) =>
+  body.replace(/fill="[^"]+"/g, `fill="${colour}" stroke="${colour}" stroke-width="${w}" stroke-linejoin="round"`);

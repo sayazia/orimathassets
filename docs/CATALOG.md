@@ -218,24 +218,26 @@ Status: ✅ selesai · 🟡 sebagian · ⬜ direncanakan.
 
 ## B1. Foldlings, burung kertas, dan buku ✅
 
-Segitiga = geometri utama; "+garis" = segitiga `ink_outline` (opsional, bisa dimatikan game).
+Segitiga = geometri utama; "+garis" = segitiga `ink_outline`. Sejak 29 September 2026 garis tinta dimatikan (0) atas
+masukan bahwa garis tebal gelap membuat aset tidak terasa seperti kertas; lipatan kini dibaca dari sisi terang dan
+sisi `_shade` yang lebih gelap (sekitar 22%). `FOLDLINGS_OUTLINES=1 npm run build` bisa menyalakannya lagi.
 Ukuran = kotak batas nyata (x × z × y, meter). Semua lolos validator (0 error, 0 warning).
 
 | File | Segitiga | +garis | KB | Ukuran (x×z×y) | Anchor | Klip |
 |---|---|---|---|---|---|---|
-| foldlings/foldling_fox | 280 | 234 | 52.0 | 0.077×0.023×0.059 | flag_anchor, label_anchor | idle, hop, cheer, bounce, fold |
-| foldlings/foldling_rabbit | 376 | 332 | 56.9 | 0.052×0.032×0.070 | flag_anchor, label_anchor | idle, hop, cheer, bounce, fold |
-| foldlings/foldling_crane | 136 | 96 | 32.8 | 0.072×0.071×0.055 | flag_anchor, label_anchor | idle, hop, cheer, bounce, fold |
-| foldlings/foldling_turtle | 178 | 138 | 35.1 | 0.076×0.052×0.028 | flag_anchor, label_anchor | idle, hop, cheer, bounce, fold |
-| foldlings/foldling_frog | 236 | 196 | 32.6 | 0.043×0.048×0.032 | flag_anchor, label_anchor | idle, hop, cheer, bounce, fold |
-| foldlings/foldling_fish | 122 | 82 | 27.6 | 0.069×0.029×0.036 | flag_anchor, label_anchor | idle, hop, cheer, bounce, fold |
-| foldlings/foldling_cat | 232 | 188 | 41.8 | 0.045×0.026×0.065 | flag_anchor, label_anchor | idle, hop, cheer, bounce, fold |
-| foldlings/foldling_elephant | 310 | 270 | 52.2 | 0.077×0.044×0.055 | flag_anchor, label_anchor | idle, hop, cheer, bounce, fold |
-| foldlings/paper_bird | 90 | 50 | 15.5 | 0.060×0.070×0.012 | (tidak ada) | flap (0.4 s) |
-| foldlings/flag_small | 60 | 60 | 8.6 | 0.054×0.004×0.093 | label_anchor | wave |
-| book/popup_book | 380 | 284 | 32.4 | 0.360×0.240×0.025 | spawn_anchor, exit_anchor, town_origin | |
-| book/popup_book_closed | 184 | 184 | 17.9 | 0.182×0.240×0.033 | | |
-| book/page_popup_frame | 164 | 164 | 16.6 | 0.298×0.019×0.118 | | |
+| foldlings/foldling_fox | 280 | 0 | 45.2 | 0.077×0.023×0.059 | flag_anchor, label_anchor | idle, hop, cheer, bounce, fold |
+| foldlings/foldling_rabbit | 376 | 0 | 49.3 | 0.052×0.032×0.070 | flag_anchor, label_anchor | idle, hop, cheer, bounce, fold |
+| foldlings/foldling_crane | 136 | 0 | 29.1 | 0.072×0.071×0.055 | flag_anchor, label_anchor | idle, hop, cheer, bounce, fold |
+| foldlings/foldling_turtle | 178 | 0 | 30.5 | 0.076×0.052×0.028 | flag_anchor, label_anchor | idle, hop, cheer, bounce, fold |
+| foldlings/foldling_frog | 236 | 0 | 28.8 | 0.043×0.048×0.032 | flag_anchor, label_anchor | idle, hop, cheer, bounce, fold |
+| foldlings/foldling_fish | 122 | 0 | 24.9 | 0.069×0.029×0.036 | flag_anchor, label_anchor | idle, hop, cheer, bounce, fold |
+| foldlings/foldling_cat | 232 | 0 | 37.3 | 0.045×0.026×0.065 | flag_anchor, label_anchor | idle, hop, cheer, bounce, fold |
+| foldlings/foldling_elephant | 310 | 0 | 44.9 | 0.077×0.044×0.055 | flag_anchor, label_anchor | idle, hop, cheer, bounce, fold |
+| foldlings/paper_bird | 90 | 0 | 13.6 | 0.060×0.070×0.012 | (tidak ada) | flap (0.4 s) |
+| foldlings/flag_small | 60 | 0 | 6.9 | 0.054×0.004×0.093 | label_anchor | wave |
+| book/popup_book | 380 | 0 | 26.4 | 0.360×0.240×0.025 | spawn_anchor, exit_anchor, town_origin | |
+| book/popup_book_closed | 184 | 0 | 14.0 | 0.182×0.240×0.033 | | |
+| book/page_popup_frame | 164 | 0 | 12.9 | 0.298×0.019×0.118 | | |
 
 Varian warna: setiap Foldling dan `paper_bird` punya 6 berkas: berkas dasar = `place_value` (coral),
 lalu `_multiply_divide` (cobalt), `_fractions` (teal), `_decimals` (sunflower), `_measurement` (violet),
@@ -262,8 +264,8 @@ Pratinjau: `previews/foldlings/`, `previews/book/` (depan, tiga perempat, sampin
    naik akan membuat lipatan kurang rapi (brief: pilih lebih rapi). Kelinci (376) sudah di dalam rentang.
 5. **Status tersembunyi** (`eyes_happy`) memakai skala 0 plus `extras.hidden_by_default`, karena glTF tidak
    punya flag visibilitas yang umum. Game menampilkannya dengan skala 1.
-6. **`ink_outline`** ada di setiap bagian bergerak sebagai anak node. three.js mengganti nama duplikat menjadi
-   `ink_outline_1`, dan seterusnya, jadi cari dengan awalan `ink_outline`.
+6. **`ink_outline`** tidak disertakan lagi (lihat catatan di atas). Jika dibangun ulang dengan garis, node itu menjadi
+   anak setiap bagian; three.js mengganti nama duplikat menjadi `ink_outline_1` dan seterusnya.
 7. **Pratinjau meja** memakai permukaan meja kayu dan putih yang digambar dari kode, bukan foto, supaya tidak
    ada gambar pihak ketiga.
 8. **Burung kertas** berorigin di pusat badan (selalu terbang), bukan di meja.
@@ -275,20 +277,20 @@ Semua lolos validator (0 error, 0 warning). Total B2: 30 aset, 33 berkas GLB.
 
 | File | Segitiga | +garis | KB | Ukuran | Anchor | Bagian |
 |---|---|---|---|---|---|---|
-| game/orb_forge/crystal | 48 | 48 | 6.4 | 0.035×0.035×0.050 | label_anchor, hand_anchor | gem |
-| game/orb_forge/orb | 174 | 174 | 16.4 | 0.054×0.054×0.054 | label_anchor, hand_anchor | core |
-| game/orb_forge/crystal_tray | 200 | 200 | 15.3 | 0.464×0.074×0.015 | slot_0, slot_1, slot_2, slot_3, slot_4 | tray |
-| game/orb_forge/shield_badge | 52 | 52 | 6.6 | 0.050×0.010×0.060 | label_anchor | badge |
-| game/balloon/balloon_round | 104 | 104 | 12.7 | 0.064×0.064×0.120 | label_anchor | skin, knot, string |
-| game/balloon/balloon_long | 104 | 104 | 12.7 | 0.043×0.043×0.130 | label_anchor | skin, knot, string |
-| game/balloon/balloon_heart | 154 | 154 | 17.0 | 0.065×0.033×0.115 | label_anchor | skin, knot, string |
-| game/balloon/balloon_pop_pieces | 64 | 64 | 15.9 | 0.073×0.076×0.033 |  | piece_0, piece_1, piece_2, piece_3, piece_4, piece_5, piece_6, piece_7 |
-| game/factory/conveyor_straight | 148 | 148 | 14.2 | 0.120×0.064×0.031 |  | frame, belt |
-| game/factory/conveyor_start | 144 | 144 | 12.8 | 0.080×0.064×0.050 | spawn_anchor | frame |
+| game/orb_forge/crystal | 48 | 0 | 5.2 | 0.035×0.035×0.050 | label_anchor, hand_anchor | gem |
+| game/orb_forge/orb | 174 | 0 | 13.6 | 0.054×0.054×0.054 | label_anchor, hand_anchor | core |
+| game/orb_forge/crystal_tray | 200 | 0 | 12.2 | 0.464×0.074×0.015 | slot_0, slot_1, slot_2, slot_3, slot_4 | tray |
+| game/orb_forge/shield_badge | 52 | 0 | 5.3 | 0.050×0.010×0.060 | label_anchor | badge |
+| game/balloon/balloon_round | 104 | 0 | 10.0 | 0.064×0.064×0.120 | label_anchor | skin, knot, string |
+| game/balloon/balloon_long | 104 | 0 | 10.0 | 0.043×0.043×0.130 | label_anchor | skin, knot, string |
+| game/balloon/balloon_heart | 154 | 0 | 13.7 | 0.065×0.033×0.115 | label_anchor | skin, knot, string |
+| game/balloon/balloon_pop_pieces | 64 | 0 | 11.5 | 0.073×0.076×0.033 |  | piece_0, piece_1, piece_2, piece_3, piece_4, piece_5, piece_6, piece_7 |
+| game/factory/conveyor_straight | 148 | 0 | 11.2 | 0.120×0.064×0.031 |  | frame, belt |
+| game/factory/conveyor_start | 144 | 0 | 10.3 | 0.080×0.064×0.050 | spawn_anchor | frame |
 | game/factory/sort_gate (+2 varian) | 88 | 88 | 11.0 | 0.064×0.064×0.121 | label_anchor | arch, sign, chute |
-| game/factory/sort_bin | 60 | 60 | 5.7 | 0.084×0.063×0.040 | drop_anchor | bin |
-| game/factory/item_token | 68 | 68 | 7.4 | 0.040×0.040×0.021 | label_anchor, hand_anchor | token |
-| game/bridge/gap_cliffs | 56 | 56 | 9.1 | 0.400×0.100×0.060 | socket_plank_start, socket_plank_end | cliff_right, cliff_left |
+| game/factory/sort_bin | 60 | 0 | 4.3 | 0.084×0.063×0.040 | drop_anchor | bin |
+| game/factory/item_token | 68 | 0 | 6.0 | 0.040×0.040×0.021 | label_anchor, hand_anchor | token |
+| game/bridge/gap_cliffs | 56 | 0 | 7.4 | 0.400×0.100×0.060 | socket_plank_start, socket_plank_end | cliff_right, cliff_left |
 | game/bridge/plank_1 | 40 | 0 | 4.1 | 0.240×0.040×0.006 | label_anchor, hand_anchor | plank |
 | game/bridge/plank_1_2 | 40 | 0 | 4.1 | 0.120×0.040×0.006 | label_anchor, hand_anchor | plank |
 | game/bridge/plank_1_3 | 40 | 0 | 4.1 | 0.080×0.040×0.006 | label_anchor, hand_anchor | plank |
@@ -297,14 +299,14 @@ Semua lolos validator (0 error, 0 warning). Total B2: 30 aset, 33 berkas GLB.
 | game/bridge/plank_1_6 | 40 | 0 | 4.1 | 0.040×0.040×0.006 | label_anchor, hand_anchor | plank |
 | game/bridge/plank_1_8 | 40 | 0 | 4.1 | 0.030×0.040×0.006 | label_anchor, hand_anchor | plank |
 | game/bridge/plank_1_10 | 40 | 0 | 4.1 | 0.024×0.040×0.006 | label_anchor, hand_anchor | plank |
-| game/bridge/bridge_post | 56 | 56 | 6.4 | 0.015×0.015×0.050 |  | post |
-| game/balance/scale | 234 | 234 | 23.7 | 0.295×0.080×0.142 | socket_right_pan, label_anchor_right, socket_left_pan, label_anchor_left | base, pillar, beam, pan_right, pan_left |
-| game/balance/weight_block | 40 | 40 | 5.1 | 0.035×0.036×0.030 | label_anchor, hand_anchor | block |
-| game/balance/gate | 120 | 120 | 14.7 | 0.140×0.033×0.140 | exit_anchor | frame, door_right, door_left |
-| game/measure/tape_measure | 300 | 72 | 22.4 | 0.073×0.050×0.021 | hand_anchor | housing, tape, tape_end |
-| game/measure/ruler_30 | 500 | 12 | 31.8 | 0.310×0.030×0.004 |  | ruler |
+| game/bridge/bridge_post | 56 | 0 | 5.1 | 0.015×0.015×0.050 |  | post |
+| game/balance/scale | 234 | 0 | 18.4 | 0.295×0.080×0.142 | socket_right_pan, label_anchor_right, socket_left_pan, label_anchor_left | base, pillar, beam, pan_right, pan_left |
+| game/balance/weight_block | 40 | 0 | 4.0 | 0.035×0.036×0.030 | label_anchor, hand_anchor | block |
+| game/balance/gate | 120 | 0 | 11.7 | 0.140×0.033×0.140 | exit_anchor | frame, door_right, door_left |
+| game/measure/tape_measure | 300 | 0 | 20.3 | 0.073×0.050×0.021 | hand_anchor | housing, tape, tape_end |
+| game/measure/ruler_30 | 500 | 0 | 31.2 | 0.310×0.030×0.004 |  | ruler |
 | game/measure/marker_pin (+1 varian) | 90 | 96 | 9.7 | 0.018×0.018×0.051 | hand_anchor | pin |
-| game/measure/treasure_chest | 108 | 108 | 11.8 | 0.070×0.053×0.049 | reward_anchor | chest, lid |
+| game/measure/treasure_chest | 108 | 0 | 9.4 | 0.070×0.053×0.049 | reward_anchor | chest, lid |
 
 Pratinjau: `previews/game/<grup>/`, `previews/sheet_{orb_forge,balloon,factory,bridge,balance,measure}.png`,
 `previews/table_b2_{wood,white}.png` dan `previews/table_b2_factory_{wood,white}.png`.
@@ -331,24 +333,24 @@ Folder `models/hints/`. Semua lolos validator. Pratinjau: `previews/hints/`, `pr
 
 | File | Segitiga | +garis | KB | Ukuran | Anchor | Bagian |
 |---|---|---|---|---|---|---|
-| hints/base10_unit | 44 | 44 | 4.5 | 0.010×0.010×0.010 |  | cube |
-| hints/base10_rod | 120 | 120 | 8.3 | 0.100×0.010×0.010 |  | rod |
-| hints/base10_flat | 192 | 192 | 13.6 | 0.100×0.100×0.011 |  | flat |
-| hints/number_line | 112 | 112 | 12.4 | 0.300×0.020×0.005 | tick_0, label_anchor_0, tick_1, label_anchor_1, tick_2, label_anchor_2, tick_3, label_anchor_3, tick_4, label_anchor_4, tick_5, label_anchor_5, tick_6, label_anchor_6, tick_7, label_anchor_7, tick_8, label_anchor_8, tick_9, label_anchor_9, tick_10, label_anchor_10 | line |
-| hints/bar_strip | 20 | 20 | 3.4 | 0.240×0.030×0.005 |  | strip |
-| hints/area_grid | 188 | 188 | 16.2 | 0.152×0.152×0.003 | cell_origin | grid |
-| hints/pie_slice_2 | 195 | 196 | 14.4 | 0.060×0.120×0.007 |  | slice |
-| hints/pie_slice_3 | 132 | 132 | 10.8 | 0.060×0.104×0.007 |  | slice |
-| hints/pie_slice_4 | 100 | 100 | 9.0 | 0.060×0.085×0.007 |  | slice |
-| hints/pie_slice_5 | 84 | 84 | 8.1 | 0.059×0.071×0.007 |  | slice |
-| hints/pie_slice_6 | 68 | 68 | 7.1 | 0.060×0.060×0.007 |  | slice |
-| hints/pie_slice_8 | 52 | 52 | 6.3 | 0.059×0.046×0.007 |  | slice |
-| hints/pie_slice_10 | 52 | 52 | 6.3 | 0.060×0.037×0.007 |  | slice |
-| hints/pie_slice_12 | 36 | 36 | 5.3 | 0.060×0.031×0.007 |  | slice |
+| hints/base10_unit | 44 | 0 | 3.4 | 0.010×0.010×0.010 |  | cube |
+| hints/base10_rod | 336 | 0 | 18.7 | 0.100×0.010×0.010 |  | rod |
+| hints/base10_flat | 408 | 0 | 23.0 | 0.100×0.100×0.011 |  | flat |
+| hints/number_line | 112 | 0 | 10.2 | 0.300×0.020×0.005 | tick_0, label_anchor_0, tick_1, label_anchor_1, tick_2, label_anchor_2, tick_3, label_anchor_3, tick_4, label_anchor_4, tick_5, label_anchor_5, tick_6, label_anchor_6, tick_7, label_anchor_7, tick_8, label_anchor_8, tick_9, label_anchor_9, tick_10, label_anchor_10 | line |
+| hints/bar_strip | 20 | 0 | 2.5 | 0.240×0.030×0.005 |  | strip |
+| hints/area_grid | 188 | 0 | 12.9 | 0.152×0.152×0.003 | cell_origin | grid |
+| hints/pie_slice_2 | 195 | 0 | 11.2 | 0.060×0.120×0.007 |  | slice |
+| hints/pie_slice_3 | 132 | 0 | 8.5 | 0.060×0.104×0.007 |  | slice |
+| hints/pie_slice_4 | 100 | 0 | 7.1 | 0.060×0.085×0.007 |  | slice |
+| hints/pie_slice_5 | 84 | 0 | 6.4 | 0.059×0.071×0.007 |  | slice |
+| hints/pie_slice_6 | 68 | 0 | 5.6 | 0.060×0.060×0.007 |  | slice |
+| hints/pie_slice_8 | 52 | 0 | 5.0 | 0.059×0.046×0.007 |  | slice |
+| hints/pie_slice_10 | 52 | 0 | 5.0 | 0.060×0.037×0.007 |  | slice |
+| hints/pie_slice_12 | 36 | 0 | 4.2 | 0.060×0.031×0.007 |  | slice |
 
 Catatan:
-- Satuan basis 10 bersama: kubus 10 mm. Batang = 10 kubus terpisah (garis tinta menandai tiap kubus);
-  lempeng = 10 batang berjajar dengan lipatan satuan melintang (192 segitiga, bukan 100 kubus penuh yang akan 1200+).
+- Satuan basis 10 bersama: kubus 10 mm. Batang = 10 kubus dengan lipatan berbayang di antara kubus;
+  lempeng = 10 batang berjajar dengan lipatan satuan di dua arah, bukan 100 kubus penuh yang akan 1200+ segitiga.
 - `number_line`: tick setiap 0.028 m, lebih panjang di 0, 5, 10; tanpa angka.
 - `bar_strip`: origin di ujung kiri supaya skala x memotong dari kanan.
 - `area_grid`: node `cell_*` (opsional) diganti satu anchor `cell_origin` plus langkah 0.015 m, jauh lebih ringan.
@@ -360,9 +362,9 @@ Folder `models/game/portal/`. Pratinjau: `previews/game/portal/`, `previews/shee
 
 | File | Segitiga | +garis | KB | Ukuran | Anchor | Bagian |
 |---|---|---|---|---|---|---|
-| game/portal/portal_main | 364 | 364 | 29.4 | 0.140×0.020×0.142 | spawn_anchor | ring_outer, ring_inner |
-| game/portal/partner_window | 64 | 64 | 7.4 | 0.180×0.011×0.120 | view_anchor, label_anchor | frame |
-| game/portal/help_orb_trail | 60 | 60 | 7.0 | 0.088×0.002×0.015 |  | trail |
+| game/portal/portal_main | 364 | 0 | 23.6 | 0.140×0.020×0.142 | spawn_anchor | ring_outer, ring_inner |
+| game/portal/partner_window | 64 | 0 | 5.9 | 0.180×0.011×0.120 | view_anchor, label_anchor | frame |
+| game/portal/help_orb_trail | 60 | 0 | 5.6 | 0.088×0.002×0.015 |  | trail |
 
 Catatan: `spawn_anchor` portal utama ada di meja tepat di depan portal (makhluk berjalan keluar), pusat
 portal di (0, 0.072, 0) sebagai poros `ring_inner`.
@@ -375,19 +377,19 @@ Pratinjau: `previews/characters/`, `previews/sheet_characters.png`, `previews/cl
 
 | File | Segitiga | +garis | KB | Ukuran | Anchor | Bagian |
 |---|---|---|---|---|---|---|
-| characters/pip_owl | 606 | 566 | 61.6 | 0.069×0.050×0.108 | label_anchor | body, head, eyes, eyes_happy, wing_l, wing_r |
-| characters/great_crumple | 1157 | 1085 | 113.6 | 0.193×0.224×0.174 | label_anchor_0, label_anchor_1, label_anchor_2 | stage_1, stage_2, stage_3, core, eyes |
-| characters/robot_partner_a | 306 | 282 | 38.1 | 0.046×0.025×0.079 | label_anchor | body, head, antenna, arm_l, arm_r |
-| characters/robot_partner_b | 390 | 378 | 43.1 | 0.048×0.032×0.083 | label_anchor | body, head, antenna, arm_l, arm_r |
-| characters/robot_partner_c | 354 | 330 | 39.7 | 0.048×0.025×0.086 | label_anchor | body, head, antenna, arm_l, arm_r |
+| characters/pip_owl | 606 | 0 | 52.4 | 0.069×0.050×0.108 | label_anchor | body, head, eyes, eyes_happy, wing_l, wing_r |
+| characters/great_crumple | 1157 | 0 | 97.6 | 0.193×0.224×0.174 | label_anchor_0, label_anchor_1, label_anchor_2 | stage_1, stage_2, stage_3, core, eyes |
+| characters/robot_partner_a | 306 | 0 | 32.4 | 0.046×0.025×0.079 | label_anchor | body, head, antenna, arm_l, arm_r |
+| characters/robot_partner_b | 390 | 0 | 36.3 | 0.048×0.032×0.083 | label_anchor | body, head, antenna, arm_l, arm_r |
+| characters/robot_partner_c | 354 | 0 | 33.2 | 0.048×0.025×0.086 | label_anchor | body, head, antenna, arm_l, arm_r |
 
 Catatan:
 - **Pip**: burung hantu kertas warna pasir, kacamata bundar dari delapan lipatan navy (bentuk umum, bukan merek),
   bulu dada chevron krem. `label_anchor` = tempat gelembung bicara, di atas kiri Pip.
 - **The Great Crumple**: tiga lapis gumpalan kusut (`stage_1` luar, lavender; `stage_2` violet; `stage_3` lavender)
   dengan mata kertas besar dan alis agak cemas supaya lucu, bukan seram. `core` (bangau emas yang rapi) diam di
-  skala 0.001; klip `unfold` mengelupas tiga lapis satu per satu lalu menumbuhkan bangau. Berkas 114 KB (di atas
-  target 60 KB, di bawah 150 KB) karena 1157 segitiga plus garis tinta untuk tiga lapis; tanpa garis tinta kira-kira separuhnya.
+  skala 0.001; klip `unfold` mengelupas tiga lapis satu per satu lalu menumbuhkan bangau. Berkas 98 KB (di atas
+  target 60 KB, di bawah 150 KB) karena 1157 segitiga untuk tiga lapis.
 - **Robot partner**: tiga desain fiktif yang jelas robot (kotak dengan kaki balok, bulat beroda dengan visor,
   tinggi berpegas dengan capit), masing-masing punya antena dan lampu kepala. Segitiganya 306 sampai 390, sedikit
   di bawah 400, karena bentuk kotak memang hemat segi.
@@ -401,22 +403,22 @@ dibuat 0.02 petak (= 0.6 mm di halaman buku). Pratinjau: `previews/buildings/ski
 
 | File | Segitiga | +garis | KB | Ukuran (petak) | Anchor | Bagian |
 |---|---|---|---|---|---|---|
-| buildings/skill_fraction_bridge_t1 | 264 | 264 | 22.3 | 2.000×1.000×0.215 |  | base, grow_deck, grow_rails |
-| buildings/skill_fraction_bridge_t2 | 504 | 504 | 37.9 | 2.000×1.000×0.435 |  | base, grow_arch, grow_deck, grow_rails |
-| buildings/skill_fraction_bridge_t3 | 768 | 768 | 57.2 | 2.000×1.000×0.840 |  | base, grow_towers, grow_deck, grow_cables |
-| buildings/skill_multiply_tower_t1 | 258 | 258 | 23.9 | 1.000×1.000×0.580 |  | base, floor_1, floor_2, roof |
-| buildings/skill_multiply_tower_t2 | 498 | 498 | 42.9 | 1.000×1.000×0.960 |  | base, floor_1, floor_2, floor_3, floor_4, roof |
-| buildings/skill_multiply_tower_t3 | 756 | 756 | 63.6 | 1.000×1.000×1.620 |  | base, floor_1, floor_2, floor_3, floor_4, floor_5, floor_6, roof |
-| buildings/skill_placevalue_hall_t1 | 136 | 136 | 12.5 | 2.000×1.000×0.530 |  | base, wing_center |
-| buildings/skill_placevalue_hall_t2 | 344 | 344 | 28.6 | 2.000×1.000×0.620 |  | base, wing_center, wing_left, wing_right |
-| buildings/skill_placevalue_hall_t3 | 420 | 420 | 35.0 | 2.000×1.000×1.040 |  | base, wing_center, wing_left, wing_right, wing_dome |
-| buildings/skill_decimal_market_t1 | 256 | 256 | 23.7 | 2.000×1.000×0.400 |  | base, plaza, stall_1, stall_2 |
-| buildings/skill_decimal_market_t2 | 488 | 488 | 42.7 | 2.000×1.000×0.400 |  | base, plaza, stall_1, stall_2, stall_3, stall_4 |
-| buildings/skill_decimal_market_t3 | 812 | 812 | 69.1 | 2.000×1.000×0.690 |  | base, plaza, stall_1, stall_2, stall_3, stall_4, stall_5, stall_6, stall_canopy |
-| buildings/skill_measure_clocktower_t1 | 286 | 126 | 22.4 | 1.000×1.000×0.870 |  | base, tower, clock_face, hand_hour, hand_minute |
-| buildings/skill_measure_clocktower_t2 | 310 | 150 | 24.0 | 1.000×1.000×1.300 |  | base, tower, clock_face, hand_hour, hand_minute |
-| buildings/skill_measure_clocktower_t3 | 322 | 162 | 24.8 | 1.000×1.000×1.600 |  | base, tower, clock_face, hand_hour, hand_minute |
-| areas/town_page_grid | 132 | 132 | 12.1 | 10.000×7.000×0.046 | cell_origin | page |
+| buildings/skill_fraction_bridge_t1 | 264 | 0 | 17.3 | 2.000×1.000×0.215 |  | base, grow_deck, grow_rails |
+| buildings/skill_fraction_bridge_t2 | 504 | 0 | 29.3 | 2.000×1.000×0.435 |  | base, grow_arch, grow_deck, grow_rails |
+| buildings/skill_fraction_bridge_t3 | 768 | 0 | 44.9 | 2.000×1.000×0.840 |  | base, grow_towers, grow_deck, grow_cables |
+| buildings/skill_multiply_tower_t1 | 258 | 0 | 18.6 | 1.000×1.000×0.580 |  | base, floor_1, floor_2, roof |
+| buildings/skill_multiply_tower_t2 | 498 | 0 | 33.6 | 1.000×1.000×0.960 |  | base, floor_1, floor_2, floor_3, floor_4, roof |
+| buildings/skill_multiply_tower_t3 | 756 | 0 | 49.9 | 1.000×1.000×1.620 |  | base, floor_1, floor_2, floor_3, floor_4, floor_5, floor_6, roof |
+| buildings/skill_placevalue_hall_t1 | 136 | 0 | 9.7 | 2.000×1.000×0.530 |  | base, wing_center |
+| buildings/skill_placevalue_hall_t2 | 344 | 0 | 22.3 | 2.000×1.000×0.620 |  | base, wing_center, wing_left, wing_right |
+| buildings/skill_placevalue_hall_t3 | 420 | 0 | 27.4 | 2.000×1.000×1.040 |  | base, wing_center, wing_left, wing_right, wing_dome |
+| buildings/skill_decimal_market_t1 | 256 | 0 | 18.4 | 2.000×1.000×0.400 |  | base, plaza, stall_1, stall_2 |
+| buildings/skill_decimal_market_t2 | 488 | 0 | 33.4 | 2.000×1.000×0.400 |  | base, plaza, stall_1, stall_2, stall_3, stall_4 |
+| buildings/skill_decimal_market_t3 | 812 | 0 | 54.1 | 2.000×1.000×0.690 |  | base, plaza, stall_1, stall_2, stall_3, stall_4, stall_5, stall_6, stall_canopy |
+| buildings/skill_measure_clocktower_t1 | 286 | 0 | 19.6 | 1.000×1.000×0.870 |  | base, tower, clock_face, hand_hour, hand_minute |
+| buildings/skill_measure_clocktower_t2 | 310 | 0 | 20.9 | 1.000×1.000×1.300 |  | base, tower, clock_face, hand_hour, hand_minute |
+| buildings/skill_measure_clocktower_t3 | 322 | 0 | 21.5 | 1.000×1.000×1.600 |  | base, tower, clock_face, hand_hour, hand_minute |
+| areas/town_page_grid | 132 | 0 | 9.6 | 10.000×7.000×0.046 | cell_origin | page |
 
 Catatan:
 - Setiap tingkat utuh dan layak tampil sendiri; tingkat berikutnya lebih besar: jembatan kayu pendek, lalu lengkung,
@@ -433,18 +435,18 @@ Folder `models/rewards/` dan `models/ui/`. Pratinjau: `previews/sheet_rewards.pn
 
 | File | Segitiga | +garis | KB | Ukuran | Anchor | Bagian |
 |---|---|---|---|---|---|---|
-| rewards/star | 30 | 30 | 4.8 | 0.048×0.016×0.045 |  | star |
-| rewards/star_empty | 120 | 120 | 10.1 | 0.050×0.003×0.047 |  | star |
-| rewards/badge_best_save | 272 | 272 | 20.9 | 0.060×0.011×0.076 |  | badge, ribbon |
-| rewards/badge_most_improved | 228 | 228 | 18.2 | 0.060×0.011×0.076 |  | badge, ribbon |
-| rewards/badge_sharpest_aim | 500 | 500 | 34.0 | 0.060×0.011×0.076 |  | badge, ribbon |
-| rewards/badge_steady_streak | 352 | 352 | 26.4 | 0.060×0.011×0.076 |  | badge, ribbon |
-| rewards/badge_brave_try | 232 | 232 | 18.6 | 0.060×0.012×0.076 |  | badge, ribbon |
-| rewards/streak_shield | 104 | 104 | 10.0 | 0.044×0.009×0.050 |  | shield |
-| rewards/trophy_paper | 218 | 218 | 17.5 | 0.062×0.044×0.076 |  | trophy |
-| ui/paper_button | 36 | 36 | 5.8 | 0.100×0.012×0.065 | label_anchor | card, press |
-| ui/paper_panel | 56 | 56 | 7.0 | 0.300×0.013×0.200 | label_anchor | panel |
-| ui/palm_menu_disc | 92 | 92 | 9.3 | 0.080×0.006×0.080 | slot_0, slot_1, slot_2, slot_3 | disc |
+| rewards/star | 30 | 0 | 3.7 | 0.048×0.016×0.045 |  | star |
+| rewards/star_empty | 120 | 0 | 7.8 | 0.050×0.003×0.047 |  | star |
+| rewards/badge_best_save | 272 | 0 | 16.1 | 0.060×0.011×0.076 |  | badge, ribbon |
+| rewards/badge_most_improved | 228 | 0 | 14.0 | 0.060×0.011×0.076 |  | badge, ribbon |
+| rewards/badge_sharpest_aim | 500 | 0 | 26.1 | 0.060×0.011×0.076 |  | badge, ribbon |
+| rewards/badge_steady_streak | 352 | 0 | 20.5 | 0.060×0.011×0.076 |  | badge, ribbon |
+| rewards/badge_brave_try | 232 | 0 | 14.3 | 0.060×0.012×0.076 |  | badge, ribbon |
+| rewards/streak_shield | 104 | 0 | 8.0 | 0.044×0.009×0.050 |  | shield |
+| rewards/trophy_paper | 218 | 0 | 14.0 | 0.062×0.044×0.076 |  | trophy |
+| ui/paper_button | 36 | 0 | 4.3 | 0.100×0.012×0.065 | label_anchor | card, press |
+| ui/paper_panel | 56 | 0 | 5.6 | 0.300×0.013×0.200 | label_anchor | panel |
+| ui/palm_menu_disc | 92 | 0 | 7.4 | 0.080×0.006×0.080 | slot_0, slot_1, slot_2, slot_3 | disc |
 
 Catatan: lencana hanya berisi simbol bentuk (tangan menangkap bola, panah naik, target, rantai, gunung) tanpa tulisan.
 Tinggi lencana 0.076 m karena pitanya menggantung di bawah cakram 0.06 m. `paper_button`: `press` bergerak ke -z
@@ -456,8 +458,8 @@ Folder `models/fx/`. Pratinjau: `previews/sheet_fx.png`.
 
 | File | Segitiga | +garis | KB | Ukuran | Anchor | Bagian |
 |---|---|---|---|---|---|---|
-| fx/confetti_pieces | 234 | 234 | 28.8 | 0.070×0.003×0.053 |  | piece_0, piece_1, piece_2, piece_3, piece_4, piece_5, piece_6, piece_7, piece_8, piece_9, piece_10, piece_11 |
-| fx/paper_scraps | 148 | 148 | 24.6 | 0.063×0.004×0.037 |  | scrap_0, scrap_1, scrap_2, scrap_3, scrap_4, scrap_5 |
+| fx/confetti_pieces | 234 | 0 | 20.5 | 0.070×0.003×0.053 |  | piece_0, piece_1, piece_2, piece_3, piece_4, piece_5, piece_6, piece_7, piece_8, piece_9, piece_10, piece_11 |
+| fx/paper_scraps | 148 | 0 | 19.9 | 0.063×0.004×0.037 |  | scrap_0, scrap_1, scrap_2, scrap_3, scrap_4, scrap_5 |
 | fx/fold_crease | 102 | 0 | 9.1 | 0.108×0.006×0.007 |  | crease |
 | fx/sparkle | 24 | 0 | 3.3 | 0.030×0.005×0.030 |  | sparkle |
 
@@ -480,7 +482,8 @@ pihak ketiga, hanya warna palet). Rincian ukuran ada di [`FOLDLINGS.md`](FOLDLIN
 | Ikon misi | `icons/mission_<misi>` (PNG 128), simbol saja | 5 |
 
 Keputusan: logo memakai huruf kapital FOLDLINGS dari pita kertas terlipat (tiap huruf satu warna misi) dan
-bangau kecil; versi "dark" untuk latar gelap memakai garis tepi kertas, bukan latar gelap, supaya tetap transparan.
+bangau kecil; versi "dark" untuk latar gelap memakai tepi kertas tipis, bukan latar gelap, supaya tetap transparan. Aset 2D tidak
+memakai garis tepi hitam; potongan kertas diberi bayangan tipis supaya terlihat seperti kertas yang ditempel.
 Ikon maskable memenuhi kanvas dengan gambar di dalam zona aman 80%. Warna ikon game: Orb Forge sunflower,
 Balloon Burst coral, Factory Sort cobalt, Bridge Builder teal, Balance Gate violet, Measure Hunt orange.
 Gambar promosi dirender dari model (adegan meja B1) dengan logo di spanduk kertas.

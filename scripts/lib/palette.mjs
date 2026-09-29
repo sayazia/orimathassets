@@ -59,12 +59,12 @@ export const ROLES = {
 
 export const MISSIONS = ['place_value', 'multiply_divide', 'fractions', 'decimals', 'measurement'];
 
-// `<key>_shade`: the side of a fold that faces away from the light. About 13% darker,
+// `<key>_shade`: the side of a fold that faces away from the light. About 22% darker,
 // with blue pulled down a little more than red so shadows stay warm like lit paper.
 export function shade(hex) {
   const n = parseInt(hex.slice(1), 16);
   const rgb = [(n >> 16) & 255, (n >> 8) & 255, n & 255];
-  const warm = [0.88, 0.86, 0.82];
+  const warm = [0.8, 0.77, 0.72];
   return '#' + rgb.map((v, i) => Math.round(v * warm[i]).toString(16).padStart(2, '0')).join('').toUpperCase();
 }
 
