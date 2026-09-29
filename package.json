@@ -9,7 +9,8 @@
     "validate": "node scripts/validate.mjs",
     "previews": "node scripts/render-previews.mjs",
     "previews:game": "node scripts/render-game-previews.mjs",
-    "all": "npm run build && npm run validate && npm run previews && npm run previews:game"
+    "build:2d": "node scripts/build-2d.mjs",
+    "all": "npm run build && npm run validate && npm run previews && npm run previews:game && npm run build:2d"
   },
   "devDependencies": {
     "gltf-validator": "^2.0.0-dev.3.10",

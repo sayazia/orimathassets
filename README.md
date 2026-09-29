@@ -48,11 +48,19 @@ paper style but are measured in **metres** and carry named nodes, anchors and an
 | --- | --- |
 | `models/foldlings/` | 8 Foldlings (fox, rabbit, crane, turtle, frog, fish, cat, elephant) in 5 mission colours + a rare gold variant, the paper bird and the number flag |
 | `models/book/` | Open pop-up book, closed book, pop-up backdrop frame |
+| `models/game/` | Props for the six mini games (Orb Forge, Balloon Burst, Factory Sort, Bridge Builder, Balance Gate, Measure Hunt) and the portals |
+| `models/hints/` | Visual hint models: base-ten blocks, number line, bar strip, area grid, pie slices |
+| `models/characters/` | Pip the owl, The Great Crumple (3 stages) and three robot partners |
+| `models/buildings/skill_*`, `models/areas/town_page_grid` | Fold Town skill buildings in three tiers and the town page base (tile units) |
+| `models/rewards/`, `models/ui/`, `models/fx/` | Stars, badges, shield, trophy; paper button, panel and palm menu; confetti, scraps, crease, sparkle |
 | `models/scale.json` | City scale on the book page (`city_tile_on_book_m`) |
+| `2d/` | SVG + PNG: avatars (8 species × 5 missions), picture-password symbols, logo, app icon, favicon, game and mission icons, Devpost and social images |
 
 Technical guide: [`docs/FOLDLINGS.md`](docs/FOLDLINGS.md). Batch status: [`docs/CATALOG.md`](docs/CATALOG.md).
 Sheets: [foldlings](previews/sheet_foldlings.png), [variants](previews/sheet_foldlings_variants.png),
 [book](previews/sheet_book.png), [colour-vision check](previews/cvd_foldlings.png).
+
+![Foldlings logo](2d/brand/logo_foldlings.png)
 
 ## Conventions (city set)
 
@@ -84,6 +92,7 @@ npm run previews              # re-render every preview (headless Chromium + thr
 npm run previews -- houses    # only one sheet (or `town`)
 npm run validate              # Khronos glTF validator over every model
 npm run previews:game         # Foldlings previews (or `-- foldlings`, `-- foldling_fox`, `-- table`)
+npm run build:2d              # Foldlings 2D assets in 2d/ (or `-- avatars`, `-- brand`, ...)
 ```
 
 - Colours live in `scripts/lib/palette.mjs`; changing one recolours every model that uses it.

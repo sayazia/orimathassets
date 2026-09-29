@@ -214,7 +214,7 @@ Status: ✅ selesai · 🟡 sebagian · ⬜ direncanakan.
 | B6 | Fold Town: bangunan skill 3 tingkat dan alas halaman kota | ✅ |
 | B7 | Hadiah dan UI 3D | ✅ |
 | B8 | Efek | ✅ |
-| 2D | Avatar, kata sandi gambar, logo, ikon, thumbnail | ⬜ |
+| 2D | Avatar, kata sandi gambar, logo, ikon, thumbnail | ✅ |
 
 ## B1. Foldlings, burung kertas, dan buku ✅
 
@@ -463,3 +463,24 @@ Folder `models/fx/`. Pratinjau: `previews/sheet_fx.png`.
 
 Catatan: konfeti memakai lima warna misi tanpa sisi bayangan (6 material termasuk tinta). `fold_crease` dan `sparkle`
 tanpa garis tinta supaya terlihat berkilau, bukan seperti stiker.
+
+## 2D. Avatar, kata sandi gambar, merek, dan ikon ✅
+
+Folder `2d/`, dibuat dengan `npm run build:2d`. Semua SVG disusun dari poligon oleh skrip (tanpa font, tanpa gambar
+pihak ketiga, hanya warna palet). Rincian ukuran ada di [`FOLDLINGS.md`](FOLDLINGS.md#2d-assets).
+
+| Kelompok | Berkas | Jumlah |
+|---|---|---|
+| Avatar | `avatars/avatar_<spesies>_<misi>` SVG + PNG 256 dan 512 | 40 |
+| Kata sandi gambar | `picture_password/pp_` star, moon, sun, leaf, fish, boat, key, heart, cloud (SVG + PNG 256) | 9 |
+| Logo | `brand/logo_foldlings` (terang) dan `logo_foldlings_dark` (gelap), PNG lebar 1200 | 2 |
+| Ikon aplikasi | `brand/app_icon`, `app_icon_maskable` (PNG 192, 512, 1024), `favicon` (PNG 32, 48) | 3 |
+| Gambar promosi | `brand/devpost_thumbnail` 1920×1080 dan 1200×630, `social_preview` 1280×640 | 3 |
+| Ikon game | `icons/game_` orb_forge, balloon_burst, factory_sort, bridge_builder, balance_gate, measure_hunt (PNG 128, 256) | 6 |
+| Ikon misi | `icons/mission_<misi>` (PNG 128), simbol saja | 5 |
+
+Keputusan: logo memakai huruf kapital FOLDLINGS dari pita kertas terlipat (tiap huruf satu warna misi) dan
+bangau kecil; versi "dark" untuk latar gelap memakai garis tepi kertas, bukan latar gelap, supaya tetap transparan.
+Ikon maskable memenuhi kanvas dengan gambar di dalam zona aman 80%. Warna ikon game: Orb Forge sunflower,
+Balloon Burst coral, Factory Sort cobalt, Bridge Builder teal, Balance Gate violet, Measure Hunt orange.
+Gambar promosi dirender dari model (adegan meja B1) dengan logo di spanduk kertas.

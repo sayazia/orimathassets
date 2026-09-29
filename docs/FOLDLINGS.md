@@ -99,3 +99,24 @@ right and wrong answers.
 - `previews/cvd_<group>.png`: mission colours under deuteranopia, protanopia and tritanopia
 - `previews/table_<batch>_wood.png` and `_white.png`: world scale on a procedurally drawn wooden and white
   table, perspective camera 45 cm above and 45 cm in front (a seated child's eye)
+
+## 2D assets
+
+`npm run build:2d` (or `-- <folder>`) writes `2d/`. Every SVG is written by `scripts/build-2d.mjs` from polygons
+(`scripts/2d/`): no fonts, no embedded images, palette colours only. PNGs are rasterised from the same SVG in
+headless Chromium; the Devpost and social images are table renders of scene `b1` with the logo banner on top,
+so run `npm run build` first.
+
+| Path | Sizes |
+| --- | --- |
+| `avatars/avatar_<species>_<mission>.svg` | `_256.png`, `_512.png` |
+| `picture_password/pp_<star, moon, sun, leaf, fish, boat, key, heart, cloud>.svg` | `.png` 256 |
+| `brand/logo_foldlings.svg` (ink contour, for light backgrounds), `logo_foldlings_dark.svg` (paper contour) | `.png` 1200 wide, transparent |
+| `brand/app_icon.svg`, `app_icon_maskable.svg` (full bleed, art inside the 80% safe zone) | `_192`, `_512`, `_1024.png` |
+| `brand/favicon.svg` | `_32`, `_48.png` |
+| `brand/devpost_thumbnail.png`, `devpost_thumbnail_1200x630.png`, `social_preview.png` | 1920×1080, 1200×630, 1280×640 |
+| `icons/game_<type>.svg` (badge style) | `_128`, `_256.png` |
+| `icons/mission_<id>.svg` (symbol only) | `.png` 128 |
+
+The logo letters are folded paper ribbons: each letter is a centre line offset to a strip with mitred
+corners, alternate strips in the lit and `_shade` tone, and the letters cycle through the five mission colours.
