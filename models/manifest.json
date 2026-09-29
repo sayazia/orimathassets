@@ -7588,5 +7588,266 @@
       "lemon_shade"
     ],
     "notes": "Origin at the head of the trail; it streams back along -x behind a flying help orb."
+  },
+  {
+    "name": "pip_owl",
+    "category": "characters",
+    "sheet": "characters",
+    "file": "characters/pip_owl.glb",
+    "unit": "m",
+    "triangles": 606,
+    "outline_triangles": 566,
+    "bounds": {
+      "min": [
+        -0.0344,
+        0,
+        -0.0229
+      ],
+      "max": [
+        0.0344,
+        0.108,
+        0.027
+      ]
+    },
+    "anchors": {
+      "label_anchor": [
+        0.03,
+        0.12,
+        0
+      ]
+    },
+    "parts": [
+      "body",
+      "head",
+      "eyes",
+      "eyes_happy",
+      "wing_l",
+      "wing_r"
+    ],
+    "materials": [
+      "cream",
+      "ink",
+      "navy",
+      "orange",
+      "sand",
+      "sand_shade"
+    ],
+    "clips": [
+      "idle",
+      "wave",
+      "cheer",
+      "point",
+      "think"
+    ],
+    "notes": "Faces the player. label_anchor marks the speech bubble, up and to Pip's left. eyes_happy hidden by default."
+  },
+  {
+    "name": "great_crumple",
+    "category": "characters",
+    "sheet": "characters",
+    "file": "characters/great_crumple.glb",
+    "unit": "m",
+    "triangles": 1157,
+    "outline_triangles": 1085,
+    "bounds": {
+      "min": [
+        -0.0883,
+        0.0282,
+        -0.1031
+      ],
+      "max": [
+        0.1048,
+        0.2021,
+        0.121
+      ]
+    },
+    "anchors": {
+      "label_anchor_0": [
+        -0.07,
+        0.2,
+        0.04
+      ],
+      "label_anchor_1": [
+        0,
+        0.192,
+        0.06
+      ],
+      "label_anchor_2": [
+        0.07,
+        0.184,
+        0.04
+      ]
+    },
+    "parts": [
+      "stage_1",
+      "stage_2",
+      "stage_3",
+      "core",
+      "eyes"
+    ],
+    "materials": [
+      "cream",
+      "gold",
+      "ink",
+      "lavender",
+      "lavender_shade",
+      "violet"
+    ],
+    "clips": [
+      "idle",
+      "hit",
+      "unfold"
+    ],
+    "notes": "stage_1 is the outer shell (opens first), stage_3 the inner one. core (the tidy crane) rests at scale 0.001; unfold grows it. label_anchor_0..2 for the three numbers."
+  },
+  {
+    "name": "robot_partner_a",
+    "category": "characters",
+    "sheet": "characters",
+    "file": "characters/robot_partner_a.glb",
+    "unit": "m",
+    "triangles": 306,
+    "outline_triangles": 282,
+    "bounds": {
+      "min": [
+        -0.0235,
+        0,
+        -0.011
+      ],
+      "max": [
+        0.0227,
+        0.0785,
+        0.014
+      ]
+    },
+    "anchors": {
+      "label_anchor": [
+        0,
+        0.1,
+        0
+      ]
+    },
+    "parts": [
+      "body",
+      "head",
+      "antenna",
+      "arm_l",
+      "arm_r"
+    ],
+    "materials": [
+      "cobalt",
+      "cobalt_shade",
+      "ink",
+      "lemon",
+      "stone",
+      "stone_shade"
+    ],
+    "clips": [
+      "idle",
+      "wave",
+      "cheer",
+      "help"
+    ],
+    "notes": "Boxy robot, cobalt."
+  },
+  {
+    "name": "robot_partner_b",
+    "category": "characters",
+    "sheet": "characters",
+    "file": "characters/robot_partner_b.glb",
+    "unit": "m",
+    "triangles": 390,
+    "outline_triangles": 378,
+    "bounds": {
+      "min": [
+        -0.0245,
+        0,
+        -0.0148
+      ],
+      "max": [
+        0.0237,
+        0.083,
+        0.017
+      ]
+    },
+    "anchors": {
+      "label_anchor": [
+        0,
+        0.1,
+        0
+      ]
+    },
+    "parts": [
+      "body",
+      "head",
+      "antenna",
+      "arm_l",
+      "arm_r"
+    ],
+    "materials": [
+      "ink",
+      "lemon",
+      "stone",
+      "stone_shade",
+      "teal",
+      "teal_shade"
+    ],
+    "clips": [
+      "idle",
+      "wave",
+      "cheer",
+      "help"
+    ],
+    "notes": "Round robot on a wheel, teal."
+  },
+  {
+    "name": "robot_partner_c",
+    "category": "characters",
+    "sheet": "characters",
+    "file": "characters/robot_partner_c.glb",
+    "unit": "m",
+    "triangles": 354,
+    "outline_triangles": 330,
+    "bounds": {
+      "min": [
+        -0.024,
+        0,
+        -0.012
+      ],
+      "max": [
+        0.024,
+        0.0865,
+        0.013
+      ]
+    },
+    "anchors": {
+      "label_anchor": [
+        0,
+        0.1,
+        0
+      ]
+    },
+    "parts": [
+      "body",
+      "head",
+      "antenna",
+      "arm_l",
+      "arm_r"
+    ],
+    "materials": [
+      "ink",
+      "lemon",
+      "orange",
+      "orange_shade",
+      "stone",
+      "stone_shade"
+    ],
+    "clips": [
+      "idle",
+      "wave",
+      "cheer",
+      "help"
+    ],
+    "notes": "Tall robot on springs, orange."
   }
 ]

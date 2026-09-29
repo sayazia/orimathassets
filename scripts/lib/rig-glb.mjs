@@ -159,7 +159,8 @@ export function toRigGLB(rig) {
     json.nodes.forEach((n, i) => { if (n.name !== 'ink_outline' && !byName.has(n.name)) byName.set(n.name, i); });
     for (const { name, tracks } of rig.clips) {
       const anim = { name, samplers: [], channels: [] };
-      for (const { node, path, keys } of tracks) {
+      for (const { node, path, keys: raw } of tracks) {
+        const keys = raw.filter(([t], i) => i === raw.length - 1 || raw[i + 1][0] > t); // strictly increasing times
         const ni = byName.get(node);
         if (ni === undefined) throw new Error(`${rig.name}/${name}: no node ${node}`);
         const rest = rig.find(node);

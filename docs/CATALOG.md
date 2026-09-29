@@ -210,7 +210,7 @@ Status: ✅ selesai · 🟡 sebagian · ⬜ direncanakan.
 | B2 | Perlengkapan 6 jenis game (Orb Forge, Balloon Burst, Factory Sort, Bridge Builder, Balance Gate, Measure Hunt) | ✅ |
 | B3 | Model bantuan visual (basis 10, garis bilangan, strip, petak luas, irisan pie) | ✅ |
 | B4 | Portal | ✅ |
-| B5 | Karakter (Pip, The Great Crumple, 3 robot partner) | ⬜ |
+| B5 | Karakter (Pip, The Great Crumple, 3 robot partner) | ✅ |
 | B6 | Fold Town: bangunan skill 3 tingkat dan alas halaman kota | ⬜ |
 | B7 | Hadiah dan UI 3D | ⬜ |
 | B8 | Efek | ⬜ |
@@ -366,3 +366,28 @@ Folder `models/game/portal/`. Pratinjau: `previews/game/portal/`, `previews/shee
 
 Catatan: `spawn_anchor` portal utama ada di meja tepat di depan portal (makhluk berjalan keluar), pusat
 portal di (0, 0.072, 0) sebagai poros `ring_inner`.
+
+## B5. Karakter ✅
+
+Folder `models/characters/`. Semua menghadap pemain (+Z); tangan kiri karakter di +X. Klip: Pip `idle, wave,
+cheer, point, think`; robot `idle, wave, cheer, help`; The Great Crumple `idle, hit, unfold`.
+Pratinjau: `previews/characters/`, `previews/sheet_characters.png`, `previews/clips/`.
+
+| File | Segitiga | +garis | KB | Ukuran | Anchor | Bagian |
+|---|---|---|---|---|---|---|
+| characters/pip_owl | 606 | 566 | 61.6 | 0.069×0.050×0.108 | label_anchor | body, head, eyes, eyes_happy, wing_l, wing_r |
+| characters/great_crumple | 1157 | 1085 | 113.6 | 0.193×0.224×0.174 | label_anchor_0, label_anchor_1, label_anchor_2 | stage_1, stage_2, stage_3, core, eyes |
+| characters/robot_partner_a | 306 | 282 | 38.1 | 0.046×0.025×0.079 | label_anchor | body, head, antenna, arm_l, arm_r |
+| characters/robot_partner_b | 390 | 378 | 43.1 | 0.048×0.032×0.083 | label_anchor | body, head, antenna, arm_l, arm_r |
+| characters/robot_partner_c | 354 | 330 | 39.7 | 0.048×0.025×0.086 | label_anchor | body, head, antenna, arm_l, arm_r |
+
+Catatan:
+- **Pip**: burung hantu kertas warna pasir, kacamata bundar dari delapan lipatan navy (bentuk umum, bukan merek),
+  bulu dada chevron krem. `label_anchor` = tempat gelembung bicara, di atas kiri Pip.
+- **The Great Crumple**: tiga lapis gumpalan kusut (`stage_1` luar, lavender; `stage_2` violet; `stage_3` lavender)
+  dengan mata kertas besar dan alis agak cemas supaya lucu, bukan seram. `core` (bangau emas yang rapi) diam di
+  skala 0.001; klip `unfold` mengelupas tiga lapis satu per satu lalu menumbuhkan bangau. Berkas 114 KB (di atas
+  target 60 KB, di bawah 150 KB) karena 1157 segitiga plus garis tinta untuk tiga lapis; tanpa garis tinta kira-kira separuhnya.
+- **Robot partner**: tiga desain fiktif yang jelas robot (kotak dengan kaki balok, bulat beroda dengan visor,
+  tinggi berpegas dengan capit), masing-masing punya antena dan lampu kepala. Segitiganya 306 sampai 390, sedikit
+  di bawah 400, karena bentuk kotak memang hemat segi.

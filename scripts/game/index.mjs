@@ -2,6 +2,7 @@
 import foldlings from './foldlings.mjs';
 import book from './book.mjs';
 import { hints, portals } from './hints.mjs';
+import characters from './characters.mjs';
 import { orbForge, balloons, factory, bridge, balance, measure } from './props.mjs';
 
 // One city tile measures 3 cm when Fold Town stands on the pop-up book's page.
@@ -18,6 +19,7 @@ export const GAME_SHEETS = [
   { sheet: 'measure', title: 'Measure Hunt', items: measure },
   { sheet: 'hints', title: 'Hints', items: hints },
   { sheet: 'portal', title: 'Portals', items: portals },
+  { sheet: 'characters', title: 'Characters', items: characters },
 ];
 
 // Table-scale preview scenes (metres, world space on the table top).
