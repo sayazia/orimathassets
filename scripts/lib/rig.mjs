@@ -17,6 +17,7 @@ export class Node {
     this.r = opts.r ?? null; // rest rotation in degrees (anchors only)
     this.anchor = !!opts.anchor;
     this.outline = opts.outline ?? true;
+    this.s = null; // rest scale (leaf nodes only), number or [x, y, z]
   }
 
   get world() {
@@ -87,9 +88,9 @@ export class Rig {
         materials.add(key);
         if (hiddenUnder(n)) continue;
         triangles += pos.length / 9;
-        const o = n.world;
+        const o = n.world, sc = n.s == null ? [1, 1, 1] : Array.isArray(n.s) ? n.s : [n.s, 1, 1];
         for (let i = 0; i < pos.length; i++) {
-          const v = (pos[i] + o[i % 3]) * this.unit;
+          const v = (pos[i] * sc[i % 3] + o[i % 3]) * this.unit;
           min[i % 3] = Math.min(min[i % 3], v);
           max[i % 3] = Math.max(max[i % 3], v);
         }

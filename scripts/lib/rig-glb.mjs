@@ -126,6 +126,7 @@ export function toRigGLB(rig) {
     const self = json.nodes.length - 1;
     if (node.t.some((v) => v !== 0)) out.translation = node.t.map((v) => +(v * u).toFixed(6));
     if (node.r) out.rotation = quat(node.r);
+    if (node.s != null) out.scale = Array.isArray(node.s) ? node.s : [node.s, 1, 1];
     if (node.hidden) { out.scale = [0, 0, 0]; out.extras = { hidden_by_default: true }; }
     const children = [];
     if (node.model && node.model.groups.size) {

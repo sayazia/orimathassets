@@ -5615,5 +5615,1291 @@
       "sky"
     ],
     "notes": "Panels hinge on their bottom edge: rotate about x from -90 (flat) to 0 (upright, rest pose). Place at the back of the open book."
+  },
+  {
+    "name": "crystal",
+    "category": "game",
+    "sheet": "orb_forge",
+    "file": "game/orb_forge/crystal.glb",
+    "unit": "m",
+    "triangles": 48,
+    "outline_triangles": 48,
+    "bounds": {
+      "min": [
+        -0.0175,
+        -0.025,
+        -0.0175
+      ],
+      "max": [
+        0.0175,
+        0.025,
+        0.0175
+      ]
+    },
+    "anchors": {
+      "label_anchor": [
+        0,
+        0,
+        0.019
+      ],
+      "hand_anchor": [
+        0,
+        0,
+        0
+      ]
+    },
+    "parts": [
+      "gem"
+    ],
+    "materials": [
+      "ink",
+      "lavender",
+      "lavender_shade"
+    ],
+    "notes": "Neutral lavender; the game recolours the lavender materials. Origin at the centre."
+  },
+  {
+    "name": "orb",
+    "category": "game",
+    "sheet": "orb_forge",
+    "file": "game/orb_forge/orb.glb",
+    "unit": "m",
+    "triangles": 174,
+    "outline_triangles": 174,
+    "bounds": {
+      "min": [
+        -0.027,
+        -0.025,
+        -0.027
+      ],
+      "max": [
+        0.027,
+        0.0285,
+        0.027
+      ]
+    },
+    "anchors": {
+      "label_anchor": [
+        0,
+        0,
+        0.028
+      ],
+      "hand_anchor": [
+        0,
+        0,
+        0
+      ]
+    },
+    "parts": [
+      "core"
+    ],
+    "materials": [
+      "gold",
+      "gold_shade",
+      "ink",
+      "lavender",
+      "lavender_shade"
+    ],
+    "notes": "Origin at the centre."
+  },
+  {
+    "name": "crystal_tray",
+    "category": "game",
+    "sheet": "orb_forge",
+    "file": "game/orb_forge/crystal_tray.glb",
+    "unit": "m",
+    "triangles": 200,
+    "outline_triangles": 200,
+    "bounds": {
+      "min": [
+        -0.232,
+        0,
+        -0.037
+      ],
+      "max": [
+        0.232,
+        0.015,
+        0.037
+      ]
+    },
+    "anchors": {
+      "slot_0": [
+        -0.18,
+        0.009,
+        0
+      ],
+      "slot_1": [
+        -0.09,
+        0.009,
+        0
+      ],
+      "slot_2": [
+        0,
+        0.009,
+        0
+      ],
+      "slot_3": [
+        0.09,
+        0.009,
+        0
+      ],
+      "slot_4": [
+        0.18,
+        0.009,
+        0
+      ]
+    },
+    "parts": [
+      "tray"
+    ],
+    "materials": [
+      "cream",
+      "cream_shade",
+      "ink",
+      "sand",
+      "sand_shade"
+    ],
+    "notes": "slot_0..4 sit 0.09 m apart on the seat tops."
+  },
+  {
+    "name": "shield_badge",
+    "category": "game",
+    "sheet": "orb_forge",
+    "file": "game/orb_forge/shield_badge.glb",
+    "unit": "m",
+    "triangles": 52,
+    "outline_triangles": 52,
+    "bounds": {
+      "min": [
+        -0.025,
+        0,
+        -0.005
+      ],
+      "max": [
+        0.025,
+        0.06,
+        0.005
+      ]
+    },
+    "anchors": {
+      "label_anchor": [
+        0,
+        0.036,
+        0.0055
+      ]
+    },
+    "parts": [
+      "badge"
+    ],
+    "materials": [
+      "cream",
+      "cream_shade",
+      "gold",
+      "gold_shade",
+      "ink"
+    ]
+  },
+  {
+    "name": "balloon_round",
+    "category": "game",
+    "sheet": "balloon",
+    "file": "game/balloon/balloon_round.glb",
+    "unit": "m",
+    "triangles": 104,
+    "outline_triangles": 104,
+    "bounds": {
+      "min": [
+        -0.0319,
+        -0.0001,
+        -0.0319
+      ],
+      "max": [
+        0.0319,
+        0.12,
+        0.0319
+      ]
+    },
+    "anchors": {
+      "label_anchor": [
+        0,
+        0.0875,
+        0.0335
+      ]
+    },
+    "parts": [
+      "skin",
+      "knot",
+      "string"
+    ],
+    "materials": [
+      "ink",
+      "paper",
+      "paper_shade",
+      "sky",
+      "sky_shade"
+    ],
+    "notes": "Origin at the bottom end of the string. Sky blue; the game recolours sky/sky_shade."
+  },
+  {
+    "name": "balloon_long",
+    "category": "game",
+    "sheet": "balloon",
+    "file": "game/balloon/balloon_long.glb",
+    "unit": "m",
+    "triangles": 104,
+    "outline_triangles": 104,
+    "bounds": {
+      "min": [
+        -0.0216,
+        -0.0001,
+        -0.0216
+      ],
+      "max": [
+        0.0216,
+        0.13,
+        0.0216
+      ]
+    },
+    "anchors": {
+      "label_anchor": [
+        0,
+        0.09,
+        0.023
+      ]
+    },
+    "parts": [
+      "skin",
+      "knot",
+      "string"
+    ],
+    "materials": [
+      "ink",
+      "paper",
+      "paper_shade",
+      "sky",
+      "sky_shade"
+    ],
+    "notes": "Origin at the bottom end of the string."
+  },
+  {
+    "name": "balloon_heart",
+    "category": "game",
+    "sheet": "balloon",
+    "file": "game/balloon/balloon_heart.glb",
+    "unit": "m",
+    "triangles": 154,
+    "outline_triangles": 154,
+    "bounds": {
+      "min": [
+        -0.0326,
+        -0.0001,
+        -0.0155
+      ],
+      "max": [
+        0.0324,
+        0.115,
+        0.017
+      ]
+    },
+    "anchors": {
+      "label_anchor": [
+        0,
+        0.092,
+        0.018
+      ]
+    },
+    "parts": [
+      "skin",
+      "knot",
+      "string"
+    ],
+    "materials": [
+      "ink",
+      "paper",
+      "paper_shade",
+      "sky",
+      "sky_shade"
+    ],
+    "notes": "Origin at the bottom end of the string."
+  },
+  {
+    "name": "balloon_pop_pieces",
+    "category": "game",
+    "sheet": "balloon",
+    "file": "game/balloon/balloon_pop_pieces.glb",
+    "unit": "m",
+    "triangles": 64,
+    "outline_triangles": 64,
+    "bounds": {
+      "min": [
+        -0.0378,
+        0.0094,
+        -0.0352
+      ],
+      "max": [
+        0.0351,
+        0.0424,
+        0.0403
+      ]
+    },
+    "anchors": {},
+    "parts": [
+      "piece_0",
+      "piece_1",
+      "piece_2",
+      "piece_3",
+      "piece_4",
+      "piece_5",
+      "piece_6",
+      "piece_7"
+    ],
+    "materials": [
+      "ink",
+      "sky",
+      "sky_shade"
+    ],
+    "notes": "Each piece_N has its origin at its own centre, laid out in a ring for the burst effect."
+  },
+  {
+    "name": "conveyor_straight",
+    "category": "game",
+    "sheet": "factory",
+    "file": "game/factory/conveyor_straight.glb",
+    "unit": "m",
+    "triangles": 148,
+    "outline_triangles": 148,
+    "bounds": {
+      "min": [
+        -0.06,
+        0,
+        -0.032
+      ],
+      "max": [
+        0.06,
+        0.031,
+        0.032
+      ]
+    },
+    "anchors": {},
+    "parts": [
+      "frame",
+      "belt"
+    ],
+    "materials": [
+      "ink",
+      "orange",
+      "orange_shade",
+      "slate",
+      "slate_shade",
+      "stone"
+    ],
+    "notes": "Tiles end to end along x (0.12 m pitch). Belt top at y = 0.028."
+  },
+  {
+    "name": "conveyor_start",
+    "category": "game",
+    "sheet": "factory",
+    "file": "game/factory/conveyor_start.glb",
+    "unit": "m",
+    "triangles": 144,
+    "outline_triangles": 144,
+    "bounds": {
+      "min": [
+        -0.04,
+        0,
+        -0.032
+      ],
+      "max": [
+        0.04,
+        0.05,
+        0.032
+      ]
+    },
+    "anchors": {
+      "spawn_anchor": [
+        -0.026,
+        0.026,
+        0
+      ]
+    },
+    "parts": [
+      "frame"
+    ],
+    "materials": [
+      "ink",
+      "lavender",
+      "orange",
+      "orange_shade",
+      "slate",
+      "violet"
+    ],
+    "notes": "Its belt end at x = +0.04 joins a conveyor_straight whose centre is at x = +0.1."
+  },
+  {
+    "name": "sort_gate",
+    "category": "game",
+    "sheet": "factory",
+    "file": "game/factory/sort_gate.glb",
+    "unit": "m",
+    "triangles": 88,
+    "outline_triangles": 88,
+    "bounds": {
+      "min": [
+        -0.032,
+        0,
+        -0.032
+      ],
+      "max": [
+        0.032,
+        0.121,
+        0.032
+      ]
+    },
+    "anchors": {
+      "label_anchor": [
+        0,
+        0.107,
+        0.005
+      ]
+    },
+    "parts": [
+      "arch",
+      "sign",
+      "chute"
+    ],
+    "materials": [
+      "coral",
+      "coral_shade",
+      "cream",
+      "cream_shade",
+      "ink",
+      "paper"
+    ],
+    "variants": [
+      "1",
+      "2",
+      "3"
+    ],
+    "variant_files": {
+      "1": "game/factory/sort_gate.glb",
+      "2": "game/factory/sort_gate_2.glb",
+      "3": "game/factory/sort_gate_3.glb"
+    },
+    "variant_colours": {
+      "1": {
+        "main": "coral"
+      },
+      "2": {
+        "main": "cobalt"
+      },
+      "3": {
+        "main": "sunflower"
+      }
+    },
+    "notes": "Stands across the belt (items travel along x). Gates 1 to 3 in coral, cobalt, sunflower."
+  },
+  {
+    "name": "sort_bin",
+    "category": "game",
+    "sheet": "factory",
+    "file": "game/factory/sort_bin.glb",
+    "unit": "m",
+    "triangles": 60,
+    "outline_triangles": 60,
+    "bounds": {
+      "min": [
+        -0.042,
+        0,
+        -0.0315
+      ],
+      "max": [
+        0.042,
+        0.04,
+        0.0315
+      ]
+    },
+    "anchors": {
+      "drop_anchor": [
+        0,
+        0.04,
+        0
+      ]
+    },
+    "parts": [
+      "bin"
+    ],
+    "materials": [
+      "ink",
+      "sand",
+      "sand_shade"
+    ]
+  },
+  {
+    "name": "item_token",
+    "category": "game",
+    "sheet": "factory",
+    "file": "game/factory/item_token.glb",
+    "unit": "m",
+    "triangles": 68,
+    "outline_triangles": 68,
+    "bounds": {
+      "min": [
+        -0.02,
+        -0.01,
+        -0.02
+      ],
+      "max": [
+        0.02,
+        0.0105,
+        0.02
+      ]
+    },
+    "anchors": {
+      "label_anchor": [
+        0,
+        0.011,
+        0.008
+      ],
+      "hand_anchor": [
+        0,
+        0,
+        0
+      ]
+    },
+    "parts": [
+      "token"
+    ],
+    "materials": [
+      "cream",
+      "cream_shade",
+      "ink",
+      "sand",
+      "sand_shade"
+    ],
+    "notes": "Origin at the centre."
+  },
+  {
+    "name": "gap_cliffs",
+    "category": "game",
+    "sheet": "bridge",
+    "file": "game/bridge/gap_cliffs.glb",
+    "unit": "m",
+    "triangles": 56,
+    "outline_triangles": 56,
+    "bounds": {
+      "min": [
+        -0.2,
+        0,
+        -0.05
+      ],
+      "max": [
+        0.2,
+        0.06,
+        0.05
+      ]
+    },
+    "anchors": {
+      "socket_plank_start": [
+        -0.12,
+        0.06,
+        0
+      ],
+      "socket_plank_end": [
+        0.12,
+        0.06,
+        0
+      ]
+    },
+    "parts": [
+      "cliff_right",
+      "cliff_left"
+    ],
+    "materials": [
+      "grass",
+      "grass_shade",
+      "ink",
+      "stone",
+      "stone_shade"
+    ],
+    "notes": "Gap 0.24 m = one bridge unit, between the two sockets."
+  },
+  {
+    "name": "plank_1",
+    "category": "game",
+    "sheet": "bridge",
+    "file": "game/bridge/plank_1.glb",
+    "unit": "m",
+    "triangles": 40,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.12,
+        -0.003,
+        -0.02
+      ],
+      "max": [
+        0.12,
+        0.003,
+        0.02
+      ]
+    },
+    "anchors": {
+      "label_anchor": [
+        0,
+        0.0032,
+        0.01
+      ],
+      "hand_anchor": [
+        0,
+        0,
+        0
+      ]
+    },
+    "parts": [
+      "plank"
+    ],
+    "materials": [
+      "sand",
+      "wood",
+      "wood_shade"
+    ],
+    "notes": "Exactly 240.0 mm long (1/1 of the 0.24 m unit). Origin at the centre. No ink outline so the length reads exactly."
+  },
+  {
+    "name": "plank_1_2",
+    "category": "game",
+    "sheet": "bridge",
+    "file": "game/bridge/plank_1_2.glb",
+    "unit": "m",
+    "triangles": 40,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.06,
+        -0.003,
+        -0.02
+      ],
+      "max": [
+        0.06,
+        0.003,
+        0.02
+      ]
+    },
+    "anchors": {
+      "label_anchor": [
+        0,
+        0.0032,
+        0.01
+      ],
+      "hand_anchor": [
+        0,
+        0,
+        0
+      ]
+    },
+    "parts": [
+      "plank"
+    ],
+    "materials": [
+      "sand",
+      "wood",
+      "wood_shade"
+    ],
+    "notes": "Exactly 120.0 mm long (1/2 of the 0.24 m unit). Origin at the centre. No ink outline so the length reads exactly."
+  },
+  {
+    "name": "plank_1_3",
+    "category": "game",
+    "sheet": "bridge",
+    "file": "game/bridge/plank_1_3.glb",
+    "unit": "m",
+    "triangles": 40,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.04,
+        -0.003,
+        -0.02
+      ],
+      "max": [
+        0.04,
+        0.003,
+        0.02
+      ]
+    },
+    "anchors": {
+      "label_anchor": [
+        0,
+        0.0032,
+        0.01
+      ],
+      "hand_anchor": [
+        0,
+        0,
+        0
+      ]
+    },
+    "parts": [
+      "plank"
+    ],
+    "materials": [
+      "sand",
+      "wood",
+      "wood_shade"
+    ],
+    "notes": "Exactly 80.0 mm long (1/3 of the 0.24 m unit). Origin at the centre. No ink outline so the length reads exactly."
+  },
+  {
+    "name": "plank_1_4",
+    "category": "game",
+    "sheet": "bridge",
+    "file": "game/bridge/plank_1_4.glb",
+    "unit": "m",
+    "triangles": 40,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.03,
+        -0.003,
+        -0.02
+      ],
+      "max": [
+        0.03,
+        0.003,
+        0.02
+      ]
+    },
+    "anchors": {
+      "label_anchor": [
+        0,
+        0.0032,
+        0.01
+      ],
+      "hand_anchor": [
+        0,
+        0,
+        0
+      ]
+    },
+    "parts": [
+      "plank"
+    ],
+    "materials": [
+      "sand",
+      "wood",
+      "wood_shade"
+    ],
+    "notes": "Exactly 60.0 mm long (1/4 of the 0.24 m unit). Origin at the centre. No ink outline so the length reads exactly."
+  },
+  {
+    "name": "plank_1_5",
+    "category": "game",
+    "sheet": "bridge",
+    "file": "game/bridge/plank_1_5.glb",
+    "unit": "m",
+    "triangles": 40,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.024,
+        -0.003,
+        -0.02
+      ],
+      "max": [
+        0.024,
+        0.003,
+        0.02
+      ]
+    },
+    "anchors": {
+      "label_anchor": [
+        0,
+        0.0032,
+        0.01
+      ],
+      "hand_anchor": [
+        0,
+        0,
+        0
+      ]
+    },
+    "parts": [
+      "plank"
+    ],
+    "materials": [
+      "sand",
+      "wood",
+      "wood_shade"
+    ],
+    "notes": "Exactly 48.0 mm long (1/5 of the 0.24 m unit). Origin at the centre. No ink outline so the length reads exactly."
+  },
+  {
+    "name": "plank_1_6",
+    "category": "game",
+    "sheet": "bridge",
+    "file": "game/bridge/plank_1_6.glb",
+    "unit": "m",
+    "triangles": 40,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.02,
+        -0.003,
+        -0.02
+      ],
+      "max": [
+        0.02,
+        0.003,
+        0.02
+      ]
+    },
+    "anchors": {
+      "label_anchor": [
+        0,
+        0.0032,
+        0.01
+      ],
+      "hand_anchor": [
+        0,
+        0,
+        0
+      ]
+    },
+    "parts": [
+      "plank"
+    ],
+    "materials": [
+      "sand",
+      "wood",
+      "wood_shade"
+    ],
+    "notes": "Exactly 40.0 mm long (1/6 of the 0.24 m unit). Origin at the centre. No ink outline so the length reads exactly."
+  },
+  {
+    "name": "plank_1_8",
+    "category": "game",
+    "sheet": "bridge",
+    "file": "game/bridge/plank_1_8.glb",
+    "unit": "m",
+    "triangles": 40,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.015,
+        -0.003,
+        -0.02
+      ],
+      "max": [
+        0.015,
+        0.003,
+        0.02
+      ]
+    },
+    "anchors": {
+      "label_anchor": [
+        0,
+        0.0032,
+        0.01
+      ],
+      "hand_anchor": [
+        0,
+        0,
+        0
+      ]
+    },
+    "parts": [
+      "plank"
+    ],
+    "materials": [
+      "sand",
+      "wood",
+      "wood_shade"
+    ],
+    "notes": "Exactly 30.0 mm long (1/8 of the 0.24 m unit). Origin at the centre. No ink outline so the length reads exactly."
+  },
+  {
+    "name": "plank_1_10",
+    "category": "game",
+    "sheet": "bridge",
+    "file": "game/bridge/plank_1_10.glb",
+    "unit": "m",
+    "triangles": 40,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.012,
+        -0.003,
+        -0.02
+      ],
+      "max": [
+        0.012,
+        0.003,
+        0.02
+      ]
+    },
+    "anchors": {
+      "label_anchor": [
+        0,
+        0.0032,
+        0.01
+      ],
+      "hand_anchor": [
+        0,
+        0,
+        0
+      ]
+    },
+    "parts": [
+      "plank"
+    ],
+    "materials": [
+      "sand",
+      "wood",
+      "wood_shade"
+    ],
+    "notes": "Exactly 24.0 mm long (1/10 of the 0.24 m unit). Origin at the centre. No ink outline so the length reads exactly."
+  },
+  {
+    "name": "bridge_post",
+    "category": "game",
+    "sheet": "bridge",
+    "file": "game/bridge/bridge_post.glb",
+    "unit": "m",
+    "triangles": 56,
+    "outline_triangles": 56,
+    "bounds": {
+      "min": [
+        -0.0074,
+        0,
+        -0.0074
+      ],
+      "max": [
+        0.0074,
+        0.05,
+        0.0074
+      ]
+    },
+    "anchors": {},
+    "parts": [
+      "post"
+    ],
+    "materials": [
+      "ink",
+      "sand",
+      "sand_shade",
+      "wood",
+      "wood_shade"
+    ]
+  },
+  {
+    "name": "scale",
+    "category": "game",
+    "sheet": "balance",
+    "file": "game/balance/scale.glb",
+    "unit": "m",
+    "triangles": 234,
+    "outline_triangles": 234,
+    "bounds": {
+      "min": [
+        -0.1473,
+        0,
+        -0.04
+      ],
+      "max": [
+        0.1473,
+        0.142,
+        0.04
+      ]
+    },
+    "anchors": {
+      "socket_right_pan": [
+        0.114,
+        0.058,
+        0
+      ],
+      "label_anchor_right": [
+        0.114,
+        0.04,
+        0.03
+      ],
+      "socket_left_pan": [
+        -0.114,
+        0.058,
+        0
+      ],
+      "label_anchor_left": [
+        -0.114,
+        0.04,
+        0.03
+      ]
+    },
+    "parts": [
+      "base",
+      "pillar",
+      "beam",
+      "pan_right",
+      "pan_left"
+    ],
+    "materials": [
+      "cobalt",
+      "cobalt_shade",
+      "cream",
+      "gold",
+      "gold_shade",
+      "ink"
+    ],
+    "notes": "Rotate beam about z (0 to 20 degrees); rotate pan_left/pan_right by the opposite angle so the pans hang level."
+  },
+  {
+    "name": "weight_block",
+    "category": "game",
+    "sheet": "balance",
+    "file": "game/balance/weight_block.glb",
+    "unit": "m",
+    "triangles": 40,
+    "outline_triangles": 40,
+    "bounds": {
+      "min": [
+        -0.0175,
+        0,
+        -0.0175
+      ],
+      "max": [
+        0.0175,
+        0.03,
+        0.0187
+      ]
+    },
+    "anchors": {
+      "label_anchor": [
+        0,
+        0.015,
+        0.019
+      ],
+      "hand_anchor": [
+        0,
+        0.015,
+        0
+      ]
+    },
+    "parts": [
+      "block"
+    ],
+    "materials": [
+      "cream",
+      "ink",
+      "stone",
+      "stone_shade"
+    ],
+    "notes": "Origin at the bottom centre; stacks every 0.03 m (safe up to 4)."
+  },
+  {
+    "name": "gate",
+    "category": "game",
+    "sheet": "balance",
+    "file": "game/balance/gate.glb",
+    "unit": "m",
+    "triangles": 120,
+    "outline_triangles": 120,
+    "bounds": {
+      "min": [
+        -0.07,
+        0,
+        -0.015
+      ],
+      "max": [
+        0.07,
+        0.14,
+        0.0175
+      ]
+    },
+    "anchors": {
+      "exit_anchor": [
+        0,
+        0,
+        -0.03
+      ]
+    },
+    "parts": [
+      "frame",
+      "door_right",
+      "door_left"
+    ],
+    "materials": [
+      "cobalt",
+      "cobalt_shade",
+      "cream",
+      "cream_shade",
+      "gold",
+      "ink"
+    ],
+    "notes": "Doors hinge at their outer edges: rotate door_left by +y, door_right by -y to open."
+  },
+  {
+    "name": "tape_measure",
+    "category": "game",
+    "sheet": "measure",
+    "file": "game/measure/tape_measure.glb",
+    "unit": "m",
+    "triangles": 300,
+    "outline_triangles": 72,
+    "bounds": {
+      "min": [
+        -0.025,
+        0,
+        -0.025
+      ],
+      "max": [
+        0.048,
+        0.0215,
+        0.025
+      ]
+    },
+    "anchors": {
+      "hand_anchor": [
+        0,
+        0.01,
+        0
+      ]
+    },
+    "parts": [
+      "housing",
+      "tape",
+      "tape_end"
+    ],
+    "materials": [
+      "ink",
+      "slate",
+      "slate_shade",
+      "sunflower",
+      "sunflower_shade"
+    ],
+    "notes": "tape is 1 m long at scale x = 1 (rest scale 0.02). Keep tape_end at x = 0.025 + 1.0 * scale. Marks every 5 cm (long at 10 cm), no numbers."
+  },
+  {
+    "name": "ruler_30",
+    "category": "game",
+    "sheet": "measure",
+    "file": "game/measure/ruler_30.glb",
+    "unit": "m",
+    "triangles": 500,
+    "outline_triangles": 12,
+    "bounds": {
+      "min": [
+        -0.155,
+        0,
+        -0.015
+      ],
+      "max": [
+        0.155,
+        0.0045,
+        0.015
+      ]
+    },
+    "anchors": {},
+    "parts": [
+      "ruler"
+    ],
+    "materials": [
+      "ink",
+      "lemon",
+      "lemon_shade"
+    ],
+    "notes": "0 to 30 cm scale (marks every 5 mm, longer at 1 cm and 5 cm, exact spacing) on a 0.31 m board. mm marks omitted: they would be thinner than the 2 mm minimum. Origin at the centre = 15 cm mark."
+  },
+  {
+    "name": "marker_pin",
+    "category": "game",
+    "sheet": "measure",
+    "file": "game/measure/marker_pin.glb",
+    "unit": "m",
+    "triangles": 90,
+    "outline_triangles": 96,
+    "bounds": {
+      "min": [
+        -0.009,
+        0,
+        -0.009
+      ],
+      "max": [
+        0.009,
+        0.0505,
+        0.009
+      ]
+    },
+    "anchors": {
+      "hand_anchor": [
+        0,
+        0.042,
+        0
+      ]
+    },
+    "parts": [
+      "pin"
+    ],
+    "materials": [
+      "coral",
+      "coral_shade",
+      "ink",
+      "stone",
+      "stone_shade"
+    ],
+    "variants": [
+      "a",
+      "b"
+    ],
+    "variant_files": {
+      "a": "game/measure/marker_pin.glb",
+      "b": "game/measure/marker_pin_b.glb"
+    },
+    "variant_colours": {
+      "a": {
+        "main": "coral"
+      },
+      "b": {
+        "main": "cobalt"
+      }
+    },
+    "notes": "Point A coral (base file), point B cobalt (_b)."
+  },
+  {
+    "name": "treasure_chest",
+    "category": "game",
+    "sheet": "measure",
+    "file": "game/measure/treasure_chest.glb",
+    "unit": "m",
+    "triangles": 108,
+    "outline_triangles": 108,
+    "bounds": {
+      "min": [
+        -0.035,
+        0,
+        -0.0258
+      ],
+      "max": [
+        0.035,
+        0.0488,
+        0.027
+      ]
+    },
+    "anchors": {
+      "reward_anchor": [
+        0,
+        0.012,
+        0
+      ]
+    },
+    "parts": [
+      "chest",
+      "lid"
+    ],
+    "materials": [
+      "gold",
+      "gold_shade",
+      "ink",
+      "wood",
+      "wood_shade"
+    ],
+    "notes": "lid hinges at the back top edge: rotate about x (negative opens)."
   }
 ]

@@ -1,6 +1,7 @@
 // Registry of the Foldlings game assets (metres). City assets stay in scripts/assets/.
 import foldlings from './foldlings.mjs';
 import book from './book.mjs';
+import { orbForge, balloons, factory, bridge, balance, measure } from './props.mjs';
 
 // One city tile measures 3 cm when Fold Town stands on the pop-up book's page.
 export const CITY_TILE_ON_BOOK_M = 0.03;
@@ -8,6 +9,12 @@ export const CITY_TILE_ON_BOOK_M = 0.03;
 export const GAME_SHEETS = [
   { sheet: 'foldlings', title: 'Foldlings', items: foldlings },
   { sheet: 'book', title: 'Pop-up Book', items: book },
+  { sheet: 'orb_forge', title: 'Orb Forge', items: orbForge },
+  { sheet: 'balloon', title: 'Balloon Burst', items: balloons },
+  { sheet: 'factory', title: 'Factory Sort', items: factory },
+  { sheet: 'bridge', title: 'Bridge Builder', items: bridge },
+  { sheet: 'balance', title: 'Balance Gate', items: balance },
+  { sheet: 'measure', title: 'Measure Hunt', items: measure },
 ];
 
 // Table-scale preview scenes (metres, world space on the table top).
@@ -29,6 +36,45 @@ export const TABLE_SCENES = [
       { file: 'foldlings/foldling_crane_fractions.glb', x: 0.25, y: 0, z: 0.08, ry: -0.6 },
       { file: 'foldlings/foldling_fish_multiply_divide.glb', x: -0.25, y: 0, z: 0.1, ry: 0.5 },
       { name: 'paper_bird', x: 0.02, y: 0.12, z: 0.03, ry: 0.4 },
+    ],
+  },
+  {
+    name: 'b2',
+    camera: { target: [0, 0.03, -0.02] },
+    items: [
+      { name: 'crystal_tray', x: 0, y: 0, z: 0.13 },
+      ...[0, 1, 2, 3, 4].map((i) => ({ name: 'crystal', x: (i - 2) * 0.09, y: 0.034, z: 0.13, ry: i })),
+      { name: 'orb', x: 0.2, y: 0.025, z: 0.05 },
+      { name: 'balloon_round', x: -0.2, y: 0, z: -0.02 },
+      { name: 'balloon_long', x: -0.14, y: 0, z: -0.06 },
+      { name: 'balloon_heart', x: -0.25, y: 0, z: -0.1 },
+      { name: 'scale', x: 0.0, y: 0, z: -0.12 },
+      { name: 'weight_block', x: -0.13, y: 0.058, z: -0.12 },
+      { name: 'weight_block', x: 0.13, y: 0.058, z: -0.12 },
+      { name: 'gap_cliffs', x: 0.0, y: 0, z: 0.02 },
+      { name: 'plank_1_2', x: -0.06, y: 0.063, z: 0.02 },
+      { name: 'plank_1_4', x: 0.03, y: 0.063, z: 0.02 },
+      { name: 'treasure_chest', x: 0.22, y: 0, z: -0.08, ry: -0.4 },
+      { name: 'ruler_30', x: 0.02, y: 0, z: 0.22 },
+      { name: 'marker_pin', x: 0.25, y: 0, z: 0.15 },
+      { file: 'game/measure/marker_pin_b.glb', x: 0.3, y: 0, z: 0.1 },
+    ],
+  },
+  {
+    name: 'b2_factory',
+    camera: { target: [0, 0.03, 0] },
+    items: [
+      { name: 'conveyor_start', x: -0.2, y: 0, z: 0 },
+      ...[0, 1, 2].map((i) => ({ name: 'conveyor_straight', x: -0.1 + i * 0.12, y: 0, z: 0 })),
+      { name: 'sort_gate', x: -0.08, y: 0, z: 0 },
+      { file: 'game/factory/sort_gate_2.glb', x: 0.04, y: 0, z: 0 },
+      { file: 'game/factory/sort_gate_3.glb', x: 0.16, y: 0, z: 0 },
+      ...[-0.08, 0.04, 0.16].map((x) => ({ name: 'sort_bin', x, y: 0, z: 0.075 })),
+      { name: 'item_token', x: -0.14, y: 0.038, z: 0 },
+      { name: 'item_token', x: 0.1, y: 0.038, z: 0 },
+      { name: 'tape_measure', x: 0.22, y: 0, z: 0.14 },
+      { name: 'gate', x: 0.0, y: 0, z: -0.14 },
+      { name: 'shield_badge', x: -0.22, y: 0, z: 0.14 },
     ],
   },
 ];

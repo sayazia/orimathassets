@@ -207,7 +207,7 @@ Status: ✅ selesai · 🟡 sebagian · ⬜ direncanakan.
 | Batch | Isi | Status |
 |---|---|---|
 | B1 | 8 Foldlings (6 varian warna), burung kertas, bendera, buku pop-up terbuka dan tertutup, bingkai pop-up | ✅ |
-| B2 | Perlengkapan 6 jenis game (Orb Forge, Balloon Burst, Factory Sort, Bridge Builder, Balance Gate, Measure Hunt) | ⬜ |
+| B2 | Perlengkapan 6 jenis game (Orb Forge, Balloon Burst, Factory Sort, Bridge Builder, Balance Gate, Measure Hunt) | ✅ |
 | B3 | Model bantuan visual (basis 10, garis bilangan, strip, petak luas, irisan pie) | ⬜ |
 | B4 | Portal | ⬜ |
 | B5 | Karakter (Pip, The Great Crumple, 3 robot partner) | ⬜ |
@@ -267,3 +267,60 @@ Pratinjau: `previews/foldlings/`, `previews/book/` (depan, tiga perempat, sampin
 7. **Pratinjau meja** memakai permukaan meja kayu dan putih yang digambar dari kode, bukan foto, supaya tidak
    ada gambar pihak ketiga.
 8. **Burung kertas** berorigin di pusat badan (selalu terbang), bukan di meja.
+
+## B2. Perlengkapan enam jenis game ✅
+
+Folder `models/game/<grup>/`. Kolom: segitiga, +garis tinta, KB, ukuran nyata (x×z×y, m), anchor, node bagian.
+Semua lolos validator (0 error, 0 warning). Total B2: 30 aset, 33 berkas GLB.
+
+| File | Segitiga | +garis | KB | Ukuran | Anchor | Bagian |
+|---|---|---|---|---|---|---|
+| game/orb_forge/crystal | 48 | 48 | 6.4 | 0.035×0.035×0.050 | label_anchor, hand_anchor | gem |
+| game/orb_forge/orb | 174 | 174 | 16.4 | 0.054×0.054×0.054 | label_anchor, hand_anchor | core |
+| game/orb_forge/crystal_tray | 200 | 200 | 15.3 | 0.464×0.074×0.015 | slot_0, slot_1, slot_2, slot_3, slot_4 | tray |
+| game/orb_forge/shield_badge | 52 | 52 | 6.6 | 0.050×0.010×0.060 | label_anchor | badge |
+| game/balloon/balloon_round | 104 | 104 | 12.7 | 0.064×0.064×0.120 | label_anchor | skin, knot, string |
+| game/balloon/balloon_long | 104 | 104 | 12.7 | 0.043×0.043×0.130 | label_anchor | skin, knot, string |
+| game/balloon/balloon_heart | 154 | 154 | 17.0 | 0.065×0.033×0.115 | label_anchor | skin, knot, string |
+| game/balloon/balloon_pop_pieces | 64 | 64 | 15.9 | 0.073×0.076×0.033 |  | piece_0, piece_1, piece_2, piece_3, piece_4, piece_5, piece_6, piece_7 |
+| game/factory/conveyor_straight | 148 | 148 | 14.2 | 0.120×0.064×0.031 |  | frame, belt |
+| game/factory/conveyor_start | 144 | 144 | 12.8 | 0.080×0.064×0.050 | spawn_anchor | frame |
+| game/factory/sort_gate (+2 varian) | 88 | 88 | 11.0 | 0.064×0.064×0.121 | label_anchor | arch, sign, chute |
+| game/factory/sort_bin | 60 | 60 | 5.7 | 0.084×0.063×0.040 | drop_anchor | bin |
+| game/factory/item_token | 68 | 68 | 7.4 | 0.040×0.040×0.021 | label_anchor, hand_anchor | token |
+| game/bridge/gap_cliffs | 56 | 56 | 9.1 | 0.400×0.100×0.060 | socket_plank_start, socket_plank_end | cliff_right, cliff_left |
+| game/bridge/plank_1 | 40 | 0 | 4.1 | 0.240×0.040×0.006 | label_anchor, hand_anchor | plank |
+| game/bridge/plank_1_2 | 40 | 0 | 4.1 | 0.120×0.040×0.006 | label_anchor, hand_anchor | plank |
+| game/bridge/plank_1_3 | 40 | 0 | 4.1 | 0.080×0.040×0.006 | label_anchor, hand_anchor | plank |
+| game/bridge/plank_1_4 | 40 | 0 | 4.1 | 0.060×0.040×0.006 | label_anchor, hand_anchor | plank |
+| game/bridge/plank_1_5 | 40 | 0 | 4.1 | 0.048×0.040×0.006 | label_anchor, hand_anchor | plank |
+| game/bridge/plank_1_6 | 40 | 0 | 4.1 | 0.040×0.040×0.006 | label_anchor, hand_anchor | plank |
+| game/bridge/plank_1_8 | 40 | 0 | 4.1 | 0.030×0.040×0.006 | label_anchor, hand_anchor | plank |
+| game/bridge/plank_1_10 | 40 | 0 | 4.1 | 0.024×0.040×0.006 | label_anchor, hand_anchor | plank |
+| game/bridge/bridge_post | 56 | 56 | 6.4 | 0.015×0.015×0.050 |  | post |
+| game/balance/scale | 234 | 234 | 23.7 | 0.295×0.080×0.142 | socket_right_pan, label_anchor_right, socket_left_pan, label_anchor_left | base, pillar, beam, pan_right, pan_left |
+| game/balance/weight_block | 40 | 40 | 5.1 | 0.035×0.036×0.030 | label_anchor, hand_anchor | block |
+| game/balance/gate | 120 | 120 | 14.7 | 0.140×0.033×0.140 | exit_anchor | frame, door_right, door_left |
+| game/measure/tape_measure | 300 | 72 | 22.4 | 0.073×0.050×0.021 | hand_anchor | housing, tape, tape_end |
+| game/measure/ruler_30 | 500 | 12 | 31.8 | 0.310×0.030×0.004 |  | ruler |
+| game/measure/marker_pin (+1 varian) | 90 | 96 | 9.7 | 0.018×0.018×0.051 | hand_anchor | pin |
+| game/measure/treasure_chest | 108 | 108 | 11.8 | 0.070×0.053×0.049 | reward_anchor | chest, lid |
+
+Pratinjau: `previews/game/<grup>/`, `previews/sheet_{orb_forge,balloon,factory,bridge,balance,measure}.png`,
+`previews/table_b2_{wood,white}.png` dan `previews/table_b2_factory_{wood,white}.png`.
+
+### Keputusan yang berbeda dari brief
+
+1. **Penggaris 30 cm** berukuran fisik 0.31 m supaya skala 0 sampai 30 cm muat dengan tepi 5 mm (penggaris
+   sungguhan juga begitu). Garis setiap 5 mm, lebih panjang di tiap cm dan 5 cm. **Garis mm tidak dibuat**:
+   lebarnya pasti di bawah batas minimum 2 mm dan akan berkedip di Quest. Segitiganya 500 (di atas 200)
+   karena 61 tanda garis; tanda dibuat sebagai punggung segitiga untuk menghemat.
+2. **Pita ukur** dimodelkan 1 m pada skala x = 1, dengan skala diam 0.02 (terlihat 2 cm). Tanda setiap 5 cm
+   (lebih panjang di 10 cm), tanpa angka. Game menggeser `tape_end` ke x = 0.025 + 1.0 × skala.
+3. **Papan jembatan** tanpa garis tinta supaya panjangnya terbaca tepat (selisih 0 mm di geometri). Tanda
+   ruas lipat berupa lipatan tengah dan dua garis lipat di ujung, tanpa angka.
+4. **Gerbang sortir** 1 sampai 3 berupa berkas varian (`sort_gate`, `sort_gate_2`, `sort_gate_3`) dalam coral,
+   cobalt, sunflower. Papan label menghadap pemain (+Z); gerbang melintang di atas ban berjalan.
+5. **Pin penanda** A (coral, berkas dasar) dan B (cobalt, `marker_pin_b`).
+6. **Kristal dan balon** memakai warna netral (lavender, sky) yang diganti game lewat nama material.
+7. Beberapa benda kecil (kristal 48, token 68, papan 40) di dekat batas bawah 40 segitiga: bentuknya memang sederhana.
