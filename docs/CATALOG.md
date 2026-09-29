@@ -469,7 +469,7 @@ tanpa garis tinta supaya terlihat berkilau, bukan seperti stiker.
 
 ## B9. Hewan origami dari dua buku ✅
 
-Dibuat dari dua buku origami di `docs/` branch `animals` (buku 1 "Comic Origami 3": hewan darat, laut, serangga, mitos; buku 2: burung). Ringkasan teknik ada di
+Dibuat dari dua buku origami (tidak disertakan di repo ini; buku 1 "Comic Origami 3": hewan darat, laut, serangga, mitos; buku 2: burung). Ringkasan teknik ada di
 [ORIGAMI_ANIMALS.md](ORIGAMI_ANIMALS.md); yang ditiru adalah prinsip lipatnya (badan berupa beberapa bidang datar besar, sisi belakang putih di tempat kertas terbalik, kaki, telinga, dan ekor berupa strip sekali lipat, mata bulat polos), bukan desain lipatan persisnya.
 Satu warna kertas per hewan ditambah putih untuk bagian yang terbalik; paling banyak 6 material; tanpa garis tinta. Semua lolos validator (0 error, 0 warning), klip animasi sama seperti Foldlings (`idle`, `hop`, `cheer`, `bounce`, `fold`; burung terbang juga punya `flap`).
 Folder: `models/origami-animals/`. Ukuran = kotak batas nyata. Pratinjau: `previews/sheet_origami_land.png`, `_sea`, `_small`, `_myth`, `_birds`.

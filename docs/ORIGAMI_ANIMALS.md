@@ -3,7 +3,7 @@
 47 animals in `models/origami-animals/` (files `origami_<name>.glb`), built from code in `scripts/game/zoo.mjs` with the
 archetype builders in `scripts/lib/zoo.mjs`. Catalog and per-asset numbers: [`CATALOG.md`](CATALOG.md) section B9 (Indonesian).
 
-Sources (both scans, in the `animals` branch under `docs/`): book 1, *Comic Origami 3* (land animals, sea animals, insects,
+Sources (two printed origami books, not included in this repository): book 1, *Comic Origami 3* (land animals, sea animals, insects,
 reptiles, mythical animals) and book 2 (birds). The study notes are in the project files (`origami-books/style-guide.md`).
 We learn the technique, not the folding patterns: no crease pattern or fold sequence is reproduced.
 
