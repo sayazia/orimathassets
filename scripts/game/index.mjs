@@ -5,6 +5,7 @@ import { hints, portals } from './hints.mjs';
 import characters from './characters.mjs';
 import foldtown from './foldtown.mjs';
 import { rewards, ui, fx } from './rewards.mjs';
+import zoo from './zoo.mjs';
 import { orbForge, balloons, factory, bridge, balance, measure } from './props.mjs';
 
 // One city tile measures 3 cm when Fold Town stands on the pop-up book's page.
@@ -19,6 +20,11 @@ export const GAME_SHEETS = [
   { sheet: 'bridge', title: 'Bridge Builder', items: bridge },
   { sheet: 'balance', title: 'Balance Gate', items: balance },
   { sheet: 'measure', title: 'Measure Hunt', items: measure },
+  { sheet: 'origami_land', title: 'Origami animals: land', items: zoo.filter((a) => a.sheet === 'origami_land') },
+  { sheet: 'origami_sea', title: 'Origami animals: water', items: zoo.filter((a) => a.sheet === 'origami_sea') },
+  { sheet: 'origami_small', title: 'Origami animals: insects and reptiles', items: zoo.filter((a) => a.sheet === 'origami_small') },
+  { sheet: 'origami_myth', title: 'Origami animals: mythical', items: zoo.filter((a) => a.sheet === 'origami_myth') },
+  { sheet: 'origami_birds', title: 'Origami animals: birds', items: zoo.filter((a) => a.sheet === 'origami_birds') },
   { sheet: 'hints', title: 'Hints', items: hints },
   { sheet: 'portal', title: 'Portals', items: portals },
   { sheet: 'characters', title: 'Characters', items: characters },

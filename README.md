@@ -60,6 +60,13 @@ Technical guide: [`docs/FOLDLINGS.md`](docs/FOLDLINGS.md). Batch status: [`docs/
 Sheets: [foldlings](previews/sheet_foldlings.png), [variants](previews/sheet_foldlings_variants.png),
 [book](previews/sheet_book.png), [colour-vision check](previews/cvd_foldlings.png).
 
+### Origami animals from two books
+
+47 more animals in `models/origami-animals/` (11 land, 5 water, 5 insects and reptiles, 4 mythical, 22 birds), folded-paper style
+with a white underside colour, same rig and clips as the Foldlings. Guide: [`docs/ORIGAMI_ANIMALS.md`](docs/ORIGAMI_ANIMALS.md).
+Sheets: [land](previews/sheet_origami_land.png), [water](previews/sheet_origami_sea.png),
+[small](previews/sheet_origami_small.png), [mythical](previews/sheet_origami_myth.png), [birds](previews/sheet_origami_birds.png).
+
 ![Foldlings logo](2d/brand/logo_foldlings.png)
 
 ## Conventions (city set)

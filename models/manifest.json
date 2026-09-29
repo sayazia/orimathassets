@@ -6882,6 +6882,2681 @@
     "notes": "lid hinges at the back top edge: rotate about x (negative opens)."
   },
   {
+    "name": "origami_squirrel",
+    "category": "origami_animals",
+    "sheet": "origami_land",
+    "file": "origami-animals/origami_squirrel.glb",
+    "unit": "m",
+    "triangles": 416,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.0297,
+        -0.0001,
+        -0.014
+      ],
+      "max": [
+        0.0246,
+        0.0487,
+        0.014
+      ]
+    },
+    "anchors": {
+      "flag_anchor": [
+        -0.0171,
+        0.034,
+        0
+      ],
+      "label_anchor": [
+        0,
+        0.0589,
+        0
+      ]
+    },
+    "parts": [
+      "body",
+      "head",
+      "ear_l",
+      "ear_r",
+      "leg_bl",
+      "leg_fl",
+      "leg_br",
+      "leg_fr",
+      "tail"
+    ],
+    "materials": [
+      "ink",
+      "paper",
+      "paper_shade",
+      "terracotta",
+      "terracotta_shade"
+    ],
+    "clips": [
+      "idle",
+      "hop",
+      "cheer",
+      "bounce",
+      "fold"
+    ]
+  },
+  {
+    "name": "origami_rabbit",
+    "category": "origami_animals",
+    "sheet": "origami_land",
+    "file": "origami-animals/origami_rabbit.glb",
+    "unit": "m",
+    "triangles": 384,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.023,
+        -0.0001,
+        -0.014
+      ],
+      "max": [
+        0.0214,
+        0.0616,
+        0.014
+      ]
+    },
+    "anchors": {
+      "flag_anchor": [
+        -0.019,
+        0.032,
+        0
+      ],
+      "label_anchor": [
+        0,
+        0.0736,
+        0
+      ]
+    },
+    "parts": [
+      "body",
+      "head",
+      "ear_l",
+      "ear_r",
+      "tail",
+      "leg_bl",
+      "leg_fl",
+      "leg_br",
+      "leg_fr"
+    ],
+    "materials": [
+      "ink",
+      "paper",
+      "paper_shade",
+      "red"
+    ],
+    "clips": [
+      "idle",
+      "hop",
+      "cheer",
+      "bounce",
+      "fold"
+    ]
+  },
+  {
+    "name": "origami_fox",
+    "category": "origami_animals",
+    "sheet": "origami_land",
+    "file": "origami-animals/origami_fox.glb",
+    "unit": "m",
+    "triangles": 416,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.0483,
+        -0.0001,
+        -0.014
+      ],
+      "max": [
+        0.0367,
+        0.061,
+        0.014
+      ]
+    },
+    "anchors": {
+      "flag_anchor": [
+        -0.019,
+        0.04,
+        0
+      ],
+      "label_anchor": [
+        0,
+        0.071,
+        0
+      ]
+    },
+    "parts": [
+      "body",
+      "head",
+      "ear_l",
+      "ear_r",
+      "tail",
+      "leg_bl",
+      "leg_fl",
+      "leg_br",
+      "leg_fr"
+    ],
+    "materials": [
+      "ink",
+      "orange",
+      "orange_shade",
+      "paper",
+      "paper_shade",
+      "pink"
+    ],
+    "clips": [
+      "idle",
+      "hop",
+      "cheer",
+      "bounce",
+      "fold"
+    ]
+  },
+  {
+    "name": "origami_cat",
+    "category": "origami_animals",
+    "sheet": "origami_land",
+    "file": "origami-animals/origami_cat.glb",
+    "unit": "m",
+    "triangles": 426,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.0439,
+        -0.0001,
+        -0.014
+      ],
+      "max": [
+        0.0212,
+        0.0469,
+        0.014
+      ]
+    },
+    "anchors": {
+      "flag_anchor": [
+        -0.019,
+        0.03,
+        0
+      ],
+      "label_anchor": [
+        0,
+        0.0567,
+        0
+      ]
+    },
+    "parts": [
+      "body",
+      "head",
+      "ear_l",
+      "ear_r",
+      "tail",
+      "leg_bl",
+      "leg_fl",
+      "leg_br",
+      "leg_fr"
+    ],
+    "materials": [
+      "dark",
+      "dark_shade",
+      "ink",
+      "paper",
+      "paper_shade",
+      "pink"
+    ],
+    "clips": [
+      "idle",
+      "hop",
+      "cheer",
+      "bounce",
+      "fold"
+    ]
+  },
+  {
+    "name": "origami_pig",
+    "category": "origami_animals",
+    "sheet": "origami_land",
+    "file": "origami-animals/origami_pig.glb",
+    "unit": "m",
+    "triangles": 522,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.0212,
+        -0.0001,
+        -0.016
+      ],
+      "max": [
+        0.0208,
+        0.0428,
+        0.016
+      ]
+    },
+    "anchors": {
+      "flag_anchor": [
+        -0.0148,
+        0.028,
+        0
+      ],
+      "label_anchor": [
+        0,
+        0.0527,
+        0
+      ]
+    },
+    "parts": [
+      "body",
+      "head",
+      "ear_l",
+      "ear_r",
+      "tail",
+      "leg_bl",
+      "leg_fl",
+      "leg_br",
+      "leg_fr"
+    ],
+    "materials": [
+      "coral",
+      "ink",
+      "paper",
+      "paper_shade",
+      "pink",
+      "pink_shade"
+    ],
+    "clips": [
+      "idle",
+      "hop",
+      "cheer",
+      "bounce",
+      "fold"
+    ]
+  },
+  {
+    "name": "origami_beaver",
+    "category": "origami_animals",
+    "sheet": "origami_land",
+    "file": "origami-animals/origami_beaver.glb",
+    "unit": "m",
+    "triangles": 390,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.0411,
+        -0.0001,
+        -0.0112
+      ],
+      "max": [
+        0.038,
+        0.034,
+        0.0112
+      ]
+    },
+    "anchors": {
+      "flag_anchor": [
+        0,
+        0.024,
+        0
+      ],
+      "label_anchor": [
+        0,
+        0.0439,
+        0
+      ]
+    },
+    "parts": [
+      "body",
+      "head",
+      "ear_l",
+      "ear_r",
+      "tail",
+      "leg_fl",
+      "leg_fr",
+      "leg_bl",
+      "leg_br"
+    ],
+    "materials": [
+      "bark",
+      "bark_shade",
+      "ink",
+      "paper",
+      "paper_shade"
+    ],
+    "clips": [
+      "idle",
+      "hop",
+      "cheer",
+      "bounce",
+      "fold"
+    ]
+  },
+  {
+    "name": "origami_tiger",
+    "category": "origami_animals",
+    "sheet": "origami_land",
+    "file": "origami-animals/origami_tiger.glb",
+    "unit": "m",
+    "triangles": 478,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.0365,
+        -0.0001,
+        -0.0105
+      ],
+      "max": [
+        0.0351,
+        0.0587,
+        0.0105
+      ]
+    },
+    "anchors": {
+      "flag_anchor": [
+        0,
+        0.034,
+        0
+      ],
+      "label_anchor": [
+        0,
+        0.057,
+        0
+      ]
+    },
+    "parts": [
+      "body",
+      "head",
+      "ear_l",
+      "ear_r",
+      "tail",
+      "leg_fl",
+      "leg_fr",
+      "leg_bl",
+      "leg_br"
+    ],
+    "materials": [
+      "ink",
+      "paper",
+      "paper_shade",
+      "sunflower",
+      "sunflower_shade"
+    ],
+    "clips": [
+      "idle",
+      "hop",
+      "cheer",
+      "bounce",
+      "fold"
+    ]
+  },
+  {
+    "name": "origami_hippo",
+    "category": "origami_animals",
+    "sheet": "origami_land",
+    "file": "origami-animals/origami_hippo.glb",
+    "unit": "m",
+    "triangles": 522,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.0293,
+        -0.0001,
+        -0.0157
+      ],
+      "max": [
+        0.0387,
+        0.044,
+        0.0157
+      ]
+    },
+    "anchors": {
+      "flag_anchor": [
+        0,
+        0.034,
+        0
+      ],
+      "label_anchor": [
+        0,
+        0.0541,
+        0
+      ]
+    },
+    "parts": [
+      "body",
+      "head",
+      "ear_l",
+      "ear_r",
+      "tail",
+      "leg_fl",
+      "leg_fr",
+      "leg_bl",
+      "leg_br"
+    ],
+    "materials": [
+      "ink",
+      "paper",
+      "paper_shade",
+      "stone",
+      "stone_shade"
+    ],
+    "clips": [
+      "idle",
+      "hop",
+      "cheer",
+      "bounce",
+      "fold"
+    ]
+  },
+  {
+    "name": "origami_meerkat",
+    "category": "origami_animals",
+    "sheet": "origami_land",
+    "file": "origami-animals/origami_meerkat.glb",
+    "unit": "m",
+    "triangles": 408,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.0396,
+        0,
+        -0.012
+      ],
+      "max": [
+        0.0236,
+        0.0581,
+        0.012
+      ]
+    },
+    "anchors": {
+      "flag_anchor": [
+        -0.0118,
+        0.048,
+        0
+      ],
+      "label_anchor": [
+        0,
+        0.0679,
+        0
+      ]
+    },
+    "parts": [
+      "body",
+      "head",
+      "ear_l",
+      "ear_r",
+      "tail",
+      "leg_bl",
+      "leg_fl",
+      "leg_br",
+      "leg_fr"
+    ],
+    "materials": [
+      "bark",
+      "ink",
+      "paper",
+      "paper_shade",
+      "straw",
+      "straw_shade"
+    ],
+    "clips": [
+      "idle",
+      "hop",
+      "cheer",
+      "bounce",
+      "fold"
+    ]
+  },
+  {
+    "name": "origami_wolf",
+    "category": "origami_animals",
+    "sheet": "origami_land",
+    "file": "origami-animals/origami_wolf.glb",
+    "unit": "m",
+    "triangles": 462,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.0572,
+        0,
+        -0.014
+      ],
+      "max": [
+        0.0566,
+        0.059,
+        0.014
+      ]
+    },
+    "anchors": {
+      "flag_anchor": [
+        0,
+        0.038,
+        0
+      ],
+      "label_anchor": [
+        0,
+        0.069,
+        0
+      ]
+    },
+    "parts": [
+      "body",
+      "head",
+      "ear_l",
+      "ear_r",
+      "tail",
+      "leg_fl",
+      "leg_fr",
+      "leg_bl",
+      "leg_br"
+    ],
+    "materials": [
+      "blue",
+      "blue_shade",
+      "ink",
+      "paper",
+      "paper_shade",
+      "pink"
+    ],
+    "clips": [
+      "idle",
+      "hop",
+      "cheer",
+      "bounce",
+      "fold"
+    ]
+  },
+  {
+    "name": "origami_mammoth",
+    "category": "origami_animals",
+    "sheet": "origami_land",
+    "file": "origami-animals/origami_mammoth.glb",
+    "unit": "m",
+    "triangles": 450,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.0293,
+        -0.0081,
+        -0.016
+      ],
+      "max": [
+        0.0547,
+        0.0476,
+        0.016
+      ]
+    },
+    "anchors": {
+      "flag_anchor": [
+        0,
+        0.041,
+        0
+      ],
+      "label_anchor": [
+        0,
+        0.0575,
+        0
+      ]
+    },
+    "parts": [
+      "body",
+      "head",
+      "ear_l",
+      "ear_r",
+      "tail",
+      "leg_fl",
+      "leg_fr",
+      "leg_bl",
+      "leg_br"
+    ],
+    "materials": [
+      "ink",
+      "paper",
+      "paper_shade",
+      "wood",
+      "wood_shade"
+    ],
+    "clips": [
+      "idle",
+      "hop",
+      "cheer",
+      "bounce",
+      "fold"
+    ]
+  },
+  {
+    "name": "origami_shark",
+    "category": "origami_animals",
+    "sheet": "origami_sea",
+    "file": "origami-animals/origami_shark.glb",
+    "unit": "m",
+    "triangles": 220,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.0372,
+        0.0094,
+        -0.0207
+      ],
+      "max": [
+        0.038,
+        0.05,
+        0.0207
+      ]
+    },
+    "anchors": {
+      "flag_anchor": [
+        0,
+        0.036,
+        0
+      ],
+      "label_anchor": [
+        0,
+        0.058,
+        0
+      ]
+    },
+    "parts": [
+      "body",
+      "tail",
+      "fin_l",
+      "fin_r"
+    ],
+    "materials": [
+      "blue",
+      "blue_shade",
+      "ink",
+      "paper",
+      "paper_shade"
+    ],
+    "clips": [
+      "idle",
+      "hop",
+      "cheer",
+      "bounce",
+      "fold"
+    ],
+    "notes": "The long upper tail lobe is the thresher shark's signature."
+  },
+  {
+    "name": "origami_whale",
+    "category": "origami_animals",
+    "sheet": "origami_sea",
+    "file": "origami-animals/origami_whale.glb",
+    "unit": "m",
+    "triangles": 212,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.043,
+        0.009,
+        -0.0277
+      ],
+      "max": [
+        0.033,
+        0.05,
+        0.0277
+      ]
+    },
+    "anchors": {
+      "flag_anchor": [
+        0,
+        0.044,
+        0
+      ],
+      "label_anchor": [
+        0,
+        0.058,
+        0
+      ]
+    },
+    "parts": [
+      "body",
+      "tail",
+      "fin_l",
+      "fin_r"
+    ],
+    "materials": [
+      "cobalt",
+      "cobalt_shade",
+      "ink",
+      "paper",
+      "paper_shade"
+    ],
+    "clips": [
+      "idle",
+      "hop",
+      "cheer",
+      "bounce",
+      "fold"
+    ]
+  },
+  {
+    "name": "origami_pufferfish",
+    "category": "origami_animals",
+    "sheet": "origami_sea",
+    "file": "origami-animals/origami_pufferfish.glb",
+    "unit": "m",
+    "triangles": 228,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.028,
+        0.0127,
+        -0.0227
+      ],
+      "max": [
+        0.022,
+        0.052,
+        0.0227
+      ]
+    },
+    "anchors": {
+      "flag_anchor": [
+        0,
+        0.047,
+        0
+      ],
+      "label_anchor": [
+        0,
+        0.055,
+        0
+      ]
+    },
+    "parts": [
+      "body",
+      "tail",
+      "fin_l",
+      "fin_r"
+    ],
+    "materials": [
+      "ink",
+      "orange",
+      "paper",
+      "paper_shade",
+      "sunflower",
+      "sunflower_shade"
+    ],
+    "clips": [
+      "idle",
+      "hop",
+      "cheer",
+      "bounce",
+      "fold"
+    ]
+  },
+  {
+    "name": "origami_squid",
+    "category": "origami_animals",
+    "sheet": "origami_sea",
+    "file": "origami-animals/origami_squid.glb",
+    "unit": "m",
+    "triangles": 262,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.0124,
+        -0.0003,
+        -0.0206
+      ],
+      "max": [
+        0.0124,
+        0.0565,
+        0.0206
+      ]
+    },
+    "anchors": {
+      "flag_anchor": [
+        0,
+        0.05,
+        0
+      ],
+      "label_anchor": [
+        0,
+        0.068,
+        0
+      ]
+    },
+    "parts": [
+      "body",
+      "tentacle_0",
+      "tentacle_1",
+      "tentacle_2",
+      "tentacle_3",
+      "tentacle_4",
+      "tentacle_5"
+    ],
+    "materials": [
+      "ink",
+      "paper",
+      "paper_shade",
+      "sky",
+      "sky_shade"
+    ],
+    "clips": [
+      "idle",
+      "hop",
+      "cheer",
+      "bounce",
+      "fold"
+    ]
+  },
+  {
+    "name": "origami_walrus",
+    "category": "origami_animals",
+    "sheet": "origami_sea",
+    "file": "origami-animals/origami_walrus.glb",
+    "unit": "m",
+    "triangles": 366,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.025,
+        -0.0084,
+        -0.0153
+      ],
+      "max": [
+        0.0389,
+        0.029,
+        0.0153
+      ]
+    },
+    "anchors": {
+      "flag_anchor": [
+        0,
+        0.028,
+        0
+      ],
+      "label_anchor": [
+        0,
+        0.0394,
+        0
+      ]
+    },
+    "parts": [
+      "body",
+      "head",
+      "leg_fl",
+      "leg_fr",
+      "leg_bl",
+      "leg_br"
+    ],
+    "materials": [
+      "ink",
+      "paper",
+      "paper_shade",
+      "sand",
+      "sand_shade"
+    ],
+    "clips": [
+      "idle",
+      "hop",
+      "cheer",
+      "bounce",
+      "fold"
+    ]
+  },
+  {
+    "name": "origami_shieldbug",
+    "category": "origami_animals",
+    "sheet": "origami_small",
+    "file": "origami-animals/origami_shieldbug.glb",
+    "unit": "m",
+    "triangles": 380,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.017,
+        -0.0005,
+        -0.0271
+      ],
+      "max": [
+        0.0306,
+        0.0176,
+        0.0271
+      ]
+    },
+    "anchors": {
+      "flag_anchor": [
+        0,
+        0.014,
+        0
+      ],
+      "label_anchor": [
+        0,
+        0.04,
+        0
+      ]
+    },
+    "parts": [
+      "body",
+      "head",
+      "leg_fl",
+      "leg_ml",
+      "leg_bl",
+      "leg_fr",
+      "leg_mr",
+      "leg_br"
+    ],
+    "materials": [
+      "grass",
+      "grass_shade",
+      "ink",
+      "lemon",
+      "lemon_shade",
+      "terracotta"
+    ],
+    "clips": [
+      "idle",
+      "hop",
+      "cheer",
+      "bounce",
+      "fold"
+    ]
+  },
+  {
+    "name": "origami_katydid",
+    "category": "origami_animals",
+    "sheet": "origami_small",
+    "file": "origami-animals/origami_katydid.glb",
+    "unit": "m",
+    "triangles": 498,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.0362,
+        -0.0005,
+        -0.0129
+      ],
+      "max": [
+        0.017,
+        0.0443,
+        0.0129
+      ]
+    },
+    "anchors": {
+      "flag_anchor": [
+        -0.006,
+        0.03,
+        0
+      ],
+      "label_anchor": [
+        0,
+        0.052,
+        0
+      ]
+    },
+    "parts": [
+      "body",
+      "head",
+      "leg_fl",
+      "leg_ml",
+      "leg_bl",
+      "leg_fr",
+      "leg_mr",
+      "leg_br"
+    ],
+    "materials": [
+      "ink",
+      "leaf",
+      "leaf_shade",
+      "lemon",
+      "lemon_shade"
+    ],
+    "clips": [
+      "idle",
+      "hop",
+      "cheer",
+      "bounce",
+      "fold"
+    ]
+  },
+  {
+    "name": "origami_snake",
+    "category": "origami_animals",
+    "sheet": "origami_small",
+    "file": "origami-animals/origami_snake.glb",
+    "unit": "m",
+    "triangles": 238,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.0304,
+        -0.0015,
+        -0.006
+      ],
+      "max": [
+        0.026,
+        0.039,
+        0.006
+      ]
+    },
+    "anchors": {
+      "flag_anchor": [
+        0,
+        0.008,
+        0
+      ],
+      "label_anchor": [
+        0,
+        0.052,
+        0
+      ]
+    },
+    "parts": [
+      "body",
+      "head"
+    ],
+    "materials": [
+      "ink",
+      "leaf",
+      "leaf_shade",
+      "lemon",
+      "lemon_shade",
+      "red"
+    ],
+    "clips": [
+      "idle",
+      "hop",
+      "cheer",
+      "bounce",
+      "fold"
+    ]
+  },
+  {
+    "name": "origami_chameleon",
+    "category": "origami_animals",
+    "sheet": "origami_small",
+    "file": "origami-animals/origami_chameleon.glb",
+    "unit": "m",
+    "triangles": 424,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.027,
+        0,
+        -0.0107
+      ],
+      "max": [
+        0.027,
+        0.032,
+        0.0107
+      ]
+    },
+    "anchors": {
+      "flag_anchor": [
+        -0.004,
+        0.03,
+        0
+      ],
+      "label_anchor": [
+        0,
+        0.046,
+        0
+      ]
+    },
+    "parts": [
+      "body",
+      "head",
+      "leg_fl",
+      "leg_bl",
+      "leg_fr",
+      "leg_br"
+    ],
+    "materials": [
+      "bark",
+      "ink",
+      "leaf",
+      "leaf_shade",
+      "mint",
+      "mint_shade"
+    ],
+    "clips": [
+      "idle",
+      "hop",
+      "cheer",
+      "bounce",
+      "fold"
+    ],
+    "notes": "Sits on a bark branch (one flat colour, the sixth material)."
+  },
+  {
+    "name": "origami_stegosaurus",
+    "category": "origami_animals",
+    "sheet": "origami_small",
+    "file": "origami-animals/origami_stegosaurus.glb",
+    "unit": "m",
+    "triangles": 480,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.0451,
+        -0.0001,
+        -0.0112
+      ],
+      "max": [
+        0.0475,
+        0.0384,
+        0.0112
+      ]
+    },
+    "anchors": {
+      "flag_anchor": [
+        0,
+        0.027,
+        0
+      ],
+      "label_anchor": [
+        0,
+        0.0348,
+        0
+      ]
+    },
+    "parts": [
+      "body",
+      "head",
+      "tail",
+      "leg_fl",
+      "leg_fr",
+      "leg_bl",
+      "leg_br"
+    ],
+    "materials": [
+      "ink",
+      "paper",
+      "paper_shade",
+      "sky",
+      "slate",
+      "slate_shade"
+    ],
+    "clips": [
+      "idle",
+      "hop",
+      "cheer",
+      "bounce",
+      "fold"
+    ]
+  },
+  {
+    "name": "origami_griffin",
+    "category": "origami_animals",
+    "sheet": "origami_myth",
+    "file": "origami-animals/origami_griffin.glb",
+    "unit": "m",
+    "triangles": 392,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.0433,
+        -0.0001,
+        -0.0306
+      ],
+      "max": [
+        0.0455,
+        0.0614,
+        0.0306
+      ]
+    },
+    "anchors": {
+      "flag_anchor": [
+        0,
+        0.032,
+        0
+      ],
+      "label_anchor": [
+        0,
+        0.0523,
+        0
+      ]
+    },
+    "parts": [
+      "body",
+      "head",
+      "tail",
+      "leg_fl",
+      "leg_fr",
+      "leg_bl",
+      "leg_br"
+    ],
+    "materials": [
+      "gold",
+      "gold_shade",
+      "ink",
+      "orange",
+      "paper",
+      "paper_shade"
+    ],
+    "clips": [
+      "idle",
+      "hop",
+      "cheer",
+      "bounce",
+      "fold"
+    ]
+  },
+  {
+    "name": "origami_winged_lion",
+    "category": "origami_animals",
+    "sheet": "origami_myth",
+    "file": "origami-animals/origami_winged_lion.glb",
+    "unit": "m",
+    "triangles": 460,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.0425,
+        -0.0001,
+        -0.0325
+      ],
+      "max": [
+        0.0325,
+        0.0585,
+        0.0325
+      ]
+    },
+    "anchors": {
+      "flag_anchor": [
+        0,
+        0.033,
+        0
+      ],
+      "label_anchor": [
+        0,
+        0.054,
+        0
+      ]
+    },
+    "parts": [
+      "body",
+      "head",
+      "ear_l",
+      "ear_r",
+      "tail",
+      "leg_fl",
+      "leg_fr",
+      "leg_bl",
+      "leg_br"
+    ],
+    "materials": [
+      "bark",
+      "ink",
+      "paper",
+      "paper_shade",
+      "sand",
+      "sand_shade"
+    ],
+    "clips": [
+      "idle",
+      "hop",
+      "cheer",
+      "bounce",
+      "fold"
+    ]
+  },
+  {
+    "name": "origami_dragon",
+    "category": "origami_animals",
+    "sheet": "origami_myth",
+    "file": "origami-animals/origami_dragon.glb",
+    "unit": "m",
+    "triangles": 546,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.0521,
+        -0.0001,
+        -0.0175
+      ],
+      "max": [
+        0.0452,
+        0.052,
+        0.0175
+      ]
+    },
+    "anchors": {
+      "flag_anchor": [
+        0,
+        0.027,
+        0
+      ],
+      "label_anchor": [
+        0,
+        0.0563,
+        0
+      ]
+    },
+    "parts": [
+      "body",
+      "head",
+      "ear_l",
+      "ear_r",
+      "tail",
+      "leg_fl",
+      "leg_fr",
+      "leg_bl",
+      "leg_br"
+    ],
+    "materials": [
+      "ink",
+      "paper",
+      "paper_shade",
+      "sky",
+      "sky_shade",
+      "teal"
+    ],
+    "clips": [
+      "idle",
+      "hop",
+      "cheer",
+      "bounce",
+      "fold"
+    ]
+  },
+  {
+    "name": "origami_phoenix",
+    "category": "origami_animals",
+    "sheet": "origami_myth",
+    "file": "origami-animals/origami_phoenix.glb",
+    "unit": "m",
+    "triangles": 344,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.0523,
+        0.0001,
+        -0.0383
+      ],
+      "max": [
+        0.0179,
+        0.0487,
+        0.0383
+      ]
+    },
+    "anchors": {
+      "flag_anchor": [
+        -0.0028,
+        0.037,
+        0
+      ],
+      "label_anchor": [
+        0,
+        0.0564,
+        0
+      ]
+    },
+    "parts": [
+      "body",
+      "head",
+      "tail",
+      "wing_l",
+      "wing_r",
+      "leg_l",
+      "leg_r"
+    ],
+    "materials": [
+      "gold",
+      "ink",
+      "orange",
+      "orange_shade",
+      "red",
+      "red_shade"
+    ],
+    "clips": [
+      "idle",
+      "hop",
+      "cheer",
+      "bounce",
+      "fold"
+    ]
+  },
+  {
+    "name": "origami_duck",
+    "category": "origami_animals",
+    "sheet": "origami_birds",
+    "file": "origami-animals/origami_duck.glb",
+    "unit": "m",
+    "triangles": 272,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.03,
+        0,
+        -0.009
+      ],
+      "max": [
+        0.0221,
+        0.0275,
+        0.009
+      ]
+    },
+    "anchors": {
+      "flag_anchor": [
+        -0.0034,
+        0.022,
+        0
+      ],
+      "label_anchor": [
+        0,
+        0.0312,
+        0
+      ]
+    },
+    "parts": [
+      "body",
+      "neck",
+      "head",
+      "tail",
+      "wing_l",
+      "wing_r",
+      "leg_l",
+      "leg_r"
+    ],
+    "materials": [
+      "ink",
+      "orange",
+      "paper",
+      "paper_shade"
+    ],
+    "clips": [
+      "idle",
+      "hop",
+      "cheer",
+      "bounce",
+      "fold"
+    ]
+  },
+  {
+    "name": "origami_seagull",
+    "category": "origami_animals",
+    "sheet": "origami_birds",
+    "file": "origami-animals/origami_seagull.glb",
+    "unit": "m",
+    "triangles": 272,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.0288,
+        0.0001,
+        -0.0081
+      ],
+      "max": [
+        0.0209,
+        0.0321,
+        0.0081
+      ]
+    },
+    "anchors": {
+      "flag_anchor": [
+        -0.0032,
+        0.028,
+        0
+      ],
+      "label_anchor": [
+        0,
+        0.0356,
+        0
+      ]
+    },
+    "parts": [
+      "body",
+      "neck",
+      "head",
+      "tail",
+      "wing_l",
+      "wing_r",
+      "leg_l",
+      "leg_r"
+    ],
+    "materials": [
+      "ink",
+      "paper",
+      "paper_shade",
+      "stone",
+      "stone_shade",
+      "sunflower"
+    ],
+    "clips": [
+      "idle",
+      "hop",
+      "cheer",
+      "bounce",
+      "fold"
+    ]
+  },
+  {
+    "name": "origami_vulture",
+    "category": "origami_animals",
+    "sheet": "origami_birds",
+    "file": "origami-animals/origami_vulture.glb",
+    "unit": "m",
+    "triangles": 262,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.0321,
+        0.0001,
+        -0.0108
+      ],
+      "max": [
+        0.0231,
+        0.0408,
+        0.0108
+      ]
+    },
+    "anchors": {
+      "flag_anchor": [
+        -0.0034,
+        0.037,
+        0
+      ],
+      "label_anchor": [
+        0,
+        0.0445,
+        0
+      ]
+    },
+    "parts": [
+      "body",
+      "neck",
+      "head",
+      "tail",
+      "wing_l",
+      "wing_r",
+      "leg_l",
+      "leg_r"
+    ],
+    "materials": [
+      "asphalt",
+      "asphalt_shade",
+      "ink",
+      "lemon",
+      "pink",
+      "pink_shade"
+    ],
+    "clips": [
+      "idle",
+      "hop",
+      "cheer",
+      "bounce",
+      "fold"
+    ]
+  },
+  {
+    "name": "origami_rooster",
+    "category": "origami_animals",
+    "sheet": "origami_birds",
+    "file": "origami-animals/origami_rooster.glb",
+    "unit": "m",
+    "triangles": 262,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.0317,
+        0.0001,
+        -0.0099
+      ],
+      "max": [
+        0.0174,
+        0.0493,
+        0.0099
+      ]
+    },
+    "anchors": {
+      "flag_anchor": [
+        -0.003,
+        0.037,
+        0
+      ],
+      "label_anchor": [
+        0,
+        0.0521,
+        0
+      ]
+    },
+    "parts": [
+      "body",
+      "head",
+      "tail",
+      "wing_l",
+      "wing_r",
+      "leg_l",
+      "leg_r"
+    ],
+    "materials": [
+      "ink",
+      "orange",
+      "orange_shade",
+      "paper",
+      "paper_shade",
+      "red"
+    ],
+    "clips": [
+      "idle",
+      "hop",
+      "cheer",
+      "bounce",
+      "fold"
+    ]
+  },
+  {
+    "name": "origami_cardinal",
+    "category": "origami_animals",
+    "sheet": "origami_birds",
+    "file": "origami-animals/origami_cardinal.glb",
+    "unit": "m",
+    "triangles": 278,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.0414,
+        0,
+        -0.0095
+      ],
+      "max": [
+        0.0174,
+        0.0341,
+        0.0095
+      ]
+    },
+    "anchors": {
+      "flag_anchor": [
+        -0.003,
+        0.029,
+        0
+      ],
+      "label_anchor": [
+        0,
+        0.0417,
+        0
+      ]
+    },
+    "parts": [
+      "body",
+      "head",
+      "tail",
+      "wing_l",
+      "wing_r",
+      "leg_l",
+      "leg_r"
+    ],
+    "materials": [
+      "ink",
+      "orange",
+      "red",
+      "red_shade"
+    ],
+    "clips": [
+      "idle",
+      "hop",
+      "cheer",
+      "bounce",
+      "fold"
+    ]
+  },
+  {
+    "name": "origami_sparrow",
+    "category": "origami_animals",
+    "sheet": "origami_birds",
+    "file": "origami-animals/origami_sparrow.glb",
+    "unit": "m",
+    "triangles": 254,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.0306,
+        0,
+        -0.0081
+      ],
+      "max": [
+        0.0157,
+        0.0264,
+        0.0081
+      ]
+    },
+    "anchors": {
+      "flag_anchor": [
+        -0.0024,
+        0.025,
+        0
+      ],
+      "label_anchor": [
+        0,
+        0.0302,
+        0
+      ]
+    },
+    "parts": [
+      "body",
+      "head",
+      "tail",
+      "wing_l",
+      "wing_r",
+      "leg_l",
+      "leg_r"
+    ],
+    "materials": [
+      "bark",
+      "cream",
+      "cream_shade",
+      "ink",
+      "wood",
+      "wood_shade"
+    ],
+    "clips": [
+      "idle",
+      "hop",
+      "cheer",
+      "bounce",
+      "fold"
+    ]
+  },
+  {
+    "name": "origami_blue_jay",
+    "category": "origami_animals",
+    "sheet": "origami_birds",
+    "file": "origami-animals/origami_blue_jay.glb",
+    "unit": "m",
+    "triangles": 286,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.0394,
+        0,
+        -0.0092
+      ],
+      "max": [
+        0.0184,
+        0.0324,
+        0.0092
+      ]
+    },
+    "anchors": {
+      "flag_anchor": [
+        -0.003,
+        0.028,
+        0
+      ],
+      "label_anchor": [
+        0,
+        0.04,
+        0
+      ]
+    },
+    "parts": [
+      "body",
+      "head",
+      "tail",
+      "wing_l",
+      "wing_r",
+      "leg_l",
+      "leg_r"
+    ],
+    "materials": [
+      "blue",
+      "blue_shade",
+      "ink",
+      "paper",
+      "paper_shade"
+    ],
+    "clips": [
+      "idle",
+      "hop",
+      "cheer",
+      "bounce",
+      "fold"
+    ]
+  },
+  {
+    "name": "origami_toucan",
+    "category": "origami_animals",
+    "sheet": "origami_birds",
+    "file": "origami-animals/origami_toucan.glb",
+    "unit": "m",
+    "triangles": 254,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.0342,
+        0,
+        -0.009
+      ],
+      "max": [
+        0.032,
+        0.0328,
+        0.009
+      ]
+    },
+    "anchors": {
+      "flag_anchor": [
+        -0.0028,
+        0.033,
+        0
+      ],
+      "label_anchor": [
+        0,
+        0.0365,
+        0
+      ]
+    },
+    "parts": [
+      "body",
+      "head",
+      "tail",
+      "wing_l",
+      "wing_r",
+      "leg_l",
+      "leg_r"
+    ],
+    "materials": [
+      "dark",
+      "dark_shade",
+      "ink",
+      "orange",
+      "paper",
+      "paper_shade"
+    ],
+    "clips": [
+      "idle",
+      "hop",
+      "cheer",
+      "bounce",
+      "fold"
+    ]
+  },
+  {
+    "name": "origami_flycatcher",
+    "category": "origami_animals",
+    "sheet": "origami_birds",
+    "file": "origami-animals/origami_flycatcher.glb",
+    "unit": "m",
+    "triangles": 248,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.0315,
+        0,
+        -0.0081
+      ],
+      "max": [
+        0.0163,
+        0.0262,
+        0.0081
+      ]
+    },
+    "anchors": {
+      "flag_anchor": [
+        -0.0024,
+        0.025,
+        0
+      ],
+      "label_anchor": [
+        0,
+        0.0299,
+        0
+      ]
+    },
+    "parts": [
+      "body",
+      "head",
+      "tail",
+      "wing_l",
+      "wing_r",
+      "leg_l",
+      "leg_r"
+    ],
+    "materials": [
+      "cobalt",
+      "cobalt_shade",
+      "ink",
+      "paper",
+      "paper_shade"
+    ],
+    "clips": [
+      "idle",
+      "hop",
+      "cheer",
+      "bounce",
+      "fold"
+    ]
+  },
+  {
+    "name": "origami_magpie",
+    "category": "origami_animals",
+    "sheet": "origami_birds",
+    "file": "origami-animals/origami_magpie.glb",
+    "unit": "m",
+    "triangles": 248,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.058,
+        0,
+        -0.0081
+      ],
+      "max": [
+        0.0179,
+        0.0269,
+        0.0081
+      ]
+    },
+    "anchors": {
+      "flag_anchor": [
+        -0.0028,
+        0.026,
+        0
+      ],
+      "label_anchor": [
+        0,
+        0.0305,
+        0
+      ]
+    },
+    "parts": [
+      "body",
+      "head",
+      "tail",
+      "wing_l",
+      "wing_r",
+      "leg_l",
+      "leg_r"
+    ],
+    "materials": [
+      "blue",
+      "dark",
+      "dark_shade",
+      "ink",
+      "paper",
+      "paper_shade"
+    ],
+    "clips": [
+      "idle",
+      "hop",
+      "cheer",
+      "bounce",
+      "fold"
+    ]
+  },
+  {
+    "name": "origami_penguin",
+    "category": "origami_animals",
+    "sheet": "origami_birds",
+    "file": "origami-animals/origami_penguin.glb",
+    "unit": "m",
+    "triangles": 248,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.0241,
+        0,
+        -0.0099
+      ],
+      "max": [
+        0.0179,
+        0.0399,
+        0.0099
+      ]
+    },
+    "anchors": {
+      "flag_anchor": [
+        -0.0024,
+        0.038,
+        0
+      ],
+      "label_anchor": [
+        0,
+        0.0437,
+        0
+      ]
+    },
+    "parts": [
+      "body",
+      "head",
+      "tail",
+      "wing_l",
+      "wing_r",
+      "leg_l",
+      "leg_r"
+    ],
+    "materials": [
+      "dark",
+      "dark_shade",
+      "ink",
+      "orange",
+      "paper",
+      "paper_shade"
+    ],
+    "clips": [
+      "idle",
+      "hop",
+      "cheer",
+      "bounce",
+      "fold"
+    ]
+  },
+  {
+    "name": "origami_long_tailed_tit",
+    "category": "origami_animals",
+    "sheet": "origami_birds",
+    "file": "origami-animals/origami_long_tailed_tit.glb",
+    "unit": "m",
+    "triangles": 248,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.0456,
+        0,
+        -0.0072
+      ],
+      "max": [
+        0.013,
+        0.0237,
+        0.0072
+      ]
+    },
+    "anchors": {
+      "flag_anchor": [
+        -0.0018,
+        0.022,
+        0
+      ],
+      "label_anchor": [
+        0,
+        0.0276,
+        0
+      ]
+    },
+    "parts": [
+      "body",
+      "head",
+      "tail",
+      "wing_l",
+      "wing_r",
+      "leg_l",
+      "leg_r"
+    ],
+    "materials": [
+      "dark",
+      "dark_shade",
+      "ink",
+      "paper",
+      "paper_shade"
+    ],
+    "clips": [
+      "idle",
+      "hop",
+      "cheer",
+      "bounce",
+      "fold"
+    ]
+  },
+  {
+    "name": "origami_bald_eagle",
+    "category": "origami_animals",
+    "sheet": "origami_birds",
+    "file": "origami-animals/origami_bald_eagle.glb",
+    "unit": "m",
+    "triangles": 264,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.0328,
+        0.0001,
+        -0.0302
+      ],
+      "max": [
+        0.0228,
+        0.0399,
+        0.0302
+      ]
+    },
+    "anchors": {
+      "flag_anchor": [
+        -0.0032,
+        0.036,
+        0
+      ],
+      "label_anchor": [
+        0,
+        0.0403,
+        0
+      ]
+    },
+    "parts": [
+      "body",
+      "head",
+      "tail",
+      "wing_l",
+      "wing_r",
+      "leg_l",
+      "leg_r"
+    ],
+    "materials": [
+      "bark",
+      "bark_shade",
+      "ink",
+      "paper",
+      "paper_shade",
+      "sunflower"
+    ],
+    "clips": [
+      "idle",
+      "hop",
+      "cheer",
+      "bounce",
+      "fold"
+    ]
+  },
+  {
+    "name": "origami_hummingbird",
+    "category": "origami_animals",
+    "sheet": "origami_birds",
+    "file": "origami-animals/origami_hummingbird.glb",
+    "unit": "m",
+    "triangles": 236,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.0244,
+        0.025,
+        -0.0263
+      ],
+      "max": [
+        0.0243,
+        0.0496,
+        0.0263
+      ]
+    },
+    "anchors": {
+      "flag_anchor": [
+        -0.0022,
+        0.041,
+        0
+      ],
+      "label_anchor": [
+        0,
+        0.0459,
+        0
+      ]
+    },
+    "parts": [
+      "body",
+      "head",
+      "tail",
+      "wing_l",
+      "wing_r"
+    ],
+    "materials": [
+      "ink",
+      "paper",
+      "paper_shade",
+      "teal",
+      "teal_shade"
+    ],
+    "clips": [
+      "idle",
+      "hop",
+      "cheer",
+      "bounce",
+      "fold"
+    ],
+    "notes": "Hovers: the body floats 2.6 cm above the table; the origin stays on the table top. Clip flap."
+  },
+  {
+    "name": "origami_swallow",
+    "category": "origami_animals",
+    "sheet": "origami_birds",
+    "file": "origami-animals/origami_swallow.glb",
+    "unit": "m",
+    "triangles": 256,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.0407,
+        0.025,
+        -0.0403
+      ],
+      "max": [
+        0.0154,
+        0.0427,
+        0.0403
+      ]
+    },
+    "anchors": {
+      "flag_anchor": [
+        -0.0026,
+        0.04,
+        0
+      ],
+      "label_anchor": [
+        0,
+        0.045,
+        0
+      ]
+    },
+    "parts": [
+      "body",
+      "head",
+      "tail",
+      "wing_l",
+      "wing_r"
+    ],
+    "materials": [
+      "ink",
+      "navy",
+      "navy_shade",
+      "paper",
+      "paper_shade"
+    ],
+    "clips": [
+      "idle",
+      "hop",
+      "cheer",
+      "bounce",
+      "fold"
+    ],
+    "notes": "Hovers: the body floats 2.6 cm above the table; the origin stays on the table top. Clip flap."
+  },
+  {
+    "name": "origami_peacock",
+    "category": "origami_animals",
+    "sheet": "origami_birds",
+    "file": "origami-animals/origami_peacock.glb",
+    "unit": "m",
+    "triangles": 876,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.0399,
+        0.0001,
+        -0.0261
+      ],
+      "max": [
+        0.015,
+        0.0496,
+        0.0261
+      ]
+    },
+    "anchors": {
+      "flag_anchor": [
+        -0.0028,
+        0.035,
+        0
+      ],
+      "label_anchor": [
+        0,
+        0.0565,
+        0
+      ]
+    },
+    "parts": [
+      "body",
+      "neck",
+      "head",
+      "tail",
+      "wing_l",
+      "wing_r",
+      "leg_l",
+      "leg_r"
+    ],
+    "materials": [
+      "blue",
+      "blue_shade",
+      "gold",
+      "ink",
+      "teal",
+      "teal_shade"
+    ],
+    "clips": [
+      "idle",
+      "hop",
+      "cheer",
+      "bounce",
+      "fold"
+    ]
+  },
+  {
+    "name": "origami_flamingo",
+    "category": "origami_animals",
+    "sheet": "origami_birds",
+    "file": "origami-animals/origami_flamingo.glb",
+    "unit": "m",
+    "triangles": 262,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.025,
+        0.0001,
+        -0.0081
+      ],
+      "max": [
+        0.0163,
+        0.0728,
+        0.0081
+      ]
+    },
+    "anchors": {
+      "flag_anchor": [
+        -0.0026,
+        0.048,
+        0
+      ],
+      "label_anchor": [
+        0,
+        0.076,
+        0
+      ]
+    },
+    "parts": [
+      "body",
+      "neck",
+      "head",
+      "tail",
+      "wing_l",
+      "wing_r",
+      "leg_l",
+      "leg_r"
+    ],
+    "materials": [
+      "coral",
+      "coral_shade",
+      "ink",
+      "pink",
+      "pink_shade"
+    ],
+    "clips": [
+      "idle",
+      "hop",
+      "cheer",
+      "bounce",
+      "fold"
+    ]
+  },
+  {
+    "name": "origami_egret",
+    "category": "origami_animals",
+    "sheet": "origami_birds",
+    "file": "origami-animals/origami_egret.glb",
+    "unit": "m",
+    "triangles": 262,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.0275,
+        0.0001,
+        -0.0072
+      ],
+      "max": [
+        0.0204,
+        0.0689,
+        0.0072
+      ]
+    },
+    "anchors": {
+      "flag_anchor": [
+        -0.0024,
+        0.042,
+        0
+      ],
+      "label_anchor": [
+        0,
+        0.0718,
+        0
+      ]
+    },
+    "parts": [
+      "body",
+      "neck",
+      "head",
+      "tail",
+      "wing_l",
+      "wing_r",
+      "leg_l",
+      "leg_r"
+    ],
+    "materials": [
+      "ink",
+      "paper",
+      "paper_shade",
+      "sunflower"
+    ],
+    "clips": [
+      "idle",
+      "hop",
+      "cheer",
+      "bounce",
+      "fold"
+    ]
+  },
+  {
+    "name": "origami_ostrich",
+    "category": "origami_animals",
+    "sheet": "origami_birds",
+    "file": "origami-animals/origami_ostrich.glb",
+    "unit": "m",
+    "triangles": 262,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.0315,
+        0.0001,
+        -0.0108
+      ],
+      "max": [
+        0.0164,
+        0.0841,
+        0.0108
+      ]
+    },
+    "anchors": {
+      "flag_anchor": [
+        -0.003,
+        0.055,
+        0
+      ],
+      "label_anchor": [
+        0,
+        0.0873,
+        0
+      ]
+    },
+    "parts": [
+      "body",
+      "neck",
+      "head",
+      "tail",
+      "wing_l",
+      "wing_r",
+      "leg_l",
+      "leg_r"
+    ],
+    "materials": [
+      "dark",
+      "dark_shade",
+      "ink",
+      "paper",
+      "paper_shade",
+      "sand"
+    ],
+    "clips": [
+      "idle",
+      "hop",
+      "cheer",
+      "bounce",
+      "fold"
+    ]
+  },
+  {
+    "name": "origami_shoebill",
+    "category": "origami_animals",
+    "sheet": "origami_birds",
+    "file": "origami-animals/origami_shoebill.glb",
+    "unit": "m",
+    "triangles": 272,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.0257,
+        0.0001,
+        -0.009
+      ],
+      "max": [
+        0.0304,
+        0.0536,
+        0.009
+      ]
+    },
+    "anchors": {
+      "flag_anchor": [
+        -0.0024,
+        0.047,
+        0
+      ],
+      "label_anchor": [
+        0,
+        0.0581,
+        0
+      ]
+    },
+    "parts": [
+      "body",
+      "neck",
+      "head",
+      "tail",
+      "wing_l",
+      "wing_r",
+      "leg_l",
+      "leg_r"
+    ],
+    "materials": [
+      "ink",
+      "sand",
+      "slate",
+      "slate_shade",
+      "stone",
+      "stone_shade"
+    ],
+    "clips": [
+      "idle",
+      "hop",
+      "cheer",
+      "bounce",
+      "fold"
+    ]
+  },
+  {
+    "name": "origami_owl",
+    "category": "origami_animals",
+    "sheet": "origami_birds",
+    "file": "origami-animals/origami_owl.glb",
+    "unit": "m",
+    "triangles": 286,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.0238,
+        0,
+        -0.0099
+      ],
+      "max": [
+        0.0176,
+        0.0369,
+        0.0099
+      ]
+    },
+    "anchors": {
+      "flag_anchor": [
+        -0.0024,
+        0.035,
+        0
+      ],
+      "label_anchor": [
+        0,
+        0.0485,
+        0
+      ]
+    },
+    "parts": [
+      "body",
+      "head",
+      "tail",
+      "wing_l",
+      "wing_r",
+      "leg_l",
+      "leg_r"
+    ],
+    "materials": [
+      "cream",
+      "cream_shade",
+      "ink",
+      "sunflower",
+      "wood",
+      "wood_shade"
+    ],
+    "clips": [
+      "idle",
+      "hop",
+      "cheer",
+      "bounce",
+      "fold"
+    ]
+  },
+  {
+    "name": "origami_parrot",
+    "category": "origami_animals",
+    "sheet": "origami_birds",
+    "file": "origami-animals/origami_parrot.glb",
+    "unit": "m",
+    "triangles": 264,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.0508,
+        0,
+        -0.009
+      ],
+      "max": [
+        0.0195,
+        0.0337,
+        0.009
+      ]
+    },
+    "anchors": {
+      "flag_anchor": [
+        -0.0026,
+        0.033,
+        0
+      ],
+      "label_anchor": [
+        0,
+        0.0413,
+        0
+      ]
+    },
+    "parts": [
+      "body",
+      "head",
+      "tail",
+      "wing_l",
+      "wing_r",
+      "leg_l",
+      "leg_r"
+    ],
+    "materials": [
+      "ink",
+      "leaf",
+      "leaf_shade",
+      "lemon",
+      "lemon_shade",
+      "red"
+    ],
+    "clips": [
+      "idle",
+      "hop",
+      "cheer",
+      "bounce",
+      "fold"
+    ]
+  },
+  {
     "name": "base10_unit",
     "category": "hints",
     "sheet": "hints",
