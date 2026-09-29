@@ -41,6 +41,55 @@ export function headShape([hx, hy], { s = 1, snout = 1, wide = 1, drop = 0, blun
   return { pts, tip: P(tipX, tipY), P };
 }
 
+// Species face: a faceted cranium plus a muzzle block. Units mm, head-local x forward from the pivot.
+// hl, hw, hh: cranium length, width, height. ml, mw, mh: muzzle length, width, height.
+// taper: muzzle tip size vs its base (0 = pointed like a fox, 1 = square like a pig or hippo).
+// drop: muzzle lowered below the eyes. dome: extra crown height. ridge: crown folded to a ridge (pointed faces).
+// cheek: cheeks pushed out sideways (cats, big cats). jowl: chin pulled down (hippo, walrus). s: overall scale.
+export const FACES = {
+  fox: { hl: 16, hw: 19, hh: 15, ml: 17, mw: 8, mh: 7, taper: 0.1, drop: 3, ridge: true },
+  wolf: { hl: 18, hw: 18, hh: 16, ml: 19, mw: 9, mh: 8, taper: 0.35, drop: 2, ridge: true },
+  cat: { hl: 17, hw: 22, hh: 18, ml: 3.5, mw: 11, mh: 7, taper: 0.75, drop: 3, cheek: 1.15 },
+  bigcat: { hl: 19, hw: 24, hh: 18, ml: 7, mw: 14, mh: 10, taper: 0.8, drop: 3, cheek: 1.2 },
+  rabbit: { hl: 17, hw: 16, hh: 16, ml: 6, mw: 10, mh: 8, taper: 0.55, drop: 2, dome: 2 },
+  squirrel: { hl: 15, hw: 16, hh: 15, ml: 6, mw: 8.5, mh: 7, taper: 0.5, drop: 2, dome: 1.5, cheek: 1.1 },
+  meerkat: { hl: 14, hw: 13, hh: 12, ml: 10, mw: 6, mh: 5.5, taper: 0.35, drop: 2 },
+  pig: { hl: 16, hw: 22, hh: 19, ml: 6, mw: 12, mh: 10, taper: 1, drop: 3 },
+  hippo: { hl: 20, hw: 22, hh: 16, ml: 16, mw: 24, mh: 15, taper: 1, drop: 6, jowl: 3 },
+  beaver: { hl: 16, hw: 18, hh: 15, ml: 6, mw: 12, mh: 9, taper: 0.8, drop: 3, dome: 1, cheek: 1.1 },
+  mammoth: { hl: 18, hw: 20, hh: 24, ml: 3, mw: 12, mh: 10, taper: 0.9, drop: 4, dome: 7 },
+  walrus: { hl: 18, hw: 20, hh: 16, ml: 8, mw: 20, mh: 12, taper: 0.9, drop: 4, jowl: 2 },
+  dragon: { hl: 16, hw: 16, hh: 14, ml: 16, mw: 11, mh: 7, taper: 0.7, drop: 1, ridge: true },
+  lizard: { hl: 12, hw: 10, hh: 9, ml: 10, mw: 7, mh: 5, taper: 0.5, drop: 1 },
+  bird: { hl: 15, hw: 16, hh: 16, ml: 0, mw: 6, mh: 6, taper: 1, drop: 0, dome: 2 },
+};
+
+export function faceHead([hx, hy], face) {
+  const f = { hl: 16, hw: 18, hh: 16, ml: 10, mw: 9, mh: 7, taper: 0.5, drop: 2, dome: 0, cheek: 1, jowl: 0, s: 1, ...face };
+  const s = f.s, P = (x, y, z = 0) => [hx + x * s, hy + y * s, z * s];
+  const { hl, hw, hh, ml, mw, mh, taper, drop, dome, cheek, jowl } = f;
+  const top = hh * 0.5, zt = f.ridge ? 0 : hw * 0.26;
+  const pts = [
+    P(-hl * 0.5, hh * 0.05, hw * 0.3), P(-hl * 0.5, hh * 0.05, -hw * 0.3), // back of the skull
+    P(-hl * 0.3, top, zt), P(-hl * 0.3, top, -zt), P(hl * 0.1, top * 0.92 + dome * 0.4, zt * 0.9), P(hl * 0.1, top * 0.92 + dome * 0.4, -zt * 0.9), // crown
+    P(-hl * 0.05, -hh * 0.08, hw * 0.5 * cheek), P(-hl * 0.05, -hh * 0.08, -hw * 0.5 * cheek), // cheeks
+    P(-hl * 0.25, -hh * 0.5 - jowl, hw * 0.24), P(-hl * 0.25, -hh * 0.5 - jowl, -hw * 0.24), // jaw
+  ];
+  if (dome) pts.push(P(-hl * 0.05, top + dome, 0));
+  const xf = hl * 0.3, my = -hh * 0.18 - drop * 0.4, ty = my - drop * 0.6;
+  const base = [[mh / 2, mw / 2], [mh / 2, -mw / 2], [-mh / 2, mw / 2], [-mh / 2, -mw / 2]];
+  base.forEach(([y, z]) => pts.push(P(xf, my + y, z)));
+  const tipX = xf + ml;
+  if (taper < 0.12) pts.push(P(tipX, ty));
+  else base.forEach(([y, z]) => pts.push(P(tipX, ty + y * taper, z * taper)));
+  return {
+    pts, P, f,
+    tip: P(tipX, ty), // centre of the nose end
+    eyeAt: P(xf - 1.5 - (ml < 5 ? 1 : 0), hh * 0.16 + dome * 0.2), // just behind the muzzle, above the cheek line
+    muzzleTop: my + mh / 2, xf, my, ty, tipX,
+  };
+}
+
 // Two eyes seated on a convex hull: rays from each side hit the surface, so the discs always touch it.
 export function seatEyes(node, pts, at, { size = 4.4, tilt = [0, 0, 1], colour = 'ink' } = {}) {
   const hits = [1, -1].map((s) => {
@@ -92,33 +141,78 @@ function anchorsAt(rig, flag, top) {
 }
 
 // Head with muzzle trim, nose, eyes and ears. `hp` is the head pivot in model space.
+// c.face: a FACES key or face object; c.ear: { kind: point | long | round | flop | none, h, x, z, spread, lean, inner }.
 function buildHead(body, k, hp, c) {
   const { M, T, A } = k;
-  const h = headShape(hp, c.head);
+  const face = typeof c.face === 'string' ? FACES[c.face] : c.face ?? FACES.fox;
+  const h = faceHead(hp, { ...face, ...(c.faceMod ?? {}) });
   const head = body.add('head', [hp[0], hp[1], 0]);
-  const s = c.head?.s ?? 1;
+  const s = h.f.s;
   const HM = c.headMain ? c.headMain + '*' : M;
+  const muzzleTrim = c.muzzle ?? (h.f.ml > 2);
   head.mesh((m) => {
     m.hull(HM, h.pts);
-    if (c.muzzle !== false) m.hull(T, [h.P(5, -7), h.P(7, -4, 7.5 * (c.head?.wide ?? 1)), h.P(7, -4, -7.5 * (c.head?.wide ?? 1)), lerp(h.tip, h.P(5, -7), 0.04), h.P(8, -6.5)]);
+    if (muzzleTrim) faceTrim(m, T, h);
     if (c.nose !== false) { // the nose sits on whatever face is at the front of the snout
-      const f = surf(h.pts, [h.tip[0] + 60, h.tip[1] + 0.6 * s, 0], [-1, 0, 0]);
-      if (f) disc(m, c.noseColour ?? 'ink', f.p, f.n, 1.7 * s * (c.noseSize ?? 1), 1.4 * s * (c.noseSize ?? 1));
+      const f = surf(h.pts, [h.tip[0] + 60, h.tip[1] + h.f.mh * Math.max(h.f.taper, 0.2) * 0.25 * s, 0], [-1, 0, 0]);
+      if (f) disc(m, c.noseColour ?? 'ink', f.p, f.n, 1.7 * s * (c.noseSize ?? 1), 1.3 * s * (c.noseSize ?? 1));
     }
   });
-  seatEyes(head, h.pts, h.P(10 + ((c.head?.snout ?? 1) - 1) * 2, 3.2), { size: 4.4 * s * (c.eyeSize ?? 1), colour: c.eyeColour ?? 'ink' });
+  seatEyes(head, h.pts, c.eyeAt ?? h.eyeAt, { size: 4.2 * s * (c.eyeSize ?? 1), colour: c.eyeColour ?? 'ink', tilt: c.eyeTilt ?? [0, 0, 1] });
   const e = c.ear;
   if (e && e.kind !== 'none') {
+    const kind = e.kind ?? 'point', ex = e.x ?? -2, ez = e.z ?? h.f.hw * 0.28, eh = e.h ?? 10;
     both((sd) => {
-      const root = h.P(e.x ?? 4, 6, sd * (e.z ?? 5));
-      head.add(sd > 0 ? 'ear_l' : 'ear_r', [root[0], h.P(0, 8)[1], root[2]]).mesh((m) => {
-        const tipY = h.P(0, 10 + e.h)[1];
-        ear(m, h.pts, HM, e.inner === undefined ? A : e.inner, h.P((e.x ?? 4) - 5, 0, sd * ((e.z ?? 5) - 2.2)), h.P((e.x ?? 4) + 3.5, 0, sd * ((e.z ?? 5) + 1.5)), [h.P((e.x ?? 4) + (e.lean ?? -1), 0)[0], tipY, sd * (e.spread ?? 7) * s], [e.out ?? 0.6, 0, sd * 1.4]);
+      const root = h.P(ex, h.f.hh * 0.5, sd * ez);
+      head.add(sd > 0 ? 'ear_l' : 'ear_r', root).mesh((m) => {
+        const a = h.P(ex - (e.w ?? 5) * 0.55, 0, sd * (ez - 1.8)), b = h.P(ex + (e.w ?? 5) * 0.45, 0, sd * (ez + 1.4));
+        const topY = h.P(0, h.f.hh * 0.5 + (h.f.dome ?? 0) + eh)[1];
+        if (kind === 'point' || kind === 'long') {
+          ear(m, h.pts, HM, e.inner === undefined ? A : e.inner, a, b, [h.P(ex + (e.lean ?? -1), 0)[0], topY, sd * (e.spread ?? ez + 2) * s], [e.out ?? 0.6, 0, sd * 1.4]);
+        } else if (kind === 'flop') { // folded over forwards and out, like a pig or a hound
+          ear(m, h.pts, HM, null, a, b, [h.P(ex + eh * 0.8, 0)[0], h.P(0, h.f.hh * 0.5 + eh * 0.2)[1], sd * (e.spread ?? ez + eh * 0.6) * s], [0, 1.4, sd * 0.8]);
+        } else if (kind === 'side') { // big flat ear lying against the side of the head (elephant, mammoth)
+          const zc = sd * (h.f.hw * 0.5 * (h.f.cheek ?? 1) * s + 0.8), cx = h.P(ex, 0)[0], cy = h.P(0, e.y ?? 0)[1], r = eh * s;
+          const fan = [...Array(7).keys()].map((i) => { const t = -Math.PI * 0.6 + Math.PI * 1.25 * (i / 6); return [cx - Math.cos(t) * r * 0.75 - r * 0.3, cy + Math.sin(t) * r, zc + sd * (1 - Math.cos(t)) * r * 0.25]; });
+          plate(m, HM, [[cx + 1, cy + r * 0.7, zc - sd * 0.8], ...fan, [cx + 1, cy - r * 0.5, zc - sd * 0.8]], 1.6);
+          if (e.inner) plate(m, e.inner, fan.slice(1, 6).map((p) => [cx - 1 + (p[0] - cx) * 0.6, cy + (p[1] - cy) * 0.6, p[2] + sd * 0.9]), 0.6);
+        } else if (kind === 'round') { // short rounded ear: a fan of flat facets standing on the crown
+          const cx = h.P(ex, 0)[0], seatY = seatTop(h.pts, cx, sd * ez * s), r = eh * s, zc = sd * (e.spread ?? ez) * s;
+          const arc = [...Array(6).keys()].map((i) => { const t = Math.PI * (i / 5); return [cx - Math.cos(t) * r * 0.8, seatY - 1.5 + Math.sin(t) * r, zc]; });
+          plate(m, HM, arc, 1.6);
+          if (e.inner !== null && (e.inner ?? A)) plate(m, e.inner ?? A, [...Array(5).keys()].map((i) => { const t = Math.PI * (0.1 + 0.8 * i / 4); return [cx + 0.9 - Math.cos(t) * r * 0.5, seatY - 0.5 + Math.sin(t) * r * 0.62, zc + sd * 0.1]; }).map((p) => [p[0] + 0.9, p[1], p[2]]), 0.6);
+        }
       });
     });
   }
   h.front = (y, z = 0) => surf(h.pts, [h.tip[0] + 80, y, z], [-1, 0, 0]);
   return { head, h };
+}
+
+// A flat decal on the front (+x) of a hull: shape points are [y, z], projected along -x.
+export function frontPatch(m, colour, hullPts, shape, th = 0.7) {
+  const pts = shape.map(([y, z]) => { const h = surf(hullPts, [400, y, z], [-1, 0, 0]); return h && V.add(h.p, V.mul(h.n, 0.45)); });
+  if (pts.some((p) => !p)) return;
+  plate(m, colour, pts, th);
+}
+
+// The paper turned over under the muzzle: the lower half of the muzzle block, a hair proud of it.
+export function faceTrim(m, T, h) {
+  const { mw, mh, taper } = h.f, tw = Math.max(taper, 0.2), e = 0.35;
+  const x0 = h.xf - 1.5, x1 = h.tipX + e, z0 = mw / 2 + e, z1 = mw * tw / 2 + e;
+  m.hull(T, [[x0, h.my - mh / 2 - e, z0], [x0, h.my, z0], [x1, h.ty - mh * tw / 2 - e, z1], [x1, h.ty, z1]].flatMap(([x, y, z]) => [h.P(x, y, z), h.P(x, y, -z)]));
+}
+
+// Round nose on the front face of the muzzle.
+export function faceNose(m, colour, h, size = 1) {
+  const s = h.f.s, f = surf(h.pts, [h.tip[0] + 60, h.tip[1] + h.f.mh * Math.max(h.f.taper, 0.2) * 0.25 * s, 0], [-1, 0, 0]);
+  if (f) disc(m, colour, f.p, f.n, 1.7 * s * size, 1.3 * s * size);
+}
+
+// Height of the top of a hull at (x, z), for seating parts on it.
+function seatTop(pts, x, z) {
+  for (let k = 1; k > 0.05; k -= 0.05) { const hit = surf(pts, [x, 400, z * k], [0, -1, 0]); if (hit) return hit.p[1]; }
+  throw new Error('nothing to sit on');
 }
 
 function buildTail(body, k, t, { x0, yt, yb }) {
@@ -159,12 +253,16 @@ export function quad(rig, c) {
     [(x0 + x1) / 2 - L * 0.05, yb + Hb * 0.55, W * 1.18], [(x0 + x1) / 2 - L * 0.05, yb + Hb * 0.55, -W * 1.18],
     [x1 + (c.chestOut ?? 1), yb + Hb * 0.62, 0], [(x0 + x1) / 2, yb - 2, 0],
   ];
+  if (c.barrel) { // round belly: fuller flanks and a flat broad back, like a pig, hippo or beaver
+    const b = c.barrel;
+    for (const x of [x0 + L * 0.18, x1 - L * 0.2]) bodyPts.push([x, yb + Hb * 0.5, W * (1 + 0.2 * b)], [x, yb + Hb * 0.5, -W * (1 + 0.2 * b)], [x, yt - Hb * 0.05, W * 0.55 * b], [x, yt - Hb * 0.05, -W * 0.55 * b], [x, yb - 1.5, W * 0.6], [x, yb - 1.5, -W * 0.6]);
+  }
   body.mesh((m) => {
     m.hull(M, bodyPts);
     if (c.chest !== false) m.hull(T, [[x1 - L * 0.16, yt, 0], [x1 - 1, yb - 1, W * 0.86], [x1 - 1, yb - 1, -W * 0.86], [x1 + (c.chestOut ?? 1) + (c.chestTrim ?? 8), yb + Hb * 0.34, 0]]);
     if (c.belly) m.hull(T, [[x0 + 4, yb - 1.2, W * 0.6], [x0 + 4, yb - 1.2, -W * 0.6], [x1 - 2, yb - 1.2, W * 0.7], [x1 - 2, yb - 1.2, -W * 0.7], [(x0 + x1) / 2, yb - 2.4, 0], [(x0 + x1) / 2, yb + Hb * 0.4, W * 1.0], [(x0 + x1) / 2, yb + Hb * 0.4, -W * 1.0]]);
   });
-  const hp = [x1 - 2 + (c.headX ?? 0), yt - 1 + (c.headY ?? 0)];
+  const hp = [x1 + (c.headX ?? 4), yt + (c.headY ?? 2)];
   const { head, h } = buildHead(body, k, hp, c);
   const tail = buildTail(body, k, c.tail ?? { kind: 'brush' }, { x0, yt, yb });
   const legs = [];
@@ -175,7 +273,7 @@ export function quad(rig, c) {
   }
   const ctx = { rig, body, head, h, k, M, T, A: k.A, x0, x1, yb, yt, hp, W, L, Hb, legH, bodyPts, legs };
   c.extra?.(ctx);
-  anchorsAt(rig, [(x0 + x1) / 2, yt + 1, 0], hp[1] + 14 * (c.head?.s ?? 1) + (c.ear?.h ?? 0) + 6 + (c.topExtra ?? 0));
+  anchorsAt(rig, [(x0 + x1) / 2, yt + 1, 0], hp[1] + 10 + (c.ear?.kind === 'none' ? 0 : c.ear?.h ?? 0) + 6 + (c.topExtra ?? 0));
   const ears = c.ear && c.ear.kind !== 'none' ? ['ear_l', 'ear_r'] : [];
   creatureClips(rig, { head: 'head', tail: tail ? 'tail' : null, legs, ears, hopHeight: c.hop ?? 12, tailAxis: c.tail?.kind === 'brush' ? 'y' : 'z' });
   return ctx;
@@ -188,14 +286,25 @@ export function sitter(rig, c) {
   const k = cols(c);
   const { M, T } = k;
   const H = c.H ?? 34, kx = c.kx ?? 1, Bw = c.Bw ?? 10;
-  const x0 = -19 * kx, x1 = 7 * kx;
+  const x0 = -19 * kx, x1 = 7 * kx, xm = (x0 + x1) / 2;
+  // Seated body from rings of flat facets: a wide base, a belly ring (`belly` = how round), narrow shoulders.
+  const belly = c.belly ?? 1.15, shoulder = c.shoulder ?? 0.55, lean = c.lean ?? 0.3;
+  const ring = (y, rx, rz, cx) => [[cx + rx, y, 0], [cx + rx * 0.5, y, rz], [cx + rx * 0.5, y, -rz], [cx - rx * 0.5, y, rz], [cx - rx * 0.5, y, -rz], [cx - rx, y, 0]];
+  const bodyPts = [
+    ...ring(0.8, (x1 - x0) / 2, Bw, xm),
+    ...ring(H * 0.4, (x1 - x0) / 2 * belly, Bw * belly, xm + 1),
+    ...ring(H * 0.82, (x1 - x0) / 2 * shoulder, Bw * shoulder * 1.1, xm + (x1 - xm) * lean + 2),
+    [xm + (x1 - xm) * lean + 3, H + 1, 0],
+  ];
   const body = rig.root.add('body', [0, H / 2, 0]);
   body.mesh((m) => {
-    m.hull(M, [[x0, H * 0.65, 0], [x0 * 0.32 + x1 * 0.1, H, 0], [x1 + 2 * kx, H * 0.76, 0], [x0, 1, Bw], [x0, 1, -Bw], [x1, 1, Bw * 0.8], [x1, 1, -Bw * 0.8], [-7 * kx, H * 0.5, Bw * 1.3], [-7 * kx, H * 0.5, -Bw * 1.3], [x0 - 4 * kx, H * 0.3, 0]]);
-    m.hull(M, [[-4 * kx, H * 0.9, 5], [-4 * kx, H * 0.9, -5], [x1 + 1, H * 0.8, 0], [3 * kx, H + 3, 0]]);
-    if (c.bib !== false) m.hull(T, [[x1 + 2 * kx, H * 0.76, 0], [x1, 2, Bw * 0.7], [x1, 2, -Bw * 0.7], [x1 + 5 * kx + (c.bibOut ?? 0), H * 0.36, 0]]);
+    m.hull(M, bodyPts);
+    if (c.bib !== false) { // the white chest where the paper turns over: a long diamond down the front
+      const bw = Bw * (c.bibW ?? 0.45);
+      frontPatch(m, T, bodyPts, [[H * 0.84, 0], [H * 0.5, bw], [H * 0.08, 0], [H * 0.5, -bw]]);
+    }
   });
-  const hp = [x1 - 1 * kx + (c.headX ?? 0), H - 1 + (c.headY ?? 0)];
+  const hp = [xm + (x1 - xm) * lean + 5 + (c.headX ?? 0), H + 4 + (c.headY ?? 0)];
   const { head, h } = buildHead(body, k, hp, c);
   const tail = buildTail(body, k, c.tail ?? { kind: 'ball' }, { x0: x0 - 1, yt: H * 0.5, yb: 0 });
   if (c.tail?.kind === 'ball') {
@@ -203,23 +312,26 @@ export function sitter(rig, c) {
     t.mesh((m) => m.hull(c.tail.trim ? T : M, blob([x0 - 3 * kx, H * 0.3, 0], 5.5, 5.5, 5.5, 10)));
   }
   const legs = [];
+  const hz = Bw * belly * 0.9, hx = xm - (x1 - x0) * 0.15, hh = H * (c.haunch ?? 0.62), foot = c.foot ?? 1;
+  const xa = xm + 1 + (x1 - x0) / 2 * belly * 0.8, ya = H * (c.armY ?? 0.62), armEnd = c.armEnd ?? 0;
   both((s) => {
     // folded haunch and a long flat hind foot
     const n = s > 0 ? 'leg_bl' : 'leg_br';
     legs.push(n);
-    body.add(n, [-6 * kx, H * 0.36, s * (Bw + 2)]).mesh((m) => {
-      spike(m, M, [x0 - 2, 1.5, s * (Bw + 1)], [x1 - 7, 1, s * (Bw + 0.5)], [x0 + 7 * kx, H * 0.7, s * (Bw + 1.5)], [0, 0, s * 2.4], 1.6);
-      m.hull(M, [[x0 + 4 * kx, 0, s * (Bw - 1)], [x0 + 4 * kx, 0, s * (Bw + 4)], [x1 + 2 * kx, 0, s * (Bw + 1.5)], [x0 + 4 * kx, 2, s * (Bw - 1)], [x0 + 4 * kx, 2, s * (Bw + 4)], [x1 + 2 * kx, 1.4, s * (Bw + 1.5)]]);
+    body.add(n, [hx, hh * 0.5, s * hz]).mesh((m) => {
+      spike(m, M, [hx - 9 * kx, 1.5, s * hz], [hx + 9 * kx, 1, s * hz], [hx - 2 * kx, hh, s * (hz + 0.5)], [0, 0, s * 2.4], 1.6);
+      const fx0 = hx - 6 * kx, fx1 = hx + 12 * kx * foot;
+      m.hull(M, [[fx0, 0, s * (hz - 2)], [fx0, 0, s * (hz + 3)], [fx1, 0, s * (hz + 0.5)], [fx0, 2, s * (hz - 2)], [fx0, 2, s * (hz + 3)], [fx1, 1.4, s * (hz + 0.5)]]);
     });
     if (c.arms !== false) {
       const an = s > 0 ? 'leg_fl' : 'leg_fr';
       legs.push(an);
-      body.add(an, [x1, H * 0.5, s * 6]).mesh((m) => flapLeg(m, M, [x1 - 3, H * 0.5 + 1, s * 6], [x1 + 3, H * 0.5 + 1, s * 6], [x1 + 3, 0, s * 6.5], [0, 0, s * 1.4], 2.6));
+      body.add(an, [xa, ya, s * Bw * 0.4]).mesh((m) => flapLeg(m, M, [xa - 3, ya + 1, s * Bw * 0.42], [xa + 3, ya + 1, s * Bw * 0.42], [xa + 3, armEnd, s * Bw * 0.45], [0, 0, s * 1.4], 2.6));
     }
   });
-  const ctx = { rig, body, head, h, k, M, T, A: k.A, x0, x1, hp, H, Bw };
+  const ctx = { rig, body, head, h, k, M, T, A: k.A, x0, x1, xm, hp, H, Bw, bodyPts };
   c.extra?.(ctx);
-  anchorsAt(rig, [x0, H, 0], hp[1] + 14 * (c.head?.s ?? 1) + (c.ear?.h ?? 0) + 6);
+  anchorsAt(rig, [x0, H, 0], hp[1] + 10 + (c.ear?.kind === 'none' ? 0 : c.ear?.h ?? 0) + 6);
   const ears = c.ear && c.ear.kind !== 'none' ? ['ear_l', 'ear_r'] : [];
   creatureClips(rig, { head: 'head', tail: tail || c.tail?.kind === 'ball' ? 'tail' : null, legs, ears, hopHeight: c.hop ?? 14, tailAxis: 'z' });
   return ctx;

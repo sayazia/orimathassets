@@ -474,21 +474,28 @@ Dibuat dari dua buku origami di `docs/` branch `animals` (buku 1 "Comic Origami 
 Satu warna kertas per hewan ditambah putih untuk bagian yang terbalik; paling banyak 6 material; tanpa garis tinta. Semua lolos validator (0 error, 0 warning), klip animasi sama seperti Foldlings (`idle`, `hop`, `cheer`, `bounce`, `fold`; burung terbang juga punya `flap`).
 Folder: `models/origami-animals/`. Ukuran = kotak batas nyata. Pratinjau: `previews/sheet_origami_land.png`, `_sea`, `_small`, `_myth`, `_birds`.
 
+
+Revisi 29 September 2026 (masukan: hampir semua mulut dan bentuk sama, runcing): tiap spesies kini punya bentuk wajah sendiri
+(`FACES` di `scripts/lib/zoo.mjs`): rubah dan serigala bermoncong runcing, kucing berwajah lebar dan pendek, babi dan kuda nil
+bermoncong kotak datar, berang-berang berkepala bulat dengan gigi depan, mamut berkepala kubah dengan telinga lebar di samping,
+griffin berkepala elang dengan paruh bengkok. Badan juga dibedakan: kucing berbaring, babi dan kuda nil seperti tong, kelinci
+bulat dengan kaki belakang besar, meerkat berdiri tegak. Kepala Foldlings kelinci, kucing, dan gajah ikut diganti.
+
 ### Hewan darat (11)
 
 | File | Nama | Segitiga | KB | Ukuran (x×z×y, m) |
 |---|---|---|---|---|
-| origami-animals/origami_squirrel | Tupai | 416 | 42.7 | 0.054×0.028×0.049 |
-| origami-animals/origami_rabbit | Kelinci | 384 | 40.2 | 0.044×0.028×0.062 |
-| origami-animals/origami_fox | Rubah | 416 | 45.0 | 0.085×0.028×0.061 |
-| origami-animals/origami_cat | Kucing | 426 | 44.9 | 0.065×0.028×0.047 |
-| origami-animals/origami_pig | Babi | 522 | 47.3 | 0.042×0.032×0.043 |
-| origami-animals/origami_beaver | Berang-berang | 390 | 42.0 | 0.079×0.022×0.034 |
-| origami-animals/origami_tiger | Harimau | 478 | 47.5 | 0.072×0.021×0.059 |
-| origami-animals/origami_hippo | Kuda nil | 522 | 47.7 | 0.068×0.031×0.044 |
-| origami-animals/origami_meerkat | Meerkat | 408 | 43.1 | 0.063×0.024×0.058 |
-| origami-animals/origami_wolf | Serigala | 462 | 47.2 | 0.114×0.028×0.059 |
-| origami-animals/origami_mammoth | Mamut | 450 | 44.9 | 0.084×0.032×0.056 |
+| origami-animals/origami_squirrel | Tupai | 468 | 45.6 | 0.048×0.026×0.049 |
+| origami-animals/origami_rabbit | Kelinci | 498 | 48.6 | 0.039×0.032×0.068 |
+| origami-animals/origami_fox | Rubah | 456 | 47.2 | 0.072×0.021×0.064 |
+| origami-animals/origami_cat | Kucing | 460 | 47.4 | 0.070×0.028×0.039 |
+| origami-animals/origami_pig | Babi | 550 | 48.2 | 0.055×0.029×0.035 |
+| origami-animals/origami_beaver | Berang-berang | 456 | 45.5 | 0.071×0.024×0.028 |
+| origami-animals/origami_tiger | Harimau | 562 | 52.4 | 0.074×0.029×0.057 |
+| origami-animals/origami_hippo | Kuda nil | 566 | 50.4 | 0.077×0.034×0.038 |
+| origami-animals/origami_meerkat | Meerkat | 466 | 45.7 | 0.058×0.019×0.056 |
+| origami-animals/origami_wolf | Serigala | 486 | 48.5 | 0.108×0.028×0.060 |
+| origami-animals/origami_mammoth | Mamut | 420 | 45.0 | 0.079×0.036×0.059 |
 
 ### Hewan air (5)
 
@@ -498,7 +505,7 @@ Folder: `models/origami-animals/`. Ukuran = kotak batas nyata. Pratinjau: `previ
 | origami-animals/origami_whale | Paus | 212 | 24.8 | 0.076×0.055×0.041 |
 | origami-animals/origami_pufferfish | Ikan buntal | 228 | 24.7 | 0.050×0.045×0.039 |
 | origami-animals/origami_squid | Cumi terbang | 262 | 26.4 | 0.025×0.041×0.057 |
-| origami-animals/origami_walrus | Walrus | 366 | 33.3 | 0.064×0.031×0.037 |
+| origami-animals/origami_walrus | Walrus | 484 | 39.3 | 0.064×0.031×0.040 |
 
 ### Serangga dan reptil (5)
 
@@ -508,15 +515,15 @@ Folder: `models/origami-animals/`. Ukuran = kotak batas nyata. Pratinjau: `previ
 | origami-animals/origami_katydid | Belalang katydid | 498 | 41.2 | 0.053×0.026×0.045 |
 | origami-animals/origami_snake | Ular | 238 | 21.6 | 0.056×0.012×0.041 |
 | origami-animals/origami_chameleon | Bunglon | 424 | 39.6 | 0.054×0.021×0.032 |
-| origami-animals/origami_stegosaurus | Stegosaurus | 480 | 43.6 | 0.093×0.022×0.038 |
+| origami-animals/origami_stegosaurus | Stegosaurus | 496 | 43.8 | 0.084×0.022×0.038 |
 
 ### Makhluk mitos (4)
 
 | File | Nama | Segitiga | KB | Ukuran (x×z×y, m) |
 |---|---|---|---|---|
-| origami-animals/origami_griffin | Griffin | 392 | 39.7 | 0.089×0.061×0.062 |
-| origami-animals/origami_winged_lion | Singa bersayap | 460 | 46.8 | 0.075×0.065×0.059 |
-| origami-animals/origami_dragon | Naga (Loong) | 546 | 52.7 | 0.097×0.035×0.052 |
+| origami-animals/origami_griffin | Griffin | 414 | 41.1 | 0.080×0.061×0.062 |
+| origami-animals/origami_winged_lion | Singa bersayap | 496 | 48.4 | 0.079×0.065×0.059 |
+| origami-animals/origami_dragon | Naga (Loong) | 574 | 54.4 | 0.103×0.035×0.053 |
 | origami-animals/origami_phoenix | Burung api (phoenix) | 344 | 38.8 | 0.070×0.077×0.049 |
 
 ### Burung (22)

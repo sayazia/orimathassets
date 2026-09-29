@@ -3,6 +3,7 @@
 import { plate, eye, happyEye, leg, surf, blob, kite, disc, flapLeg, spike, V } from '../lib/origami.mjs';
 import { creatureClips } from '../lib/clips.mjs';
 import { MISSIONS, ROLES } from '../lib/palette.mjs';
+import { FACES, faceHead, faceTrim, faceNose } from '../lib/zoo.mjs';
 
 export const FOLDLING_VARIANTS = [
   ...MISSIONS.map((id) => ({ id, pal: { main: ROLES[id], trim: 'cream' } })),
@@ -94,16 +95,17 @@ function rabbit(rig, { main, trim }) {
     m.hull(T, [[9, 26, 0], [7, 2, 7], [7, 2, -7], [12, 13, 0]]); // pointed cream belly
     m.hull(T, blob([-22, 16, 0], 5, 5, 5, 10)); // round pom tail
   });
+  // short round face: domed crown, a small blunt muzzle, long ears
+  const hf = faceHead([11, 41], { ...FACES.rabbit, s: 0.95 }), headPts = hf.pts;
   const head = body.add('head', [6, 33, 0]);
-  const headPts = [[6, 48, 0], [16, 47, 0], [7, 38, 9.5], [7, 38, -9.5], [25, 37, 0], [12, 31, 0]];
   head.mesh((m) => {
     m.hull(M, headPts);
-    m.hull(T, [[19, 33.4, 4.6], [19, 33.4, -4.6], [24.6, 36.4, 0], [15, 31.6, 0]]); // cream muzzle
-    disc(m, 'ink', [24.9, 37.6, 0], [1, 0.3, 0], 1.5, 1.2); // nose
+    faceTrim(m, T, hf);
+    faceNose(m, 'ink', hf, 0.9);
   });
-  eyes(head, headPts, [16, 42], { size: 4.4 });
+  eyes(head, headPts, hf.eyeAt, { size: 4.4 });
   both((s) => {
-    head.add(s > 0 ? 'ear_l' : 'ear_r', [9, 47, s * 4]).mesh((m) => ear(m, headPts, M, [5, 0, s * 2.5], [13, 0, s * 5.5], [3, 72, s * 8], [0.8, 0, s * 1.8]));
+    head.add(s > 0 ? 'ear_l' : 'ear_r', [8, 48, s * 4]).mesh((m) => ear(m, headPts, M, [5, 0, s * 2.5], [12, 0, s * 5.5], [2, 74, s * 7], [0.8, 0, s * 1.8]));
   });
   both((s) => {
     body.add(s > 0 ? 'leg_bl' : 'leg_br', [-10, 12, s * 11]).mesh((m) => {
@@ -228,16 +230,17 @@ function cat(rig, { main, trim }) {
     m.hull(T, [[9, 31, 0], [7, 5, 6], [7, 5, -6], [12, 17, 0]]); // pointed cream bib
     both((s) => flapLeg(m, M, [5, 19, s * 5], [11, 19, s * 5], [13, 0, s * 5.2], [0, 0, s * 1.4], 3)); // front legs
   });
+  // broad cat face: wide cheeks, a short flat muzzle, triangular ears standing wide apart
+  const hf = faceHead([6, 47], { ...FACES.cat, s: 0.95 }), headPts = hf.pts;
   const head = body.add('head', [3, 38, 0]);
-  const headPts = [[-4, 47, 0], [5, 56, 0], [14, 50, 0], [5, 40, 11], [5, 40, -11], [18, 44.5, 0], [11, 39, 0]];
   head.mesh((m) => {
     m.hull(M, headPts);
-    m.hull(T, [[13, 40.6, 5], [13, 40.6, -5], [17.6, 43.6, 0], [12, 39.4, 0]]); // cream muzzle
-    disc(m, 'ink', [17.9, 44.8, 0], [1, 0.3, 0], 1.4, 1.1); // nose
+    faceTrim(m, T, hf);
+    faceNose(m, 'ink', hf, 0.85);
   });
-  eyes(head, headPts, [11, 47], { size: 4.4 });
+  eyes(head, headPts, hf.eyeAt, { size: 4.6, tilt: [-0.35, 0, 1] });
   both((s) => {
-    head.add(s > 0 ? 'ear_l' : 'ear_r', [5, 55, s * 6]).mesh((m) => ear(m, headPts, M, [0, 0, s * 3.5], [10, 0, s * 6.5], [3, 66, s * 8], [0.6, 0, s * 1.6]));
+    head.add(s > 0 ? 'ear_l' : 'ear_r', [5, 55, s * 6]).mesh((m) => ear(m, headPts, M, [-1, 0, s * 4], [8, 0, s * 8], [3, 63, s * 10], [0.6, 0, s * 1.6]));
   });
   const tail = body.add('tail', [-14, 6, 0]);
   tail.mesh((m) => {
@@ -256,17 +259,20 @@ function elephant(rig, { main, trim }) {
     m.hull(M, [[-22, 45, 0], [6, 48, 0], [-29, 34, 0], [-24, 20, 12], [-24, 20, -12], [9, 19, 13], [9, 19, -13], [-7, 33, 15.5], [-7, 33, -15.5], [-8, 15, 0], [13, 33, 0]]); // broad tent body, creased across the flank
     spike(m, M, [-26, 38, 0], [-28, 33, 0], [-34, 16, 0], [-1, 0, 1.6], 1.2); // thin tail
   });
+  // high domed head with a short square face; the trunk hangs from the front, tusks beside it
+  const hf = faceHead([21, 44], { ...FACES.mammoth, hl: 16, hw: 22, hh: 20, dome: 4, ml: 3, s: 1 }), headPts = hf.pts;
   const head = body.add('head', [14, 38, 0]);
-  const headPts = [[13, 53, 0], [25, 51, 0], [15, 40, 12], [15, 40, -12], [31, 38, 0], [21, 30, 0], [28, 46, 6], [28, 46, -6]];
   head.mesh((m) => {
     m.hull(M, headPts);
-    both((s) => spike(m, T, [26, 33, s * 4], [28, 36, s * 4], [36, 27, s * 6.5], [0, -0.8, s * 0.6], 1.4)); // tusks
+    const x = hf.tipX - 3, y = hf.ty - 2;
+    both((s) => spike(m, T, hf.P(x - 2, y, s * 4.4), hf.P(x, y + 3, s * 4.4), hf.P(x + 9, y - 10, s * 6.5), [0, -0.8, s * 0.6], 1.4)); // tusks
   });
-  eyes(head, headPts, [26, 45], { size: 4.2 });
-  const trunk = head.add('trunk', [30, 37, 0]);
+  eyes(head, headPts, hf.eyeAt, { size: 4.2 });
+  const trunk = head.add('trunk', hf.P(hf.tipX - 1, hf.ty));
   trunk.mesh((m) => {
-    spike(m, M, [27, 42, 0], [31, 32, 0], [36, 9, 0], [1.4, 0, 4]); // tapered trunk, creased down the front
-    spike(m, M, [34.6, 13, 0], [36.4, 10, 0], [42, 15, 0], [0, 0, 2.2], 1.2); // curled-up tip
+    const [tx, ty] = [hf.tipX, hf.ty];
+    spike(m, M, hf.P(tx - 4, ty + 4), hf.P(tx + 0.5, ty - 3), hf.P(tx + 5, ty - 30), [1.4, 0, 4.4]); // tapered trunk, creased down the front
+    spike(m, M, hf.P(tx + 3.6, ty - 26), hf.P(tx + 5.4, ty - 29), hf.P(tx + 11, ty - 24), [0, 0, 2.2], 1.2); // curled-up tip
   });
   both((s) => {
     head.add(s > 0 ? 'ear_l' : 'ear_r', [17, 46, s * 11]).mesh((m) => {

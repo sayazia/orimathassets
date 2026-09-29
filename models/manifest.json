@@ -4684,7 +4684,7 @@
     "sheet": "foldlings",
     "file": "foldlings/foldling_rabbit.glb",
     "unit": "m",
-    "triangles": 446,
+    "triangles": 480,
     "outline_triangles": 0,
     "bounds": {
       "min": [
@@ -4693,8 +4693,8 @@
         -0.015
       ],
       "max": [
-        0.026,
-        0.0722,
+        0.0223,
+        0.0741,
         0.015
       ]
     },
@@ -5174,7 +5174,7 @@
     "sheet": "foldlings",
     "file": "foldlings/foldling_cat.glb",
     "unit": "m",
-    "triangles": 370,
+    "triangles": 396,
     "outline_triangles": 0,
     "bounds": {
       "min": [
@@ -5183,8 +5183,8 @@
         -0.0125
       ],
       "max": [
-        0.019,
-        0.0661,
+        0.015,
+        0.0631,
         0.0125
       ]
     },
@@ -5272,7 +5272,7 @@
     "sheet": "foldlings",
     "file": "foldlings/foldling_elephant.glb",
     "unit": "m",
-    "triangles": 390,
+    "triangles": 404,
     "outline_triangles": 0,
     "bounds": {
       "min": [
@@ -5281,7 +5281,7 @@
         -0.0198
       ],
       "max": [
-        0.0423,
+        0.0401,
         0.0581,
         0.0198
       ]
@@ -6887,29 +6887,29 @@
     "sheet": "origami_land",
     "file": "origami-animals/origami_squirrel.glb",
     "unit": "m",
-    "triangles": 416,
+    "triangles": 468,
     "outline_triangles": 0,
     "bounds": {
       "min": [
-        -0.0297,
-        -0.0001,
-        -0.014
+        -0.0304,
+        0,
+        -0.0129
       ],
       "max": [
-        0.0246,
-        0.0487,
-        0.014
+        0.0172,
+        0.049,
+        0.0129
       ]
     },
     "anchors": {
       "flag_anchor": [
-        -0.0171,
-        0.034,
+        -0.0148,
+        0.028,
         0
       ],
       "label_anchor": [
         0,
-        0.0589,
+        0.053,
         0
       ]
     },
@@ -6945,29 +6945,29 @@
     "sheet": "origami_land",
     "file": "origami-animals/origami_rabbit.glb",
     "unit": "m",
-    "triangles": 384,
+    "triangles": 498,
     "outline_triangles": 0,
     "bounds": {
       "min": [
-        -0.023,
+        -0.0228,
         -0.0001,
-        -0.014
+        -0.016
       ],
       "max": [
-        0.0214,
-        0.0616,
-        0.014
+        0.0163,
+        0.068,
+        0.016
       ]
     },
     "anchors": {
       "flag_anchor": [
-        -0.019,
-        0.032,
+        -0.0152,
+        0.028,
         0
       ],
       "label_anchor": [
         0,
-        0.0736,
+        0.074,
         0
       ]
     },
@@ -6976,6 +6976,7 @@
       "head",
       "ear_l",
       "ear_r",
+      "tail",
       "tail",
       "leg_bl",
       "leg_fl",
@@ -7002,29 +7003,29 @@
     "sheet": "origami_land",
     "file": "origami-animals/origami_fox.glb",
     "unit": "m",
-    "triangles": 416,
+    "triangles": 456,
     "outline_triangles": 0,
     "bounds": {
       "min": [
-        -0.0483,
-        -0.0001,
-        -0.014
+        -0.0444,
+        0,
+        -0.0107
       ],
       "max": [
-        0.0367,
-        0.061,
-        0.014
+        0.028,
+        0.0636,
+        0.0107
       ]
     },
     "anchors": {
       "flag_anchor": [
-        -0.019,
+        -0.0152,
         0.04,
         0
       ],
       "label_anchor": [
         0,
-        0.071,
+        0.072,
         0
       ]
     },
@@ -7061,29 +7062,29 @@
     "sheet": "origami_land",
     "file": "origami-animals/origami_cat.glb",
     "unit": "m",
-    "triangles": 426,
+    "triangles": 460,
     "outline_triangles": 0,
     "bounds": {
       "min": [
-        -0.0439,
-        -0.0001,
-        -0.014
+        -0.0414,
+        -0.0002,
+        -0.0139
       ],
       "max": [
-        0.0212,
-        0.0469,
-        0.014
+        0.0283,
+        0.0387,
+        0.0139
       ]
     },
     "anchors": {
       "flag_anchor": [
-        -0.019,
-        0.03,
+        0,
+        0.021,
         0
       ],
       "label_anchor": [
         0,
-        0.0567,
+        0.044,
         0
       ]
     },
@@ -7093,10 +7094,10 @@
       "ear_l",
       "ear_r",
       "tail",
-      "leg_bl",
       "leg_fl",
-      "leg_br",
-      "leg_fr"
+      "leg_fr",
+      "leg_bl",
+      "leg_br"
     ],
     "materials": [
       "dark",
@@ -7120,29 +7121,29 @@
     "sheet": "origami_land",
     "file": "origami-animals/origami_pig.glb",
     "unit": "m",
-    "triangles": 522,
+    "triangles": 550,
     "outline_triangles": 0,
     "bounds": {
       "min": [
-        -0.0212,
+        -0.0224,
         -0.0001,
-        -0.016
+        -0.0144
       ],
       "max": [
-        0.0208,
-        0.0428,
-        0.016
+        0.0331,
+        0.0353,
+        0.0144
       ]
     },
     "anchors": {
       "flag_anchor": [
-        -0.0148,
-        0.028,
+        0,
+        0.029,
         0
       ],
       "label_anchor": [
         0,
-        0.0527,
+        0.048,
         0
       ]
     },
@@ -7152,16 +7153,14 @@
       "ear_l",
       "ear_r",
       "tail",
-      "leg_bl",
       "leg_fl",
-      "leg_br",
-      "leg_fr"
+      "leg_fr",
+      "leg_bl",
+      "leg_br"
     ],
     "materials": [
       "coral",
       "ink",
-      "paper",
-      "paper_shade",
       "pink",
       "pink_shade"
     ],
@@ -7179,29 +7178,29 @@
     "sheet": "origami_land",
     "file": "origami-animals/origami_beaver.glb",
     "unit": "m",
-    "triangles": 390,
+    "triangles": 456,
     "outline_triangles": 0,
     "bounds": {
       "min": [
-        -0.0411,
+        -0.0421,
         -0.0001,
-        -0.0112
+        -0.0121
       ],
       "max": [
-        0.038,
-        0.034,
-        0.0112
+        0.0286,
+        0.0275,
+        0.0121
       ]
     },
     "anchors": {
       "flag_anchor": [
         0,
-        0.024,
+        0.023,
         0
       ],
       "label_anchor": [
         0,
-        0.0439,
+        0.038,
         0
       ]
     },
@@ -7237,29 +7236,29 @@
     "sheet": "origami_land",
     "file": "origami-animals/origami_tiger.glb",
     "unit": "m",
-    "triangles": 478,
+    "triangles": 562,
     "outline_triangles": 0,
     "bounds": {
       "min": [
-        -0.0365,
+        -0.0375,
         -0.0001,
-        -0.0105
+        -0.0144
       ],
       "max": [
-        0.0351,
-        0.0587,
-        0.0105
+        0.0365,
+        0.0567,
+        0.0144
       ]
     },
     "anchors": {
       "flag_anchor": [
         0,
-        0.034,
+        0.032,
         0
       ],
       "label_anchor": [
         0,
-        0.057,
+        0.0535,
         0
       ]
     },
@@ -7295,29 +7294,29 @@
     "sheet": "origami_land",
     "file": "origami-animals/origami_hippo.glb",
     "unit": "m",
-    "triangles": 522,
+    "triangles": 566,
     "outline_triangles": 0,
     "bounds": {
       "min": [
-        -0.0293,
+        -0.0294,
         -0.0001,
-        -0.0157
+        -0.0168
       ],
       "max": [
-        0.0387,
-        0.044,
-        0.0157
+        0.048,
+        0.0376,
+        0.0168
       ]
     },
     "anchors": {
       "flag_anchor": [
         0,
-        0.034,
+        0.032,
         0
       ],
       "label_anchor": [
         0,
-        0.0541,
+        0.0446,
         0
       ]
     },
@@ -7334,8 +7333,7 @@
     ],
     "materials": [
       "ink",
-      "paper",
-      "paper_shade",
+      "pink",
       "stone",
       "stone_shade"
     ],
@@ -7353,29 +7351,29 @@
     "sheet": "origami_land",
     "file": "origami-animals/origami_meerkat.glb",
     "unit": "m",
-    "triangles": 408,
+    "triangles": 466,
     "outline_triangles": 0,
     "bounds": {
       "min": [
         -0.0396,
         0,
-        -0.012
+        -0.0094
       ],
       "max": [
-        0.0236,
-        0.0581,
-        0.012
+        0.0185,
+        0.0561,
+        0.0094
       ]
     },
     "anchors": {
       "flag_anchor": [
-        -0.0118,
-        0.048,
+        -0.0105,
+        0.046,
         0
       ],
       "label_anchor": [
         0,
-        0.0679,
+        0.0685,
         0
       ]
     },
@@ -7412,7 +7410,7 @@
     "sheet": "origami_land",
     "file": "origami-animals/origami_wolf.glb",
     "unit": "m",
-    "triangles": 462,
+    "triangles": 486,
     "outline_triangles": 0,
     "bounds": {
       "min": [
@@ -7421,8 +7419,8 @@
         -0.014
       ],
       "max": [
-        0.0566,
-        0.059,
+        0.0512,
+        0.0601,
         0.014
       ]
     },
@@ -7434,7 +7432,7 @@
       ],
       "label_anchor": [
         0,
-        0.069,
+        0.068,
         0
       ]
     },
@@ -7471,18 +7469,18 @@
     "sheet": "origami_land",
     "file": "origami-animals/origami_mammoth.glb",
     "unit": "m",
-    "triangles": 450,
+    "triangles": 420,
     "outline_triangles": 0,
     "bounds": {
       "min": [
         -0.0293,
-        -0.0081,
-        -0.016
+        -0.0019,
+        -0.0178
       ],
       "max": [
-        0.0547,
-        0.0476,
-        0.016
+        0.0493,
+        0.0576,
+        0.0178
       ]
     },
     "anchors": {
@@ -7493,7 +7491,7 @@
       ],
       "label_anchor": [
         0,
-        0.0575,
+        0.065,
         0
       ]
     },
@@ -7502,6 +7500,7 @@
       "head",
       "ear_l",
       "ear_r",
+      "trunk",
       "tail",
       "leg_fl",
       "leg_fr",
@@ -7746,16 +7745,16 @@
     "sheet": "origami_sea",
     "file": "origami-animals/origami_walrus.glb",
     "unit": "m",
-    "triangles": 366,
+    "triangles": 484,
     "outline_triangles": 0,
     "bounds": {
       "min": [
         -0.025,
-        -0.0084,
+        -0.0113,
         -0.0153
       ],
       "max": [
-        0.0389,
+        0.0392,
         0.029,
         0.0153
       ]
@@ -7768,7 +7767,7 @@
       ],
       "label_anchor": [
         0,
-        0.0394,
+        0.037,
         0
       ]
     },
@@ -8025,7 +8024,7 @@
     "sheet": "origami_small",
     "file": "origami-animals/origami_stegosaurus.glb",
     "unit": "m",
-    "triangles": 480,
+    "triangles": 496,
     "outline_triangles": 0,
     "bounds": {
       "min": [
@@ -8034,7 +8033,7 @@
         -0.0112
       ],
       "max": [
-        0.0475,
+        0.0394,
         0.0384,
         0.0112
       ]
@@ -8047,7 +8046,7 @@
       ],
       "label_anchor": [
         0,
-        0.0348,
+        0.033,
         0
       ]
     },
@@ -8082,7 +8081,7 @@
     "sheet": "origami_myth",
     "file": "origami-animals/origami_griffin.glb",
     "unit": "m",
-    "triangles": 392,
+    "triangles": 414,
     "outline_triangles": 0,
     "bounds": {
       "min": [
@@ -8091,7 +8090,7 @@
         -0.0306
       ],
       "max": [
-        0.0455,
+        0.0365,
         0.0614,
         0.0306
       ]
@@ -8104,7 +8103,7 @@
       ],
       "label_anchor": [
         0,
-        0.0523,
+        0.052,
         0
       ]
     },
@@ -8139,7 +8138,7 @@
     "sheet": "origami_myth",
     "file": "origami-animals/origami_winged_lion.glb",
     "unit": "m",
-    "triangles": 460,
+    "triangles": 496,
     "outline_triangles": 0,
     "bounds": {
       "min": [
@@ -8148,7 +8147,7 @@
         -0.0325
       ],
       "max": [
-        0.0325,
+        0.0365,
         0.0585,
         0.0325
       ]
@@ -8161,7 +8160,7 @@
       ],
       "label_anchor": [
         0,
-        0.054,
+        0.0535,
         0
       ]
     },
@@ -8198,7 +8197,7 @@
     "sheet": "origami_myth",
     "file": "origami-animals/origami_dragon.glb",
     "unit": "m",
-    "triangles": 546,
+    "triangles": 574,
     "outline_triangles": 0,
     "bounds": {
       "min": [
@@ -8207,8 +8206,8 @@
         -0.0175
       ],
       "max": [
-        0.0452,
-        0.052,
+        0.0505,
+        0.0532,
         0.0175
       ]
     },
@@ -8220,7 +8219,7 @@
       ],
       "label_anchor": [
         0,
-        0.0563,
+        0.053,
         0
       ]
     },

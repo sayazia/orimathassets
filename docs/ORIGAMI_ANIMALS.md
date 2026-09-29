@@ -21,12 +21,30 @@ We learn the technique, not the folding patterns: no crease pattern or fold sequ
 Materials: at most six per file. `main*` and `trim*` give four (lit + shade), plus `ink` and one flat colour. A flat colour
 that equals the base key of a starred colour (for example `orange` next to `orange*`) costs nothing.
 
+## Faces
+
+Every species gets its own face so the heads do not all end in the same point. `faceHead(pivot, face)` builds a faceted
+cranium plus a muzzle block; `FACES` holds the presets:
+
+| Face | Muzzle | Used by |
+| --- | --- | --- |
+| `fox`, `wolf` | long, tapering to a point | fox, wolf, Foldling fox |
+| `cat`, `bigcat` | short and broad, wide cheeks | cat, tiger, winged lion, Foldling cat |
+| `rabbit`, `squirrel`, `meerkat` | small blunt muzzle, domed crown | rabbit, squirrel, meerkat, Foldling rabbit |
+| `pig`, `hippo`, `walrus` | square and flat (`taper: 1`), nose pad or whisker pad | pig, hippo, walrus |
+| `beaver` | short round muzzle with front teeth | beaver |
+| `mammoth` | high dome, short face, trunk from the front | mammoth, Foldling elephant |
+| `dragon`, `lizard` | long flat-topped snout | dragon, stegosaurus |
+| `bird` | no muzzle, a beak is added | griffin |
+
+Ears come in five kinds: `point`, `long`, `round`, `flop` (folded forward, pig) and `side` (large, flat against the head).
+
 ## Builders (`scripts/lib/zoo.mjs`)
 
 | Builder | Used for | Main options |
 | --- | --- | --- |
-| `quad` | four-legged animals | `L`, `Hb`, `legH`, `W`, `head {s, snout, wide, blunt, drop, tall}`, `ear {kind, h, spread, inner}`, `tail {kind: brush, whip, up, stub, paddle}`, `extra(ctx)` |
-| `sitter` | seated animals (squirrel, rabbit, fox, cat, pig, meerkat) | `H`, `kx`, `Bw`, head, ear, tail, `extra(ctx)` |
+| `quad` | four-legged animals, also lying (cat) | `L`, `Hb`, `legH`, `W`, `barrel`, `face`, `ear {kind, h, spread, inner}`, `tail {kind: brush, whip, up, stub, paddle}`, `extra(ctx)` |
+| `sitter` | seated or upright animals (squirrel, rabbit, fox, meerkat) | `H`, `kx`, `Bw`, `belly`, `shoulder`, `lean`, `foot`, `armEnd`, face, ear, tail |
 | `bird` | all birds | `bodyL`, `bodyH`, `legH`, `neck {len, curve}`, `beak {len, h, colour}`, `crest`, `tail {len, w, fork}`, `wing {len, open}`, `faceTrim`, `float` |
 | `swimmer` | shark, whale, pufferfish | `L`, `H`, `W`, `snout`, `dorsal`, `tailUp/Down`, `fin` |
 | custom | squid, shield bug, katydid, snake, chameleon | written directly in `zoo.mjs` |

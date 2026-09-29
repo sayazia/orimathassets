@@ -1,7 +1,7 @@
 // Origami animals modelled on the two reference books (docs/ORIGAMI_ANIMALS.md): flat planes, a white
 // underside colour where the paper turns over, plain round eyes, no ink outline. Millimetres, head to +x.
 import { plate, spike, flapLeg, blob, disc, surf, V } from '../lib/origami.mjs';
-import { quad, sitter, bird, swimmer, both, patch, stick, band, lerp, flapClip, cols } from '../lib/zoo.mjs';
+import { quad, sitter, bird, swimmer, both, patch, frontPatch, stick, band, lerp, flapClip, cols, FACES } from '../lib/zoo.mjs';
 import { creatureClips } from '../lib/clips.mjs';
 
 const ASSET = (name, sheet, build, notes) => ({ name: 'origami_' + name, dir: 'origami-animals', category: 'origami_animals', sheet, build, notes });
@@ -19,57 +19,90 @@ function archTail(ctx, { colour, tipColour, x = ctx.x0 + 1, y = 8, up = 28, out 
   return t;
 }
 
+// Nose pad on the flat front of a square muzzle (pig, hippo): a disc with two nostrils.
+function snoutPad(ctx, colour, { r = 4.6, ry = 3.8, nostril = 0.9, gap = 1.9, dy = 0 } = {}) {
+  const { h, head } = ctx;
+  head.mesh((m) => {
+    const f = h.front(h.tip[1] + dy);
+    if (!f) return;
+    if (colour) disc(m, colour, f.p, f.n, r, ry, { h: 1.4 });
+    [gap, -gap].forEach((z) => disc(m, 'ink', V.add(V.add(f.p, [0, 0, z]), V.mul(f.n, colour ? 1.5 : 0)), f.n, nostril, nostril * 1.2));
+  });
+}
+// Two flat front teeth hanging under the muzzle tip (beaver).
+function teeth(ctx, colour = 'paper') {
+  const { h, head } = ctx, x = h.tipX - 1.2, y = h.ty - h.f.mh * h.f.taper / 2;
+  head.mesh((m) => m.hull(colour, [h.P(x - 1.5, y + 0.5, 2.2), h.P(x - 1.5, y + 0.5, -2.2), h.P(x, y + 0.5, 2.2), h.P(x, y + 0.5, -2.2), h.P(x - 1.2, y - 4, 2), h.P(x - 1.2, y - 4, -2), h.P(x, y - 4, 2), h.P(x, y - 4, -2)]));
+}
+
 // ================================================================ land animals
 const land = [
   ASSET('squirrel', 'origami_land', (rig) => sitter(rig, {
-    main: 'terracotta', trim: 'paper', accent: 'pink', H: 34, kx: 0.9, ear: { h: 7, spread: 5.5, inner: null }, head: { s: 0.92, snout: 0.75, wide: 1.05 }, tail: { kind: 'none' },
-    extra: (ctx) => { ctx.tailNode = archTail(ctx, { y: 7, up: 26, out: 13, over: 9, w: 7, tipColour: ctx.T }); },
+    main: 'terracotta', trim: 'paper', accent: 'pink', H: 28, kx: 0.78, Bw: 9, belly: 1.2, shoulder: 0.6, lean: 0.55, armEnd: 12, armY: 0.7,
+    face: 'squirrel', ear: { kind: 'point', h: 6, w: 4, x: -3, inner: null }, tail: { kind: 'none' }, headY: -1,
+    extra: (ctx) => { archTail(ctx, { y: 5, up: 30, out: 16, over: 12, w: 9, tipColour: ctx.T }); },
   })),
   ASSET('rabbit', 'origami_land', (rig) => sitter(rig, {
-    main: 'paper', trim: 'paper', accent: 'red', eyeColour: 'red', H: 32, ear: { h: 24, spread: 6, x: 3, lean: -2 }, head: { s: 0.9, snout: 0.6 },
+    main: 'paper', trim: 'paper', accent: 'red', eyeColour: 'red', H: 28, kx: 0.8, Bw: 11, belly: 1.3, shoulder: 0.5, lean: 0.4, foot: 1.5, armEnd: 0,
+    face: 'rabbit', ear: { kind: 'long', h: 26, w: 5.5, x: -4, lean: -4, spread: 5 }, tail: { kind: 'ball', trim: true },
   })),
   ASSET('fox', 'origami_land', (rig) => sitter(rig, {
-    main: 'orange', trim: 'paper', accent: 'pink', H: 40, ear: { h: 12 }, head: { s: 1, snout: 1.15 }, tail: { kind: 'brush', len: 28, up: 2, w: 6.5, tip: true },
+    main: 'orange', trim: 'paper', accent: 'pink', H: 40, kx: 0.8, Bw: 8, belly: 1.05, shoulder: 0.55, lean: 0.45,
+    face: 'fox', ear: { kind: 'point', h: 12, w: 6 }, tail: { kind: 'brush', len: 28, up: -2, w: 7, tip: true },
   })),
-  ASSET('cat', 'origami_land', (rig) => sitter(rig, {
-    main: 'dark', trim: 'paper', accent: 'pink', H: 30, ear: { h: 7 }, head: { s: 1.05, snout: 0.5, wide: 1.12 }, tail: { kind: 'whip', len: 34, w: 2.2 },
-    extra: (ctx) => { // the white mask: two cheek patches and a bib
-      ctx.head.mesh((m) => both((s) => patch(m, ctx.T, ctx.h.pts, s, [ctx.h.P(3, -5), ctx.h.P(7, -1), ctx.h.P(11.5, -4), ctx.h.P(7, -6.5)].map((p) => [p[0], p[1]]))));
-    },
+  ASSET('cat', 'origami_land', (rig) => quad(rig, { // a loaf: lying down with the paws tucked in, big round head
+    main: 'dark', trim: 'paper', accent: 'pink', L: 32, Hb: 17, legH: 3, W: 11, legW: 4, barrel: 1, back: 0.02, chestTrim: 4,
+    face: { ...FACES.cat, s: 1.1 }, ear: { kind: 'point', h: 7, w: 7, x: -2, spread: 9 }, eyeTilt: [-0.35, 0, 1], headX: 2, headY: 1, muzzle: false,
+    tail: { kind: 'whip', len: 36, w: 2.4, drop: -2 }, hop: 8,
+    extra: (ctx) => { const { h } = ctx, y0 = h.P(0, h.my + h.f.mh / 2 + 1.5)[1], y1 = h.P(0, -h.f.hh * 0.5)[1]; ctx.head.mesh((m) => frontPatch(m, ctx.T, h.pts, [[y0, 0], [y0 + 1, 6.5], [(y0 + y1) / 2, 7], [y1 + 0.5, 3], [y1 + 0.5, -3], [(y0 + y1) / 2, -7], [y0 + 1, -6.5]])); }, // white mask round the mouth
   })),
-  ASSET('pig', 'origami_land', (rig) => sitter(rig, {
-    main: 'pink', trim: 'paper', accent: 'coral', H: 28, kx: 0.78, Bw: 12, ear: { h: 5, spread: 8.5, z: 8, x: 2, lean: 2, inner: null }, head: { s: 1.05, snout: 0.5, wide: 1.25, blunt: true }, nose: false,
-    tail: { kind: 'stub', len: 5 }, bib: false,
-    extra: (ctx) => { const h = ctx.h; ctx.head.mesh((m) => { const f = h.front(h.tip[1] + 2); if (!f) return; disc(m, 'coral', f.p, f.n, 5, 4.2, { h: 1.6 }); [1.9, -1.9].forEach((z) => { const q = h.front(h.tip[1] + 2, z); if (q) disc(m, 'ink', [q.p[0] + 1.9, q.p[1], q.p[2]], f.n, 0.8); }); }); },
+  ASSET('pig', 'origami_land', (rig) => quad(rig, { // round barrel on four stubby legs, flat nose pad, ears flopped forward
+    main: 'pink', trim: 'paper', accent: 'coral', L: 34, Hb: 20, legH: 8, W: 12, legW: 4.5, barrel: 1, back: 0.02, chest: false,
+    face: 'pig', ear: { kind: 'flop', h: 8, w: 7, x: -3, z: 6 }, nose: false, muzzle: false, headX: 3, headY: -4,
+    tail: { kind: 'stub', len: 5 },
+    extra: (ctx) => snoutPad(ctx, 'coral', { r: 5, ry: 4.2, dy: 0.5 }),
   })),
-  ASSET('beaver', 'origami_land', (rig) => quad(rig, {
-    main: 'bark', trim: 'paper', accent: 'paper', L: 34, Hb: 15, legH: 8, W: 9, legW: 4, chest: false, belly: true, head: { s: 0.92, snout: 0.7, wide: 1.05 }, ear: { h: 3, spread: 6, inner: null }, tail: { kind: 'paddle', len: 24, w: 8 }, back: 0.1,
-    extra: (ctx) => { const h = ctx.h; ctx.head.mesh((m) => m.hull('paper', [h.P(22, -5.5, 2.4), h.P(22, -5.5, -2.4), h.P(23, -9.5, 2), h.P(23, -9.5, -2), h.P(25, -9.5, 0)])); }, // front teeth
+  ASSET('beaver', 'origami_land', (rig) => quad(rig, { // low and round, rounded head with buck teeth, flat paddle tail
+    main: 'bark', trim: 'paper', accent: 'paper', L: 32, Hb: 17, legH: 5, W: 10, legW: 4, barrel: 0.9, chest: false, belly: true, back: 0.12,
+    face: 'beaver', ear: { kind: 'round', h: 3, x: -4, inner: null }, headX: 1, headY: -3, tail: { kind: 'paddle', len: 26, w: 8 },
+    extra: (ctx) => teeth(ctx),
   })),
-  ASSET('tiger', 'origami_land', (rig) => quad(rig, {
-    main: 'sunflower', trim: 'paper', accent: 'pink', L: 40, Hb: 16, legH: 17, W: 8, head: { s: 1, snout: 0.6 }, ear: { h: 5, inner: null }, tail: { kind: 'up', len: 32 },
+  ASSET('tiger', 'origami_land', (rig) => quad(rig, { // big cat: broad face, short square muzzle, round ears, stripes
+    main: 'sunflower', trim: 'paper', accent: 'paper', L: 42, Hb: 15, legH: 16, W: 8.5, legW: 4.4,
+    face: 'bigcat', ear: { kind: 'round', h: 4.5, x: -4, spread: 7 }, tail: { kind: 'up', len: 32 }, headX: 2,
     extra: (ctx) => {
-      const { x0, x1, yt, yb, bodyPts } = ctx;
+      const { x0, x1, yt, bodyPts, h } = ctx;
       ctx.body.mesh((m) => both((s) => [-14, -7, 0, 7].forEach((dx, i) => {
         const cx = (x0 + x1) / 2 + dx, top = yt - i * 0.4 - 1;
         patch(m, 'ink', bodyPts, s, [[cx - 1.6, top], [cx + 1.6, top - 0.5], [cx + 0.3, top - 9 - (i % 2) * 2]]);
       })));
-      ctx.head.mesh((m) => both((sd) => patch(m, 'ink', ctx.h.pts, sd, [ctx.h.P(3.5, 6.2), ctx.h.P(8, 4.6), ctx.h.P(5.5, 3.2)].map((p) => [p[0], p[1]]))));
+      ctx.head.mesh((m) => [[-1, 7, -3.5], [3, 6.5, -1]].forEach(([x, y, x2]) => both((sd) => patch(m, 'ink', h.pts, sd, [h.P(x - 3, y), h.P(x, y - 0.5), h.P(x2, y - 4)].map((p) => [p[0], p[1]]))))); // cheek stripes
     },
   })),
-  ASSET('hippo', 'origami_land', (rig) => quad(rig, {
-    main: 'stone', trim: 'paper', accent: 'pink', L: 42, Hb: 22, legH: 11, W: 13, legW: 6, legZ: 2.4, head: { s: 1.15, snout: 0.62, wide: 1.25, blunt: true, drop: 1 }, ear: { h: 3, spread: 8.5, z: 8, inner: null }, tail: { kind: 'stub', len: 8 }, headY: -3, back: 0.02,
-    extra: (ctx) => { const h = ctx.h; ctx.head.mesh((m) => [3.4, -3.4].forEach((z) => { const f = h.front(h.tip[1] + 3.2, z); if (f) disc(m, 'ink', f.p, f.n, 1.1); })); },
-  })),
-  ASSET('meerkat', 'origami_land', (rig) => sitter(rig, {
-    main: 'straw', trim: 'paper', accent: 'bark', H: 48, kx: 0.62, Bw: 8, ear: { h: 3, spread: 5, inner: null }, head: { s: 0.85, snout: 0.85, wide: 1.0 }, tail: { kind: 'whip', len: 38, w: 2, colour: 'bark' }, hop: 10,
-    extra: (ctx) => { // dark eye patches
-      ctx.head.mesh((m) => both((s) => patch(m, 'bark', ctx.h.pts, s, [ctx.h.P(7.5, 5.6), ctx.h.P(15, 3.6), ctx.h.P(12.5, 1), ctx.h.P(7.5, 2)].map((p) => [p[0], p[1]]))));
+  ASSET('hippo', 'origami_land', (rig) => quad(rig, { // huge barrel, short legs, a wide square muzzle, eyes and ears on top
+    main: 'stone', trim: 'pink', accent: 'pink', L: 46, Hb: 22, legH: 9, W: 14, legW: 6, legZ: 2.4, barrel: 1, back: 0.02, chest: false,
+    face: { ...FACES.hippo, s: 1.05, ml: 13 }, ear: { kind: 'round', h: 2.6, x: -7, spread: 6, inner: 'pink' }, muzzle: false, nose: false, headX: 5, headY: -5,
+    tail: { kind: 'stub', len: 6 },
+    extra: (ctx) => {
+      const { h, head } = ctx;
+      head.mesh((m) => both((sd) => m.hull(ctx.M, [h.P(-1, h.f.hh * 0.3, sd * 4), h.P(4, h.f.hh * 0.3, sd * 4), h.P(1.5, h.f.hh * 0.5 + 3, sd * 5), h.P(1.5, h.f.hh * 0.35, sd * 7.5), h.P(1.5, h.f.hh * 0.35, sd * 2)]))); // eye bumps on top of the head
+      head.mesh((m) => { // nostrils on top of the muzzle, a pink mouth line along its sides
+        [3.2, -3.2].forEach((z) => { const t = surf(h.pts, [h.P(h.tipX - 3, 0)[0], 300, z], [0, -1, 0]); if (t) disc(m, 'ink', t.p, t.n, 1.2, 0.9); });
+        both((sd) => patch(m, 'pink', h.pts, sd, [h.P(h.xf + 2, h.my - 1.2), h.P(h.tipX, h.ty - 1.2), h.P(h.tipX, h.ty - 3), h.P(h.xf + 2, h.my - 2.2)].map((p) => [p[0], p[1]])));
+      });
     },
   })),
-  ASSET('wolf', 'origami_land', (rig) => quad(rig, {
-    main: 'blue', trim: 'paper', accent: 'pink', L: 46, Hb: 16, legH: 21, W: 7.5, legW: 3.6, head: { s: 1, snout: 1.35 }, ear: { h: 13 }, tail: { kind: 'brush', len: 34, up: 2, w: 6 }, legSplay: 1.3,
-    extra: (ctx) => { // shaggy ruff: spiky planes fanned around the neck
+  ASSET('meerkat', 'origami_land', (rig) => sitter(rig, { // standing upright on the hind feet, arms hanging, tail as a prop
+    main: 'straw', trim: 'paper', accent: 'bark', H: 46, kx: 0.55, Bw: 7, belly: 1.0, shoulder: 0.72, lean: 0.25, armY: 0.7, armEnd: 20, haunch: 0.4, foot: 0.8,
+    face: 'meerkat', ear: { kind: 'round', h: 2.5, x: -3, inner: null }, noseColour: 'ink', tail: { kind: 'whip', len: 40, w: 2, colour: 'bark' }, hop: 10,
+    extra: (ctx) => { // dark eye patches around the eyes
+      const { h } = ctx, [ex, ey] = [h.eyeAt[0], h.eyeAt[1]];
+      ctx.head.mesh((m) => both((s) => patch(m, 'bark', h.pts, s, [[ex - 3, ey + 2.4], [ex + 3.4, ey + 1.2], [ex + 2.6, ey - 2.6], [ex - 2.6, ey - 2]])));
+    },
+  })),
+  ASSET('wolf', 'origami_land', (rig) => quad(rig, { // long legs, long snout, shaggy ruff
+    main: 'blue', trim: 'paper', accent: 'pink', L: 46, Hb: 16, legH: 21, W: 7.5, legW: 3.6, face: 'wolf', ear: { kind: 'point', h: 12, w: 6 }, tail: { kind: 'brush', len: 34, up: 2, w: 6 }, legSplay: 1.3, headX: 3, headY: 3,
+    extra: (ctx) => {
       const { x1, yt, W, body } = ctx;
       body.mesh((m) => both((s) => {
         spike(m, ctx.M, [x1 - 8, yt - 1, s * 2], [x1 - 3, yt - 9, s * (W + 2)], [x1 - 15, yt + 1, s * (W + 4)], [0, 0, s * 1.4], 1.3);
@@ -77,17 +110,18 @@ const land = [
       }));
     },
   })),
-  ASSET('mammoth', 'origami_land', (rig) => quad(rig, {
-    main: 'wood', trim: 'paper', accent: 'paper', L: 40, Hb: 27, legH: 13, W: 13, legW: 6.5, legZ: 2.8, chest: false, head: { s: 1.25, snout: 0.5, wide: 1.05, tall: 1.25 }, ear: { h: 2, spread: 10, z: 9, inner: null }, tail: { kind: 'stub', len: 9 }, headY: -7, headX: -1, back: 0.16,
+  ASSET('mammoth', 'origami_land', (rig) => quad(rig, { // high domed head, sloping back, trunk and long curved tusks
+    main: 'wood', trim: 'paper', accent: 'paper', L: 40, Hb: 26, legH: 14, W: 13, legW: 6.5, legZ: 2.8, chest: false, back: 0.2, muzzle: false, nose: false,
+    face: { ...FACES.mammoth, s: 1.1, hw: 23, hh: 22, dome: 5 }, ear: { kind: 'side', h: 9, x: -3, y: 2 }, tail: { kind: 'stub', len: 9 }, headY: 0, headX: 0,
     extra: (ctx) => {
-      const { h, head, M } = ctx;
-      const at = (x, y) => { const p = h.P(x, y); return [p[0], p[1], 0]; };
-      head.mesh((m) => { // trunk: a strip folded down the front of the face, curling up at the tip
-        spike(m, M, at(6, -1), at(12, -3), at(15, -32), [1.8, 0, 4.6], 1.5);
-        spike(m, M, at(13.6, -26), at(17.4, -30), at(24, -25), [0, 0, 2.6], 1.2);
+      const { h, head, M } = ctx, tx = h.tipX, ty = h.ty;
+      const tr = head.add('trunk', h.P(tx - 1, ty));
+      tr.mesh((m) => { // trunk: a strip folded down the front of the face, curling out at the tip
+        spike(m, M, h.P(tx - 7, ty + 4, 0), h.P(tx + 1, ty - 2, 0), h.P(tx + 3, ty - 30, 0), [2.2, 0, 6], 1.5);
+        spike(m, M, h.P(tx + 1, ty - 24, 0), h.P(tx + 4.4, ty - 28, 0), h.P(tx + 10, ty - 23, 0), [0, 0, 2.4], 1.2);
       });
-      both((s) => head.mesh((m) => spike(m, 'paper*', h.P(7, -6, s * 6.4), h.P(10, -1, s * 6.4), h.P(30, -17, s * 8.6), [0, -1, s * 1.2], 1.5))); // curved tusks
-      ctx.body.mesh((m) => m.hull(M, [[ctx.x1 - 12, ctx.yt + 1, 0], [ctx.x1 - 20, ctx.yt + 6, 4], [ctx.x1 - 20, ctx.yt + 6, -4], [ctx.x1 - 3, ctx.yt - 2, 7], [ctx.x1 - 3, ctx.yt - 2, -7]])); // shaggy hump
+      both((s) => head.mesh((m) => spike(m, 'paper*', h.P(tx - 5, ty - 3, s * 5), h.P(tx - 2, ty, s * 5), h.P(tx + 18, ty - 13, s * 7.6), [0, -1, s * 1.2], 1.5))); // curved tusks
+      ctx.body.mesh((m) => m.hull(M, [[ctx.x1 - 10, ctx.yt + 1, 0], [ctx.x1 - 18, ctx.yt + 6, 4], [ctx.x1 - 18, ctx.yt + 6, -4], [ctx.x1 - 3, ctx.yt - 2, 7], [ctx.x1 - 3, ctx.yt - 2, -7]])); // shaggy hump
     },
   })),
 ];
@@ -127,9 +161,13 @@ const sea = [
     body.anchorAt('flag_anchor', [0, y + 20, 0]);
     creatureClips(rig, { head: null, tail: null, floating: true, hopHeight: 8 });
   }),
-  ASSET('walrus', 'origami_sea', (rig) => quad(rig, {
-    main: 'sand', trim: 'paper', accent: 'paper', L: 46, Hb: 24, legH: 3, W: 13, legW: 4, chest: false, head: { s: 1.1, snout: 0.55, wide: 1.2, blunt: true, drop: 1 }, ear: { kind: 'none' }, tail: { kind: 'none' }, headX: 1, headY: -8, back: 0.05, legSplay: 1.8,
-    extra: (ctx) => { const h = ctx.h; both((s) => ctx.head.mesh((m) => spike(m, 'paper*', h.P(9, -5.6, s * 4.6), h.P(12, -5.6, s * 4.6), h.P(11.5, -24, s * 5.4), [0.6, 0, s * 0.5], 1.6))); }, // tusks
+  ASSET('walrus', 'origami_sea', (rig) => quad(rig, { // heavy body lying on flippers, a fat whisker pad and two long tusks
+    main: 'sand', trim: 'paper', accent: 'paper', L: 46, Hb: 24, legH: 3, W: 13, legW: 4, chest: false, barrel: 0.8, face: 'walrus', ear: { kind: 'none' }, tail: { kind: 'none' }, headX: 2, headY: -6, back: 0.05, legSplay: 1.8, nose: false,
+    extra: (ctx) => {
+      const { h } = ctx, x = h.tipX - 4, y = h.ty - h.f.mh * h.f.taper / 2;
+      both((s) => ctx.head.mesh((m) => spike(m, 'paper*', h.P(x - 1.5, y + 1, s * 3.6), h.P(x + 1.5, y + 1, s * 3.6), h.P(x + 1, y - 20, s * 4.4), [0.6, 0, s * 0.5], 1.6))); // tusks
+      snoutPad(ctx, null, { gap: 2.6, dy: 2.5, nostril: 0.9 });
+    },
   })),
 ];
 
@@ -227,7 +265,7 @@ const small = [
     creatureClips(rig, { head: 'head', tail: null, legs, hopHeight: 6 });
   }, 'Sits on a bark branch (one flat colour, the sixth material).'),
   ASSET('stegosaurus', 'origami_small', (rig) => quad(rig, {
-    main: 'slate', trim: 'paper', accent: 'sky', L: 46, Hb: 16, legH: 10, W: 9, legW: 4.4, chest: false, head: { s: 0.7, snout: 1.25, wide: 0.75, drop: 3 }, ear: { kind: 'none' }, tail: { kind: 'stub', len: 22 }, headY: -6, headX: 3, back: 0.18, hop: 8,
+    main: 'slate', trim: 'paper', accent: 'sky', L: 46, Hb: 16, legH: 10, W: 9, legW: 4.4, chest: false, face: { ...FACES.lizard, s: 0.85, drop: 3 }, ear: { kind: 'none' }, tail: { kind: 'stub', len: 22 }, headY: -9, headX: 4, muzzle: false, back: 0.18, hop: 8,
     extra: (ctx) => {
       const { x0, x1, yt, body } = ctx;
       [[8, 12], [2, 15], [-5, 16], [-12, 14], [-19, 10]].forEach(([x, h], i) => body.mesh((m) => {
@@ -241,26 +279,28 @@ const small = [
 
 // ================================================================ mythical
 const myth = [
-  ASSET('griffin', 'origami_myth', (rig) => quad(rig, {
-    main: 'gold', trim: 'paper', accent: 'orange', headMain: 'paper', L: 38, Hb: 16, legH: 15, W: 9, legW: 4.4, chest: false, head: { s: 0.95, snout: 0.5, wide: 0.95, tall: 1.1 }, ear: { kind: 'none' }, tail: { kind: 'brush', len: 24, up: 2, w: 5, tip: true }, headY: 3, nose: false, muzzle: false,
+  ASSET('griffin', 'origami_myth', (rig) => quad(rig, { // lion body, eagle head with a hooked beak, big folded wings
+    main: 'gold', trim: 'paper', accent: 'orange', headMain: 'paper', L: 38, Hb: 16, legH: 15, W: 9, legW: 4.4, chest: false,
+    face: { ...FACES.bird, s: 1 }, ear: { kind: 'none' }, tail: { kind: 'brush', len: 24, up: 2, w: 5, tip: true }, headY: 5, headX: 2, nose: false, muzzle: false,
     extra: (ctx) => {
-      const { h, head, x0, x1, yt, body } = ctx;
-      head.mesh((m) => { // hooked beak
-        m.hull('orange', [h.P(20, -1, 3.2), h.P(20, -1, -3.2), h.P(20, 4, 0), h.P(30, -7, 0), h.P(22, -9, 0)]);
-        both((s) => spike(m, 'paper*', h.P(0, 9, s * 2), h.P(6, 7, s * 4), h.P(-9, 22, s * 6), [0, 0, s * 1.2], 1.2)); // feather crest
+      const { h, head, x0, x1, yt, body } = ctx, bx = h.xf - 1;
+      head.mesh((m) => { // hooked beak and a folded feather crest
+        m.hull('orange', [h.P(bx, 1.5, 3.4), h.P(bx, 1.5, -3.4), h.P(bx, -5, 2.6), h.P(bx, -5, -2.6), h.P(bx + 11, -1, 0), h.P(bx + 12, -6, 0), h.P(bx + 6, -6, 0)]);
+        both((s) => spike(m, 'paper*', h.P(-4, 6, s * 2), h.P(2, 6, s * 4), h.P(-14, 16, s * 6), [0, 0, s * 1.2], 1.2));
       });
-      both((s) => body.mesh((m) => { // big wings: two folded planes each
+      both((s) => body.mesh((m) => {
         spike(m, 'paper*', [x1 - 8, yt - 1, s * 4], [x0 + 8, yt - 2, s * 4], [x0 + 5, yt + 30, s * 22], [0, 0, s * 4], 1.5);
         spike(m, 'paper*', [x1 - 10, yt - 1, s * 5], [x1 - 22, yt - 1, s * 5], [x0 + 12, yt + 24, s * 30], [0, 0, s * 3], 1.5);
       }));
     },
   })),
-  ASSET('winged_lion', 'origami_myth', (rig) => quad(rig, {
-    main: 'sand', trim: 'paper', accent: 'bark', L: 40, Hb: 17, legH: 15, W: 9, legW: 4.4, chest: false, head: { s: 1, snout: 0.5, wide: 1.1 }, ear: { h: 3, spread: 7, inner: null }, tail: { kind: 'whip', len: 32, w: 2 },
+  ASSET('winged_lion', 'origami_myth', (rig) => quad(rig, { // big-cat face inside a ring-shaped mane, wings
+    main: 'sand', trim: 'paper', accent: 'bark', L: 40, Hb: 17, legH: 15, W: 9, legW: 4.4, chest: false,
+    face: 'bigcat', ear: { kind: 'round', h: 3.5, x: -3, spread: 8, inner: null }, tail: { kind: 'whip', len: 32, w: 2 }, headX: 3, headY: 2,
     extra: (ctx) => {
-      const { h, head, x1, yt, body } = ctx;
-      head.mesh((m) => { // mane: a ring of flat spikes around the face
-        m.hull('bark', [h.P(-3, 12, 0), h.P(-6, 4, 12), h.P(-6, 4, -12), h.P(-4, -8, 8), h.P(-4, -8, -8), h.P(-8, -1, 0), h.P(4, 4, 9), h.P(4, 4, -9), h.P(3, -5, 7), h.P(3, -5, -7)]);
+      const { h, head, x1, yt } = ctx;
+      head.mesh((m) => { // mane: a faceted collar behind the face
+        m.hull('bark', [h.P(-5, 14, 0), h.P(-8, 6, 15), h.P(-8, 6, -15), h.P(-7, -9, 11), h.P(-7, -9, -11), h.P(-12, 0, 0), h.P(-3, 7, 12), h.P(-3, 7, -12), h.P(-3, -6, 10), h.P(-3, -6, -10), h.P(-6, -14, 0)]);
       });
       ctx.body.mesh((m) => both((s) => {
         spike(m, 'paper*', [x1 - 8, yt - 1, s * 4], [x1 - 22, yt - 2, s * 4], [x1 - 34, yt + 26, s * 24], [0, 0, s * 4], 1.5);
@@ -268,13 +308,14 @@ const myth = [
       }));
     },
   })),
-  ASSET('dragon', 'origami_myth', (rig) => quad(rig, {
-    main: 'paper', trim: 'sky', accent: 'teal', L: 36, Hb: 14, legH: 12, W: 7, legW: 3.6, chest: false, head: { s: 0.95, snout: 0.75, wide: 0.95 }, ear: { h: 8, inner: 'teal', spread: 7 }, tail: { kind: 'brush', len: 34, up: -2, w: 5, tip: true, colour: 'paper' }, headY: 4, hop: 12,
+  ASSET('dragon', 'origami_myth', (rig) => quad(rig, { // long flat-topped snout, horns, whiskers, spiky back
+    main: 'paper', trim: 'sky', accent: 'teal', L: 36, Hb: 14, legH: 12, W: 7, legW: 3.6, chest: false,
+    face: 'dragon', ear: { kind: 'point', h: 6, w: 4, x: -6, inner: 'teal', spread: 8 }, tail: { kind: 'brush', len: 34, up: -2, w: 5, tip: true, colour: 'paper' }, headY: 5, headX: 3, hop: 12,
     extra: (ctx) => {
-      const { h, head, x0, x1, yt, body } = ctx;
-      head.mesh((m) => both((s) => { stick(m, 'teal', h.P(20, -2, s * 4), h.P(30, -12, s * 12), 0.6); spike(m, 'teal', h.P(3, 8, s * 3), h.P(7, 8, s * 3), h.P(-8, 24, s * 5), [0, 0, s * 0.8], 1); })); // whiskers and horns
-      body.mesh((m) => { for (let i = 0; i < 6; i++) { const x = x1 - 6 - i * 6, y = yt - i * 0.4; plate(m, 'sky*', [[x + 3, y, 0], [x - 3, y, 0], [x, y + 7 - i * 0.6, 0]], 1.4); } }); // dorsal spikes
-      body.mesh((m) => both((s) => spike(m, 'sky*', [x1 - 10, yt - 1, s * 3], [x1 - 22, yt - 1, s * 3], [x1 - 22, yt + 18, s * 17], [0, 0, s * 3], 1.3))); // small wings
+      const { h, head, x1, yt, body } = ctx;
+      head.mesh((m) => both((s) => { stick(m, 'teal', h.P(h.tipX - 2, h.ty - 1, s * 4), h.P(h.tipX + 8, h.ty - 12, s * 12), 0.6); spike(m, 'teal', h.P(-3, 6, s * 3), h.P(1, 6, s * 3), h.P(-14, 22, s * 5), [0, 0, s * 0.8], 1); }));
+      body.mesh((m) => { for (let i = 0; i < 6; i++) { const x = x1 - 6 - i * 6, y = yt - i * 0.4; plate(m, 'sky*', [[x + 3, y, 0], [x - 3, y, 0], [x, y + 7 - i * 0.6, 0]], 1.4); } });
+      body.mesh((m) => both((s) => spike(m, 'sky*', [x1 - 10, yt - 1, s * 3], [x1 - 22, yt - 1, s * 3], [x1 - 22, yt + 18, s * 17], [0, 0, s * 3], 1.3)));
     },
   })),
   ASSET('phoenix', 'origami_myth', (rig) => bird(rig, {
