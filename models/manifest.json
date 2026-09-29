@@ -8520,5 +8520,585 @@
       "paper"
     ],
     "notes": "Fits the right-hand page of popup_book at 0.03 m per tile. cell_origin = centre of the -x/-z corner cell; cells step 1 tile."
+  },
+  {
+    "name": "star",
+    "category": "rewards",
+    "sheet": "rewards",
+    "file": "rewards/star.glb",
+    "unit": "m",
+    "triangles": 30,
+    "outline_triangles": 30,
+    "bounds": {
+      "min": [
+        -0.0238,
+        -0.0202,
+        -0.008
+      ],
+      "max": [
+        0.0238,
+        0.025,
+        0.008
+      ]
+    },
+    "anchors": {},
+    "parts": [
+      "star"
+    ],
+    "materials": [
+      "gold",
+      "gold_shade",
+      "ink"
+    ],
+    "notes": "Origin at the centre; faces +Z."
+  },
+  {
+    "name": "star_empty",
+    "category": "rewards",
+    "sheet": "rewards",
+    "file": "rewards/star_empty.glb",
+    "unit": "m",
+    "triangles": 120,
+    "outline_triangles": 120,
+    "bounds": {
+      "min": [
+        -0.0248,
+        -0.0215,
+        -0.0015
+      ],
+      "max": [
+        0.0248,
+        0.0256,
+        0.0015
+      ]
+    },
+    "anchors": {},
+    "parts": [
+      "star"
+    ],
+    "materials": [
+      "cream",
+      "cream_shade",
+      "ink"
+    ],
+    "notes": "Paper outline of the same star (not yet earned)."
+  },
+  {
+    "name": "badge_best_save",
+    "category": "rewards",
+    "sheet": "rewards",
+    "file": "rewards/badge_best_save.glb",
+    "unit": "m",
+    "triangles": 272,
+    "outline_triangles": 272,
+    "bounds": {
+      "min": [
+        -0.03,
+        -0.046,
+        -0.004
+      ],
+      "max": [
+        0.03,
+        0.03,
+        0.0075
+      ]
+    },
+    "anchors": {},
+    "parts": [
+      "badge",
+      "ribbon"
+    ],
+    "materials": [
+      "coral",
+      "coral_shade",
+      "cream",
+      "gold",
+      "gold_shade",
+      "ink"
+    ],
+    "notes": "Symbol only, no text. Origin at the disc centre; ribbon hangs below."
+  },
+  {
+    "name": "badge_most_improved",
+    "category": "rewards",
+    "sheet": "rewards",
+    "file": "rewards/badge_most_improved.glb",
+    "unit": "m",
+    "triangles": 228,
+    "outline_triangles": 228,
+    "bounds": {
+      "min": [
+        -0.03,
+        -0.046,
+        -0.004
+      ],
+      "max": [
+        0.03,
+        0.03,
+        0.007
+      ]
+    },
+    "anchors": {},
+    "parts": [
+      "badge",
+      "ribbon"
+    ],
+    "materials": [
+      "cream",
+      "gold",
+      "gold_shade",
+      "ink",
+      "leaf",
+      "leaf_shade"
+    ],
+    "notes": "Symbol only, no text. Origin at the disc centre; ribbon hangs below."
+  },
+  {
+    "name": "badge_sharpest_aim",
+    "category": "rewards",
+    "sheet": "rewards",
+    "file": "rewards/badge_sharpest_aim.glb",
+    "unit": "m",
+    "triangles": 500,
+    "outline_triangles": 500,
+    "bounds": {
+      "min": [
+        -0.03,
+        -0.046,
+        -0.004
+      ],
+      "max": [
+        0.03,
+        0.03,
+        0.0075
+      ]
+    },
+    "anchors": {},
+    "parts": [
+      "badge",
+      "ribbon"
+    ],
+    "materials": [
+      "cobalt",
+      "cobalt_shade",
+      "cream",
+      "gold",
+      "gold_shade",
+      "ink"
+    ],
+    "notes": "Symbol only, no text. Origin at the disc centre; ribbon hangs below."
+  },
+  {
+    "name": "badge_steady_streak",
+    "category": "rewards",
+    "sheet": "rewards",
+    "file": "rewards/badge_steady_streak.glb",
+    "unit": "m",
+    "triangles": 352,
+    "outline_triangles": 352,
+    "bounds": {
+      "min": [
+        -0.03,
+        -0.046,
+        -0.004
+      ],
+      "max": [
+        0.03,
+        0.03,
+        0.0068
+      ]
+    },
+    "anchors": {},
+    "parts": [
+      "badge",
+      "ribbon"
+    ],
+    "materials": [
+      "cream",
+      "gold",
+      "gold_shade",
+      "ink",
+      "violet",
+      "violet_shade"
+    ],
+    "notes": "Symbol only, no text. Origin at the disc centre; ribbon hangs below."
+  },
+  {
+    "name": "badge_brave_try",
+    "category": "rewards",
+    "sheet": "rewards",
+    "file": "rewards/badge_brave_try.glb",
+    "unit": "m",
+    "triangles": 232,
+    "outline_triangles": 232,
+    "bounds": {
+      "min": [
+        -0.03,
+        -0.046,
+        -0.004
+      ],
+      "max": [
+        0.03,
+        0.03,
+        0.0082
+      ]
+    },
+    "anchors": {},
+    "parts": [
+      "badge",
+      "ribbon"
+    ],
+    "materials": [
+      "cream",
+      "gold",
+      "gold_shade",
+      "ink",
+      "orange",
+      "orange_shade"
+    ],
+    "notes": "Symbol only, no text. Origin at the disc centre; ribbon hangs below."
+  },
+  {
+    "name": "streak_shield",
+    "category": "rewards",
+    "sheet": "rewards",
+    "file": "rewards/streak_shield.glb",
+    "unit": "m",
+    "triangles": 104,
+    "outline_triangles": 104,
+    "bounds": {
+      "min": [
+        -0.022,
+        -0.025,
+        -0.003
+      ],
+      "max": [
+        0.022,
+        0.025,
+        0.0065
+      ]
+    },
+    "anchors": {},
+    "parts": [
+      "shield"
+    ],
+    "materials": [
+      "cream",
+      "gold",
+      "gold_shade",
+      "ink",
+      "orange",
+      "orange_shade"
+    ],
+    "notes": "Origin at the centre."
+  },
+  {
+    "name": "trophy_paper",
+    "category": "rewards",
+    "sheet": "rewards",
+    "file": "rewards/trophy_paper.glb",
+    "unit": "m",
+    "triangles": 218,
+    "outline_triangles": 218,
+    "bounds": {
+      "min": [
+        -0.0309,
+        0,
+        -0.0203
+      ],
+      "max": [
+        0.0309,
+        0.076,
+        0.024
+      ]
+    },
+    "anchors": {},
+    "parts": [
+      "trophy"
+    ],
+    "materials": [
+      "cream",
+      "cream_shade",
+      "gold",
+      "gold_shade",
+      "ink"
+    ],
+    "notes": "Stands on the table."
+  },
+  {
+    "name": "paper_button",
+    "category": "ui",
+    "sheet": "ui",
+    "file": "ui/paper_button.glb",
+    "unit": "m",
+    "triangles": 36,
+    "outline_triangles": 36,
+    "bounds": {
+      "min": [
+        -0.05,
+        0,
+        -0.006
+      ],
+      "max": [
+        0.05,
+        0.065,
+        0.006
+      ]
+    },
+    "anchors": {
+      "label_anchor": [
+        0,
+        0.0325,
+        0.0065
+      ]
+    },
+    "parts": [
+      "card",
+      "press"
+    ],
+    "materials": [
+      "cream",
+      "cream_shade",
+      "ink",
+      "sky",
+      "sky_shade"
+    ],
+    "notes": "Poke from the front. press moves back along -z by up to 0.005 m; the game recolours sky."
+  },
+  {
+    "name": "paper_panel",
+    "category": "ui",
+    "sheet": "ui",
+    "file": "ui/paper_panel.glb",
+    "unit": "m",
+    "triangles": 56,
+    "outline_triangles": 56,
+    "bounds": {
+      "min": [
+        -0.15,
+        0,
+        -0.005
+      ],
+      "max": [
+        0.15,
+        0.2,
+        0.008
+      ]
+    },
+    "anchors": {
+      "label_anchor": [
+        0,
+        0.1,
+        0.0035
+      ]
+    },
+    "parts": [
+      "panel"
+    ],
+    "materials": [
+      "cream",
+      "cream_shade",
+      "ink",
+      "paper",
+      "paper_shade"
+    ],
+    "notes": "Background for recap and menu text drawn at label_anchor."
+  },
+  {
+    "name": "palm_menu_disc",
+    "category": "ui",
+    "sheet": "ui",
+    "file": "ui/palm_menu_disc.glb",
+    "unit": "m",
+    "triangles": 92,
+    "outline_triangles": 92,
+    "bounds": {
+      "min": [
+        -0.04,
+        -0.04,
+        -0.002
+      ],
+      "max": [
+        0.04,
+        0.04,
+        0.004
+      ]
+    },
+    "anchors": {
+      "slot_0": [
+        0,
+        0.026,
+        0.003
+      ],
+      "slot_1": [
+        0.026,
+        0,
+        0.003
+      ],
+      "slot_2": [
+        0,
+        -0.026,
+        0.003
+      ],
+      "slot_3": [
+        -0.026,
+        0,
+        0.003
+      ]
+    },
+    "parts": [
+      "disc"
+    ],
+    "materials": [
+      "ink",
+      "lavender",
+      "paper",
+      "violet",
+      "violet_shade"
+    ],
+    "notes": "Faces +Z (towards the eyes when held up in the palm). slot_0 at the top, then clockwise."
+  },
+  {
+    "name": "confetti_pieces",
+    "category": "fx",
+    "sheet": "fx",
+    "file": "fx/confetti_pieces.glb",
+    "unit": "m",
+    "triangles": 234,
+    "outline_triangles": 234,
+    "bounds": {
+      "min": [
+        -0.035,
+        -0.0057,
+        -0.0015
+      ],
+      "max": [
+        0.035,
+        0.047,
+        0.0015
+      ]
+    },
+    "anchors": {},
+    "parts": [
+      "piece_0",
+      "piece_1",
+      "piece_2",
+      "piece_3",
+      "piece_4",
+      "piece_5",
+      "piece_6",
+      "piece_7",
+      "piece_8",
+      "piece_9",
+      "piece_10",
+      "piece_11"
+    ],
+    "materials": [
+      "cobalt",
+      "coral",
+      "ink",
+      "sunflower",
+      "teal",
+      "violet"
+    ],
+    "notes": "piece_0..11: squares, triangles, small stars and circles in the five mission colours, each with its origin at its centre."
+  },
+  {
+    "name": "paper_scraps",
+    "category": "fx",
+    "sheet": "fx",
+    "file": "fx/paper_scraps.glb",
+    "unit": "m",
+    "triangles": 148,
+    "outline_triangles": 148,
+    "bounds": {
+      "min": [
+        -0.0312,
+        -0.008,
+        -0.001
+      ],
+      "max": [
+        0.0321,
+        0.0291,
+        0.0025
+      ]
+    },
+    "anchors": {},
+    "parts": [
+      "scrap_0",
+      "scrap_1",
+      "scrap_2",
+      "scrap_3",
+      "scrap_4",
+      "scrap_5"
+    ],
+    "materials": [
+      "cream",
+      "cream_shade",
+      "ink",
+      "paper",
+      "paper_shade"
+    ],
+    "notes": "scrap_0..5: gently bent torn pieces for a wrong answer (funny, not destructive)."
+  },
+  {
+    "name": "fold_crease",
+    "category": "fx",
+    "sheet": "fx",
+    "file": "fx/fold_crease.glb",
+    "unit": "m",
+    "triangles": 102,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.054,
+        -0.0022,
+        -0.002
+      ],
+      "max": [
+        0.054,
+        0.005,
+        0.0037
+      ]
+    },
+    "anchors": {},
+    "parts": [
+      "crease"
+    ],
+    "materials": [
+      "gold",
+      "lemon"
+    ],
+    "notes": "Shiny crease strip along x for fold animations; no ink outline."
+  },
+  {
+    "name": "sparkle",
+    "category": "fx",
+    "sheet": "fx",
+    "file": "fx/sparkle.glb",
+    "unit": "m",
+    "triangles": 24,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.015,
+        -0.015,
+        -0.0025
+      ],
+      "max": [
+        0.015,
+        0.015,
+        0.0025
+      ]
+    },
+    "anchors": {},
+    "parts": [
+      "sparkle"
+    ],
+    "materials": [
+      "gold",
+      "lemon"
+    ],
+    "notes": "Four-point sparkle, origin at the centre; no ink outline."
   }
 ]

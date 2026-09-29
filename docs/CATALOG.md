@@ -212,8 +212,8 @@ Status: ✅ selesai · 🟡 sebagian · ⬜ direncanakan.
 | B4 | Portal | ✅ |
 | B5 | Karakter (Pip, The Great Crumple, 3 robot partner) | ✅ |
 | B6 | Fold Town: bangunan skill 3 tingkat dan alas halaman kota | ✅ |
-| B7 | Hadiah dan UI 3D | ⬜ |
-| B8 | Efek | ⬜ |
+| B7 | Hadiah dan UI 3D | ✅ |
+| B8 | Efek | ✅ |
 | 2D | Avatar, kata sandi gambar, logo, ikon, thumbnail | ⬜ |
 
 ## B1. Foldlings, burung kertas, dan buku ✅
@@ -426,3 +426,40 @@ Catatan:
 - **Perlu keputusan:** dengan 1 petak = 0.03 m, alas 10 × 7 petak berukuran 0.30 × 0.21 m. Ukuran ini tidak muat di
   halaman kanan buku (0.164 × 0.22 m), tetapi muat melintang di kedua halaman (lihat `table_b6_wood.png`).
   Supaya muat di halaman kanan, skalanya harus sekitar 0.016 m per petak. `models/scale.json` tetap 0.03 sesuai brief.
+
+## B7. Hadiah dan UI 3D ✅
+
+Folder `models/rewards/` dan `models/ui/`. Pratinjau: `previews/sheet_rewards.png`, `previews/sheet_ui.png`.
+
+| File | Segitiga | +garis | KB | Ukuran | Anchor | Bagian |
+|---|---|---|---|---|---|---|
+| rewards/star | 30 | 30 | 4.8 | 0.048×0.016×0.045 |  | star |
+| rewards/star_empty | 120 | 120 | 10.1 | 0.050×0.003×0.047 |  | star |
+| rewards/badge_best_save | 272 | 272 | 20.9 | 0.060×0.011×0.076 |  | badge, ribbon |
+| rewards/badge_most_improved | 228 | 228 | 18.2 | 0.060×0.011×0.076 |  | badge, ribbon |
+| rewards/badge_sharpest_aim | 500 | 500 | 34.0 | 0.060×0.011×0.076 |  | badge, ribbon |
+| rewards/badge_steady_streak | 352 | 352 | 26.4 | 0.060×0.011×0.076 |  | badge, ribbon |
+| rewards/badge_brave_try | 232 | 232 | 18.6 | 0.060×0.012×0.076 |  | badge, ribbon |
+| rewards/streak_shield | 104 | 104 | 10.0 | 0.044×0.009×0.050 |  | shield |
+| rewards/trophy_paper | 218 | 218 | 17.5 | 0.062×0.044×0.076 |  | trophy |
+| ui/paper_button | 36 | 36 | 5.8 | 0.100×0.012×0.065 | label_anchor | card, press |
+| ui/paper_panel | 56 | 56 | 7.0 | 0.300×0.013×0.200 | label_anchor | panel |
+| ui/palm_menu_disc | 92 | 92 | 9.3 | 0.080×0.006×0.080 | slot_0, slot_1, slot_2, slot_3 | disc |
+
+Catatan: lencana hanya berisi simbol bentuk (tangan menangkap bola, panah naik, target, rantai, gunung) tanpa tulisan.
+Tinggi lencana 0.076 m karena pitanya menggantung di bawah cakram 0.06 m. `paper_button`: `press` bergerak ke -z
+sampai 5 mm. `palm_menu_disc`: `slot_0` di atas, lalu searah jarum jam.
+
+## B8. Efek ✅
+
+Folder `models/fx/`. Pratinjau: `previews/sheet_fx.png`.
+
+| File | Segitiga | +garis | KB | Ukuran | Anchor | Bagian |
+|---|---|---|---|---|---|---|
+| fx/confetti_pieces | 234 | 234 | 28.8 | 0.070×0.003×0.053 |  | piece_0, piece_1, piece_2, piece_3, piece_4, piece_5, piece_6, piece_7, piece_8, piece_9, piece_10, piece_11 |
+| fx/paper_scraps | 148 | 148 | 24.6 | 0.063×0.004×0.037 |  | scrap_0, scrap_1, scrap_2, scrap_3, scrap_4, scrap_5 |
+| fx/fold_crease | 102 | 0 | 9.1 | 0.108×0.006×0.007 |  | crease |
+| fx/sparkle | 24 | 0 | 3.3 | 0.030×0.005×0.030 |  | sparkle |
+
+Catatan: konfeti memakai lima warna misi tanpa sisi bayangan (6 material termasuk tinta). `fold_crease` dan `sparkle`
+tanpa garis tinta supaya terlihat berkilau, bukan seperti stiker.

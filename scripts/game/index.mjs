@@ -4,6 +4,7 @@ import book from './book.mjs';
 import { hints, portals } from './hints.mjs';
 import characters from './characters.mjs';
 import foldtown from './foldtown.mjs';
+import { rewards, ui, fx } from './rewards.mjs';
 import { orbForge, balloons, factory, bridge, balance, measure } from './props.mjs';
 
 // One city tile measures 3 cm when Fold Town stands on the pop-up book's page.
@@ -22,6 +23,9 @@ export const GAME_SHEETS = [
   { sheet: 'portal', title: 'Portals', items: portals },
   { sheet: 'characters', title: 'Characters', items: characters },
   { sheet: 'foldtown', title: 'Fold Town skill buildings', items: foldtown },
+  { sheet: 'rewards', title: 'Rewards', items: rewards },
+  { sheet: 'ui', title: '3D UI', items: ui },
+  { sheet: 'fx', title: 'Effects', items: fx },
 ];
 
 // Table-scale preview scenes (metres, world space on the table top).
