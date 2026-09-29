@@ -6901,5 +6901,692 @@
       "wood_shade"
     ],
     "notes": "lid hinges at the back top edge: rotate about x (negative opens)."
+  },
+  {
+    "name": "base10_unit",
+    "category": "hints",
+    "sheet": "hints",
+    "file": "hints/base10_unit.glb",
+    "unit": "m",
+    "triangles": 44,
+    "outline_triangles": 44,
+    "bounds": {
+      "min": [
+        -0.005,
+        0,
+        -0.005
+      ],
+      "max": [
+        0.005,
+        0.01,
+        0.005
+      ]
+    },
+    "anchors": {},
+    "parts": [
+      "cube"
+    ],
+    "materials": [
+      "coral",
+      "coral_shade",
+      "ink"
+    ],
+    "notes": "Origin at the bottom centre. All base-10 blocks share this 10 mm unit."
+  },
+  {
+    "name": "base10_rod",
+    "category": "hints",
+    "sheet": "hints",
+    "file": "hints/base10_rod.glb",
+    "unit": "m",
+    "triangles": 120,
+    "outline_triangles": 120,
+    "bounds": {
+      "min": [
+        -0.05,
+        0,
+        -0.005
+      ],
+      "max": [
+        0.05,
+        0.01,
+        0.005
+      ]
+    },
+    "anchors": {},
+    "parts": [
+      "rod"
+    ],
+    "materials": [
+      "coral",
+      "coral_shade",
+      "ink"
+    ],
+    "notes": "Ten 10 mm cubes along x; outlines mark each cube."
+  },
+  {
+    "name": "base10_flat",
+    "category": "hints",
+    "sheet": "hints",
+    "file": "hints/base10_flat.glb",
+    "unit": "m",
+    "triangles": 192,
+    "outline_triangles": 192,
+    "bounds": {
+      "min": [
+        -0.05,
+        0,
+        -0.05
+      ],
+      "max": [
+        0.05,
+        0.0106,
+        0.05
+      ]
+    },
+    "anchors": {},
+    "parts": [
+      "flat"
+    ],
+    "materials": [
+      "coral",
+      "coral_shade",
+      "ink"
+    ],
+    "notes": "Ten rods side by side with unit creases across."
+  },
+  {
+    "name": "number_line",
+    "category": "hints",
+    "sheet": "hints",
+    "file": "hints/number_line.glb",
+    "unit": "m",
+    "triangles": 112,
+    "outline_triangles": 112,
+    "bounds": {
+      "min": [
+        -0.15,
+        0,
+        -0.01
+      ],
+      "max": [
+        0.15,
+        0.0048,
+        0.01
+      ]
+    },
+    "anchors": {
+      "tick_0": [
+        -0.14,
+        0.004,
+        0
+      ],
+      "label_anchor_0": [
+        -0.14,
+        0.0048,
+        0.009
+      ],
+      "tick_1": [
+        -0.112,
+        0.004,
+        0
+      ],
+      "label_anchor_1": [
+        -0.112,
+        0.0048,
+        0.009
+      ],
+      "tick_2": [
+        -0.084,
+        0.004,
+        0
+      ],
+      "label_anchor_2": [
+        -0.084,
+        0.0048,
+        0.009
+      ],
+      "tick_3": [
+        -0.056,
+        0.004,
+        0
+      ],
+      "label_anchor_3": [
+        -0.056,
+        0.0048,
+        0.009
+      ],
+      "tick_4": [
+        -0.028,
+        0.004,
+        0
+      ],
+      "label_anchor_4": [
+        -0.028,
+        0.0048,
+        0.009
+      ],
+      "tick_5": [
+        0,
+        0.004,
+        0
+      ],
+      "label_anchor_5": [
+        0,
+        0.0048,
+        0.009
+      ],
+      "tick_6": [
+        0.028,
+        0.004,
+        0
+      ],
+      "label_anchor_6": [
+        0.028,
+        0.0048,
+        0.009
+      ],
+      "tick_7": [
+        0.056,
+        0.004,
+        0
+      ],
+      "label_anchor_7": [
+        0.056,
+        0.0048,
+        0.009
+      ],
+      "tick_8": [
+        0.084,
+        0.004,
+        0
+      ],
+      "label_anchor_8": [
+        0.084,
+        0.0048,
+        0.009
+      ],
+      "tick_9": [
+        0.112,
+        0.004,
+        0
+      ],
+      "label_anchor_9": [
+        0.112,
+        0.0048,
+        0.009
+      ],
+      "tick_10": [
+        0.14,
+        0.004,
+        0
+      ],
+      "label_anchor_10": [
+        0.14,
+        0.0048,
+        0.009
+      ]
+    },
+    "parts": [
+      "line"
+    ],
+    "materials": [
+      "ink",
+      "paper",
+      "paper_shade",
+      "slate"
+    ],
+    "notes": "tick_0..10 every 0.028 m (longer at 0, 5, 10); label_anchor_N just in front of each tick. Ends are plain so lines can be chained."
+  },
+  {
+    "name": "bar_strip",
+    "category": "hints",
+    "sheet": "hints",
+    "file": "hints/bar_strip.glb",
+    "unit": "m",
+    "triangles": 20,
+    "outline_triangles": 20,
+    "bounds": {
+      "min": [
+        0,
+        0,
+        -0.015
+      ],
+      "max": [
+        0.24,
+        0.0048,
+        0.015
+      ]
+    },
+    "anchors": {},
+    "parts": [
+      "strip"
+    ],
+    "materials": [
+      "ink",
+      "teal",
+      "teal_shade"
+    ],
+    "notes": "Origin at the left end: scale x to cut it (1 = the whole unit, 0.24 m)."
+  },
+  {
+    "name": "area_grid",
+    "category": "hints",
+    "sheet": "hints",
+    "file": "hints/area_grid.glb",
+    "unit": "m",
+    "triangles": 188,
+    "outline_triangles": 188,
+    "bounds": {
+      "min": [
+        -0.076,
+        0,
+        -0.076
+      ],
+      "max": [
+        0.076,
+        0.003,
+        0.076
+      ]
+    },
+    "anchors": {
+      "cell_origin": [
+        -0.0675,
+        0.003,
+        -0.0675
+      ]
+    },
+    "parts": [
+      "grid"
+    ],
+    "materials": [
+      "ink",
+      "mint",
+      "mint_shade",
+      "paper"
+    ],
+    "notes": "10 x 10 cells of 15 mm. cell_origin = centre of the -x/-z corner cell; step 0.015 m."
+  },
+  {
+    "name": "pie_slice_2",
+    "category": "hints",
+    "sheet": "hints",
+    "file": "hints/pie_slice_2.glb",
+    "unit": "m",
+    "triangles": 195,
+    "outline_triangles": 196,
+    "bounds": {
+      "min": [
+        0,
+        0,
+        -0.06
+      ],
+      "max": [
+        0.06,
+        0.007,
+        0.06
+      ]
+    },
+    "anchors": {},
+    "parts": [
+      "slice"
+    ],
+    "materials": [
+      "cream",
+      "cream_shade",
+      "ink",
+      "teal",
+      "teal_shade"
+    ],
+    "notes": "One of 2 slices of a 0.12 m pie. Origin at the pie centre, slice points along +x; rotate by k*180.0 deg about y to assemble."
+  },
+  {
+    "name": "pie_slice_3",
+    "category": "hints",
+    "sheet": "hints",
+    "file": "hints/pie_slice_3.glb",
+    "unit": "m",
+    "triangles": 132,
+    "outline_triangles": 132,
+    "bounds": {
+      "min": [
+        0,
+        0,
+        -0.052
+      ],
+      "max": [
+        0.06,
+        0.007,
+        0.052
+      ]
+    },
+    "anchors": {},
+    "parts": [
+      "slice"
+    ],
+    "materials": [
+      "cream",
+      "cream_shade",
+      "ink",
+      "teal",
+      "teal_shade"
+    ],
+    "notes": "One of 3 slices of a 0.12 m pie. Origin at the pie centre, slice points along +x; rotate by k*120.0 deg about y to assemble."
+  },
+  {
+    "name": "pie_slice_4",
+    "category": "hints",
+    "sheet": "hints",
+    "file": "hints/pie_slice_4.glb",
+    "unit": "m",
+    "triangles": 100,
+    "outline_triangles": 100,
+    "bounds": {
+      "min": [
+        0,
+        0,
+        -0.0424
+      ],
+      "max": [
+        0.06,
+        0.007,
+        0.0424
+      ]
+    },
+    "anchors": {},
+    "parts": [
+      "slice"
+    ],
+    "materials": [
+      "cream",
+      "cream_shade",
+      "ink",
+      "teal",
+      "teal_shade"
+    ],
+    "notes": "One of 4 slices of a 0.12 m pie. Origin at the pie centre, slice points along +x; rotate by k*90.0 deg about y to assemble."
+  },
+  {
+    "name": "pie_slice_5",
+    "category": "hints",
+    "sheet": "hints",
+    "file": "hints/pie_slice_5.glb",
+    "unit": "m",
+    "triangles": 84,
+    "outline_triangles": 84,
+    "bounds": {
+      "min": [
+        0,
+        0,
+        -0.0353
+      ],
+      "max": [
+        0.0595,
+        0.007,
+        0.0353
+      ]
+    },
+    "anchors": {},
+    "parts": [
+      "slice"
+    ],
+    "materials": [
+      "cream",
+      "cream_shade",
+      "ink",
+      "teal",
+      "teal_shade"
+    ],
+    "notes": "One of 5 slices of a 0.12 m pie. Origin at the pie centre, slice points along +x; rotate by k*72.0 deg about y to assemble."
+  },
+  {
+    "name": "pie_slice_6",
+    "category": "hints",
+    "sheet": "hints",
+    "file": "hints/pie_slice_6.glb",
+    "unit": "m",
+    "triangles": 68,
+    "outline_triangles": 68,
+    "bounds": {
+      "min": [
+        0,
+        0,
+        -0.03
+      ],
+      "max": [
+        0.06,
+        0.007,
+        0.03
+      ]
+    },
+    "anchors": {},
+    "parts": [
+      "slice"
+    ],
+    "materials": [
+      "cream",
+      "cream_shade",
+      "ink",
+      "teal",
+      "teal_shade"
+    ],
+    "notes": "One of 6 slices of a 0.12 m pie. Origin at the pie centre, slice points along +x; rotate by k*60.0 deg about y to assemble."
+  },
+  {
+    "name": "pie_slice_8",
+    "category": "hints",
+    "sheet": "hints",
+    "file": "hints/pie_slice_8.glb",
+    "unit": "m",
+    "triangles": 52,
+    "outline_triangles": 52,
+    "bounds": {
+      "min": [
+        0,
+        0,
+        -0.023
+      ],
+      "max": [
+        0.0595,
+        0.007,
+        0.023
+      ]
+    },
+    "anchors": {},
+    "parts": [
+      "slice"
+    ],
+    "materials": [
+      "cream",
+      "cream_shade",
+      "ink",
+      "teal",
+      "teal_shade"
+    ],
+    "notes": "One of 8 slices of a 0.12 m pie. Origin at the pie centre, slice points along +x; rotate by k*45.0 deg about y to assemble."
+  },
+  {
+    "name": "pie_slice_10",
+    "category": "hints",
+    "sheet": "hints",
+    "file": "hints/pie_slice_10.glb",
+    "unit": "m",
+    "triangles": 52,
+    "outline_triangles": 52,
+    "bounds": {
+      "min": [
+        0,
+        0,
+        -0.0185
+      ],
+      "max": [
+        0.0597,
+        0.007,
+        0.0185
+      ]
+    },
+    "anchors": {},
+    "parts": [
+      "slice"
+    ],
+    "materials": [
+      "cream",
+      "cream_shade",
+      "ink",
+      "teal",
+      "teal_shade"
+    ],
+    "notes": "One of 10 slices of a 0.12 m pie. Origin at the pie centre, slice points along +x; rotate by k*36.0 deg about y to assemble."
+  },
+  {
+    "name": "pie_slice_12",
+    "category": "hints",
+    "sheet": "hints",
+    "file": "hints/pie_slice_12.glb",
+    "unit": "m",
+    "triangles": 36,
+    "outline_triangles": 36,
+    "bounds": {
+      "min": [
+        0,
+        0,
+        -0.0155
+      ],
+      "max": [
+        0.06,
+        0.007,
+        0.0155
+      ]
+    },
+    "anchors": {},
+    "parts": [
+      "slice"
+    ],
+    "materials": [
+      "cream",
+      "cream_shade",
+      "ink",
+      "teal",
+      "teal_shade"
+    ],
+    "notes": "One of 12 slices of a 0.12 m pie. Origin at the pie centre, slice points along +x; rotate by k*30.0 deg about y to assemble."
+  },
+  {
+    "name": "portal_main",
+    "category": "game",
+    "sheet": "portal",
+    "file": "game/portal/portal_main.glb",
+    "unit": "m",
+    "triangles": 364,
+    "outline_triangles": 364,
+    "bounds": {
+      "min": [
+        -0.07,
+        0,
+        -0.01
+      ],
+      "max": [
+        0.07,
+        0.142,
+        0.01
+      ]
+    },
+    "anchors": {
+      "spawn_anchor": [
+        0,
+        0,
+        0.014
+      ]
+    },
+    "parts": [
+      "ring_outer",
+      "ring_inner"
+    ],
+    "materials": [
+      "gold",
+      "ink",
+      "lavender",
+      "navy",
+      "violet",
+      "violet_shade"
+    ],
+    "notes": "Stands upright on its feet at the edge of the book. ring_inner spins about z around the portal centre (0, 0.072, 0). spawn_anchor on the table just in front."
+  },
+  {
+    "name": "partner_window",
+    "category": "game",
+    "sheet": "portal",
+    "file": "game/portal/partner_window.glb",
+    "unit": "m",
+    "triangles": 64,
+    "outline_triangles": 64,
+    "bounds": {
+      "min": [
+        -0.09,
+        -0.06,
+        -0.005
+      ],
+      "max": [
+        0.09,
+        0.06,
+        0.0065
+      ]
+    },
+    "anchors": {
+      "view_anchor": [
+        0,
+        0,
+        0
+      ],
+      "label_anchor": [
+        0,
+        0.068,
+        0
+      ]
+    },
+    "parts": [
+      "frame"
+    ],
+    "materials": [
+      "cream",
+      "cream_shade",
+      "ink",
+      "violet",
+      "violet_shade"
+    ],
+    "notes": "Floating frame, origin at its centre. view_anchor: centre of the opening (0.16 x 0.1 m) where the game renders the partner table; label_anchor above for the bot name."
+  },
+  {
+    "name": "help_orb_trail",
+    "category": "game",
+    "sheet": "portal",
+    "file": "game/portal/help_orb_trail.glb",
+    "unit": "m",
+    "triangles": 60,
+    "outline_triangles": 60,
+    "bounds": {
+      "min": [
+        -0.0874,
+        -0.0063,
+        -0.001
+      ],
+      "max": [
+        0.001,
+        0.0092,
+        0.001
+      ]
+    },
+    "anchors": {},
+    "parts": [
+      "trail"
+    ],
+    "materials": [
+      "gold",
+      "gold_shade",
+      "ink",
+      "lemon",
+      "lemon_shade"
+    ],
+    "notes": "Origin at the head of the trail; it streams back along -x behind a flying help orb."
   }
 ]

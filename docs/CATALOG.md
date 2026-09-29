@@ -208,8 +208,8 @@ Status: ✅ selesai · 🟡 sebagian · ⬜ direncanakan.
 |---|---|---|
 | B1 | 8 Foldlings (6 varian warna), burung kertas, bendera, buku pop-up terbuka dan tertutup, bingkai pop-up | ✅ |
 | B2 | Perlengkapan 6 jenis game (Orb Forge, Balloon Burst, Factory Sort, Bridge Builder, Balance Gate, Measure Hunt) | ✅ |
-| B3 | Model bantuan visual (basis 10, garis bilangan, strip, petak luas, irisan pie) | ⬜ |
-| B4 | Portal | ⬜ |
+| B3 | Model bantuan visual (basis 10, garis bilangan, strip, petak luas, irisan pie) | ✅ |
+| B4 | Portal | ✅ |
 | B5 | Karakter (Pip, The Great Crumple, 3 robot partner) | ⬜ |
 | B6 | Fold Town: bangunan skill 3 tingkat dan alas halaman kota | ⬜ |
 | B7 | Hadiah dan UI 3D | ⬜ |
@@ -324,3 +324,45 @@ Pratinjau: `previews/game/<grup>/`, `previews/sheet_{orb_forge,balloon,factory,b
 5. **Pin penanda** A (coral, berkas dasar) dan B (cobalt, `marker_pin_b`).
 6. **Kristal dan balon** memakai warna netral (lavender, sky) yang diganti game lewat nama material.
 7. Beberapa benda kecil (kristal 48, token 68, papan 40) di dekat batas bawah 40 segitiga: bentuknya memang sederhana.
+
+## B3. Model bantuan visual ✅
+
+Folder `models/hints/`. Semua lolos validator. Pratinjau: `previews/hints/`, `previews/sheet_hints.png`.
+
+| File | Segitiga | +garis | KB | Ukuran | Anchor | Bagian |
+|---|---|---|---|---|---|---|
+| hints/base10_unit | 44 | 44 | 4.5 | 0.010×0.010×0.010 |  | cube |
+| hints/base10_rod | 120 | 120 | 8.3 | 0.100×0.010×0.010 |  | rod |
+| hints/base10_flat | 192 | 192 | 13.6 | 0.100×0.100×0.011 |  | flat |
+| hints/number_line | 112 | 112 | 12.4 | 0.300×0.020×0.005 | tick_0, label_anchor_0, tick_1, label_anchor_1, tick_2, label_anchor_2, tick_3, label_anchor_3, tick_4, label_anchor_4, tick_5, label_anchor_5, tick_6, label_anchor_6, tick_7, label_anchor_7, tick_8, label_anchor_8, tick_9, label_anchor_9, tick_10, label_anchor_10 | line |
+| hints/bar_strip | 20 | 20 | 3.4 | 0.240×0.030×0.005 |  | strip |
+| hints/area_grid | 188 | 188 | 16.2 | 0.152×0.152×0.003 | cell_origin | grid |
+| hints/pie_slice_2 | 195 | 196 | 14.4 | 0.060×0.120×0.007 |  | slice |
+| hints/pie_slice_3 | 132 | 132 | 10.8 | 0.060×0.104×0.007 |  | slice |
+| hints/pie_slice_4 | 100 | 100 | 9.0 | 0.060×0.085×0.007 |  | slice |
+| hints/pie_slice_5 | 84 | 84 | 8.1 | 0.059×0.071×0.007 |  | slice |
+| hints/pie_slice_6 | 68 | 68 | 7.1 | 0.060×0.060×0.007 |  | slice |
+| hints/pie_slice_8 | 52 | 52 | 6.3 | 0.059×0.046×0.007 |  | slice |
+| hints/pie_slice_10 | 52 | 52 | 6.3 | 0.060×0.037×0.007 |  | slice |
+| hints/pie_slice_12 | 36 | 36 | 5.3 | 0.060×0.031×0.007 |  | slice |
+
+Catatan:
+- Satuan basis 10 bersama: kubus 10 mm. Batang = 10 kubus terpisah (garis tinta menandai tiap kubus);
+  lempeng = 10 batang berjajar dengan lipatan satuan melintang (192 segitiga, bukan 100 kubus penuh yang akan 1200+).
+- `number_line`: tick setiap 0.028 m, lebih panjang di 0, 5, 10; tanpa angka.
+- `bar_strip`: origin di ujung kiri supaya skala x memotong dari kanan.
+- `area_grid`: node `cell_*` (opsional) diganti satu anchor `cell_origin` plus langkah 0.015 m, jauh lebih ringan.
+- `pie_slice_<n>` untuk n = 2, 3, 4, 5, 6, 8, 10, 12: origin di pusat pie, irisan menunjuk +X, dengan kulit kertas krem di tepi lengkung.
+
+## B4. Portal ✅
+
+Folder `models/game/portal/`. Pratinjau: `previews/game/portal/`, `previews/sheet_portal.png`.
+
+| File | Segitiga | +garis | KB | Ukuran | Anchor | Bagian |
+|---|---|---|---|---|---|---|
+| game/portal/portal_main | 364 | 364 | 29.4 | 0.140×0.020×0.142 | spawn_anchor | ring_outer, ring_inner |
+| game/portal/partner_window | 64 | 64 | 7.4 | 0.180×0.011×0.120 | view_anchor, label_anchor | frame |
+| game/portal/help_orb_trail | 60 | 60 | 7.0 | 0.088×0.002×0.015 |  | trail |
+
+Catatan: `spawn_anchor` portal utama ada di meja tepat di depan portal (makhluk berjalan keluar), pusat
+portal di (0, 0.072, 0) sebagai poros `ring_inner`.

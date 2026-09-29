@@ -1,6 +1,7 @@
 // Registry of the Foldlings game assets (metres). City assets stay in scripts/assets/.
 import foldlings from './foldlings.mjs';
 import book from './book.mjs';
+import { hints, portals } from './hints.mjs';
 import { orbForge, balloons, factory, bridge, balance, measure } from './props.mjs';
 
 // One city tile measures 3 cm when Fold Town stands on the pop-up book's page.
@@ -15,6 +16,8 @@ export const GAME_SHEETS = [
   { sheet: 'bridge', title: 'Bridge Builder', items: bridge },
   { sheet: 'balance', title: 'Balance Gate', items: balance },
   { sheet: 'measure', title: 'Measure Hunt', items: measure },
+  { sheet: 'hints', title: 'Hints', items: hints },
+  { sheet: 'portal', title: 'Portals', items: portals },
 ];
 
 // Table-scale preview scenes (metres, world space on the table top).

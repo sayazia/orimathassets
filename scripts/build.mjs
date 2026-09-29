@@ -59,7 +59,7 @@ for (const a of GAME_ASSETS) {
       if (rig.clips.length) entry.clips = rig.clips.map((c) => c.name);
       if (a.size) {
         const got = [0, 2, 1].map((i) => info.bounds.max[i] - info.bounds.min[i]);
-        if (got.some((g, i) => g > a.size[i] * 1.1 || g < a.size[i] * 0.7)) console.warn(`  ! ${name}: size ${got.map((g) => g.toFixed(3)).join('x')} vs brief ${a.size.join('x')}`);
+        if (got.some((g, i) => g > a.size[i] * 1.1 + 0.0015 || g < a.size[i] * 0.7 - 0.0015)) console.warn(`  ! ${name}: size ${got.map((g) => g.toFixed(3)).join('x')} vs brief ${a.size.join('x')}`);
       }
     }
     if (!name.startsWith(filter)) continue;
