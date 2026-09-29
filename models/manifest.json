@@ -1,0 +1,4579 @@
+[
+  {
+    "name": "house_hut",
+    "category": "buildings",
+    "sheet": "houses",
+    "file": "buildings/house_hut.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 576,
+    "bounds": {
+      "min": [
+        -0.5,
+        -0.001,
+        -0.5
+      ],
+      "max": [
+        0.55,
+        0.44,
+        0.5
+      ]
+    }
+  },
+  {
+    "name": "house_stilt",
+    "category": "buildings",
+    "sheet": "houses",
+    "file": "buildings/house_stilt.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 580,
+    "bounds": {
+      "min": [
+        -0.5,
+        -0.001,
+        -0.5
+      ],
+      "max": [
+        0.571,
+        0.58,
+        0.5
+      ]
+    }
+  },
+  {
+    "name": "house_cottage",
+    "category": "buildings",
+    "sheet": "houses",
+    "file": "buildings/house_cottage.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 858,
+    "bounds": {
+      "min": [
+        -0.5,
+        0,
+        -0.5
+      ],
+      "max": [
+        0.5,
+        0.56,
+        0.5
+      ]
+    }
+  },
+  {
+    "name": "house_basic",
+    "category": "buildings",
+    "sheet": "houses",
+    "file": "buildings/house_basic.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 376,
+    "bounds": {
+      "min": [
+        -0.5,
+        0,
+        -0.5
+      ],
+      "max": [
+        0.5,
+        0.62,
+        0.5
+      ]
+    }
+  },
+  {
+    "name": "house_minimalist",
+    "category": "buildings",
+    "sheet": "houses",
+    "file": "buildings/house_minimalist.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 344,
+    "bounds": {
+      "min": [
+        -0.5,
+        0,
+        -0.5
+      ],
+      "max": [
+        0.5,
+        0.4,
+        0.5
+      ]
+    }
+  },
+  {
+    "name": "house_row",
+    "category": "buildings",
+    "sheet": "houses",
+    "file": "buildings/house_row.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 648,
+    "bounds": {
+      "min": [
+        -0.5,
+        0,
+        -0.5
+      ],
+      "max": [
+        0.5,
+        0.54,
+        0.5
+      ]
+    }
+  },
+  {
+    "name": "house_garage",
+    "category": "buildings",
+    "sheet": "houses",
+    "file": "buildings/house_garage.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 548,
+    "bounds": {
+      "min": [
+        -0.5,
+        0,
+        -0.5
+      ],
+      "max": [
+        0.5,
+        0.56,
+        0.5
+      ]
+    }
+  },
+  {
+    "name": "house_two_storey",
+    "category": "buildings",
+    "sheet": "houses",
+    "file": "buildings/house_two_storey.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 920,
+    "bounds": {
+      "min": [
+        -0.5,
+        0,
+        -0.5
+      ],
+      "max": [
+        0.5,
+        0.7,
+        0.5
+      ]
+    }
+  },
+  {
+    "name": "house_joglo",
+    "category": "buildings",
+    "sheet": "houses",
+    "file": "buildings/house_joglo.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 740,
+    "bounds": {
+      "min": [
+        -0.517,
+        0,
+        -0.517
+      ],
+      "max": [
+        0.517,
+        0.748,
+        0.5
+      ]
+    }
+  },
+  {
+    "name": "house_gadang",
+    "category": "buildings",
+    "sheet": "houses",
+    "file": "buildings/house_gadang.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 614,
+    "bounds": {
+      "min": [
+        -0.5,
+        -0.001,
+        -0.5
+      ],
+      "max": [
+        0.592,
+        0.92,
+        0.5
+      ]
+    }
+  },
+  {
+    "name": "house_colonial",
+    "category": "buildings",
+    "sheet": "houses",
+    "file": "buildings/house_colonial.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 820,
+    "bounds": {
+      "min": [
+        -0.5,
+        0,
+        -0.5
+      ],
+      "max": [
+        0.5,
+        0.62,
+        0.5
+      ]
+    }
+  },
+  {
+    "name": "house_bungalow",
+    "category": "buildings",
+    "sheet": "houses",
+    "file": "buildings/house_bungalow.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 796,
+    "bounds": {
+      "min": [
+        -0.5,
+        -0.002,
+        -0.5
+      ],
+      "max": [
+        0.664,
+        0.5,
+        0.514
+      ]
+    }
+  },
+  {
+    "name": "house_modern_glass",
+    "category": "buildings",
+    "sheet": "houses",
+    "file": "buildings/house_modern_glass.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 362,
+    "bounds": {
+      "min": [
+        -0.5,
+        0,
+        -0.5
+      ],
+      "max": [
+        0.5,
+        0.455,
+        0.5
+      ]
+    }
+  },
+  {
+    "name": "house_garden",
+    "category": "buildings",
+    "sheet": "houses",
+    "file": "buildings/house_garden.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 2072,
+    "bounds": {
+      "min": [
+        -0.5,
+        0,
+        -0.5
+      ],
+      "max": [
+        0.5,
+        0.48,
+        0.5
+      ]
+    }
+  },
+  {
+    "name": "house_duplex",
+    "category": "buildings",
+    "sheet": "houses",
+    "file": "buildings/house_duplex.glb",
+    "footprint": [
+      2,
+      1
+    ],
+    "triangles": 988,
+    "bounds": {
+      "min": [
+        -1,
+        0,
+        -0.5
+      ],
+      "max": [
+        1,
+        0.6,
+        0.5
+      ]
+    }
+  },
+  {
+    "name": "house_apartment",
+    "category": "buildings",
+    "sheet": "houses",
+    "file": "buildings/house_apartment.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 1394,
+    "bounds": {
+      "min": [
+        -0.5,
+        0,
+        -0.5
+      ],
+      "max": [
+        0.5,
+        1.01,
+        0.5
+      ]
+    }
+  },
+  {
+    "name": "house_flats",
+    "category": "buildings",
+    "sheet": "houses",
+    "file": "buildings/house_flats.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 1868,
+    "bounds": {
+      "min": [
+        -0.5,
+        0,
+        -0.5
+      ],
+      "max": [
+        0.5,
+        1.29,
+        0.5
+      ]
+    }
+  },
+  {
+    "name": "house_villa_pool",
+    "category": "buildings",
+    "sheet": "houses",
+    "file": "buildings/house_villa_pool.glb",
+    "footprint": [
+      2,
+      1
+    ],
+    "triangles": 864,
+    "bounds": {
+      "min": [
+        -1.135,
+        -0.002,
+        -0.5
+      ],
+      "max": [
+        1.21,
+        0.6,
+        0.514
+      ]
+    }
+  },
+  {
+    "name": "house_luxury",
+    "category": "buildings",
+    "sheet": "houses",
+    "file": "buildings/house_luxury.glb",
+    "footprint": [
+      2,
+      2
+    ],
+    "triangles": 1372,
+    "bounds": {
+      "min": [
+        -1.008,
+        -0.001,
+        -1.017
+      ],
+      "max": [
+        1.02,
+        0.8,
+        1.017
+      ]
+    }
+  },
+  {
+    "name": "house_mansion",
+    "category": "buildings",
+    "sheet": "houses",
+    "file": "buildings/house_mansion.glb",
+    "footprint": [
+      2,
+      2
+    ],
+    "triangles": 2390,
+    "bounds": {
+      "min": [
+        -1,
+        0,
+        -1
+      ],
+      "max": [
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  {
+    "name": "office_shophouse",
+    "category": "buildings",
+    "sheet": "offices",
+    "file": "buildings/office_shophouse.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 1172,
+    "bounds": {
+      "min": [
+        -0.5,
+        0,
+        -0.5
+      ],
+      "max": [
+        0.5,
+        0.704,
+        0.5
+      ]
+    }
+  },
+  {
+    "name": "office_small",
+    "category": "buildings",
+    "sheet": "offices",
+    "file": "buildings/office_small.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 708,
+    "bounds": {
+      "min": [
+        -0.5,
+        0,
+        -0.5
+      ],
+      "max": [
+        0.508,
+        0.54,
+        0.5
+      ]
+    }
+  },
+  {
+    "name": "office_glass_tower",
+    "category": "buildings",
+    "sheet": "offices",
+    "file": "buildings/office_glass_tower.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 372,
+    "bounds": {
+      "min": [
+        -0.5,
+        0,
+        -0.5
+      ],
+      "max": [
+        0.5,
+        1.785,
+        0.5
+      ]
+    }
+  },
+  {
+    "name": "office_stepped",
+    "category": "buildings",
+    "sheet": "offices",
+    "file": "buildings/office_stepped.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 644,
+    "bounds": {
+      "min": [
+        -0.5,
+        0,
+        -0.5
+      ],
+      "max": [
+        0.5,
+        1.63,
+        0.5
+      ]
+    }
+  },
+  {
+    "name": "office_round",
+    "category": "buildings",
+    "sheet": "offices",
+    "file": "buildings/office_round.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 1300,
+    "bounds": {
+      "min": [
+        -0.5,
+        0,
+        -0.5
+      ],
+      "max": [
+        0.5,
+        1.76,
+        0.5
+      ]
+    }
+  },
+  {
+    "name": "office_twin",
+    "category": "buildings",
+    "sheet": "offices",
+    "file": "buildings/office_twin.glb",
+    "footprint": [
+      2,
+      1
+    ],
+    "triangles": 776,
+    "bounds": {
+      "min": [
+        -1,
+        0,
+        -0.5
+      ],
+      "max": [
+        1,
+        2.16,
+        0.5
+      ]
+    }
+  },
+  {
+    "name": "office_helipad",
+    "category": "buildings",
+    "sheet": "offices",
+    "file": "buildings/office_helipad.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 644,
+    "bounds": {
+      "min": [
+        -0.5,
+        0,
+        -0.5
+      ],
+      "max": [
+        0.5,
+        1.562,
+        0.5
+      ]
+    }
+  },
+  {
+    "name": "office_spire",
+    "category": "buildings",
+    "sheet": "offices",
+    "file": "buildings/office_spire.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 618,
+    "bounds": {
+      "min": [
+        -0.5,
+        0,
+        -0.5
+      ],
+      "max": [
+        0.504,
+        2.55,
+        0.502
+      ]
+    }
+  },
+  {
+    "name": "office_campus",
+    "category": "buildings",
+    "sheet": "offices",
+    "file": "buildings/office_campus.glb",
+    "footprint": [
+      2,
+      1
+    ],
+    "triangles": 606,
+    "bounds": {
+      "min": [
+        -1,
+        0,
+        -0.5
+      ],
+      "max": [
+        1,
+        0.5,
+        0.5
+      ]
+    }
+  },
+  {
+    "name": "office_creative",
+    "category": "buildings",
+    "sheet": "offices",
+    "file": "buildings/office_creative.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 444,
+    "bounds": {
+      "min": [
+        -0.5,
+        0,
+        -0.5
+      ],
+      "max": [
+        0.5,
+        0.78,
+        0.5
+      ]
+    }
+  },
+  {
+    "name": "public_school",
+    "category": "buildings",
+    "sheet": "public",
+    "file": "buildings/public_school.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 586,
+    "bounds": {
+      "min": [
+        -0.506,
+        0,
+        -0.5
+      ],
+      "max": [
+        0.506,
+        0.86,
+        0.5
+      ]
+    }
+  },
+  {
+    "name": "public_kindergarten",
+    "category": "buildings",
+    "sheet": "public",
+    "file": "buildings/public_kindergarten.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 544,
+    "bounds": {
+      "min": [
+        -0.5,
+        0,
+        -0.5
+      ],
+      "max": [
+        0.5,
+        0.36,
+        0.5
+      ]
+    }
+  },
+  {
+    "name": "public_university",
+    "category": "buildings",
+    "sheet": "public",
+    "file": "buildings/public_university.glb",
+    "footprint": [
+      2,
+      2
+    ],
+    "triangles": 3188,
+    "bounds": {
+      "min": [
+        -1.06,
+        0,
+        -1
+      ],
+      "max": [
+        1.06,
+        0.864,
+        1
+      ]
+    }
+  },
+  {
+    "name": "public_hospital",
+    "category": "buildings",
+    "sheet": "public",
+    "file": "buildings/public_hospital.glb",
+    "footprint": [
+      2,
+      1
+    ],
+    "triangles": 976,
+    "bounds": {
+      "min": [
+        -1.027,
+        0,
+        -0.5
+      ],
+      "max": [
+        1.027,
+        1.11,
+        0.5
+      ]
+    }
+  },
+  {
+    "name": "public_clinic",
+    "category": "buildings",
+    "sheet": "public",
+    "file": "buildings/public_clinic.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 472,
+    "bounds": {
+      "min": [
+        -0.5,
+        0,
+        -0.5
+      ],
+      "max": [
+        0.5,
+        0.44,
+        0.5
+      ]
+    }
+  },
+  {
+    "name": "public_police",
+    "category": "buildings",
+    "sheet": "public",
+    "file": "buildings/public_police.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 1436,
+    "bounds": {
+      "min": [
+        -0.5,
+        0,
+        -0.5
+      ],
+      "max": [
+        0.5,
+        0.54,
+        0.5
+      ]
+    }
+  },
+  {
+    "name": "public_fire_station",
+    "category": "buildings",
+    "sheet": "public",
+    "file": "buildings/public_fire_station.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 726,
+    "bounds": {
+      "min": [
+        -0.5,
+        0,
+        -0.5
+      ],
+      "max": [
+        0.5,
+        0.78,
+        0.502
+      ]
+    }
+  },
+  {
+    "name": "public_post_office",
+    "category": "buildings",
+    "sheet": "public",
+    "file": "buildings/public_post_office.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 516,
+    "bounds": {
+      "min": [
+        -0.5,
+        0,
+        -0.5
+      ],
+      "max": [
+        0.5,
+        0.46,
+        0.5
+      ]
+    }
+  },
+  {
+    "name": "public_city_hall",
+    "category": "buildings",
+    "sheet": "public",
+    "file": "buildings/public_city_hall.glb",
+    "footprint": [
+      2,
+      1
+    ],
+    "triangles": 2380,
+    "bounds": {
+      "min": [
+        -1,
+        0,
+        -0.5
+      ],
+      "max": [
+        1,
+        1.018,
+        0.5
+      ]
+    }
+  },
+  {
+    "name": "public_library",
+    "category": "buildings",
+    "sheet": "public",
+    "file": "buildings/public_library.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 768,
+    "bounds": {
+      "min": [
+        -0.5,
+        0,
+        -0.5
+      ],
+      "max": [
+        0.5,
+        0.595,
+        0.5
+      ]
+    }
+  },
+  {
+    "name": "public_museum",
+    "category": "buildings",
+    "sheet": "public",
+    "file": "buildings/public_museum.glb",
+    "footprint": [
+      2,
+      1
+    ],
+    "triangles": 702,
+    "bounds": {
+      "min": [
+        -1,
+        0,
+        -0.5
+      ],
+      "max": [
+        1,
+        0.66,
+        0.5
+      ]
+    }
+  },
+  {
+    "name": "public_mosque",
+    "category": "buildings",
+    "sheet": "public",
+    "file": "buildings/public_mosque.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 1022,
+    "bounds": {
+      "min": [
+        -0.5,
+        -0.001,
+        -0.5
+      ],
+      "max": [
+        0.552,
+        0.87,
+        0.5
+      ]
+    }
+  },
+  {
+    "name": "public_church",
+    "category": "buildings",
+    "sheet": "public",
+    "file": "buildings/public_church.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 478,
+    "bounds": {
+      "min": [
+        -0.5,
+        0,
+        -0.5
+      ],
+      "max": [
+        0.5,
+        1.06,
+        0.5
+      ]
+    }
+  },
+  {
+    "name": "public_temple",
+    "category": "buildings",
+    "sheet": "public",
+    "file": "buildings/public_temple.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 592,
+    "bounds": {
+      "min": [
+        -0.5,
+        -0.001,
+        -0.5
+      ],
+      "max": [
+        0.5,
+        0.66,
+        0.509
+      ]
+    }
+  },
+  {
+    "name": "public_train_station",
+    "category": "buildings",
+    "sheet": "public",
+    "file": "buildings/public_train_station.glb",
+    "footprint": [
+      2,
+      1
+    ],
+    "triangles": 1156,
+    "bounds": {
+      "min": [
+        -1,
+        0,
+        -0.5
+      ],
+      "max": [
+        1.01,
+        0.66,
+        0.5
+      ]
+    }
+  },
+  {
+    "name": "public_bus_terminal",
+    "category": "buildings",
+    "sheet": "public",
+    "file": "buildings/public_bus_terminal.glb",
+    "footprint": [
+      2,
+      1
+    ],
+    "triangles": 960,
+    "bounds": {
+      "min": [
+        -1,
+        0,
+        -0.5
+      ],
+      "max": [
+        1,
+        0.33,
+        0.5
+      ]
+    }
+  },
+  {
+    "name": "public_airport",
+    "category": "buildings",
+    "sheet": "public",
+    "file": "buildings/public_airport.glb",
+    "footprint": [
+      2,
+      2
+    ],
+    "triangles": 1864,
+    "bounds": {
+      "min": [
+        -1,
+        0,
+        -1
+      ],
+      "max": [
+        1,
+        1.102,
+        1
+      ]
+    }
+  },
+  {
+    "name": "public_water_tower",
+    "category": "buildings",
+    "sheet": "public",
+    "file": "buildings/public_water_tower.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 540,
+    "bounds": {
+      "min": [
+        -0.5,
+        0,
+        -0.5
+      ],
+      "max": [
+        0.5,
+        0.86,
+        0.5
+      ]
+    }
+  },
+  {
+    "name": "public_power_plant",
+    "category": "buildings",
+    "sheet": "public",
+    "file": "buildings/public_power_plant.glb",
+    "footprint": [
+      2,
+      2
+    ],
+    "triangles": 1316,
+    "bounds": {
+      "min": [
+        -1,
+        0,
+        -1
+      ],
+      "max": [
+        1,
+        1.1,
+        1
+      ]
+    }
+  },
+  {
+    "name": "shop_general",
+    "category": "buildings",
+    "sheet": "commercial",
+    "file": "buildings/shop_general.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 536,
+    "bounds": {
+      "min": [
+        -0.5,
+        0,
+        -0.5
+      ],
+      "max": [
+        0.5,
+        0.51,
+        0.5
+      ]
+    }
+  },
+  {
+    "name": "shop_minimarket",
+    "category": "buildings",
+    "sheet": "commercial",
+    "file": "buildings/shop_minimarket.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 732,
+    "bounds": {
+      "min": [
+        -0.5,
+        0,
+        -0.5
+      ],
+      "max": [
+        0.5,
+        0.38,
+        0.5
+      ]
+    }
+  },
+  {
+    "name": "shop_cafe",
+    "category": "buildings",
+    "sheet": "commercial",
+    "file": "buildings/shop_cafe.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 762,
+    "bounds": {
+      "min": [
+        -0.5,
+        0,
+        -0.5
+      ],
+      "max": [
+        0.5,
+        0.47,
+        0.5
+      ]
+    }
+  },
+  {
+    "name": "shop_restaurant",
+    "category": "buildings",
+    "sheet": "commercial",
+    "file": "buildings/shop_restaurant.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 616,
+    "bounds": {
+      "min": [
+        -0.5,
+        0,
+        -0.5
+      ],
+      "max": [
+        0.5,
+        0.52,
+        0.5
+      ]
+    }
+  },
+  {
+    "name": "shop_market",
+    "category": "buildings",
+    "sheet": "commercial",
+    "file": "buildings/shop_market.glb",
+    "footprint": [
+      2,
+      1
+    ],
+    "triangles": 1820,
+    "bounds": {
+      "min": [
+        -1.02,
+        0,
+        -0.5
+      ],
+      "max": [
+        1.02,
+        0.44,
+        0.51
+      ]
+    }
+  },
+  {
+    "name": "shop_mall",
+    "category": "buildings",
+    "sheet": "commercial",
+    "file": "buildings/shop_mall.glb",
+    "footprint": [
+      2,
+      2
+    ],
+    "triangles": 1746,
+    "bounds": {
+      "min": [
+        -1.028,
+        0,
+        -1
+      ],
+      "max": [
+        1.028,
+        0.78,
+        1
+      ]
+    }
+  },
+  {
+    "name": "shop_hotel",
+    "category": "buildings",
+    "sheet": "commercial",
+    "file": "buildings/shop_hotel.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 810,
+    "bounds": {
+      "min": [
+        -0.5,
+        -0.001,
+        -0.5
+      ],
+      "max": [
+        0.593,
+        1.24,
+        0.517
+      ]
+    }
+  },
+  {
+    "name": "shop_cinema",
+    "category": "buildings",
+    "sheet": "commercial",
+    "file": "buildings/shop_cinema.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 504,
+    "bounds": {
+      "min": [
+        -0.5,
+        0,
+        -0.5
+      ],
+      "max": [
+        0.5,
+        0.7,
+        0.5
+      ]
+    }
+  },
+  {
+    "name": "shop_bank",
+    "category": "buildings",
+    "sheet": "commercial",
+    "file": "buildings/shop_bank.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 644,
+    "bounds": {
+      "min": [
+        -0.5,
+        0,
+        -0.5
+      ],
+      "max": [
+        0.5,
+        0.56,
+        0.5
+      ]
+    }
+  },
+  {
+    "name": "shop_gas_station",
+    "category": "buildings",
+    "sheet": "commercial",
+    "file": "buildings/shop_gas_station.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 668,
+    "bounds": {
+      "min": [
+        -0.5,
+        0,
+        -0.5
+      ],
+      "max": [
+        0.5,
+        0.56,
+        0.5
+      ]
+    }
+  },
+  {
+    "name": "industry_factory",
+    "category": "buildings",
+    "sheet": "industry",
+    "file": "buildings/industry_factory.glb",
+    "footprint": [
+      2,
+      2
+    ],
+    "triangles": 1800,
+    "bounds": {
+      "min": [
+        -1,
+        0,
+        -1
+      ],
+      "max": [
+        1,
+        1.06,
+        1
+      ]
+    }
+  },
+  {
+    "name": "industry_warehouse",
+    "category": "buildings",
+    "sheet": "industry",
+    "file": "buildings/industry_warehouse.glb",
+    "footprint": [
+      2,
+      1
+    ],
+    "triangles": 1640,
+    "bounds": {
+      "min": [
+        -1,
+        0,
+        -0.5
+      ],
+      "max": [
+        1,
+        0.44,
+        0.522
+      ]
+    }
+  },
+  {
+    "name": "industry_silo",
+    "category": "buildings",
+    "sheet": "industry",
+    "file": "buildings/industry_silo.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 1124,
+    "bounds": {
+      "min": [
+        -0.5,
+        0,
+        -0.5
+      ],
+      "max": [
+        0.5,
+        0.9,
+        0.5
+      ]
+    }
+  },
+  {
+    "name": "road_straight",
+    "category": "areas",
+    "sheet": "roads",
+    "file": "areas/road_straight.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 146,
+    "bounds": {
+      "min": [
+        -0.5,
+        0,
+        -0.5
+      ],
+      "max": [
+        0.5,
+        0.36,
+        0.5
+      ]
+    }
+  },
+  {
+    "name": "road_corner",
+    "category": "areas",
+    "sheet": "roads",
+    "file": "areas/road_corner.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 226,
+    "bounds": {
+      "min": [
+        -0.5,
+        0,
+        -0.5
+      ],
+      "max": [
+        0.5,
+        0.36,
+        0.5
+      ]
+    }
+  },
+  {
+    "name": "road_t",
+    "category": "areas",
+    "sheet": "roads",
+    "file": "areas/road_t.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 180,
+    "bounds": {
+      "min": [
+        -0.5,
+        0,
+        -0.5
+      ],
+      "max": [
+        0.5,
+        0.065,
+        0.5
+      ]
+    }
+  },
+  {
+    "name": "road_cross",
+    "category": "areas",
+    "sheet": "roads",
+    "file": "areas/road_cross.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 520,
+    "bounds": {
+      "min": [
+        -0.5,
+        0,
+        -0.5
+      ],
+      "max": [
+        0.5,
+        0.36,
+        0.5
+      ]
+    }
+  },
+  {
+    "name": "road_crosswalk",
+    "category": "areas",
+    "sheet": "roads",
+    "file": "areas/road_crosswalk.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 240,
+    "bounds": {
+      "min": [
+        -0.5,
+        0,
+        -0.5
+      ],
+      "max": [
+        0.5,
+        0.27,
+        0.5
+      ]
+    }
+  },
+  {
+    "name": "road_end",
+    "category": "areas",
+    "sheet": "roads",
+    "file": "areas/road_end.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 538,
+    "bounds": {
+      "min": [
+        -0.5,
+        0,
+        -0.51
+      ],
+      "max": [
+        0.5,
+        0.36,
+        0.5
+      ]
+    }
+  },
+  {
+    "name": "road_roundabout",
+    "category": "areas",
+    "sheet": "roads",
+    "file": "areas/road_roundabout.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 528,
+    "bounds": {
+      "min": [
+        -0.5,
+        0,
+        -0.5
+      ],
+      "max": [
+        0.5,
+        0.305,
+        0.5
+      ]
+    }
+  },
+  {
+    "name": "path_straight",
+    "category": "areas",
+    "sheet": "roads",
+    "file": "areas/path_straight.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 458,
+    "bounds": {
+      "min": [
+        -0.5,
+        0,
+        -0.5
+      ],
+      "max": [
+        0.5,
+        0.36,
+        0.6
+      ]
+    }
+  },
+  {
+    "name": "path_corner",
+    "category": "areas",
+    "sheet": "roads",
+    "file": "areas/path_corner.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 326,
+    "bounds": {
+      "min": [
+        -0.5,
+        0,
+        -0.5
+      ],
+      "max": [
+        0.5,
+        0.36,
+        0.5
+      ]
+    }
+  },
+  {
+    "name": "path_t",
+    "category": "areas",
+    "sheet": "roads",
+    "file": "areas/path_t.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 492,
+    "bounds": {
+      "min": [
+        -0.5,
+        0,
+        -0.5
+      ],
+      "max": [
+        0.5,
+        0.342,
+        0.6
+      ]
+    }
+  },
+  {
+    "name": "path_cross",
+    "category": "areas",
+    "sheet": "roads",
+    "file": "areas/path_cross.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 724,
+    "bounds": {
+      "min": [
+        -0.5,
+        0,
+        -0.5
+      ],
+      "max": [
+        0.5,
+        0.272,
+        0.6
+      ]
+    }
+  },
+  {
+    "name": "road_dirt_straight",
+    "category": "areas",
+    "sheet": "roads",
+    "file": "areas/road_dirt_straight.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 226,
+    "bounds": {
+      "min": [
+        -0.5,
+        0,
+        -0.5
+      ],
+      "max": [
+        0.5,
+        0.272,
+        0.5
+      ]
+    }
+  },
+  {
+    "name": "road_dirt_corner",
+    "category": "areas",
+    "sheet": "roads",
+    "file": "areas/road_dirt_corner.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 428,
+    "bounds": {
+      "min": [
+        -0.5,
+        0,
+        -0.5
+      ],
+      "max": [
+        0.5,
+        0.306,
+        0.5
+      ]
+    }
+  },
+  {
+    "name": "avenue_straight",
+    "category": "areas",
+    "sheet": "roads",
+    "file": "areas/avenue_straight.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 592,
+    "bounds": {
+      "min": [
+        -0.5,
+        0,
+        -0.5
+      ],
+      "max": [
+        0.5,
+        0.204,
+        0.5
+      ]
+    }
+  },
+  {
+    "name": "avenue_corner",
+    "category": "areas",
+    "sheet": "roads",
+    "file": "areas/avenue_corner.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 428,
+    "bounds": {
+      "min": [
+        -0.5,
+        0,
+        -0.5
+      ],
+      "max": [
+        0.5,
+        0.067,
+        0.5
+      ]
+    }
+  },
+  {
+    "name": "avenue_t",
+    "category": "areas",
+    "sheet": "roads",
+    "file": "areas/avenue_t.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 316,
+    "bounds": {
+      "min": [
+        -0.5,
+        0,
+        -0.5
+      ],
+      "max": [
+        0.5,
+        0.36,
+        0.5
+      ]
+    }
+  },
+  {
+    "name": "avenue_cross",
+    "category": "areas",
+    "sheet": "roads",
+    "file": "areas/avenue_cross.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 988,
+    "bounds": {
+      "min": [
+        -0.5,
+        0,
+        -0.5
+      ],
+      "max": [
+        0.5,
+        0.26,
+        0.5
+      ]
+    }
+  },
+  {
+    "name": "highway_straight",
+    "category": "areas",
+    "sheet": "roads",
+    "file": "areas/highway_straight.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 772,
+    "bounds": {
+      "min": [
+        -0.5,
+        0,
+        -0.5
+      ],
+      "max": [
+        0.5,
+        0.466,
+        0.5
+      ]
+    }
+  },
+  {
+    "name": "highway_corner",
+    "category": "areas",
+    "sheet": "roads",
+    "file": "areas/highway_corner.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 600,
+    "bounds": {
+      "min": [
+        -0.5,
+        0,
+        -0.5
+      ],
+      "max": [
+        0.5,
+        0.38,
+        0.5
+      ]
+    }
+  },
+  {
+    "name": "highway_ramp",
+    "category": "areas",
+    "sheet": "roads",
+    "file": "areas/highway_ramp.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 140,
+    "bounds": {
+      "min": [
+        -0.5,
+        0,
+        -0.5
+      ],
+      "max": [
+        0.5,
+        0.38,
+        0.5
+      ]
+    }
+  },
+  {
+    "name": "highway_over_road",
+    "category": "areas",
+    "sheet": "roads",
+    "file": "areas/highway_over_road.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 644,
+    "bounds": {
+      "min": [
+        -0.5,
+        0,
+        -0.5
+      ],
+      "max": [
+        0.5,
+        0.428,
+        0.5
+      ]
+    }
+  },
+  {
+    "name": "bridge_road",
+    "category": "areas",
+    "sheet": "roads",
+    "file": "areas/bridge_road.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 396,
+    "bounds": {
+      "min": [
+        -0.5,
+        0,
+        -0.503
+      ],
+      "max": [
+        0.5,
+        0.22,
+        0.503
+      ]
+    }
+  },
+  {
+    "name": "rail_straight",
+    "category": "areas",
+    "sheet": "roads",
+    "file": "areas/rail_straight.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 284,
+    "bounds": {
+      "min": [
+        -0.5,
+        0,
+        -0.5
+      ],
+      "max": [
+        0.5,
+        0.3,
+        0.5
+      ]
+    }
+  },
+  {
+    "name": "rail_corner",
+    "category": "areas",
+    "sheet": "roads",
+    "file": "areas/rail_corner.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 532,
+    "bounds": {
+      "min": [
+        -0.5,
+        0,
+        -0.5
+      ],
+      "max": [
+        0.5,
+        0.306,
+        0.5
+      ]
+    }
+  },
+  {
+    "name": "rail_crossing",
+    "category": "areas",
+    "sheet": "roads",
+    "file": "areas/rail_crossing.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 512,
+    "bounds": {
+      "min": [
+        -0.5,
+        0,
+        -0.5
+      ],
+      "max": [
+        0.5,
+        0.22,
+        0.5
+      ]
+    }
+  },
+  {
+    "name": "parking_lot",
+    "category": "areas",
+    "sheet": "roads",
+    "file": "areas/parking_lot.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 1456,
+    "bounds": {
+      "min": [
+        -0.505,
+        0,
+        -0.5
+      ],
+      "max": [
+        0.505,
+        0.36,
+        0.5
+      ]
+    }
+  },
+  {
+    "name": "park_fountain",
+    "category": "areas",
+    "sheet": "parks",
+    "file": "areas/park_fountain.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 712,
+    "bounds": {
+      "min": [
+        -0.5,
+        0,
+        -0.5
+      ],
+      "max": [
+        0.5,
+        0.342,
+        0.5
+      ]
+    }
+  },
+  {
+    "name": "park_statue",
+    "category": "areas",
+    "sheet": "parks",
+    "file": "areas/park_statue.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 824,
+    "bounds": {
+      "min": [
+        -0.5,
+        0,
+        -0.5
+      ],
+      "max": [
+        0.5,
+        0.436,
+        0.5
+      ]
+    }
+  },
+  {
+    "name": "park_flower",
+    "category": "areas",
+    "sheet": "parks",
+    "file": "areas/park_flower.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 2974,
+    "bounds": {
+      "min": [
+        -0.5,
+        0,
+        -0.5
+      ],
+      "max": [
+        0.5,
+        0.26,
+        0.5
+      ]
+    }
+  },
+  {
+    "name": "park_playground",
+    "category": "areas",
+    "sheet": "parks",
+    "file": "areas/park_playground.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 802,
+    "bounds": {
+      "min": [
+        -0.517,
+        -0.08,
+        -0.5
+      ],
+      "max": [
+        0.5,
+        0.28,
+        0.517
+      ]
+    }
+  },
+  {
+    "name": "park_pond",
+    "category": "areas",
+    "sheet": "parks",
+    "file": "areas/park_pond.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 394,
+    "bounds": {
+      "min": [
+        -0.5,
+        0,
+        -0.5
+      ],
+      "max": [
+        0.5,
+        0.272,
+        0.5
+      ]
+    }
+  },
+  {
+    "name": "park_zen",
+    "category": "areas",
+    "sheet": "parks",
+    "file": "areas/park_zen.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 914,
+    "bounds": {
+      "min": [
+        -0.5,
+        0,
+        -0.5
+      ],
+      "max": [
+        0.5,
+        0.2,
+        0.5
+      ]
+    }
+  },
+  {
+    "name": "park_square",
+    "category": "areas",
+    "sheet": "parks",
+    "file": "areas/park_square.glb",
+    "footprint": [
+      2,
+      2
+    ],
+    "triangles": 2188,
+    "bounds": {
+      "min": [
+        -1,
+        0,
+        -1
+      ],
+      "max": [
+        1,
+        0.84,
+        1
+      ]
+    }
+  },
+  {
+    "name": "park_community_garden",
+    "category": "areas",
+    "sheet": "parks",
+    "file": "areas/park_community_garden.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 3258,
+    "bounds": {
+      "min": [
+        -0.5,
+        0,
+        -0.5
+      ],
+      "max": [
+        0.5,
+        0.22,
+        0.5
+      ]
+    }
+  },
+  {
+    "name": "park_picnic",
+    "category": "areas",
+    "sheet": "parks",
+    "file": "areas/park_picnic.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 1320,
+    "bounds": {
+      "min": [
+        -0.5,
+        -0.001,
+        -0.5
+      ],
+      "max": [
+        0.592,
+        0.408,
+        0.529
+      ]
+    }
+  },
+  {
+    "name": "sport_soccer",
+    "category": "areas",
+    "sheet": "sports",
+    "file": "areas/sport_soccer.glb",
+    "footprint": [
+      2,
+      1
+    ],
+    "triangles": 1196,
+    "bounds": {
+      "min": [
+        -1,
+        0,
+        -0.5
+      ],
+      "max": [
+        1,
+        0.157,
+        0.5
+      ]
+    }
+  },
+  {
+    "name": "sport_basketball",
+    "category": "areas",
+    "sheet": "sports",
+    "file": "areas/sport_basketball.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 1400,
+    "bounds": {
+      "min": [
+        -0.5,
+        0,
+        -0.5
+      ],
+      "max": [
+        0.5,
+        0.32,
+        0.5
+      ]
+    }
+  },
+  {
+    "name": "sport_tennis",
+    "category": "areas",
+    "sheet": "sports",
+    "file": "areas/sport_tennis.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 880,
+    "bounds": {
+      "min": [
+        -0.5,
+        0,
+        -0.5
+      ],
+      "max": [
+        0.5,
+        0.22,
+        0.5
+      ]
+    }
+  },
+  {
+    "name": "sport_badminton",
+    "category": "areas",
+    "sheet": "sports",
+    "file": "areas/sport_badminton.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 616,
+    "bounds": {
+      "min": [
+        -0.5,
+        0,
+        -0.5
+      ],
+      "max": [
+        0.5,
+        0.5,
+        0.5
+      ]
+    }
+  },
+  {
+    "name": "sport_pool",
+    "category": "areas",
+    "sheet": "sports",
+    "file": "areas/sport_pool.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 1414,
+    "bounds": {
+      "min": [
+        -0.5,
+        0,
+        -0.5
+      ],
+      "max": [
+        0.5,
+        0.2,
+        0.5
+      ]
+    }
+  },
+  {
+    "name": "sport_skatepark",
+    "category": "areas",
+    "sheet": "sports",
+    "file": "areas/sport_skatepark.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 328,
+    "bounds": {
+      "min": [
+        -0.5,
+        0,
+        -0.5
+      ],
+      "max": [
+        0.5,
+        0.19,
+        0.5
+      ]
+    }
+  },
+  {
+    "name": "sport_stadium",
+    "category": "areas",
+    "sheet": "sports",
+    "file": "areas/sport_stadium.glb",
+    "footprint": [
+      2,
+      2
+    ],
+    "triangles": 2624,
+    "bounds": {
+      "min": [
+        -1,
+        0,
+        -1
+      ],
+      "max": [
+        1,
+        0.66,
+        1
+      ]
+    }
+  },
+  {
+    "name": "zoo_gate",
+    "category": "areas",
+    "sheet": "zoo",
+    "file": "areas/zoo_gate.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 1246,
+    "bounds": {
+      "min": [
+        -0.5,
+        -0.001,
+        -0.5
+      ],
+      "max": [
+        0.551,
+        0.573,
+        0.5
+      ]
+    }
+  },
+  {
+    "name": "zoo_elephant",
+    "category": "areas",
+    "sheet": "zoo",
+    "file": "areas/zoo_elephant.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 784,
+    "bounds": {
+      "min": [
+        -0.5,
+        0,
+        -0.5
+      ],
+      "max": [
+        0.5,
+        0.306,
+        0.5
+      ]
+    }
+  },
+  {
+    "name": "zoo_giraffe",
+    "category": "areas",
+    "sheet": "zoo",
+    "file": "areas/zoo_giraffe.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 1128,
+    "bounds": {
+      "min": [
+        -0.5,
+        0,
+        -0.5
+      ],
+      "max": [
+        0.5,
+        0.435,
+        0.5
+      ]
+    }
+  },
+  {
+    "name": "zoo_lion",
+    "category": "areas",
+    "sheet": "zoo",
+    "file": "areas/zoo_lion.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 988,
+    "bounds": {
+      "min": [
+        -0.5,
+        0,
+        -0.5
+      ],
+      "max": [
+        0.5,
+        0.336,
+        0.5
+      ]
+    }
+  },
+  {
+    "name": "zoo_penguin",
+    "category": "areas",
+    "sheet": "zoo",
+    "file": "areas/zoo_penguin.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 942,
+    "bounds": {
+      "min": [
+        -0.5,
+        0,
+        -0.5
+      ],
+      "max": [
+        0.5,
+        0.279,
+        0.5
+      ]
+    }
+  },
+  {
+    "name": "zoo_monkey",
+    "category": "areas",
+    "sheet": "zoo",
+    "file": "areas/zoo_monkey.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 1064,
+    "bounds": {
+      "min": [
+        -0.5,
+        -0.001,
+        -0.5
+      ],
+      "max": [
+        0.5,
+        0.438,
+        0.5
+      ]
+    }
+  },
+  {
+    "name": "zoo_aviary",
+    "category": "areas",
+    "sheet": "zoo",
+    "file": "areas/zoo_aviary.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 1380,
+    "bounds": {
+      "min": [
+        -0.5,
+        -0.001,
+        -0.5
+      ],
+      "max": [
+        0.5,
+        0.62,
+        0.5
+      ]
+    }
+  },
+  {
+    "name": "nature_grass",
+    "category": "areas",
+    "sheet": "nature",
+    "file": "areas/nature_grass.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 228,
+    "bounds": {
+      "min": [
+        -0.5,
+        0,
+        -0.5
+      ],
+      "max": [
+        0.5,
+        0.11,
+        0.5
+      ]
+    }
+  },
+  {
+    "name": "nature_forest",
+    "category": "areas",
+    "sheet": "nature",
+    "file": "areas/nature_forest.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 758,
+    "bounds": {
+      "min": [
+        -0.501,
+        0,
+        -0.5
+      ],
+      "max": [
+        0.5,
+        0.494,
+        0.5
+      ]
+    }
+  },
+  {
+    "name": "nature_rice_field",
+    "category": "areas",
+    "sheet": "nature",
+    "file": "areas/nature_rice_field.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 1394,
+    "bounds": {
+      "min": [
+        -0.5,
+        0,
+        -0.5
+      ],
+      "max": [
+        0.5,
+        0.23,
+        0.5
+      ]
+    }
+  },
+  {
+    "name": "nature_beach",
+    "category": "areas",
+    "sheet": "nature",
+    "file": "areas/nature_beach.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 778,
+    "bounds": {
+      "min": [
+        -0.5,
+        -0.003,
+        -0.534
+      ],
+      "max": [
+        0.5,
+        0.518,
+        0.5
+      ]
+    }
+  },
+  {
+    "name": "nature_river_straight",
+    "category": "areas",
+    "sheet": "nature",
+    "file": "areas/nature_river_straight.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 244,
+    "bounds": {
+      "min": [
+        -0.508,
+        0,
+        -0.5
+      ],
+      "max": [
+        0.5,
+        0.272,
+        0.5
+      ]
+    }
+  },
+  {
+    "name": "nature_river_corner",
+    "category": "areas",
+    "sheet": "nature",
+    "file": "areas/nature_river_corner.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 412,
+    "bounds": {
+      "min": [
+        -0.5,
+        0,
+        -0.5
+      ],
+      "max": [
+        0.5,
+        0.38,
+        0.5
+      ]
+    }
+  },
+  {
+    "name": "nature_hill",
+    "category": "areas",
+    "sheet": "nature",
+    "file": "areas/nature_hill.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 536,
+    "bounds": {
+      "min": [
+        -0.5,
+        0,
+        -0.503
+      ],
+      "max": [
+        0.5,
+        0.424,
+        0.5
+      ]
+    }
+  },
+  {
+    "name": "people_man",
+    "category": "objects",
+    "sheet": "people",
+    "file": "objects/people_man.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 108,
+    "bounds": {
+      "min": [
+        -0.031,
+        0,
+        -0.022
+      ],
+      "max": [
+        0.031,
+        0.117,
+        0.022
+      ]
+    }
+  },
+  {
+    "name": "people_woman",
+    "category": "objects",
+    "sheet": "people",
+    "file": "objects/people_woman.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 148,
+    "bounds": {
+      "min": [
+        -0.031,
+        0,
+        -0.023
+      ],
+      "max": [
+        0.031,
+        0.118,
+        0.022
+      ]
+    }
+  },
+  {
+    "name": "people_hijab",
+    "category": "objects",
+    "sheet": "people",
+    "file": "objects/people_hijab.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 152,
+    "bounds": {
+      "min": [
+        -0.031,
+        0,
+        -0.021
+      ],
+      "max": [
+        0.031,
+        0.12,
+        0.021
+      ]
+    }
+  },
+  {
+    "name": "people_office_worker",
+    "category": "objects",
+    "sheet": "people",
+    "file": "objects/people_office_worker.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 108,
+    "bounds": {
+      "min": [
+        -0.031,
+        0,
+        -0.022
+      ],
+      "max": [
+        0.031,
+        0.117,
+        0.022
+      ]
+    }
+  },
+  {
+    "name": "people_student",
+    "category": "objects",
+    "sheet": "people",
+    "file": "objects/people_student.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 108,
+    "bounds": {
+      "min": [
+        -0.031,
+        0,
+        -0.016
+      ],
+      "max": [
+        0.044,
+        0.117,
+        0.013
+      ]
+    }
+  },
+  {
+    "name": "people_child",
+    "category": "objects",
+    "sheet": "people",
+    "file": "objects/people_child.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 144,
+    "bounds": {
+      "min": [
+        -0.022,
+        0,
+        -0.016
+      ],
+      "max": [
+        0.046,
+        0.15,
+        0.016
+      ]
+    }
+  },
+  {
+    "name": "people_elderly",
+    "category": "objects",
+    "sheet": "people",
+    "file": "objects/people_elderly.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 132,
+    "bounds": {
+      "min": [
+        -0.03,
+        0,
+        -0.015
+      ],
+      "max": [
+        0.032,
+        0.111,
+        0.014
+      ]
+    }
+  },
+  {
+    "name": "people_jogger",
+    "category": "objects",
+    "sheet": "people",
+    "file": "objects/people_jogger.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 120,
+    "bounds": {
+      "min": [
+        -0.031,
+        0,
+        -0.022
+      ],
+      "max": [
+        0.031,
+        0.117,
+        0.022
+      ]
+    }
+  },
+  {
+    "name": "people_police",
+    "category": "objects",
+    "sheet": "people",
+    "file": "objects/people_police.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 160,
+    "bounds": {
+      "min": [
+        -0.031,
+        0,
+        -0.016
+      ],
+      "max": [
+        0.044,
+        0.118,
+        0.022
+      ]
+    }
+  },
+  {
+    "name": "people_worker",
+    "category": "objects",
+    "sheet": "people",
+    "file": "objects/people_worker.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 168,
+    "bounds": {
+      "min": [
+        -0.031,
+        0,
+        -0.017
+      ],
+      "max": [
+        0.031,
+        0.12,
+        0.02
+      ]
+    }
+  },
+  {
+    "name": "people_doctor",
+    "category": "objects",
+    "sheet": "people",
+    "file": "objects/people_doctor.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 140,
+    "bounds": {
+      "min": [
+        -0.031,
+        0,
+        -0.019
+      ],
+      "max": [
+        0.031,
+        0.117,
+        0.022
+      ]
+    }
+  },
+  {
+    "name": "people_cyclist",
+    "category": "objects",
+    "sheet": "people",
+    "file": "objects/people_cyclist.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 300,
+    "bounds": {
+      "min": [
+        -0.031,
+        0,
+        -0.054
+      ],
+      "max": [
+        0.031,
+        0.134,
+        0.054
+      ]
+    }
+  },
+  {
+    "name": "people_vendor",
+    "category": "objects",
+    "sheet": "people",
+    "file": "objects/people_vendor.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 366,
+    "bounds": {
+      "min": [
+        -0.186,
+        0,
+        -0.04
+      ],
+      "max": [
+        0.075,
+        0.135,
+        0.04
+      ]
+    }
+  },
+  {
+    "name": "people_umbrella",
+    "category": "objects",
+    "sheet": "people",
+    "file": "objects/people_umbrella.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 134,
+    "bounds": {
+      "min": [
+        -0.05,
+        0,
+        -0.06
+      ],
+      "max": [
+        0.07,
+        0.16,
+        0.06
+      ]
+    }
+  },
+  {
+    "name": "people_sitting",
+    "category": "objects",
+    "sheet": "people",
+    "file": "objects/people_sitting.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 132,
+    "bounds": {
+      "min": [
+        -0.031,
+        0,
+        -0.016
+      ],
+      "max": [
+        0.031,
+        0.102,
+        0.028
+      ]
+    }
+  },
+  {
+    "name": "tree_round",
+    "category": "objects",
+    "sheet": "plants",
+    "file": "objects/tree_round.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 40,
+    "bounds": {
+      "min": [
+        -0.132,
+        -0.04,
+        -0.132
+      ],
+      "max": [
+        0.132,
+        0.368,
+        0.132
+      ]
+    }
+  },
+  {
+    "name": "tree_pine",
+    "category": "objects",
+    "sheet": "plants",
+    "file": "objects/tree_pine.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 52,
+    "bounds": {
+      "min": [
+        -0.13,
+        -0.04,
+        -0.14
+      ],
+      "max": [
+        0.144,
+        0.416,
+        0.14
+      ]
+    }
+  },
+  {
+    "name": "tree_palm",
+    "category": "objects",
+    "sheet": "plants",
+    "file": "objects/tree_palm.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 148,
+    "bounds": {
+      "min": [
+        -0.073,
+        -0.001,
+        -0.158
+      ],
+      "max": [
+        0.248,
+        0.518,
+        0.158
+      ]
+    }
+  },
+  {
+    "name": "tree_coconut",
+    "category": "objects",
+    "sheet": "plants",
+    "file": "objects/tree_coconut.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 208,
+    "bounds": {
+      "min": [
+        -0.024,
+        -0.003,
+        -0.17
+      ],
+      "max": [
+        0.393,
+        0.558,
+        0.17
+      ]
+    }
+  },
+  {
+    "name": "tree_sakura",
+    "category": "objects",
+    "sheet": "plants",
+    "file": "objects/tree_sakura.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 88,
+    "bounds": {
+      "min": [
+        -0.12,
+        -0.002,
+        -0.127
+      ],
+      "max": [
+        0.15,
+        0.32,
+        0.127
+      ]
+    }
+  },
+  {
+    "name": "tree_cypress",
+    "category": "objects",
+    "sheet": "plants",
+    "file": "objects/tree_cypress.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 40,
+    "bounds": {
+      "min": [
+        -0.05,
+        0,
+        -0.05
+      ],
+      "max": [
+        0.05,
+        0.37,
+        0.05
+      ]
+    }
+  },
+  {
+    "name": "tree_banyan",
+    "category": "objects",
+    "sheet": "plants",
+    "file": "objects/tree_banyan.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 172,
+    "bounds": {
+      "min": [
+        -0.286,
+        0.012,
+        -0.286
+      ],
+      "max": [
+        0.286,
+        0.467,
+        0.286
+      ]
+    }
+  },
+  {
+    "name": "tree_acacia",
+    "category": "objects",
+    "sheet": "plants",
+    "file": "objects/tree_acacia.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 48,
+    "bounds": {
+      "min": [
+        -0.13,
+        -0.002,
+        -0.17
+      ],
+      "max": [
+        0.21,
+        0.315,
+        0.17
+      ]
+    }
+  },
+  {
+    "name": "plant_bamboo",
+    "category": "objects",
+    "sheet": "plants",
+    "file": "objects/plant_bamboo.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 1200,
+    "bounds": {
+      "min": [
+        -0.063,
+        0,
+        -0.071
+      ],
+      "max": [
+        0.052,
+        0.404,
+        0.084
+      ]
+    }
+  },
+  {
+    "name": "plant_bush",
+    "category": "objects",
+    "sheet": "plants",
+    "file": "objects/plant_bush.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 20,
+    "bounds": {
+      "min": [
+        -0.07,
+        -0.007,
+        -0.067
+      ],
+      "max": [
+        0.07,
+        0.091,
+        0.067
+      ]
+    }
+  },
+  {
+    "name": "plant_flower_bush",
+    "category": "objects",
+    "sheet": "plants",
+    "file": "objects/plant_flower_bush.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 68,
+    "bounds": {
+      "min": [
+        -0.07,
+        -0.007,
+        -0.067
+      ],
+      "max": [
+        0.07,
+        0.1,
+        0.067
+      ]
+    }
+  },
+  {
+    "name": "plant_hedge",
+    "category": "objects",
+    "sheet": "plants",
+    "file": "objects/plant_hedge.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 12,
+    "bounds": {
+      "min": [
+        -0.2,
+        0,
+        -0.04
+      ],
+      "max": [
+        0.2,
+        0.07,
+        0.04
+      ]
+    }
+  },
+  {
+    "name": "plant_cactus",
+    "category": "objects",
+    "sheet": "plants",
+    "file": "objects/plant_cactus.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 200,
+    "bounds": {
+      "min": [
+        -0.057,
+        0,
+        -0.05
+      ],
+      "max": [
+        0.057,
+        0.19,
+        0.05
+      ]
+    }
+  },
+  {
+    "name": "plant_flower_pot",
+    "category": "objects",
+    "sheet": "plants",
+    "file": "objects/plant_flower_pot.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 192,
+    "bounds": {
+      "min": [
+        -0.045,
+        0,
+        -0.045
+      ],
+      "max": [
+        0.045,
+        0.112,
+        0.045
+      ]
+    }
+  },
+  {
+    "name": "plant_flower_bed",
+    "category": "objects",
+    "sheet": "plants",
+    "file": "objects/plant_flower_bed.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 348,
+    "bounds": {
+      "min": [
+        -0.15,
+        0,
+        -0.06
+      ],
+      "max": [
+        0.15,
+        0.077,
+        0.06
+      ]
+    }
+  },
+  {
+    "name": "prop_street_lamp",
+    "category": "objects",
+    "sheet": "props",
+    "file": "objects/prop_street_lamp.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 62,
+    "bounds": {
+      "min": [
+        -0.035,
+        -0.04,
+        -0.03
+      ],
+      "max": [
+        0.035,
+        0.32,
+        0.03
+      ]
+    }
+  },
+  {
+    "name": "prop_bench",
+    "category": "objects",
+    "sheet": "props",
+    "file": "objects/prop_bench.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 48,
+    "bounds": {
+      "min": [
+        -0.07,
+        0,
+        -0.025
+      ],
+      "max": [
+        0.07,
+        0.085,
+        0.022
+      ]
+    }
+  },
+  {
+    "name": "prop_trash_bins",
+    "category": "objects",
+    "sheet": "props",
+    "file": "objects/prop_trash_bins.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 108,
+    "bounds": {
+      "min": [
+        -0.066,
+        0,
+        -0.019
+      ],
+      "max": [
+        0.066,
+        0.066,
+        0.02
+      ]
+    }
+  },
+  {
+    "name": "prop_bus_stop",
+    "category": "objects",
+    "sheet": "props",
+    "file": "objects/prop_bus_stop.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 240,
+    "bounds": {
+      "min": [
+        -0.15,
+        0,
+        -0.051
+      ],
+      "max": [
+        0.155,
+        0.21,
+        0.05
+      ]
+    }
+  },
+  {
+    "name": "prop_traffic_light",
+    "category": "objects",
+    "sheet": "props",
+    "file": "objects/prop_traffic_light.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 120,
+    "bounds": {
+      "min": [
+        -0.018,
+        0,
+        -0.014
+      ],
+      "max": [
+        0.018,
+        0.3,
+        0.026
+      ]
+    }
+  },
+  {
+    "name": "prop_stop_sign",
+    "category": "objects",
+    "sheet": "props",
+    "file": "objects/prop_stop_sign.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 84,
+    "bounds": {
+      "min": [
+        -0.032,
+        0,
+        -0.005
+      ],
+      "max": [
+        0.032,
+        0.232,
+        0.014
+      ]
+    }
+  },
+  {
+    "name": "prop_warning_sign",
+    "category": "objects",
+    "sheet": "props",
+    "file": "objects/prop_warning_sign.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 44,
+    "bounds": {
+      "min": [
+        -0.035,
+        0,
+        -0.005
+      ],
+      "max": [
+        0.035,
+        0.22,
+        0.014
+      ]
+    }
+  },
+  {
+    "name": "prop_direction_sign",
+    "category": "objects",
+    "sheet": "props",
+    "file": "objects/prop_direction_sign.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 64,
+    "bounds": {
+      "min": [
+        -0.105,
+        0,
+        -0.006
+      ],
+      "max": [
+        0.105,
+        0.23,
+        0.006
+      ]
+    }
+  },
+  {
+    "name": "prop_hydrant",
+    "category": "objects",
+    "sheet": "props",
+    "file": "objects/prop_hydrant.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 124,
+    "bounds": {
+      "min": [
+        -0.022,
+        0,
+        -0.02
+      ],
+      "max": [
+        0.022,
+        0.06,
+        0.02
+      ]
+    }
+  },
+  {
+    "name": "prop_mailbox",
+    "category": "objects",
+    "sheet": "props",
+    "file": "objects/prop_mailbox.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 48,
+    "bounds": {
+      "min": [
+        -0.03,
+        0,
+        -0.025
+      ],
+      "max": [
+        0.03,
+        0.16,
+        0.027
+      ]
+    }
+  },
+  {
+    "name": "prop_phone_booth",
+    "category": "objects",
+    "sheet": "props",
+    "file": "objects/prop_phone_booth.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 42,
+    "bounds": {
+      "min": [
+        -0.04,
+        0,
+        -0.04
+      ],
+      "max": [
+        0.04,
+        0.18,
+        0.04
+      ]
+    }
+  },
+  {
+    "name": "prop_vending_machine",
+    "category": "objects",
+    "sheet": "props",
+    "file": "objects/prop_vending_machine.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 156,
+    "bounds": {
+      "min": [
+        -0.04,
+        0,
+        -0.025
+      ],
+      "max": [
+        0.04,
+        0.16,
+        0.027
+      ]
+    }
+  },
+  {
+    "name": "prop_fountain",
+    "category": "objects",
+    "sheet": "props",
+    "file": "objects/prop_fountain.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 124,
+    "bounds": {
+      "min": [
+        -0.1,
+        0,
+        -0.1
+      ],
+      "max": [
+        0.1,
+        0.162,
+        0.1
+      ]
+    }
+  },
+  {
+    "name": "prop_statue",
+    "category": "objects",
+    "sheet": "props",
+    "file": "objects/prop_statue.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 132,
+    "bounds": {
+      "min": [
+        -0.081,
+        0,
+        -0.08
+      ],
+      "max": [
+        0.115,
+        0.419,
+        0.08
+      ]
+    }
+  },
+  {
+    "name": "prop_fence",
+    "category": "objects",
+    "sheet": "props",
+    "file": "objects/prop_fence.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 96,
+    "bounds": {
+      "min": [
+        -0.208,
+        0,
+        -0.008
+      ],
+      "max": [
+        0.208,
+        0.07,
+        0.008
+      ]
+    }
+  },
+  {
+    "name": "prop_flagpole",
+    "category": "objects",
+    "sheet": "props",
+    "file": "objects/prop_flagpole.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 68,
+    "bounds": {
+      "min": [
+        -0.03,
+        0,
+        -0.03
+      ],
+      "max": [
+        0.11,
+        0.438,
+        0.03
+      ]
+    }
+  },
+  {
+    "name": "prop_cafe_table",
+    "category": "objects",
+    "sheet": "props",
+    "file": "objects/prop_cafe_table.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 106,
+    "bounds": {
+      "min": [
+        -0.07,
+        0,
+        -0.07
+      ],
+      "max": [
+        0.07,
+        0.14,
+        0.07
+      ]
+    }
+  },
+  {
+    "name": "prop_beach_umbrella",
+    "category": "objects",
+    "sheet": "props",
+    "file": "objects/prop_beach_umbrella.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 26,
+    "bounds": {
+      "min": [
+        -0.07,
+        0,
+        -0.07
+      ],
+      "max": [
+        0.07,
+        0.14,
+        0.07
+      ]
+    }
+  },
+  {
+    "name": "billboard_pole",
+    "category": "objects",
+    "sheet": "billboards",
+    "file": "objects/billboard_pole.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 176,
+    "bounds": {
+      "min": [
+        -0.2,
+        0,
+        -0.02
+      ],
+      "max": [
+        0.2,
+        0.52,
+        0.052
+      ]
+    }
+  },
+  {
+    "name": "billboard_wide",
+    "category": "objects",
+    "sheet": "billboards",
+    "file": "objects/billboard_wide.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 120,
+    "bounds": {
+      "min": [
+        -0.3,
+        0,
+        -0.015
+      ],
+      "max": [
+        0.3,
+        0.3,
+        0.012
+      ]
+    }
+  },
+  {
+    "name": "billboard_digital",
+    "category": "objects",
+    "sheet": "billboards",
+    "file": "objects/billboard_digital.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 504,
+    "bounds": {
+      "min": [
+        -0.16,
+        0,
+        -0.03
+      ],
+      "max": [
+        0.16,
+        0.42,
+        0.03
+      ]
+    }
+  },
+  {
+    "name": "billboard_rooftop",
+    "category": "objects",
+    "sheet": "billboards",
+    "file": "objects/billboard_rooftop.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 252,
+    "bounds": {
+      "min": [
+        -0.24,
+        -0.003,
+        -0.06
+      ],
+      "max": [
+        0.24,
+        0.246,
+        0.023
+      ]
+    }
+  },
+  {
+    "name": "billboard_standing",
+    "category": "objects",
+    "sheet": "billboards",
+    "file": "objects/billboard_standing.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 72,
+    "bounds": {
+      "min": [
+        -0.03,
+        -0.001,
+        -0.021
+      ],
+      "max": [
+        0.03,
+        0.089,
+        0.021
+      ]
+    }
+  },
+  {
+    "name": "animal_elephant",
+    "category": "objects",
+    "sheet": "animals",
+    "file": "objects/animal_elephant.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 176,
+    "bounds": {
+      "min": [
+        -0.08,
+        0,
+        -0.114
+      ],
+      "max": [
+        0.08,
+        0.24,
+        0.214
+      ]
+    }
+  },
+  {
+    "name": "animal_giraffe",
+    "category": "objects",
+    "sheet": "animals",
+    "file": "objects/animal_giraffe.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 248,
+    "bounds": {
+      "min": [
+        -0.054,
+        0,
+        -0.073
+      ],
+      "max": [
+        0.054,
+        0.385,
+        0.14
+      ]
+    }
+  },
+  {
+    "name": "animal_lion",
+    "category": "objects",
+    "sheet": "animals",
+    "file": "objects/animal_lion.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 180,
+    "bounds": {
+      "min": [
+        -0.04,
+        0,
+        -0.098
+      ],
+      "max": [
+        0.04,
+        0.13,
+        0.101
+      ]
+    }
+  },
+  {
+    "name": "animal_lioness",
+    "category": "objects",
+    "sheet": "animals",
+    "file": "objects/animal_lioness.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 152,
+    "bounds": {
+      "min": [
+        -0.04,
+        0,
+        -0.098
+      ],
+      "max": [
+        0.04,
+        0.112,
+        0.101
+      ]
+    }
+  },
+  {
+    "name": "animal_zebra",
+    "category": "objects",
+    "sheet": "animals",
+    "file": "objects/animal_zebra.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 184,
+    "bounds": {
+      "min": [
+        -0.026,
+        0,
+        -0.055
+      ],
+      "max": [
+        0.026,
+        0.159,
+        0.112
+      ]
+    }
+  },
+  {
+    "name": "animal_penguin",
+    "category": "objects",
+    "sheet": "animals",
+    "file": "objects/animal_penguin.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 126,
+    "bounds": {
+      "min": [
+        -0.034,
+        0,
+        -0.022
+      ],
+      "max": [
+        0.034,
+        0.089,
+        0.026
+      ]
+    }
+  },
+  {
+    "name": "animal_monkey",
+    "category": "objects",
+    "sheet": "animals",
+    "file": "objects/animal_monkey.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 132,
+    "bounds": {
+      "min": [
+        -0.04,
+        -0.027,
+        -0.07
+      ],
+      "max": [
+        0.04,
+        0.086,
+        0.026
+      ]
+    }
+  },
+  {
+    "name": "animal_cow",
+    "category": "objects",
+    "sheet": "animals",
+    "file": "objects/animal_cow.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 148,
+    "bounds": {
+      "min": [
+        -0.03,
+        0,
+        -0.06
+      ],
+      "max": [
+        0.03,
+        0.12,
+        0.092
+      ]
+    }
+  },
+  {
+    "name": "animal_cat",
+    "category": "objects",
+    "sheet": "animals",
+    "file": "objects/animal_cat.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 120,
+    "bounds": {
+      "min": [
+        -0.013,
+        0,
+        -0.035
+      ],
+      "max": [
+        0.013,
+        0.058,
+        0.032
+      ]
+    }
+  },
+  {
+    "name": "animal_bird",
+    "category": "objects",
+    "sheet": "animals",
+    "file": "objects/animal_bird.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 76,
+    "bounds": {
+      "min": [
+        -0.028,
+        0,
+        -0.011
+      ],
+      "max": [
+        0.028,
+        0.042,
+        0.026
+      ]
+    }
+  },
+  {
+    "name": "vehicle_sedan",
+    "category": "objects",
+    "sheet": "vehicles",
+    "file": "objects/vehicle_sedan.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 196,
+    "bounds": {
+      "min": [
+        -0.055,
+        0,
+        -0.103
+      ],
+      "max": [
+        0.055,
+        0.08,
+        0.103
+      ]
+    }
+  },
+  {
+    "name": "vehicle_hatchback",
+    "category": "objects",
+    "sheet": "vehicles",
+    "file": "objects/vehicle_hatchback.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 184,
+    "bounds": {
+      "min": [
+        -0.052,
+        0,
+        -0.078
+      ],
+      "max": [
+        0.052,
+        0.085,
+        0.088
+      ]
+    }
+  },
+  {
+    "name": "vehicle_taxi",
+    "category": "objects",
+    "sheet": "vehicles",
+    "file": "objects/vehicle_taxi.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 220,
+    "bounds": {
+      "min": [
+        -0.055,
+        0,
+        -0.103
+      ],
+      "max": [
+        0.055,
+        0.095,
+        0.103
+      ]
+    }
+  },
+  {
+    "name": "vehicle_suv",
+    "category": "objects",
+    "sheet": "vehicles",
+    "file": "objects/vehicle_suv.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 208,
+    "bounds": {
+      "min": [
+        -0.062,
+        0,
+        -0.103
+      ],
+      "max": [
+        0.062,
+        0.11,
+        0.105
+      ]
+    }
+  },
+  {
+    "name": "vehicle_pickup",
+    "category": "objects",
+    "sheet": "vehicles",
+    "file": "objects/vehicle_pickup.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 244,
+    "bounds": {
+      "min": [
+        -0.058,
+        0,
+        -0.117
+      ],
+      "max": [
+        0.058,
+        0.095,
+        0.113
+      ]
+    }
+  },
+  {
+    "name": "vehicle_van",
+    "category": "objects",
+    "sheet": "vehicles",
+    "file": "objects/vehicle_van.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 232,
+    "bounds": {
+      "min": [
+        -0.06,
+        0,
+        -0.113
+      ],
+      "max": [
+        0.06,
+        0.12,
+        0.123
+      ]
+    }
+  },
+  {
+    "name": "vehicle_police",
+    "category": "objects",
+    "sheet": "vehicles",
+    "file": "objects/vehicle_police.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 232,
+    "bounds": {
+      "min": [
+        -0.055,
+        0,
+        -0.103
+      ],
+      "max": [
+        0.055,
+        0.09,
+        0.103
+      ]
+    }
+  },
+  {
+    "name": "vehicle_ambulance",
+    "category": "objects",
+    "sheet": "vehicles",
+    "file": "objects/vehicle_ambulance.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 232,
+    "bounds": {
+      "min": [
+        -0.06,
+        0,
+        -0.11
+      ],
+      "max": [
+        0.06,
+        0.13,
+        0.12
+      ]
+    }
+  },
+  {
+    "name": "vehicle_fire_truck",
+    "category": "objects",
+    "sheet": "vehicles",
+    "file": "objects/vehicle_fire_truck.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 280,
+    "bounds": {
+      "min": [
+        -0.07,
+        0,
+        -0.16
+      ],
+      "max": [
+        0.07,
+        0.14,
+        0.162
+      ]
+    }
+  },
+  {
+    "name": "vehicle_bus",
+    "category": "objects",
+    "sheet": "vehicles",
+    "file": "objects/vehicle_bus.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 220,
+    "bounds": {
+      "min": [
+        -0.065,
+        0,
+        -0.193
+      ],
+      "max": [
+        0.065,
+        0.14,
+        0.193
+      ]
+    }
+  },
+  {
+    "name": "vehicle_school_bus",
+    "category": "objects",
+    "sheet": "vehicles",
+    "file": "objects/vehicle_school_bus.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 256,
+    "bounds": {
+      "min": [
+        -0.065,
+        0,
+        -0.163
+      ],
+      "max": [
+        0.065,
+        0.14,
+        0.213
+      ]
+    }
+  },
+  {
+    "name": "vehicle_truck",
+    "category": "objects",
+    "sheet": "vehicles",
+    "file": "objects/vehicle_truck.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 252,
+    "bounds": {
+      "min": [
+        -0.065,
+        0,
+        -0.183
+      ],
+      "max": [
+        0.065,
+        0.15,
+        0.163
+      ]
+    }
+  },
+  {
+    "name": "vehicle_motorcycle",
+    "category": "objects",
+    "sheet": "vehicles",
+    "file": "objects/vehicle_motorcycle.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 272,
+    "bounds": {
+      "min": [
+        -0.031,
+        0,
+        -0.058
+      ],
+      "max": [
+        0.031,
+        0.138,
+        0.063
+      ]
+    }
+  },
+  {
+    "name": "vehicle_bicycle",
+    "category": "objects",
+    "sheet": "vehicles",
+    "file": "objects/vehicle_bicycle.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 144,
+    "bounds": {
+      "min": [
+        -0.018,
+        0,
+        -0.054
+      ],
+      "max": [
+        0.018,
+        0.062,
+        0.054
+      ]
+    }
+  },
+  {
+    "name": "vehicle_bajaj",
+    "category": "objects",
+    "sheet": "vehicles",
+    "file": "objects/vehicle_bajaj.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 188,
+    "bounds": {
+      "min": [
+        -0.048,
+        0,
+        -0.07
+      ],
+      "max": [
+        0.048,
+        0.11,
+        0.092
+      ]
+    }
+  },
+  {
+    "name": "vehicle_becak",
+    "category": "objects",
+    "sheet": "vehicles",
+    "file": "objects/vehicle_becak.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 168,
+    "bounds": {
+      "min": [
+        -0.044,
+        0,
+        -0.09
+      ],
+      "max": [
+        0.044,
+        0.117,
+        0.07
+      ]
+    }
+  },
+  {
+    "name": "vehicle_train_locomotive",
+    "category": "objects",
+    "sheet": "vehicles",
+    "file": "objects/vehicle_train_locomotive.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 320,
+    "bounds": {
+      "min": [
+        -0.07,
+        0,
+        -0.22
+      ],
+      "max": [
+        0.07,
+        0.16,
+        0.224
+      ]
+    }
+  },
+  {
+    "name": "vehicle_train_carriage",
+    "category": "objects",
+    "sheet": "vehicles",
+    "file": "objects/vehicle_train_carriage.glb",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 220,
+    "bounds": {
+      "min": [
+        -0.067,
+        0,
+        -0.22
+      ],
+      "max": [
+        0.067,
+        0.16,
+        0.22
+      ]
+    }
+  }
+]

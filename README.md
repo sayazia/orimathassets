@@ -1,0 +1,75 @@
+# Origami City Assets
+
+Colourful, low-poly 3D models for a city-building game in a flat **origami paper** style:
+faceted geometry, flat shading and bright paper colours.
+
+![Demo town](previews/town.png)
+
+## What's here
+
+| Folder | Contents |
+| --- | --- |
+| `models/buildings/`, `models/areas/`, `models/objects/` | One `.glb` (glTF 2.0 binary) per asset |
+| `models/manifest.json` | Every asset with its category, sheet, footprint (in tiles), triangle count and bounds |
+| `previews/` | A PNG per asset, one `sheet_<group>.png` contact sheet per group, and `town.png` |
+| `docs/CATALOG.md` | The full catalog plan (in Indonesian) with the status of every asset |
+| `scripts/` | The generator: every model is built from code, so it can be tweaked and rebuilt |
+
+**199 assets** in 16 groups, each with its own contact sheet:
+
+| Group | Count | Sheet |
+| --- | --- | --- |
+| Houses | 20 | [sheet_houses.png](previews/sheet_houses.png) |
+| Offices | 10 | [sheet_offices.png](previews/sheet_offices.png) |
+| Public services | 19 | [sheet_public.png](previews/sheet_public.png) |
+| Commercial | 10 | [sheet_commercial.png](previews/sheet_commercial.png) |
+| Industry | 3 | [sheet_industry.png](previews/sheet_industry.png) |
+| Roads, paths, highway, rail | 26 | [sheet_roads.png](previews/sheet_roads.png) |
+| Parks | 9 | [sheet_parks.png](previews/sheet_parks.png) |
+| Sports | 7 | [sheet_sports.png](previews/sheet_sports.png) |
+| Zoo | 7 | [sheet_zoo.png](previews/sheet_zoo.png) |
+| Nature | 7 | [sheet_nature.png](previews/sheet_nature.png) |
+| People | 15 | [sheet_people.png](previews/sheet_people.png) |
+| Vehicles | 18 | [sheet_vehicles.png](previews/sheet_vehicles.png) |
+| Trees and plants | 15 | [sheet_plants.png](previews/sheet_plants.png) |
+| Street props | 18 | [sheet_props.png](previews/sheet_props.png) |
+| Billboards | 5 | [sheet_billboards.png](previews/sheet_billboards.png) |
+| Animals | 10 | [sheet_animals.png](previews/sheet_animals.png) |
+
+## Conventions
+
+- **1 unit = 1 grid tile.** A 1×1 asset spans x and z from -0.5 to 0.5; a 2×1 asset spans x from -1 to 1.
+  y is up and the ground is at y = 0 (buildings and areas have a 0.04-thick paper base plate).
+- **Buildings face +z.** Rotate in 90° steps around y to face a road.
+- **Roads** are authored in one orientation and snap together edge to edge:
+  - `road_straight` runs along z
+  - `road_corner` joins the +x and +z edges
+  - `road_t` runs along z with a branch to +x
+  - `road_cross` joins all four edges
+- **Roads** of other types (`path_`, `road_dirt_`, `avenue_`, `highway_`, `rail_`, `nature_river_`) follow
+  the same rule: straight pieces run along z and corners join the +x and +z edges.
+- **Objects** (people, vehicles, plants, props, billboards, animals) have no base plate, stand on y = 0
+  and share the buildings' scale: a person is about 0.1 units tall and a car about 0.2 units long.
+- Materials are plain PBR colours (metallic 0, roughness 0.95) named after the palette entry,
+  with no textures, so they are easy to recolour in any engine. Normals are per face for the
+  faceted paper look.
+
+The files load directly in Unity (via glTFast), Godot, Unreal, three.js, Babylon.js and Blender.
+
+## Rebuilding
+
+```sh
+npm install
+npm run build                 # regenerate every model
+npm run build -- house_       # only assets whose name starts with house_
+npm run previews              # re-render every preview (headless Chromium + three.js)
+npm run previews -- houses    # only one sheet (or `town`)
+```
+
+- Colours live in `scripts/lib/palette.mjs`; changing one recolours every model that uses it.
+- Assets live in `scripts/assets/<group>.mjs` and are registered in `scripts/assets/index.mjs`.
+  Shared pieces (windows, doors, trees, cars, pools...) are in `scripts/lib/parts.mjs`.
+- Each asset is a small function built from boxes, gable and hip roofs,
+  prisms, cones and faceted "paper ball" shapes (`scripts/lib/geom.mjs`).
+- `scripts/lib/glb.mjs` is a dependency-free GLB writer. The output passes the Khronos glTF
+  validator with no errors or warnings.
