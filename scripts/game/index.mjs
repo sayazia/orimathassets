@@ -60,7 +60,7 @@ export const TABLE_SCENES = [
     camera: { target: [0, 0.03, -0.02] },
     items: [
       { name: 'crystal_tray', x: 0, y: 0, z: 0.13 },
-      ...[0, 1, 2, 3, 4].map((i) => ({ name: 'crystal', x: (i - 2) * 0.09, y: 0.034, z: 0.13, ry: i })),
+      ...[0, 1, 2, 3, 4].map((i) => ({ name: ['crystal', 'crystal_2', 'crystal_3'][i % 3], x: (i - 2) * 0.09, y: i % 3 === 2 ? 0.025 : 0.034, z: 0.13, ry: i })),
       { name: 'orb', x: 0.2, y: 0.025, z: 0.05 },
       { name: 'balloon_round', x: -0.2, y: 0, z: -0.02 },
       { name: 'balloon_long', x: -0.14, y: 0, z: -0.06 },

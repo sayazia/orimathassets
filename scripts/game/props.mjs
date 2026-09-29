@@ -6,11 +6,20 @@ const both = (f) => { f(1); f(-1); };
 const UP = [-60, 0, 0]; // anchor tilt: +Z turned up towards a seated player's eyes
 
 // ------------------------------------------------------------------ Orb Forge
-function crystal(rig) {
+// Paper gems like folded card models: flat facets, sharp creases, one colour with its shade.
+// kind 1: a long bipyramid, 2: a hexagonal prism with pointed caps, 3: a short fat bipyramid.
+const CRYSTALS = {
+  1: { rings: [[9, 15, 0], [1, 15.5, 0.5]], top: 23, bottom: -25, n: 6 },
+  2: { rings: [[14, 12, 0], [-14, 12, 0]], top: 25, bottom: -25, n: 6 },
+  3: { rings: [[4, 17, 0], [-1, 16, 0.5]], top: 15, bottom: -16, n: 5 },
+};
+function crystal(rig, kind = 1) {
+  const { rings, top, bottom, n } = CRYSTALS[kind];
+  const ring = (y, r, off) => [...Array(n).keys()].map((i) => { const a = ((i + off) / n) * Math.PI * 2; return [Math.cos(a) * r, y, Math.sin(a) * r]; });
   const gem = rig.root.add('gem', [0, 0, 0]);
-  const ring = (y, r, off) => [...Array(8).keys()].map((i) => { const a = ((i + off) / 8) * Math.PI * 2; return [Math.cos(a) * r, y, Math.sin(a) * r]; });
-  gem.mesh((m) => m.hull('lavender*', [[0, 25, 0], [0, -25, 0], ...ring(9, 14.5, 0.25), ...ring(0, 17.5, 0), ...ring(-9, 14.5, 0.25)]));
-  rig.root.anchorAt('label_anchor', [0, 0, 19]);
+  gem.mesh((m) => m.hull('lavender*', [[0, top, 0], [0, bottom, 0], ...rings.flatMap(([y, r, off]) => ring(y, r, off))]));
+  const front = Math.max(...rings.map(([, r]) => r));
+  rig.root.anchorAt('label_anchor', [0, 0, front + 1.5]);
   rig.root.anchorAt('hand_anchor', [0, 0, 0]);
 }
 
@@ -54,40 +63,78 @@ function shieldBadge(rig) {
   rig.root.anchorAt('label_anchor', [0, 36, 5.5]);
 }
 
-// ------------------------------------------------------------------ Balloon Burst (origin at the bottom of the string)
-function string(m, top) {
-  // a paper ribbon that zigzags gently down from the knot
-  const pts = [[0, top, 0], [2.5, top * 0.7, 0], [-2.5, top * 0.38, 0], [0, 0, 0]];
-  for (let i = 0; i < 3; i++) m.beam('paper*', pts[i], pts[i + 1], 2);
+// ------------------------------------------------------------------ Balloon Burst (origin at the bottom of the basket)
+// Paper-cut hot-air balloons: vertical paper gores, each bulging out a little like a folded strip,
+// alternating light (sky) and dark (blue) paper so the stripes read like layered card.
+const LIGHT = 'sky*', DARK = 'blue*';
+// Half outline of a round-topped balloon: an arc over the top, then a straight taper to the throat.
+function balloonOutline(cy, rx, ry, throatY, throatR) {
+  const pts = [];
+  for (let i = 0; i <= 6; i++) { const t = Math.PI / 2 - (i / 6) * (Math.PI / 2 + 0.55); pts.push([Math.cos(t) * rx, cy + Math.sin(t) * ry]); }
+  pts.push([throatR, throatY]);
+  return pts; // from the top (x = 0) round to the throat
+}
+// One gore between angles a0 and a1: a wedge from the axis whose middle bulges out.
+// cx shifts it sideways and zs squashes it front to back (for the heart).
+function gore(m, c, half, a0, a1, bulge = 1.06, cx = 0, zs = 1) {
+  const am = (a0 + a1) / 2, pts = [];
+  for (const [r, y] of half) {
+    pts.push([cx, y, 0]);
+    for (const [a, k] of [[a0, 1], [am, bulge], [a1, 1]]) pts.push([cx + Math.cos(a) * r * k, y, Math.sin(a) * r * k * zs]);
+  }
+  m.hull(c, pts);
+}
+function basket(rig, throatY, throatR) {
+  rig.root.add('basket', [0, 0, 0]).mesh((m) => {
+    m.frustum('wood*', [0, 0], 8, 10, 0, 11, 8, Math.PI / 8);
+    m.frustum('wood*', [0, 0], 10.8, 10.8, 9.5, 12, 8, Math.PI / 8); // folded rim
+  });
+  // four paper strings from the basket rim up to the balloon's throat
+  rig.root.add('string', [0, 12, 0]).mesh((m) => {
+    for (let i = 0; i < 4; i++) {
+      const a = Math.PI / 4 + (i / 4) * Math.PI * 2;
+      m.beam('wood*', [Math.cos(a) * 8.5, 12, Math.sin(a) * 8.5], [Math.cos(a) * throatR * 0.8, throatY + 1, Math.sin(a) * throatR * 0.8], 1);
+    }
+  });
 }
 function balloon(rig, shape) {
   const skin = rig.root.add('skin', [0, 0, 0]);
-  const C = 'sky*';
-  let knotY, centre;
+  let throatY, throatR, centre, zFront;
   skin.mesh((m) => {
-    if (shape === 'round') { centre = [0, 87.5, 0]; m.hull(C, blob(centre, 32.5, 32.5, 32.5, 8, 0.2)); knotY = 55; }
-    if (shape === 'long') { centre = [0, 90, 0]; m.hull(C, blob(centre, 22, 40, 22, 8, 0.2)); knotY = 50; }
     if (shape === 'heart') {
-      centre = [0, 88, 0];
-      both((s) => m.hull(C, blob([s * 15, 97, 0], 18, 18, 17, 7, 0.2)));
-      m.hull(C, [[-31, 96, 0], [31, 96, 0], [0, 55, 0], [-18, 90, 13], [18, 90, 13], [-18, 90, -13], [18, 90, -13], [0, 75, 9], [0, 75, -9]]);
-      knotY = 55;
+      // two round gore lobes on top of a flattened gore cone
+      centre = [0, 92, 0]; throatY = 44; throatR = 4; zFront = 16;
+      const lobe = [...Array(6).keys()].map((k) => { const t = (k / 5) * Math.PI; return [Math.sin(t) * 17, 102 + Math.cos(t) * 17]; });
+      const cone = [[29, 104], [29, 96], [22, 78], [throatR, throatY]];
+      for (let i = 0; i < 10; i++) {
+        const a0 = (i / 10) * Math.PI * 2, a1 = ((i + 1) / 10) * Math.PI * 2, c = i % 2 ? LIGHT : DARK;
+        both((s) => gore(m, c, lobe, a0, a1, 1.06, s * 13, 0.85));
+        gore(m, c, [[0.1, 104], ...cone], a0, a1, 1.04, 0, 0.55);
+      }
+      return;
     }
+    const n = 12;
+    const half = shape === 'long' ? balloonOutline(96, 21, 34, 48, 6) : balloonOutline(86, 31, 31, 44, 7);
+    throatY = half[half.length - 1][1]; throatR = half[half.length - 1][0];
+    centre = [0, shape === 'long' ? 96 : 86, 0];
+    zFront = shape === 'long' ? 23 : 33.5;
+    for (let i = 0; i < n; i++) gore(m, i % 2 ? LIGHT : DARK, half, (i / n) * Math.PI * 2, ((i + 1) / n) * Math.PI * 2);
   });
-  const knot = rig.root.add('knot', [0, knotY, 0]);
-  knot.mesh((m) => m.frustum('sky*', [0, 0], 3, 6, knotY - 5, knotY + 1, 6, 0));
-  rig.root.add('string', [0, 0, 0]).mesh((m) => string(m, knotY - 5));
-  const zFront = shape === 'long' ? 23 : shape === 'heart' ? 18 : 33.5;
-  rig.root.anchorAt('label_anchor', [0, centre[1] + (shape === 'heart' ? 4 : 0), zFront]);
+  // paper band that holds the gores together at the throat
+  rig.root.add('knot', [0, throatY, 0]).mesh((m) => m.frustum(DARK, [0, 0], throatR + 1, throatR + 2, throatY - 2, throatY + 2, 8, Math.PI / 8));
+  basket(rig, throatY - 2, throatR + 1);
+  rig.root.anchorAt('label_anchor', [0, centre[1], zFront]);
 }
 
 function popPieces(rig) {
+  // curved paper gores that fly apart when the balloon bursts
   for (let i = 0; i < 8; i++) {
-    const a = (i / 8) * Math.PI * 2, r = 30, s = 10 + (i % 3) * 5;
+    const a = (i / 8) * Math.PI * 2, r = 30, h = 12 + (i % 3) * 5, w = 4 + (i % 2) * 2;
     const c = [Math.cos(a) * r, 20 + (i % 2) * 12, Math.sin(a) * r];
+    const t = [-Math.sin(a), 0, Math.cos(a)], tilt = (i % 3 - 1) * 0.5;
     rig.root.add(`piece_${i}`, c).mesh((m) => {
-      const pts = [0, 1, 2].map((k) => { const b = a + (k * 2.1) + i; return [c[0] + Math.cos(b) * s / 2, c[1] + Math.sin(b * 1.3) * s / 2, c[2] + Math.sin(b) * s / 2]; });
-      plate(m, 'sky*', pts, 2);
+      const P = (u, v) => [c[0] + t[0] * u + Math.cos(a) * v * tilt, c[1] + v, c[2] + t[2] * u + Math.sin(a) * v * tilt];
+      plate(m, i % 2 ? LIGHT : DARK, [P(0, h / 2), P(w, h / 4), P(w, -h / 4), P(0, -h / 2), P(-w, -h / 4), P(-w, h / 4)], 1.6);
     });
   }
 }
@@ -145,12 +192,16 @@ function sortBin(rig) {
   rig.root.anchorAt('drop_anchor', [0, 40, 0]);
 }
 function itemToken(rig) {
+  // a folded paper envelope lying flat: side and bottom folds tucked in, the top flap folded down over them
+  const W = 21, D = 14; // half width (x) and half depth (z); the flap edge is at -z, the bottom edge faces the player
+  const tri = (c, a, b, p, y0, y1) => m => m.hull(c, [...[a, b, p].map(([x, z]) => [x, y0, z]), ...[a, b, p].map(([x, z]) => [x, y1, z])]);
   rig.root.add('token', [0, 0, 0]).mesh((m) => {
-    const oct = (y, a, c) => [[-a + c, y, -a], [a - c, y, -a], [a, y, -a + c], [a, y, a - c], [a - c, y, a], [-a + c, y, a], [-a, y, a - c], [-a, y, -a + c]];
-    m.hull('cream*', [...oct(-10, 18.5, 2), ...oct(-8.5, 20, 2.5), ...oct(7.5, 20, 2.5), ...oct(9, 18.5, 2)]);
-    m.hull('sand*', [[-19, 9, -19], [19, 9, -19], [0, 9, 3], [-19, 10.5, -19], [19, 10.5, -19], [0, 10.5, 3]]); // envelope flap
+    m.box('coral*', [-W, -2, -D], [W, -0.8, D]); // back of the envelope
+    both((s) => tri('coral*', [s * W, -D], [s * W, D], [s * 3, 0.5], -0.8, 0)(m)); // side folds
+    tri('coral*', [-W, D], [W, D], [0, -2], 0, 0.8)(m); // bottom fold
+    tri('red*', [-W - 0.3, -D - 0.3], [W + 0.3, -D - 0.3], [0, 5], 0.8, 2)(m); // top flap
   });
-  rig.root.anchorAt('label_anchor', [0, 11, 8], UP);
+  rig.root.anchorAt('label_anchor', [0, 1, 9], UP);
   rig.root.anchorAt('hand_anchor', [0, 0, 0]);
 }
 
@@ -295,15 +346,17 @@ const MISSION_GATES = [
 const PINS = [{ id: 'a', pal: { main: 'coral' } }, { id: 'b', pal: { main: 'cobalt' } }];
 
 export const orbForge = [
-  G('orb_forge', 'crystal', [0.035, 0.035, 0.05], crystal, { notes: 'Neutral lavender; the game recolours the lavender materials. Origin at the centre.' }),
+  G('orb_forge', 'crystal', [0.03, 0.03, 0.048], (r) => crystal(r, 1), { notes: 'Long paper gem. Neutral lavender; the game recolours the lavender materials. Origin at the centre.' }),
+  G('orb_forge', 'crystal_2', [0.024, 0.024, 0.05], (r) => crystal(r, 2), { notes: 'Paper gem: hexagonal prism with pointed caps. Neutral lavender; the game recolours it. Origin at the centre.' }),
+  G('orb_forge', 'crystal_3', [0.035, 0.035, 0.031], (r) => crystal(r, 3), { notes: 'Short fat paper gem. Neutral lavender; the game recolours it. Origin at the centre.' }),
   G('orb_forge', 'orb', [0.05, 0.05, 0.05], orb, { notes: 'Origin at the centre.' }),
   G('orb_forge', 'crystal_tray', [0.46, 0.07, 0.015], crystalTray, { notes: 'slot_0..4 sit 0.09 m apart on the seat tops.' }),
   G('orb_forge', 'shield_badge', [0.05, 0.01, 0.06], shieldBadge),
 ];
 export const balloons = [
-  G('balloon', 'balloon_round', [0.065, 0.065, 0.12], (r) => balloon(r, 'round'), { notes: 'Origin at the bottom end of the string. Sky blue; the game recolours sky/sky_shade.' }),
-  G('balloon', 'balloon_long', [0.044, 0.044, 0.13], (r) => balloon(r, 'long'), { notes: 'Origin at the bottom end of the string.' }),
-  G('balloon', 'balloon_heart', [0.065, 0.035, 0.12], (r) => balloon(r, 'heart'), { notes: 'Origin at the bottom end of the string.' }),
+  G('balloon', 'balloon_round', [0.065, 0.065, 0.12], (r) => balloon(r, 'round'), { notes: 'Paper-cut hot-air balloon. Origin at the bottom of the basket. Gores alternate sky/sky_shade and blue/blue_shade; the game recolours both pairs.' }),
+  G('balloon', 'balloon_long', [0.044, 0.044, 0.13], (r) => balloon(r, 'long'), { notes: 'Paper-cut hot-air balloon. Origin at the bottom of the basket.' }),
+  G('balloon', 'balloon_heart', [0.065, 0.035, 0.12], (r) => balloon(r, 'heart'), { notes: 'Paper-cut hot-air balloon. Origin at the bottom of the basket.' }),
   G('balloon', 'balloon_pop_pieces', [0.08, 0.08, 0.05], popPieces, { notes: 'Each piece_N has its origin at its own centre, laid out in a ring for the burst effect.' }),
 ];
 export const factory = [
@@ -311,7 +364,7 @@ export const factory = [
   G('factory', 'conveyor_start', [0.08, 0.06, 0.05], conveyorStart, { notes: 'Its belt end at x = +0.04 joins a conveyor_straight whose centre is at x = +0.1.' }),
   G('factory', 'sort_gate', [0.09, 0.06, 0.12], sortGate, { variants: MISSION_GATES, notes: 'Stands across the belt (items travel along x). Gates 1 to 3 in coral, cobalt, sunflower.' }),
   G('factory', 'sort_bin', [0.08, 0.06, 0.04], sortBin),
-  G('factory', 'item_token', [0.04, 0.04, 0.02], itemToken, { notes: 'Origin at the centre.' }),
+  G('factory', 'item_token', [0.043, 0.029, 0.004], itemToken, { notes: 'A flat folded paper envelope. Origin at the centre; the flap points at -z, the label sits on the bottom fold.' }),
 ];
 export const bridge = [
   G('bridge', 'gap_cliffs', [0.4, 0.1, 0.06], gapCliffs, { notes: 'Gap 0.24 m = one bridge unit, between the two sockets.' }),

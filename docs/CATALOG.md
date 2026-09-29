@@ -274,23 +274,25 @@ Pratinjau: `previews/foldlings/`, `previews/book/` (depan, tiga perempat, sampin
 ## B2. Perlengkapan enam jenis game ✅
 
 Folder `models/game/<grup>/`. Kolom: segitiga, +garis tinta, KB, ukuran nyata (x×z×y, m), anchor, node bagian.
-Semua lolos validator (0 error, 0 warning). Total B2: 30 aset, 33 berkas GLB.
+Semua lolos validator (0 error, 0 warning). Total B2: 32 aset, 35 berkas GLB.
 
 | File | Segitiga | +garis | KB | Ukuran | Anchor | Bagian |
 |---|---|---|---|---|---|---|
-| game/orb_forge/crystal | 48 | 0 | 5.2 | 0.035×0.035×0.050 | label_anchor, hand_anchor | gem |
+| game/orb_forge/crystal | 24 | 0 | 3.4 | 0.030×0.031×0.048 | label_anchor, hand_anchor | gem |
+| game/orb_forge/crystal_2 | 24 | 0 | 3.1 | 0.024×0.021×0.050 | label_anchor, hand_anchor | gem |
+| game/orb_forge/crystal_3 | 20 | 0 | 3.1 | 0.033×0.032×0.031 | label_anchor, hand_anchor | gem |
 | game/orb_forge/orb | 174 | 0 | 13.6 | 0.054×0.054×0.054 | label_anchor, hand_anchor | core |
 | game/orb_forge/crystal_tray | 200 | 0 | 12.2 | 0.464×0.074×0.015 | slot_0, slot_1, slot_2, slot_3, slot_4 | tray |
 | game/orb_forge/shield_badge | 52 | 0 | 5.3 | 0.050×0.010×0.060 | label_anchor | badge |
-| game/balloon/balloon_round | 104 | 0 | 10.0 | 0.064×0.064×0.120 | label_anchor | skin, knot, string |
-| game/balloon/balloon_long | 104 | 0 | 10.0 | 0.043×0.043×0.130 | label_anchor | skin, knot, string |
-| game/balloon/balloon_heart | 154 | 0 | 13.7 | 0.065×0.033×0.115 | label_anchor | skin, knot, string |
-| game/balloon/balloon_pop_pieces | 64 | 0 | 11.5 | 0.073×0.076×0.033 |  | piece_0, piece_1, piece_2, piece_3, piece_4, piece_5, piece_6, piece_7 |
+| game/balloon/balloon_round | 780 | 0 | 40.1 | 0.063×0.063×0.117 | label_anchor | skin, knot, basket, string |
+| game/balloon/balloon_long | 780 | 0 | 40.1 | 0.042×0.042×0.130 | label_anchor | skin, knot, basket, string |
+| game/balloon/balloon_heart | 1019 | 0 | 52.2 | 0.059×0.033×0.119 | label_anchor | skin, knot, basket, string |
+| game/balloon/balloon_pop_pieces | 160 | 0 | 15.6 | 0.065×0.070×0.035 |  | piece_0, piece_1, piece_2, piece_3, piece_4, piece_5, piece_6, piece_7 |
 | game/factory/conveyor_straight | 148 | 0 | 11.2 | 0.120×0.064×0.031 |  | frame, belt |
 | game/factory/conveyor_start | 144 | 0 | 10.3 | 0.080×0.064×0.050 | spawn_anchor | frame |
-| game/factory/sort_gate (+2 varian) | 88 | 88 | 11.0 | 0.064×0.064×0.121 | label_anchor | arch, sign, chute |
+| game/factory/sort_gate (+2 varian) | 88 | 0 | 8.4 | 0.064×0.064×0.121 | label_anchor | arch, sign, chute |
 | game/factory/sort_bin | 60 | 0 | 4.3 | 0.084×0.063×0.040 | drop_anchor | bin |
-| game/factory/item_token | 68 | 0 | 6.0 | 0.040×0.040×0.021 | label_anchor, hand_anchor | token |
+| game/factory/item_token | 44 | 0 | 5.0 | 0.043×0.028×0.004 | label_anchor, hand_anchor | token |
 | game/bridge/gap_cliffs | 56 | 0 | 7.4 | 0.400×0.100×0.060 | socket_plank_start, socket_plank_end | cliff_right, cliff_left |
 | game/bridge/plank_1 | 40 | 0 | 4.1 | 0.240×0.040×0.006 | label_anchor, hand_anchor | plank |
 | game/bridge/plank_1_2 | 40 | 0 | 4.1 | 0.120×0.040×0.006 | label_anchor, hand_anchor | plank |
@@ -325,8 +327,12 @@ Pratinjau: `previews/game/<grup>/`, `previews/sheet_{orb_forge,balloon,factory,b
 4. **Gerbang sortir** 1 sampai 3 berupa berkas varian (`sort_gate`, `sort_gate_2`, `sort_gate_3`) dalam coral,
    cobalt, sunflower. Papan label menghadap pemain (+Z); gerbang melintang di atas ban berjalan.
 5. **Pin penanda** A (coral, berkas dasar) dan B (cobalt, `marker_pin_b`).
-6. **Kristal dan balon** memakai warna netral (lavender, sky) yang diganti game lewat nama material.
-7. Beberapa benda kecil (kristal 48, token 68, papan 40) di dekat batas bawah 40 segitiga: bentuknya memang sederhana.
+6. **Kristal dan balon** memakai warna netral (lavender; balon sky dan blue) yang diganti game lewat nama material.
+   Kristal punya tiga bentuk permata kertas: `crystal` (panjang), `crystal_2` (prisma segi enam berujung
+   runcing), `crystal_3` (pendek gemuk). Balon berupa balon udara kertas: pita vertikal sky dan blue
+   berselang-seling, tali, dan keranjang; origin di dasar keranjang. `item_token` berupa amplop kertas
+   terlipat yang tergeletak datar, tutupnya ke arah -z.
+7. Beberapa benda kecil (kristal 10 sampai 24, papan 40) di dekat batas bawah 40 segitiga: bentuknya memang sederhana.
 
 ## B3. Model bantuan visual ✅
 

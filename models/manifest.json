@@ -5621,25 +5621,25 @@
     "sheet": "orb_forge",
     "file": "game/orb_forge/crystal.glb",
     "unit": "m",
-    "triangles": 48,
+    "triangles": 24,
     "outline_triangles": 0,
     "bounds": {
       "min": [
-        -0.0175,
+        -0.015,
         -0.025,
-        -0.0175
+        -0.0155
       ],
       "max": [
-        0.0175,
-        0.025,
-        0.0175
+        0.015,
+        0.023,
+        0.0155
       ]
     },
     "anchors": {
       "label_anchor": [
         0,
         0,
-        0.019
+        0.017
       ],
       "hand_anchor": [
         0,
@@ -5654,7 +5654,89 @@
       "lavender",
       "lavender_shade"
     ],
-    "notes": "Neutral lavender; the game recolours the lavender materials. Origin at the centre."
+    "notes": "Long paper gem. Neutral lavender; the game recolours the lavender materials. Origin at the centre."
+  },
+  {
+    "name": "crystal_2",
+    "category": "game",
+    "sheet": "orb_forge",
+    "file": "game/orb_forge/crystal_2.glb",
+    "unit": "m",
+    "triangles": 24,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.012,
+        -0.025,
+        -0.0104
+      ],
+      "max": [
+        0.012,
+        0.025,
+        0.0104
+      ]
+    },
+    "anchors": {
+      "label_anchor": [
+        0,
+        0,
+        0.0135
+      ],
+      "hand_anchor": [
+        0,
+        0,
+        0
+      ]
+    },
+    "parts": [
+      "gem"
+    ],
+    "materials": [
+      "lavender",
+      "lavender_shade"
+    ],
+    "notes": "Paper gem: hexagonal prism with pointed caps. Neutral lavender; the game recolours it. Origin at the centre."
+  },
+  {
+    "name": "crystal_3",
+    "category": "game",
+    "sheet": "orb_forge",
+    "file": "game/orb_forge/crystal_3.glb",
+    "unit": "m",
+    "triangles": 20,
+    "outline_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.016,
+        -0.016,
+        -0.0162
+      ],
+      "max": [
+        0.017,
+        0.015,
+        0.0162
+      ]
+    },
+    "anchors": {
+      "label_anchor": [
+        0,
+        0,
+        0.0185
+      ],
+      "hand_anchor": [
+        0,
+        0,
+        0
+      ]
+    },
+    "parts": [
+      "gem"
+    ],
+    "materials": [
+      "lavender",
+      "lavender_shade"
+    ],
+    "notes": "Short fat paper gem. Neutral lavender; the game recolours it. Origin at the centre."
   },
   {
     "name": "orb",
@@ -5800,39 +5882,42 @@
     "sheet": "balloon",
     "file": "game/balloon/balloon_round.glb",
     "unit": "m",
-    "triangles": 104,
+    "triangles": 780,
     "outline_triangles": 0,
     "bounds": {
       "min": [
-        -0.0319,
-        -0.0001,
-        -0.0319
+        -0.0314,
+        0,
+        -0.0314
       ],
       "max": [
-        0.0319,
-        0.12,
-        0.0319
+        0.0314,
+        0.117,
+        0.0314
       ]
     },
     "anchors": {
       "label_anchor": [
         0,
-        0.0875,
+        0.086,
         0.0335
       ]
     },
     "parts": [
       "skin",
       "knot",
+      "basket",
       "string"
     ],
     "materials": [
-      "paper",
-      "paper_shade",
+      "blue",
+      "blue_shade",
       "sky",
-      "sky_shade"
+      "sky_shade",
+      "wood",
+      "wood_shade"
     ],
-    "notes": "Origin at the bottom end of the string. Sky blue; the game recolours sky/sky_shade."
+    "notes": "Paper-cut hot-air balloon. Origin at the bottom of the basket. Gores alternate sky/sky_shade and blue/blue_shade; the game recolours both pairs."
   },
   {
     "name": "balloon_long",
@@ -5840,39 +5925,42 @@
     "sheet": "balloon",
     "file": "game/balloon/balloon_long.glb",
     "unit": "m",
-    "triangles": 104,
+    "triangles": 780,
     "outline_triangles": 0,
     "bounds": {
       "min": [
-        -0.0216,
-        -0.0001,
-        -0.0216
+        -0.0212,
+        0,
+        -0.0212
       ],
       "max": [
-        0.0216,
+        0.0212,
         0.13,
-        0.0216
+        0.0212
       ]
     },
     "anchors": {
       "label_anchor": [
         0,
-        0.09,
+        0.096,
         0.023
       ]
     },
     "parts": [
       "skin",
       "knot",
+      "basket",
       "string"
     ],
     "materials": [
-      "paper",
-      "paper_shade",
+      "blue",
+      "blue_shade",
       "sky",
-      "sky_shade"
+      "sky_shade",
+      "wood",
+      "wood_shade"
     ],
-    "notes": "Origin at the bottom end of the string."
+    "notes": "Paper-cut hot-air balloon. Origin at the bottom of the basket."
   },
   {
     "name": "balloon_heart",
@@ -5880,39 +5968,42 @@
     "sheet": "balloon",
     "file": "game/balloon/balloon_heart.glb",
     "unit": "m",
-    "triangles": 154,
+    "triangles": 1019,
     "outline_triangles": 0,
     "bounds": {
       "min": [
-        -0.0326,
-        -0.0001,
-        -0.0155
+        -0.0293,
+        0,
+        -0.0166
       ],
       "max": [
-        0.0324,
-        0.115,
-        0.017
+        0.0293,
+        0.119,
+        0.0166
       ]
     },
     "anchors": {
       "label_anchor": [
         0,
         0.092,
-        0.018
+        0.016
       ]
     },
     "parts": [
       "skin",
       "knot",
+      "basket",
       "string"
     ],
     "materials": [
-      "paper",
-      "paper_shade",
+      "blue",
+      "blue_shade",
       "sky",
-      "sky_shade"
+      "sky_shade",
+      "wood",
+      "wood_shade"
     ],
-    "notes": "Origin at the bottom end of the string."
+    "notes": "Paper-cut hot-air balloon. Origin at the bottom of the basket."
   },
   {
     "name": "balloon_pop_pieces",
@@ -5920,18 +6011,18 @@
     "sheet": "balloon",
     "file": "game/balloon/balloon_pop_pieces.glb",
     "unit": "m",
-    "triangles": 64,
+    "triangles": 160,
     "outline_triangles": 0,
     "bounds": {
       "min": [
-        -0.0378,
-        0.0094,
-        -0.0352
+        -0.0308,
+        0.0086,
+        -0.0337
       ],
       "max": [
-        0.0351,
-        0.0424,
-        0.0403
+        0.0337,
+        0.0434,
+        0.0362
       ]
     },
     "anchors": {},
@@ -5946,6 +6037,8 @@
       "piece_7"
     ],
     "materials": [
+      "blue",
+      "blue_shade",
       "sky",
       "sky_shade"
     ],
@@ -6127,25 +6220,25 @@
     "sheet": "factory",
     "file": "game/factory/item_token.glb",
     "unit": "m",
-    "triangles": 68,
+    "triangles": 44,
     "outline_triangles": 0,
     "bounds": {
       "min": [
-        -0.02,
-        -0.01,
-        -0.02
+        -0.0213,
+        -0.002,
+        -0.0143
       ],
       "max": [
-        0.02,
-        0.0105,
-        0.02
+        0.0213,
+        0.002,
+        0.014
       ]
     },
     "anchors": {
       "label_anchor": [
         0,
-        0.011,
-        0.008
+        0.001,
+        0.009
       ],
       "hand_anchor": [
         0,
@@ -6157,12 +6250,12 @@
       "token"
     ],
     "materials": [
-      "cream",
-      "cream_shade",
-      "sand",
-      "sand_shade"
+      "coral",
+      "coral_shade",
+      "red",
+      "red_shade"
     ],
-    "notes": "Origin at the centre."
+    "notes": "A flat folded paper envelope. Origin at the centre; the flap points at -z, the label sits on the bottom fold."
   },
   {
     "name": "gap_cliffs",
