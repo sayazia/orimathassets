@@ -1,5 +1,5 @@
 // B5: supporting characters. They face the player (+Z); their left hand is at +x.
-import { plate, eye, happyEye, blob, surf, disc, hoop } from '../lib/origami.mjs';
+import { plate, eye, happyEye, blob, surf, disc, hoop, spike } from '../lib/origami.mjs';
 
 const both = (f) => { f(1); f(-1); };
 const loop = (period, n, f) => [...Array(n + 1).keys()].map((i) => [+(period * i / n).toFixed(4), f(i / n)]);
@@ -38,7 +38,8 @@ function characterClips(rig, { body = 'body', head = 'head', armL, armR, extra =
 function pip(rig) {
   const B = 'sand*', CR = 'cream', OR = 'orange', GL = 'navy';
   const body = rig.root.add('body', [0, 40, 0]);
-  const bodyPts = blob([0, 38, 0], 25, 36, 22, 10, 0.1);
+  const ring = (y, rx, rz, n, rot = 0) => [...Array(n).keys()].map((i) => { const a = rot + (i / n) * Math.PI * 2; return [Math.cos(a) * rx, y, Math.sin(a) * rz]; });
+  const bodyPts = [...ring(4, 16, 14, 4), ...ring(36, 25, 22, 6, Math.PI / 6), ...ring(66, 14, 12, 4), [0, 74, 0]]; // folded paper body: few large facets
   body.mesh((m) => {
     m.hull(B, bodyPts);
     // belly: three rows of folded chevron feathers on the player side
@@ -53,10 +54,10 @@ function pip(rig) {
     both((s) => m.hull(OR, [[s * 12, 0, 6], [s * 4, 0, 6], [s * 8, 0, 18], [s * 8, 3, 8], [s * 12, 2, 6], [s * 4, 2, 6]])); // feet
   });
   const head = body.add('head', [0, 70, 0]);
-  const headPts = blob([0, 84, 0], 28, 17, 23, 10, 0.1);
+  const headPts = [[-26, 80, 0], [26, 80, 0], [-22, 97, -10], [22, 97, -10], [-21, 96, 19], [21, 96, 19], [-21, 73, 19], [21, 73, 19], [-18, 72, -13], [18, 72, -13], [0, 86, 23], [0, 100, 4]]; // wide head, face folded down the middle
   head.mesh((m) => {
     m.hull(B, headPts);
-    both((s) => m.hull(B, [[s * 14, 95, -6], [s * 26, 92, -6], [s * 18, 96, 8], [s * 25, 108, 0], [s * 20, 92, 4]])); // ear tufts
+    both((s) => spike(m, B, [s * 12, 95, 2], [s * 23, 93, 2], [s * 26, 110, 0], [0, 0, 2], 1.6)); // flat folded ear tufts
     m.hull(OR, [[-3.5, 82, 21], [3.5, 82, 21], [0, 84, 20], [0, 74, 25], [0, 80, 27]]); // beak
     both((s) => { // facial discs and round folded glasses
       const c = surf(headPts, [s * 11, 86, 60], [0, 0, -1]).p;

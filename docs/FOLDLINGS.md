@@ -26,6 +26,9 @@ Batch status and per-asset numbers are in [`CATALOG.md`](CATALOG.md) (Indonesian
   `flag_anchor` (foot of the number flag), `spawn_anchor`, `exit_anchor`, `town_origin`.
 - **Hidden states** (`eyes_happy`) have scale 0 and `extras.hidden_by_default: true`. Set scale to 1 to show
   them (and hide `eyes` by swapping, or simply let the happy eyes cover them).
+- **Built like real origami**: bodies are tents of a few large planes meeting along the back, heads are
+  pyramids with pointed snouts, and legs, ears, tails and trunks are flat strips folded once down the middle
+  (`flapLeg`, `spike` in `scripts/lib/origami.mjs`).
 - **Small details stay plain**: eyes, noses, pupils and glasses are round discs and rings (`disc`, `hoop` in
   `scripts/lib/origami.mjs`), not folded facets; happy eyes are a smooth arc.
 - **No ink outline**: the set ships without dark contours, because real folded paper has none; folds read from

@@ -94,6 +94,22 @@ export function leg(m, c, top, foot, wTop = 6, wFoot = 4.5, dz = 4, knee = 0) {
   ]);
 }
 
+// Origami leg: a flat strip of paper from the body edge a-b down to a narrow foot, folded once along
+// its length (the crease pushed out by `out`), so one half catches the light and the other is in shade.
+export function flapLeg(m, c, a, b, foot, out = [0, 0, 1.6], footW = 3, th = 1.4) {
+  const c0 = add(mul(add(a, b), 0.5), out), c1 = add(foot, mul(out, 0.35));
+  const dir = norm(sub(b, a)), fA = sub(foot, mul(dir, footW / 2)), fB = add(foot, mul(dir, footW / 2));
+  plate(m, c, [a, c0, c1, fA], th);
+  plate(m, c, [b, fB, c1, c0], th);
+}
+
+// Long pointed flap (tail, trunk tip, fin): root edge a-b to a tip, folded along its centre line.
+export function spike(m, c, a, b, tip, out = [0, 0, 2], th = 1.4) {
+  const c0 = add(mul(add(a, b), 0.5), out);
+  plate(m, c, [a, c0, tip], th);
+  plate(m, c, [b, tip, c0], th);
+}
+
 // Diamond ("kite") shape used for ears, tails and fins: base edge a-b with a folded ridge to the tip.
 export function kite(m, c, a, b, tip, lift, th = 2) {
   const mid = mul(add(a, b), 0.5);

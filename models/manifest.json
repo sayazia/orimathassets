@@ -4582,18 +4582,18 @@
     "sheet": "foldlings",
     "file": "foldlings/foldling_fox.glb",
     "unit": "m",
-    "triangles": 438,
+    "triangles": 412,
     "outline_triangles": 0,
     "bounds": {
       "min": [
-        -0.038,
+        -0.0408,
         0,
-        -0.0115
+        -0.0116
       ],
       "max": [
-        0.0384,
-        0.059,
-        0.0115
+        0.0385,
+        0.0581,
+        0.0116
       ]
     },
     "anchors": {
@@ -4683,18 +4683,18 @@
     "sheet": "foldlings",
     "file": "foldlings/foldling_rabbit.glb",
     "unit": "m",
-    "triangles": 566,
+    "triangles": 446,
     "outline_triangles": 0,
     "bounds": {
       "min": [
-        -0.0258,
-        0,
-        -0.016
+        -0.0268,
+        -0.0001,
+        -0.015
       ],
       "max": [
-        0.0265,
-        0.0703,
-        0.016
+        0.026,
+        0.0721,
+        0.015
       ]
     },
     "anchors": {
@@ -4881,16 +4881,16 @@
     "sheet": "foldlings",
     "file": "foldlings/foldling_turtle.glb",
     "unit": "m",
-    "triangles": 274,
+    "triangles": 260,
     "outline_triangles": 0,
     "bounds": {
       "min": [
-        -0.034,
+        -0.0352,
         0,
         -0.026
       ],
       "max": [
-        0.0417,
+        0.042,
         0.028,
         0.026
       ]
@@ -4980,12 +4980,12 @@
     "sheet": "foldlings",
     "file": "foldlings/foldling_frog.glb",
     "unit": "m",
-    "triangles": 392,
+    "triangles": 424,
     "outline_triangles": 0,
     "bounds": {
       "min": [
         -0.021,
-        0,
+        -0.0003,
         -0.024
       ],
       "max": [
@@ -5172,18 +5172,18 @@
     "sheet": "foldlings",
     "file": "foldlings/foldling_cat.glb",
     "unit": "m",
-    "triangles": 392,
+    "triangles": 370,
     "outline_triangles": 0,
     "bounds": {
       "min": [
-        -0.026,
-        0,
-        -0.013
+        -0.0284,
+        -0.0001,
+        -0.0125
       ],
       "max": [
-        0.0189,
-        0.065,
-        0.013
+        0.019,
+        0.0661,
+        0.0125
       ]
     },
     "anchors": {
@@ -5269,24 +5269,24 @@
     "sheet": "foldlings",
     "file": "foldlings/foldling_elephant.glb",
     "unit": "m",
-    "triangles": 406,
+    "triangles": 390,
     "outline_triangles": 0,
     "bounds": {
       "min": [
-        -0.033,
+        -0.0345,
         0,
-        -0.022
+        -0.0198
       ],
       "max": [
-        0.044,
-        0.0553,
-        0.022
+        0.0423,
+        0.0581,
+        0.0198
       ]
     },
     "anchors": {
       "flag_anchor": [
         -0.008,
-        0.046,
+        0.048,
         0
       ],
       "label_anchor": [
@@ -7554,17 +7554,17 @@
     "sheet": "characters",
     "file": "characters/pip_owl.glb",
     "unit": "m",
-    "triangles": 1142,
+    "triangles": 1088,
     "outline_triangles": 0,
     "bounds": {
       "min": [
         -0.0344,
         0,
-        -0.0229
+        -0.022
       ],
       "max": [
         0.0344,
-        0.108,
+        0.1103,
         0.027
       ]
     },

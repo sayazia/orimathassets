@@ -1,6 +1,6 @@
 // Foldlings: origami animals that carry a number flag. Head points to +x, the flat
 // profile faces the player (+z), feet stand on y = 0. Authored in millimetres.
-import { plate, eye, happyEye, leg, surf, blob, kite, disc } from '../lib/origami.mjs';
+import { plate, eye, happyEye, leg, surf, blob, kite, disc, flapLeg, spike } from '../lib/origami.mjs';
 import { creatureClips } from '../lib/clips.mjs';
 import { MISSIONS, ROLES } from '../lib/palette.mjs';
 
@@ -31,37 +31,38 @@ function anchors(rig, flag, top) {
 }
 
 // ---------------------------------------------------------------- fox
+// Built like a folded paper fox: a tent-shaped body (two big side planes meeting along the back),
+// a pyramid head with a long pointed snout, flat triangular ears and flat folded strips for legs and tail.
 function fox(rig, { main, trim }) {
   const M = main + '*', T = trim + '*';
   const body = rig.root.add('body', [0, 24, 0]);
   body.mesh((m) => {
-    // folded torso: ridge along the back, a side crease at mid height, keel under the belly
-    m.hull(M, [[-16, 37, 0], [8, 38, 0], [-18, 28, 11], [-18, 28, -11], [8, 28, 11.5], [8, 28, -11.5], [-17, 17, 7], [-17, 17, -7], [8, 16, 8], [8, 16, -8], [-24, 29, 0], [-14, 13, 0], [6, 12.5, 0]]);
-    // cream chest: the paper's back side folded out
-    m.hull(T, [[8, 38, 0], [8, 28, 11.5], [8, 28, -11.5], [8, 16, 8], [8, 16, -8], [6, 12.5, 0], [19, 27, 0], [15, 35, 0], [16, 18, 0], [14, 27, 7], [14, 27, -7]]);
+    m.hull(M, [[-17, 36, 0], [7, 38, 0], [-23, 29, 0], [-18, 20, 8], [-18, 20, -8], [7, 19, 9.5], [7, 19, -9.5], [-5, 28, 11.5], [-5, 28, -11.5], [-6, 16, 0]]); // tent body, creased across the flank
+    m.hull(T, [[7, 38, 0], [7, 19, 9.5], [7, 19, -9.5], [16, 25, 0]]); // pointed cream chest
   });
   const head = body.add('head', [12, 37, 0]);
-  const headPts = [[10, 48, 0], [8, 39, 9], [8, 39, -9], [20, 34, 11.5], [20, 34, -11.5], [18, 29.5, 0], [37, 31.5, 0], [26, 42, 3], [26, 42, -3], [14, 45, 6.5], [14, 45, -6.5], [29, 34, 5], [29, 34, -5]];
+  const headPts = [[10, 47, 0], [23, 42, 0], [13, 36, 10.5], [13, 36, -10.5], [17, 30, 0], [38, 31.5, 0]];
   head.mesh((m) => {
     m.hull(M, headPts);
-    m.hull(T, [[20, 32.5, 8.5], [20, 32.5, -8.5], [18, 29.2, 0], [35.5, 30.8, 0], [28, 31.4, 4.5], [28, 31.4, -4.5]]); // muzzle
-    disc(m, 'ink', [37.2, 32.2, 0], [1, 0.25, 0], 1.9, 1.6); // nose
+    m.hull(T, [[17, 30, 0], [19, 33, 7.5], [19, 33, -7.5], [36, 31, 0], [20, 30.5, 0]]); // cream lower jaw
+    disc(m, 'ink', [37.6, 31.8, 0], [1, 0.1, 0], 1.7, 1.4); // nose
   });
-  eyes(head, headPts, [23, 39], { size: 4.6 });
+  eyes(head, headPts, [22, 39], { size: 4.4 });
   both((s) => {
-    const ear = head.add(s > 0 ? 'ear_l' : 'ear_r', [14, 44, s * 6]);
+    const ear = head.add(s > 0 ? 'ear_l' : 'ear_r', [13, 44, s * 5]);
     ear.mesh((m) => {
-      m.hull(M, [[9, 43, s * 3], [19, 42.5, s * 5], [13, 45.5, s * 10.5], [12, 59, s * 7.5], [14.5, 45, s * 3], [14, 50, s * 5]]);
-      plate(m, T, [[11.6, 45, s * 9.9], [17.2, 44.4, s * 8.2], [12.7, 55.5, s * 8.5]].map((p) => [p[0], p[1], p[2] + s * 0.4]), 1.2);
+      spike(m, M, [9, 44.5, s * 3], [17, 42.5, s * 6.5], [11, 58, s * 7], [0.6, 0, s * 1.4], 1.4); // flat folded triangle
+      plate(m, T, [[11, 45.5, s * 5.6], [15.4, 44.2, s * 7.2], [11.4, 54, s * 7.9]], 0.8);
     });
   });
-  const tail = body.add('tail', [-19, 29, 0]);
+  const tail = body.add('tail', [-19, 30, 0]);
   tail.mesh((m) => {
-    m.hull(M, [[-16, 35, 4.5], [-16, 35, -4.5], [-18, 21, 4.5], [-18, 21, -4.5], [-28, 24, 0], [-34, 32, 8], [-34, 32, -8], [-32, 44, 6.5], [-32, 44, -6.5], [-25, 42, 0], [-38, 38, 0]]);
-    m.hull(T, [[-32, 44, 6.5], [-32, 44, -6.5], [-25, 42, 0], [-38, 38, 0], [-36, 45, 4.5], [-36, 45, -4.5], [-34, 57, 0], [-29, 50, 3], [-29, 50, -3]]);
+    spike(m, M, [-18, 35, 0], [-21, 25, 0], [-40, 44, 0], [-1, 0, 5]); // long flat brush, creased down the middle
+    spike(m, T, [-34.6, 40.6, 0], [-36.4, 38.2, 0], [-40.4, 44.4, 0], [0, 0, 3.4], 1); // cream tip
   });
-  for (const [n, x, z] of [['leg_fl', 6, 6], ['leg_fr', 6, -6], ['leg_bl', -14, 6], ['leg_br', -14, -6]]) {
-    body.add(n, [x, 18, z]).mesh((m) => leg(m, M, [x, 19, z], [x + (x > 0 ? 2 : -1), 0, z * 1.15], 9, 5.5, 7, x > 0 ? -1.5 : 1.5));
+  for (const [n, x, z] of [['leg_fl', 4, 1], ['leg_fr', 4, -1], ['leg_bl', -15, 1], ['leg_br', -15, -1]]) {
+    const zz = z * 9.2;
+    body.add(n, [x, 19, zz]).mesh((m) => flapLeg(m, M, [x - 4, 20, zz], [x + 4, 20, zz], [x + (x > 0 ? 1.5 : -1), 0, zz * 1.05], [0, 0, z * 1.8]));
   }
   anchors(rig, [-4, 38, 0], 72);
   creatureClips(rig, { head: 'head', tail: 'tail', legs: ['leg_fl', 'leg_fr', 'leg_bl', 'leg_br'], ears: ['ear_l', 'ear_r'] });
@@ -72,31 +73,32 @@ function rabbit(rig, { main, trim }) {
   const M = main + '*', T = trim + '*';
   const body = rig.root.add('body', [-4, 18, 0]);
   body.mesh((m) => {
-    m.hull(M, blob([-5, 18, 0], 15, 17, 13, 6, 0.3));
-    m.hull(T, [[4, 30, 0], [9, 22, 6], [9, 22, -6], [8, 10, 5], [8, 10, -5], [12, 18, 0], [4, 8, 0]]); // cream belly flap
-    m.hull(T, blob([-21, 16, 0], 5, 5, 5, 10)); // pom tail
+    m.hull(M, [[-19, 22, 0], [-6, 34, 0], [9, 26, 0], [-19, 1, 10], [-19, 1, -10], [7, 1, 8], [7, 1, -8], [-7, 17, 13], [-7, 17, -13], [-23, 10, 0]]); // seated pyramid
+    m.hull(M, [[-4, 30, 5], [-4, 30, -5], [8, 27, 0], [3, 36, 0], [10, 34, 0]]); // neck fold up to the head
+    m.hull(T, [[9, 26, 0], [7, 2, 7], [7, 2, -7], [12, 13, 0]]); // pointed cream belly
+    m.hull(T, blob([-22, 16, 0], 5, 5, 5, 10)); // round pom tail
   });
   const head = body.add('head', [6, 33, 0]);
-  const headPts = [...blob([12, 40, 0], 11, 10, 11, 6, 0.26), [25, 37, 0], [23, 41, 3], [23, 41, -3]];
+  const headPts = [[6, 48, 0], [16, 47, 0], [7, 38, 9.5], [7, 38, -9.5], [25, 37, 0], [12, 31, 0]];
   head.mesh((m) => {
     m.hull(M, headPts);
-    m.hull(T, [[18, 34, 6], [18, 34, -6], [25.4, 36.6, 0], [22, 33.2, 0], [23, 38, 3.5], [23, 38, -3.5]]); // muzzle
-    disc(m, 'ink', [25.4, 38.4, 0], [1, 0.25, 0], 1.6, 1.3); // nose
+    m.hull(T, [[19, 33.4, 4.6], [19, 33.4, -4.6], [24.6, 36.4, 0], [15, 31.6, 0]]); // cream muzzle
+    disc(m, 'ink', [24.9, 37.6, 0], [1, 0.3, 0], 1.5, 1.2); // nose
   });
-  eyes(head, headPts, [17, 42], { size: 4.6 });
+  eyes(head, headPts, [16, 42], { size: 4.4 });
   both((s) => {
-    const ear = head.add(s > 0 ? 'ear_l' : 'ear_r', [9, 48, s * 4]);
+    const ear = head.add(s > 0 ? 'ear_l' : 'ear_r', [9, 47, s * 4]);
     ear.mesh((m) => {
-      kite(m, M, [5, 47, s * 2], [13, 47, s * 6], [3, 70, s * 8], [0, 0, s * 3], 2.2);
-      plate(m, T, [[6.5, 50, s * 5.6], [11, 50, s * 7.2], [4.6, 64, s * 8.9]], 1.2);
+      spike(m, M, [5, 46, s * 2.5], [13, 45.5, s * 5.5], [3, 72, s * 8], [0.8, 0, s * 1.8], 1.4); // long flat ear, creased
+      plate(m, T, [[7, 49, s * 5.3], [11, 48.6, s * 6.4], [4.6, 66, s * 8.4]], 0.8);
     });
   });
   both((s) => {
     body.add(s > 0 ? 'leg_bl' : 'leg_br', [-10, 12, s * 11]).mesh((m) => {
-      m.hull(M, [...blob([-10, 11, s * 12.5], 10, 10, 3.5, 6), [-18, 4, s * 13]]); // haunch
-      m.hull(M, [[-14, 0, s * 10], [-14, 0, s * 16], [6, 0, s * 12], [6, 0, s * 15], [-12, 5, s * 13], [2, 3, s * 13.5]]); // long hind foot
+      spike(m, M, [-21, 2, s * 12], [0, 1.5, s * 11.5], [-12, 23, s * 12.5], [0, 0, s * 2.4], 1.6); // flat folded haunch
+      m.hull(M, [[-15, 0, s * 10], [-15, 0, s * 15], [7, 0, s * 12.5], [-15, 2, s * 10], [-15, 2, s * 15], [7, 1.4, s * 12.5]]); // long flat hind foot
     });
-    body.add(s > 0 ? 'leg_fl' : 'leg_fr', [7, 16, s * 6]).mesh((m) => leg(m, M, [7, 17, s * 6], [10, 0, s * 6.5], 6, 5, 5, -1));
+    body.add(s > 0 ? 'leg_fl' : 'leg_fr', [7, 16, s * 6]).mesh((m) => flapLeg(m, M, [4, 17, s * 6], [10, 17, s * 6], [10, 0, s * 6.5], [0, 0, s * 1.4], 2.6));
   });
   anchors(rig, [-8, 34, 0], 82);
   creatureClips(rig, { head: 'head', tail: null, legs: ['leg_fl', 'leg_fr', 'leg_bl', 'leg_br'], ears: ['ear_l', 'ear_r'], hopHeight: 20 });
@@ -144,7 +146,7 @@ function turtle(rig, { main, trim }) {
     m.hull(T, [...hex(22, 9.2, 0), ...hex(18, 4, 0)]); // plastron
   });
   const head = body.add('head', [22, 12, 0]);
-  const headPts = [...blob([33, 15, 0], 9, 7, 7.5, 6, 0.26), [20, 14, 5], [20, 14, -5], [20, 8, 0]];
+  const headPts = [[20, 14, 5], [20, 14, -5], [20, 8, 0], [30, 21, 0], [42, 14, 0], [31, 9, 0], [32, 15, 7], [32, 15, -7]]; // pyramid head, pointed snout
   head.mesh((m) => m.hull(M, headPts));
   eyes(head, headPts, [36, 17], { size: 4.2 });
   for (const [n, x, z] of [['leg_fl', 13, 1], ['leg_fr', 13, -1], ['leg_bl', -16, 1], ['leg_br', -16, -1]]) {
@@ -155,7 +157,7 @@ function turtle(rig, { main, trim }) {
     });
   }
   const tail = body.add('tail', [-26, 8, 0]);
-  tail.mesh((m) => m.hull(M, [[-24, 10, 3], [-24, 10, -3], [-24, 5, 0], [-34, 4, 0], [-28, 8, 0]]));
+  tail.mesh((m) => spike(m, M, [-24, 10, 0], [-24, 5, 0], [-35, 4, 0], [0, 0, 2.4], 1.4));
   anchors(rig, [-2, 28, 0], 48);
   creatureClips(rig, { head: 'head', tail: 'tail', legs: ['leg_fl', 'leg_fr', 'leg_bl', 'leg_br'], hopHeight: 8 });
 }
@@ -169,13 +171,13 @@ function frog(rig, { main, trim }) {
     m.hull(M, bodyPts);
     m.hull(T, [[21, 14, 0], [14, 5.6, 8.6], [14, 5.6, -8.6], [-2, 3, 8], [-2, 3, -8], [17, 10, 5], [17, 10, -5]]); // cream throat and belly
     both((s) => m.hull(M, blob([8, 27, s * 7], 5, 5, 5, 10))); // eye bumps
-    both((s) => leg(m, M, [10, 10, s * 9], [15, 0, s * 13], 6, 5, 4, 1)); // front legs
+    both((s) => flapLeg(m, M, [8, 11, s * 9], [13, 11, s * 9], [15, 0, s * 13], [0, 0, s * 1.4], 3)); // front legs
   });
   eyes(body, (s) => blob([8, 27, s * 7], 5, 5, 5, 10), [8, 28], { size: 4.4, tilt: [-0.6, -0.4, 1], zc: 7 });
   both((s) => {
     body.add(s > 0 ? 'leg_bl' : 'leg_br', [-12, 9, s * 12]).mesh((m) => {
-      m.hull(M, [[-16, 12, s * 10], [-10, 5, s * 11], [-8, 13, s * 11], [4, 9, s * 19], [2, 6, s * 20], [-12, 8, s * 14]]); // thigh forward
-      m.hull(M, [[4, 10, s * 18.5], [3, 5, s * 21], [-19, 3, s * 21.5], [-19, 7, s * 18.5], [-8, 9, s * 22]]); // shin back
+      spike(m, M, [-17, 12, s * 10], [-9, 4, s * 11], [5, 8, s * 19.5], [0, 1.6, s * 1.4], 1.6); // flat thigh folded forward
+      spike(m, M, [5, 10, s * 19], [3, 4.5, s * 20], [-20, 4, s * 21.5], [0, 1.6, s * 1], 1.6); // flat shin folded back
       m.hull(M, [[-21, 0, s * 17], [-21, 0, s * 24], [-9, 0, s * 24], [-6, 0, s * 20.5], [-20, 2.4, s * 18], [-19, 2.4, s * 23], [-10, 2.4, s * 22]]); // foot
     });
   });
@@ -209,29 +211,29 @@ function cat(rig, { main, trim }) {
   const M = main + '*', T = trim + '*';
   const body = rig.root.add('body', [0, 16, 0]);
   body.mesh((m) => {
-    m.hull(M, [[-14, 0, 11], [-14, 0, -11], [6, 0, 11], [6, 0, -11], [-17, 12, 0], [-12, 22, 9], [-12, 22, -9], [4, 36, 7], [4, 36, -7], [-6, 38, 0], [10, 30, 0], [-4, 8, 13], [-4, 8, -13]]);
-    m.hull(T, [[10, 30, 0], [4, 35.6, 6.4], [4, 35.6, -6.4], [7, 12, 6], [7, 12, -6], [11, 20, 3], [11, 20, -3], [6, 4, 0]]); // bib
-    both((s) => leg(m, M, [8, 18, s * 5], [13, 0, s * 5], 6, 5.5, 5, 2)); // front legs
+    m.hull(M, [[-15, 0, 10], [-15, 0, -10], [6, 0, 10], [6, 0, -10], [-18, 11, 0], [-5, 38, 0], [9, 31, 0], [-6, 17, 12.5], [-6, 17, -12.5]]); // seated pyramid
+    m.hull(M, [[-6, 34, 5], [-6, 34, -5], [8, 30, 0], [0, 42, 0], [8, 41, 0]]); // neck fold up to the head
+    m.hull(T, [[9, 31, 0], [7, 5, 6], [7, 5, -6], [12, 17, 0]]); // pointed cream bib
+    both((s) => flapLeg(m, M, [5, 19, s * 5], [11, 19, s * 5], [13, 0, s * 5.2], [0, 0, s * 1.4], 3)); // front legs
   });
   const head = body.add('head', [3, 38, 0]);
-  const headPts = [...blob([6, 47, 0], 12, 10, 12, 6, 0.26), [17, 45, 0], [14, 42, 5], [14, 42, -5]];
+  const headPts = [[-4, 47, 0], [5, 56, 0], [14, 50, 0], [5, 40, 11], [5, 40, -11], [18, 44.5, 0], [11, 39, 0]];
   head.mesh((m) => {
     m.hull(M, headPts);
-    m.hull(T, [[13, 40.6, 6], [13, 40.6, -6], [17.6, 44, 0], [15, 39.2, 0], [16, 43, 3.6], [16, 43, -3.6]]); // muzzle
-    disc(m, 'ink', [17.8, 45.4, 0], [1, 0.25, 0], 1.5, 1.2); // nose
+    m.hull(T, [[13, 40.6, 5], [13, 40.6, -5], [17.6, 43.6, 0], [12, 39.4, 0]]); // cream muzzle
+    disc(m, 'ink', [17.9, 44.8, 0], [1, 0.3, 0], 1.4, 1.1); // nose
   });
-  eyes(head, headPts, [11, 48], { size: 4.6 });
+  eyes(head, headPts, [11, 47], { size: 4.4 });
   both((s) => {
     head.add(s > 0 ? 'ear_l' : 'ear_r', [5, 55, s * 6]).mesh((m) => {
-      m.hull(M, [[0, 53, s * 3], [11, 53, s * 5], [5, 54, s * 11], [4, 65, s * 8], [6, 57, s * 4]]);
-      plate(m, T, [[3, 55, s * 9.2], [8.6, 55, s * 8.2], [4.5, 62, s * 8.6]].map((p) => [p[0], p[1], p[2] + s * 0.4]), 1.2);
+      spike(m, M, [0, 53, s * 3.5], [10, 52, s * 6.5], [3, 66, s * 8], [0.6, 0, s * 1.6], 1.4); // flat folded triangle
+      plate(m, T, [[2.4, 54.4, s * 6.2], [7.4, 53.8, s * 7.4], [3.4, 62.4, s * 8.4]], 0.8);
     });
   });
   const tail = body.add('tail', [-14, 6, 0]);
   tail.mesh((m) => {
-    m.hull(M, [[-12, 3, 3], [-12, 3, -3], [-14, 9, 0], [-24, 14, 2.5], [-24, 14, -2.5], [-26, 18, 0]]);
-    m.hull(M, [[-24, 14, 2.5], [-24, 14, -2.5], [-26, 18, 0], [-24, 34, 2], [-24, 34, -2], [-21, 33, 0]]);
-    m.hull(T, [[-24, 34, 2], [-24, 34, -2], [-21, 33, 0], [-17, 42, 0], [-19, 41, 1.6], [-19, 41, -1.6]]);
+    spike(m, M, [-12, 3, 0], [-15, 10, 0], [-27, 25, 0], [0, 0, 2.4], 1.4); // flat strip sweeping back...
+    spike(m, M, [-24, 20, 0], [-28, 25, 0], [-19, 44, 0], [0, 0, 2.2], 1.4); // ...and folded up
   });
   anchors(rig, [-8, 34, 0], 78);
   creatureClips(rig, { head: 'head', tail: 'tail', ears: ['ear_l', 'ear_r'], tailAxis: 'z', hopHeight: 12 });
@@ -242,34 +244,34 @@ function elephant(rig, { main, trim }) {
   const M = main + '*', T = trim + '*';
   const body = rig.root.add('body', [-4, 30, 0]);
   body.mesh((m) => {
-    m.hull(M, blob([-5, 31, 0], 22, 15, 16, 6, 0));
-    m.hull(M, [[-25, 36, 1.5], [-25, 36, -1.5], [-26, 31, 0], [-31, 18, 1.4], [-31, 18, -1.4], [-33, 17, 0]]); // tail
+    m.hull(M, [[-22, 45, 0], [6, 48, 0], [-29, 34, 0], [-24, 20, 12], [-24, 20, -12], [9, 19, 13], [9, 19, -13], [-7, 33, 15.5], [-7, 33, -15.5], [-8, 15, 0], [13, 33, 0]]); // broad tent body, creased across the flank
+    spike(m, M, [-26, 38, 0], [-28, 33, 0], [-34, 16, 0], [-1, 0, 1.6], 1.2); // thin tail
   });
   const head = body.add('head', [14, 38, 0]);
-  const headPts = [...blob([21, 41, 0], 12, 12, 12, 6, 0.26), [31, 34, 5], [31, 34, -5]];
+  const headPts = [[13, 53, 0], [25, 51, 0], [15, 40, 12], [15, 40, -12], [31, 38, 0], [21, 30, 0], [28, 46, 6], [28, 46, -6]];
   head.mesh((m) => {
     m.hull(M, headPts);
-    both((s) => m.hull(T, [[28, 30, s * 5], [30, 34, s * 5], [36, 25, s * 8.5], [35, 27, s * 9]])); // tusks
+    both((s) => spike(m, T, [26, 33, s * 4], [28, 36, s * 4], [36, 27, s * 6.5], [0, -0.8, s * 0.6], 1.4)); // tusks
   });
-  eyes(head, headPts, [27, 45], { size: 4.4 });
-  const trunk = head.add('trunk', [31, 36, 0]);
+  eyes(head, headPts, [26, 45], { size: 4.2 });
+  const trunk = head.add('trunk', [30, 37, 0]);
   trunk.mesh((m) => {
-    m.hull(M, [[27, 38, 4.5], [27, 38, -4.5], [34, 38, 0], [28, 32, 0], [34, 20, 3.5], [34, 20, -3.5], [38, 21, 0]]);
-    m.hull(M, [[34, 20, 3.5], [34, 20, -3.5], [38, 21, 0], [34, 8, 3], [34, 8, -3], [38, 7, 0], [35, 14, 0]]);
-    m.hull(M, [[34, 8, 3], [34, 8, -3], [38, 7, 0], [43, 13, 2.6], [43, 13, -2.6], [44, 9, 0], [39, 3.5, 2], [39, 3.5, -2]]); // curled tip
+    spike(m, M, [27, 42, 0], [31, 32, 0], [36, 9, 0], [1.4, 0, 4]); // tapered trunk, creased down the front
+    spike(m, M, [34.6, 13, 0], [36.4, 10, 0], [42, 15, 0], [0, 0, 2.2], 1.2); // curled-up tip
   });
   both((s) => {
-    head.add(s > 0 ? 'ear_l' : 'ear_r', [17, 46, s * 10]).mesh((m) => {
-      // big fan ear: two folded panels
-      plate(m, M, [[19, 52, s * 10], [15, 24, s * 13], [7, 40, s * 21]], 2.4);
-      plate(m, M, [[19, 52, s * 10], [7, 40, s * 21], [8, 55, s * 16]], 2.4);
-      plate(m, T, [[17, 47, s * 12.4], [15, 31, s * 14], [10, 41, s * 18.6]], 1.2);
+    head.add(s > 0 ? 'ear_l' : 'ear_r', [17, 46, s * 11]).mesh((m) => {
+      // big flat fan ear folded once down the middle
+      plate(m, M, [[20, 54, s * 12], [15, 25, s * 14], [2, 38, s * 19]], 1.6);
+      plate(m, M, [[20, 54, s * 12], [2, 38, s * 19], [5, 58, s * 16]], 1.6);
+      plate(m, T, [[17.4, 48, s * 13.9], [14.6, 31, s * 15.1], [7, 39.6, s * 18]], 0.8);
     });
   });
-  for (const [n, x, z] of [['leg_fl', 9, 9], ['leg_fr', 9, -9], ['leg_bl', -17, 9], ['leg_br', -17, -9]]) {
-    body.add(n, [x, 20, z]).mesh((m) => leg(m, M, [x, 22, z], [x, 0, z * 1.05], 12, 10, 10, 0));
+  for (const [n, x, z] of [['leg_fl', 6, 1], ['leg_fr', 6, -1], ['leg_bl', -19, 1], ['leg_br', -19, -1]]) {
+    const zz = z * 12.5;
+    body.add(n, [x, 20, zz]).mesh((m) => flapLeg(m, M, [x - 6, 21, zz], [x + 6, 21, zz], [x, 0, zz * 1.04], [0, 0, z * 2.6], 8, 1.8));
   }
-  anchors(rig, [-8, 46, 0], 72);
+  anchors(rig, [-8, 48, 0], 72);
   creatureClips(rig, { head: 'head', tail: null, legs: ['leg_fl', 'leg_fr', 'leg_bl', 'leg_br'], ears: ['ear_l', 'ear_r'], hopHeight: 10 });
   rig.clips.find((c) => c.name === 'idle').tracks.push({ node: 'trunk', path: 'rotation', keys: [[0, [0, 0, 0]], [1.2, [0, 0, 8]], [2.4, [0, 0, 0]]] });
   rig.clips.find((c) => c.name === 'cheer').tracks.push({ node: 'trunk', path: 'rotation', keys: [[0, [0, 0, 0]], [0.3, [0, 0, 60]], [0.9, [0, 0, 60]], [1.2, [0, 0, 0]]] });

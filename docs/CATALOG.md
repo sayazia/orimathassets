@@ -226,16 +226,16 @@ Ukuran = kotak batas nyata (x × z × y, meter). Semua lolos validator (0 error,
 
 | File | Segitiga | +garis | KB | Ukuran (x×z×y) | Anchor | Klip |
 |---|---|---|---|---|---|---|
-| foldlings/foldling_fox | 438 | 0 | 57.1 | 0.077×0.023×0.059 | flag_anchor, label_anchor | idle, hop, cheer, bounce, fold |
-| foldlings/foldling_rabbit | 566 | 0 | 63.6 | 0.052×0.032×0.070 | flag_anchor, label_anchor | idle, hop, cheer, bounce, fold |
+| foldlings/foldling_fox | 412 | 0 | 53.9 | 0.079×0.023×0.058 | flag_anchor, label_anchor | idle, hop, cheer, bounce, fold |
+| foldlings/foldling_rabbit | 446 | 0 | 53.6 | 0.053×0.030×0.072 | flag_anchor, label_anchor | idle, hop, cheer, bounce, fold |
 | foldlings/foldling_crane | 232 | 0 | 38.5 | 0.072×0.071×0.055 | flag_anchor, label_anchor | idle, hop, cheer, bounce, fold |
-| foldlings/foldling_turtle | 274 | 0 | 39.9 | 0.076×0.052×0.028 | flag_anchor, label_anchor | idle, hop, cheer, bounce, fold |
-| foldlings/foldling_frog | 392 | 0 | 42.8 | 0.043×0.048×0.032 | flag_anchor, label_anchor | idle, hop, cheer, bounce, fold |
+| foldlings/foldling_turtle | 260 | 0 | 38.6 | 0.077×0.052×0.028 | flag_anchor, label_anchor | idle, hop, cheer, bounce, fold |
+| foldlings/foldling_frog | 424 | 0 | 43.8 | 0.043×0.048×0.032 | flag_anchor, label_anchor | idle, hop, cheer, bounce, fold |
 | foldlings/foldling_fish | 218 | 0 | 34.2 | 0.069×0.029×0.036 | flag_anchor, label_anchor | idle, hop, cheer, bounce, fold |
-| foldlings/foldling_cat | 392 | 0 | 49.3 | 0.045×0.026×0.065 | flag_anchor, label_anchor | idle, hop, cheer, bounce, fold |
-| foldlings/foldling_elephant | 406 | 0 | 54.2 | 0.077×0.044×0.055 | flag_anchor, label_anchor | idle, hop, cheer, bounce, fold |
+| foldlings/foldling_cat | 370 | 0 | 45.8 | 0.047×0.025×0.066 | flag_anchor, label_anchor | idle, hop, cheer, bounce, fold |
+| foldlings/foldling_elephant | 390 | 0 | 51.4 | 0.077×0.040×0.058 | flag_anchor, label_anchor | idle, hop, cheer, bounce, fold |
 | foldlings/paper_bird | 186 | 0 | 23.0 | 0.060×0.070×0.012 | (tidak ada) | flap (0.4 s) |
-| foldlings/flag_small | 96 | 0 | 9.6 | 0.054×0.004×0.093 | label_anchor | wave |
+| foldlings/flag_small | 96 | 0 | 9.6 | 0.054×0.005×0.093 | label_anchor | wave |
 | book/popup_book | 380 | 0 | 26.4 | 0.360×0.240×0.025 | spawn_anchor, exit_anchor, town_origin | |
 | book/popup_book_closed | 184 | 0 | 14.0 | 0.182×0.240×0.033 | | |
 | book/page_popup_frame | 164 | 0 | 12.9 | 0.298×0.019×0.118 | | |
@@ -335,8 +335,8 @@ Folder `models/hints/`. Semua lolos validator. Pratinjau: `previews/hints/`, `pr
 | File | Segitiga | +garis | KB | Ukuran | Anchor | Bagian |
 |---|---|---|---|---|---|---|
 | hints/base10_unit | 44 | 0 | 3.4 | 0.010×0.010×0.010 |  | cube |
-| hints/base10_rod | 336 | 0 | 18.7 | 0.100×0.010×0.010 |  | rod |
-| hints/base10_flat | 408 | 0 | 23.0 | 0.100×0.100×0.011 |  | flat |
+| hints/base10_rod | 336 | 0 | 18.7 | 0.100×0.011×0.011 |  | rod |
+| hints/base10_flat | 408 | 0 | 23.0 | 0.101×0.101×0.011 |  | flat |
 | hints/number_line | 112 | 0 | 10.2 | 0.300×0.020×0.005 | tick_0, label_anchor_0, tick_1, label_anchor_1, tick_2, label_anchor_2, tick_3, label_anchor_3, tick_4, label_anchor_4, tick_5, label_anchor_5, tick_6, label_anchor_6, tick_7, label_anchor_7, tick_8, label_anchor_8, tick_9, label_anchor_9, tick_10, label_anchor_10 | line |
 | hints/bar_strip | 20 | 0 | 2.5 | 0.240×0.030×0.005 |  | strip |
 | hints/area_grid | 188 | 0 | 12.9 | 0.152×0.152×0.003 | cell_origin | grid |
@@ -378,10 +378,10 @@ Pratinjau: `previews/characters/`, `previews/sheet_characters.png`, `previews/cl
 
 | File | Segitiga | +garis | KB | Ukuran | Anchor | Bagian |
 |---|---|---|---|---|---|---|
-| characters/pip_owl | 1142 | 0 | 78.2 | 0.069×0.050×0.108 | label_anchor | body, head, eyes, eyes_happy, wing_l, wing_r |
-| characters/great_crumple | 1309 | 0 | 98.5 | 0.193×0.224×0.174 | label_anchor_0, label_anchor_1, label_anchor_2 | stage_1, stage_2, stage_3, core, eyes |
-| characters/robot_partner_a | 508 | 0 | 43.9 | 0.046×0.025×0.079 | label_anchor | body, head, antenna, arm_l, arm_r |
-| characters/robot_partner_b | 510 | 0 | 45.5 | 0.048×0.032×0.083 | label_anchor | body, head, antenna, arm_l, arm_r |
+| characters/pip_owl | 1088 | 0 | 73.3 | 0.069×0.049×0.110 | label_anchor | body, head, eyes, eyes_happy, wing_l, wing_r |
+| characters/great_crumple | 1309 | 0 | 98.5 | 0.193×0.220×0.174 | label_anchor_0, label_anchor_1, label_anchor_2 | stage_1, stage_2, stage_3, core, eyes |
+| characters/robot_partner_a | 508 | 0 | 43.9 | 0.047×0.025×0.079 | label_anchor | body, head, antenna, arm_l, arm_r |
+| characters/robot_partner_b | 510 | 0 | 45.5 | 0.049×0.032×0.083 | label_anchor | body, head, antenna, arm_l, arm_r |
 | characters/robot_partner_c | 496 | 0 | 40.1 | 0.048×0.025×0.086 | label_anchor | body, head, antenna, arm_l, arm_r |
 
 Catatan:
