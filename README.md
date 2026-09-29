@@ -36,7 +36,25 @@ faceted geometry, flat shading and bright paper colours.
 | Billboards | 5 | [sheet_billboards.png](previews/sheet_billboards.png) |
 | Animals | 10 | [sheet_animals.png](previews/sheet_animals.png) |
 
-## Conventions
+## Foldlings game assets
+
+The repository also holds the assets for **Foldlings**, a mixed-reality maths game (WebXR on Meta Quest):
+origami animals that walk out of a pop-up book on the player's table. They share this set's palette and
+paper style but are measured in **metres** and carry named nodes, anchors and animation clips.
+
+![Foldlings on the pop-up book](previews/table_b1_wood.png)
+
+| Folder | Contents |
+| --- | --- |
+| `models/foldlings/` | 8 Foldlings (fox, rabbit, crane, turtle, frog, fish, cat, elephant) in 5 mission colours + a rare gold variant, the paper bird and the number flag |
+| `models/book/` | Open pop-up book, closed book, pop-up backdrop frame |
+| `models/scale.json` | City scale on the book page (`city_tile_on_book_m`) |
+
+Technical guide: [`docs/FOLDLINGS.md`](docs/FOLDLINGS.md). Batch status: [`docs/CATALOG.md`](docs/CATALOG.md).
+Sheets: [foldlings](previews/sheet_foldlings.png), [variants](previews/sheet_foldlings_variants.png),
+[book](previews/sheet_book.png), [colour-vision check](previews/cvd_foldlings.png).
+
+## Conventions (city set)
 
 - **1 unit = 1 grid tile.** A 1×1 asset spans x and z from -0.5 to 0.5; a 2×1 asset spans x from -1 to 1.
   y is up and the ground is at y = 0 (buildings and areas have a 0.04-thick paper base plate).
@@ -64,6 +82,8 @@ npm run build                 # regenerate every model
 npm run build -- house_       # only assets whose name starts with house_
 npm run previews              # re-render every preview (headless Chromium + three.js)
 npm run previews -- houses    # only one sheet (or `town`)
+npm run validate              # Khronos glTF validator over every model
+npm run previews:game         # Foldlings previews (or `-- foldlings`, `-- foldling_fox`, `-- table`)
 ```
 
 - Colours live in `scripts/lib/palette.mjs`; changing one recolours every model that uses it.
@@ -73,3 +93,13 @@ npm run previews -- houses    # only one sheet (or `town`)
   prisms, cones and faceted "paper ball" shapes (`scripts/lib/geom.mjs`).
 - `scripts/lib/glb.mjs` is a dependency-free GLB writer. The output passes the Khronos glTF
   validator with no errors or warnings.
+
+## Ownership and licence
+
+All assets were created from 29 September 2026 onwards by Zia, who owns both the `sayazia` GitHub
+account (this repository) and the `eziedutech` account that publishes the Foldlings game; the git history
+is the record. They were built from code with the help of a code assistant. No third-party fonts,
+images, models or brand colours are used anywhere.
+
+Models and images are released under **CC0 1.0**, the generator scripts under the **MIT** licence.
+See [`LICENSE`](LICENSE).

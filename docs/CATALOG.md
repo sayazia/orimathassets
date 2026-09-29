@@ -192,3 +192,78 @@ Setiap jenis jalan punya potongan yang saling menyambung: lurus, belok, pertigaa
 7. **Batch 7:** orang, kendaraan, tanaman, perabot jalan, papan reklame
 
 Setiap batch menghasilkan file GLB, gambar pratinjau per aset, dan satu lembar kontak per kategori di `previews/`.
+
+---
+
+# Aset Game Foldlings
+
+Aset untuk Foldlings, game matematika mixed reality (WebXR, Meta Quest) untuk anak kelas 4 sampai 6.
+Konvensi teknis lengkap ada di [`FOLDLINGS.md`](FOLDLINGS.md). Ringkasnya: satuan **meter**, y ke atas,
+depan +Z, dasar di y = 0, maksimal 6 material per aset, node dan anchor bernama tetap, klip animasi
+transformasi saja, validator glTF 0 error 0 warning.
+
+Status: ✅ selesai · 🟡 sebagian · ⬜ direncanakan.
+
+| Batch | Isi | Status |
+|---|---|---|
+| B1 | 8 Foldlings (6 varian warna), burung kertas, bendera, buku pop-up terbuka dan tertutup, bingkai pop-up | ✅ |
+| B2 | Perlengkapan 6 jenis game (Orb Forge, Balloon Burst, Factory Sort, Bridge Builder, Balance Gate, Measure Hunt) | ⬜ |
+| B3 | Model bantuan visual (basis 10, garis bilangan, strip, petak luas, irisan pie) | ⬜ |
+| B4 | Portal | ⬜ |
+| B5 | Karakter (Pip, The Great Crumple, 3 robot partner) | ⬜ |
+| B6 | Fold Town: bangunan skill 3 tingkat dan alas halaman kota | ⬜ |
+| B7 | Hadiah dan UI 3D | ⬜ |
+| B8 | Efek | ⬜ |
+| 2D | Avatar, kata sandi gambar, logo, ikon, thumbnail | ⬜ |
+
+## B1. Foldlings, burung kertas, dan buku ✅
+
+Segitiga = geometri utama; "+garis" = segitiga `ink_outline` (opsional, bisa dimatikan game).
+Ukuran = kotak batas nyata (x × z × y, meter). Semua lolos validator (0 error, 0 warning).
+
+| File | Segitiga | +garis | KB | Ukuran (x×z×y) | Anchor | Klip |
+|---|---|---|---|---|---|---|
+| foldlings/foldling_fox | 280 | 234 | 52.0 | 0.077×0.023×0.059 | flag_anchor, label_anchor | idle, hop, cheer, bounce, fold |
+| foldlings/foldling_rabbit | 376 | 332 | 56.9 | 0.052×0.032×0.070 | flag_anchor, label_anchor | idle, hop, cheer, bounce, fold |
+| foldlings/foldling_crane | 136 | 96 | 32.8 | 0.072×0.071×0.055 | flag_anchor, label_anchor | idle, hop, cheer, bounce, fold |
+| foldlings/foldling_turtle | 178 | 138 | 35.1 | 0.076×0.052×0.028 | flag_anchor, label_anchor | idle, hop, cheer, bounce, fold |
+| foldlings/foldling_frog | 236 | 196 | 32.6 | 0.043×0.048×0.032 | flag_anchor, label_anchor | idle, hop, cheer, bounce, fold |
+| foldlings/foldling_fish | 122 | 82 | 27.6 | 0.069×0.029×0.036 | flag_anchor, label_anchor | idle, hop, cheer, bounce, fold |
+| foldlings/foldling_cat | 232 | 188 | 41.8 | 0.045×0.026×0.065 | flag_anchor, label_anchor | idle, hop, cheer, bounce, fold |
+| foldlings/foldling_elephant | 310 | 270 | 52.2 | 0.077×0.044×0.055 | flag_anchor, label_anchor | idle, hop, cheer, bounce, fold |
+| foldlings/paper_bird | 90 | 50 | 15.5 | 0.060×0.070×0.012 | (tidak ada) | flap (0.4 s) |
+| foldlings/flag_small | 60 | 60 | 8.6 | 0.054×0.004×0.093 | label_anchor | wave |
+| book/popup_book | 380 | 284 | 32.4 | 0.360×0.240×0.025 | spawn_anchor, exit_anchor, town_origin | |
+| book/popup_book_closed | 184 | 184 | 17.9 | 0.182×0.240×0.033 | | |
+| book/page_popup_frame | 164 | 164 | 16.6 | 0.298×0.019×0.118 | | |
+
+Varian warna: setiap Foldling dan `paper_bird` punya 6 berkas: berkas dasar = `place_value` (coral),
+lalu `_multiply_divide` (cobalt), `_fractions` (teal), `_decimals` (sunflower), `_measurement` (violet),
+`_rare` (gold dengan tepi paper). Total B1: 13 aset, 58 berkas GLB.
+
+Pratinjau: `previews/foldlings/`, `previews/book/` (depan, tiga perempat, samping, siluet),
+`previews/sheet_foldlings.png`, `sheet_foldlings_variants.png`, `sheet_book.png`,
+`previews/clips/` (6 frame per klip), `previews/cvd_foldlings.png` (simulasi buta warna),
+`previews/table_b1_wood.png` dan `table_b1_white.png` (skala meja dari mata anak duduk).
+
+### Keputusan yang berbeda dari brief
+
+1. **Warna misi `multiply_divide` dan `measurement`.** `blue` dan `purple` dari palet kota hampir sama
+   bagi penderita protanopia (ΔE 5.7) dan deuteranopia (ΔE 8.1). Ditambah dua warna baru tanpa mengubah
+   warna kota: `cobalt` #3469C4 (lebih gelap) dan `violet` #B198EA (lebih terang). Jarak terkecil antar
+   warna misi kini ΔE 17 (coral dan teal pada protanopia, beda terang-gelap), selebihnya di atas 20.
+   Rinciannya di `FOLDLINGS.md`.
+2. **Varian sebagai berkas terpisah**, bukan ganti material saat runtime. Nama material tetap kunci palet,
+   jadi game masih bisa mengganti warna sendiri bila mau. Dicatat di manifest (`variant_files`, `variant_colours`).
+3. **Arah makhluk.** Profil makhluk menghadap pemain (+Z) dan kepala ke +X, sesuai ukuran brief yang
+   panjangnya di sumbu x. `hop` diputar di tempat; game menggeser root 0.03 m ke +X selama klip.
+4. **Segitiga di bawah batas bawah** untuk bangau (136), ikan (122), kura-kura (178), katak (236), kucing (232),
+   rubah (280) dan gajah (310). Bentuk origami aslinya memang sederhana; menambah segi hanya supaya angka
+   naik akan membuat lipatan kurang rapi (brief: pilih lebih rapi). Kelinci (376) sudah di dalam rentang.
+5. **Status tersembunyi** (`eyes_happy`) memakai skala 0 plus `extras.hidden_by_default`, karena glTF tidak
+   punya flag visibilitas yang umum. Game menampilkannya dengan skala 1.
+6. **`ink_outline`** ada di setiap bagian bergerak sebagai anak node. three.js mengganti nama duplikat menjadi
+   `ink_outline_1`, dan seterusnya, jadi cari dengan awalan `ink_outline`.
+7. **Pratinjau meja** memakai permukaan meja kayu dan putih yang digambar dari kode, bukan foto, supaya tidak
+   ada gambar pihak ketiga.
+8. **Burung kertas** berorigin di pusat badan (selalu terbang), bukan di meja.

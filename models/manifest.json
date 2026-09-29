@@ -4575,5 +4575,1045 @@
         0.22
       ]
     }
+  },
+  {
+    "name": "foldling_fox",
+    "category": "foldlings",
+    "sheet": "foldlings",
+    "file": "foldlings/foldling_fox.glb",
+    "unit": "m",
+    "triangles": 280,
+    "outline_triangles": 234,
+    "bounds": {
+      "min": [
+        -0.038,
+        0,
+        -0.0115
+      ],
+      "max": [
+        0.0386,
+        0.059,
+        0.0115
+      ]
+    },
+    "anchors": {
+      "flag_anchor": [
+        -0.004,
+        0.038,
+        0
+      ],
+      "label_anchor": [
+        0,
+        0.072,
+        0
+      ]
+    },
+    "parts": [
+      "body",
+      "head",
+      "eyes_happy",
+      "ear_l",
+      "ear_r",
+      "tail",
+      "leg_fl",
+      "leg_fr",
+      "leg_bl",
+      "leg_br"
+    ],
+    "materials": [
+      "coral",
+      "coral_shade",
+      "cream",
+      "cream_shade",
+      "ink"
+    ],
+    "clips": [
+      "idle",
+      "hop",
+      "cheer",
+      "bounce",
+      "fold"
+    ],
+    "variants": [
+      "place_value",
+      "multiply_divide",
+      "fractions",
+      "decimals",
+      "measurement",
+      "rare"
+    ],
+    "variant_files": {
+      "place_value": "foldlings/foldling_fox.glb",
+      "multiply_divide": "foldlings/foldling_fox_multiply_divide.glb",
+      "fractions": "foldlings/foldling_fox_fractions.glb",
+      "decimals": "foldlings/foldling_fox_decimals.glb",
+      "measurement": "foldlings/foldling_fox_measurement.glb",
+      "rare": "foldlings/foldling_fox_rare.glb"
+    },
+    "variant_colours": {
+      "place_value": {
+        "main": "coral",
+        "trim": "cream"
+      },
+      "multiply_divide": {
+        "main": "cobalt",
+        "trim": "cream"
+      },
+      "fractions": {
+        "main": "teal",
+        "trim": "cream"
+      },
+      "decimals": {
+        "main": "sunflower",
+        "trim": "cream"
+      },
+      "measurement": {
+        "main": "violet",
+        "trim": "cream"
+      },
+      "rare": {
+        "main": "gold",
+        "trim": "paper"
+      }
+    }
+  },
+  {
+    "name": "foldling_rabbit",
+    "category": "foldlings",
+    "sheet": "foldlings",
+    "file": "foldlings/foldling_rabbit.glb",
+    "unit": "m",
+    "triangles": 376,
+    "outline_triangles": 332,
+    "bounds": {
+      "min": [
+        -0.026,
+        0,
+        -0.016
+      ],
+      "max": [
+        0.0262,
+        0.0703,
+        0.016
+      ]
+    },
+    "anchors": {
+      "flag_anchor": [
+        -0.008,
+        0.034,
+        0
+      ],
+      "label_anchor": [
+        0,
+        0.082,
+        0
+      ]
+    },
+    "parts": [
+      "body",
+      "head",
+      "eyes_happy",
+      "ear_l",
+      "ear_r",
+      "leg_bl",
+      "leg_fl",
+      "leg_br",
+      "leg_fr"
+    ],
+    "materials": [
+      "coral",
+      "coral_shade",
+      "cream",
+      "cream_shade",
+      "ink"
+    ],
+    "clips": [
+      "idle",
+      "hop",
+      "cheer",
+      "bounce",
+      "fold"
+    ],
+    "variants": [
+      "place_value",
+      "multiply_divide",
+      "fractions",
+      "decimals",
+      "measurement",
+      "rare"
+    ],
+    "variant_files": {
+      "place_value": "foldlings/foldling_rabbit.glb",
+      "multiply_divide": "foldlings/foldling_rabbit_multiply_divide.glb",
+      "fractions": "foldlings/foldling_rabbit_fractions.glb",
+      "decimals": "foldlings/foldling_rabbit_decimals.glb",
+      "measurement": "foldlings/foldling_rabbit_measurement.glb",
+      "rare": "foldlings/foldling_rabbit_rare.glb"
+    },
+    "variant_colours": {
+      "place_value": {
+        "main": "coral",
+        "trim": "cream"
+      },
+      "multiply_divide": {
+        "main": "cobalt",
+        "trim": "cream"
+      },
+      "fractions": {
+        "main": "teal",
+        "trim": "cream"
+      },
+      "decimals": {
+        "main": "sunflower",
+        "trim": "cream"
+      },
+      "measurement": {
+        "main": "violet",
+        "trim": "cream"
+      },
+      "rare": {
+        "main": "gold",
+        "trim": "paper"
+      }
+    }
+  },
+  {
+    "name": "foldling_crane",
+    "category": "foldlings",
+    "sheet": "foldlings",
+    "file": "foldlings/foldling_crane.glb",
+    "unit": "m",
+    "triangles": 136,
+    "outline_triangles": 96,
+    "bounds": {
+      "min": [
+        -0.035,
+        0,
+        -0.0355
+      ],
+      "max": [
+        0.037,
+        0.055,
+        0.0355
+      ]
+    },
+    "anchors": {
+      "flag_anchor": [
+        -0.004,
+        0.026,
+        0
+      ],
+      "label_anchor": [
+        0,
+        0.072,
+        0
+      ]
+    },
+    "parts": [
+      "body",
+      "wing_l",
+      "wing_r",
+      "neck",
+      "head",
+      "eyes_happy",
+      "tail"
+    ],
+    "materials": [
+      "coral",
+      "coral_shade",
+      "cream",
+      "cream_shade",
+      "ink"
+    ],
+    "clips": [
+      "idle",
+      "hop",
+      "cheer",
+      "bounce",
+      "fold"
+    ],
+    "variants": [
+      "place_value",
+      "multiply_divide",
+      "fractions",
+      "decimals",
+      "measurement",
+      "rare"
+    ],
+    "variant_files": {
+      "place_value": "foldlings/foldling_crane.glb",
+      "multiply_divide": "foldlings/foldling_crane_multiply_divide.glb",
+      "fractions": "foldlings/foldling_crane_fractions.glb",
+      "decimals": "foldlings/foldling_crane_decimals.glb",
+      "measurement": "foldlings/foldling_crane_measurement.glb",
+      "rare": "foldlings/foldling_crane_rare.glb"
+    },
+    "variant_colours": {
+      "place_value": {
+        "main": "coral",
+        "trim": "cream"
+      },
+      "multiply_divide": {
+        "main": "cobalt",
+        "trim": "cream"
+      },
+      "fractions": {
+        "main": "teal",
+        "trim": "cream"
+      },
+      "decimals": {
+        "main": "sunflower",
+        "trim": "cream"
+      },
+      "measurement": {
+        "main": "violet",
+        "trim": "cream"
+      },
+      "rare": {
+        "main": "gold",
+        "trim": "paper"
+      }
+    }
+  },
+  {
+    "name": "foldling_turtle",
+    "category": "foldlings",
+    "sheet": "foldlings",
+    "file": "foldlings/foldling_turtle.glb",
+    "unit": "m",
+    "triangles": 178,
+    "outline_triangles": 138,
+    "bounds": {
+      "min": [
+        -0.034,
+        0,
+        -0.026
+      ],
+      "max": [
+        0.0417,
+        0.028,
+        0.026
+      ]
+    },
+    "anchors": {
+      "flag_anchor": [
+        -0.002,
+        0.028,
+        0
+      ],
+      "label_anchor": [
+        0,
+        0.048,
+        0
+      ]
+    },
+    "parts": [
+      "body",
+      "head",
+      "eyes_happy",
+      "leg_fl",
+      "leg_fr",
+      "leg_bl",
+      "leg_br",
+      "tail"
+    ],
+    "materials": [
+      "coral",
+      "coral_shade",
+      "cream",
+      "cream_shade",
+      "ink"
+    ],
+    "clips": [
+      "idle",
+      "hop",
+      "cheer",
+      "bounce",
+      "fold"
+    ],
+    "variants": [
+      "place_value",
+      "multiply_divide",
+      "fractions",
+      "decimals",
+      "measurement",
+      "rare"
+    ],
+    "variant_files": {
+      "place_value": "foldlings/foldling_turtle.glb",
+      "multiply_divide": "foldlings/foldling_turtle_multiply_divide.glb",
+      "fractions": "foldlings/foldling_turtle_fractions.glb",
+      "decimals": "foldlings/foldling_turtle_decimals.glb",
+      "measurement": "foldlings/foldling_turtle_measurement.glb",
+      "rare": "foldlings/foldling_turtle_rare.glb"
+    },
+    "variant_colours": {
+      "place_value": {
+        "main": "coral",
+        "trim": "cream"
+      },
+      "multiply_divide": {
+        "main": "cobalt",
+        "trim": "cream"
+      },
+      "fractions": {
+        "main": "teal",
+        "trim": "cream"
+      },
+      "decimals": {
+        "main": "sunflower",
+        "trim": "cream"
+      },
+      "measurement": {
+        "main": "violet",
+        "trim": "cream"
+      },
+      "rare": {
+        "main": "gold",
+        "trim": "paper"
+      }
+    }
+  },
+  {
+    "name": "foldling_frog",
+    "category": "foldlings",
+    "sheet": "foldlings",
+    "file": "foldlings/foldling_frog.glb",
+    "unit": "m",
+    "triangles": 236,
+    "outline_triangles": 196,
+    "bounds": {
+      "min": [
+        -0.021,
+        0,
+        -0.024
+      ],
+      "max": [
+        0.022,
+        0.032,
+        0.024
+      ]
+    },
+    "anchors": {
+      "flag_anchor": [
+        -0.006,
+        0.02,
+        0
+      ],
+      "label_anchor": [
+        0,
+        0.05,
+        0
+      ]
+    },
+    "parts": [
+      "body",
+      "eyes_happy",
+      "leg_bl",
+      "leg_br"
+    ],
+    "materials": [
+      "coral",
+      "coral_shade",
+      "cream",
+      "cream_shade",
+      "ink"
+    ],
+    "clips": [
+      "idle",
+      "hop",
+      "cheer",
+      "bounce",
+      "fold"
+    ],
+    "variants": [
+      "place_value",
+      "multiply_divide",
+      "fractions",
+      "decimals",
+      "measurement",
+      "rare"
+    ],
+    "variant_files": {
+      "place_value": "foldlings/foldling_frog.glb",
+      "multiply_divide": "foldlings/foldling_frog_multiply_divide.glb",
+      "fractions": "foldlings/foldling_frog_fractions.glb",
+      "decimals": "foldlings/foldling_frog_decimals.glb",
+      "measurement": "foldlings/foldling_frog_measurement.glb",
+      "rare": "foldlings/foldling_frog_rare.glb"
+    },
+    "variant_colours": {
+      "place_value": {
+        "main": "coral",
+        "trim": "cream"
+      },
+      "multiply_divide": {
+        "main": "cobalt",
+        "trim": "cream"
+      },
+      "fractions": {
+        "main": "teal",
+        "trim": "cream"
+      },
+      "decimals": {
+        "main": "sunflower",
+        "trim": "cream"
+      },
+      "measurement": {
+        "main": "violet",
+        "trim": "cream"
+      },
+      "rare": {
+        "main": "gold",
+        "trim": "paper"
+      }
+    }
+  },
+  {
+    "name": "foldling_fish",
+    "category": "foldlings",
+    "sheet": "foldlings",
+    "file": "foldlings/foldling_fish.glb",
+    "unit": "m",
+    "triangles": 122,
+    "outline_triangles": 82,
+    "bounds": {
+      "min": [
+        -0.038,
+        0.009,
+        -0.0147
+      ],
+      "max": [
+        0.031,
+        0.045,
+        0.0147
+      ]
+    },
+    "anchors": {
+      "flag_anchor": [
+        0,
+        0.038,
+        0
+      ],
+      "label_anchor": [
+        0,
+        0.058,
+        0
+      ]
+    },
+    "parts": [
+      "body",
+      "eyes_happy",
+      "tail",
+      "fin_l",
+      "fin_r"
+    ],
+    "materials": [
+      "coral",
+      "coral_shade",
+      "cream",
+      "cream_shade",
+      "ink"
+    ],
+    "clips": [
+      "idle",
+      "hop",
+      "cheer",
+      "bounce",
+      "fold"
+    ],
+    "variants": [
+      "place_value",
+      "multiply_divide",
+      "fractions",
+      "decimals",
+      "measurement",
+      "rare"
+    ],
+    "variant_files": {
+      "place_value": "foldlings/foldling_fish.glb",
+      "multiply_divide": "foldlings/foldling_fish_multiply_divide.glb",
+      "fractions": "foldlings/foldling_fish_fractions.glb",
+      "decimals": "foldlings/foldling_fish_decimals.glb",
+      "measurement": "foldlings/foldling_fish_measurement.glb",
+      "rare": "foldlings/foldling_fish_rare.glb"
+    },
+    "variant_colours": {
+      "place_value": {
+        "main": "coral",
+        "trim": "cream"
+      },
+      "multiply_divide": {
+        "main": "cobalt",
+        "trim": "cream"
+      },
+      "fractions": {
+        "main": "teal",
+        "trim": "cream"
+      },
+      "decimals": {
+        "main": "sunflower",
+        "trim": "cream"
+      },
+      "measurement": {
+        "main": "violet",
+        "trim": "cream"
+      },
+      "rare": {
+        "main": "gold",
+        "trim": "paper"
+      }
+    },
+    "notes": "Floats: belly 1 cm above the table; the origin stays on the table top."
+  },
+  {
+    "name": "foldling_cat",
+    "category": "foldlings",
+    "sheet": "foldlings",
+    "file": "foldlings/foldling_cat.glb",
+    "unit": "m",
+    "triangles": 232,
+    "outline_triangles": 188,
+    "bounds": {
+      "min": [
+        -0.026,
+        0,
+        -0.013
+      ],
+      "max": [
+        0.0186,
+        0.065,
+        0.013
+      ]
+    },
+    "anchors": {
+      "flag_anchor": [
+        -0.008,
+        0.034,
+        0
+      ],
+      "label_anchor": [
+        0,
+        0.078,
+        0
+      ]
+    },
+    "parts": [
+      "body",
+      "head",
+      "eyes_happy",
+      "ear_l",
+      "ear_r",
+      "tail"
+    ],
+    "materials": [
+      "coral",
+      "coral_shade",
+      "cream",
+      "cream_shade",
+      "ink"
+    ],
+    "clips": [
+      "idle",
+      "hop",
+      "cheer",
+      "bounce",
+      "fold"
+    ],
+    "variants": [
+      "place_value",
+      "multiply_divide",
+      "fractions",
+      "decimals",
+      "measurement",
+      "rare"
+    ],
+    "variant_files": {
+      "place_value": "foldlings/foldling_cat.glb",
+      "multiply_divide": "foldlings/foldling_cat_multiply_divide.glb",
+      "fractions": "foldlings/foldling_cat_fractions.glb",
+      "decimals": "foldlings/foldling_cat_decimals.glb",
+      "measurement": "foldlings/foldling_cat_measurement.glb",
+      "rare": "foldlings/foldling_cat_rare.glb"
+    },
+    "variant_colours": {
+      "place_value": {
+        "main": "coral",
+        "trim": "cream"
+      },
+      "multiply_divide": {
+        "main": "cobalt",
+        "trim": "cream"
+      },
+      "fractions": {
+        "main": "teal",
+        "trim": "cream"
+      },
+      "decimals": {
+        "main": "sunflower",
+        "trim": "cream"
+      },
+      "measurement": {
+        "main": "violet",
+        "trim": "cream"
+      },
+      "rare": {
+        "main": "gold",
+        "trim": "paper"
+      }
+    }
+  },
+  {
+    "name": "foldling_elephant",
+    "category": "foldlings",
+    "sheet": "foldlings",
+    "file": "foldlings/foldling_elephant.glb",
+    "unit": "m",
+    "triangles": 310,
+    "outline_triangles": 270,
+    "bounds": {
+      "min": [
+        -0.033,
+        0,
+        -0.022
+      ],
+      "max": [
+        0.044,
+        0.0553,
+        0.022
+      ]
+    },
+    "anchors": {
+      "flag_anchor": [
+        -0.008,
+        0.046,
+        0
+      ],
+      "label_anchor": [
+        0,
+        0.072,
+        0
+      ]
+    },
+    "parts": [
+      "body",
+      "head",
+      "eyes_happy",
+      "trunk",
+      "ear_l",
+      "ear_r",
+      "leg_fl",
+      "leg_fr",
+      "leg_bl",
+      "leg_br"
+    ],
+    "materials": [
+      "coral",
+      "coral_shade",
+      "cream",
+      "cream_shade",
+      "ink"
+    ],
+    "clips": [
+      "idle",
+      "hop",
+      "cheer",
+      "bounce",
+      "fold"
+    ],
+    "variants": [
+      "place_value",
+      "multiply_divide",
+      "fractions",
+      "decimals",
+      "measurement",
+      "rare"
+    ],
+    "variant_files": {
+      "place_value": "foldlings/foldling_elephant.glb",
+      "multiply_divide": "foldlings/foldling_elephant_multiply_divide.glb",
+      "fractions": "foldlings/foldling_elephant_fractions.glb",
+      "decimals": "foldlings/foldling_elephant_decimals.glb",
+      "measurement": "foldlings/foldling_elephant_measurement.glb",
+      "rare": "foldlings/foldling_elephant_rare.glb"
+    },
+    "variant_colours": {
+      "place_value": {
+        "main": "coral",
+        "trim": "cream"
+      },
+      "multiply_divide": {
+        "main": "cobalt",
+        "trim": "cream"
+      },
+      "fractions": {
+        "main": "teal",
+        "trim": "cream"
+      },
+      "decimals": {
+        "main": "sunflower",
+        "trim": "cream"
+      },
+      "measurement": {
+        "main": "violet",
+        "trim": "cream"
+      },
+      "rare": {
+        "main": "gold",
+        "trim": "paper"
+      }
+    }
+  },
+  {
+    "name": "paper_bird",
+    "category": "foldlings",
+    "sheet": "foldlings",
+    "file": "foldlings/paper_bird.glb",
+    "unit": "m",
+    "triangles": 90,
+    "outline_triangles": 50,
+    "bounds": {
+      "min": [
+        -0.03,
+        -0.0035,
+        -0.0351
+      ],
+      "max": [
+        0.03,
+        0.009,
+        0.0351
+      ]
+    },
+    "anchors": {},
+    "parts": [
+      "body",
+      "eyes_happy",
+      "wing_l",
+      "wing_r"
+    ],
+    "materials": [
+      "coral",
+      "coral_shade",
+      "cream",
+      "cream_shade",
+      "ink"
+    ],
+    "clips": [
+      "flap"
+    ],
+    "variants": [
+      "place_value",
+      "multiply_divide",
+      "fractions",
+      "decimals",
+      "measurement",
+      "rare"
+    ],
+    "variant_files": {
+      "place_value": "foldlings/paper_bird.glb",
+      "multiply_divide": "foldlings/paper_bird_multiply_divide.glb",
+      "fractions": "foldlings/paper_bird_fractions.glb",
+      "decimals": "foldlings/paper_bird_decimals.glb",
+      "measurement": "foldlings/paper_bird_measurement.glb",
+      "rare": "foldlings/paper_bird_rare.glb"
+    },
+    "variant_colours": {
+      "place_value": {
+        "main": "coral",
+        "trim": "cream"
+      },
+      "multiply_divide": {
+        "main": "cobalt",
+        "trim": "cream"
+      },
+      "fractions": {
+        "main": "teal",
+        "trim": "cream"
+      },
+      "decimals": {
+        "main": "sunflower",
+        "trim": "cream"
+      },
+      "measurement": {
+        "main": "violet",
+        "trim": "cream"
+      },
+      "rare": {
+        "main": "gold",
+        "trim": "paper"
+      }
+    },
+    "notes": "Flying form after a correct answer. Origin at the body centre; flies towards +x."
+  },
+  {
+    "name": "flag_small",
+    "category": "foldlings",
+    "sheet": "foldlings",
+    "file": "foldlings/flag_small.glb",
+    "unit": "m",
+    "triangles": 60,
+    "outline_triangles": 60,
+    "bounds": {
+      "min": [
+        -0.002,
+        0,
+        -0.0022
+      ],
+      "max": [
+        0.0516,
+        0.0926,
+        0.002
+      ]
+    },
+    "anchors": {
+      "label_anchor": [
+        0.0265,
+        0.0685,
+        0.0018
+      ]
+    },
+    "parts": [
+      "pole",
+      "cloth"
+    ],
+    "materials": [
+      "cream",
+      "cream_shade",
+      "ink",
+      "wood",
+      "wood_shade"
+    ],
+    "clips": [
+      "wave"
+    ],
+    "notes": "Origin at the foot of the pole; attach to a Foldling flag_anchor. Plain cream cloth, the game draws the number at label_anchor."
+  },
+  {
+    "name": "popup_book",
+    "category": "book",
+    "sheet": "book",
+    "file": "book/popup_book.glb",
+    "unit": "m",
+    "triangles": 380,
+    "outline_triangles": 284,
+    "bounds": {
+      "min": [
+        -0.18,
+        -0.0015,
+        -0.12
+      ],
+      "max": [
+        0.18,
+        0.0234,
+        0.12
+      ]
+    },
+    "anchors": {
+      "spawn_anchor": [
+        -0.09,
+        0.0217,
+        0
+      ],
+      "exit_anchor": [
+        0,
+        0.06,
+        0
+      ],
+      "town_origin": [
+        0.09,
+        0.0217,
+        0
+      ]
+    },
+    "parts": [
+      "spine",
+      "cover_left",
+      "pages_left",
+      "page_hinge_left",
+      "cover_right",
+      "pages_right",
+      "page_hinge_right"
+    ],
+    "materials": [
+      "gold",
+      "ink",
+      "navy",
+      "navy_shade",
+      "paper",
+      "paper_shade"
+    ],
+    "notes": "Open flat. spawn_anchor: centre of the left page; town_origin: centre of the right page; exit_anchor: 6 cm above the spine. page_hinge_* hold the top leaf (rotate about z to turn a page)."
+  },
+  {
+    "name": "popup_book_closed",
+    "category": "book",
+    "sheet": "book",
+    "file": "book/popup_book_closed.glb",
+    "unit": "m",
+    "triangles": 184,
+    "outline_triangles": 184,
+    "bounds": {
+      "min": [
+        -0.0925,
+        0,
+        -0.12
+      ],
+      "max": [
+        0.09,
+        0.0326,
+        0.12
+      ]
+    },
+    "anchors": {},
+    "parts": [
+      "spine",
+      "cover_back",
+      "cover_front"
+    ],
+    "materials": [
+      "gold",
+      "ink",
+      "navy",
+      "navy_shade",
+      "paper",
+      "paper_shade"
+    ],
+    "notes": "Spine on the -x side; cover_front opens about z at its spine edge."
+  },
+  {
+    "name": "page_popup_frame",
+    "category": "book",
+    "sheet": "book",
+    "file": "book/page_popup_frame.glb",
+    "unit": "m",
+    "triangles": 164,
+    "outline_triangles": 164,
+    "bounds": {
+      "min": [
+        -0.149,
+        0,
+        -0.001
+      ],
+      "max": [
+        0.149,
+        0.118,
+        0.018
+      ]
+    },
+    "anchors": {},
+    "parts": [
+      "panel_left",
+      "panel_back",
+      "panel_right"
+    ],
+    "materials": [
+      "ink",
+      "leaf",
+      "mint",
+      "mint_shade",
+      "paper",
+      "sky"
+    ],
+    "notes": "Panels hinge on their bottom edge: rotate about x from -90 (flat) to 0 (upright, rest pose). Place at the back of the open book."
   }
 ]
