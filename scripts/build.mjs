@@ -46,7 +46,8 @@ for (const { name, category, sheet, footprint, build } of ASSETS) {
 // Game assets: one rig per variant; the first variant is the base file.
 for (const a of GAME_ASSETS) {
   const { name, category, sheet, dir, variants = [null] } = a;
-  const entry = { name, category, sheet, file: `${dir}/${name}.glb`, unit: 'm' };
+  const entry = { name, category, sheet, file: `${dir}/${name}.glb`, unit: a.unit ?? 'm' };
+  if (a.footprint) entry.footprint = a.footprint;
   const variantFiles = {};
   for (const v of variants) {
     const rig = new Rig(name);

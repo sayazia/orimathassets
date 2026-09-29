@@ -7849,5 +7849,676 @@
       "help"
     ],
     "notes": "Tall robot on springs, orange."
+  },
+  {
+    "name": "skill_fraction_bridge_t1",
+    "category": "buildings",
+    "sheet": "foldtown",
+    "file": "buildings/skill_fraction_bridge_t1.glb",
+    "unit": "tile",
+    "footprint": [
+      2,
+      1
+    ],
+    "triangles": 264,
+    "outline_triangles": 264,
+    "bounds": {
+      "min": [
+        -1,
+        0,
+        -0.5
+      ],
+      "max": [
+        1,
+        0.215,
+        0.5
+      ]
+    },
+    "anchors": {},
+    "parts": [
+      "base",
+      "grow_deck",
+      "grow_rails"
+    ],
+    "materials": [
+      "grass",
+      "ink",
+      "leaf",
+      "paper",
+      "teal",
+      "teal_shade"
+    ],
+    "notes": "grow_* parts appear in order (deck, rails / arch / towers, cables)."
+  },
+  {
+    "name": "skill_fraction_bridge_t2",
+    "category": "buildings",
+    "sheet": "foldtown",
+    "file": "buildings/skill_fraction_bridge_t2.glb",
+    "unit": "tile",
+    "footprint": [
+      2,
+      1
+    ],
+    "triangles": 504,
+    "outline_triangles": 504,
+    "bounds": {
+      "min": [
+        -1,
+        0,
+        -0.5
+      ],
+      "max": [
+        1,
+        0.435,
+        0.5
+      ]
+    },
+    "anchors": {},
+    "parts": [
+      "base",
+      "grow_arch",
+      "grow_deck",
+      "grow_rails"
+    ],
+    "materials": [
+      "grass",
+      "ink",
+      "leaf",
+      "paper",
+      "teal",
+      "teal_shade"
+    ],
+    "notes": "grow_* parts appear in order (deck, rails / arch / towers, cables)."
+  },
+  {
+    "name": "skill_fraction_bridge_t3",
+    "category": "buildings",
+    "sheet": "foldtown",
+    "file": "buildings/skill_fraction_bridge_t3.glb",
+    "unit": "tile",
+    "footprint": [
+      2,
+      1
+    ],
+    "triangles": 768,
+    "outline_triangles": 768,
+    "bounds": {
+      "min": [
+        -1,
+        0,
+        -0.5
+      ],
+      "max": [
+        1,
+        0.84,
+        0.5
+      ]
+    },
+    "anchors": {},
+    "parts": [
+      "base",
+      "grow_towers",
+      "grow_deck",
+      "grow_cables"
+    ],
+    "materials": [
+      "grass",
+      "ink",
+      "leaf",
+      "paper",
+      "teal",
+      "teal_shade"
+    ],
+    "notes": "grow_* parts appear in order (deck, rails / arch / towers, cables)."
+  },
+  {
+    "name": "skill_multiply_tower_t1",
+    "category": "buildings",
+    "sheet": "foldtown",
+    "file": "buildings/skill_multiply_tower_t1.glb",
+    "unit": "tile",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 258,
+    "outline_triangles": 258,
+    "bounds": {
+      "min": [
+        -0.5,
+        0,
+        -0.5
+      ],
+      "max": [
+        0.5,
+        0.58,
+        0.5
+      ]
+    },
+    "anchors": {},
+    "parts": [
+      "base",
+      "floor_1",
+      "floor_2",
+      "roof"
+    ],
+    "materials": [
+      "cobalt",
+      "cobalt_shade",
+      "grass",
+      "ink",
+      "leaf",
+      "paper"
+    ],
+    "notes": "floor_1..2 bottom to top, then roof."
+  },
+  {
+    "name": "skill_multiply_tower_t2",
+    "category": "buildings",
+    "sheet": "foldtown",
+    "file": "buildings/skill_multiply_tower_t2.glb",
+    "unit": "tile",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 498,
+    "outline_triangles": 498,
+    "bounds": {
+      "min": [
+        -0.5,
+        0,
+        -0.5
+      ],
+      "max": [
+        0.5,
+        0.96,
+        0.5
+      ]
+    },
+    "anchors": {},
+    "parts": [
+      "base",
+      "floor_1",
+      "floor_2",
+      "floor_3",
+      "floor_4",
+      "roof"
+    ],
+    "materials": [
+      "cobalt",
+      "cobalt_shade",
+      "grass",
+      "ink",
+      "leaf",
+      "paper"
+    ],
+    "notes": "floor_1..4 bottom to top, then roof."
+  },
+  {
+    "name": "skill_multiply_tower_t3",
+    "category": "buildings",
+    "sheet": "foldtown",
+    "file": "buildings/skill_multiply_tower_t3.glb",
+    "unit": "tile",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 756,
+    "outline_triangles": 756,
+    "bounds": {
+      "min": [
+        -0.5,
+        0,
+        -0.5
+      ],
+      "max": [
+        0.5,
+        1.62,
+        0.5
+      ]
+    },
+    "anchors": {},
+    "parts": [
+      "base",
+      "floor_1",
+      "floor_2",
+      "floor_3",
+      "floor_4",
+      "floor_5",
+      "floor_6",
+      "roof"
+    ],
+    "materials": [
+      "cobalt",
+      "cobalt_shade",
+      "grass",
+      "ink",
+      "leaf",
+      "paper"
+    ],
+    "notes": "floor_1..6 bottom to top, then roof."
+  },
+  {
+    "name": "skill_placevalue_hall_t1",
+    "category": "buildings",
+    "sheet": "foldtown",
+    "file": "buildings/skill_placevalue_hall_t1.glb",
+    "unit": "tile",
+    "footprint": [
+      2,
+      1
+    ],
+    "triangles": 136,
+    "outline_triangles": 136,
+    "bounds": {
+      "min": [
+        -1,
+        0,
+        -0.5
+      ],
+      "max": [
+        1,
+        0.53,
+        0.5
+      ]
+    },
+    "anchors": {},
+    "parts": [
+      "base",
+      "wing_center"
+    ],
+    "materials": [
+      "coral",
+      "coral_shade",
+      "grass",
+      "ink",
+      "leaf",
+      "paper"
+    ],
+    "notes": "wing_center, then wing_left/right, then wing_dome at tier 3."
+  },
+  {
+    "name": "skill_placevalue_hall_t2",
+    "category": "buildings",
+    "sheet": "foldtown",
+    "file": "buildings/skill_placevalue_hall_t2.glb",
+    "unit": "tile",
+    "footprint": [
+      2,
+      1
+    ],
+    "triangles": 344,
+    "outline_triangles": 344,
+    "bounds": {
+      "min": [
+        -1,
+        0,
+        -0.5
+      ],
+      "max": [
+        1,
+        0.62,
+        0.5
+      ]
+    },
+    "anchors": {},
+    "parts": [
+      "base",
+      "wing_center",
+      "wing_left",
+      "wing_right"
+    ],
+    "materials": [
+      "coral",
+      "coral_shade",
+      "grass",
+      "ink",
+      "leaf",
+      "paper"
+    ],
+    "notes": "wing_center, then wing_left/right, then wing_dome at tier 3."
+  },
+  {
+    "name": "skill_placevalue_hall_t3",
+    "category": "buildings",
+    "sheet": "foldtown",
+    "file": "buildings/skill_placevalue_hall_t3.glb",
+    "unit": "tile",
+    "footprint": [
+      2,
+      1
+    ],
+    "triangles": 420,
+    "outline_triangles": 420,
+    "bounds": {
+      "min": [
+        -1,
+        0,
+        -0.5
+      ],
+      "max": [
+        1,
+        1.04,
+        0.5
+      ]
+    },
+    "anchors": {},
+    "parts": [
+      "base",
+      "wing_center",
+      "wing_left",
+      "wing_right",
+      "wing_dome"
+    ],
+    "materials": [
+      "coral",
+      "coral_shade",
+      "grass",
+      "ink",
+      "leaf",
+      "paper"
+    ],
+    "notes": "wing_center, then wing_left/right, then wing_dome at tier 3."
+  },
+  {
+    "name": "skill_decimal_market_t1",
+    "category": "buildings",
+    "sheet": "foldtown",
+    "file": "buildings/skill_decimal_market_t1.glb",
+    "unit": "tile",
+    "footprint": [
+      2,
+      1
+    ],
+    "triangles": 256,
+    "outline_triangles": 256,
+    "bounds": {
+      "min": [
+        -1,
+        0,
+        -0.5
+      ],
+      "max": [
+        1,
+        0.4,
+        0.5
+      ]
+    },
+    "anchors": {},
+    "parts": [
+      "base",
+      "plaza",
+      "stall_1",
+      "stall_2"
+    ],
+    "materials": [
+      "grass",
+      "ink",
+      "leaf",
+      "paper",
+      "sunflower",
+      "sunflower_shade"
+    ],
+    "notes": "stall_1..N (2, 4, 6) and a central stall_canopy at tier 3."
+  },
+  {
+    "name": "skill_decimal_market_t2",
+    "category": "buildings",
+    "sheet": "foldtown",
+    "file": "buildings/skill_decimal_market_t2.glb",
+    "unit": "tile",
+    "footprint": [
+      2,
+      1
+    ],
+    "triangles": 488,
+    "outline_triangles": 488,
+    "bounds": {
+      "min": [
+        -1,
+        0,
+        -0.5
+      ],
+      "max": [
+        1,
+        0.4,
+        0.5
+      ]
+    },
+    "anchors": {},
+    "parts": [
+      "base",
+      "plaza",
+      "stall_1",
+      "stall_2",
+      "stall_3",
+      "stall_4"
+    ],
+    "materials": [
+      "grass",
+      "ink",
+      "leaf",
+      "paper",
+      "sunflower",
+      "sunflower_shade"
+    ],
+    "notes": "stall_1..N (2, 4, 6) and a central stall_canopy at tier 3."
+  },
+  {
+    "name": "skill_decimal_market_t3",
+    "category": "buildings",
+    "sheet": "foldtown",
+    "file": "buildings/skill_decimal_market_t3.glb",
+    "unit": "tile",
+    "footprint": [
+      2,
+      1
+    ],
+    "triangles": 812,
+    "outline_triangles": 812,
+    "bounds": {
+      "min": [
+        -1,
+        0,
+        -0.5
+      ],
+      "max": [
+        1,
+        0.69,
+        0.5
+      ]
+    },
+    "anchors": {},
+    "parts": [
+      "base",
+      "plaza",
+      "stall_1",
+      "stall_2",
+      "stall_3",
+      "stall_4",
+      "stall_5",
+      "stall_6",
+      "stall_canopy"
+    ],
+    "materials": [
+      "grass",
+      "ink",
+      "leaf",
+      "paper",
+      "sunflower",
+      "sunflower_shade"
+    ],
+    "notes": "stall_1..N (2, 4, 6) and a central stall_canopy at tier 3."
+  },
+  {
+    "name": "skill_measure_clocktower_t1",
+    "category": "buildings",
+    "sheet": "foldtown",
+    "file": "buildings/skill_measure_clocktower_t1.glb",
+    "unit": "tile",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 286,
+    "outline_triangles": 126,
+    "bounds": {
+      "min": [
+        -0.5,
+        0,
+        -0.5
+      ],
+      "max": [
+        0.5,
+        0.87,
+        0.5
+      ]
+    },
+    "anchors": {},
+    "parts": [
+      "base",
+      "tower",
+      "clock_face",
+      "hand_hour",
+      "hand_minute"
+    ],
+    "materials": [
+      "grass",
+      "ink",
+      "leaf",
+      "paper",
+      "violet",
+      "violet_shade"
+    ],
+    "notes": "hand_hour and hand_minute rotate about z around the clock centre; the face has 12 marks, no numbers."
+  },
+  {
+    "name": "skill_measure_clocktower_t2",
+    "category": "buildings",
+    "sheet": "foldtown",
+    "file": "buildings/skill_measure_clocktower_t2.glb",
+    "unit": "tile",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 310,
+    "outline_triangles": 150,
+    "bounds": {
+      "min": [
+        -0.5,
+        0,
+        -0.5
+      ],
+      "max": [
+        0.5,
+        1.3,
+        0.5
+      ]
+    },
+    "anchors": {},
+    "parts": [
+      "base",
+      "tower",
+      "clock_face",
+      "hand_hour",
+      "hand_minute"
+    ],
+    "materials": [
+      "grass",
+      "ink",
+      "leaf",
+      "paper",
+      "violet",
+      "violet_shade"
+    ],
+    "notes": "hand_hour and hand_minute rotate about z around the clock centre; the face has 12 marks, no numbers."
+  },
+  {
+    "name": "skill_measure_clocktower_t3",
+    "category": "buildings",
+    "sheet": "foldtown",
+    "file": "buildings/skill_measure_clocktower_t3.glb",
+    "unit": "tile",
+    "footprint": [
+      1,
+      1
+    ],
+    "triangles": 322,
+    "outline_triangles": 162,
+    "bounds": {
+      "min": [
+        -0.5,
+        0,
+        -0.5
+      ],
+      "max": [
+        0.5,
+        1.6,
+        0.5
+      ]
+    },
+    "anchors": {},
+    "parts": [
+      "base",
+      "tower",
+      "clock_face",
+      "hand_hour",
+      "hand_minute"
+    ],
+    "materials": [
+      "grass",
+      "ink",
+      "leaf",
+      "paper",
+      "violet",
+      "violet_shade"
+    ],
+    "notes": "hand_hour and hand_minute rotate about z around the clock centre; the face has 12 marks, no numbers."
+  },
+  {
+    "name": "town_page_grid",
+    "category": "areas",
+    "sheet": "foldtown",
+    "file": "areas/town_page_grid.glb",
+    "unit": "tile",
+    "footprint": [
+      10,
+      7
+    ],
+    "triangles": 132,
+    "outline_triangles": 132,
+    "bounds": {
+      "min": [
+        -5,
+        0,
+        -3.5
+      ],
+      "max": [
+        5,
+        0.046,
+        3.5
+      ]
+    },
+    "anchors": {
+      "cell_origin": [
+        -4.5,
+        0.04,
+        -3
+      ]
+    },
+    "parts": [
+      "page"
+    ],
+    "materials": [
+      "cream",
+      "cream_shade",
+      "ink",
+      "paper"
+    ],
+    "notes": "Fits the right-hand page of popup_book at 0.03 m per tile. cell_origin = centre of the -x/-z corner cell; cells step 1 tile."
   }
 ]

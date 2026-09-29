@@ -137,7 +137,7 @@ export function toRigGLB(rig) {
       if (solids.length) {
         const pos = [], idx = [];
         for (const s of solids) {
-          const o = outlineSolid(s, OUTLINE_MM), base = pos.length / 3;
+          const o = outlineSolid(s, rig.outline ?? OUTLINE_MM), base = pos.length / 3;
           pos.push(...o.pos.map((v) => v * u));
           idx.push(...o.idx.map((i) => i + base));
         }

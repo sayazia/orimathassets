@@ -13,7 +13,7 @@ import { chromium } from 'playwright';
 import { GAME_SHEETS, TABLE_SCENES } from './game/index.mjs';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
-const manifest = JSON.parse(readFileSync(join(root, 'models/manifest.json'), 'utf8')).filter((a) => a.unit === 'm');
+const manifest = JSON.parse(readFileSync(join(root, 'models/manifest.json'), 'utf8')).filter((a) => a.unit); // game assets (metres, or tiles for Fold Town)
 const outDir = join(root, 'previews');
 
 const types = { '.html': 'text/html', '.js': 'text/javascript', '.glb': 'model/gltf-binary', '.json': 'application/json' };

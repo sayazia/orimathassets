@@ -3,7 +3,7 @@ import { readFileSync, statSync } from 'node:fs';
 const sheets = process.argv.slice(2);
 const manifest = JSON.parse(readFileSync(new URL('../models/manifest.json', import.meta.url), 'utf8'));
 const f = (v) => v.toFixed(3);
-for (const a of manifest.filter((x) => x.unit === 'm' && sheets.includes(x.sheet))) {
+for (const a of manifest.filter((x) => x.unit && sheets.includes(x.sheet))) {
   const kb = (statSync(new URL(`../models/${a.file}`, import.meta.url)).size / 1024).toFixed(1);
   const [x, y, z] = a.bounds.max.map((v, i) => v - a.bounds.min[i]);
   const extra = a.variants ? ` (+${a.variants.length - 1} varian)` : '';

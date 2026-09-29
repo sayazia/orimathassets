@@ -3,6 +3,7 @@ import foldlings from './foldlings.mjs';
 import book from './book.mjs';
 import { hints, portals } from './hints.mjs';
 import characters from './characters.mjs';
+import foldtown from './foldtown.mjs';
 import { orbForge, balloons, factory, bridge, balance, measure } from './props.mjs';
 
 // One city tile measures 3 cm when Fold Town stands on the pop-up book's page.
@@ -20,6 +21,7 @@ export const GAME_SHEETS = [
   { sheet: 'hints', title: 'Hints', items: hints },
   { sheet: 'portal', title: 'Portals', items: portals },
   { sheet: 'characters', title: 'Characters', items: characters },
+  { sheet: 'foldtown', title: 'Fold Town skill buildings', items: foldtown },
 ];
 
 // Table-scale preview scenes (metres, world space on the table top).
@@ -80,6 +82,22 @@ export const TABLE_SCENES = [
       { name: 'tape_measure', x: 0.22, y: 0, z: 0.14 },
       { name: 'gate', x: 0.0, y: 0, z: -0.14 },
       { name: 'shield_badge', x: -0.22, y: 0, z: 0.14 },
+    ],
+  },
+  {
+    // Fold Town at 0.03 m per tile: the 10 x 7 grid (0.30 x 0.21 m) spans both pages of the open book
+    name: 'b6',
+    camera: { target: [0, 0.03, 0] },
+    items: [
+      { name: 'popup_book' },
+      { name: 'town_page_grid', x: 0, y: 0.0215, z: 0, s: 0.03 },
+      ...[
+        ['skill_fraction_bridge_t3', -3.5, -2], ['skill_multiply_tower_t3', -1, -2], ['skill_placevalue_hall_t3', 1.5, -2],
+        ['skill_decimal_market_t3', -3.5, 1], ['skill_measure_clocktower_t3', 3, -2], ['skill_multiply_tower_t2', 0, 1],
+        ['skill_placevalue_hall_t1', 2.5, 1], ['skill_measure_clocktower_t1', -1, 1], ['skill_decimal_market_t1', 0.5, 2.5],
+      ].map(([name, cx, cz]) => ({ name, x: cx * 0.03, y: 0.0215 + 0.0012, z: cz * 0.03, s: 0.03 })),
+      { name: 'foldling_fox', x: -0.02, y: 0.023, z: 0.07, ry: 0.4 },
+      { name: 'pip_owl', x: 0.2, y: 0, z: 0.06, ry: -0.3 },
     ],
   },
 ];

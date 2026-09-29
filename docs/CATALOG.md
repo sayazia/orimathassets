@@ -211,7 +211,7 @@ Status: ✅ selesai · 🟡 sebagian · ⬜ direncanakan.
 | B3 | Model bantuan visual (basis 10, garis bilangan, strip, petak luas, irisan pie) | ✅ |
 | B4 | Portal | ✅ |
 | B5 | Karakter (Pip, The Great Crumple, 3 robot partner) | ✅ |
-| B6 | Fold Town: bangunan skill 3 tingkat dan alas halaman kota | ⬜ |
+| B6 | Fold Town: bangunan skill 3 tingkat dan alas halaman kota | ✅ |
 | B7 | Hadiah dan UI 3D | ⬜ |
 | B8 | Efek | ⬜ |
 | 2D | Avatar, kata sandi gambar, logo, ikon, thumbnail | ⬜ |
@@ -391,3 +391,38 @@ Catatan:
 - **Robot partner**: tiga desain fiktif yang jelas robot (kotak dengan kaki balok, bulat beroda dengan visor,
   tinggi berpegas dengan capit), masing-masing punya antena dan lampu kepala. Segitiganya 306 sampai 390, sedikit
   di bawah 400, karena bentuk kotak memang hemat segi.
+
+## B6. Fold Town ✅
+
+Bangunan skill di `models/buildings/`, alas kota di `models/areas/`. Satuan **petak** (manifest `unit: "tile"`,
+`footprint`), alas rumput 0.04 seperti aset kota, jadi bisa disusun dengan jalan yang sudah ada. Garis tinta
+dibuat 0.02 petak (= 0.6 mm di halaman buku). Pratinjau: `previews/buildings/skill_*.png`,
+`previews/sheet_foldtown.png`, `previews/table_b6_{wood,white}.png`.
+
+| File | Segitiga | +garis | KB | Ukuran (petak) | Anchor | Bagian |
+|---|---|---|---|---|---|---|
+| buildings/skill_fraction_bridge_t1 | 264 | 264 | 22.3 | 2.000×1.000×0.215 |  | base, grow_deck, grow_rails |
+| buildings/skill_fraction_bridge_t2 | 504 | 504 | 37.9 | 2.000×1.000×0.435 |  | base, grow_arch, grow_deck, grow_rails |
+| buildings/skill_fraction_bridge_t3 | 768 | 768 | 57.2 | 2.000×1.000×0.840 |  | base, grow_towers, grow_deck, grow_cables |
+| buildings/skill_multiply_tower_t1 | 258 | 258 | 23.9 | 1.000×1.000×0.580 |  | base, floor_1, floor_2, roof |
+| buildings/skill_multiply_tower_t2 | 498 | 498 | 42.9 | 1.000×1.000×0.960 |  | base, floor_1, floor_2, floor_3, floor_4, roof |
+| buildings/skill_multiply_tower_t3 | 756 | 756 | 63.6 | 1.000×1.000×1.620 |  | base, floor_1, floor_2, floor_3, floor_4, floor_5, floor_6, roof |
+| buildings/skill_placevalue_hall_t1 | 136 | 136 | 12.5 | 2.000×1.000×0.530 |  | base, wing_center |
+| buildings/skill_placevalue_hall_t2 | 344 | 344 | 28.6 | 2.000×1.000×0.620 |  | base, wing_center, wing_left, wing_right |
+| buildings/skill_placevalue_hall_t3 | 420 | 420 | 35.0 | 2.000×1.000×1.040 |  | base, wing_center, wing_left, wing_right, wing_dome |
+| buildings/skill_decimal_market_t1 | 256 | 256 | 23.7 | 2.000×1.000×0.400 |  | base, plaza, stall_1, stall_2 |
+| buildings/skill_decimal_market_t2 | 488 | 488 | 42.7 | 2.000×1.000×0.400 |  | base, plaza, stall_1, stall_2, stall_3, stall_4 |
+| buildings/skill_decimal_market_t3 | 812 | 812 | 69.1 | 2.000×1.000×0.690 |  | base, plaza, stall_1, stall_2, stall_3, stall_4, stall_5, stall_6, stall_canopy |
+| buildings/skill_measure_clocktower_t1 | 286 | 126 | 22.4 | 1.000×1.000×0.870 |  | base, tower, clock_face, hand_hour, hand_minute |
+| buildings/skill_measure_clocktower_t2 | 310 | 150 | 24.0 | 1.000×1.000×1.300 |  | base, tower, clock_face, hand_hour, hand_minute |
+| buildings/skill_measure_clocktower_t3 | 322 | 162 | 24.8 | 1.000×1.000×1.600 |  | base, tower, clock_face, hand_hour, hand_minute |
+| areas/town_page_grid | 132 | 132 | 12.1 | 10.000×7.000×0.046 | cell_origin | page |
+
+Catatan:
+- Setiap tingkat utuh dan layak tampil sendiri; tingkat berikutnya lebih besar: jembatan kayu pendek, lalu lengkung,
+  lalu gantung; menara 2, 4, lalu 6 lantai dengan menara runcing; balai 1, 3, lalu 3 sayap dengan kubah; pasar 2, 4,
+  lalu 6 kios dengan kanopi tengah; menara jam makin tinggi.
+- Jam tanpa angka: 12 tanda jam, jarum `hand_hour` dan `hand_minute` berputar pada sumbu z di pusat jam.
+- **Perlu keputusan:** dengan 1 petak = 0.03 m, alas 10 × 7 petak berukuran 0.30 × 0.21 m. Ukuran ini tidak muat di
+  halaman kanan buku (0.164 × 0.22 m), tetapi muat melintang di kedua halaman (lihat `table_b6_wood.png`).
+  Supaya muat di halaman kanan, skalanya harus sekitar 0.016 m per petak. `models/scale.json` tetap 0.03 sesuai brief.
