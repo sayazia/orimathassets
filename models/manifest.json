@@ -4625,7 +4625,8 @@
       "coral_shade",
       "cream",
       "cream_shade",
-      "ink"
+      "ink",
+      "pink"
     ],
     "clips": [
       "idle",
@@ -4693,7 +4694,7 @@
       ],
       "max": [
         0.026,
-        0.0721,
+        0.0722,
         0.015
       ]
     },
@@ -4725,7 +4726,8 @@
       "coral_shade",
       "cream",
       "cream_shade",
-      "ink"
+      "ink",
+      "pink"
     ],
     "clips": [
       "idle",
@@ -5211,7 +5213,8 @@
       "coral_shade",
       "cream",
       "cream_shade",
-      "ink"
+      "ink",
+      "pink"
     ],
     "clips": [
       "idle",

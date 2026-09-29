@@ -226,13 +226,13 @@ Ukuran = kotak batas nyata (x × z × y, meter). Semua lolos validator (0 error,
 
 | File | Segitiga | +garis | KB | Ukuran (x×z×y) | Anchor | Klip |
 |---|---|---|---|---|---|---|
-| foldlings/foldling_fox | 412 | 0 | 53.9 | 0.079×0.023×0.058 | flag_anchor, label_anchor | idle, hop, cheer, bounce, fold |
-| foldlings/foldling_rabbit | 446 | 0 | 53.6 | 0.053×0.030×0.072 | flag_anchor, label_anchor | idle, hop, cheer, bounce, fold |
+| foldlings/foldling_fox | 412 | 0 | 53.2 | 0.079×0.023×0.058 | flag_anchor, label_anchor | idle, hop, cheer, bounce, fold |
+| foldlings/foldling_rabbit | 446 | 0 | 53.0 | 0.053×0.030×0.072 | flag_anchor, label_anchor | idle, hop, cheer, bounce, fold |
 | foldlings/foldling_crane | 232 | 0 | 38.5 | 0.072×0.071×0.055 | flag_anchor, label_anchor | idle, hop, cheer, bounce, fold |
 | foldlings/foldling_turtle | 260 | 0 | 38.6 | 0.077×0.052×0.028 | flag_anchor, label_anchor | idle, hop, cheer, bounce, fold |
 | foldlings/foldling_frog | 424 | 0 | 43.8 | 0.043×0.048×0.032 | flag_anchor, label_anchor | idle, hop, cheer, bounce, fold |
 | foldlings/foldling_fish | 218 | 0 | 34.2 | 0.069×0.029×0.036 | flag_anchor, label_anchor | idle, hop, cheer, bounce, fold |
-| foldlings/foldling_cat | 370 | 0 | 45.8 | 0.047×0.025×0.066 | flag_anchor, label_anchor | idle, hop, cheer, bounce, fold |
+| foldlings/foldling_cat | 370 | 0 | 45.1 | 0.047×0.025×0.066 | flag_anchor, label_anchor | idle, hop, cheer, bounce, fold |
 | foldlings/foldling_elephant | 390 | 0 | 51.4 | 0.077×0.040×0.058 | flag_anchor, label_anchor | idle, hop, cheer, bounce, fold |
 | foldlings/paper_bird | 186 | 0 | 23.0 | 0.060×0.070×0.012 | (tidak ada) | flap (0.4 s) |
 | foldlings/flag_small | 96 | 0 | 9.6 | 0.054×0.005×0.093 | label_anchor | wave |

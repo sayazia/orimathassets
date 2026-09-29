@@ -1,6 +1,6 @@
 // Foldlings: origami animals that carry a number flag. Head points to +x, the flat
 // profile faces the player (+z), feet stand on y = 0. Authored in millimetres.
-import { plate, eye, happyEye, leg, surf, blob, kite, disc, flapLeg, spike } from '../lib/origami.mjs';
+import { plate, eye, happyEye, leg, surf, blob, kite, disc, flapLeg, spike, V } from '../lib/origami.mjs';
 import { creatureClips } from '../lib/clips.mjs';
 import { MISSIONS, ROLES } from '../lib/palette.mjs';
 
@@ -23,6 +23,26 @@ function eyes(head, pts, at, { size = 4.4, tilt = [0, 0, 1], zc = 0 } = {}) {
   head.mesh((m) => hits.forEach((h) => eye(m, h.p, h.n, size)));
   const happy = head.add('eyes_happy', head.world, { hidden: true });
   happy.mesh((m) => hits.forEach((h) => happyEye(m, h.p, h.n, size + 0.8)));
+}
+
+// A flat folded ear standing on the head: its root edge is dropped onto the head surface and sunk 2 mm
+// in, so it never floats, and a pink inner-ear triangle sits on its front face.
+function ear(m, headPts, M, a, b, tip, out) {
+  const seat = ([x, , z]) => { // pulled towards the centre line until it lands on the head
+    const cx = headPts.reduce((a, p) => a + p[0], 0) / headPts.length;
+    for (let k = 1; k > 0.05; k -= 0.05) {
+      const px = cx + (x - cx) * (0.3 + 0.7 * k), pz = z * k, h = surf(headPts, [px, 300, pz], [0, -1, 0]);
+      if (h) return [px, h.p[1] - 2, pz];
+    }
+    throw new Error('ear root misses the head');
+  };
+  const [a2, b2] = [seat(a), seat(b)];
+  spike(m, M, a2, b2, tip, out, 1.4);
+  const lerp = (p, q, t) => p.map((v, i) => v + (q[i] - v) * t);
+  let n = V.norm(V.cross(V.sub(b2, a2), V.sub(tip, a2)));
+  if (n[0] < 0) n = V.mul(n, -1); // the face turned towards the snout
+  const mid = lerp(a2, b2, 0.5), lift = (p) => V.add(p, V.mul(n, 1.1));
+  plate(m, 'pink', [lerp(lerp(a2, b2, 0.22), tip, 0.18), lerp(lerp(a2, b2, 0.78), tip, 0.18), lerp(mid, tip, 0.78)].map(lift), 0.8);
 }
 
 function anchors(rig, flag, top) {
@@ -49,11 +69,7 @@ function fox(rig, { main, trim }) {
   });
   eyes(head, headPts, [22, 39], { size: 4.4 });
   both((s) => {
-    const ear = head.add(s > 0 ? 'ear_l' : 'ear_r', [13, 44, s * 5]);
-    ear.mesh((m) => {
-      spike(m, M, [9, 44.5, s * 3], [17, 42.5, s * 6.5], [11, 58, s * 7], [0.6, 0, s * 1.4], 1.4); // flat folded triangle
-      plate(m, T, [[11, 45.5, s * 5.6], [15.4, 44.2, s * 7.2], [11.4, 54, s * 7.9]], 0.8);
-    });
+    head.add(s > 0 ? 'ear_l' : 'ear_r', [13, 44, s * 5]).mesh((m) => ear(m, headPts, M, [9, 0, s * 3], [17, 0, s * 6.5], [11, 58, s * 7], [0.6, 0, s * 1.4]));
   });
   const tail = body.add('tail', [-19, 30, 0]);
   tail.mesh((m) => {
@@ -87,11 +103,7 @@ function rabbit(rig, { main, trim }) {
   });
   eyes(head, headPts, [16, 42], { size: 4.4 });
   both((s) => {
-    const ear = head.add(s > 0 ? 'ear_l' : 'ear_r', [9, 47, s * 4]);
-    ear.mesh((m) => {
-      spike(m, M, [5, 46, s * 2.5], [13, 45.5, s * 5.5], [3, 72, s * 8], [0.8, 0, s * 1.8], 1.4); // long flat ear, creased
-      plate(m, T, [[7, 49, s * 5.3], [11, 48.6, s * 6.4], [4.6, 66, s * 8.4]], 0.8);
-    });
+    head.add(s > 0 ? 'ear_l' : 'ear_r', [9, 47, s * 4]).mesh((m) => ear(m, headPts, M, [5, 0, s * 2.5], [13, 0, s * 5.5], [3, 72, s * 8], [0.8, 0, s * 1.8]));
   });
   both((s) => {
     body.add(s > 0 ? 'leg_bl' : 'leg_br', [-10, 12, s * 11]).mesh((m) => {
@@ -225,10 +237,7 @@ function cat(rig, { main, trim }) {
   });
   eyes(head, headPts, [11, 47], { size: 4.4 });
   both((s) => {
-    head.add(s > 0 ? 'ear_l' : 'ear_r', [5, 55, s * 6]).mesh((m) => {
-      spike(m, M, [0, 53, s * 3.5], [10, 52, s * 6.5], [3, 66, s * 8], [0.6, 0, s * 1.6], 1.4); // flat folded triangle
-      plate(m, T, [[2.4, 54.4, s * 6.2], [7.4, 53.8, s * 7.4], [3.4, 62.4, s * 8.4]], 0.8);
-    });
+    head.add(s > 0 ? 'ear_l' : 'ear_r', [5, 55, s * 6]).mesh((m) => ear(m, headPts, M, [0, 0, s * 3.5], [10, 0, s * 6.5], [3, 66, s * 8], [0.6, 0, s * 1.6]));
   });
   const tail = body.add('tail', [-14, 6, 0]);
   tail.mesh((m) => {
