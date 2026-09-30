@@ -1,20 +1,21 @@
 // Numeria Arena UI pieces: a paper shape (rectangle, circle, parallelogram, ribbon, speech bubble) with
-// paper lettering, in three treatments (brief U1 section 1.1):
-//   E  transparent emboss (the main one): no fill of its own (white 5%), so whatever is behind shows through;
-//      shape and letters read only from a lit edge (white) on the top left and a dark edge (black) on the
-//      bottom right, letters at half strength
+// paper lettering, in three treatments (brief U1 section 1.1, corrected by Zia on 30 Sep 2026):
+//   E  clear sticker (the main one), the approved "BEGIN HERE" style D of scripts/2d/menu.mjs: the body has no
+//      colour, so the background shows through; its left and top edges vanish into the background and only a
+//      peel shadow on the right and bottom (plus a very faint blurred top line and an even sheen) shows the
+//      shape. Letters are solid cream paper with a short soft shadow. No lit or dark rims anywhere.
 //   W  on colour: a role colour face, cream letters with a #F6E3C0 dark side, lifted a little
 //   K  solid paper: #FFFDF8 face for question cards and number tags; the game writes ink text on it
 // Light always comes from the top left. Outside the shape is transparent; the shadow is baked into the PNG.
-// The shape shadow is the brief's drop (offset 6, blur 14, black 15% at M size, scaled per class), faded
-// out towards the left edge so that edge sits flat on the background like the approved stickers.
 import { layoutLine, INK_H } from './glyphs.mjs';
 import { place } from './icons.mjs';
 
 export const INK = { paper: '#FFF8EC', paper_back: '#F6E3C0', ink: '#3A3F4B', question: '#1F4FA3' };
 export const FACE_K = '#FFFDF8';
-// E strengths: shape edges at full strength, letters at half (brief: light 55-65%, dark 12-18%, shadow 15%)
-export const EMBOSS = { light: 0.62, dark: 0.16, fill: 0.05, shadow: 0.15, edge: 2.5, letterDark: 0.8 };
+// Sticker style D, as in LABEL_STYLE of scripts/2d/menu.mjs: shadow layers [start, reach, blur, opacity]
+// that start later along the lift and reach further, blurring more, so the peel grows towards the free corner.
+const PEEL = [[0.02, 0.12, 1.2, 0.16], [0.2, 0.35, 3.5, 0.14], [0.45, 0.7, 7, 0.13], [0.65, 1, 12, 0.1]];
+export const STICKER = { lift: 0.8, sheen: 0.042, top: 0.035 };
 
 // Size classes: PNG height, letter height, world height of that PNG height.
 export const CLASSES = {
@@ -54,20 +55,42 @@ function roundRect(x, y, w, h, rad, n = 6) {
 }
 
 const BIG = 'x="-10000" y="-10000" width="20000" height="20000"';
-// Bevel of a transparent raised shape: a lit band inside the top-left edges and a dark band inside the
-// bottom-right edges, each the shape minus itself shifted by d. `body` is polygons with no fill.
-export function bevel(body, d, light, dark, id, swap = false) {
-  const [l, k] = swap ? [dark, light] : [light, dark];
-  const m = (mid, dx) => `<mask id="${mid}" maskUnits="userSpaceOnUse" ${BIG}><g fill="#fff">${body}</g><g fill="#000" transform="translate(${f(dx)} ${f(dx)})">${body}</g></mask>`;
-  return `<defs>${m(id + 'L', d)}${m(id + 'D', -d)}</defs>`
-    + `<rect ${BIG} fill="${swap ? '#000' : '#fff'}" opacity="${f(l)}" mask="url(#${id}L)"/>`
-    + `<rect ${BIG} fill="${swap ? '#fff' : '#000'}" opacity="${f(k)}" mask="url(#${id}D)"/>`;
-}
 const outsideMask = (id, body) => `<mask id="${id}" maskUnits="userSpaceOnUse" ${BIG}><rect ${BIG} fill="#fff"/><g fill="#000">${body}</g></mask>`;
 
-// Lettering from polygons (px). E: bevel at half strength and a short shadow outside the letters;
+// Peel shadow of a clear sticker (style D). Rectangles use the sticker's own wedge polygons along the bottom
+// and up the right side; other shapes use copies of themselves shifted towards the free corner, faded out
+// towards the left. Both fade towards the top and stay outside the body. k scales lift and blur to the size.
+export function stickerShadow(face, box, id, rect, cut, strength = 1) {
+  const [x, y, w, h] = box, k = Math.min(1, Math.min(w, h) / 170);
+  const lift = Math.min(34, 10 + Math.min(w, h) * 0.05) * STICKER.lift * k;
+  const blur = (i, sd) => `<filter id="${id}p${i}" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="${f(Math.max(0.5, sd * k))}"/></filter>`;
+  const ramp = (gid, x1, y1, x2, y2, fn) => `<linearGradient id="${gid}" x1="${f(x1)}" y1="${f(y1)}" x2="${f(x2)}" y2="${f(y2)}" gradientUnits="userSpaceOnUse">${[0, 0.2, 0.4, 0.6, 0.8, 1].map((t) => `<stop offset="${t}" stop-color="#fff" stop-opacity="${f(fn(t))}"/>`).join('')}</linearGradient>`;
+  let defs = PEEL.map(([, , sd], i) => blur(i, sd)).join('')
+    + `<filter id="${id}ph" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation="${f(Math.max(0.8, 3 * k))}"/></filter>`
+    + ramp(`${id}pu`, 0, y, 0, y + h * 0.65, (t) => 0.3 + 0.7 * t * (2 - t))
+    + ramp(`${id}ps`, x + w * 0.3, 0, x + w * 0.9, 0, (t) => t * t * (3 - 2 * t))
+    + `<mask id="${id}pU" maskUnits="userSpaceOnUse" ${BIG}><rect ${BIG} fill="url(#${id}pu)"/></mask>`
+    + `<mask id="${id}pS" maskUnits="userSpaceOnUse" ${BIG}><rect ${BIG} fill="url(#${id}ps)"/></mask>`
+    + outsideMask(`${id}pO`, cut);
+  let layers = '';
+  for (const [i, [start, reach, , op]] of PEEL.entries()) {
+    const d = lift * reach;
+    if (rect) layers += `<polygon points="${P([[x + w * start, y + h - 1], [x + w - 1, y + 1], [x + w + d * 0.55, y + h * 0.3 + d * 0.3], [x + w + d * 0.6, y + h + d], [x + w * (start + (1 - start) * 0.45), y + h + d * 0.55]])}" fill="#000" opacity="${f(op * strength)}" filter="url(#${id}p${i})"/>`;
+    else layers += `<polygon points="${P(face)}" transform="translate(${f(d * 0.6)} ${f(d * 0.35)})" fill="#000" opacity="${f(op * strength)}" filter="url(#${id}p${i})"/>`;
+  }
+  const top = `<polygon points="${P(face)}" transform="translate(0 ${f(-1.5 * Math.max(0.5, k))})" fill="#000" opacity="${f(STICKER.top * strength)}" filter="url(#${id}ph)"/>`;
+  return { reach: lift + 2.5 * 12 * k, svg: `<defs>${defs}</defs><g mask="url(#${id}pO)"><g mask="url(#${id}pU)"><g${rect ? '' : ` mask="url(#${id}pS)"`}>${layers}</g></g>${top}</g>` };
+}
+// Very even sheen: the paper turns a touch lighter towards the right (LABEL_STYLE.smooth of the stickers).
+function sheen(face, box, id, amount = 0.045) {
+  const [x, , w] = box;
+  return `<defs><linearGradient id="${id}l" x1="${f(x)}" y1="0" x2="${f(x + w)}" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0.25" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#fff" stop-opacity="${amount}"/></linearGradient></defs>`
+    + `<polygon points="${P(face)}" fill="url(#${id}l)"/>`;
+}
+
+// Lettering from polygons (px). E: solid cream with the sticker's short soft shadow;
 // W: cream with a #F6E3C0 dark side and a short shadow of the background darkened 20%; K: flat ink.
-// state 'pressed' swaps the lit and dark edges, 'off' halves the effects. `id` keeps defs unique.
+// state 'pressed' flattens the shadows, 'off' halves the effects. `id` keeps defs unique.
 export function lettering(polys, treatment, lh, id, bg, state, ink = INK.ink) {
   const s = Math.max(0.75, lh / 72); // 2 px shadow at M letters, scaled with the letter height (at least 1.5 px)
   const body = polys.map((p) => `<polygon points="${P(p)}"/>`).join('');
@@ -78,13 +101,11 @@ export function lettering(polys, treatment, lh, id, bg, state, ink = INK.ink) {
   if (treatment === 'K') {
     out += use(ink, 0, 0);
   } else if (treatment === 'E') {
-    // letters: the brief's half strength for the lit edge; the dark edge and shadow at LETTER_DARK of full,
-    // so thin strokes still read on light paper (the lit edge alone disappears there)
-    const k = (state === 'off' ? 0.5 : 1) * 0.5, kd = (state === 'off' ? 0.5 : 1) * EMBOSS.letterDark, pressed = state === 'pressed';
-    out += `<defs>${outsideMask(id + 'o', body)}</defs>`;
-    if (!pressed) out += `<g mask="url(#${id}o)">${use('#000', 2 * s, 2 * s, ` filter="url(#${id}b)" opacity="${f(EMBOSS.shadow * kd)}"`)}</g>`;
-    out += `<g fill="#fff">${body.replace(/<polygon /g, `<polygon opacity="${f(EMBOSS.fill * k)}" `)}</g>`;
-    out += bevel(body, Math.max(1, EMBOSS.edge * s * 0.8), EMBOSS.light * k, EMBOSS.dark * kd, id + 'v', pressed);
+    // solid cream paper letters with the sticker's short soft shadow (menuLabel: dx 1.5, dy 3, deviation 2,
+    // black 20% at M letters). Pressed: the shadow nearly goes, as if pushed flat; off: letters at half opacity.
+    const ds = state === 'pressed' ? 0.35 : 1;
+    out += `<defs><filter id="${id}d" x="-10%" y="-10%" width="120%" height="140%"><feDropShadow dx="${f(1.5 * s * ds)}" dy="${f(3 * s * ds)}" stdDeviation="${f(2 * s * ds)}" flood-color="#000" flood-opacity="0.2"/></filter></defs>`;
+    out += `<g filter="url(#${id}d)"${state === 'off' ? ' opacity="0.5"' : ''}>${use(INK.paper, 0, 0)}</g>`;
   } else {
     const shadow = bg ? mix(bg, '#000000', 0.2) : '#000000';
     out += use(shadow, 2 * s, 2 * s, ` filter="url(#${id}b)"${bg ? '' : ' opacity="0.2"'}`) + use(INK.paper_back, d * 0.8, d * 0.8) + use(INK.paper, 0, 0);
@@ -92,7 +113,7 @@ export function lettering(polys, treatment, lh, id, bg, state, ink = INK.ink) {
   return out;
 }
 
-// Soft shape shadow for a face polygon, fading in from the left edge; plus a faint top line.
+// W and K shape shadow (brief 1.1: offset 6, blur 14, black 15% at M, scaled), fading in from the left edge; plus a faint top line.
 function faceShadow(face, box, s, id, strength = 1, cut = null) {
   const [x, y, w, h] = box, dx = 6 * s, sd = 7 * s; // blur 14 px ~ Gaussian deviation 7
   const fadeTo = x + Math.min(w * 0.4, h * 1.6);
@@ -101,16 +122,9 @@ function faceShadow(face, box, s, id, strength = 1, cut = null) {
     + `<linearGradient id="${id}g" x1="${f(x)}" y1="0" x2="${f(fadeTo)}" y2="0" gradientUnits="userSpaceOnUse">${[0, 0.25, 0.5, 0.75, 1].map((t) => `<stop offset="${t}" stop-color="#fff" stop-opacity="${f(t * t * (3 - 2 * t))}"/>`).join('')}</linearGradient>`
     + `<mask id="${id}m" maskUnits="userSpaceOnUse" x="-10000" y="-10000" width="20000" height="20000"><rect x="-10000" y="-10000" width="20000" height="20000" fill="url(#${id}g)"/></mask></defs>`
     + (cut ? outsideMask(id + 'x', cut) : '')
-    + `<g${cut ? ` mask="url(#${id}x)"` : ''}><g mask="url(#${id}m)"><polygon points="${P(face)}" transform="translate(${f(dx)} ${f(dx)})" fill="#000" opacity="${f(EMBOSS.shadow * strength)}" filter="url(#${id}s)"/></g>`
+    + `<g${cut ? ` mask="url(#${id}x)"` : ''}><g mask="url(#${id}m)"><polygon points="${P(face)}" transform="translate(${f(dx)} ${f(dx)})" fill="#000" opacity="${f(0.15 * strength)}" filter="url(#${id}s)"/></g>`
     + `<polygon points="${P(face)}" transform="translate(0 ${f(-1.2 * Math.max(1, s))})" fill="#000" opacity="${f(0.035 * strength)}" filter="url(#${id}h)"/></g>`;
 }
-// Very even sheen: the paper turns a touch lighter towards the right (LABEL_STYLE.smooth of the stickers).
-function sheen(face, box, id) {
-  const [x, , w] = box;
-  return `<defs><linearGradient id="${id}l" x1="${f(x)}" y1="0" x2="${f(x + w)}" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0.25" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#fff" stop-opacity="0.045"/></linearGradient></defs>`
-    + `<polygon points="${P(face)}" fill="url(#${id}l)"/>`;
-}
-
 // Splits text into lines for round shapes: picks the break that makes the block closest to square.
 function bestLines(text, lh, aspect = 1) {
   const words = text.split(' ');
@@ -171,6 +185,13 @@ export function piece(opts) {
     face = wobble([[sk, 0], [fw + sk, 0], [fw, fh], [0, fh]], name);
     extraRight = sk;
     textBox = [sk / 2, 0, fw, fh];
+  } else if (shape === 'P' && treatment === 'E') {
+    // clear sticker ribbon: one band with V-notched ends (back tails would only show as stray shadows)
+    fh = opts.faceH ?? Math.round(lh + 2 * padY);
+    const n = fh * 0.3, e = fh * 0.45;
+    fw = opts.width ?? Math.ceil(textW + 2 * padX + 2 * e);
+    face = wobble([[0, 0], [fw, 0], [fw - n, fh / 2], [fw, fh], [0, fh], [n, fh / 2]], name);
+    textBox = [0, 0, fw, fh];
   } else if (shape === 'P') {
     fh = opts.faceH ?? Math.round(lh + 2 * padY);
     fw = opts.width ?? Math.ceil(textW + 2 * padX);
@@ -191,8 +212,10 @@ export function piece(opts) {
   }
 
   // Canvas: room for the shadow (reach ~ offset + 2.5 deviations) mostly to the right and below.
-  const reach = 6 * s + 7 * s * 2.4;
-  const mL = Math.ceil(extraLeft + reach * 0.25 + 1), mT = Math.ceil(reach * 0.35);
+  // E stickers: the peel reaches right and down only; the left and top edges vanish, so they need almost no margin.
+  const kk = Math.min(1, Math.min(fw, fh) / 170);
+  const reach = E ? Math.min(34, 10 + Math.min(fw, fh) * 0.05) * 0.8 * kk + 30 * kk : 6 * s + 7 * s * 2.4;
+  const mL = Math.ceil(extraLeft + (E ? 2 : reach * 0.25 + 1)), mT = Math.ceil(E ? 2 + 6 * kk : reach * 0.35);
   let W = Math.ceil(mL + fw + extraRight + reach), H = Math.ceil(mT + fh + extraBottom + reach);
   let ox = mL, oy = mT;
   const Hmin = C.png; // at least the class height, face centred on the class band like the brief's table
@@ -207,22 +230,21 @@ export function piece(opts) {
   const poly = (pts) => `<polygon points="${P(pts)}"/>`;
   const tailG = tails ? tails.polys.map((p) => wobble(tr(p), name + p.length)) : [];
   const allBody = [faceG, ...tailG].map(poly).join('');
-  // shadow outside the shape only (an E face is see-through, so it must not darken what is behind it)
-  let out = state === 'pressed' ? '' : faceShadow(faceG, box, s, id, k, E ? allBody : null);
+  const sticker = (face2, box2, sid, rect) => (state === 'pressed' ? '' : stickerShadow(face2, box2, sid, rect, allBody, k).svg);
+  let out = E ? sticker(faceG, box, id, shape === 'R') : state === 'pressed' ? '' : faceShadow(faceG, box, s, id, k);
   if (tails) {
-    if (state !== 'pressed') out += tailG.map((p, i) => faceShadow(p, i ? [ox + fw, oy, extraLeft, fh] : [ox - extraLeft, oy, extraLeft, fh], s, id + 'ab'[i], k, E ? allBody : null)).join('');
+    const tb = [[ox - extraLeft, oy + fh * 0.22, extraLeft + fh * 0.26, fh], [ox + fw - fh * 0.26, oy + fh * 0.22, extraLeft + fh * 0.26, fh]];
     if (E) {
-      // tails tuck under the face: draw them only outside it
-      const tb = tailG.map(poly).join('');
-      out += `<defs>${outsideMask(id + 'f', poly(faceG))}</defs><g mask="url(#${id}f)"><g fill="#fff" opacity="${f(EMBOSS.fill * k * 0.6)}">${tb}</g>`
-        + bevel(tb, Math.max(1, EMBOSS.edge * s), EMBOSS.light * k * 0.8, EMBOSS.dark * k, id + 'tv', state === 'pressed')
-        + tails.folds.map((p) => `<polygon points="${P(tr(p))}" fill="#000" opacity="${f(0.1 * k)}"/>`).join('') + '</g>';
+      // clear tails: only their own peel shadow and the fold where they tuck under the band show
+      out += tailG.map((p, i) => sticker(p, tb[i], id + 'ab'[i], false)).join('');
+      out += tails.folds.map((p) => `<polygon points="${P(tr(p))}" fill="#000" opacity="${f(0.06 * k)}"/>`).join('');
     } else {
+      if (state !== 'pressed') out += tailG.map((p, i) => faceShadow(p, tb[i], s, id + 'ab'[i], k)).join('');
       out += tailG.map((p) => `<polygon points="${P(p)}" fill="${tails.back}"/>`).join('');
       out += tails.folds.map((p) => `<polygon points="${P(tr(p))}" fill="${tails.fold}"/>`).join('');
     }
   }
-  if (E) out += `<polygon points="${P(faceG)}" fill="#fff" opacity="${f(EMBOSS.fill * k)}"/>` + bevel(poly(faceG), Math.max(1, EMBOSS.edge * s), EMBOSS.light * k, EMBOSS.dark * k, id + 'sv', state === 'pressed');
+  if (E) out += sheen(faceG, box, id, STICKER.sheen);
   else out += `<polygon points="${P(faceG)}" fill="${bg}"/>` + (treatment === 'W' ? sheen(faceG, box, id) : '');
   if (opts.border) {
     const bw = Math.max(2, lh * 0.075);

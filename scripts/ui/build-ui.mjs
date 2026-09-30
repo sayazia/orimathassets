@@ -50,8 +50,8 @@ if (!only || 'font'.startsWith(only) || only === 'paper_glyphs') {
   console.log(`glyphs: ${font.files.length} svg, 3 atlases ${aw}x${ah}`);
 }
 
-// Section 2 items. Buttons also get a pressed state (lit and dark edges swapped, no drop shadow, so it
-// sinks into the paper) and an off state (effects at half strength).
+// Section 2 items. Buttons also get a pressed state (sticker pressed flat: no peel shadow, letter shadow
+// shortened) and an off state (effects at half strength).
 const BG = (treatment, bg) => (treatment === 'W' ? bg : treatment === 'K' ? '#FFFDF8' : null);
 for (const it of ITEMS) {
   const C = CLASSES[it.cls];
@@ -67,12 +67,12 @@ for (const it of ITEMS) {
   }
 }
 
-// 2.9 small icons (128 px), transparent emboss like the buttons that use them
+// 2.9 small icons (128 px), clear stickers like the buttons that use them
 for (const [id, draw] of Object.entries(ICONS)) {
   const p = piece({ name: `icon_${id}`, shape: 'C', treatment: 'E', cls: 'S', lh: 30, width: 104, square: 128, symbol: draw(), symbolScale: 0.62 });
   await emit({ name: `icon_${id}`, dir: 'icons', text: '', shape: 'C', treatment: 'E', background: null, sizeClass: 'icon_small', world: 0.02, classPx: 128, priority: 2 }, p);
 }
-// 2.10 large icons (512 px), transparent emboss
+// 2.10 large icons (512 px), clear stickers
 for (const [id, draw] of Object.entries(LARGE)) {
   const name = LARGE_NAMES[id];
   const p = piece({ name, shape: 'C', treatment: 'E', cls: 'L', width: 440, square: 512, symbol: draw(), symbolScale: 0.6 });

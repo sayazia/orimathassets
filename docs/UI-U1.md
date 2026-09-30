@@ -1,7 +1,7 @@
 # Numeria Arena UI, batch U1: ringkasan
 
 Dikerjakan 30 Sep 2026 atas permintaan Zia, mengikuti `docs/brief/BRIEF-UI-U1.md` dan `docs/brief/ATURAN-UMUM.md`.
-Semua banner, tombol, kata HUD, lencana, dan ikon batch U1 dengan huruf kertas timbul seperti contoh "BEGIN HERE",
+Semua banner, tombol, kata HUD, lencana, dan ikon batch U1 dengan huruf kertas seperti stiker "BEGIN HERE",
 ditambah satu set huruf kertas untuk teks dinamis (skor, jam, soal). Semuanya dibangun dari kode di `scripts/ui/`
 tanpa font pihak ketiga, tanpa merek lain, dan tanpa emdash.
 
@@ -11,20 +11,20 @@ npm run build:ui -- race_   # hanya berkas yang namanya diawali race_
 npm run build:2d -- brand   # logo, ikon aplikasi, favicon, dan gambar promosi Numeria Arena
 ```
 
-Buka `ui2d/preview.html`: setiap berkas E tampil di atas empat latar uji (kertas buram DOF, krem #F6E3C0, teal #3FB6A0,
-dan ruangan buram yang agak gelap), lalu atlas huruf, uji baca angka, dan satu contoh HUD lomba yang angkanya disusun
+Buka `ui2d/preview.html`: setiap berkas E tampil di samping `2d/labels/label_begin_here.png` di atas empat latar uji (kertas buram DOF, krem #F6E3C0, teal #3FB6A0,
+dan ruangan buram yang agak gelap), lalu semua berkas E pada ukuran di game (sekitar 2 cm dilihat dari 50 cm), atlas huruf, uji baca angka, dan satu contoh HUD lomba yang angkanya disusun
 dari atlas huruf kertas.
 
 ## Perlakuan
 
 | Kode | Manifest | Dipakai untuk | Cara dibuat |
 |---|---|---|---|
-| E | `emboss` | default: judul, menu, status, gelombang, kata HUD, petunjuk, tombol, jeda, semua ikon | muka putih 5%; tepi terang putih 62% di kiri atas dan tepi gelap hitam 16% di kanan bawah, lebar 2.5 px pada kelas M; bayangan jatuh offset 6 px, blur 14 px, hitam 15% (diskalakan per kelas), hanya di luar bentuk dan memudar ke tepi kiri |
+| E | `emboss` | default: judul, menu, status, gelombang, kata HUD, petunjuk, tombol, jeda, semua ikon | stiker bening gaya D yang sama dengan `label_begin_here.png` (`scripts/2d/menu.mjs`): badan bening yang mengambil warna latar dengan kilap putih rata 0 sampai 4.2%; tepi kiri dan atas menghilang ke latar; garis mengelupas dan bayangan lembut (empat lapis, hitam 10 sampai 16%) hanya di kanan dan bawah; garis atas sangat samar 3.5%. Huruf kertas krem padat #FFF8EC dengan bayangan pendek lembut (geser 1.5/3 px, blur 2 px, hitam 20% pada tinggi huruf 72 px, diskalakan). Tanpa tepi terang atau gelap di sekeliling huruf dan tanpa bingkai timbul |
 | W | `on_color` | warna yang bermakna: READY!, BOSS ROUND, DOUBLE POINTS!, TIME'S UP!, juara, nama pemain dan robot, gelembung robot, umpan balik, strip waktu, lencana | muka warna peran, huruf krem #FFF8EC dengan sisi gelap #F6E3C0, bayangan huruf 2 px warna latar digelapkan 20% |
 | K | `solid_paper` | kartu soal dan tag jawaban | muka #FFFDF8 padat, kosong; game menulis dengan tinta |
 
-Tombol (`button_*`) juga punya `_pressed` (tepi terang dan gelap bertukar, tanpa bayangan jatuh, jadi tombol masuk ke
-kertas) dan `_off` (semua efek setengah kekuatan).
+Tombol (`button_*`) juga punya `_pressed` (stiker menempel rata: tanpa bayangan kelupas, bayangan huruf dipendekkan) dan
+`_off` (bayangan setengah kekuatan, huruf 50% tembus pandang).
 
 ## Berkas
 
@@ -50,17 +50,17 @@ teal #3FB6A0, benar #5DB85B, coba lagi #F8961E, salah #E04A44, emas #E8B64C, per
 
 ## Keputusan yang berbeda dari brief, dan alasannya
 
-1. **Tepi gelap dan bayangan huruf E pada 80%, bukan 50%.** Tepi terang tetap setengah kekuatan. Pada latar terang (kertas
-   buram dan krem) tepi putih hampir hilang, sehingga dengan tepi gelap setengah kekuatan huruf S dan XS sulit dibaca;
-   80% lolos uji empat latar. Diatur di `EMBOSS.letterDark` (`scripts/ui/paper.mjs`).
+1. **E mengikuti koreksi Zia untuk bagian 1.1**: E adalah stiker bening gaya BEGIN HERE (gaya D), bukan emboss bertepi.
+   Nilai manifest tetap `emboss` sesuai format bagian 4. Seperti BEGIN HERE, huruf krem paling jelas di latar berwarna dan
+   ruangan, dan lebih samar di latar krem atau kertas terang; pratinjau ukuran game menunjukkan keduanya berdampingan.
 2. **Angka dinamis di HUD disusun dengan atlas K (tinta)**, kata tetapnya (SOLVED, PTS) tetap E. Brief 1.1 menyebut K untuk
    angka yang harus selalu terbaca; contoh HUD di pratinjau memakai cara ini. Pilihan sebelumnya (kata XS bertinta)
    digantikan brief baru, jadi SOLVED, PTS, dan PROGRESS NOT SAVED kini E.
 3. **Atlas E, W, K** menggantikan "dua versi T dan W" di 1.5, karena perlakuan T tidak ada lagi di 1.1. Atlas K dicetak
    tinta #3A3F4B; untuk teks soal game mewarnainya #1F4FA3.
-4. **Bayangan bentuk** memakai angka brief pada kelas M lalu diskalakan dengan tinggi huruf, dan memudar ke tepi kiri supaya
-   tepi kiri menyatu dengan latar seperti stiker yang disetujui. Bayangan huruf 2 px juga diskalakan dari kelas M
-   (paling kecil 1.5 px).
+4. **Bayangan stiker** memakai lapisan kelupas yang sama dengan label menu (`PEEL` di `scripts/ui/paper.mjs`), dengan tinggi
+   angkat diskalakan dari ukuran bentuk. Untuk bentuk bukan persegi (lingkaran, jajar genjang, gelembung, pita) bayangan
+   dibuat dari salinan bentuk yang digeser ke kanan bawah lalu dipudarkan ke atas dan ke kiri.
 5. **Tinggi PNG**: persegi panjang dan jajar genjang tepat setinggi kelasnya. Lingkaran, gelembung, dan pita lebih tinggi
    karena bentuknya, sedangkan tinggi huruf tetap sesuai kelas; `world_height_m` diskalakan dengan tinggi PNG supaya huruf
    di dunia tetap berukuran kelasnya. Teks lingkaran dan gelembung dipatah ke dua baris bila lebih bulat (TIME'S / UP!).
@@ -70,11 +70,11 @@ teal #3FB6A0, benar #5DB85B, coba lagi #F8961E, salah #E04A44, emas #E8B64C, per
 7. **Ukuran bebas yang saya pilih**: kartu soal lebar muka 480, 800, 1120 px; tag jawaban muat tiga angka S, versi pecahan
    1.5x tinggi; strip waktu 640 x 22 px; `recap_place_*` lingkaran 440 px di kanvas 512 dengan huruf L; bingkai jam merah
    bertepi #E04A44 selebar 0.075 tinggi huruf.
-8. **Pita (P)**: pada W, ekor belakang memakai warna latar digelapkan 10% dan lipatannya 20%; pada E, ekor timbul seperti muka
-   dan lipatannya hitam 10%. Ekor digambar hanya di luar muka supaya tidak terlihat menembus muka yang transparan.
+8. **Pita (P)**: pada W, ekor belakang memakai warna latar digelapkan 10% dan lipatannya 20%. Pada E, pita dibuat satu pita
+   stiker dengan ujung bertakik V, karena ekor belakang pada stiker bening hanya terlihat sebagai bayangan nyasar.
 9. **Ikon tombol**: MENU memakai rumah, SKIP panah ganda dengan batang, RESUME segitiga play. Untuk tombol OFF ditambah ikon
    bercoret `music_off` dan `captions_off` (`sound_off` sudah ada di brief). Bendera balap di `icon_robot_race` memakai kotak
-   timbul dan kotak kosong, karena E tidak berwarna.
+   krem dan kotak kosong, karena E tidak berwarna.
 10. **Merek**: `logo_numeria_arena` tetap krem di atas teal supaya logo berdiri sendiri di mana pun (Devpost, ikon), ditambah
     versi `logo_numeria_arena_emboss`. Ikon aplikasi dan favicon kini monogram NA dan N; bangau dan buku Foldlings dilepas.
     `title_numeria_arena_w` dihapus karena brief baru hanya meminta versi E.

@@ -32,7 +32,7 @@ export function buildFont() {
     note: 'Numeria Arena paper glyphs. All values in px for glyphs 128 px tall; scale by (letter height / 128). '
       + 'Draw a glyph by copying its atlas cell so that cell.origin lands on the pen position (x) and the top of the line (y), '
       + 'then advance the pen by advance, adding kerning[prev + char] when present. Digits can use tabular_advance (centre the digit in it) so a running clock does not wobble. '
-      + 'Atlas E is the transparent emboss (white edge top left, black edge bottom right, no fill) that takes the colour of whatever is behind it; atlas W is cream for coloured paper and bakes its short shadow as black at 20% (it reads as the background darkened 20%); atlas K is flat ink #3A3F4B for answers and questions on solid paper (tint it #1F4FA3 for question text).',
+      + 'Atlas E is solid cream #FFF8EC paper letters with a short soft shadow, the lettering of the clear stickers (approved BEGIN HERE label style), readable on any coloured background; atlas W is cream for coloured paper and bakes its short shadow as black at 20% (it reads as the background darkened 20%); atlas K is flat ink #3A3F4B for answers and questions on solid paper (tint it #1F4FA3 for question text).',
     height: GH,
     units: { letter_height: INK_H, px_per_unit: r2(K) },
     atlas: { E: 'ui2d/font/paper_glyphs_E.png', W: 'ui2d/font/paper_glyphs_W.png', K: 'ui2d/font/paper_glyphs_K.png', size: [ATLAS_W, atlasH], cell_padding: PAD },

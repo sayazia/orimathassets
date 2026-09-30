@@ -22,7 +22,7 @@ export function previewRoom(W, H) {
 <rect x="0" y="${H * 0.7}" width="${W}" height="${H * 0.3}" fill="#2E2A28"/><rect x="${W * 0.1}" y="${H * 0.52}" width="${W * 0.42}" height="${H * 0.26}" rx="40" fill="#4E5D55"/></g></svg>`;
 }
 
-// The four test backgrounds every emboss (E) file must stay readable on (brief 1.1).
+// The four test backgrounds every sticker (E) file must stay readable on (brief 1.1).
 const TESTS = [['dof', 'url(preview_bg.jpg) 30% 40%/900px auto'], ['cream', '#F6E3C0'], ['teal', '#3FB6A0'], ['room', 'url(preview_room.jpg) 20% 60%/1400px auto']];
 
 const GROUPS = [
@@ -33,9 +33,18 @@ const GROUPS = [
 export function previewHtml(manifest, font) {
   const byDir = (d) => manifest.filter((m) => m.file.startsWith(`ui2d/${d}/`));
   const img = (m, sc = 2) => `<img src="${m.file.slice(5)}" width="${Math.round(m.px[0] / sc)}" height="${Math.round(m.px[1] / sc)}" alt="${m.text || m.name}">`;
-  const card = (m) => m.treatment === 'emboss'
-    ? `<figure class="tests">${TESTS.map(([k, bg]) => `<div class="tile" style="background:${bg}" title="${k}">${img(m, m.px[0] > 900 ? 3 : 2)}</div>`).join('')}<figcaption>${m.name}<br><span>${m.px.join(' x ')} · ${m.size_class} · ${m.treatment} · P${m.priority}</span></figcaption></figure>`
-    : `<figure>${img(m)}<figcaption>${m.name}<br><span>${m.px.join(' x ')} · ${m.size_class} · ${m.treatment} · P${m.priority}</span></figcaption></figure>`;
+  // E files sit beside the approved sticker (2d/labels/label_begin_here.png, letters about 71 px tall),
+  // scaled so both letter heights match, on each of the four test backgrounds.
+  const BH = { src: '../2d/labels/label_begin_here.png', w: 736, h: 266, letter: 71 };
+  const beside = (m, sc) => { const r = (m.letter_px ?? 72) / BH.letter / sc; return `<img src="${BH.src}" width="${Math.round(BH.w * r)}" height="${Math.round(BH.h * r)}" alt="BEGIN HERE">`; };
+  const card = (m) => { const sc = m.px[0] > 900 ? 3 : 2; return m.treatment === 'emboss'
+    ? `<figure class="tests">${TESTS.map(([k, bg]) => `<div class="tile" style="background:${bg}" title="${k}">${beside(m, sc)}${img(m, sc)}</div>`).join('')}<figcaption>${m.name}<br><span>${m.px.join(' x ')} · ${m.size_class} · ${m.treatment} · P${m.priority}</span></figcaption></figure>`
+    : `<figure>${img(m)}<figcaption>${m.name}<br><span>${m.px.join(' x ')} · ${m.size_class} · ${m.treatment} · P${m.priority}</span></figcaption></figure>`; };
+  // In-game size: world height seen from 50 cm on a headset at about 25 px per degree (Quest 3).
+  const gamePx = (worldM) => (Math.atan(worldM / 0.5) * 180 / Math.PI) * 25;
+  const gameImg = (src, pxH, worldM, alt) => `<img src="${src}" style="height:${gamePx(worldM).toFixed(1)}px;width:auto" alt="${alt}" title="${alt}">`;
+  const gameRow = (bg) => `<div class="tile game" style="background:${bg}">${gameImg(BH.src, BH.h, 0.035 * BH.h / 160, 'BEGIN HERE')}${manifest.filter((m) => m.treatment === 'emboss').map((m) => gameImg(m.file.slice(5), m.px[1], m.world_height_m, m.name)).join('')}</div>`;
+  const gameSection = `<section id="gamesize"><h2>At game size (about 2 cm seen from 50 cm)</h2><p>Every sticker (E) file at its world height as a headset shows it from 50 cm (about 25 px per degree), with BEGIN HERE first at button size.</p>${TESTS.map(([, bg]) => gameRow(bg)).join('')}</section>`;
   const sections = GROUPS.map(([d, t]) => `<section><h2>${t}</h2><div class="grid">${byDir(d).map(card).join('')}</div></section>`).join('');
   const slot = (n) => JSON.stringify(manifest.find((m) => m.name === n));
   return `<!doctype html>
@@ -50,14 +59,15 @@ p{max-width:70ch}
 .grid{display:flex;flex-wrap:wrap;gap:14px 18px;align-items:flex-end}
 figure{margin:0;max-width:100%}figure img{display:block;max-width:100%;height:auto}
 figcaption{font-size:12px;padding-left:6px}figcaption span{opacity:.6}
-.tests{display:flex;flex-wrap:wrap;gap:4px;align-items:stretch}.tests figcaption{flex-basis:100%}.tile{padding:6px;border-radius:6px;display:flex;align-items:center}
+.tests{display:flex;flex-wrap:wrap;gap:4px;align-items:stretch}.tests figcaption{flex-basis:100%}.tile{padding:6px;border-radius:6px;display:flex;align-items:center;gap:6px}.tile.game{flex-wrap:wrap;gap:4px 10px;margin-bottom:8px;padding:12px}
 #hud{position:relative;width:1280px;max-width:100%;aspect-ratio:16/9;background:url(preview_bg.jpg) center/cover;border-radius:10px;overflow:hidden;box-shadow:0 4px 24px #0002}
 #hud>*{position:absolute}
 .glyphs img{max-width:100%}
 </style></head><body><main>
 <h1>Numeria Arena UI, batch U1</h1>
-<p>Every file from ui2d/manifest.json at half size (the PNGs are 2x). Emboss (E) files are shown on the four test backgrounds: blurred paper, cream, teal and a dark blurred room. The race HUD below is put together from the pieces, with every number set from the paper glyph atlases.</p>
+<p>Every file from ui2d/manifest.json at half size (the PNGs are 2x). Emboss (E) files are clear stickers in the approved BEGIN HERE style; each is shown beside label_begin_here.png on the four test backgrounds (blurred paper, cream, teal and a dark blurred room), and again at game size. The race HUD below is put together from the pieces, with every number set from the paper glyph atlases.</p>
 <section><h2>Race HUD example</h2><div id="hud"></div></section>
+${gameSection}
 <section class="glyphs"><h2>Paper glyphs (atlases E, W and K)</h2>
 <div class="tests">${TESTS.map(([k, bg]) => `<div class="tile" style="background:${bg}"><img src="font/paper_glyphs_E.png" width="340"></div>`).join('')}</div>
 <img src="font/paper_glyphs_W.png" width="512" style="background:#3469C4"> <img src="font/paper_glyphs_K.png" width="512" style="background:#FFFDF8">

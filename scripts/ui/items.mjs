@@ -6,7 +6,7 @@ export const COL = {
   correct: '#5DB85B', correct_text: '#2F7D32', try_again: '#F8961E', wrong: '#E04A44', wrong_text: '#C62828',
   gold: '#E8B64C', silver: '#B8BEC8', bronze: '#C98A5A', boss: '#6D597A',
 };
-// Treatments (brief 1.1): E transparent emboss is the default; W only where the colour means something;
+// Treatments (brief 1.1): E clear sticker (BEGIN HERE style) is the default; W only where the colour means something;
 // K (solid paper) only for question cards and number tags.
 
 const R = (name, text, t, bg, cls, pri, extra = {}) => ({ name, text, shape: 'R', treatment: t, bg: bg ? COL[bg] : null, bgKey: bg, cls, priority: pri, ...extra });

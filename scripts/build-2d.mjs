@@ -49,8 +49,8 @@ for (const [name, draw] of Object.entries(PICTURES)) {
   emit(`picture_password/pp_${name}`, 100, 100, body, [[256, 256]], true);
 }
 
-// Logo (Numeria Arena): the title in the embossed paper letters of the UI set (scripts/ui), cream on
-// teal (stands on its own anywhere) and the transparent emboss version that takes any background.
+// Logo (Numeria Arena): the title in the paper letters of the UI set (scripts/ui), cream on
+// teal (stands on its own anywhere) and the clear sticker version (treatment E) that takes any background.
 const title = (treatment) => piece({ name: `logo${treatment}`, text: 'NUMERIA ARENA', shape: 'R', treatment, bg: C('teal'), cls: 'XL' });
 for (const [id, treatment] of [['logo_numeria_arena', 'W'], ['logo_numeria_arena_emboss', 'E']]) {
   const t = title(treatment);

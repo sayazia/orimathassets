@@ -1,6 +1,6 @@
 // Icon symbols for Numeria Arena, drawn in one colour from flat paper pieces in a 100 x 100 box (y down).
 // Details are cut out (gaps between pieces, holes left open) rather than drawn in a second colour, so each
-// icon embosses exactly like the paper letters.
+// icon is drawn in cream paper exactly like the letters.
 const rad = (a) => (a * Math.PI) / 180;
 export const rect = (x0, y0, x1, y1) => [[x0, y0], [x1, y0], [x1, y1], [x0, y1]];
 export const ngon = (cx, cy, r, n = 16, rot = 0, ry = r) => [...Array(n).keys()].map((i) => { const a = rot + (i / n) * Math.PI * 2; return [cx + Math.cos(a) * r, cy + Math.sin(a) * ry]; });
