@@ -84,10 +84,10 @@ if (!only || 'backgrounds'.startsWith(only)) {
   write('backgrounds/menu_layout.json', JSON.stringify({ size: [MENU_W, MENU_H], note: 'Slot rectangles [x, y, w, h] in pixels from the top left, same for every colour. Each is the label face exactly; its left edge stays on the sheet and its right side peels up.', layouts: MENU_LAYOUTS }, null, 2) + '\n');
 }
 
-// Menu labels: transparent PNGs of a label with its peel shadow and lettering, to lay on a background.
+// Menu label stickers: transparent PNGs with a clear face, so they take the colour of any background.
 for (const [id, shape, lines] of [['start_here', 'square', ['START', 'HERE']], ['you_win', 'circle', ['YOU', 'WIN']]]) {
-  const { body, W, H } = menuLabel('teal', shape, lines);
-  emit(`labels/label_${id}_teal`, W, H, body, [[W * 2, H * 2]], true);
+  const { body, W, H } = menuLabel(shape, lines);
+  emit(`labels/label_${id}`, W, H, body, [[W * 2, H * 2]], true);
 }
 
 // ---- Rasterise, then render the brand images from the models.
