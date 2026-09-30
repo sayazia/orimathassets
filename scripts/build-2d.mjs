@@ -85,8 +85,8 @@ if (!only || 'backgrounds'.startsWith(only)) {
 }
 
 // Menu label stickers: transparent PNGs with a clear face, so they take the colour of any background.
-for (const [id, shape, lines] of [['start_here', 'square', ['START', 'HERE']], ['you_win', 'circle', ['YOU', 'WIN']]]) {
-  const { body, W, H } = menuLabel(shape, lines);
+for (const [id, shape, lines, size] of [['start_here', 'square', ['START', 'HERE']], ['you_win', 'circle', ['YOU', 'WIN']], ['begin_here', 'square', ['BEGIN HERE'], [640, 170]]]) {
+  const { body, W, H } = menuLabel(shape, lines, undefined, size);
   emit(`labels/label_${id}`, W, H, body, [[W, H]], true);
 }
 

@@ -82,8 +82,9 @@ export const LABEL_STYLE = { lift: 0.8, ramp: true, curve: 0.6, edge: 0, corner:
 export function menuLabel(shape, lines, style = LABEL_STYLE, size = 360, pad = 48) {
   const { lift: L, ramp, curve, edge, corner, smooth } = style;
   const P = (pts) => pts.map(([px, py]) => `${px.toFixed(1)},${py.toFixed(1)}`).join(' ');
-  const x = pad, y = pad, w = size, h = size, cx = x + w / 2, cy = y + h / 2, r = size / 2;
-  const lift = Math.min(34, 10 + w * 0.05) * L;
+  const [w, h] = Array.isArray(size) ? size : [size, size];
+  const x = pad, y = pad, cx = x + w / 2, cy = y + h / 2, r = Math.min(w, h) / 2;
+  const lift = Math.min(34, 10 + Math.min(w, h) * 0.05) * L;
   const W = w + pad * 2, H = h + pad * 2;
   const shapeEl = (fill, extra = '') => shape === 'circle' ? `<circle cx="${cx}" cy="${cy}" r="${r}" fill="${fill}"${extra}/>` : `<rect x="${x}" y="${y}" width="${w}" height="${h}" fill="${fill}"${extra}/>`;
   // gradient axis: left to right for a side lift, top-left to bottom-right for a corner lift
@@ -135,8 +136,9 @@ export function menuLabel(shape, lines, style = LABEL_STYLE, size = 360, pad = 4
   }
   // lettering: centred lines, white paper with a small shadow
   const words = lines.map((l) => wordFlat(l));
-  const k = (size * (shape === 'circle' ? 0.5 : 0.66)) / Math.max(...words.map((wd) => wd.width));
   const lineGap = 3.2, total = words.length * words[0].height + (words.length - 1) * lineGap;
+  let k = (w * (shape === 'circle' ? 0.5 : 0.66)) / Math.max(...words.map((wd) => wd.width));
+  if (w !== h) k = Math.min(k, (h * 0.42) / total); // wide labels: the height limits the lettering
   let ty = cy - (total * k) / 2, letters = '';
   for (const wd of words) {
     const tx = cx - (wd.width * k) / 2;
