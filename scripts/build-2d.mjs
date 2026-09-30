@@ -81,7 +81,7 @@ for (const [layout, slots] of Object.entries(MENU_LAYOUTS)) for (const key of ME
   emit(`backgrounds/${layout}_${key}`, MENU_W, MENU_H, menuBackground(key, slots), [[1920, 1080]], true, 'jpg');
 }
 if (!only || 'backgrounds'.startsWith(only)) {
-  write('backgrounds/menu_layout.json', JSON.stringify({ size: [MENU_W, MENU_H], note: 'Slot rectangles [x, y, w, h] in pixels from the top left, same for every colour. Each is the hole a label flap was cut from: the flap is hinged on the right edge, and its visible face starts min(0.1 w, 34) px right of x.', layouts: MENU_LAYOUTS }, null, 2) + '\n');
+  write('backgrounds/menu_layout.json', JSON.stringify({ size: [MENU_W, MENU_H], note: 'Slot rectangles [x, y, w, h] in pixels from the top left, same for every colour. Each is the label face exactly; its left edge stays on the sheet and its right side peels up.', layouts: MENU_LAYOUTS }, null, 2) + '\n');
 }
 
 // ---- Rasterise, then render the brand images from the models.

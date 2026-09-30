@@ -1,5 +1,5 @@
-// Matte paper menu backgrounds: each label slot is cut from the sheet itself and pried up, hinged on
-// its right edge, so the left edge lifts and the cut hole shows behind it.
+// Matte paper menu backgrounds: each label is part of the sheet, still fixed along its left edge while
+// its right side peels up, so the shadow grows from nothing at the left to widest at the bottom right.
 // No text is drawn; the game writes into the slots listed in menu_layout.json.
 import { colourOf } from '../lib/palette.mjs';
 
@@ -31,7 +31,9 @@ export function menuBackground(key, slots) {
   const light = mix(base, '#FFFFFF', 0.07), dark = mix(base, '#000000', 0.07), ink = mix(base, '#000000', 0.55);
   const defs = `<defs>
 <radialGradient id="bg" cx="0.3" cy="0.2" r="1.1"><stop offset="0" stop-color="${light}"/><stop offset="1" stop-color="${dark}"/></radialGradient>
-<filter id="soft" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="7"/></filter>
+<filter id="soft" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="6"/></filter>
+<filter id="tight" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="3"/></filter>
+<filter id="hair" x="-5%" y="-100%" width="110%" height="300%"><feGaussianBlur stdDeviation="1.2"/></filter>
 <filter id="grain" x="0" y="0" width="100%" height="100%">
   <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="7"/>
   <feColorMatrix type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0.33 0.33 0.33 0 -0.42"/>
@@ -44,21 +46,18 @@ export function menuBackground(key, slots) {
 </defs>`;
   const W = MENU_W, H = MENU_H;
   let body = defs + `<rect width="${W}" height="${H}" fill="url(#bg)"/>`, defs2 = '';
-  const hole = mix(base, '#000000', 0.38), holeEdge = mix(base, '#000000', 0.12), crease = mix(base, '#000000', 0.2);
+  const shadow = mix(base, '#000000', 0.42); // tinted, never black
   slots.forEach(({ rect: [x, y, w, h] }, i) => {
-    const d = Math.min(w * 0.1, 34), e = Math.min(h * 0.06, 10) + 3; // left edge swings in by d, spreads by e
-    defs2 += `<linearGradient id="h${i}" x1="${x}" y1="0" x2="${x + d + 6}" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="${holeEdge}"/><stop offset="1" stop-color="${hole}"/></linearGradient>`
-      + `<linearGradient id="f${i}" x1="${x + d}" y1="0" x2="${x + w}" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="${mix(base, '#FFFFFF', 0.13)}"/><stop offset="1" stop-color="${mix(base, '#000000', 0.03)}"/></linearGradient>`;
     const P = (pts) => pts.map(([px, py]) => `${px.toFixed(1)},${py.toFixed(1)}`).join(' ');
-    // the hole the label was cut from, darkest under the lifted edge
-    body += `<rect x="${x}" y="${y}" width="${w}" height="${h}" fill="url(#h${i})"/>`;
-    // shadow of the lifted flap: nothing at the hinge, widening towards the free left edge
-    body += `<polygon points="${P([[x + w, y + h - 2], [x + d, y + h + e - 4], [x + d + 14, y + h + e + 20], [x + w, y + h + 2]])}" fill="${ink}" opacity="0.32" filter="url(#soft)"/>`;
-    body += `<polygon points="${P([[x + d, y - e + 6], [x + d + 18, y - e + 10], [x + d + 18, y + h + e - 6], [x + d, y + h + e]])}" fill="${ink}" opacity="0.35" filter="url(#soft)"/>`;
-    // the flap: hinged on the right, its left edge nearer the viewer so it reads a little taller
-    body += `<polygon points="${P([[x + w, y], [x + w, y + h], [x + d, y + h + e], [x + d, y - e]])}" fill="url(#f${i})"/>`;
-    body += `<polygon points="${P([[x + d, y - e], [x + d + 2.5, y - e + 0.3], [x + d + 2.5, y + h + e - 0.3], [x + d, y + h + e]])}" fill="#FFFFFF" opacity="0.18"/>`; // cut edge catching light
-    body += `<rect x="${x + w - 1.5}" y="${y}" width="3" height="${h}" fill="${crease}" opacity="0.6"/>`; // hinge crease
+    const lift = Math.min(34, 10 + w * 0.05); // how far the free bottom-right corner stands off the sheet
+    defs2 += `<linearGradient id="f${i}" x1="${x}" y1="0" x2="${x + w}" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="${base}"/><stop offset="1" stop-color="${mix(base, '#FFFFFF', 0.06)}"/></linearGradient>`;
+    // soft wedge along the bottom and up the right side, zero at the fixed left edge
+    body += `<polygon points="${P([[x + w * 0.04, y + h - 3], [x + w - 3, y + h * 0.12], [x + w + lift * 0.45, y + h * 0.55], [x + w + lift * 0.6, y + h + lift], [x + w * 0.5, y + h + lift * 0.45]])}" fill="${shadow}" opacity="0.42" filter="url(#soft)"/>`;
+    // tighter, slightly darker core right under the lifted corner
+    body += `<polygon points="${P([[x + w * 0.35, y + h - 2], [x + w - 2, y + h * 0.6], [x + w + lift * 0.3, y + h + lift * 0.55], [x + w * 0.75, y + h + lift * 0.3]])}" fill="${shadow}" opacity="0.3" filter="url(#tight)"/>`;
+    // very thin shadow along the top edge
+    body += `<rect x="${x + 3}" y="${y - 1.5}" width="${w - 6}" height="3" fill="${shadow}" opacity="0.12" filter="url(#hair)"/>`;
+    body += `<rect x="${x}" y="${y}" width="${w}" height="${h}" fill="url(#f${i})"/>`;
   });
   body = body.replace('</defs>', defs2 + '</defs>');
   // matte paper: a fine grain and faint long fibres over everything
