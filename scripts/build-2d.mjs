@@ -10,7 +10,7 @@ import { C, S, poly, ngon, svg, g, outline, edge, twoTone, crane, book } from '.
 import { HEADS } from './2d/heads.mjs';
 import { PICTURES, gameBadge, GAME_COLOURS, missionIcon, word } from './2d/symbols.mjs';
 import { MISSIONS } from './lib/palette.mjs';
-import { MENU_COLOURS, MENU_LAYOUTS, MENU_W, MENU_H, menuBackground, menuLabel } from './2d/menu.mjs';
+import { MENU_COLOURS, MENU_LAYOUTS, MENU_W, MENU_H, menuBackground, menuLabel, LABEL_STYLES } from './2d/menu.mjs';
 import { TABLE_SCENES } from './game/index.mjs';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
@@ -86,8 +86,10 @@ if (!only || 'backgrounds'.startsWith(only)) {
 
 // Menu label stickers: transparent PNGs with a clear face, so they take the colour of any background.
 for (const [id, shape, lines] of [['start_here', 'square', ['START', 'HERE']], ['you_win', 'circle', ['YOU', 'WIN']]]) {
-  const { body, W, H } = menuLabel(shape, lines);
-  emit(`labels/label_${id}`, W, H, body, [[W * 2, H * 2]], true);
+  for (const [v, style] of Object.entries(LABEL_STYLES)) {
+    const { body, W, H } = menuLabel(shape, lines, style);
+    emit(`labels/label_${id}_${v}`, W, H, body, [[W, H]], true);
+  }
 }
 
 // ---- Rasterise, then render the brand images from the models.

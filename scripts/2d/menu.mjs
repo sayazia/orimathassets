@@ -71,54 +71,80 @@ export function menuBackground(key, slots) {
 // the background shows through, and only the effects are drawn (peel shadow outside the edge, a faint
 // sheen and grain on the face, paper lettering). They pick up any background they are laid on.
 // shape 'square' or 'circle'; lines of capitals.
-export function menuLabel(shape, lines, size = 360, pad = 48) {
-  const shadow = '#000000';
+// Style variants for the stickers (all colour-neutral):
+//   lift   how far the free side stands off the sheet (shadow reach)
+//   ramp   shadow sharp and thin near the fixed side, wider and blurrier towards the free corner
+//   curve  light band where the paper starts to bend, a little shade where it turns away at the edge
+//   edge   thin lit paper thickness along the lifted edges only
+//   corner lift only the bottom-right corner (diagonal) instead of the whole right side
+export const LABEL_STYLES = {
+  a: { lift: 1, ramp: true, curve: 0, edge: 0.35, corner: false }, // shadow ramp + lit edge, flat body
+  b: { lift: 1, ramp: true, curve: 1, edge: 0.35, corner: false }, // + gentle bend shading
+  c: { lift: 1.5, ramp: true, curve: 1.6, edge: 0.45, corner: false }, // stronger curl, higher lift
+  d: { lift: 0.8, ramp: true, curve: 0.6, edge: 0, corner: false }, // quiet: soft bend, no edge line
+  e: { lift: 1.2, ramp: true, curve: 1, edge: 0.35, corner: true }, // only the bottom-right corner peels
+};
+
+// Stand-alone label stickers (transparent PNG) with no paper colour of their own: the face is clear, so
+// the background shows through, and only the effects are drawn. The left (or top-left) part stays fully
+// clear so it reads as the background itself; the free side peels up. shape 'square' or 'circle'.
+export function menuLabel(shape, lines, style = LABEL_STYLES.b, size = 360, pad = 48) {
+  const { lift: L, ramp, curve, edge, corner } = style;
   const P = (pts) => pts.map(([px, py]) => `${px.toFixed(1)},${py.toFixed(1)}`).join(' ');
   const x = pad, y = pad, w = size, h = size, cx = x + w / 2, cy = y + h / 2, r = size / 2;
-  const lift = Math.min(34, 10 + w * 0.05);
-  const shapeEl = (fill) => shape === 'circle' ? `<circle cx="${cx}" cy="${cy}" r="${r}" fill="${fill}"/>` : `<rect x="${x}" y="${y}" width="${w}" height="${h}" fill="${fill}"/>`;
-  let out = `<defs>
-<filter id="soft" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="6"/></filter>
-<filter id="tight" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="3"/></filter>
-<filter id="hair" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation="3"/></filter>
-<filter id="drop" x="-10%" y="-10%" width="120%" height="130%"><feDropShadow dx="1.5" dy="3" stdDeviation="2" flood-color="#000000" flood-opacity="0.2"/></filter>
-<filter id="grain" x="0" y="0" width="100%" height="100%">
-  <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="7"/>
-  <feColorMatrix type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0.33 0.33 0.33 0 -0.42"/>
-  <feComposite in2="SourceGraphic" operator="in"/>
-</filter>
-<linearGradient id="sheen" x1="${x}" y1="0" x2="${x + w}" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#FFFFFF" stop-opacity="0"/><stop offset="0.3" stop-color="#FFFFFF" stop-opacity="0"/><stop offset="1" stop-color="#FFFFFF" stop-opacity="0.06"/></linearGradient>
-<linearGradient id="fadeIn" x1="${x}" y1="0" x2="${x + w}" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0.15" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#fff" stop-opacity="1"/></linearGradient>
-<mask id="fade" maskUnits="userSpaceOnUse" x="0" y="0" width="${w + pad * 2}" height="${h + pad * 2}">${shapeEl('url(#fadeIn)')}</mask>
-<clipPath id="clip">${shapeEl('#fff')}</clipPath>
-<mask id="outside" maskUnits="userSpaceOnUse" x="0" y="0" width="${w + pad * 2}" height="${h + pad * 2}"><rect width="${w + pad * 2}" height="${h + pad * 2}" fill="#fff"/>${shapeEl('#000')}</mask>
-</defs>`;
-  // shadows sit only outside the face, so nothing darkens the background showing through it
-  out += '<g mask="url(#outside)">';
-  if (shape === 'circle') {
-    // crescent: the disc's shadow slid towards the bottom right, so the left rim stays flat on the sheet
-    out += `<circle cx="${cx + lift * 0.35}" cy="${cy + lift * 0.45}" r="${r}" fill="${shadow}" opacity="0.2" filter="url(#soft)"/>`;
-    out += `<circle cx="${cx + lift * 0.18}" cy="${cy + lift * 0.25}" r="${r - 2}" fill="${shadow}" opacity="0.14" filter="url(#tight)"/>`;
-    out += `<circle cx="${cx}" cy="${cy - 1.5}" r="${r}" fill="${shadow}" opacity="0.035" filter="url(#hair)"/>`;
-  } else {
-    out += `<polygon points="${P([[x + w * 0.04, y + h - 3], [x + w - 3, y + h * 0.12], [x + w + lift * 0.45, y + h * 0.55], [x + w + lift * 0.6, y + h + lift], [x + w * 0.5, y + h + lift * 0.45]])}" fill="${shadow}" opacity="0.2" filter="url(#soft)"/>`;
-    out += `<polygon points="${P([[x + w * 0.35, y + h - 2], [x + w - 2, y + h * 0.6], [x + w + lift * 0.3, y + h + lift * 0.55], [x + w * 0.75, y + h + lift * 0.3]])}" fill="${shadow}" opacity="0.14" filter="url(#tight)"/>`;
-    out += `<rect x="${x + 3}" y="${y - 1.5}" width="${w - 6}" height="3" fill="${shadow}" opacity="0.035" filter="url(#hair)"/>`;
+  const lift = Math.min(34, 10 + w * 0.05) * L;
+  const W = w + pad * 2, H = h + pad * 2;
+  const shapeEl = (fill, extra = '') => shape === 'circle' ? `<circle cx="${cx}" cy="${cy}" r="${r}" fill="${fill}"${extra}/>` : `<rect x="${x}" y="${y}" width="${w}" height="${h}" fill="${fill}"${extra}/>`;
+  // gradient axis: left to right for a side lift, top-left to bottom-right for a corner lift
+  const [gx1, gy1, gx2, gy2] = corner ? [x, y, x + w, y + h] : [x, 0, x + w, 0];
+  const blur = (id, sd) => `<filter id="${id}" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="${sd}"/></filter>`;
+  const c = (a) => (a * curve).toFixed(3);
+  let defs = blur('b1', 1.2) + blur('b2', 3.5) + blur('b3', 7) + blur('b4', 12) + blur('hair', 3)
+    + `<filter id="drop" x="-10%" y="-10%" width="120%" height="130%"><feDropShadow dx="1.5" dy="3" stdDeviation="2" flood-color="#000" flood-opacity="0.2"/></filter>`
+    + `<linearGradient id="bend" x1="${gx1}" y1="${gy1}" x2="${gx2}" y2="${gy2}" gradientUnits="userSpaceOnUse">`
+    + `<stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset="${corner ? 0.55 : 0.45}" stop-color="#fff" stop-opacity="0"/>`
+    + `<stop offset="${corner ? 0.72 : 0.64}" stop-color="#fff" stop-opacity="${c(0.1)}"/><stop offset="${corner ? 0.86 : 0.84}" stop-color="#fff" stop-opacity="${c(0.02)}"/>`
+    + `<stop offset="0.95" stop-color="#000" stop-opacity="${c(0.05)}"/><stop offset="1" stop-color="#000" stop-opacity="${c(0.09)}"/></linearGradient>`
+    + `<linearGradient id="edgeFade" x1="${gx1}" y1="${gy1}" x2="${gx2}" y2="${gy2}" gradientUnits="userSpaceOnUse"><stop offset="${corner ? 0.6 : 0.4}" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#fff" stop-opacity="1"/></linearGradient>`
+    + `<mask id="outside" maskUnits="userSpaceOnUse" x="0" y="0" width="${W}" height="${H}"><rect width="${W}" height="${H}" fill="#fff"/>${shapeEl('#000')}</mask>`
+    + `<mask id="edgeMask" maskUnits="userSpaceOnUse" x="0" y="0" width="${W}" height="${H}"><rect width="${W}" height="${H}" fill="url(#edgeFade)"/></mask>`;
+  let out = '<g mask="url(#outside)">';
+  // shadows, outside the face only. Each layer reaches further and blurs more, starting later along the lift.
+  const layers = ramp ? [[0.02, 0.12, 'b1', 0.16], [0.2, 0.35, 'b2', 0.14], [0.45, 0.7, 'b3', 0.13], [0.65, 1, 'b4', 0.1]] : [[0.04, 0.6, 'b3', 0.2], [0.35, 0.35, 'b2', 0.14]];
+  for (const [start, reach, f, op] of layers) {
+    const d = lift * reach;
+    if (shape === 'circle') {
+      // disc shifted towards the free side: the offset grows with reach, so the fixed rim gets none
+      const [ox, oy] = corner ? [d * 0.55, d * 0.6] : [d * 0.6, d * 0.35];
+      out += `<circle cx="${cx + ox}" cy="${cy + oy}" r="${r - 1}" fill="#000" opacity="${op}" filter="url(#${f})"/>`;
+    } else if (corner) {
+      const s0 = start;
+      out += `<polygon points="${P([[x + w * (0.35 + s0 * 0.5), y + h - 1], [x + w - 1, y + h * (0.35 + s0 * 0.5)], [x + w + d * 0.5, y + h * (0.4 + s0 * 0.5) + d * 0.4], [x + w + d * 0.6, y + h + d * 0.7], [x + w * (0.4 + s0 * 0.5) + d * 0.4, y + h + d * 0.5]])}" fill="#000" opacity="${op}" filter="url(#${f})"/>`;
+    } else {
+      out += `<polygon points="${P([[x + w * start, y + h - 1], [x + w - 1, y + h * 0.1], [x + w + d * 0.55, y + h * 0.3 + d * 0.3], [x + w + d * 0.6, y + h + d], [x + w * (start + (1 - start) * 0.45), y + h + d * 0.55]])}" fill="#000" opacity="${op}" filter="url(#${f})"/>`;
+    }
   }
-  out += '</g>' + shapeEl('url(#sheen)');
-  out += `<rect x="${x}" y="${y}" width="${w}" height="${h}" fill="#000" filter="url(#grain)" opacity="0.15" mask="url(#fade)"/>`;
-  // lettering: centred lines, white paper with a small tinted shadow
+  if (shape === 'circle') out += `<circle cx="${cx}" cy="${cy - 1.5}" r="${r}" fill="#000" opacity="0.035" filter="url(#hair)"/>`;
+  else out += `<rect x="${x + 3}" y="${y - 1.5}" width="${w - 6}" height="3" fill="#000" opacity="0.035" filter="url(#hair)"/>`;
+  out += '</g>';
+  if (curve) out += shapeEl('url(#bend)');
+  if (edge) {
+    // lit paper thickness on the lifted edges, fading out towards the fixed side
+    const line = shape === 'circle' ? `<circle cx="${cx}" cy="${cy}" r="${r - 0.8}" fill="none" stroke="#fff" stroke-width="1.6"/>`
+      : `<polyline points="${P([[x + 1, y + h - 0.8], [x + w - 0.8, y + h - 0.8], [x + w - 0.8, y + 1]])}" fill="none" stroke="#fff" stroke-width="1.6"/>`;
+    out += `<g mask="url(#edgeMask)" opacity="${edge}">${line}</g>`;
+  }
+  // lettering: centred lines, white paper with a small shadow
   const words = lines.map((l) => wordFlat(l));
   const k = (size * (shape === 'circle' ? 0.5 : 0.66)) / Math.max(...words.map((wd) => wd.width));
   const lineGap = 3.2, total = words.length * words[0].height + (words.length - 1) * lineGap;
-  let ty = cy - (total * k) / 2;
-  let letters = '';
+  let ty = cy - (total * k) / 2, letters = '';
   for (const wd of words) {
     const tx = cx - (wd.width * k) / 2;
     letters += `<g transform="translate(${tx.toFixed(1)} ${ty.toFixed(1)}) scale(${k.toFixed(3)})">${wd.quads.map((q) => `<polygon points="${P(q)}"/>`).join('')}</g>`;
     ty += (wd.height + lineGap) * k;
   }
-  const white = colourOf("paper"); // a hairline stroke in the fill colour hides the seams between ribbon pieces
+  const white = colourOf('paper'); // a hairline stroke in the fill colour hides the seams between ribbon pieces
   out += `<g fill="${white}" stroke="${white}" stroke-width="0.08" stroke-linejoin="round" filter="url(#drop)">${letters}</g>`;
-  return { body: out, W: size + pad * 2, H: size + pad * 2 };
+  return { body: `<defs>${defs}</defs>` + out, W, H };
 }
