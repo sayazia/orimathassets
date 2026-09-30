@@ -80,14 +80,16 @@ export function menuLabel(shape, lines, size = 360, pad = 48) {
   let out = `<defs>
 <filter id="soft" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="6"/></filter>
 <filter id="tight" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="3"/></filter>
-<filter id="hair" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation="1.2"/></filter>
+<filter id="hair" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation="3"/></filter>
 <filter id="drop" x="-10%" y="-10%" width="120%" height="130%"><feDropShadow dx="1.5" dy="3" stdDeviation="2" flood-color="#000000" flood-opacity="0.2"/></filter>
 <filter id="grain" x="0" y="0" width="100%" height="100%">
   <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="7"/>
   <feColorMatrix type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0.33 0.33 0.33 0 -0.42"/>
   <feComposite in2="SourceGraphic" operator="in"/>
 </filter>
-<linearGradient id="sheen" x1="${x}" y1="0" x2="${x + w}" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#FFFFFF" stop-opacity="0"/><stop offset="1" stop-color="#FFFFFF" stop-opacity="0.07"/></linearGradient>
+<linearGradient id="sheen" x1="${x}" y1="0" x2="${x + w}" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#FFFFFF" stop-opacity="0"/><stop offset="0.3" stop-color="#FFFFFF" stop-opacity="0"/><stop offset="1" stop-color="#FFFFFF" stop-opacity="0.06"/></linearGradient>
+<linearGradient id="fadeIn" x1="${x}" y1="0" x2="${x + w}" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0.15" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#fff" stop-opacity="1"/></linearGradient>
+<mask id="fade" maskUnits="userSpaceOnUse" x="0" y="0" width="${w + pad * 2}" height="${h + pad * 2}">${shapeEl('url(#fadeIn)')}</mask>
 <clipPath id="clip">${shapeEl('#fff')}</clipPath>
 <mask id="outside" maskUnits="userSpaceOnUse" x="0" y="0" width="${w + pad * 2}" height="${h + pad * 2}"><rect width="${w + pad * 2}" height="${h + pad * 2}" fill="#fff"/>${shapeEl('#000')}</mask>
 </defs>`;
@@ -97,14 +99,14 @@ export function menuLabel(shape, lines, size = 360, pad = 48) {
     // crescent: the disc's shadow slid towards the bottom right, so the left rim stays flat on the sheet
     out += `<circle cx="${cx + lift * 0.35}" cy="${cy + lift * 0.45}" r="${r}" fill="${shadow}" opacity="0.2" filter="url(#soft)"/>`;
     out += `<circle cx="${cx + lift * 0.18}" cy="${cy + lift * 0.25}" r="${r - 2}" fill="${shadow}" opacity="0.14" filter="url(#tight)"/>`;
-    out += `<circle cx="${cx}" cy="${cy - 1.5}" r="${r}" fill="${shadow}" opacity="0.07" filter="url(#hair)"/>`;
+    out += `<circle cx="${cx}" cy="${cy - 1.5}" r="${r}" fill="${shadow}" opacity="0.035" filter="url(#hair)"/>`;
   } else {
     out += `<polygon points="${P([[x + w * 0.04, y + h - 3], [x + w - 3, y + h * 0.12], [x + w + lift * 0.45, y + h * 0.55], [x + w + lift * 0.6, y + h + lift], [x + w * 0.5, y + h + lift * 0.45]])}" fill="${shadow}" opacity="0.2" filter="url(#soft)"/>`;
     out += `<polygon points="${P([[x + w * 0.35, y + h - 2], [x + w - 2, y + h * 0.6], [x + w + lift * 0.3, y + h + lift * 0.55], [x + w * 0.75, y + h + lift * 0.3]])}" fill="${shadow}" opacity="0.14" filter="url(#tight)"/>`;
-    out += `<rect x="${x + 3}" y="${y - 1.5}" width="${w - 6}" height="3" fill="${shadow}" opacity="0.07" filter="url(#hair)"/>`;
+    out += `<rect x="${x + 3}" y="${y - 1.5}" width="${w - 6}" height="3" fill="${shadow}" opacity="0.035" filter="url(#hair)"/>`;
   }
   out += '</g>' + shapeEl('url(#sheen)');
-  out += `<rect x="${x}" y="${y}" width="${w}" height="${h}" fill="#000" filter="url(#grain)" opacity="0.35" clip-path="url(#clip)"/>`;
+  out += `<rect x="${x}" y="${y}" width="${w}" height="${h}" fill="#000" filter="url(#grain)" opacity="0.15" mask="url(#fade)"/>`;
   // lettering: centred lines, white paper with a small tinted shadow
   const words = lines.map((l) => wordFlat(l));
   const k = (size * (shape === 'circle' ? 0.5 : 0.66)) / Math.max(...words.map((wd) => wd.width));
