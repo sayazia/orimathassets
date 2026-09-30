@@ -100,11 +100,13 @@ export function menuLabel(shape, lines, style = LABEL_STYLE, size = 360, pad = 4
         + `<stop offset="0.95" stop-color="#000" stop-opacity="${c(0.05)}"/><stop offset="1" stop-color="#000" stop-opacity="${c(0.09)}"/>`)
     + `</linearGradient>`
     + `<linearGradient id="upFade" x1="0" y1="${y}" x2="0" y2="${y + h * 0.8}" gradientUnits="userSpaceOnUse">${[0, 0.2, 0.4, 0.6, 0.8, 1].map((t) => `<stop offset="${t}" stop-color="#fff" stop-opacity="${(t * t * (3 - 2 * t)).toFixed(3)}"/>`).join('')}</linearGradient>`
+    + `<linearGradient id="sideFade" x1="${x + w * 0.3}" y1="0" x2="${x + w * 0.9}" y2="0" gradientUnits="userSpaceOnUse">${[0, 0.2, 0.4, 0.6, 0.8, 1].map((t) => `<stop offset="${t}" stop-color="#fff" stop-opacity="${(t * t * (3 - 2 * t)).toFixed(3)}"/>`).join('')}</linearGradient>`
+    + `<mask id="side" maskUnits="userSpaceOnUse" x="0" y="0" width="${W}" height="${H}"><rect width="${W}" height="${H}" fill="url(#sideFade)"/></mask>`
     + `<mask id="up" maskUnits="userSpaceOnUse" x="0" y="0" width="${W}" height="${H}"><rect width="${W}" height="${H}" fill="url(#upFade)"/></mask>`
     + `<linearGradient id="edgeFade" x1="${gx1}" y1="${gy1}" x2="${gx2}" y2="${gy2}" gradientUnits="userSpaceOnUse"><stop offset="${corner ? 0.6 : 0.4}" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#fff" stop-opacity="1"/></linearGradient>`
     + `<mask id="outside" maskUnits="userSpaceOnUse" x="0" y="0" width="${W}" height="${H}"><rect width="${W}" height="${H}" fill="#fff"/>${shapeEl('#000')}</mask>`
     + `<mask id="edgeMask" maskUnits="userSpaceOnUse" x="0" y="0" width="${W}" height="${H}"><rect width="${W}" height="${H}" fill="url(#edgeFade)"/></mask>`;
-  let out = `<g mask="url(#outside)"><g mask="${corner ? '' : 'url(#up)'}">`;
+  let out = `<g mask="url(#outside)"><g mask="${corner ? '' : 'url(#up)'}"><g mask="${shape === 'circle' && !corner ? 'url(#side)' : ''}">`;
   // shadows, outside the face only. Each layer reaches further and blurs more, starting later along the lift.
   const layers = ramp ? [[0.02, 0.12, 'b1', 0.16], [0.2, 0.35, 'b2', 0.14], [0.45, 0.7, 'b3', 0.13], [0.65, 1, 'b4', 0.1]] : [[0.04, 0.6, 'b3', 0.2], [0.35, 0.35, 'b2', 0.14]];
   for (const [start, reach, f, op] of layers) {
@@ -120,7 +122,7 @@ export function menuLabel(shape, lines, style = LABEL_STYLE, size = 360, pad = 4
       out += `<polygon points="${P([[x + w * start, y + h - 1], [x + w - 1, y + 1], [x + w + d * 0.55, y + h * 0.3 + d * 0.3], [x + w + d * 0.6, y + h + d], [x + w * (start + (1 - start) * 0.45), y + h + d * 0.55]])}" fill="#000" opacity="${op}" filter="url(#${f})"/>`;
     }
   }
-  out += '</g>';
+  out += '</g></g>';
   if (shape === 'circle') out += `<circle cx="${cx}" cy="${cy - 1.5}" r="${r}" fill="#000" opacity="0.035" filter="url(#hair)"/>`;
   else out += `<rect x="${x + 3}" y="${y - 1.5}" width="${w - 6}" height="3" fill="#000" opacity="0.035" filter="url(#hair)"/>`;
   out += '</g>';
