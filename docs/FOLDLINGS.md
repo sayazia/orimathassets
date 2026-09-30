@@ -117,7 +117,7 @@ so run `npm run build` first.
 | --- | --- |
 | `avatars/avatar_<species>_<mission>.svg` | `_256.png`, `_512.png` |
 | `picture_password/pp_<star, moon, sun, leaf, fish, boat, key, heart, cloud>.svg` | `.png` 256 |
-| `brand/logo_numeria_arena.svg` (cream on teal), `logo_numeria_arena_dark.svg` (tone-on-tone paper) | `.png` 1200 wide, transparent |
+| `brand/logo_numeria_arena.svg` (cream on teal), `logo_numeria_arena_emboss.svg` (transparent emboss) | `.png` 1200 wide, transparent |
 | `brand/app_icon.svg`, `app_icon_maskable.svg` (full bleed, art inside the 80% safe zone) | `_192`, `_512`, `_1024.png` |
 | `brand/favicon.svg` | `_32`, `_48.png` |
 | `brand/devpost_thumbnail.png`, `devpost_thumbnail_1200x630.png`, `social_preview.png` | 1920×1080, 1200×630, 1280×640 |

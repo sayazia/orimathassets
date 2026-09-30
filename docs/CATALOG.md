@@ -570,7 +570,7 @@ pihak ketiga, hanya warna palet). Rincian ukuran ada di [`FOLDLINGS.md`](FOLDLIN
 |---|---|---|
 | Avatar | `avatars/avatar_<spesies>_<misi>` SVG + PNG 256 dan 512 | 40 |
 | Kata sandi gambar | `picture_password/pp_` star, moon, sun, leaf, fish, boat, key, heart, cloud (SVG + PNG 256) | 9 |
-| Logo | `brand/logo_numeria_arena` (krem di atas teal) dan `logo_numeria_arena_dark` (kertas senada), PNG lebar 1200 | 2 |
+| Logo | `brand/logo_numeria_arena` (krem di atas teal) dan `logo_numeria_arena_emboss` (emboss transparan), PNG lebar 1200 | 2 |
 | Ikon aplikasi | `brand/app_icon`, `app_icon_maskable` (PNG 192, 512, 1024), `favicon` (PNG 32, 48) | 3 |
 | Gambar promosi | `brand/devpost_thumbnail` 1920×1080 dan 1200×630, `social_preview` 1280×640 | 3 |
 | Ikon game | `icons/game_` orb_forge, balloon_burst, factory_sort, bridge_builder, balance_gate, measure_hunt (PNG 128, 256) | 6 |

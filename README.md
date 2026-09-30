@@ -72,7 +72,7 @@ Sheets: [land](previews/sheet_origami_land.png), [water](previews/sheet_origami_
 ### Numeria Arena UI (batch U1)
 
 Banners, buttons, HUD words, badges and icons in embossed paper lettering, plus the paper glyph set the game
-uses for scores, clocks and questions: `ui2d/` (SVG + transparent PNG, `ui2d/manifest.json`,
+uses for scores, clocks and questions: `ui2d/` (SVG + transparent PNG, `ui2d/manifest.json`, briefs in `docs/brief/`,
 preview page `ui2d/preview.html`). Built by `npm run build:ui`. Summary and decisions: [`docs/UI-U1.md`](docs/UI-U1.md).
 
 ## Conventions (city set)

@@ -1,14 +1,14 @@
 {
- "note": "Numeria Arena paper glyphs. All values in px for glyphs 128 px tall; scale by (letter height / 128). Draw a glyph by copying its atlas cell so that cell.origin lands on the pen position (x) and the top of the line (y), then advance the pen by advance, adding kerning[prev + char] when present. Digits can use tabular_advance (centre the digit in it) so a running clock does not wobble. Atlas T is tone on tone for near-white paper; atlas W is for coloured paper and bakes its short shadow as black at 20% (it reads as the background darkened 20%). Atlas I is flat ink #3A3F4B for answer numbers and small text on paper.",
+ "note": "Numeria Arena paper glyphs. All values in px for glyphs 128 px tall; scale by (letter height / 128). Draw a glyph by copying its atlas cell so that cell.origin lands on the pen position (x) and the top of the line (y), then advance the pen by advance, adding kerning[prev + char] when present. Digits can use tabular_advance (centre the digit in it) so a running clock does not wobble. Atlas E is the transparent emboss (white edge top left, black edge bottom right, no fill) that takes the colour of whatever is behind it; atlas W is cream for coloured paper and bakes its short shadow as black at 20% (it reads as the background darkened 20%); atlas K is flat ink #3A3F4B for answers and questions on solid paper (tint it #1F4FA3 for question text).",
  "height": 128,
  "units": {
   "letter_height": 7.3,
   "px_per_unit": 17.53
  },
  "atlas": {
-  "T": "ui2d/font/paper_glyphs_T.png",
+  "E": "ui2d/font/paper_glyphs_E.png",
   "W": "ui2d/font/paper_glyphs_W.png",
-  "I": "ui2d/font/paper_glyphs_I.png",
+  "K": "ui2d/font/paper_glyphs_K.png",
   "size": [
    1024,
    888
@@ -17,7 +17,6 @@
  },
  "aliases": {
   "x": "×",
-  "-": "−",
   "*": "×"
  },
  "tabular_advance": 103.45,
@@ -39,9 +38,11 @@
    "lsb": 3.51,
    "rsb": 3.51,
    "ink_width": 66.63,
-   "svg_T": "ui2d/font/glyphs/T/0.svg",
-   "svg_W": "ui2d/font/glyphs/W/0.svg",
-   "svg_I": "ui2d/font/glyphs/I/0.svg"
+   "svg": {
+    "E": "ui2d/font/glyphs/E/0.svg",
+    "W": "ui2d/font/glyphs/W/0.svg",
+    "K": "ui2d/font/glyphs/K/0.svg"
+   }
   },
   "1": {
    "name": "1",
@@ -59,9 +60,11 @@
    "lsb": 3.51,
    "rsb": 3.51,
    "ink_width": 82.41,
-   "svg_T": "ui2d/font/glyphs/T/1.svg",
-   "svg_W": "ui2d/font/glyphs/W/1.svg",
-   "svg_I": "ui2d/font/glyphs/I/1.svg"
+   "svg": {
+    "E": "ui2d/font/glyphs/E/1.svg",
+    "W": "ui2d/font/glyphs/W/1.svg",
+    "K": "ui2d/font/glyphs/K/1.svg"
+   }
   },
   "2": {
    "name": "2",
@@ -79,9 +82,11 @@
    "lsb": 3.51,
    "rsb": 3.51,
    "ink_width": 92.93,
-   "svg_T": "ui2d/font/glyphs/T/2.svg",
-   "svg_W": "ui2d/font/glyphs/W/2.svg",
-   "svg_I": "ui2d/font/glyphs/I/2.svg"
+   "svg": {
+    "E": "ui2d/font/glyphs/E/2.svg",
+    "W": "ui2d/font/glyphs/W/2.svg",
+    "K": "ui2d/font/glyphs/K/2.svg"
+   }
   },
   "3": {
    "name": "3",
@@ -99,9 +104,11 @@
    "lsb": 3.51,
    "rsb": 3.51,
    "ink_width": 92.93,
-   "svg_T": "ui2d/font/glyphs/T/3.svg",
-   "svg_W": "ui2d/font/glyphs/W/3.svg",
-   "svg_I": "ui2d/font/glyphs/I/3.svg"
+   "svg": {
+    "E": "ui2d/font/glyphs/E/3.svg",
+    "W": "ui2d/font/glyphs/W/3.svg",
+    "K": "ui2d/font/glyphs/K/3.svg"
+   }
   },
   "4": {
    "name": "4",
@@ -119,9 +126,11 @@
    "lsb": 3.51,
    "rsb": 3.51,
    "ink_width": 96.44,
-   "svg_T": "ui2d/font/glyphs/T/4.svg",
-   "svg_W": "ui2d/font/glyphs/W/4.svg",
-   "svg_I": "ui2d/font/glyphs/I/4.svg"
+   "svg": {
+    "E": "ui2d/font/glyphs/E/4.svg",
+    "W": "ui2d/font/glyphs/W/4.svg",
+    "K": "ui2d/font/glyphs/K/4.svg"
+   }
   },
   "5": {
    "name": "5",
@@ -139,9 +148,11 @@
    "lsb": 3.51,
    "rsb": 3.51,
    "ink_width": 92.93,
-   "svg_T": "ui2d/font/glyphs/T/5.svg",
-   "svg_W": "ui2d/font/glyphs/W/5.svg",
-   "svg_I": "ui2d/font/glyphs/I/5.svg"
+   "svg": {
+    "E": "ui2d/font/glyphs/E/5.svg",
+    "W": "ui2d/font/glyphs/W/5.svg",
+    "K": "ui2d/font/glyphs/K/5.svg"
+   }
   },
   "6": {
    "name": "6",
@@ -159,9 +170,11 @@
    "lsb": 3.51,
    "rsb": 3.51,
    "ink_width": 92.93,
-   "svg_T": "ui2d/font/glyphs/T/6.svg",
-   "svg_W": "ui2d/font/glyphs/W/6.svg",
-   "svg_I": "ui2d/font/glyphs/I/6.svg"
+   "svg": {
+    "E": "ui2d/font/glyphs/E/6.svg",
+    "W": "ui2d/font/glyphs/W/6.svg",
+    "K": "ui2d/font/glyphs/K/6.svg"
+   }
   },
   "7": {
    "name": "7",
@@ -179,9 +192,11 @@
    "lsb": 3.51,
    "rsb": 3.51,
    "ink_width": 92.93,
-   "svg_T": "ui2d/font/glyphs/T/7.svg",
-   "svg_W": "ui2d/font/glyphs/W/7.svg",
-   "svg_I": "ui2d/font/glyphs/I/7.svg"
+   "svg": {
+    "E": "ui2d/font/glyphs/E/7.svg",
+    "W": "ui2d/font/glyphs/W/7.svg",
+    "K": "ui2d/font/glyphs/K/7.svg"
+   }
   },
   "8": {
    "name": "8",
@@ -199,9 +214,11 @@
    "lsb": 3.51,
    "rsb": 3.51,
    "ink_width": 92.93,
-   "svg_T": "ui2d/font/glyphs/T/8.svg",
-   "svg_W": "ui2d/font/glyphs/W/8.svg",
-   "svg_I": "ui2d/font/glyphs/I/8.svg"
+   "svg": {
+    "E": "ui2d/font/glyphs/E/8.svg",
+    "W": "ui2d/font/glyphs/W/8.svg",
+    "K": "ui2d/font/glyphs/K/8.svg"
+   }
   },
   "9": {
    "name": "9",
@@ -219,9 +236,11 @@
    "lsb": 3.51,
    "rsb": 3.51,
    "ink_width": 92.93,
-   "svg_T": "ui2d/font/glyphs/T/9.svg",
-   "svg_W": "ui2d/font/glyphs/W/9.svg",
-   "svg_I": "ui2d/font/glyphs/I/9.svg"
+   "svg": {
+    "E": "ui2d/font/glyphs/E/9.svg",
+    "W": "ui2d/font/glyphs/W/9.svg",
+    "K": "ui2d/font/glyphs/K/9.svg"
+   }
   },
   "A": {
    "name": "A",
@@ -239,9 +258,11 @@
    "lsb": 3.51,
    "rsb": 3.51,
    "ink_width": 99.95,
-   "svg_T": "ui2d/font/glyphs/T/A.svg",
-   "svg_W": "ui2d/font/glyphs/W/A.svg",
-   "svg_I": "ui2d/font/glyphs/I/A.svg"
+   "svg": {
+    "E": "ui2d/font/glyphs/E/A.svg",
+    "W": "ui2d/font/glyphs/W/A.svg",
+    "K": "ui2d/font/glyphs/K/A.svg"
+   }
   },
   "B": {
    "name": "B",
@@ -259,9 +280,11 @@
    "lsb": 3.51,
    "rsb": 3.51,
    "ink_width": 92.93,
-   "svg_T": "ui2d/font/glyphs/T/B.svg",
-   "svg_W": "ui2d/font/glyphs/W/B.svg",
-   "svg_I": "ui2d/font/glyphs/I/B.svg"
+   "svg": {
+    "E": "ui2d/font/glyphs/E/B.svg",
+    "W": "ui2d/font/glyphs/W/B.svg",
+    "K": "ui2d/font/glyphs/K/B.svg"
+   }
   },
   "C": {
    "name": "C",
@@ -279,9 +302,11 @@
    "lsb": 3.51,
    "rsb": 3.51,
    "ink_width": 92.93,
-   "svg_T": "ui2d/font/glyphs/T/C.svg",
-   "svg_W": "ui2d/font/glyphs/W/C.svg",
-   "svg_I": "ui2d/font/glyphs/I/C.svg"
+   "svg": {
+    "E": "ui2d/font/glyphs/E/C.svg",
+    "W": "ui2d/font/glyphs/W/C.svg",
+    "K": "ui2d/font/glyphs/K/C.svg"
+   }
   },
   "D": {
    "name": "D",
@@ -299,9 +324,11 @@
    "lsb": 3.51,
    "rsb": 3.51,
    "ink_width": 92.93,
-   "svg_T": "ui2d/font/glyphs/T/D.svg",
-   "svg_W": "ui2d/font/glyphs/W/D.svg",
-   "svg_I": "ui2d/font/glyphs/I/D.svg"
+   "svg": {
+    "E": "ui2d/font/glyphs/E/D.svg",
+    "W": "ui2d/font/glyphs/W/D.svg",
+    "K": "ui2d/font/glyphs/K/D.svg"
+   }
   },
   "E": {
    "name": "E",
@@ -319,9 +346,11 @@
    "lsb": 3.51,
    "rsb": 3.51,
    "ink_width": 85.92,
-   "svg_T": "ui2d/font/glyphs/T/E.svg",
-   "svg_W": "ui2d/font/glyphs/W/E.svg",
-   "svg_I": "ui2d/font/glyphs/I/E.svg"
+   "svg": {
+    "E": "ui2d/font/glyphs/E/E.svg",
+    "W": "ui2d/font/glyphs/W/E.svg",
+    "K": "ui2d/font/glyphs/K/E.svg"
+   }
   },
   "F": {
    "name": "F",
@@ -339,9 +368,11 @@
    "lsb": 3.51,
    "rsb": 3.51,
    "ink_width": 85.92,
-   "svg_T": "ui2d/font/glyphs/T/F.svg",
-   "svg_W": "ui2d/font/glyphs/W/F.svg",
-   "svg_I": "ui2d/font/glyphs/I/F.svg"
+   "svg": {
+    "E": "ui2d/font/glyphs/E/F.svg",
+    "W": "ui2d/font/glyphs/W/F.svg",
+    "K": "ui2d/font/glyphs/K/F.svg"
+   }
   },
   "G": {
    "name": "G",
@@ -359,9 +390,11 @@
    "lsb": 3.51,
    "rsb": 3.51,
    "ink_width": 92.93,
-   "svg_T": "ui2d/font/glyphs/T/G.svg",
-   "svg_W": "ui2d/font/glyphs/W/G.svg",
-   "svg_I": "ui2d/font/glyphs/I/G.svg"
+   "svg": {
+    "E": "ui2d/font/glyphs/E/G.svg",
+    "W": "ui2d/font/glyphs/W/G.svg",
+    "K": "ui2d/font/glyphs/K/G.svg"
+   }
   },
   "H": {
    "name": "H",
@@ -379,9 +412,11 @@
    "lsb": 3.51,
    "rsb": 3.51,
    "ink_width": 92.93,
-   "svg_T": "ui2d/font/glyphs/T/H.svg",
-   "svg_W": "ui2d/font/glyphs/W/H.svg",
-   "svg_I": "ui2d/font/glyphs/I/H.svg"
+   "svg": {
+    "E": "ui2d/font/glyphs/E/H.svg",
+    "W": "ui2d/font/glyphs/W/H.svg",
+    "K": "ui2d/font/glyphs/K/H.svg"
+   }
   },
   "I": {
    "name": "I",
@@ -399,9 +434,11 @@
    "lsb": 3.51,
    "rsb": 3.51,
    "ink_width": 22.79,
-   "svg_T": "ui2d/font/glyphs/T/I.svg",
-   "svg_W": "ui2d/font/glyphs/W/I.svg",
-   "svg_I": "ui2d/font/glyphs/I/I.svg"
+   "svg": {
+    "E": "ui2d/font/glyphs/E/I.svg",
+    "W": "ui2d/font/glyphs/W/I.svg",
+    "K": "ui2d/font/glyphs/K/I.svg"
+   }
   },
   "J": {
    "name": "J",
@@ -419,9 +456,11 @@
    "lsb": 3.51,
    "rsb": 3.51,
    "ink_width": 85.92,
-   "svg_T": "ui2d/font/glyphs/T/J.svg",
-   "svg_W": "ui2d/font/glyphs/W/J.svg",
-   "svg_I": "ui2d/font/glyphs/I/J.svg"
+   "svg": {
+    "E": "ui2d/font/glyphs/E/J.svg",
+    "W": "ui2d/font/glyphs/W/J.svg",
+    "K": "ui2d/font/glyphs/K/J.svg"
+   }
   },
   "K": {
    "name": "K",
@@ -439,9 +478,11 @@
    "lsb": 3.51,
    "rsb": 3.51,
    "ink_width": 92.93,
-   "svg_T": "ui2d/font/glyphs/T/K.svg",
-   "svg_W": "ui2d/font/glyphs/W/K.svg",
-   "svg_I": "ui2d/font/glyphs/I/K.svg"
+   "svg": {
+    "E": "ui2d/font/glyphs/E/K.svg",
+    "W": "ui2d/font/glyphs/W/K.svg",
+    "K": "ui2d/font/glyphs/K/K.svg"
+   }
   },
   "L": {
    "name": "L",
@@ -459,9 +500,11 @@
    "lsb": 3.51,
    "rsb": 3.51,
    "ink_width": 82.41,
-   "svg_T": "ui2d/font/glyphs/T/L.svg",
-   "svg_W": "ui2d/font/glyphs/W/L.svg",
-   "svg_I": "ui2d/font/glyphs/I/L.svg"
+   "svg": {
+    "E": "ui2d/font/glyphs/E/L.svg",
+    "W": "ui2d/font/glyphs/W/L.svg",
+    "K": "ui2d/font/glyphs/K/L.svg"
+   }
   },
   "M": {
    "name": "M",
@@ -479,9 +522,11 @@
    "lsb": 3.51,
    "rsb": 3.51,
    "ink_width": 110.47,
-   "svg_T": "ui2d/font/glyphs/T/M.svg",
-   "svg_W": "ui2d/font/glyphs/W/M.svg",
-   "svg_I": "ui2d/font/glyphs/I/M.svg"
+   "svg": {
+    "E": "ui2d/font/glyphs/E/M.svg",
+    "W": "ui2d/font/glyphs/W/M.svg",
+    "K": "ui2d/font/glyphs/K/M.svg"
+   }
   },
   "N": {
    "name": "N",
@@ -499,9 +544,11 @@
    "lsb": 3.51,
    "rsb": 3.51,
    "ink_width": 92.93,
-   "svg_T": "ui2d/font/glyphs/T/N.svg",
-   "svg_W": "ui2d/font/glyphs/W/N.svg",
-   "svg_I": "ui2d/font/glyphs/I/N.svg"
+   "svg": {
+    "E": "ui2d/font/glyphs/E/N.svg",
+    "W": "ui2d/font/glyphs/W/N.svg",
+    "K": "ui2d/font/glyphs/K/N.svg"
+   }
   },
   "O": {
    "name": "O",
@@ -519,9 +566,11 @@
    "lsb": 3.51,
    "rsb": 3.51,
    "ink_width": 92.93,
-   "svg_T": "ui2d/font/glyphs/T/O.svg",
-   "svg_W": "ui2d/font/glyphs/W/O.svg",
-   "svg_I": "ui2d/font/glyphs/I/O.svg"
+   "svg": {
+    "E": "ui2d/font/glyphs/E/O.svg",
+    "W": "ui2d/font/glyphs/W/O.svg",
+    "K": "ui2d/font/glyphs/K/O.svg"
+   }
   },
   "P": {
    "name": "P",
@@ -539,9 +588,11 @@
    "lsb": 3.51,
    "rsb": 3.51,
    "ink_width": 92.93,
-   "svg_T": "ui2d/font/glyphs/T/P.svg",
-   "svg_W": "ui2d/font/glyphs/W/P.svg",
-   "svg_I": "ui2d/font/glyphs/I/P.svg"
+   "svg": {
+    "E": "ui2d/font/glyphs/E/P.svg",
+    "W": "ui2d/font/glyphs/W/P.svg",
+    "K": "ui2d/font/glyphs/K/P.svg"
+   }
   },
   "Q": {
    "name": "Q",
@@ -559,9 +610,11 @@
    "lsb": 3.51,
    "rsb": 3.51,
    "ink_width": 92.93,
-   "svg_T": "ui2d/font/glyphs/T/Q.svg",
-   "svg_W": "ui2d/font/glyphs/W/Q.svg",
-   "svg_I": "ui2d/font/glyphs/I/Q.svg"
+   "svg": {
+    "E": "ui2d/font/glyphs/E/Q.svg",
+    "W": "ui2d/font/glyphs/W/Q.svg",
+    "K": "ui2d/font/glyphs/K/Q.svg"
+   }
   },
   "R": {
    "name": "R",
@@ -579,9 +632,11 @@
    "lsb": 3.51,
    "rsb": 3.51,
    "ink_width": 92.93,
-   "svg_T": "ui2d/font/glyphs/T/R.svg",
-   "svg_W": "ui2d/font/glyphs/W/R.svg",
-   "svg_I": "ui2d/font/glyphs/I/R.svg"
+   "svg": {
+    "E": "ui2d/font/glyphs/E/R.svg",
+    "W": "ui2d/font/glyphs/W/R.svg",
+    "K": "ui2d/font/glyphs/K/R.svg"
+   }
   },
   "S": {
    "name": "S",
@@ -599,9 +654,11 @@
    "lsb": 3.51,
    "rsb": 3.51,
    "ink_width": 92.93,
-   "svg_T": "ui2d/font/glyphs/T/S.svg",
-   "svg_W": "ui2d/font/glyphs/W/S.svg",
-   "svg_I": "ui2d/font/glyphs/I/S.svg"
+   "svg": {
+    "E": "ui2d/font/glyphs/E/S.svg",
+    "W": "ui2d/font/glyphs/W/S.svg",
+    "K": "ui2d/font/glyphs/K/S.svg"
+   }
   },
   "T": {
    "name": "T",
@@ -619,9 +676,11 @@
    "lsb": 3.51,
    "rsb": 3.51,
    "ink_width": 92.93,
-   "svg_T": "ui2d/font/glyphs/T/T.svg",
-   "svg_W": "ui2d/font/glyphs/W/T.svg",
-   "svg_I": "ui2d/font/glyphs/I/T.svg"
+   "svg": {
+    "E": "ui2d/font/glyphs/E/T.svg",
+    "W": "ui2d/font/glyphs/W/T.svg",
+    "K": "ui2d/font/glyphs/K/T.svg"
+   }
   },
   "U": {
    "name": "U",
@@ -639,9 +698,11 @@
    "lsb": 3.51,
    "rsb": 3.51,
    "ink_width": 92.93,
-   "svg_T": "ui2d/font/glyphs/T/U.svg",
-   "svg_W": "ui2d/font/glyphs/W/U.svg",
-   "svg_I": "ui2d/font/glyphs/I/U.svg"
+   "svg": {
+    "E": "ui2d/font/glyphs/E/U.svg",
+    "W": "ui2d/font/glyphs/W/U.svg",
+    "K": "ui2d/font/glyphs/K/U.svg"
+   }
   },
   "V": {
    "name": "V",
@@ -659,9 +720,11 @@
    "lsb": 3.51,
    "rsb": 3.51,
    "ink_width": 99.95,
-   "svg_T": "ui2d/font/glyphs/T/V.svg",
-   "svg_W": "ui2d/font/glyphs/W/V.svg",
-   "svg_I": "ui2d/font/glyphs/I/V.svg"
+   "svg": {
+    "E": "ui2d/font/glyphs/E/V.svg",
+    "W": "ui2d/font/glyphs/W/V.svg",
+    "K": "ui2d/font/glyphs/K/V.svg"
+   }
   },
   "W": {
    "name": "W",
@@ -679,9 +742,11 @@
    "lsb": 3.51,
    "rsb": 3.51,
    "ink_width": 128,
-   "svg_T": "ui2d/font/glyphs/T/W.svg",
-   "svg_W": "ui2d/font/glyphs/W/W.svg",
-   "svg_I": "ui2d/font/glyphs/I/W.svg"
+   "svg": {
+    "E": "ui2d/font/glyphs/E/W.svg",
+    "W": "ui2d/font/glyphs/W/W.svg",
+    "K": "ui2d/font/glyphs/K/W.svg"
+   }
   },
   "X": {
    "name": "X",
@@ -699,9 +764,11 @@
    "lsb": 3.51,
    "rsb": 3.51,
    "ink_width": 96.44,
-   "svg_T": "ui2d/font/glyphs/T/X.svg",
-   "svg_W": "ui2d/font/glyphs/W/X.svg",
-   "svg_I": "ui2d/font/glyphs/I/X.svg"
+   "svg": {
+    "E": "ui2d/font/glyphs/E/X.svg",
+    "W": "ui2d/font/glyphs/W/X.svg",
+    "K": "ui2d/font/glyphs/K/X.svg"
+   }
   },
   "Y": {
    "name": "Y",
@@ -719,9 +786,11 @@
    "lsb": 3.51,
    "rsb": 3.51,
    "ink_width": 99.95,
-   "svg_T": "ui2d/font/glyphs/T/Y.svg",
-   "svg_W": "ui2d/font/glyphs/W/Y.svg",
-   "svg_I": "ui2d/font/glyphs/I/Y.svg"
+   "svg": {
+    "E": "ui2d/font/glyphs/E/Y.svg",
+    "W": "ui2d/font/glyphs/W/Y.svg",
+    "K": "ui2d/font/glyphs/K/Y.svg"
+   }
   },
   "Z": {
    "name": "Z",
@@ -739,9 +808,11 @@
    "lsb": 3.51,
    "rsb": 3.51,
    "ink_width": 92.93,
-   "svg_T": "ui2d/font/glyphs/T/Z.svg",
-   "svg_W": "ui2d/font/glyphs/W/Z.svg",
-   "svg_I": "ui2d/font/glyphs/I/Z.svg"
+   "svg": {
+    "E": "ui2d/font/glyphs/E/Z.svg",
+    "W": "ui2d/font/glyphs/W/Z.svg",
+    "K": "ui2d/font/glyphs/K/Z.svg"
+   }
   },
   "+": {
    "name": "plus",
@@ -759,9 +830,11 @@
    "lsb": 3.51,
    "rsb": 3.51,
    "ink_width": 89.42,
-   "svg_T": "ui2d/font/glyphs/T/plus.svg",
-   "svg_W": "ui2d/font/glyphs/W/plus.svg",
-   "svg_I": "ui2d/font/glyphs/I/plus.svg"
+   "svg": {
+    "E": "ui2d/font/glyphs/E/plus.svg",
+    "W": "ui2d/font/glyphs/W/plus.svg",
+    "K": "ui2d/font/glyphs/K/plus.svg"
+   }
   },
   "−": {
    "name": "minus",
@@ -779,14 +852,38 @@
    "lsb": 3.51,
    "rsb": 3.51,
    "ink_width": 89.42,
-   "svg_T": "ui2d/font/glyphs/T/minus.svg",
-   "svg_W": "ui2d/font/glyphs/W/minus.svg",
-   "svg_I": "ui2d/font/glyphs/I/minus.svg"
+   "svg": {
+    "E": "ui2d/font/glyphs/E/minus.svg",
+    "W": "ui2d/font/glyphs/W/minus.svg",
+    "K": "ui2d/font/glyphs/K/minus.svg"
+   }
+  },
+  "-": {
+   "name": "hyphen",
+   "cell": [
+    594,
+    592,
+    89,
+    148
+   ],
+   "origin": [
+    10,
+    10
+   ],
+   "advance": 68.38,
+   "lsb": 3.51,
+   "rsb": 3.51,
+   "ink_width": 61.37,
+   "svg": {
+    "E": "ui2d/font/glyphs/E/hyphen.svg",
+    "W": "ui2d/font/glyphs/W/hyphen.svg",
+    "K": "ui2d/font/glyphs/K/hyphen.svg"
+   }
   },
   "×": {
    "name": "multiply",
    "cell": [
-    594,
+    683,
     592,
     106,
     148
@@ -799,14 +896,16 @@
    "lsb": 3.51,
    "rsb": 3.51,
    "ink_width": 78.9,
-   "svg_T": "ui2d/font/glyphs/T/multiply.svg",
-   "svg_W": "ui2d/font/glyphs/W/multiply.svg",
-   "svg_I": "ui2d/font/glyphs/I/multiply.svg"
+   "svg": {
+    "E": "ui2d/font/glyphs/E/multiply.svg",
+    "W": "ui2d/font/glyphs/W/multiply.svg",
+    "K": "ui2d/font/glyphs/K/multiply.svg"
+   }
   },
   "÷": {
    "name": "divide",
    "cell": [
-    700,
+    789,
     592,
     117,
     148
@@ -819,14 +918,16 @@
    "lsb": 3.51,
    "rsb": 3.51,
    "ink_width": 89.42,
-   "svg_T": "ui2d/font/glyphs/T/divide.svg",
-   "svg_W": "ui2d/font/glyphs/W/divide.svg",
-   "svg_I": "ui2d/font/glyphs/I/divide.svg"
+   "svg": {
+    "E": "ui2d/font/glyphs/E/divide.svg",
+    "W": "ui2d/font/glyphs/W/divide.svg",
+    "K": "ui2d/font/glyphs/K/divide.svg"
+   }
   },
   "=": {
    "name": "equals",
    "cell": [
-    817,
+    906,
     592,
     117,
     148
@@ -839,9 +940,11 @@
    "lsb": 3.51,
    "rsb": 3.51,
    "ink_width": 89.42,
-   "svg_T": "ui2d/font/glyphs/T/equals.svg",
-   "svg_W": "ui2d/font/glyphs/W/equals.svg",
-   "svg_I": "ui2d/font/glyphs/I/equals.svg"
+   "svg": {
+    "E": "ui2d/font/glyphs/E/equals.svg",
+    "W": "ui2d/font/glyphs/W/equals.svg",
+    "K": "ui2d/font/glyphs/K/equals.svg"
+   }
   },
   "?": {
    "name": "question",
@@ -859,9 +962,11 @@
    "lsb": 3.51,
    "rsb": 3.51,
    "ink_width": 85.92,
-   "svg_T": "ui2d/font/glyphs/T/question.svg",
-   "svg_W": "ui2d/font/glyphs/W/question.svg",
-   "svg_I": "ui2d/font/glyphs/I/question.svg"
+   "svg": {
+    "E": "ui2d/font/glyphs/E/question.svg",
+    "W": "ui2d/font/glyphs/W/question.svg",
+    "K": "ui2d/font/glyphs/K/question.svg"
+   }
   },
   "/": {
    "name": "slash",
@@ -879,9 +984,11 @@
    "lsb": 3.51,
    "rsb": 3.51,
    "ink_width": 75.4,
-   "svg_T": "ui2d/font/glyphs/T/slash.svg",
-   "svg_W": "ui2d/font/glyphs/W/slash.svg",
-   "svg_I": "ui2d/font/glyphs/I/slash.svg"
+   "svg": {
+    "E": "ui2d/font/glyphs/E/slash.svg",
+    "W": "ui2d/font/glyphs/W/slash.svg",
+    "K": "ui2d/font/glyphs/K/slash.svg"
+   }
   },
   ".": {
    "name": "period",
@@ -899,9 +1006,11 @@
    "lsb": 3.51,
    "rsb": 3.51,
    "ink_width": 26.3,
-   "svg_T": "ui2d/font/glyphs/T/period.svg",
-   "svg_W": "ui2d/font/glyphs/W/period.svg",
-   "svg_I": "ui2d/font/glyphs/I/period.svg"
+   "svg": {
+    "E": "ui2d/font/glyphs/E/period.svg",
+    "W": "ui2d/font/glyphs/W/period.svg",
+    "K": "ui2d/font/glyphs/K/period.svg"
+   }
   },
   ",": {
    "name": "comma",
@@ -919,9 +1028,11 @@
    "lsb": 3.51,
    "rsb": 3.51,
    "ink_width": 31.56,
-   "svg_T": "ui2d/font/glyphs/T/comma.svg",
-   "svg_W": "ui2d/font/glyphs/W/comma.svg",
-   "svg_I": "ui2d/font/glyphs/I/comma.svg"
+   "svg": {
+    "E": "ui2d/font/glyphs/E/comma.svg",
+    "W": "ui2d/font/glyphs/W/comma.svg",
+    "K": "ui2d/font/glyphs/K/comma.svg"
+   }
   },
   ":": {
    "name": "colon",
@@ -939,9 +1050,11 @@
    "lsb": 3.51,
    "rsb": 3.51,
    "ink_width": 26.3,
-   "svg_T": "ui2d/font/glyphs/T/colon.svg",
-   "svg_W": "ui2d/font/glyphs/W/colon.svg",
-   "svg_I": "ui2d/font/glyphs/I/colon.svg"
+   "svg": {
+    "E": "ui2d/font/glyphs/E/colon.svg",
+    "W": "ui2d/font/glyphs/W/colon.svg",
+    "K": "ui2d/font/glyphs/K/colon.svg"
+   }
   },
   "%": {
    "name": "percent",
@@ -959,9 +1072,11 @@
    "lsb": 3.51,
    "rsb": 3.51,
    "ink_width": 110.47,
-   "svg_T": "ui2d/font/glyphs/T/percent.svg",
-   "svg_W": "ui2d/font/glyphs/W/percent.svg",
-   "svg_I": "ui2d/font/glyphs/I/percent.svg"
+   "svg": {
+    "E": "ui2d/font/glyphs/E/percent.svg",
+    "W": "ui2d/font/glyphs/W/percent.svg",
+    "K": "ui2d/font/glyphs/K/percent.svg"
+   }
   },
   "!": {
    "name": "exclam",
@@ -979,9 +1094,11 @@
    "lsb": 3.51,
    "rsb": 3.51,
    "ink_width": 26.3,
-   "svg_T": "ui2d/font/glyphs/T/exclam.svg",
-   "svg_W": "ui2d/font/glyphs/W/exclam.svg",
-   "svg_I": "ui2d/font/glyphs/I/exclam.svg"
+   "svg": {
+    "E": "ui2d/font/glyphs/E/exclam.svg",
+    "W": "ui2d/font/glyphs/W/exclam.svg",
+    "K": "ui2d/font/glyphs/K/exclam.svg"
+   }
   },
   "'": {
    "name": "quotesingle",
@@ -999,9 +1116,11 @@
    "lsb": 3.51,
    "rsb": 3.51,
    "ink_width": 22.79,
-   "svg_T": "ui2d/font/glyphs/T/quotesingle.svg",
-   "svg_W": "ui2d/font/glyphs/W/quotesingle.svg",
-   "svg_I": "ui2d/font/glyphs/I/quotesingle.svg"
+   "svg": {
+    "E": "ui2d/font/glyphs/E/quotesingle.svg",
+    "W": "ui2d/font/glyphs/W/quotesingle.svg",
+    "K": "ui2d/font/glyphs/K/quotesingle.svg"
+   }
   },
   "(": {
    "name": "parenleft",
@@ -1019,9 +1138,11 @@
    "lsb": 3.51,
    "rsb": 3.51,
    "ink_width": 50.85,
-   "svg_T": "ui2d/font/glyphs/T/parenleft.svg",
-   "svg_W": "ui2d/font/glyphs/W/parenleft.svg",
-   "svg_I": "ui2d/font/glyphs/I/parenleft.svg"
+   "svg": {
+    "E": "ui2d/font/glyphs/E/parenleft.svg",
+    "W": "ui2d/font/glyphs/W/parenleft.svg",
+    "K": "ui2d/font/glyphs/K/parenleft.svg"
+   }
   },
   ")": {
    "name": "parenright",
@@ -1039,9 +1160,11 @@
    "lsb": 3.51,
    "rsb": 3.51,
    "ink_width": 50.85,
-   "svg_T": "ui2d/font/glyphs/T/parenright.svg",
-   "svg_W": "ui2d/font/glyphs/W/parenright.svg",
-   "svg_I": "ui2d/font/glyphs/I/parenright.svg"
+   "svg": {
+    "E": "ui2d/font/glyphs/E/parenright.svg",
+    "W": "ui2d/font/glyphs/W/parenright.svg",
+    "K": "ui2d/font/glyphs/K/parenright.svg"
+   }
   },
   "²": {
    "name": "twosuperior",
@@ -1059,9 +1182,11 @@
    "lsb": 3.51,
    "rsb": 3.51,
    "ink_width": 64.88,
-   "svg_T": "ui2d/font/glyphs/T/twosuperior.svg",
-   "svg_W": "ui2d/font/glyphs/W/twosuperior.svg",
-   "svg_I": "ui2d/font/glyphs/I/twosuperior.svg"
+   "svg": {
+    "E": "ui2d/font/glyphs/E/twosuperior.svg",
+    "W": "ui2d/font/glyphs/W/twosuperior.svg",
+    "K": "ui2d/font/glyphs/K/twosuperior.svg"
+   }
   },
   " ": {
    "name": "space",
@@ -1079,9 +1204,7 @@
    "lsb": 3.51,
    "rsb": 3.51,
    "ink_width": 50.85,
-   "svg_T": null,
-   "svg_W": null,
-   "svg_I": null
+   "svg": null
   }
  },
  "kerning": {
@@ -1125,6 +1248,7 @@
   "A9": -4.38,
   "A+": -6.14,
   "A−": -6.14,
+  "A-": -6.14,
   "A÷": -6.14,
   "A=": -6.14,
   "A?": -11.4,
@@ -1135,6 +1259,7 @@
   "B7": -7.01,
   "B+": -6.14,
   "B−": -6.14,
+  "B-": -6.14,
   "B÷": -6.14,
   "B=": -6.14,
   "CT": -7.89,
@@ -1143,12 +1268,14 @@
   "C7": -7.89,
   "C+": -7.89,
   "C−": -7.89,
+  "C-": -7.89,
   "C÷": -7.89,
   "C=": -7.89,
   "DT": -6.14,
   "D7": -6.14,
   "D+": -6.14,
   "D−": -6.14,
+  "D-": -6.14,
   "D÷": -6.14,
   "D=": -6.14,
   "EA": -6.14,
@@ -1189,6 +1316,7 @@
   "E9": -6.14,
   "E+": -11.4,
   "E−": -11.4,
+  "E-": -11.4,
   "E×": -7.89,
   "E÷": -11.4,
   "E=": -11.4,
@@ -1241,6 +1369,7 @@
   "F9": -6.14,
   "F+": -11.4,
   "F−": -11.4,
+  "F-": -11.4,
   "F×": -7.89,
   "F÷": -11.4,
   "F=": -11.4,
@@ -1259,24 +1388,28 @@
   "G7": -6.14,
   "G+": -6.14,
   "G−": -6.14,
+  "G-": -6.14,
   "G÷": -6.14,
   "G=": -6.14,
   "HT": -6.14,
   "H7": -6.14,
   "H+": -6.14,
   "H−": -6.14,
+  "H-": -6.14,
   "H÷": -6.14,
   "H=": -6.14,
   "IT": -6.14,
   "I7": -6.14,
   "I+": -6.14,
   "I−": -6.14,
+  "I-": -6.14,
   "I÷": -6.14,
   "I=": -6.14,
   "JT": -6.14,
   "J7": -6.14,
   "J+": -6.14,
   "J−": -6.14,
+  "J-": -6.14,
   "J÷": -6.14,
   "J=": -6.14,
   "KT": -7.89,
@@ -1284,6 +1417,7 @@
   "K7": -7.89,
   "K+": -7.01,
   "K−": -7.01,
+  "K-": -7.01,
   "K÷": -7.01,
   "K=": -7.01,
   "K?": -4.38,
@@ -1325,6 +1459,7 @@
   "L9": -13.15,
   "L+": -11.4,
   "L−": -11.4,
+  "L-": -11.4,
   "L×": -7.89,
   "L÷": -11.4,
   "L=": -11.4,
@@ -1343,18 +1478,21 @@
   "M7": -6.14,
   "M+": -6.14,
   "M−": -6.14,
+  "M-": -6.14,
   "M÷": -6.14,
   "M=": -6.14,
   "NT": -6.14,
   "N7": -6.14,
   "N+": -6.14,
   "N−": -6.14,
+  "N-": -6.14,
   "N÷": -6.14,
   "N=": -6.14,
   "OT": -6.14,
   "O7": -6.14,
   "O+": -6.14,
   "O−": -6.14,
+  "O-": -6.14,
   "O÷": -6.14,
   "O=": -6.14,
   "PA": -4.38,
@@ -1364,6 +1502,7 @@
   "P7": -6.14,
   "P+": -6.14,
   "P−": -6.14,
+  "P-": -6.14,
   "P÷": -6.14,
   "P=": -6.14,
   "P/": -5.26,
@@ -1373,12 +1512,14 @@
   "Q7": -6.14,
   "Q+": -6.14,
   "Q−": -6.14,
+  "Q-": -6.14,
   "Q÷": -6.14,
   "Q=": -6.14,
   "RT": -6.14,
   "R7": -6.14,
   "R+": -6.14,
   "R−": -6.14,
+  "R-": -6.14,
   "R÷": -6.14,
   "R=": -6.14,
   "ST": -7.89,
@@ -1386,6 +1527,7 @@
   "S7": -7.89,
   "S+": -6.14,
   "S−": -6.14,
+  "S-": -6.14,
   "S÷": -6.14,
   "S=": -6.14,
   "S?": -4.38,
@@ -1427,6 +1569,7 @@
   "T9": -6.14,
   "T+": -11.4,
   "T−": -11.4,
+  "T-": -11.4,
   "T×": -7.89,
   "T÷": -11.4,
   "T=": -11.4,
@@ -1445,6 +1588,7 @@
   "U7": -6.14,
   "U+": -6.14,
   "U−": -6.14,
+  "U-": -6.14,
   "U÷": -6.14,
   "U=": -6.14,
   "VA": -11.4,
@@ -1456,6 +1600,7 @@
   "V7": -6.14,
   "V+": -6.14,
   "V−": -6.14,
+  "V-": -7.01,
   "V÷": -6.14,
   "V=": -6.14,
   "V/": -11.4,
@@ -1468,6 +1613,7 @@
   "W7": -6.14,
   "W+": -6.14,
   "W−": -6.14,
+  "W-": -7.01,
   "W÷": -6.14,
   "W=": -6.14,
   "W/": -7.89,
@@ -1478,6 +1624,7 @@
   "X7": -7.01,
   "X+": -7.01,
   "X−": -7.01,
+  "X-": -7.01,
   "X÷": -7.01,
   "X=": -7.01,
   "YA": -12.27,
@@ -1489,6 +1636,7 @@
   "Y7": -7.01,
   "Y+": -7.01,
   "Y−": -7.01,
+  "Y-": -7.89,
   "Y÷": -7.01,
   "Y=": -7.01,
   "Y/": -15.78,
@@ -1502,6 +1650,7 @@
   "Z7": -6.14,
   "Z+": -6.14,
   "Z−": -6.14,
+  "Z-": -7.89,
   "Z÷": -6.14,
   "Z=": -6.14,
   "Z/": -7.01,
@@ -1511,6 +1660,7 @@
   "07": -6.14,
   "0+": -6.14,
   "0−": -6.14,
+  "0-": -6.14,
   "0÷": -6.14,
   "0=": -6.14,
   "1A": -6.14,
@@ -1541,6 +1691,7 @@
   "1Z": -6.14,
   "1+": -11.4,
   "1−": -11.4,
+  "1-": -11.4,
   "1×": -7.89,
   "1÷": -11.4,
   "1=": -11.4,
@@ -1560,6 +1711,7 @@
   "2Z": -6.14,
   "2+": -6.14,
   "2−": -6.14,
+  "2-": -6.14,
   "2÷": -6.14,
   "2=": -6.14,
   "2/": -5.26,
@@ -1568,6 +1720,7 @@
   "3T": -6.14,
   "3+": -6.14,
   "3−": -6.14,
+  "3-": -6.14,
   "3÷": -6.14,
   "3=": -6.14,
   "4A": -6.14,
@@ -1598,6 +1751,7 @@
   "4Z": -5.26,
   "4+": -11.4,
   "4−": -11.4,
+  "4-": -11.4,
   "4×": -7.89,
   "4÷": -11.4,
   "4=": -11.4,
@@ -1617,6 +1771,7 @@
   "5Y": -7.01,
   "5+": -6.14,
   "5−": -6.14,
+  "5-": -6.14,
   "5÷": -6.14,
   "5=": -6.14,
   "5?": -7.01,
@@ -1625,6 +1780,7 @@
   "6Y": -6.14,
   "6+": -6.14,
   "6−": -6.14,
+  "6-": -6.14,
   "6÷": -6.14,
   "6=": -6.14,
   "6?": -7.01,
@@ -1634,6 +1790,7 @@
   "7Z": -6.14,
   "7+": -6.14,
   "7−": -6.14,
+  "7-": -7.01,
   "7÷": -6.14,
   "7=": -6.14,
   "7/": -13.15,
@@ -1642,11 +1799,13 @@
   "8T": -7.01,
   "8+": -6.14,
   "8−": -6.14,
+  "8-": -6.14,
   "8÷": -6.14,
   "8=": -6.14,
   "9T": -6.14,
   "9+": -6.14,
   "9−": -6.14,
+  "9-": -6.14,
   "9÷": -6.14,
   "9=": -6.14,
   "+A": -6.14,
@@ -1687,6 +1846,7 @@
   "+9": -5.26,
   "++": -11.4,
   "+−": -11.4,
+  "+-": -11.4,
   "+×": -7.89,
   "+÷": -11.4,
   "+=": -11.4,
@@ -1739,6 +1899,7 @@
   "−9": -5.26,
   "−+": -11.4,
   "−−": -11.4,
+  "−-": -11.4,
   "−×": -7.89,
   "−÷": -11.4,
   "−=": -11.4,
@@ -1753,12 +1914,66 @@
   "−(": -7.01,
   "−)": -7.01,
   "−²": -5.26,
+  "-A": -6.14,
+  "-B": -5.26,
+  "-C": -5.26,
+  "-D": -5.26,
+  "-E": -5.26,
+  "-F": -5.26,
+  "-G": -5.26,
+  "-H": -5.26,
+  "-I": -5.26,
+  "-J": -7.89,
+  "-K": -5.26,
+  "-L": -5.26,
+  "-M": -5.26,
+  "-N": -5.26,
+  "-O": -5.26,
+  "-P": -5.26,
+  "-Q": -5.26,
+  "-R": -5.26,
+  "-S": -5.26,
+  "-T": -11.4,
+  "-U": -5.26,
+  "-V": -7.01,
+  "-W": -7.01,
+  "-X": -7.01,
+  "-Y": -7.89,
+  "-Z": -5.26,
+  "-0": -5.26,
+  "-1": -9.64,
+  "-2": -5.26,
+  "-3": -7.89,
+  "-4": -5.26,
+  "-5": -5.26,
+  "-6": -5.26,
+  "-7": -11.4,
+  "-8": -5.26,
+  "-9": -5.26,
+  "-+": -11.4,
+  "-−": -11.4,
+  "--": -11.4,
+  "-×": -7.89,
+  "-÷": -11.4,
+  "-=": -11.4,
+  "-?": -7.89,
+  "-/": -7.01,
+  "-.": -6.14,
+  "-,": -9.64,
+  "-:": -6.14,
+  "-%": -7.01,
+  "-!": -6.14,
+  "-'": -5.26,
+  "-(": -7.01,
+  "-)": -7.01,
+  "-²": -5.26,
   "×T": -7.89,
   "×1": -6.14,
   "×3": -4.38,
   "×7": -7.89,
   "×+": -7.89,
   "×−": -7.89,
+  "×-": -7.89,
   "×÷": -7.89,
   "×=": -7.89,
   "÷A": -6.14,
@@ -1799,6 +2014,7 @@
   "÷9": -5.26,
   "÷+": -11.4,
   "÷−": -11.4,
+  "÷-": -11.4,
   "÷×": -7.89,
   "÷÷": -11.4,
   "÷=": -11.4,
@@ -1851,6 +2067,7 @@
   "=9": -5.26,
   "=+": -11.4,
   "=−": -11.4,
+  "=-": -11.4,
   "=×": -7.89,
   "=÷": -11.4,
   "==": -11.4,
@@ -1872,6 +2089,7 @@
   "?7": -6.14,
   "?+": -6.14,
   "?−": -6.14,
+  "?-": -6.14,
   "?÷": -6.14,
   "?=": -6.14,
   "?/": -5.26,
@@ -1886,6 +2104,7 @@
   "/7": -7.01,
   "/+": -7.01,
   "/−": -7.01,
+  "/-": -7.01,
   "/÷": -7.01,
   "/=": -7.01,
   "//": -15.78,
@@ -1900,6 +2119,7 @@
   ".9": -10.52,
   ".+": -6.14,
   ".−": -6.14,
+  ".-": -6.14,
   ".÷": -6.14,
   ".=": -6.14,
   ".?": -16.66,
@@ -1913,6 +2133,7 @@
   ",9": -7.89,
   ",+": -6.14,
   ",−": -6.14,
+  ",-": -6.14,
   ",÷": -6.14,
   ",=": -6.14,
   ",?": -15.78,
@@ -1922,6 +2143,7 @@
   ":7": -6.14,
   ":+": -6.14,
   ":−": -6.14,
+  ":-": -6.14,
   ":÷": -6.14,
   ":=": -6.14,
   "%T": -14.03,
@@ -1931,6 +2153,7 @@
   "%7": -14.03,
   "%+": -7.01,
   "%−": -7.01,
+  "%-": -7.01,
   "%÷": -7.01,
   "%=": -7.01,
   "%?": -6.14,
@@ -1939,6 +2162,7 @@
   "!7": -6.14,
   "!+": -6.14,
   "!−": -6.14,
+  "!-": -6.14,
   "!÷": -6.14,
   "!=": -6.14,
   "'A": -6.14,
@@ -1948,6 +2172,7 @@
   "'7": -6.14,
   "'+": -6.14,
   "'−": -6.14,
+  "'-": -6.14,
   "'÷": -6.14,
   "'=": -6.14,
   "'/": -7.89,
@@ -1956,6 +2181,7 @@
   "(7": -7.01,
   "(+": -7.01,
   "(−": -7.01,
+  "(-": -7.01,
   "(÷": -7.01,
   "(=": -7.01,
   ")T": -7.89,
@@ -1963,6 +2189,7 @@
   ")7": -7.89,
   ")+": -7.89,
   ")−": -7.89,
+  ")-": -7.89,
   ")÷": -7.89,
   ")=": -7.89,
   "²A": -6.14,
@@ -1974,6 +2201,7 @@
   "²7": -7.01,
   "²+": -7.01,
   "²−": -7.01,
+  "²-": -7.01,
   "²÷": -7.01,
   "²=": -7.01,
   "²/": -7.01,

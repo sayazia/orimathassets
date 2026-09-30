@@ -76,10 +76,6 @@ export const LARGE = {
   decimals: () => [...Array(10).keys()].map((i) => rect(14 + i * 7.4, i < 3 ? 18 : 28, 19.4 + i * 7.4, 82)),
   measurement: () => [rect(10, 36, 90, 48), ...[...Array(9).keys()].map((i) => rect(12 + i * 9.5, 48, 17 + i * 9.5, i % 2 ? 58 : 66))],
 };
-export const LARGE_COLOURS = {
-  robot_race: 'teal', practice: 'cobalt', orb_forge: 'cobalt', balloon_burst: 'coral', factory_sort: 'sunflower', bridge_builder: 'violet',
-  balance_gate: 'coral', measure_hunt: 'violet', place_value: 'coral', multiply_divide: 'cobalt', fractions: 'teal', decimals: 'sunflower', measurement: 'violet',
-};
 export const LARGE_NAMES = {
   robot_race: 'icon_robot_race', practice: 'icon_practice',
   orb_forge: 'game_orb_forge', balloon_burst: 'game_balloon_burst', factory_sort: 'game_factory_sort', bridge_builder: 'game_bridge_builder', balance_gate: 'game_balance_gate', measure_hunt: 'game_measure_hunt',

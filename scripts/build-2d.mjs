@@ -50,9 +50,9 @@ for (const [name, draw] of Object.entries(PICTURES)) {
 }
 
 // Logo (Numeria Arena): the title in the embossed paper letters of the UI set (scripts/ui), cream on
-// teal for light backgrounds and tone-on-tone paper for dark ones.
+// teal (stands on its own anywhere) and the transparent emboss version that takes any background.
 const title = (treatment) => piece({ name: `logo${treatment}`, text: 'NUMERIA ARENA', shape: 'R', treatment, bg: C('teal'), cls: 'XL' });
-for (const [id, treatment] of [['logo_numeria_arena', 'W'], ['logo_numeria_arena_dark', 'T']]) {
+for (const [id, treatment] of [['logo_numeria_arena', 'W'], ['logo_numeria_arena_emboss', 'E']]) {
   const t = title(treatment);
   emit(`brand/${id}`, t.W, t.H, t.svg, [[1200, Math.round((1200 * t.H) / t.W)]], true);
 }

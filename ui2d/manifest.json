@@ -5,25 +5,8 @@
   "svg": "ui2d/brand/title_numeria_arena.svg",
   "text": "NUMERIA ARENA",
   "shape": "rectangle",
-  "treatment": "on_paper",
-  "background": "#FFFDF8",
-  "size_class": "XL",
-  "px": [
-   2076,
-   400
-  ],
-  "world_height_m": 0.07,
-  "priority": 1,
-  "letter_px": 190
- },
- {
-  "name": "title_numeria_arena_w",
-  "file": "ui2d/brand/title_numeria_arena_w.png",
-  "svg": "ui2d/brand/title_numeria_arena_w.svg",
-  "text": "NUMERIA ARENA",
-  "shape": "rectangle",
-  "treatment": "on_color",
-  "background": "#3FB6A0",
+  "treatment": "emboss",
+  "background": null,
   "size_class": "XL",
   "px": [
    2076,
@@ -39,8 +22,8 @@
   "svg": "ui2d/menu/menu_robot_race.svg",
   "text": "ROBOT RACE",
   "shape": "parallelogram",
-  "treatment": "on_color",
-  "background": "#3FB6A0",
+  "treatment": "emboss",
+  "background": null,
   "size_class": "S",
   "px": [
    422,
@@ -56,8 +39,8 @@
   "svg": "ui2d/menu/menu_balloon_burst.svg",
   "text": "BALLOON BURST",
   "shape": "parallelogram",
-  "treatment": "on_color",
-  "background": "#F2716B",
+  "treatment": "emboss",
+  "background": null,
   "size_class": "S",
   "px": [
    516,
@@ -73,8 +56,8 @@
   "svg": "ui2d/menu/menu_orb_forge.svg",
   "text": "ORB FORGE",
   "shape": "parallelogram",
-  "treatment": "on_color",
-  "background": "#3469C4",
+  "treatment": "emboss",
+  "background": null,
   "size_class": "S",
   "px": [
    384,
@@ -90,8 +73,8 @@
   "svg": "ui2d/menu/menu_factory_sort.svg",
   "text": "FACTORY SORT",
   "shape": "parallelogram",
-  "treatment": "on_color",
-  "background": "#F9C74F",
+  "treatment": "emboss",
+  "background": null,
   "size_class": "S",
   "px": [
    484,
@@ -107,8 +90,8 @@
   "svg": "ui2d/menu/menu_bridge_builder.svg",
   "text": "BRIDGE BUILDER",
   "shape": "parallelogram",
-  "treatment": "on_color",
-  "background": "#B198EA",
+  "treatment": "emboss",
+  "background": null,
   "size_class": "S",
   "px": [
    502,
@@ -124,8 +107,8 @@
   "svg": "ui2d/menu/menu_balance_gate.svg",
   "text": "BALANCE GATE",
   "shape": "parallelogram",
-  "treatment": "on_color",
-  "background": "#F2716B",
+  "treatment": "emboss",
+  "background": null,
   "size_class": "S",
   "px": [
    482,
@@ -141,8 +124,8 @@
   "svg": "ui2d/menu/menu_measure_hunt.svg",
   "text": "MEASURE HUNT",
   "shape": "parallelogram",
-  "treatment": "on_color",
-  "background": "#B198EA",
+  "treatment": "emboss",
+  "background": null,
   "size_class": "S",
   "px": [
    494,
@@ -158,8 +141,8 @@
   "svg": "ui2d/placement/status_finding_table.svg",
   "text": "FINDING YOUR TABLE",
   "shape": "rectangle",
-  "treatment": "on_paper",
-  "background": "#FFFDF8",
+  "treatment": "emboss",
+  "background": null,
   "size_class": "M",
   "px": [
    978,
@@ -175,8 +158,8 @@
   "svg": "ui2d/placement/status_pinch_to_place.svg",
   "text": "PINCH TO PLACE THE BOOK",
   "shape": "rectangle",
-  "treatment": "on_paper",
-  "background": "#FFFDF8",
+  "treatment": "emboss",
+  "background": null,
   "size_class": "M",
   "px": [
    1252,
@@ -192,8 +175,8 @@
   "svg": "ui2d/placement/status_or_wait.svg",
   "text": "OR WAIT # S",
   "shape": "rectangle",
-  "treatment": "on_paper",
-  "background": "#FFFDF8",
+  "treatment": "emboss",
+  "background": null,
   "size_class": "S",
   "px": [
    428,
@@ -235,8 +218,8 @@
   "svg": "ui2d/race/race_wave_1.svg",
   "text": "WAVE 1 OF 3",
   "shape": "rectangle",
-  "treatment": "on_color",
-  "background": "#3FB6A0",
+  "treatment": "emboss",
+  "background": null,
   "size_class": "L",
   "px": [
    1104,
@@ -252,8 +235,8 @@
   "svg": "ui2d/race/race_wave_2.svg",
   "text": "WAVE 2 OF 3",
   "shape": "rectangle",
-  "treatment": "on_color",
-  "background": "#3FB6A0",
+  "treatment": "emboss",
+  "background": null,
   "size_class": "L",
   "px": [
    1114,
@@ -269,8 +252,8 @@
   "svg": "ui2d/race/race_wave_3.svg",
   "text": "WAVE 3 OF 3",
   "shape": "rectangle",
-  "treatment": "on_color",
-  "background": "#3FB6A0",
+  "treatment": "emboss",
+  "background": null,
   "size_class": "L",
   "px": [
    1114,
@@ -321,8 +304,8 @@
   "svg": "ui2d/race/race_20_seconds.svg",
   "text": "20 SECONDS",
   "shape": "rectangle",
-  "treatment": "on_paper",
-  "background": "#FFFDF8",
+  "treatment": "emboss",
+  "background": null,
   "size_class": "S",
   "px": [
    386,
@@ -355,8 +338,8 @@
   "svg": "ui2d/race/race_clock_frame.svg",
   "text": "",
   "shape": "rectangle",
-  "treatment": "on_paper",
-  "background": "#FFFDF8",
+  "treatment": "emboss",
+  "background": null,
   "size_class": "M",
   "px": [
    310,
@@ -382,8 +365,8 @@
   "svg": "ui2d/race/race_clock_frame_red.svg",
   "text": "",
   "shape": "rectangle",
-  "treatment": "on_paper",
-  "background": "#FFFDF8",
+  "treatment": "emboss",
+  "background": null,
   "size_class": "M",
   "px": [
    310,
@@ -515,8 +498,8 @@
   "svg": "ui2d/race/race_word_solved.svg",
   "text": "SOLVED",
   "shape": "rectangle",
-  "treatment": "ink_on_paper",
-  "background": "#FFFDF8",
+  "treatment": "emboss",
+  "background": null,
   "size_class": "XS",
   "px": [
    182,
@@ -533,8 +516,8 @@
   "svg": "ui2d/race/race_word_pts.svg",
   "text": "PTS",
   "shape": "rectangle",
-  "treatment": "ink_on_paper",
-  "background": "#FFFDF8",
+  "treatment": "emboss",
+  "background": null,
   "size_class": "XS",
   "px": [
    116,
@@ -658,7 +641,7 @@
   "svg": "ui2d/question/card_question_short.svg",
   "text": "",
   "shape": "rectangle",
-  "treatment": "on_paper",
+  "treatment": "solid_paper",
   "background": "#FFFDF8",
   "size_class": "M",
   "px": [
@@ -676,7 +659,7 @@
   "svg": "ui2d/question/card_question_medium.svg",
   "text": "",
   "shape": "rectangle",
-  "treatment": "on_paper",
+  "treatment": "solid_paper",
   "background": "#FFFDF8",
   "size_class": "M",
   "px": [
@@ -694,7 +677,7 @@
   "svg": "ui2d/question/card_question_long.svg",
   "text": "",
   "shape": "rectangle",
-  "treatment": "on_paper",
+  "treatment": "solid_paper",
   "background": "#FFFDF8",
   "size_class": "M",
   "px": [
@@ -712,8 +695,8 @@
   "svg": "ui2d/question/hint_pop_right_answer.svg",
   "text": "POP THE RIGHT ANSWER",
   "shape": "rectangle",
-  "treatment": "on_paper",
-  "background": "#FFFDF8",
+  "treatment": "emboss",
+  "background": null,
   "size_class": "S",
   "px": [
    694,
@@ -729,8 +712,8 @@
   "svg": "ui2d/question/hint_join_2_crystals.svg",
   "text": "JOIN 2 CRYSTALS TO MAKE",
   "shape": "rectangle",
-  "treatment": "on_paper",
-  "background": "#FFFDF8",
+  "treatment": "emboss",
+  "background": null,
   "size_class": "S",
   "px": [
    862,
@@ -756,8 +739,8 @@
   "svg": "ui2d/question/hint_make.svg",
   "text": "MAKE",
   "shape": "rectangle",
-  "treatment": "on_paper",
-  "background": "#FFFDF8",
+  "treatment": "emboss",
+  "background": null,
   "size_class": "S",
   "px": [
    306,
@@ -854,8 +837,8 @@
   "svg": "ui2d/question/feedback_missed.svg",
   "text": "MISSED",
   "shape": "parallelogram",
-  "treatment": "on_paper",
-  "background": "#FFFDF8",
+  "treatment": "emboss",
+  "background": null,
   "size_class": "S",
   "px": [
    280,
@@ -871,7 +854,7 @@
   "svg": "ui2d/question/tag_answer_balloon.svg",
   "text": "",
   "shape": "rectangle",
-  "treatment": "on_paper",
+  "treatment": "solid_paper",
   "background": "#FFFDF8",
   "size_class": "S",
   "px": [
@@ -898,7 +881,7 @@
   "svg": "ui2d/question/tag_answer_balloon_fraction.svg",
   "text": "",
   "shape": "rectangle",
-  "treatment": "on_paper",
+  "treatment": "solid_paper",
   "background": "#FFFDF8",
   "size_class": "S",
   "px": [
@@ -925,7 +908,7 @@
   "svg": "ui2d/question/tag_answer_crystal.svg",
   "text": "",
   "shape": "rectangle",
-  "treatment": "on_paper",
+  "treatment": "solid_paper",
   "background": "#FFFDF8",
   "size_class": "S",
   "px": [
@@ -952,7 +935,7 @@
   "svg": "ui2d/question/tag_answer_crystal_fraction.svg",
   "text": "",
   "shape": "rectangle",
-  "treatment": "on_paper",
+  "treatment": "solid_paper",
   "background": "#FFFDF8",
   "size_class": "S",
   "px": [
@@ -1015,8 +998,8 @@
   "svg": "ui2d/question/score_points.svg",
   "text": "POINTS",
   "shape": "rectangle",
-  "treatment": "on_paper",
-  "background": "#FFFDF8",
+  "treatment": "emboss",
+  "background": null,
   "size_class": "M",
   "px": [
    614,
@@ -1042,8 +1025,8 @@
   "svg": "ui2d/recap/recap_title.svg",
   "text": "RACE RESULTS",
   "shape": "ribbon",
-  "treatment": "on_color",
-  "background": "#3FB6A0",
+  "treatment": "emboss",
+  "background": null,
   "size_class": "L",
   "px": [
    1476,
@@ -1200,8 +1183,8 @@
   "svg": "ui2d/recap/button_done.svg",
   "text": "DONE",
   "shape": "rectangle",
-  "treatment": "on_color",
-  "background": "#5DB85B",
+  "treatment": "emboss",
+  "background": null,
   "size_class": "M",
   "px": [
    334,
@@ -1213,13 +1196,49 @@
   "note": "replaces the old #81B29A Done button"
  },
  {
+  "name": "button_done_pressed",
+  "file": "ui2d/recap/button_done_pressed.png",
+  "svg": "ui2d/recap/button_done_pressed.svg",
+  "text": "DONE",
+  "shape": "rectangle",
+  "treatment": "emboss",
+  "background": null,
+  "size_class": "M",
+  "px": [
+   334,
+   160
+  ],
+  "world_height_m": 0.035,
+  "priority": 1,
+  "letter_px": 72,
+  "note": "pressed state; replaces the old #81B29A Done button"
+ },
+ {
+  "name": "button_done_off",
+  "file": "ui2d/recap/button_done_off.png",
+  "svg": "ui2d/recap/button_done_off.svg",
+  "text": "DONE",
+  "shape": "rectangle",
+  "treatment": "emboss",
+  "background": null,
+  "size_class": "M",
+  "px": [
+   334,
+   160
+  ],
+  "world_height_m": 0.035,
+  "priority": 1,
+  "letter_px": 72,
+  "note": "off state; replaces the old #81B29A Done button"
+ },
+ {
   "name": "button_start",
   "file": "ui2d/web/button_start.png",
   "svg": "ui2d/web/button_start.svg",
   "text": "START",
   "shape": "rectangle",
-  "treatment": "on_color",
-  "background": "#3FB6A0",
+  "treatment": "emboss",
+  "background": null,
   "size_class": "M",
   "px": [
    382,
@@ -1230,13 +1249,49 @@
   "letter_px": 72
  },
  {
+  "name": "button_start_pressed",
+  "file": "ui2d/web/button_start_pressed.png",
+  "svg": "ui2d/web/button_start_pressed.svg",
+  "text": "START",
+  "shape": "rectangle",
+  "treatment": "emboss",
+  "background": null,
+  "size_class": "M",
+  "px": [
+   382,
+   160
+  ],
+  "world_height_m": 0.035,
+  "priority": 1,
+  "letter_px": 72,
+  "note": "pressed state"
+ },
+ {
+  "name": "button_start_off",
+  "file": "ui2d/web/button_start_off.png",
+  "svg": "ui2d/web/button_start_off.svg",
+  "text": "START",
+  "shape": "rectangle",
+  "treatment": "emboss",
+  "background": null,
+  "size_class": "M",
+  "px": [
+   382,
+   160
+  ],
+  "world_height_m": 0.035,
+  "priority": 1,
+  "letter_px": 72,
+  "note": "off state"
+ },
+ {
   "name": "button_enter_xr",
   "file": "ui2d/web/button_enter_xr.png",
   "svg": "ui2d/web/button_enter_xr.svg",
   "text": "ENTER XR",
   "shape": "rectangle",
-  "treatment": "on_color",
-  "background": "#3469C4",
+  "treatment": "emboss",
+  "background": null,
   "size_class": "M",
   "px": [
    520,
@@ -1247,13 +1302,49 @@
   "letter_px": 72
  },
  {
+  "name": "button_enter_xr_pressed",
+  "file": "ui2d/web/button_enter_xr_pressed.png",
+  "svg": "ui2d/web/button_enter_xr_pressed.svg",
+  "text": "ENTER XR",
+  "shape": "rectangle",
+  "treatment": "emboss",
+  "background": null,
+  "size_class": "M",
+  "px": [
+   520,
+   160
+  ],
+  "world_height_m": 0.035,
+  "priority": 1,
+  "letter_px": 72,
+  "note": "pressed state"
+ },
+ {
+  "name": "button_enter_xr_off",
+  "file": "ui2d/web/button_enter_xr_off.png",
+  "svg": "ui2d/web/button_enter_xr_off.svg",
+  "text": "ENTER XR",
+  "shape": "rectangle",
+  "treatment": "emboss",
+  "background": null,
+  "size_class": "M",
+  "px": [
+   520,
+   160
+  ],
+  "world_height_m": 0.035,
+  "priority": 1,
+  "letter_px": 72,
+  "note": "off state"
+ },
+ {
   "name": "pause_paused",
   "file": "ui2d/pause/pause_paused.png",
   "svg": "ui2d/pause/pause_paused.svg",
   "text": "PAUSED",
   "shape": "circle",
-  "treatment": "on_color",
-  "background": "#3469C4",
+  "treatment": "emboss",
+  "background": null,
   "size_class": "L",
   "px": [
    690,
@@ -1269,8 +1360,8 @@
   "svg": "ui2d/pause/pause_welcome_back.svg",
   "text": "WELCOME BACK!",
   "shape": "rectangle",
-  "treatment": "on_color",
-  "background": "#3FB6A0",
+  "treatment": "emboss",
+  "background": null,
   "size_class": "M",
   "px": [
    796,
@@ -1286,8 +1377,8 @@
   "svg": "ui2d/pause/notice_not_saved.svg",
   "text": "PROGRESS NOT SAVED ON THIS DEVICE",
   "shape": "rectangle",
-  "treatment": "ink_on_paper",
-  "background": "#FFFDF8",
+  "treatment": "emboss",
+  "background": null,
   "size_class": "XS",
   "px": [
    728,
@@ -1303,8 +1394,8 @@
   "svg": "ui2d/buttons/button_play.svg",
   "text": "PLAY",
   "shape": "rectangle",
-  "treatment": "on_color",
-  "background": "#5DB85B",
+  "treatment": "emboss",
+  "background": null,
   "size_class": "M",
   "px": [
    430,
@@ -1316,13 +1407,49 @@
   "note": "icon play on the left"
  },
  {
+  "name": "button_play_pressed",
+  "file": "ui2d/buttons/button_play_pressed.png",
+  "svg": "ui2d/buttons/button_play_pressed.svg",
+  "text": "PLAY",
+  "shape": "rectangle",
+  "treatment": "emboss",
+  "background": null,
+  "size_class": "M",
+  "px": [
+   430,
+   160
+  ],
+  "world_height_m": 0.035,
+  "priority": 2,
+  "letter_px": 72,
+  "note": "pressed state; icon play on the left"
+ },
+ {
+  "name": "button_play_off",
+  "file": "ui2d/buttons/button_play_off.png",
+  "svg": "ui2d/buttons/button_play_off.svg",
+  "text": "PLAY",
+  "shape": "rectangle",
+  "treatment": "emboss",
+  "background": null,
+  "size_class": "M",
+  "px": [
+   430,
+   160
+  ],
+  "world_height_m": 0.035,
+  "priority": 2,
+  "letter_px": 72,
+  "note": "off state; icon play on the left"
+ },
+ {
   "name": "button_play_again",
   "file": "ui2d/buttons/button_play_again.png",
   "svg": "ui2d/buttons/button_play_again.svg",
   "text": "PLAY AGAIN",
   "shape": "rectangle",
-  "treatment": "on_color",
-  "background": "#5DB85B",
+  "treatment": "emboss",
+  "background": null,
   "size_class": "M",
   "px": [
    712,
@@ -1334,13 +1461,49 @@
   "note": "icon replay on the left"
  },
  {
+  "name": "button_play_again_pressed",
+  "file": "ui2d/buttons/button_play_again_pressed.png",
+  "svg": "ui2d/buttons/button_play_again_pressed.svg",
+  "text": "PLAY AGAIN",
+  "shape": "rectangle",
+  "treatment": "emboss",
+  "background": null,
+  "size_class": "M",
+  "px": [
+   712,
+   160
+  ],
+  "world_height_m": 0.035,
+  "priority": 2,
+  "letter_px": 72,
+  "note": "pressed state; icon replay on the left"
+ },
+ {
+  "name": "button_play_again_off",
+  "file": "ui2d/buttons/button_play_again_off.png",
+  "svg": "ui2d/buttons/button_play_again_off.svg",
+  "text": "PLAY AGAIN",
+  "shape": "rectangle",
+  "treatment": "emboss",
+  "background": null,
+  "size_class": "M",
+  "px": [
+   712,
+   160
+  ],
+  "world_height_m": 0.035,
+  "priority": 2,
+  "letter_px": 72,
+  "note": "off state; icon replay on the left"
+ },
+ {
   "name": "button_next",
   "file": "ui2d/buttons/button_next.png",
   "svg": "ui2d/buttons/button_next.svg",
   "text": "NEXT",
   "shape": "rectangle",
-  "treatment": "on_color",
-  "background": "#3FB6A0",
+  "treatment": "emboss",
+  "background": null,
   "size_class": "M",
   "px": [
    430,
@@ -1352,13 +1515,49 @@
   "note": "icon next on the left"
  },
  {
+  "name": "button_next_pressed",
+  "file": "ui2d/buttons/button_next_pressed.png",
+  "svg": "ui2d/buttons/button_next_pressed.svg",
+  "text": "NEXT",
+  "shape": "rectangle",
+  "treatment": "emboss",
+  "background": null,
+  "size_class": "M",
+  "px": [
+   430,
+   160
+  ],
+  "world_height_m": 0.035,
+  "priority": 2,
+  "letter_px": 72,
+  "note": "pressed state; icon next on the left"
+ },
+ {
+  "name": "button_next_off",
+  "file": "ui2d/buttons/button_next_off.png",
+  "svg": "ui2d/buttons/button_next_off.svg",
+  "text": "NEXT",
+  "shape": "rectangle",
+  "treatment": "emboss",
+  "background": null,
+  "size_class": "M",
+  "px": [
+   430,
+   160
+  ],
+  "world_height_m": 0.035,
+  "priority": 2,
+  "letter_px": 72,
+  "note": "off state; icon next on the left"
+ },
+ {
   "name": "button_back",
   "file": "ui2d/buttons/button_back.png",
   "svg": "ui2d/buttons/button_back.svg",
   "text": "BACK",
   "shape": "rectangle",
-  "treatment": "on_paper",
-  "background": "#FFFDF8",
+  "treatment": "emboss",
+  "background": null,
   "size_class": "M",
   "px": [
    444,
@@ -1370,13 +1569,49 @@
   "note": "icon back on the left"
  },
  {
+  "name": "button_back_pressed",
+  "file": "ui2d/buttons/button_back_pressed.png",
+  "svg": "ui2d/buttons/button_back_pressed.svg",
+  "text": "BACK",
+  "shape": "rectangle",
+  "treatment": "emboss",
+  "background": null,
+  "size_class": "M",
+  "px": [
+   444,
+   160
+  ],
+  "world_height_m": 0.035,
+  "priority": 2,
+  "letter_px": 72,
+  "note": "pressed state; icon back on the left"
+ },
+ {
+  "name": "button_back_off",
+  "file": "ui2d/buttons/button_back_off.png",
+  "svg": "ui2d/buttons/button_back_off.svg",
+  "text": "BACK",
+  "shape": "rectangle",
+  "treatment": "emboss",
+  "background": null,
+  "size_class": "M",
+  "px": [
+   444,
+   160
+  ],
+  "world_height_m": 0.035,
+  "priority": 2,
+  "letter_px": 72,
+  "note": "off state; icon back on the left"
+ },
+ {
   "name": "button_menu",
   "file": "ui2d/buttons/button_menu.png",
   "svg": "ui2d/buttons/button_menu.svg",
   "text": "MENU",
   "shape": "rectangle",
-  "treatment": "on_paper",
-  "background": "#FFFDF8",
+  "treatment": "emboss",
+  "background": null,
   "size_class": "M",
   "px": [
    442,
@@ -1388,13 +1623,49 @@
   "note": "icon home on the left"
  },
  {
+  "name": "button_menu_pressed",
+  "file": "ui2d/buttons/button_menu_pressed.png",
+  "svg": "ui2d/buttons/button_menu_pressed.svg",
+  "text": "MENU",
+  "shape": "rectangle",
+  "treatment": "emboss",
+  "background": null,
+  "size_class": "M",
+  "px": [
+   442,
+   160
+  ],
+  "world_height_m": 0.035,
+  "priority": 2,
+  "letter_px": 72,
+  "note": "pressed state; icon home on the left"
+ },
+ {
+  "name": "button_menu_off",
+  "file": "ui2d/buttons/button_menu_off.png",
+  "svg": "ui2d/buttons/button_menu_off.svg",
+  "text": "MENU",
+  "shape": "rectangle",
+  "treatment": "emboss",
+  "background": null,
+  "size_class": "M",
+  "px": [
+   442,
+   160
+  ],
+  "world_height_m": 0.035,
+  "priority": 2,
+  "letter_px": 72,
+  "note": "off state; icon home on the left"
+ },
+ {
   "name": "button_resume",
   "file": "ui2d/buttons/button_resume.png",
   "svg": "ui2d/buttons/button_resume.svg",
   "text": "RESUME",
   "shape": "rectangle",
-  "treatment": "on_color",
-  "background": "#5DB85B",
+  "treatment": "emboss",
+  "background": null,
   "size_class": "M",
   "px": [
    550,
@@ -1406,13 +1677,49 @@
   "note": "icon play on the left"
  },
  {
+  "name": "button_resume_pressed",
+  "file": "ui2d/buttons/button_resume_pressed.png",
+  "svg": "ui2d/buttons/button_resume_pressed.svg",
+  "text": "RESUME",
+  "shape": "rectangle",
+  "treatment": "emboss",
+  "background": null,
+  "size_class": "M",
+  "px": [
+   550,
+   160
+  ],
+  "world_height_m": 0.035,
+  "priority": 2,
+  "letter_px": 72,
+  "note": "pressed state; icon play on the left"
+ },
+ {
+  "name": "button_resume_off",
+  "file": "ui2d/buttons/button_resume_off.png",
+  "svg": "ui2d/buttons/button_resume_off.svg",
+  "text": "RESUME",
+  "shape": "rectangle",
+  "treatment": "emboss",
+  "background": null,
+  "size_class": "M",
+  "px": [
+   550,
+   160
+  ],
+  "world_height_m": 0.035,
+  "priority": 2,
+  "letter_px": 72,
+  "note": "off state; icon play on the left"
+ },
+ {
   "name": "button_settings",
   "file": "ui2d/buttons/button_settings.png",
   "svg": "ui2d/buttons/button_settings.svg",
   "text": "SETTINGS",
   "shape": "rectangle",
-  "treatment": "on_color",
-  "background": "#3469C4",
+  "treatment": "emboss",
+  "background": null,
   "size_class": "M",
   "px": [
    604,
@@ -1424,13 +1731,49 @@
   "note": "icon settings on the left"
  },
  {
+  "name": "button_settings_pressed",
+  "file": "ui2d/buttons/button_settings_pressed.png",
+  "svg": "ui2d/buttons/button_settings_pressed.svg",
+  "text": "SETTINGS",
+  "shape": "rectangle",
+  "treatment": "emboss",
+  "background": null,
+  "size_class": "M",
+  "px": [
+   604,
+   160
+  ],
+  "world_height_m": 0.035,
+  "priority": 2,
+  "letter_px": 72,
+  "note": "pressed state; icon settings on the left"
+ },
+ {
+  "name": "button_settings_off",
+  "file": "ui2d/buttons/button_settings_off.png",
+  "svg": "ui2d/buttons/button_settings_off.svg",
+  "text": "SETTINGS",
+  "shape": "rectangle",
+  "treatment": "emboss",
+  "background": null,
+  "size_class": "M",
+  "px": [
+   604,
+   160
+  ],
+  "world_height_m": 0.035,
+  "priority": 2,
+  "letter_px": 72,
+  "note": "off state; icon settings on the left"
+ },
+ {
   "name": "button_skip",
   "file": "ui2d/buttons/button_skip.png",
   "svg": "ui2d/buttons/button_skip.svg",
   "text": "SKIP",
   "shape": "rectangle",
-  "treatment": "on_paper",
-  "background": "#FFFDF8",
+  "treatment": "emboss",
+  "background": null,
   "size_class": "M",
   "px": [
    400,
@@ -1442,13 +1785,49 @@
   "note": "icon skip on the left"
  },
  {
+  "name": "button_skip_pressed",
+  "file": "ui2d/buttons/button_skip_pressed.png",
+  "svg": "ui2d/buttons/button_skip_pressed.svg",
+  "text": "SKIP",
+  "shape": "rectangle",
+  "treatment": "emboss",
+  "background": null,
+  "size_class": "M",
+  "px": [
+   400,
+   160
+  ],
+  "world_height_m": 0.035,
+  "priority": 2,
+  "letter_px": 72,
+  "note": "pressed state; icon skip on the left"
+ },
+ {
+  "name": "button_skip_off",
+  "file": "ui2d/buttons/button_skip_off.png",
+  "svg": "ui2d/buttons/button_skip_off.svg",
+  "text": "SKIP",
+  "shape": "rectangle",
+  "treatment": "emboss",
+  "background": null,
+  "size_class": "M",
+  "px": [
+   400,
+   160
+  ],
+  "world_height_m": 0.035,
+  "priority": 2,
+  "letter_px": 72,
+  "note": "off state; icon skip on the left"
+ },
+ {
   "name": "button_yes",
   "file": "ui2d/buttons/button_yes.png",
   "svg": "ui2d/buttons/button_yes.svg",
   "text": "YES",
   "shape": "rectangle",
-  "treatment": "on_color",
-  "background": "#5DB85B",
+  "treatment": "emboss",
+  "background": null,
   "size_class": "M",
   "px": [
    380,
@@ -1460,13 +1839,49 @@
   "note": "icon check on the left"
  },
  {
+  "name": "button_yes_pressed",
+  "file": "ui2d/buttons/button_yes_pressed.png",
+  "svg": "ui2d/buttons/button_yes_pressed.svg",
+  "text": "YES",
+  "shape": "rectangle",
+  "treatment": "emboss",
+  "background": null,
+  "size_class": "M",
+  "px": [
+   380,
+   160
+  ],
+  "world_height_m": 0.035,
+  "priority": 2,
+  "letter_px": 72,
+  "note": "pressed state; icon check on the left"
+ },
+ {
+  "name": "button_yes_off",
+  "file": "ui2d/buttons/button_yes_off.png",
+  "svg": "ui2d/buttons/button_yes_off.svg",
+  "text": "YES",
+  "shape": "rectangle",
+  "treatment": "emboss",
+  "background": null,
+  "size_class": "M",
+  "px": [
+   380,
+   160
+  ],
+  "world_height_m": 0.035,
+  "priority": 2,
+  "letter_px": 72,
+  "note": "off state; icon check on the left"
+ },
+ {
   "name": "button_no",
   "file": "ui2d/buttons/button_no.png",
   "svg": "ui2d/buttons/button_no.svg",
   "text": "NO",
   "shape": "rectangle",
-  "treatment": "on_paper",
-  "background": "#FFFDF8",
+  "treatment": "emboss",
+  "background": null,
   "size_class": "M",
   "px": [
    326,
@@ -1478,13 +1893,49 @@
   "note": "icon cross on the left"
  },
  {
+  "name": "button_no_pressed",
+  "file": "ui2d/buttons/button_no_pressed.png",
+  "svg": "ui2d/buttons/button_no_pressed.svg",
+  "text": "NO",
+  "shape": "rectangle",
+  "treatment": "emboss",
+  "background": null,
+  "size_class": "M",
+  "px": [
+   326,
+   160
+  ],
+  "world_height_m": 0.035,
+  "priority": 2,
+  "letter_px": 72,
+  "note": "pressed state; icon cross on the left"
+ },
+ {
+  "name": "button_no_off",
+  "file": "ui2d/buttons/button_no_off.png",
+  "svg": "ui2d/buttons/button_no_off.svg",
+  "text": "NO",
+  "shape": "rectangle",
+  "treatment": "emboss",
+  "background": null,
+  "size_class": "M",
+  "px": [
+   326,
+   160
+  ],
+  "world_height_m": 0.035,
+  "priority": 2,
+  "letter_px": 72,
+  "note": "off state; icon cross on the left"
+ },
+ {
   "name": "button_sound_on",
   "file": "ui2d/buttons/button_sound_on.png",
   "svg": "ui2d/buttons/button_sound_on.svg",
   "text": "SOUND ON",
   "shape": "rectangle",
-  "treatment": "on_color",
-  "background": "#3469C4",
+  "treatment": "emboss",
+  "background": null,
   "size_class": "M",
   "px": [
    640,
@@ -1496,13 +1947,49 @@
   "note": "icon sound_on on the left"
  },
  {
+  "name": "button_sound_on_pressed",
+  "file": "ui2d/buttons/button_sound_on_pressed.png",
+  "svg": "ui2d/buttons/button_sound_on_pressed.svg",
+  "text": "SOUND ON",
+  "shape": "rectangle",
+  "treatment": "emboss",
+  "background": null,
+  "size_class": "M",
+  "px": [
+   640,
+   160
+  ],
+  "world_height_m": 0.035,
+  "priority": 2,
+  "letter_px": 72,
+  "note": "pressed state; icon sound_on on the left"
+ },
+ {
+  "name": "button_sound_on_off",
+  "file": "ui2d/buttons/button_sound_on_off.png",
+  "svg": "ui2d/buttons/button_sound_on_off.svg",
+  "text": "SOUND ON",
+  "shape": "rectangle",
+  "treatment": "emboss",
+  "background": null,
+  "size_class": "M",
+  "px": [
+   640,
+   160
+  ],
+  "world_height_m": 0.035,
+  "priority": 2,
+  "letter_px": 72,
+  "note": "off state; icon sound_on on the left"
+ },
+ {
   "name": "button_sound_off",
   "file": "ui2d/buttons/button_sound_off.png",
   "svg": "ui2d/buttons/button_sound_off.svg",
   "text": "SOUND OFF",
   "shape": "rectangle",
-  "treatment": "on_paper",
-  "background": "#FFFDF8",
+  "treatment": "emboss",
+  "background": null,
   "size_class": "M",
   "px": [
    686,
@@ -1514,13 +2001,49 @@
   "note": "icon sound_off on the left"
  },
  {
+  "name": "button_sound_off_pressed",
+  "file": "ui2d/buttons/button_sound_off_pressed.png",
+  "svg": "ui2d/buttons/button_sound_off_pressed.svg",
+  "text": "SOUND OFF",
+  "shape": "rectangle",
+  "treatment": "emboss",
+  "background": null,
+  "size_class": "M",
+  "px": [
+   686,
+   160
+  ],
+  "world_height_m": 0.035,
+  "priority": 2,
+  "letter_px": 72,
+  "note": "pressed state; icon sound_off on the left"
+ },
+ {
+  "name": "button_sound_off_off",
+  "file": "ui2d/buttons/button_sound_off_off.png",
+  "svg": "ui2d/buttons/button_sound_off_off.svg",
+  "text": "SOUND OFF",
+  "shape": "rectangle",
+  "treatment": "emboss",
+  "background": null,
+  "size_class": "M",
+  "px": [
+   686,
+   160
+  ],
+  "world_height_m": 0.035,
+  "priority": 2,
+  "letter_px": 72,
+  "note": "off state; icon sound_off on the left"
+ },
+ {
   "name": "button_music_on",
   "file": "ui2d/buttons/button_music_on.png",
   "svg": "ui2d/buttons/button_music_on.svg",
   "text": "MUSIC ON",
   "shape": "rectangle",
-  "treatment": "on_color",
-  "background": "#3469C4",
+  "treatment": "emboss",
+  "background": null,
   "size_class": "M",
   "px": [
    610,
@@ -1532,13 +2055,49 @@
   "note": "icon music on the left"
  },
  {
+  "name": "button_music_on_pressed",
+  "file": "ui2d/buttons/button_music_on_pressed.png",
+  "svg": "ui2d/buttons/button_music_on_pressed.svg",
+  "text": "MUSIC ON",
+  "shape": "rectangle",
+  "treatment": "emboss",
+  "background": null,
+  "size_class": "M",
+  "px": [
+   610,
+   160
+  ],
+  "world_height_m": 0.035,
+  "priority": 2,
+  "letter_px": 72,
+  "note": "pressed state; icon music on the left"
+ },
+ {
+  "name": "button_music_on_off",
+  "file": "ui2d/buttons/button_music_on_off.png",
+  "svg": "ui2d/buttons/button_music_on_off.svg",
+  "text": "MUSIC ON",
+  "shape": "rectangle",
+  "treatment": "emboss",
+  "background": null,
+  "size_class": "M",
+  "px": [
+   610,
+   160
+  ],
+  "world_height_m": 0.035,
+  "priority": 2,
+  "letter_px": 72,
+  "note": "off state; icon music on the left"
+ },
+ {
   "name": "button_music_off",
   "file": "ui2d/buttons/button_music_off.png",
   "svg": "ui2d/buttons/button_music_off.svg",
   "text": "MUSIC OFF",
   "shape": "rectangle",
-  "treatment": "on_paper",
-  "background": "#FFFDF8",
+  "treatment": "emboss",
+  "background": null,
   "size_class": "M",
   "px": [
    656,
@@ -1550,13 +2109,49 @@
   "note": "icon music_off on the left"
  },
  {
+  "name": "button_music_off_pressed",
+  "file": "ui2d/buttons/button_music_off_pressed.png",
+  "svg": "ui2d/buttons/button_music_off_pressed.svg",
+  "text": "MUSIC OFF",
+  "shape": "rectangle",
+  "treatment": "emboss",
+  "background": null,
+  "size_class": "M",
+  "px": [
+   656,
+   160
+  ],
+  "world_height_m": 0.035,
+  "priority": 2,
+  "letter_px": 72,
+  "note": "pressed state; icon music_off on the left"
+ },
+ {
+  "name": "button_music_off_off",
+  "file": "ui2d/buttons/button_music_off_off.png",
+  "svg": "ui2d/buttons/button_music_off_off.svg",
+  "text": "MUSIC OFF",
+  "shape": "rectangle",
+  "treatment": "emboss",
+  "background": null,
+  "size_class": "M",
+  "px": [
+   656,
+   160
+  ],
+  "world_height_m": 0.035,
+  "priority": 2,
+  "letter_px": 72,
+  "note": "off state; icon music_off on the left"
+ },
+ {
   "name": "button_captions_on",
   "file": "ui2d/buttons/button_captions_on.png",
   "svg": "ui2d/buttons/button_captions_on.svg",
   "text": "CAPTIONS ON",
   "shape": "rectangle",
-  "treatment": "on_color",
-  "background": "#3469C4",
+  "treatment": "emboss",
+  "background": null,
   "size_class": "M",
   "px": [
    766,
@@ -1568,13 +2163,49 @@
   "note": "icon captions on the left"
  },
  {
+  "name": "button_captions_on_pressed",
+  "file": "ui2d/buttons/button_captions_on_pressed.png",
+  "svg": "ui2d/buttons/button_captions_on_pressed.svg",
+  "text": "CAPTIONS ON",
+  "shape": "rectangle",
+  "treatment": "emboss",
+  "background": null,
+  "size_class": "M",
+  "px": [
+   766,
+   160
+  ],
+  "world_height_m": 0.035,
+  "priority": 2,
+  "letter_px": 72,
+  "note": "pressed state; icon captions on the left"
+ },
+ {
+  "name": "button_captions_on_off",
+  "file": "ui2d/buttons/button_captions_on_off.png",
+  "svg": "ui2d/buttons/button_captions_on_off.svg",
+  "text": "CAPTIONS ON",
+  "shape": "rectangle",
+  "treatment": "emboss",
+  "background": null,
+  "size_class": "M",
+  "px": [
+   766,
+   160
+  ],
+  "world_height_m": 0.035,
+  "priority": 2,
+  "letter_px": 72,
+  "note": "off state; icon captions on the left"
+ },
+ {
   "name": "button_captions_off",
   "file": "ui2d/buttons/button_captions_off.png",
   "svg": "ui2d/buttons/button_captions_off.svg",
   "text": "CAPTIONS OFF",
   "shape": "rectangle",
-  "treatment": "on_paper",
-  "background": "#FFFDF8",
+  "treatment": "emboss",
+  "background": null,
   "size_class": "M",
   "px": [
    812,
@@ -1586,13 +2217,49 @@
   "note": "icon captions_off on the left"
  },
  {
+  "name": "button_captions_off_pressed",
+  "file": "ui2d/buttons/button_captions_off_pressed.png",
+  "svg": "ui2d/buttons/button_captions_off_pressed.svg",
+  "text": "CAPTIONS OFF",
+  "shape": "rectangle",
+  "treatment": "emboss",
+  "background": null,
+  "size_class": "M",
+  "px": [
+   812,
+   160
+  ],
+  "world_height_m": 0.035,
+  "priority": 2,
+  "letter_px": 72,
+  "note": "pressed state; icon captions_off on the left"
+ },
+ {
+  "name": "button_captions_off_off",
+  "file": "ui2d/buttons/button_captions_off_off.png",
+  "svg": "ui2d/buttons/button_captions_off_off.svg",
+  "text": "CAPTIONS OFF",
+  "shape": "rectangle",
+  "treatment": "emboss",
+  "background": null,
+  "size_class": "M",
+  "px": [
+   812,
+   160
+  ],
+  "world_height_m": 0.035,
+  "priority": 2,
+  "letter_px": 72,
+  "note": "off state; icon captions_off on the left"
+ },
+ {
   "name": "button_language_en",
   "file": "ui2d/buttons/button_language_en.png",
   "svg": "ui2d/buttons/button_language_en.svg",
   "text": "ENGLISH",
   "shape": "rectangle",
-  "treatment": "on_color",
-  "background": "#3FB6A0",
+  "treatment": "emboss",
+  "background": null,
   "size_class": "M",
   "px": [
    552,
@@ -1604,13 +2271,49 @@
   "note": "icon language on the left"
  },
  {
+  "name": "button_language_en_pressed",
+  "file": "ui2d/buttons/button_language_en_pressed.png",
+  "svg": "ui2d/buttons/button_language_en_pressed.svg",
+  "text": "ENGLISH",
+  "shape": "rectangle",
+  "treatment": "emboss",
+  "background": null,
+  "size_class": "M",
+  "px": [
+   552,
+   160
+  ],
+  "world_height_m": 0.035,
+  "priority": 2,
+  "letter_px": 72,
+  "note": "pressed state; icon language on the left"
+ },
+ {
+  "name": "button_language_en_off",
+  "file": "ui2d/buttons/button_language_en_off.png",
+  "svg": "ui2d/buttons/button_language_en_off.svg",
+  "text": "ENGLISH",
+  "shape": "rectangle",
+  "treatment": "emboss",
+  "background": null,
+  "size_class": "M",
+  "px": [
+   552,
+   160
+  ],
+  "world_height_m": 0.035,
+  "priority": 2,
+  "letter_px": 72,
+  "note": "off state; icon language on the left"
+ },
+ {
   "name": "button_language_id",
   "file": "ui2d/buttons/button_language_id.png",
   "svg": "ui2d/buttons/button_language_id.svg",
   "text": "BAHASA INDONESIA",
   "shape": "rectangle",
-  "treatment": "on_color",
-  "background": "#3FB6A0",
+  "treatment": "emboss",
+  "background": null,
   "size_class": "M",
   "px": [
    1020,
@@ -1622,13 +2325,49 @@
   "note": "icon language on the left"
  },
  {
-  "name": "icon_back_cobalt",
-  "file": "ui2d/icons/icon_back_cobalt.png",
-  "svg": "ui2d/icons/icon_back_cobalt.svg",
+  "name": "button_language_id_pressed",
+  "file": "ui2d/buttons/button_language_id_pressed.png",
+  "svg": "ui2d/buttons/button_language_id_pressed.svg",
+  "text": "BAHASA INDONESIA",
+  "shape": "rectangle",
+  "treatment": "emboss",
+  "background": null,
+  "size_class": "M",
+  "px": [
+   1020,
+   160
+  ],
+  "world_height_m": 0.035,
+  "priority": 2,
+  "letter_px": 72,
+  "note": "pressed state; icon language on the left"
+ },
+ {
+  "name": "button_language_id_off",
+  "file": "ui2d/buttons/button_language_id_off.png",
+  "svg": "ui2d/buttons/button_language_id_off.svg",
+  "text": "BAHASA INDONESIA",
+  "shape": "rectangle",
+  "treatment": "emboss",
+  "background": null,
+  "size_class": "M",
+  "px": [
+   1020,
+   160
+  ],
+  "world_height_m": 0.035,
+  "priority": 2,
+  "letter_px": 72,
+  "note": "off state; icon language on the left"
+ },
+ {
+  "name": "icon_back",
+  "file": "ui2d/icons/icon_back.png",
+  "svg": "ui2d/icons/icon_back.svg",
   "text": "",
   "shape": "circle",
-  "treatment": "on_color",
-  "background": "#3469C4",
+  "treatment": "emboss",
+  "background": null,
   "size_class": "icon_small",
   "px": [
    128,
@@ -1638,13 +2377,13 @@
   "priority": 2
  },
  {
-  "name": "icon_back_paper",
-  "file": "ui2d/icons/icon_back_paper.png",
-  "svg": "ui2d/icons/icon_back_paper.svg",
+  "name": "icon_next",
+  "file": "ui2d/icons/icon_next.png",
+  "svg": "ui2d/icons/icon_next.svg",
   "text": "",
   "shape": "circle",
-  "treatment": "ink_on_paper",
-  "background": "#FFFDF8",
+  "treatment": "emboss",
+  "background": null,
   "size_class": "icon_small",
   "px": [
    128,
@@ -1654,13 +2393,13 @@
   "priority": 2
  },
  {
-  "name": "icon_next_cobalt",
-  "file": "ui2d/icons/icon_next_cobalt.png",
-  "svg": "ui2d/icons/icon_next_cobalt.svg",
+  "name": "icon_skip",
+  "file": "ui2d/icons/icon_skip.png",
+  "svg": "ui2d/icons/icon_skip.svg",
   "text": "",
   "shape": "circle",
-  "treatment": "on_color",
-  "background": "#3469C4",
+  "treatment": "emboss",
+  "background": null,
   "size_class": "icon_small",
   "px": [
    128,
@@ -1670,13 +2409,13 @@
   "priority": 2
  },
  {
-  "name": "icon_next_paper",
-  "file": "ui2d/icons/icon_next_paper.png",
-  "svg": "ui2d/icons/icon_next_paper.svg",
+  "name": "icon_home",
+  "file": "ui2d/icons/icon_home.png",
+  "svg": "ui2d/icons/icon_home.svg",
   "text": "",
   "shape": "circle",
-  "treatment": "ink_on_paper",
-  "background": "#FFFDF8",
+  "treatment": "emboss",
+  "background": null,
   "size_class": "icon_small",
   "px": [
    128,
@@ -1686,13 +2425,13 @@
   "priority": 2
  },
  {
-  "name": "icon_skip_cobalt",
-  "file": "ui2d/icons/icon_skip_cobalt.png",
-  "svg": "ui2d/icons/icon_skip_cobalt.svg",
+  "name": "icon_replay",
+  "file": "ui2d/icons/icon_replay.png",
+  "svg": "ui2d/icons/icon_replay.svg",
   "text": "",
   "shape": "circle",
-  "treatment": "on_color",
-  "background": "#3469C4",
+  "treatment": "emboss",
+  "background": null,
   "size_class": "icon_small",
   "px": [
    128,
@@ -1702,13 +2441,13 @@
   "priority": 2
  },
  {
-  "name": "icon_skip_paper",
-  "file": "ui2d/icons/icon_skip_paper.png",
-  "svg": "ui2d/icons/icon_skip_paper.svg",
+  "name": "icon_play",
+  "file": "ui2d/icons/icon_play.png",
+  "svg": "ui2d/icons/icon_play.svg",
   "text": "",
   "shape": "circle",
-  "treatment": "ink_on_paper",
-  "background": "#FFFDF8",
+  "treatment": "emboss",
+  "background": null,
   "size_class": "icon_small",
   "px": [
    128,
@@ -1718,13 +2457,13 @@
   "priority": 2
  },
  {
-  "name": "icon_home_cobalt",
-  "file": "ui2d/icons/icon_home_cobalt.png",
-  "svg": "ui2d/icons/icon_home_cobalt.svg",
+  "name": "icon_pause",
+  "file": "ui2d/icons/icon_pause.png",
+  "svg": "ui2d/icons/icon_pause.svg",
   "text": "",
   "shape": "circle",
-  "treatment": "on_color",
-  "background": "#3469C4",
+  "treatment": "emboss",
+  "background": null,
   "size_class": "icon_small",
   "px": [
    128,
@@ -1734,13 +2473,13 @@
   "priority": 2
  },
  {
-  "name": "icon_home_paper",
-  "file": "ui2d/icons/icon_home_paper.png",
-  "svg": "ui2d/icons/icon_home_paper.svg",
+  "name": "icon_settings",
+  "file": "ui2d/icons/icon_settings.png",
+  "svg": "ui2d/icons/icon_settings.svg",
   "text": "",
   "shape": "circle",
-  "treatment": "ink_on_paper",
-  "background": "#FFFDF8",
+  "treatment": "emboss",
+  "background": null,
   "size_class": "icon_small",
   "px": [
    128,
@@ -1750,13 +2489,13 @@
   "priority": 2
  },
  {
-  "name": "icon_replay_cobalt",
-  "file": "ui2d/icons/icon_replay_cobalt.png",
-  "svg": "ui2d/icons/icon_replay_cobalt.svg",
+  "name": "icon_sound_on",
+  "file": "ui2d/icons/icon_sound_on.png",
+  "svg": "ui2d/icons/icon_sound_on.svg",
   "text": "",
   "shape": "circle",
-  "treatment": "on_color",
-  "background": "#3469C4",
+  "treatment": "emboss",
+  "background": null,
   "size_class": "icon_small",
   "px": [
    128,
@@ -1766,13 +2505,13 @@
   "priority": 2
  },
  {
-  "name": "icon_replay_paper",
-  "file": "ui2d/icons/icon_replay_paper.png",
-  "svg": "ui2d/icons/icon_replay_paper.svg",
+  "name": "icon_sound_off",
+  "file": "ui2d/icons/icon_sound_off.png",
+  "svg": "ui2d/icons/icon_sound_off.svg",
   "text": "",
   "shape": "circle",
-  "treatment": "ink_on_paper",
-  "background": "#FFFDF8",
+  "treatment": "emboss",
+  "background": null,
   "size_class": "icon_small",
   "px": [
    128,
@@ -1782,13 +2521,13 @@
   "priority": 2
  },
  {
-  "name": "icon_play_cobalt",
-  "file": "ui2d/icons/icon_play_cobalt.png",
-  "svg": "ui2d/icons/icon_play_cobalt.svg",
+  "name": "icon_music",
+  "file": "ui2d/icons/icon_music.png",
+  "svg": "ui2d/icons/icon_music.svg",
   "text": "",
   "shape": "circle",
-  "treatment": "on_color",
-  "background": "#3469C4",
+  "treatment": "emboss",
+  "background": null,
   "size_class": "icon_small",
   "px": [
    128,
@@ -1798,13 +2537,13 @@
   "priority": 2
  },
  {
-  "name": "icon_play_paper",
-  "file": "ui2d/icons/icon_play_paper.png",
-  "svg": "ui2d/icons/icon_play_paper.svg",
+  "name": "icon_music_off",
+  "file": "ui2d/icons/icon_music_off.png",
+  "svg": "ui2d/icons/icon_music_off.svg",
   "text": "",
   "shape": "circle",
-  "treatment": "ink_on_paper",
-  "background": "#FFFDF8",
+  "treatment": "emboss",
+  "background": null,
   "size_class": "icon_small",
   "px": [
    128,
@@ -1814,13 +2553,13 @@
   "priority": 2
  },
  {
-  "name": "icon_pause_cobalt",
-  "file": "ui2d/icons/icon_pause_cobalt.png",
-  "svg": "ui2d/icons/icon_pause_cobalt.svg",
+  "name": "icon_captions",
+  "file": "ui2d/icons/icon_captions.png",
+  "svg": "ui2d/icons/icon_captions.svg",
   "text": "",
   "shape": "circle",
-  "treatment": "on_color",
-  "background": "#3469C4",
+  "treatment": "emboss",
+  "background": null,
   "size_class": "icon_small",
   "px": [
    128,
@@ -1830,13 +2569,13 @@
   "priority": 2
  },
  {
-  "name": "icon_pause_paper",
-  "file": "ui2d/icons/icon_pause_paper.png",
-  "svg": "ui2d/icons/icon_pause_paper.svg",
+  "name": "icon_captions_off",
+  "file": "ui2d/icons/icon_captions_off.png",
+  "svg": "ui2d/icons/icon_captions_off.svg",
   "text": "",
   "shape": "circle",
-  "treatment": "ink_on_paper",
-  "background": "#FFFDF8",
+  "treatment": "emboss",
+  "background": null,
   "size_class": "icon_small",
   "px": [
    128,
@@ -1846,13 +2585,13 @@
   "priority": 2
  },
  {
-  "name": "icon_settings_cobalt",
-  "file": "ui2d/icons/icon_settings_cobalt.png",
-  "svg": "ui2d/icons/icon_settings_cobalt.svg",
+  "name": "icon_language",
+  "file": "ui2d/icons/icon_language.png",
+  "svg": "ui2d/icons/icon_language.svg",
   "text": "",
   "shape": "circle",
-  "treatment": "on_color",
-  "background": "#3469C4",
+  "treatment": "emboss",
+  "background": null,
   "size_class": "icon_small",
   "px": [
    128,
@@ -1862,13 +2601,13 @@
   "priority": 2
  },
  {
-  "name": "icon_settings_paper",
-  "file": "ui2d/icons/icon_settings_paper.png",
-  "svg": "ui2d/icons/icon_settings_paper.svg",
+  "name": "icon_check",
+  "file": "ui2d/icons/icon_check.png",
+  "svg": "ui2d/icons/icon_check.svg",
   "text": "",
   "shape": "circle",
-  "treatment": "ink_on_paper",
-  "background": "#FFFDF8",
+  "treatment": "emboss",
+  "background": null,
   "size_class": "icon_small",
   "px": [
    128,
@@ -1878,13 +2617,13 @@
   "priority": 2
  },
  {
-  "name": "icon_sound_on_cobalt",
-  "file": "ui2d/icons/icon_sound_on_cobalt.png",
-  "svg": "ui2d/icons/icon_sound_on_cobalt.svg",
+  "name": "icon_cross",
+  "file": "ui2d/icons/icon_cross.png",
+  "svg": "ui2d/icons/icon_cross.svg",
   "text": "",
   "shape": "circle",
-  "treatment": "on_color",
-  "background": "#3469C4",
+  "treatment": "emboss",
+  "background": null,
   "size_class": "icon_small",
   "px": [
    128,
@@ -1894,13 +2633,13 @@
   "priority": 2
  },
  {
-  "name": "icon_sound_on_paper",
-  "file": "ui2d/icons/icon_sound_on_paper.png",
-  "svg": "ui2d/icons/icon_sound_on_paper.svg",
+  "name": "icon_close",
+  "file": "ui2d/icons/icon_close.png",
+  "svg": "ui2d/icons/icon_close.svg",
   "text": "",
   "shape": "circle",
-  "treatment": "ink_on_paper",
-  "background": "#FFFDF8",
+  "treatment": "emboss",
+  "background": null,
   "size_class": "icon_small",
   "px": [
    128,
@@ -1910,13 +2649,13 @@
   "priority": 2
  },
  {
-  "name": "icon_sound_off_cobalt",
-  "file": "ui2d/icons/icon_sound_off_cobalt.png",
-  "svg": "ui2d/icons/icon_sound_off_cobalt.svg",
+  "name": "icon_star",
+  "file": "ui2d/icons/icon_star.png",
+  "svg": "ui2d/icons/icon_star.svg",
   "text": "",
   "shape": "circle",
-  "treatment": "on_color",
-  "background": "#3469C4",
+  "treatment": "emboss",
+  "background": null,
   "size_class": "icon_small",
   "px": [
    128,
@@ -1926,13 +2665,13 @@
   "priority": 2
  },
  {
-  "name": "icon_sound_off_paper",
-  "file": "ui2d/icons/icon_sound_off_paper.png",
-  "svg": "ui2d/icons/icon_sound_off_paper.svg",
+  "name": "icon_clock",
+  "file": "ui2d/icons/icon_clock.png",
+  "svg": "ui2d/icons/icon_clock.svg",
   "text": "",
   "shape": "circle",
-  "treatment": "ink_on_paper",
-  "background": "#FFFDF8",
+  "treatment": "emboss",
+  "background": null,
   "size_class": "icon_small",
   "px": [
    128,
@@ -1942,13 +2681,13 @@
   "priority": 2
  },
  {
-  "name": "icon_music_cobalt",
-  "file": "ui2d/icons/icon_music_cobalt.png",
-  "svg": "ui2d/icons/icon_music_cobalt.svg",
+  "name": "icon_robot",
+  "file": "ui2d/icons/icon_robot.png",
+  "svg": "ui2d/icons/icon_robot.svg",
   "text": "",
   "shape": "circle",
-  "treatment": "on_color",
-  "background": "#3469C4",
+  "treatment": "emboss",
+  "background": null,
   "size_class": "icon_small",
   "px": [
    128,
@@ -1958,13 +2697,13 @@
   "priority": 2
  },
  {
-  "name": "icon_music_paper",
-  "file": "ui2d/icons/icon_music_paper.png",
-  "svg": "ui2d/icons/icon_music_paper.svg",
+  "name": "icon_you",
+  "file": "ui2d/icons/icon_you.png",
+  "svg": "ui2d/icons/icon_you.svg",
   "text": "",
   "shape": "circle",
-  "treatment": "ink_on_paper",
-  "background": "#FFFDF8",
+  "treatment": "emboss",
+  "background": null,
   "size_class": "icon_small",
   "px": [
    128,
@@ -1974,13 +2713,13 @@
   "priority": 2
  },
  {
-  "name": "icon_music_off_cobalt",
-  "file": "ui2d/icons/icon_music_off_cobalt.png",
-  "svg": "ui2d/icons/icon_music_off_cobalt.svg",
+  "name": "icon_trophy",
+  "file": "ui2d/icons/icon_trophy.png",
+  "svg": "ui2d/icons/icon_trophy.svg",
   "text": "",
   "shape": "circle",
-  "treatment": "on_color",
-  "background": "#3469C4",
+  "treatment": "emboss",
+  "background": null,
   "size_class": "icon_small",
   "px": [
    128,
@@ -1990,13 +2729,13 @@
   "priority": 2
  },
  {
-  "name": "icon_music_off_paper",
-  "file": "ui2d/icons/icon_music_off_paper.png",
-  "svg": "ui2d/icons/icon_music_off_paper.svg",
+  "name": "icon_lock",
+  "file": "ui2d/icons/icon_lock.png",
+  "svg": "ui2d/icons/icon_lock.svg",
   "text": "",
   "shape": "circle",
-  "treatment": "ink_on_paper",
-  "background": "#FFFDF8",
+  "treatment": "emboss",
+  "background": null,
   "size_class": "icon_small",
   "px": [
    128,
@@ -2006,13 +2745,13 @@
   "priority": 2
  },
  {
-  "name": "icon_captions_cobalt",
-  "file": "ui2d/icons/icon_captions_cobalt.png",
-  "svg": "ui2d/icons/icon_captions_cobalt.svg",
+  "name": "icon_info",
+  "file": "ui2d/icons/icon_info.png",
+  "svg": "ui2d/icons/icon_info.svg",
   "text": "",
   "shape": "circle",
-  "treatment": "on_color",
-  "background": "#3469C4",
+  "treatment": "emboss",
+  "background": null,
   "size_class": "icon_small",
   "px": [
    128,
@@ -2022,13 +2761,13 @@
   "priority": 2
  },
  {
-  "name": "icon_captions_paper",
-  "file": "ui2d/icons/icon_captions_paper.png",
-  "svg": "ui2d/icons/icon_captions_paper.svg",
+  "name": "icon_hand_poke",
+  "file": "ui2d/icons/icon_hand_poke.png",
+  "svg": "ui2d/icons/icon_hand_poke.svg",
   "text": "",
   "shape": "circle",
-  "treatment": "ink_on_paper",
-  "background": "#FFFDF8",
+  "treatment": "emboss",
+  "background": null,
   "size_class": "icon_small",
   "px": [
    128,
@@ -2038,445 +2777,13 @@
   "priority": 2
  },
  {
-  "name": "icon_captions_off_cobalt",
-  "file": "ui2d/icons/icon_captions_off_cobalt.png",
-  "svg": "ui2d/icons/icon_captions_off_cobalt.svg",
+  "name": "icon_hand_pinch",
+  "file": "ui2d/icons/icon_hand_pinch.png",
+  "svg": "ui2d/icons/icon_hand_pinch.svg",
   "text": "",
   "shape": "circle",
-  "treatment": "on_color",
-  "background": "#3469C4",
-  "size_class": "icon_small",
-  "px": [
-   128,
-   128
-  ],
-  "world_height_m": 0.02,
-  "priority": 2
- },
- {
-  "name": "icon_captions_off_paper",
-  "file": "ui2d/icons/icon_captions_off_paper.png",
-  "svg": "ui2d/icons/icon_captions_off_paper.svg",
-  "text": "",
-  "shape": "circle",
-  "treatment": "ink_on_paper",
-  "background": "#FFFDF8",
-  "size_class": "icon_small",
-  "px": [
-   128,
-   128
-  ],
-  "world_height_m": 0.02,
-  "priority": 2
- },
- {
-  "name": "icon_language_cobalt",
-  "file": "ui2d/icons/icon_language_cobalt.png",
-  "svg": "ui2d/icons/icon_language_cobalt.svg",
-  "text": "",
-  "shape": "circle",
-  "treatment": "on_color",
-  "background": "#3469C4",
-  "size_class": "icon_small",
-  "px": [
-   128,
-   128
-  ],
-  "world_height_m": 0.02,
-  "priority": 2
- },
- {
-  "name": "icon_language_paper",
-  "file": "ui2d/icons/icon_language_paper.png",
-  "svg": "ui2d/icons/icon_language_paper.svg",
-  "text": "",
-  "shape": "circle",
-  "treatment": "ink_on_paper",
-  "background": "#FFFDF8",
-  "size_class": "icon_small",
-  "px": [
-   128,
-   128
-  ],
-  "world_height_m": 0.02,
-  "priority": 2
- },
- {
-  "name": "icon_check_cobalt",
-  "file": "ui2d/icons/icon_check_cobalt.png",
-  "svg": "ui2d/icons/icon_check_cobalt.svg",
-  "text": "",
-  "shape": "circle",
-  "treatment": "on_color",
-  "background": "#3469C4",
-  "size_class": "icon_small",
-  "px": [
-   128,
-   128
-  ],
-  "world_height_m": 0.02,
-  "priority": 2
- },
- {
-  "name": "icon_check_paper",
-  "file": "ui2d/icons/icon_check_paper.png",
-  "svg": "ui2d/icons/icon_check_paper.svg",
-  "text": "",
-  "shape": "circle",
-  "treatment": "ink_on_paper",
-  "background": "#FFFDF8",
-  "size_class": "icon_small",
-  "px": [
-   128,
-   128
-  ],
-  "world_height_m": 0.02,
-  "priority": 2
- },
- {
-  "name": "icon_cross_cobalt",
-  "file": "ui2d/icons/icon_cross_cobalt.png",
-  "svg": "ui2d/icons/icon_cross_cobalt.svg",
-  "text": "",
-  "shape": "circle",
-  "treatment": "on_color",
-  "background": "#3469C4",
-  "size_class": "icon_small",
-  "px": [
-   128,
-   128
-  ],
-  "world_height_m": 0.02,
-  "priority": 2
- },
- {
-  "name": "icon_cross_paper",
-  "file": "ui2d/icons/icon_cross_paper.png",
-  "svg": "ui2d/icons/icon_cross_paper.svg",
-  "text": "",
-  "shape": "circle",
-  "treatment": "ink_on_paper",
-  "background": "#FFFDF8",
-  "size_class": "icon_small",
-  "px": [
-   128,
-   128
-  ],
-  "world_height_m": 0.02,
-  "priority": 2
- },
- {
-  "name": "icon_close_cobalt",
-  "file": "ui2d/icons/icon_close_cobalt.png",
-  "svg": "ui2d/icons/icon_close_cobalt.svg",
-  "text": "",
-  "shape": "circle",
-  "treatment": "on_color",
-  "background": "#3469C4",
-  "size_class": "icon_small",
-  "px": [
-   128,
-   128
-  ],
-  "world_height_m": 0.02,
-  "priority": 2
- },
- {
-  "name": "icon_close_paper",
-  "file": "ui2d/icons/icon_close_paper.png",
-  "svg": "ui2d/icons/icon_close_paper.svg",
-  "text": "",
-  "shape": "circle",
-  "treatment": "ink_on_paper",
-  "background": "#FFFDF8",
-  "size_class": "icon_small",
-  "px": [
-   128,
-   128
-  ],
-  "world_height_m": 0.02,
-  "priority": 2
- },
- {
-  "name": "icon_star_cobalt",
-  "file": "ui2d/icons/icon_star_cobalt.png",
-  "svg": "ui2d/icons/icon_star_cobalt.svg",
-  "text": "",
-  "shape": "circle",
-  "treatment": "on_color",
-  "background": "#3469C4",
-  "size_class": "icon_small",
-  "px": [
-   128,
-   128
-  ],
-  "world_height_m": 0.02,
-  "priority": 2
- },
- {
-  "name": "icon_star_paper",
-  "file": "ui2d/icons/icon_star_paper.png",
-  "svg": "ui2d/icons/icon_star_paper.svg",
-  "text": "",
-  "shape": "circle",
-  "treatment": "ink_on_paper",
-  "background": "#FFFDF8",
-  "size_class": "icon_small",
-  "px": [
-   128,
-   128
-  ],
-  "world_height_m": 0.02,
-  "priority": 2
- },
- {
-  "name": "icon_clock_cobalt",
-  "file": "ui2d/icons/icon_clock_cobalt.png",
-  "svg": "ui2d/icons/icon_clock_cobalt.svg",
-  "text": "",
-  "shape": "circle",
-  "treatment": "on_color",
-  "background": "#3469C4",
-  "size_class": "icon_small",
-  "px": [
-   128,
-   128
-  ],
-  "world_height_m": 0.02,
-  "priority": 2
- },
- {
-  "name": "icon_clock_paper",
-  "file": "ui2d/icons/icon_clock_paper.png",
-  "svg": "ui2d/icons/icon_clock_paper.svg",
-  "text": "",
-  "shape": "circle",
-  "treatment": "ink_on_paper",
-  "background": "#FFFDF8",
-  "size_class": "icon_small",
-  "px": [
-   128,
-   128
-  ],
-  "world_height_m": 0.02,
-  "priority": 2
- },
- {
-  "name": "icon_robot_cobalt",
-  "file": "ui2d/icons/icon_robot_cobalt.png",
-  "svg": "ui2d/icons/icon_robot_cobalt.svg",
-  "text": "",
-  "shape": "circle",
-  "treatment": "on_color",
-  "background": "#3469C4",
-  "size_class": "icon_small",
-  "px": [
-   128,
-   128
-  ],
-  "world_height_m": 0.02,
-  "priority": 2
- },
- {
-  "name": "icon_robot_paper",
-  "file": "ui2d/icons/icon_robot_paper.png",
-  "svg": "ui2d/icons/icon_robot_paper.svg",
-  "text": "",
-  "shape": "circle",
-  "treatment": "ink_on_paper",
-  "background": "#FFFDF8",
-  "size_class": "icon_small",
-  "px": [
-   128,
-   128
-  ],
-  "world_height_m": 0.02,
-  "priority": 2
- },
- {
-  "name": "icon_you_cobalt",
-  "file": "ui2d/icons/icon_you_cobalt.png",
-  "svg": "ui2d/icons/icon_you_cobalt.svg",
-  "text": "",
-  "shape": "circle",
-  "treatment": "on_color",
-  "background": "#3469C4",
-  "size_class": "icon_small",
-  "px": [
-   128,
-   128
-  ],
-  "world_height_m": 0.02,
-  "priority": 2
- },
- {
-  "name": "icon_you_paper",
-  "file": "ui2d/icons/icon_you_paper.png",
-  "svg": "ui2d/icons/icon_you_paper.svg",
-  "text": "",
-  "shape": "circle",
-  "treatment": "ink_on_paper",
-  "background": "#FFFDF8",
-  "size_class": "icon_small",
-  "px": [
-   128,
-   128
-  ],
-  "world_height_m": 0.02,
-  "priority": 2
- },
- {
-  "name": "icon_trophy_cobalt",
-  "file": "ui2d/icons/icon_trophy_cobalt.png",
-  "svg": "ui2d/icons/icon_trophy_cobalt.svg",
-  "text": "",
-  "shape": "circle",
-  "treatment": "on_color",
-  "background": "#3469C4",
-  "size_class": "icon_small",
-  "px": [
-   128,
-   128
-  ],
-  "world_height_m": 0.02,
-  "priority": 2
- },
- {
-  "name": "icon_trophy_paper",
-  "file": "ui2d/icons/icon_trophy_paper.png",
-  "svg": "ui2d/icons/icon_trophy_paper.svg",
-  "text": "",
-  "shape": "circle",
-  "treatment": "ink_on_paper",
-  "background": "#FFFDF8",
-  "size_class": "icon_small",
-  "px": [
-   128,
-   128
-  ],
-  "world_height_m": 0.02,
-  "priority": 2
- },
- {
-  "name": "icon_lock_cobalt",
-  "file": "ui2d/icons/icon_lock_cobalt.png",
-  "svg": "ui2d/icons/icon_lock_cobalt.svg",
-  "text": "",
-  "shape": "circle",
-  "treatment": "on_color",
-  "background": "#3469C4",
-  "size_class": "icon_small",
-  "px": [
-   128,
-   128
-  ],
-  "world_height_m": 0.02,
-  "priority": 2
- },
- {
-  "name": "icon_lock_paper",
-  "file": "ui2d/icons/icon_lock_paper.png",
-  "svg": "ui2d/icons/icon_lock_paper.svg",
-  "text": "",
-  "shape": "circle",
-  "treatment": "ink_on_paper",
-  "background": "#FFFDF8",
-  "size_class": "icon_small",
-  "px": [
-   128,
-   128
-  ],
-  "world_height_m": 0.02,
-  "priority": 2
- },
- {
-  "name": "icon_info_cobalt",
-  "file": "ui2d/icons/icon_info_cobalt.png",
-  "svg": "ui2d/icons/icon_info_cobalt.svg",
-  "text": "",
-  "shape": "circle",
-  "treatment": "on_color",
-  "background": "#3469C4",
-  "size_class": "icon_small",
-  "px": [
-   128,
-   128
-  ],
-  "world_height_m": 0.02,
-  "priority": 2
- },
- {
-  "name": "icon_info_paper",
-  "file": "ui2d/icons/icon_info_paper.png",
-  "svg": "ui2d/icons/icon_info_paper.svg",
-  "text": "",
-  "shape": "circle",
-  "treatment": "ink_on_paper",
-  "background": "#FFFDF8",
-  "size_class": "icon_small",
-  "px": [
-   128,
-   128
-  ],
-  "world_height_m": 0.02,
-  "priority": 2
- },
- {
-  "name": "icon_hand_poke_cobalt",
-  "file": "ui2d/icons/icon_hand_poke_cobalt.png",
-  "svg": "ui2d/icons/icon_hand_poke_cobalt.svg",
-  "text": "",
-  "shape": "circle",
-  "treatment": "on_color",
-  "background": "#3469C4",
-  "size_class": "icon_small",
-  "px": [
-   128,
-   128
-  ],
-  "world_height_m": 0.02,
-  "priority": 2
- },
- {
-  "name": "icon_hand_poke_paper",
-  "file": "ui2d/icons/icon_hand_poke_paper.png",
-  "svg": "ui2d/icons/icon_hand_poke_paper.svg",
-  "text": "",
-  "shape": "circle",
-  "treatment": "ink_on_paper",
-  "background": "#FFFDF8",
-  "size_class": "icon_small",
-  "px": [
-   128,
-   128
-  ],
-  "world_height_m": 0.02,
-  "priority": 2
- },
- {
-  "name": "icon_hand_pinch_cobalt",
-  "file": "ui2d/icons/icon_hand_pinch_cobalt.png",
-  "svg": "ui2d/icons/icon_hand_pinch_cobalt.svg",
-  "text": "",
-  "shape": "circle",
-  "treatment": "on_color",
-  "background": "#3469C4",
-  "size_class": "icon_small",
-  "px": [
-   128,
-   128
-  ],
-  "world_height_m": 0.02,
-  "priority": 2
- },
- {
-  "name": "icon_hand_pinch_paper",
-  "file": "ui2d/icons/icon_hand_pinch_paper.png",
-  "svg": "ui2d/icons/icon_hand_pinch_paper.svg",
-  "text": "",
-  "shape": "circle",
-  "treatment": "ink_on_paper",
-  "background": "#FFFDF8",
+  "treatment": "emboss",
+  "background": null,
   "size_class": "icon_small",
   "px": [
    128,
@@ -2491,8 +2798,8 @@
   "svg": "ui2d/icons_large/icon_robot_race.svg",
   "text": "",
   "shape": "circle",
-  "treatment": "on_color",
-  "background": "#3FB6A0",
+  "treatment": "emboss",
+  "background": null,
   "size_class": "icon_large",
   "px": [
    512,
@@ -2507,8 +2814,8 @@
   "svg": "ui2d/icons_large/icon_practice.svg",
   "text": "",
   "shape": "circle",
-  "treatment": "on_color",
-  "background": "#3469C4",
+  "treatment": "emboss",
+  "background": null,
   "size_class": "icon_large",
   "px": [
    512,
@@ -2523,8 +2830,8 @@
   "svg": "ui2d/icons_large/game_orb_forge.svg",
   "text": "",
   "shape": "circle",
-  "treatment": "on_color",
-  "background": "#3469C4",
+  "treatment": "emboss",
+  "background": null,
   "size_class": "icon_large",
   "px": [
    512,
@@ -2539,8 +2846,8 @@
   "svg": "ui2d/icons_large/game_balloon_burst.svg",
   "text": "",
   "shape": "circle",
-  "treatment": "on_color",
-  "background": "#F2716B",
+  "treatment": "emboss",
+  "background": null,
   "size_class": "icon_large",
   "px": [
    512,
@@ -2555,8 +2862,8 @@
   "svg": "ui2d/icons_large/game_factory_sort.svg",
   "text": "",
   "shape": "circle",
-  "treatment": "on_color",
-  "background": "#F9C74F",
+  "treatment": "emboss",
+  "background": null,
   "size_class": "icon_large",
   "px": [
    512,
@@ -2571,8 +2878,8 @@
   "svg": "ui2d/icons_large/game_bridge_builder.svg",
   "text": "",
   "shape": "circle",
-  "treatment": "on_color",
-  "background": "#B198EA",
+  "treatment": "emboss",
+  "background": null,
   "size_class": "icon_large",
   "px": [
    512,
@@ -2587,8 +2894,8 @@
   "svg": "ui2d/icons_large/game_balance_gate.svg",
   "text": "",
   "shape": "circle",
-  "treatment": "on_color",
-  "background": "#F2716B",
+  "treatment": "emboss",
+  "background": null,
   "size_class": "icon_large",
   "px": [
    512,
@@ -2603,8 +2910,8 @@
   "svg": "ui2d/icons_large/game_measure_hunt.svg",
   "text": "",
   "shape": "circle",
-  "treatment": "on_color",
-  "background": "#B198EA",
+  "treatment": "emboss",
+  "background": null,
   "size_class": "icon_large",
   "px": [
    512,
@@ -2619,8 +2926,8 @@
   "svg": "ui2d/icons_large/mission_place_value.svg",
   "text": "",
   "shape": "circle",
-  "treatment": "on_color",
-  "background": "#F2716B",
+  "treatment": "emboss",
+  "background": null,
   "size_class": "icon_large",
   "px": [
    512,
@@ -2635,8 +2942,8 @@
   "svg": "ui2d/icons_large/mission_multiply_divide.svg",
   "text": "",
   "shape": "circle",
-  "treatment": "on_color",
-  "background": "#3469C4",
+  "treatment": "emboss",
+  "background": null,
   "size_class": "icon_large",
   "px": [
    512,
@@ -2651,8 +2958,8 @@
   "svg": "ui2d/icons_large/mission_fractions.svg",
   "text": "",
   "shape": "circle",
-  "treatment": "on_color",
-  "background": "#3FB6A0",
+  "treatment": "emboss",
+  "background": null,
   "size_class": "icon_large",
   "px": [
    512,
@@ -2667,8 +2974,8 @@
   "svg": "ui2d/icons_large/mission_decimals.svg",
   "text": "",
   "shape": "circle",
-  "treatment": "on_color",
-  "background": "#F9C74F",
+  "treatment": "emboss",
+  "background": null,
   "size_class": "icon_large",
   "px": [
    512,
@@ -2683,8 +2990,8 @@
   "svg": "ui2d/icons_large/mission_measurement.svg",
   "text": "",
   "shape": "circle",
-  "treatment": "on_color",
-  "background": "#B198EA",
+  "treatment": "emboss",
+  "background": null,
   "size_class": "icon_large",
   "px": [
    512,

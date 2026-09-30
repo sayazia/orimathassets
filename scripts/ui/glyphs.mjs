@@ -36,6 +36,7 @@ const G = {
   9: { w: 4, strokes: [[[4, 2.3], [2.8, 3.3], [1.2, 3.3], [0, 2.2], [0, 1.2], [1.2, 0], [2.8, 0], [4, 1.2], [4, 6]]] },
   '+': { w: 3.8, strokes: [[[1.9, 1.1], [1.9, 4.9]], [[0, 3], [3.8, 3]]], name: 'plus' },
   '−': { w: 3.8, strokes: [[[0, 3], [3.8, 3]]], name: 'minus' },
+  '-': { w: 2.2, strokes: [[[0, 3.2], [2.2, 3.2]]], name: 'hyphen' }, // shorter and a touch lower than minus
   '×': { w: 3.2, strokes: [[[0, 1.4], [3.2, 4.6]], [[3.2, 1.4], [0, 4.6]]], name: 'multiply' },
   '÷': { w: 3.8, strokes: [[[0, 3], [3.8, 3]]], dots: [[1.9, 1.1, 0.78], [1.9, 4.9, 0.78]], name: 'divide' },
   '=': { w: 3.8, strokes: [[[0, 2], [3.8, 2]], [[0, 4.1], [3.8, 4.1]]], name: 'equals' },
@@ -54,8 +55,8 @@ const G = {
 };
 
 // Characters people will type that map onto the set.
-export const ALIASES = { x: '×', '-': '−', '*': '×' };
-export const CHARS = [...'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789', '+', '−', '×', '÷', '=', '?', '/', '.', ',', ':', '%', '!', "'", '(', ')', '²', ' '];
+export const ALIASES = { x: '×', '*': '×' };
+export const CHARS = [...'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789', '+', '−', '-', '×', '÷', '=', '?', '/', '.', ',', ':', '%', '!', "'", '(', ')', '²', ' '];
 export const glyphName = (ch) => G[ch].name ?? ch;
 export const DIGITS = [...'0123456789'];
 
