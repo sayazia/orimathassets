@@ -3,7 +3,7 @@
     1920,
     1080
   ],
-  "note": "Slot rectangles [x, y, w, h] in pixels from the top left, same for every colour.",
+  "note": "Slot rectangles [x, y, w, h] in pixels from the top left, same for every colour. Each is the hole a label flap was cut from: the flap is hinged on the right edge, and its visible face starts min(0.1 w, 34) px right of x.",
   "layouts": {
     "menu_grid": [
       {

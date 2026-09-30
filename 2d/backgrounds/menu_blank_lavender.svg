@@ -1,10 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080"><defs>
 <radialGradient id="bg" cx="0.3" cy="0.2" r="1.1"><stop offset="0" stop-color="#BCA9E2"/><stop offset="1" stop-color="#AA98D0"/></radialGradient>
-<linearGradient id="face" x1="0" y1="0" x2="0.35" y2="1"><stop offset="0" stop-color="#BBA8E2"/><stop offset="1" stop-color="#B7A3E0"/></linearGradient>
-<filter id="lift" x="-20%" y="-30%" width="140%" height="170%">
-  <feDropShadow dx="10" dy="14" stdDeviation="13" flood-color="#524965" flood-opacity="0.34"/>
-  <feDropShadow dx="2" dy="3" stdDeviation="2" flood-color="#524965" flood-opacity="0.16"/>
-</filter>
+<filter id="soft" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="7"/></filter>
 <filter id="grain" x="0" y="0" width="100%" height="100%">
   <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="7"/>
   <feColorMatrix type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0.33 0.33 0.33 0 -0.42"/>
