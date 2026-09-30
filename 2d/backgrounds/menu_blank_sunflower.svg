@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080"><defs>
+<radialGradient id="bg" cx="0.3" cy="0.2" r="1.1"><stop offset="0" stop-color="#F9CB5B"/><stop offset="1" stop-color="#E8B949"/></radialGradient>
+<linearGradient id="face" x1="0" y1="0" x2="0.35" y2="1"><stop offset="0" stop-color="#F9CA58"/><stop offset="1" stop-color="#F9C74F"/></linearGradient>
+<filter id="lift" x="-20%" y="-30%" width="140%" height="170%">
+  <feDropShadow dx="10" dy="14" stdDeviation="13" flood-color="#705A24" flood-opacity="0.34"/>
+  <feDropShadow dx="2" dy="3" stdDeviation="2" flood-color="#705A24" flood-opacity="0.16"/>
+</filter>
+<filter id="grain" x="0" y="0" width="100%" height="100%">
+  <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="7"/>
+  <feColorMatrix type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0.33 0.33 0.33 0 -0.42"/>
+  <feComposite in2="SourceGraphic" operator="in"/>
+</filter>
+<filter id="fibres" x="0" y="0" width="100%" height="100%">
+  <feTurbulence type="fractalNoise" baseFrequency="0.006 0.02" numOctaves="3" seed="3"/>
+  <feColorMatrix type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0.5 0 0 0 -0.22"/>
+</filter>
+</defs><rect width="1920" height="1080" fill="url(#bg)"/><rect width="1920" height="1080" fill="#000" filter="url(#grain)" opacity="0.5"/><rect width="1920" height="1080" filter="url(#fibres)" opacity="0.1"/></svg>

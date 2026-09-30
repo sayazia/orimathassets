@@ -10,6 +10,7 @@ import { C, S, poly, ngon, svg, g, outline, edge, twoTone, crane, book } from '.
 import { HEADS } from './2d/heads.mjs';
 import { PICTURES, gameBadge, GAME_COLOURS, missionIcon, word } from './2d/symbols.mjs';
 import { MISSIONS } from './lib/palette.mjs';
+import { MENU_COLOURS, MENU_LAYOUTS, MENU_W, MENU_H, menuBackground } from './2d/menu.mjs';
 import { TABLE_SCENES } from './game/index.mjs';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
@@ -19,11 +20,12 @@ const jobs = []; // PNG exports: { file, svg, width, height }
 
 const write = (file, text) => { mkdirSync(dirname(join(out, file)), { recursive: true }); writeFileSync(join(out, file), text); };
 // Writes <file>.svg and queues PNG exports; sizes are [w, h] pairs, suffixed _<w> unless `plain`.
-function emit(file, w, h, body, sizes, plain = false) {
+// `ext` 'jpg' is for opaque, grainy art (backgrounds) where PNG would be several MB.
+function emit(file, w, h, body, sizes, plain = false, ext = 'png') {
   if (only && !file.startsWith(only)) return;
   const s = svg(w, h, body, `0 0 ${w} ${h}`);
   write(`${file}.svg`, s);
-  for (const [pw, ph] of sizes) jobs.push({ file: plain ? `${file}.png` : `${file}_${pw}.png`, svg: s, width: pw, height: ph });
+  for (const [pw, ph] of sizes) jobs.push({ file: plain ? `${file}.${ext}` : `${file}_${pw}.${ext}`, svg: s, width: pw, height: ph, jpeg: ext === 'jpg' });
 }
 const fit = (body, s, dx = 0, dy = 0) => g(body, `translate(${dx} ${dy}) scale(${s})`);
 
@@ -74,6 +76,14 @@ emit('brand/favicon', 100, 100, bg(24) + fit(outline(fav, 7) + fav, 0.86, 7, 8),
 for (const id of Object.keys(GAME_COLOURS)) emit(`icons/game_${id}`, 100, 100, gameBadge(id), [[128, 128], [256, 256]]);
 for (const m of MISSIONS) emit(`icons/mission_${m}`, 100, 100, missionIcon(m), [[128, 128]], true);
 
+// Menu backgrounds: matte paper with label slots lifted out of the sheet, plus the slot layout.
+for (const [layout, slots] of Object.entries(MENU_LAYOUTS)) for (const key of MENU_COLOURS) {
+  emit(`backgrounds/${layout}_${key}`, MENU_W, MENU_H, menuBackground(key, slots), [[1920, 1080]], true, 'jpg');
+}
+if (!only || 'backgrounds'.startsWith(only)) {
+  write('backgrounds/menu_layout.json', JSON.stringify({ size: [MENU_W, MENU_H], note: 'Slot rectangles [x, y, w, h] in pixels from the top left, same for every colour.', layouts: MENU_LAYOUTS }, null, 2) + '\n');
+}
+
 // ---- Rasterise, then render the brand images from the models.
 const types = { '.html': 'text/html', '.js': 'text/javascript', '.glb': 'model/gltf-binary', '.json': 'application/json' };
 const server = createServer((req, res) => {
@@ -91,7 +101,7 @@ const call = (fn, arg) => page.evaluate(({ fn, arg }) => window[fn](arg), { fn, 
 const savePng = (file, dataUrl) => { mkdirSync(dirname(join(out, file)), { recursive: true }); writeFileSync(join(out, file), Buffer.from(dataUrl.split(',')[1], 'base64')); };
 
 for (const j of jobs) savePng(j.file, await call('rasterize', j));
-console.log(`exported ${jobs.length} PNG files`);
+console.log(`exported ${jobs.length} images`);
 
 if (!only || only === 'brand') {
   const manifest = JSON.parse(readFileSync(join(root, 'models/manifest.json'), 'utf8'));
