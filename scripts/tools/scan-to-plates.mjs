@@ -3,13 +3,14 @@
 // face normal, merges thin strips into their neighbours and paints each plate one brown
 // shade so neighbouring plates differ. No textures; KHR_mesh_quantization.
 // Run: npm i --no-save @gltf-transform/core @gltf-transform/functions @gltf-transform/extensions meshoptimizer
-//      node scripts/tools/scan-to-plates.mjs in.glb out.glb [targetTris=5000] [angleDeg=22] [minAreaFrac=0.004]
+//      node scripts/tools/scan-to-plates.mjs in.glb out.glb [targetTris=5000] [angleDeg=22] [minAreaFrac=0.004] [palette=brown|grey]
 import { NodeIO, Document } from '@gltf-transform/core';
 import { ALL_EXTENSIONS } from '@gltf-transform/extensions';
 import { MeshoptSimplifier } from 'meshoptimizer';
 import { writeFileSync } from 'node:fs';
 import { quantize, dedup, prune } from '@gltf-transform/functions';
-const [,, input, output, TARGET = '6000', ANG = '22', MINAREA = '0.004'] = process.argv;
+const [,, input, output, TARGET = '6000', ANG = '22', MINAREA = '0.004', PALETTE = 'brown'] = process.argv;
+const NAME = output.split('/').pop().replace(/\.glb$/, '');
 await MeshoptSimplifier.ready;
 const io = new NodeIO().registerExtensions(ALL_EXTENSIONS);
 const doc = await io.read(input);
@@ -67,13 +68,24 @@ for (let pass = 0; pass < 10; pass++) { let changed = 0;
 const live = regions.map((r,i)=>i).filter(i=>regions[i].faces.length);
 console.log('regions', live.length);
 // region adjacency + greedy colouring so neighbours differ
-const palette = [
-  ['paper_brown',       [0.600,0.388,0.220]],
-  ['paper_brown_light', [0.855,0.667,0.447]],
-  ['paper_brown_dark',  [0.337,0.204,0.114]],
-  ['paper_caramel',     [0.757,0.502,0.271]],
-  ['paper_cream',       [0.945,0.839,0.667]],
-];
+const palettes = {
+  brown: [
+    ['paper_brown',       [0.600,0.388,0.220]],
+    ['paper_brown_light', [0.855,0.667,0.447]],
+    ['paper_brown_dark',  [0.337,0.204,0.114]],
+    ['paper_caramel',     [0.757,0.502,0.271]],
+    ['paper_cream',       [0.945,0.839,0.667]],
+  ],
+  grey: [
+    ['paper_grey',        [0.545,0.557,0.573]],
+    ['paper_grey_light',  [0.800,0.808,0.816]],
+    ['paper_grey_dark',   [0.278,0.290,0.306]],
+    ['paper_slate',       [0.412,0.431,0.459]],
+    ['paper_silver',      [0.925,0.929,0.933]],
+  ],
+};
+const palette = palettes[PALETTE];
+if (!palette) throw new Error(`unknown palette ${PALETTE}`);
 const rAdj = new Map(live.map(i=>[i,new Map()]));
 for (let f=0; f<F; f++) for (const g of adj[f]) if (R[f]!==R[g]) { const m=rAdj.get(R[f]); m.set(R[g],(m.get(R[g])||0)+1); }
 const col = new Map(); const use = new Array(palette.length).fill(0);
@@ -82,7 +94,7 @@ for (const i of [...live].sort((a,b)=>regions[b].area-regions[a].area)) {
   let best=-1; for (let c=0;c<palette.length;c++) if(!bad.has(c) && (best<0 || use[c]<use[best])) best=c;
   if (best<0) best = i % palette.length; col.set(i,best); use[best]+=regions[i].area; }
 // build output: one primitive per colour, vertices split per region, flat region normal
-const out = new Document(); const buf = out.createBuffer(); const mesh = out.createMesh('rabbit');
+const out = new Document(); const buf = out.createBuffer(); const mesh = out.createMesh(NAME);
 for (let c = 0; c < palette.length; c++) {
   const vp=[], vn=[], ix=[];
   for (const i of live) { if (col.get(i)!==c) continue; const r=regions[i];
@@ -102,6 +114,6 @@ for (let c = 0; c < palette.length; c++) {
     .setIndices(out.createAccessor().setType('SCALAR').setArray(vp.length/3>65535?new Uint32Array(ix):new Uint16Array(ix)).setBuffer(buf));
   mesh.addPrimitive(p);
 }
-out.createScene().addChild(out.createNode('rabbit').setMesh(mesh));
+out.createScene().addChild(out.createNode(NAME).setMesh(mesh));
 await out.transform(dedup(), prune(), quantize({ quantizePosition: 14, quantizeNormal: 8 }));
 await new NodeIO().registerExtensions(ALL_EXTENSIONS).write(output, out);
