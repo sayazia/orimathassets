@@ -99,7 +99,7 @@ export function menuLabel(shape, lines, style = LABEL_STYLE, size = 360, pad = 4
         + `<stop offset="${corner ? 0.72 : 0.64}" stop-color="#fff" stop-opacity="${c(0.1)}"/><stop offset="${corner ? 0.86 : 0.84}" stop-color="#fff" stop-opacity="${c(0.02)}"/>`
         + `<stop offset="0.95" stop-color="#000" stop-opacity="${c(0.05)}"/><stop offset="1" stop-color="#000" stop-opacity="${c(0.09)}"/>`)
     + `</linearGradient>`
-    + `<linearGradient id="upFade" x1="0" y1="${y}" x2="0" y2="${y + h * 0.8}" gradientUnits="userSpaceOnUse">${[0, 0.2, 0.4, 0.6, 0.8, 1].map((t) => `<stop offset="${t}" stop-color="#fff" stop-opacity="${(t * t * (3 - 2 * t)).toFixed(3)}"/>`).join('')}</linearGradient>`
+    + `<linearGradient id="upFade" x1="0" y1="${y}" x2="0" y2="${y + h * 0.65}" gradientUnits="userSpaceOnUse">${[0, 0.2, 0.4, 0.6, 0.8, 1].map((t) => `<stop offset="${t}" stop-color="#fff" stop-opacity="${(0.3 + 0.7 * t * (2 - t)).toFixed(3)}"/>`).join('')}</linearGradient>`
     + `<linearGradient id="sideFade" x1="${x + w * 0.3}" y1="0" x2="${x + w * 0.9}" y2="0" gradientUnits="userSpaceOnUse">${[0, 0.2, 0.4, 0.6, 0.8, 1].map((t) => `<stop offset="${t}" stop-color="#fff" stop-opacity="${(t * t * (3 - 2 * t)).toFixed(3)}"/>`).join('')}</linearGradient>`
     + `<mask id="side" maskUnits="userSpaceOnUse" x="0" y="0" width="${W}" height="${H}"><rect width="${W}" height="${H}" fill="url(#sideFade)"/></mask>`
     + `<mask id="up" maskUnits="userSpaceOnUse" x="0" y="0" width="${W}" height="${H}"><rect width="${W}" height="${H}" fill="url(#upFade)"/></mask>`
