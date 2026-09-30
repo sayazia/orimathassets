@@ -67,29 +67,20 @@ export function menuBackground(key, slots) {
   return body;
 }
 
-// Stand-alone label stickers (transparent PNG) with no paper colour of their own: the face is clear, so
-// the background shows through, and only the effects are drawn (peel shadow outside the edge, a faint
-// sheen and grain on the face, paper lettering). They pick up any background they are laid on.
-// shape 'square' or 'circle'; lines of capitals.
-// Style variants for the stickers (all colour-neutral):
+// Sticker style (colour-neutral), chosen from five tries: D, with the bend spread more gradually.
 //   lift   how far the free side stands off the sheet (shadow reach)
 //   ramp   shadow sharp and thin near the fixed side, wider and blurrier towards the free corner
 //   curve  light band where the paper starts to bend, a little shade where it turns away at the edge
-//   edge   thin lit paper thickness along the lifted edges only
+//   edge   thin lit paper thickness along the lifted edges only (0 = none)
 //   corner lift only the bottom-right corner (diagonal) instead of the whole right side
-export const LABEL_STYLES = {
-  a: { lift: 1, ramp: true, curve: 0, edge: 0.35, corner: false }, // shadow ramp + lit edge, flat body
-  b: { lift: 1, ramp: true, curve: 1, edge: 0.35, corner: false }, // + gentle bend shading
-  c: { lift: 1.5, ramp: true, curve: 1.6, edge: 0.45, corner: false }, // stronger curl, higher lift
-  d: { lift: 0.8, ramp: true, curve: 0.6, edge: 0, corner: false }, // quiet: soft bend, no edge line
-  e: { lift: 1.2, ramp: true, curve: 1, edge: 0.35, corner: true }, // only the bottom-right corner peels
-};
+//   smooth spread the bend over a wider span and fade it towards the top, so the top right barely curls
+export const LABEL_STYLE = { lift: 0.8, ramp: true, curve: 0.6, edge: 0, corner: false, smooth: true };
 
 // Stand-alone label stickers (transparent PNG) with no paper colour of their own: the face is clear, so
 // the background shows through, and only the effects are drawn. The left (or top-left) part stays fully
 // clear so it reads as the background itself; the free side peels up. shape 'square' or 'circle'.
-export function menuLabel(shape, lines, style = LABEL_STYLES.b, size = 360, pad = 48) {
-  const { lift: L, ramp, curve, edge, corner } = style;
+export function menuLabel(shape, lines, style = LABEL_STYLE, size = 360, pad = 48) {
+  const { lift: L, ramp, curve, edge, corner, smooth } = style;
   const P = (pts) => pts.map(([px, py]) => `${px.toFixed(1)},${py.toFixed(1)}`).join(' ');
   const x = pad, y = pad, w = size, h = size, cx = x + w / 2, cy = y + h / 2, r = size / 2;
   const lift = Math.min(34, 10 + w * 0.05) * L;
@@ -102,9 +93,15 @@ export function menuLabel(shape, lines, style = LABEL_STYLES.b, size = 360, pad 
   let defs = blur('b1', 1.2) + blur('b2', 3.5) + blur('b3', 7) + blur('b4', 12) + blur('hair', 3)
     + `<filter id="drop" x="-10%" y="-10%" width="120%" height="130%"><feDropShadow dx="1.5" dy="3" stdDeviation="2" flood-color="#000" flood-opacity="0.2"/></filter>`
     + `<linearGradient id="bend" x1="${gx1}" y1="${gy1}" x2="${gx2}" y2="${gy2}" gradientUnits="userSpaceOnUse">`
-    + `<stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset="${corner ? 0.55 : 0.45}" stop-color="#fff" stop-opacity="0"/>`
-    + `<stop offset="${corner ? 0.72 : 0.64}" stop-color="#fff" stop-opacity="${c(0.1)}"/><stop offset="${corner ? 0.86 : 0.84}" stop-color="#fff" stop-opacity="${c(0.02)}"/>`
-    + `<stop offset="0.95" stop-color="#000" stop-opacity="${c(0.05)}"/><stop offset="1" stop-color="#000" stop-opacity="${c(0.09)}"/></linearGradient>`
+    + (smooth
+      ? `<stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset="0.3" stop-color="#fff" stop-opacity="0"/><stop offset="0.72" stop-color="#fff" stop-opacity="${c(0.07)}"/>`
+        + `<stop offset="0.9" stop-color="#fff" stop-opacity="${c(0.02)}"/><stop offset="1" stop-color="#000" stop-opacity="${c(0.045)}"/>`
+      : `<stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset="${corner ? 0.55 : 0.45}" stop-color="#fff" stop-opacity="0"/>`
+        + `<stop offset="${corner ? 0.72 : 0.64}" stop-color="#fff" stop-opacity="${c(0.1)}"/><stop offset="${corner ? 0.86 : 0.84}" stop-color="#fff" stop-opacity="${c(0.02)}"/>`
+        + `<stop offset="0.95" stop-color="#000" stop-opacity="${c(0.05)}"/><stop offset="1" stop-color="#000" stop-opacity="${c(0.09)}"/>`)
+    + `</linearGradient>`
+    + `<linearGradient id="downFade" x1="0" y1="${y}" x2="0" y2="${y + h}" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#fff" stop-opacity="0.15"/><stop offset="1" stop-color="#fff" stop-opacity="1"/></linearGradient>`
+    + `<mask id="lower" maskUnits="userSpaceOnUse" x="0" y="0" width="${W}" height="${H}"><rect width="${W}" height="${H}" fill="url(#downFade)"/></mask>`
     + `<linearGradient id="edgeFade" x1="${gx1}" y1="${gy1}" x2="${gx2}" y2="${gy2}" gradientUnits="userSpaceOnUse"><stop offset="${corner ? 0.6 : 0.4}" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#fff" stop-opacity="1"/></linearGradient>`
     + `<mask id="outside" maskUnits="userSpaceOnUse" x="0" y="0" width="${W}" height="${H}"><rect width="${W}" height="${H}" fill="#fff"/>${shapeEl('#000')}</mask>`
     + `<mask id="edgeMask" maskUnits="userSpaceOnUse" x="0" y="0" width="${W}" height="${H}"><rect width="${W}" height="${H}" fill="url(#edgeFade)"/></mask>`;
@@ -115,19 +112,19 @@ export function menuLabel(shape, lines, style = LABEL_STYLES.b, size = 360, pad 
     const d = lift * reach;
     if (shape === 'circle') {
       // disc shifted towards the free side: the offset grows with reach, so the fixed rim gets none
-      const [ox, oy] = corner ? [d * 0.55, d * 0.6] : [d * 0.6, d * 0.35];
+      const [ox, oy] = corner ? [d * 0.55, d * 0.6] : smooth ? [d * 0.5, d * 0.5] : [d * 0.6, d * 0.35];
       out += `<circle cx="${cx + ox}" cy="${cy + oy}" r="${r - 1}" fill="#000" opacity="${op}" filter="url(#${f})"/>`;
     } else if (corner) {
       const s0 = start;
       out += `<polygon points="${P([[x + w * (0.35 + s0 * 0.5), y + h - 1], [x + w - 1, y + h * (0.35 + s0 * 0.5)], [x + w + d * 0.5, y + h * (0.4 + s0 * 0.5) + d * 0.4], [x + w + d * 0.6, y + h + d * 0.7], [x + w * (0.4 + s0 * 0.5) + d * 0.4, y + h + d * 0.5]])}" fill="#000" opacity="${op}" filter="url(#${f})"/>`;
     } else {
-      out += `<polygon points="${P([[x + w * start, y + h - 1], [x + w - 1, y + h * 0.1], [x + w + d * 0.55, y + h * 0.3 + d * 0.3], [x + w + d * 0.6, y + h + d], [x + w * (start + (1 - start) * 0.45), y + h + d * 0.55]])}" fill="#000" opacity="${op}" filter="url(#${f})"/>`;
+      out += `<polygon points="${P([[x + w * start, y + h - 1], [x + w - 1, y + h * (smooth ? 0.3 + start * 0.3 : 0.1)], [x + w + d * 0.55, y + h * 0.3 + d * 0.3], [x + w + d * 0.6, y + h + d], [x + w * (start + (1 - start) * 0.45), y + h + d * 0.55]])}" fill="#000" opacity="${op}" filter="url(#${f})"/>`;
     }
   }
   if (shape === 'circle') out += `<circle cx="${cx}" cy="${cy - 1.5}" r="${r}" fill="#000" opacity="0.035" filter="url(#hair)"/>`;
   else out += `<rect x="${x + 3}" y="${y - 1.5}" width="${w - 6}" height="3" fill="#000" opacity="0.035" filter="url(#hair)"/>`;
   out += '</g>';
-  if (curve) out += shapeEl('url(#bend)');
+  if (curve) out += smooth ? `<g mask="url(#lower)">${shapeEl('url(#bend)')}</g>` : shapeEl('url(#bend)');
   if (edge) {
     // lit paper thickness on the lifted edges, fading out towards the fixed side
     const line = shape === 'circle' ? `<circle cx="${cx}" cy="${cy}" r="${r - 0.8}" fill="none" stroke="#fff" stroke-width="1.6"/>`

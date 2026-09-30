@@ -54,7 +54,7 @@ paper style but are measured in **metres** and carry named nodes, anchors and an
 | `models/buildings/skill_*`, `models/areas/town_page_grid` | Fold Town skill buildings in three tiers and the town page base (tile units) |
 | `models/rewards/`, `models/ui/`, `models/fx/` | Stars, badges, shield, trophy; paper button, panel and palm menu; confetti, scraps, crease, sparkle |
 | `models/scale.json` | City scale on the book page (`city_tile_on_book_m`) |
-| `2d/` | SVG + PNG: avatars (8 species × 5 missions), picture-password symbols, logo, app icon, favicon, game and mission icons, Devpost and social images. `2d/backgrounds/`: matte paper menu backgrounds (1920×1080 JPG + SVG) with label slots that peel up from the sheet (left edge fixed) in 3 layouts × 5 colours; slot rectangles in `menu_layout.json`. `2d/labels/`: transparent PNG label stickers (clear face, peel shadow, paper lettering) that take the colour of any background, in 5 styles a to e |
+| `2d/` | SVG + PNG: avatars (8 species × 5 missions), picture-password symbols, logo, app icon, favicon, game and mission icons, Devpost and social images. `2d/backgrounds/`: matte paper menu backgrounds (1920×1080 JPG + SVG) with label slots that peel up from the sheet (left edge fixed) in 3 layouts × 5 colours; slot rectangles in `menu_layout.json`. `2d/labels/`: transparent PNG label stickers (clear face, peel shadow, paper lettering) that take the colour of any background |
 
 Technical guide: [`docs/FOLDLINGS.md`](docs/FOLDLINGS.md). Batch status: [`docs/CATALOG.md`](docs/CATALOG.md).
 Sheets: [foldlings](previews/sheet_foldlings.png), [variants](previews/sheet_foldlings_variants.png),
