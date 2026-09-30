@@ -3,7 +3,7 @@
 // face normal, merges thin strips into their neighbours and paints each plate one brown
 // shade so neighbouring plates differ. No textures; KHR_mesh_quantization.
 // Run: npm i --no-save @gltf-transform/core @gltf-transform/functions @gltf-transform/extensions meshoptimizer
-//      node scripts/tools/scan-to-plates.mjs in.glb out.glb [targetTris=5000] [angleDeg=22] [minAreaFrac=0.004] [palette=brown|grey]
+//      node scripts/tools/scan-to-plates.mjs in.glb out.glb [targetTris=5000] [angleDeg=22] [minAreaFrac=0.004] [palette=brown|brown_soft|grey]
 import { NodeIO, Document } from '@gltf-transform/core';
 import { ALL_EXTENSIONS } from '@gltf-transform/extensions';
 import { MeshoptSimplifier } from 'meshoptimizer';
@@ -75,6 +75,14 @@ const palettes = {
     ['paper_brown_dark',  [0.337,0.204,0.114]],
     ['paper_caramel',     [0.757,0.502,0.271]],
     ['paper_cream',       [0.945,0.839,0.667]],
+  ],
+  // Close shades of one hue: plates still read apart, without dramatic jumps.
+  brown_soft: [
+    ['paper_brown',       [0.765,0.557,0.373]],
+    ['paper_brown_light', [0.824,0.624,0.439]],
+    ['paper_brown_pale',  [0.867,0.690,0.518]],
+    ['paper_brown_warm',  [0.722,0.514,0.337]],
+    ['paper_brown_deep',  [0.682,0.478,0.310]],
   ],
   grey: [
     ['paper_grey',        [0.545,0.557,0.573]],
