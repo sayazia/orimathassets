@@ -570,14 +570,14 @@ pihak ketiga, hanya warna palet). Rincian ukuran ada di [`FOLDLINGS.md`](FOLDLIN
 |---|---|---|
 | Avatar | `avatars/avatar_<spesies>_<misi>` SVG + PNG 256 dan 512 | 40 |
 | Kata sandi gambar | `picture_password/pp_` star, moon, sun, leaf, fish, boat, key, heart, cloud (SVG + PNG 256) | 9 |
-| Logo | `brand/logo_foldlings` (terang) dan `logo_foldlings_dark` (gelap), PNG lebar 1200 | 2 |
+| Logo | `brand/logo_numeria_arena` (krem di atas teal) dan `logo_numeria_arena_dark` (kertas senada), PNG lebar 1200 | 2 |
 | Ikon aplikasi | `brand/app_icon`, `app_icon_maskable` (PNG 192, 512, 1024), `favicon` (PNG 32, 48) | 3 |
 | Gambar promosi | `brand/devpost_thumbnail` 1920×1080 dan 1200×630, `social_preview` 1280×640 | 3 |
 | Ikon game | `icons/game_` orb_forge, balloon_burst, factory_sort, bridge_builder, balance_gate, measure_hunt (PNG 128, 256) | 6 |
 | Ikon misi | `icons/mission_<misi>` (PNG 128), simbol saja | 5 |
 
-Keputusan: logo memakai huruf kapital FOLDLINGS dari pita kertas terlipat (tiap huruf satu warna misi) dan
-bangau kecil; versi "dark" untuk latar gelap memakai tepi kertas tipis, bukan latar gelap, supaya tetap transparan. Aset 2D tidak
+Keputusan: sejak batch U1 (30 Sep 2026) merek menjadi Numeria Arena. Logo, ikon aplikasi, favicon, dan gambar promosi memakai huruf
+kertas timbul dari `ui2d/` (lihat `docs/UI-U1.md`); ikon aplikasi berisi monogram NA krem di atas teal. Aset 2D tidak
 memakai garis tepi hitam; potongan kertas diberi bayangan tipis supaya terlihat seperti kertas yang ditempel.
 Ikon maskable memenuhi kanvas dengan gambar di dalam zona aman 80%. Warna ikon game: Orb Forge sunflower,
 Balloon Burst coral, Factory Sort cobalt, Bridge Builder teal, Balance Gate violet, Measure Hunt orange.

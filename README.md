@@ -67,7 +67,13 @@ with a white underside colour, same rig and clips as the Foldlings. Guide: [`doc
 Sheets: [land](previews/sheet_origami_land.png), [water](previews/sheet_origami_sea.png),
 [small](previews/sheet_origami_small.png), [mythical](previews/sheet_origami_myth.png), [birds](previews/sheet_origami_birds.png).
 
-![Foldlings logo](2d/brand/logo_foldlings.png)
+![Numeria Arena logo](2d/brand/logo_numeria_arena.png)
+
+### Numeria Arena UI (batch U1)
+
+Banners, buttons, HUD words, badges and icons in embossed paper lettering, plus the paper glyph set the game
+uses for scores, clocks and questions: `ui2d/` (SVG + transparent PNG, `ui2d/manifest.json`,
+preview page `ui2d/preview.html`). Built by `npm run build:ui`. Summary and decisions: [`docs/UI-U1.md`](docs/UI-U1.md).
 
 ## Conventions (city set)
 
@@ -100,6 +106,7 @@ npm run previews -- houses    # only one sheet (or `town`)
 npm run validate              # Khronos glTF validator over every model
 npm run previews:game         # Foldlings previews (or `-- foldlings`, `-- foldling_fox`, `-- table`)
 npm run build:2d              # Foldlings 2D assets in 2d/ (or `-- avatars`, `-- brand`, ...)
+npm run build:ui              # Numeria Arena UI in ui2d/ (or a name prefix, `-- race_`)
 ```
 
 - Colours live in `scripts/lib/palette.mjs`; changing one recolours every model that uses it.

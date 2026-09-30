@@ -91,7 +91,7 @@ export function missionIcon(id) {
 }
 
 // Logo letters as folded paper ribbons: a centre line per stroke, 4 units wide and 6 tall (y down).
-const LETTERS = {
+export const LETTERS = {
   F: { w: 3.6, strokes: [[[3.6, 0], [0, 0], [0, 6]], [[0, 2.9], [2.8, 2.9]]] },
   O: { w: 4, strokes: [[[1.2, 0], [2.8, 0], [4, 1.2], [4, 4.8], [2.8, 6], [1.2, 6], [0, 4.8], [0, 1.2]]], closed: true },
   L: { w: 3.4, strokes: [[[0, 0], [0, 6], [3.4, 6]]] },
@@ -125,7 +125,7 @@ export function wordFlat(text, t = 1.3, gap = 1.7) {
   return { quads, width: x - gap + t / 2, height: 6 + t };
 }
 // Offsets a polyline to a ribbon of width t with mitred joints; returns one quad per segment.
-function ribbon(pts, t, closed) {
+export function ribbon(pts, t, closed) {
   const n = pts.length, h = t / 2, segs = closed ? n : n - 1;
   const dir = (i) => { const a = pts[i % n], b = pts[(i + 1) % n], l = Math.hypot(b[0] - a[0], b[1] - a[1]); return [(b[0] - a[0]) / l, (b[1] - a[1]) / l]; };
   const offs = pts.map((p, i) => {

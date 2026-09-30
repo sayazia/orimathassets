@@ -1,4 +1,4 @@
-// Builds the 2D Foldlings assets in 2d/: SVG sources written from code, PNG exports rasterised in
+// Builds the 2D game assets (brand now Numeria Arena) in 2d/: SVG sources written from code, PNG exports rasterised in
 // headless Chromium, and the Devpost/social images rendered from the 3D models with the logo on top.
 // Run `npm run build` first so the models exist. Optional argument: a folder name (avatars, brand, ...).
 import { createServer } from 'node:http';
@@ -8,10 +8,12 @@ import { fileURLToPath } from 'node:url';
 import { chromium } from 'playwright';
 import { C, S, poly, ngon, svg, g, outline, edge, twoTone, crane, book } from './2d/svg.mjs';
 import { HEADS } from './2d/heads.mjs';
-import { PICTURES, gameBadge, GAME_COLOURS, missionIcon, word } from './2d/symbols.mjs';
+import { PICTURES, gameBadge, GAME_COLOURS, missionIcon } from './2d/symbols.mjs';
 import { MISSIONS } from './lib/palette.mjs';
 import { MENU_COLOURS, MENU_LAYOUTS, MENU_W, MENU_H, menuBackground, menuLabel } from './2d/menu.mjs';
 import { TABLE_SCENES } from './game/index.mjs';
+import { piece, lettering } from './ui/paper.mjs';
+import { layoutLine } from './ui/glyphs.mjs';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const out = join(root, '2d');
@@ -47,30 +49,24 @@ for (const [name, draw] of Object.entries(PICTURES)) {
   emit(`picture_password/pp_${name}`, 100, 100, body, [[256, 256]], true);
 }
 
-// Logo: the word from folded ribbons in the five mission colours, with a small crane in front.
-const w = word('FOLDLINGS', MISSIONS);
-function logo(contour) {
-  const u = 10, pad = 12, craneW = 7.2 * u; // letter unit in px before scaling
-  const W = pad * 2 + craneW + 1.4 * u + w.width * u, H = pad * 2 + w.height * u;
-  const under = (b, wd) => (contour ? edge(b, wd, contour) : outline(b, wd));
-  const letters = g(under(w.under, contour ? 0.3 : 0.9) + w.body, `translate(${pad + craneW + 1.4 * u} ${pad}) scale(${u})`);
-  const cr = crane('coral', 'cream', false);
-  const craneG = fit(under(cr, contour ? 3 : 8) + cr, craneW / 100, pad, pad - 6);
-  return { W, H, body: craneG + letters };
-}
-for (const [id, contour] of [['logo_foldlings', null], ['logo_foldlings_dark', C('paper')]]) {
-  const { W, H, body } = logo(contour);
-  emit(`brand/${id}`, Math.round(W), Math.round(H), body, [[1200, Math.round((1200 * H) / W)]], true);
+// Logo (Numeria Arena): the title in the embossed paper letters of the UI set (scripts/ui), cream on
+// teal for light backgrounds and tone-on-tone paper for dark ones.
+const title = (treatment) => piece({ name: `logo${treatment}`, text: 'NUMERIA ARENA', shape: 'R', treatment, bg: C('teal'), cls: 'XL' });
+for (const [id, treatment] of [['logo_numeria_arena', 'W'], ['logo_numeria_arena_dark', 'T']]) {
+  const t = title(treatment);
+  emit(`brand/${id}`, t.W, t.H, t.svg, [[1200, Math.round((1200 * t.H) / t.W)]], true);
 }
 
-// App icon, maskable icon and favicon.
-const iconArt = fit(book(), 0.78, 11, 56) + fit(outline(crane('coral', 'cream', false), 5) + crane('coral', 'cream', false), 0.62, 18, 4);
+// App icon, maskable icon and favicon: the paper monogram on teal.
+const mono = (text, lh, cx, cy) => {
+  const lay = layoutLine(text, lh), dx = cx - lay.inkMin - lay.width / 2, dy = cy - lh / 2;
+  return lettering(lay.polys.map((p) => p.map(([x, y]) => [x + dx, y + dy])), 'W', lh, `m${text}${lh}`.replace(/\W/g, ''), C('teal'));
+};
 const bg = (rx) => `<clipPath id="r"><rect width="100" height="100" rx="${rx}"/></clipPath><g clip-path="url(#r)">${twoTone([[0, 0], [100, 0], [100, 100], [0, 100]], 'teal', [0, 100], [100, 0])}</g>`;
-emit('brand/app_icon', 100, 100, bg(22) + iconArt, [[192, 192], [512, 512], [1024, 1024]]);
+emit('brand/app_icon', 100, 100, bg(22) + mono('NA', 38, 50, 50), [[192, 192], [512, 512], [1024, 1024]]);
 // Maskable: full bleed, art inside the central 80% safe circle.
-emit('brand/app_icon_maskable', 100, 100, bg(0) + fit(iconArt, 0.7, 15, 15), [[192, 192], [512, 512], [1024, 1024]]);
-const fav = crane('paper', 'cream', false);
-emit('brand/favicon', 100, 100, bg(24) + fit(outline(fav, 7) + fav, 0.86, 7, 8), [[32, 32], [48, 48]]);
+emit('brand/app_icon_maskable', 100, 100, bg(0) + mono('NA', 28, 50, 50), [[192, 192], [512, 512], [1024, 1024]]);
+emit('brand/favicon', 100, 100, bg(24) + mono('N', 60, 50, 50), [[32, 32], [48, 48]]);
 
 // Game badges and mission icons.
 for (const id of Object.keys(GAME_COLOURS)) emit(`icons/game_${id}`, 100, 100, gameBadge(id), [[128, 128], [256, 256]]);
@@ -112,21 +108,15 @@ console.log(`exported ${jobs.length} images`);
 if (!only || only === 'brand') {
   const manifest = JSON.parse(readFileSync(join(root, 'models/manifest.json'), 'utf8'));
   const items = TABLE_SCENES.find((s) => s.name === 'b1').items.map((it) => ({ ...it, file: manifest.find((a) => a.name === it.name)?.file ?? it.file }));
-  const { W, H, body } = logo(null);
-  // Logo on a paper banner with folded ends, placed along the top.
-  const banner = (bw) => {
-    const bh = (bw * H) / W, e = bh * 0.35;
-    const b = poly([[0, bh * 0.2], [e, bh * 0.2], [e, bh * 1.2], [0, bh * 1.2], [e * 0.45, bh * 0.7]], S('cream'))
-      + poly([[bw + 2 * e, bh * 0.2], [bw + e, bh * 0.2], [bw + e, bh * 1.2], [bw + 2 * e, bh * 1.2], [bw + e * 1.55, bh * 0.7]], S('cream'))
-      + poly([[e * 0.6, 0], [bw + e * 1.4, 0], [bw + e * 1.4, bh * 1.1], [e * 0.6, bh * 1.1]], C('paper'));
-    return { svg: svg(bw + 2 * e, bh * 1.2, b + g(body, `translate(${e} ${bh * 0.05}) scale(${bw / W})`)), w: bw + 2 * e, h: bh * 1.2 };
-  };
+  // Title banner along the top.
+  const t = title('W');
+  const banner = (bw) => ({ svg: svg(bw, (bw * t.H) / t.W, t.svg, `0 0 ${t.W} ${t.H}`), w: bw, h: (bw * t.H) / t.W });
   const shots = [
     ['brand/devpost_thumbnail.png', 1920, 1080], ['brand/devpost_thumbnail_1200x630.png', 1200, 630], ['brand/social_preview.png', 1280, 640],
   ];
   for (const [file, pw, ph] of shots) {
     const png = await call('renderTable', { items, table: 'wood', width: pw, height: ph, eye: [0, 0.34, 0.5], target: [0, 0.07, -0.02], fov: ph / pw > 0.54 ? 44 : 40 });
-    const bn = banner(pw * 0.46);
+    const bn = banner(pw * 0.62);
     savePng(file, await call('compose', { png, layers: [{ svg: bn.svg, x: (pw - bn.w) / 2, y: ph * 0.05, w: bn.w, h: bn.h }] }));
     console.log(`rendered ${file}`);
   }

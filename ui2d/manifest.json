@@ -1,0 +1,2696 @@
+[
+ {
+  "name": "title_numeria_arena",
+  "file": "ui2d/brand/title_numeria_arena.png",
+  "svg": "ui2d/brand/title_numeria_arena.svg",
+  "text": "NUMERIA ARENA",
+  "shape": "rectangle",
+  "treatment": "on_paper",
+  "background": "#FFFDF8",
+  "size_class": "XL",
+  "px": [
+   2076,
+   400
+  ],
+  "world_height_m": 0.07,
+  "priority": 1,
+  "letter_px": 190
+ },
+ {
+  "name": "title_numeria_arena_w",
+  "file": "ui2d/brand/title_numeria_arena_w.png",
+  "svg": "ui2d/brand/title_numeria_arena_w.svg",
+  "text": "NUMERIA ARENA",
+  "shape": "rectangle",
+  "treatment": "on_color",
+  "background": "#3FB6A0",
+  "size_class": "XL",
+  "px": [
+   2076,
+   400
+  ],
+  "world_height_m": 0.07,
+  "priority": 1,
+  "letter_px": 190
+ },
+ {
+  "name": "menu_robot_race",
+  "file": "ui2d/menu/menu_robot_race.png",
+  "svg": "ui2d/menu/menu_robot_race.svg",
+  "text": "ROBOT RACE",
+  "shape": "parallelogram",
+  "treatment": "on_color",
+  "background": "#3FB6A0",
+  "size_class": "S",
+  "px": [
+   422,
+   96
+  ],
+  "world_height_m": 0.022,
+  "priority": 1,
+  "letter_px": 44
+ },
+ {
+  "name": "menu_balloon_burst",
+  "file": "ui2d/menu/menu_balloon_burst.png",
+  "svg": "ui2d/menu/menu_balloon_burst.svg",
+  "text": "BALLOON BURST",
+  "shape": "parallelogram",
+  "treatment": "on_color",
+  "background": "#F2716B",
+  "size_class": "S",
+  "px": [
+   516,
+   96
+  ],
+  "world_height_m": 0.022,
+  "priority": 1,
+  "letter_px": 44
+ },
+ {
+  "name": "menu_orb_forge",
+  "file": "ui2d/menu/menu_orb_forge.png",
+  "svg": "ui2d/menu/menu_orb_forge.svg",
+  "text": "ORB FORGE",
+  "shape": "parallelogram",
+  "treatment": "on_color",
+  "background": "#3469C4",
+  "size_class": "S",
+  "px": [
+   384,
+   96
+  ],
+  "world_height_m": 0.022,
+  "priority": 1,
+  "letter_px": 44
+ },
+ {
+  "name": "menu_factory_sort",
+  "file": "ui2d/menu/menu_factory_sort.png",
+  "svg": "ui2d/menu/menu_factory_sort.svg",
+  "text": "FACTORY SORT",
+  "shape": "parallelogram",
+  "treatment": "on_color",
+  "background": "#F9C74F",
+  "size_class": "S",
+  "px": [
+   484,
+   96
+  ],
+  "world_height_m": 0.022,
+  "priority": 3,
+  "letter_px": 44
+ },
+ {
+  "name": "menu_bridge_builder",
+  "file": "ui2d/menu/menu_bridge_builder.png",
+  "svg": "ui2d/menu/menu_bridge_builder.svg",
+  "text": "BRIDGE BUILDER",
+  "shape": "parallelogram",
+  "treatment": "on_color",
+  "background": "#B198EA",
+  "size_class": "S",
+  "px": [
+   502,
+   96
+  ],
+  "world_height_m": 0.022,
+  "priority": 3,
+  "letter_px": 44
+ },
+ {
+  "name": "menu_balance_gate",
+  "file": "ui2d/menu/menu_balance_gate.png",
+  "svg": "ui2d/menu/menu_balance_gate.svg",
+  "text": "BALANCE GATE",
+  "shape": "parallelogram",
+  "treatment": "on_color",
+  "background": "#F2716B",
+  "size_class": "S",
+  "px": [
+   482,
+   96
+  ],
+  "world_height_m": 0.022,
+  "priority": 3,
+  "letter_px": 44
+ },
+ {
+  "name": "menu_measure_hunt",
+  "file": "ui2d/menu/menu_measure_hunt.png",
+  "svg": "ui2d/menu/menu_measure_hunt.svg",
+  "text": "MEASURE HUNT",
+  "shape": "parallelogram",
+  "treatment": "on_color",
+  "background": "#B198EA",
+  "size_class": "S",
+  "px": [
+   494,
+   96
+  ],
+  "world_height_m": 0.022,
+  "priority": 3,
+  "letter_px": 44
+ },
+ {
+  "name": "status_finding_table",
+  "file": "ui2d/placement/status_finding_table.png",
+  "svg": "ui2d/placement/status_finding_table.svg",
+  "text": "FINDING YOUR TABLE",
+  "shape": "rectangle",
+  "treatment": "on_paper",
+  "background": "#FFFDF8",
+  "size_class": "M",
+  "px": [
+   978,
+   160
+  ],
+  "world_height_m": 0.035,
+  "priority": 1,
+  "letter_px": 72
+ },
+ {
+  "name": "status_pinch_to_place",
+  "file": "ui2d/placement/status_pinch_to_place.png",
+  "svg": "ui2d/placement/status_pinch_to_place.svg",
+  "text": "PINCH TO PLACE THE BOOK",
+  "shape": "rectangle",
+  "treatment": "on_paper",
+  "background": "#FFFDF8",
+  "size_class": "M",
+  "px": [
+   1252,
+   160
+  ],
+  "world_height_m": 0.035,
+  "priority": 1,
+  "letter_px": 72
+ },
+ {
+  "name": "status_or_wait",
+  "file": "ui2d/placement/status_or_wait.png",
+  "svg": "ui2d/placement/status_or_wait.svg",
+  "text": "OR WAIT # S",
+  "shape": "rectangle",
+  "treatment": "on_paper",
+  "background": "#FFFDF8",
+  "size_class": "S",
+  "px": [
+   428,
+   96
+  ],
+  "world_height_m": 0.022,
+  "priority": 1,
+  "letter_px": 44,
+  "slots": [
+   {
+    "x": 262,
+    "y": 21,
+    "w": 71,
+    "h": 44,
+    "digits": 2
+   }
+  ]
+ },
+ {
+  "name": "status_ready",
+  "file": "ui2d/placement/status_ready.png",
+  "svg": "ui2d/placement/status_ready.svg",
+  "text": "READY!",
+  "shape": "circle",
+  "treatment": "on_color",
+  "background": "#5DB85B",
+  "size_class": "L",
+  "px": [
+   640,
+   644
+  ],
+  "world_height_m": 0.1258,
+  "priority": 1,
+  "letter_px": 120
+ },
+ {
+  "name": "race_wave_1",
+  "file": "ui2d/race/race_wave_1.png",
+  "svg": "ui2d/race/race_wave_1.svg",
+  "text": "WAVE 1 OF 3",
+  "shape": "rectangle",
+  "treatment": "on_color",
+  "background": "#3FB6A0",
+  "size_class": "L",
+  "px": [
+   1104,
+   256
+  ],
+  "world_height_m": 0.05,
+  "priority": 1,
+  "letter_px": 120
+ },
+ {
+  "name": "race_wave_2",
+  "file": "ui2d/race/race_wave_2.png",
+  "svg": "ui2d/race/race_wave_2.svg",
+  "text": "WAVE 2 OF 3",
+  "shape": "rectangle",
+  "treatment": "on_color",
+  "background": "#3FB6A0",
+  "size_class": "L",
+  "px": [
+   1114,
+   256
+  ],
+  "world_height_m": 0.05,
+  "priority": 1,
+  "letter_px": 120
+ },
+ {
+  "name": "race_wave_3",
+  "file": "ui2d/race/race_wave_3.png",
+  "svg": "ui2d/race/race_wave_3.svg",
+  "text": "WAVE 3 OF 3",
+  "shape": "rectangle",
+  "treatment": "on_color",
+  "background": "#3FB6A0",
+  "size_class": "L",
+  "px": [
+   1114,
+   256
+  ],
+  "world_height_m": 0.05,
+  "priority": 1,
+  "letter_px": 120
+ },
+ {
+  "name": "race_boss_round",
+  "file": "ui2d/race/race_boss_round.png",
+  "svg": "ui2d/race/race_boss_round.svg",
+  "text": "BOSS ROUND",
+  "shape": "ribbon",
+  "treatment": "on_color",
+  "background": "#6D597A",
+  "size_class": "L",
+  "px": [
+   1338,
+   302
+  ],
+  "world_height_m": 0.059,
+  "priority": 1,
+  "letter_px": 120
+ },
+ {
+  "name": "race_double_points",
+  "file": "ui2d/race/race_double_points.png",
+  "svg": "ui2d/race/race_double_points.svg",
+  "text": "DOUBLE POINTS!",
+  "shape": "parallelogram",
+  "treatment": "on_color",
+  "background": "#E8B64C",
+  "size_class": "M",
+  "px": [
+   822,
+   160
+  ],
+  "world_height_m": 0.035,
+  "priority": 1,
+  "letter_px": 72,
+  "note": "sits under BOSS ROUND"
+ },
+ {
+  "name": "race_20_seconds",
+  "file": "ui2d/race/race_20_seconds.png",
+  "svg": "ui2d/race/race_20_seconds.svg",
+  "text": "20 SECONDS",
+  "shape": "rectangle",
+  "treatment": "on_paper",
+  "background": "#FFFDF8",
+  "size_class": "S",
+  "px": [
+   386,
+   96
+  ],
+  "world_height_m": 0.022,
+  "priority": 1,
+  "letter_px": 44
+ },
+ {
+  "name": "race_times_up",
+  "file": "ui2d/race/race_times_up.png",
+  "svg": "ui2d/race/race_times_up.svg",
+  "text": "TIME'S UP!",
+  "shape": "circle",
+  "treatment": "on_color",
+  "background": "#E04A44",
+  "size_class": "L",
+  "px": [
+   660,
+   662
+  ],
+  "world_height_m": 0.1293,
+  "priority": 1,
+  "letter_px": 120
+ },
+ {
+  "name": "race_clock_frame",
+  "file": "ui2d/race/race_clock_frame.png",
+  "svg": "ui2d/race/race_clock_frame.svg",
+  "text": "",
+  "shape": "rectangle",
+  "treatment": "on_paper",
+  "background": "#FFFDF8",
+  "size_class": "M",
+  "px": [
+   310,
+   160
+  ],
+  "world_height_m": 0.035,
+  "priority": 1,
+  "letter_px": 72,
+  "slots": [
+   {
+    "x": 50,
+    "y": 35,
+    "w": 193,
+    "h": 72,
+    "fits": "0:00"
+   }
+  ],
+  "note": "room for \"0:42\"; the game writes the time in question ink #1F4FA3 or paper glyphs"
+ },
+ {
+  "name": "race_clock_frame_red",
+  "file": "ui2d/race/race_clock_frame_red.png",
+  "svg": "ui2d/race/race_clock_frame_red.svg",
+  "text": "",
+  "shape": "rectangle",
+  "treatment": "on_paper",
+  "background": "#FFFDF8",
+  "size_class": "M",
+  "px": [
+   310,
+   160
+  ],
+  "world_height_m": 0.035,
+  "priority": 1,
+  "letter_px": 72,
+  "slots": [
+   {
+    "x": 50,
+    "y": 35,
+    "w": 193,
+    "h": 72,
+    "fits": "0:00"
+   }
+  ],
+  "note": "last 10 seconds"
+ },
+ {
+  "name": "race_place_1st",
+  "file": "ui2d/race/race_place_1st.png",
+  "svg": "ui2d/race/race_place_1st.svg",
+  "text": "1ST",
+  "shape": "circle",
+  "treatment": "on_color",
+  "background": "#E8B64C",
+  "size_class": "S",
+  "px": [
+   156,
+   156
+  ],
+  "world_height_m": 0.0357,
+  "priority": 1,
+  "letter_px": 44,
+  "note": "left of a scoreboard row"
+ },
+ {
+  "name": "race_place_2nd",
+  "file": "ui2d/race/race_place_2nd.png",
+  "svg": "ui2d/race/race_place_2nd.svg",
+  "text": "2ND",
+  "shape": "circle",
+  "treatment": "on_color",
+  "background": "#B8BEC8",
+  "size_class": "S",
+  "px": [
+   164,
+   164
+  ],
+  "world_height_m": 0.0376,
+  "priority": 1,
+  "letter_px": 44,
+  "note": "left of a scoreboard row"
+ },
+ {
+  "name": "race_place_3rd",
+  "file": "ui2d/race/race_place_3rd.png",
+  "svg": "ui2d/race/race_place_3rd.svg",
+  "text": "3RD",
+  "shape": "circle",
+  "treatment": "on_color",
+  "background": "#C98A5A",
+  "size_class": "S",
+  "px": [
+   164,
+   164
+  ],
+  "world_height_m": 0.0376,
+  "priority": 1,
+  "letter_px": 44,
+  "note": "left of a scoreboard row"
+ },
+ {
+  "name": "race_name_you",
+  "file": "ui2d/race/race_name_you.png",
+  "svg": "ui2d/race/race_name_you.svg",
+  "text": "YOU",
+  "shape": "rectangle",
+  "treatment": "on_color",
+  "background": "#F2716B",
+  "size_class": "S",
+  "px": [
+   176,
+   96
+  ],
+  "world_height_m": 0.022,
+  "priority": 1,
+  "letter_px": 44
+ },
+ {
+  "name": "race_name_clip",
+  "file": "ui2d/race/race_name_clip.png",
+  "svg": "ui2d/race/race_name_clip.svg",
+  "text": "CLIP (BOT)",
+  "shape": "rectangle",
+  "treatment": "on_color",
+  "background": "#3469C4",
+  "size_class": "S",
+  "px": [
+   336,
+   96
+  ],
+  "world_height_m": 0.022,
+  "priority": 1,
+  "letter_px": 44,
+  "note": "also the label under the robot window"
+ },
+ {
+  "name": "race_name_crease",
+  "file": "ui2d/race/race_name_crease.png",
+  "svg": "ui2d/race/race_name_crease.svg",
+  "text": "CREASE (BOT)",
+  "shape": "rectangle",
+  "treatment": "on_color",
+  "background": "#3FB6A0",
+  "size_class": "S",
+  "px": [
+   430,
+   96
+  ],
+  "world_height_m": 0.022,
+  "priority": 1,
+  "letter_px": 44
+ },
+ {
+  "name": "race_word_solved",
+  "file": "ui2d/race/race_word_solved.png",
+  "svg": "ui2d/race/race_word_solved.svg",
+  "text": "SOLVED",
+  "shape": "rectangle",
+  "treatment": "ink_on_paper",
+  "background": "#FFFDF8",
+  "size_class": "XS",
+  "px": [
+   182,
+   64
+  ],
+  "world_height_m": 0.016,
+  "priority": 1,
+  "letter_px": 30,
+  "note": "\"# SOLVED, # PTS\""
+ },
+ {
+  "name": "race_word_pts",
+  "file": "ui2d/race/race_word_pts.png",
+  "svg": "ui2d/race/race_word_pts.svg",
+  "text": "PTS",
+  "shape": "rectangle",
+  "treatment": "ink_on_paper",
+  "background": "#FFFDF8",
+  "size_class": "XS",
+  "px": [
+   116,
+   64
+  ],
+  "world_height_m": 0.016,
+  "priority": 1,
+  "letter_px": 30
+ },
+ {
+  "name": "robot_nice_cobalt",
+  "file": "ui2d/race/robot_nice_cobalt.png",
+  "svg": "ui2d/race/robot_nice_cobalt.svg",
+  "text": "NICE!",
+  "shape": "speech_bubble",
+  "treatment": "on_color",
+  "background": "#3469C4",
+  "size_class": "S",
+  "px": [
+   190,
+   176
+  ],
+  "world_height_m": 0.0403,
+  "priority": 1,
+  "letter_px": 44,
+  "note": "robot speech bubble"
+ },
+ {
+  "name": "robot_nice_teal",
+  "file": "ui2d/race/robot_nice_teal.png",
+  "svg": "ui2d/race/robot_nice_teal.svg",
+  "text": "NICE!",
+  "shape": "speech_bubble",
+  "treatment": "on_color",
+  "background": "#3FB6A0",
+  "size_class": "S",
+  "px": [
+   190,
+   176
+  ],
+  "world_height_m": 0.0403,
+  "priority": 1,
+  "letter_px": 44,
+  "note": "robot speech bubble"
+ },
+ {
+  "name": "robot_yay_cobalt",
+  "file": "ui2d/race/robot_yay_cobalt.png",
+  "svg": "ui2d/race/robot_yay_cobalt.svg",
+  "text": "YAY!",
+  "shape": "speech_bubble",
+  "treatment": "on_color",
+  "background": "#3469C4",
+  "size_class": "S",
+  "px": [
+   184,
+   170
+  ],
+  "world_height_m": 0.039,
+  "priority": 1,
+  "letter_px": 44,
+  "note": "robot speech bubble"
+ },
+ {
+  "name": "robot_yay_teal",
+  "file": "ui2d/race/robot_yay_teal.png",
+  "svg": "ui2d/race/robot_yay_teal.svg",
+  "text": "YAY!",
+  "shape": "speech_bubble",
+  "treatment": "on_color",
+  "background": "#3FB6A0",
+  "size_class": "S",
+  "px": [
+   184,
+   170
+  ],
+  "world_height_m": 0.039,
+  "priority": 1,
+  "letter_px": 44,
+  "note": "robot speech bubble"
+ },
+ {
+  "name": "robot_got_it_cobalt",
+  "file": "ui2d/race/robot_got_it_cobalt.png",
+  "svg": "ui2d/race/robot_got_it_cobalt.svg",
+  "text": "GOT IT!",
+  "shape": "speech_bubble",
+  "treatment": "on_color",
+  "background": "#3469C4",
+  "size_class": "S",
+  "px": [
+   242,
+   224
+  ],
+  "world_height_m": 0.0513,
+  "priority": 1,
+  "letter_px": 44,
+  "note": "robot speech bubble"
+ },
+ {
+  "name": "robot_got_it_teal",
+  "file": "ui2d/race/robot_got_it_teal.png",
+  "svg": "ui2d/race/robot_got_it_teal.svg",
+  "text": "GOT IT!",
+  "shape": "speech_bubble",
+  "treatment": "on_color",
+  "background": "#3FB6A0",
+  "size_class": "S",
+  "px": [
+   242,
+   224
+  ],
+  "world_height_m": 0.0513,
+  "priority": 1,
+  "letter_px": 44,
+  "note": "robot speech bubble"
+ },
+ {
+  "name": "card_question_short",
+  "file": "ui2d/question/card_question_short.png",
+  "svg": "ui2d/question/card_question_short.svg",
+  "text": "",
+  "shape": "rectangle",
+  "treatment": "on_paper",
+  "background": "#FFFDF8",
+  "size_class": "M",
+  "px": [
+   510,
+   160
+  ],
+  "world_height_m": 0.035,
+  "priority": 1,
+  "letter_px": 72,
+  "note": "blank; the game writes the question in question ink #1F4FA3"
+ },
+ {
+  "name": "card_question_medium",
+  "file": "ui2d/question/card_question_medium.png",
+  "svg": "ui2d/question/card_question_medium.svg",
+  "text": "",
+  "shape": "rectangle",
+  "treatment": "on_paper",
+  "background": "#FFFDF8",
+  "size_class": "M",
+  "px": [
+   830,
+   160
+  ],
+  "world_height_m": 0.035,
+  "priority": 1,
+  "letter_px": 72,
+  "note": "blank; the game writes the question in question ink #1F4FA3"
+ },
+ {
+  "name": "card_question_long",
+  "file": "ui2d/question/card_question_long.png",
+  "svg": "ui2d/question/card_question_long.svg",
+  "text": "",
+  "shape": "rectangle",
+  "treatment": "on_paper",
+  "background": "#FFFDF8",
+  "size_class": "M",
+  "px": [
+   1150,
+   160
+  ],
+  "world_height_m": 0.035,
+  "priority": 1,
+  "letter_px": 72,
+  "note": "blank; the game writes the question in question ink #1F4FA3"
+ },
+ {
+  "name": "hint_pop_right_answer",
+  "file": "ui2d/question/hint_pop_right_answer.png",
+  "svg": "ui2d/question/hint_pop_right_answer.svg",
+  "text": "POP THE RIGHT ANSWER",
+  "shape": "rectangle",
+  "treatment": "on_paper",
+  "background": "#FFFDF8",
+  "size_class": "S",
+  "px": [
+   694,
+   96
+  ],
+  "world_height_m": 0.022,
+  "priority": 1,
+  "letter_px": 44
+ },
+ {
+  "name": "hint_join_2_crystals",
+  "file": "ui2d/question/hint_join_2_crystals.png",
+  "svg": "ui2d/question/hint_join_2_crystals.svg",
+  "text": "JOIN 2 CRYSTALS TO MAKE",
+  "shape": "rectangle",
+  "treatment": "on_paper",
+  "background": "#FFFDF8",
+  "size_class": "S",
+  "px": [
+   862,
+   96
+  ],
+  "world_height_m": 0.022,
+  "priority": 1,
+  "letter_px": 44,
+  "slots": [
+   {
+    "x": 750,
+    "y": 21,
+    "w": 71,
+    "h": 44,
+    "digits": 2
+   }
+  ],
+  "note": "target number goes in the slot"
+ },
+ {
+  "name": "hint_make",
+  "file": "ui2d/question/hint_make.png",
+  "svg": "ui2d/question/hint_make.svg",
+  "text": "MAKE",
+  "shape": "rectangle",
+  "treatment": "on_paper",
+  "background": "#FFFDF8",
+  "size_class": "S",
+  "px": [
+   306,
+   96
+  ],
+  "world_height_m": 0.022,
+  "priority": 1,
+  "letter_px": 44,
+  "slots": [
+   {
+    "x": 194,
+    "y": 21,
+    "w": 71,
+    "h": 44,
+    "digits": 2
+   }
+  ],
+  "note": "target number goes in the slot"
+ },
+ {
+  "name": "feedback_points",
+  "file": "ui2d/question/feedback_points.png",
+  "svg": "ui2d/question/feedback_points.svg",
+  "text": "POINTS",
+  "shape": "parallelogram",
+  "treatment": "on_color",
+  "background": "#5DB85B",
+  "size_class": "M",
+  "px": [
+   656,
+   160
+  ],
+  "world_height_m": 0.035,
+  "priority": 1,
+  "letter_px": 72,
+  "slots": [
+   {
+    "x": 71,
+    "y": 35,
+    "w": 175,
+    "h": 72,
+    "digits": 3
+   }
+  ],
+  "note": "\"+# POINTS\"; \"+\" and the number go in the slot"
+ },
+ {
+  "name": "feedback_try_again",
+  "file": "ui2d/question/feedback_try_again.png",
+  "svg": "ui2d/question/feedback_try_again.svg",
+  "text": "TRY AGAIN!",
+  "shape": "parallelogram",
+  "treatment": "on_color",
+  "background": "#F8961E",
+  "size_class": "M",
+  "px": [
+   624,
+   160
+  ],
+  "world_height_m": 0.035,
+  "priority": 1,
+  "letter_px": 72
+ },
+ {
+  "name": "feedback_it_was",
+  "file": "ui2d/question/feedback_it_was.png",
+  "svg": "ui2d/question/feedback_it_was.svg",
+  "text": "IT WAS",
+  "shape": "parallelogram",
+  "treatment": "on_color",
+  "background": "#F8961E",
+  "size_class": "M",
+  "px": [
+   654,
+   160
+  ],
+  "world_height_m": 0.035,
+  "priority": 1,
+  "letter_px": 72,
+  "slots": [
+   {
+    "x": 392,
+    "y": 35,
+    "w": 175,
+    "h": 72,
+    "digits": 3
+   }
+  ],
+  "note": "the right answer goes in the slot"
+ },
+ {
+  "name": "feedback_missed",
+  "file": "ui2d/question/feedback_missed.png",
+  "svg": "ui2d/question/feedback_missed.svg",
+  "text": "MISSED",
+  "shape": "parallelogram",
+  "treatment": "on_paper",
+  "background": "#FFFDF8",
+  "size_class": "S",
+  "px": [
+   280,
+   96
+  ],
+  "world_height_m": 0.022,
+  "priority": 1,
+  "letter_px": 44
+ },
+ {
+  "name": "tag_answer_balloon",
+  "file": "ui2d/question/tag_answer_balloon.png",
+  "svg": "ui2d/question/tag_answer_balloon.svg",
+  "text": "",
+  "shape": "rectangle",
+  "treatment": "on_paper",
+  "background": "#FFFDF8",
+  "size_class": "S",
+  "px": [
+   180,
+   96
+  ],
+  "world_height_m": 0.022,
+  "priority": 1,
+  "letter_px": 44,
+  "slots": [
+   {
+    "x": 32,
+    "y": 21,
+    "w": 107,
+    "h": 44,
+    "fits": "000"
+   }
+  ],
+  "note": "hangs under the basket; answer in ink #3A3F4B"
+ },
+ {
+  "name": "tag_answer_balloon_fraction",
+  "file": "ui2d/question/tag_answer_balloon_fraction.png",
+  "svg": "ui2d/question/tag_answer_balloon_fraction.svg",
+  "text": "",
+  "shape": "rectangle",
+  "treatment": "on_paper",
+  "background": "#FFFDF8",
+  "size_class": "S",
+  "px": [
+   180,
+   132
+  ],
+  "world_height_m": 0.0303,
+  "priority": 1,
+  "letter_px": 44,
+  "slots": [
+   {
+    "x": 32,
+    "y": 28,
+    "w": 107,
+    "h": 66,
+    "fits": "000"
+   }
+  ],
+  "note": "fraction height (1.5x)"
+ },
+ {
+  "name": "tag_answer_crystal",
+  "file": "ui2d/question/tag_answer_crystal.png",
+  "svg": "ui2d/question/tag_answer_crystal.svg",
+  "text": "",
+  "shape": "rectangle",
+  "treatment": "on_paper",
+  "background": "#FFFDF8",
+  "size_class": "S",
+  "px": [
+   180,
+   96
+  ],
+  "world_height_m": 0.022,
+  "priority": 1,
+  "letter_px": 44,
+  "slots": [
+   {
+    "x": 32,
+    "y": 21,
+    "w": 107,
+    "h": 44,
+    "fits": "000"
+   }
+  ],
+  "note": "above the crystal; answer in ink #3A3F4B"
+ },
+ {
+  "name": "tag_answer_crystal_fraction",
+  "file": "ui2d/question/tag_answer_crystal_fraction.png",
+  "svg": "ui2d/question/tag_answer_crystal_fraction.svg",
+  "text": "",
+  "shape": "rectangle",
+  "treatment": "on_paper",
+  "background": "#FFFDF8",
+  "size_class": "S",
+  "px": [
+   180,
+   132
+  ],
+  "world_height_m": 0.0303,
+  "priority": 1,
+  "letter_px": 44,
+  "slots": [
+   {
+    "x": 32,
+    "y": 28,
+    "w": 107,
+    "h": 66,
+    "fits": "000"
+   }
+  ],
+  "note": "fraction height (1.5x)"
+ },
+ {
+  "name": "timer_strip_correct",
+  "file": "ui2d/question/timer_strip_correct.png",
+  "svg": "ui2d/question/timer_strip_correct.svg",
+  "text": "",
+  "shape": "rectangle",
+  "treatment": "on_color",
+  "background": "#5DB85B",
+  "size_class": "XS",
+  "px": [
+   654,
+   64
+  ],
+  "world_height_m": 0.016,
+  "priority": 1,
+  "letter_px": 30,
+  "note": "8 s speed bonus strip; the game crops its length"
+ },
+ {
+  "name": "timer_strip_try_again",
+  "file": "ui2d/question/timer_strip_try_again.png",
+  "svg": "ui2d/question/timer_strip_try_again.svg",
+  "text": "",
+  "shape": "rectangle",
+  "treatment": "on_color",
+  "background": "#F8961E",
+  "size_class": "XS",
+  "px": [
+   654,
+   64
+  ],
+  "world_height_m": 0.016,
+  "priority": 1,
+  "letter_px": 30,
+  "note": "second colour of the bonus strip"
+ },
+ {
+  "name": "score_points",
+  "file": "ui2d/question/score_points.png",
+  "svg": "ui2d/question/score_points.svg",
+  "text": "POINTS",
+  "shape": "rectangle",
+  "treatment": "on_paper",
+  "background": "#FFFDF8",
+  "size_class": "M",
+  "px": [
+   614,
+   160
+  ],
+  "world_height_m": 0.035,
+  "priority": 1,
+  "letter_px": 72,
+  "slots": [
+   {
+    "x": 50,
+    "y": 35,
+    "w": 175,
+    "h": 72,
+    "digits": 3
+   }
+  ],
+  "note": "\"# POINTS\" in practice mode"
+ },
+ {
+  "name": "recap_title",
+  "file": "ui2d/recap/recap_title.png",
+  "svg": "ui2d/recap/recap_title.svg",
+  "text": "RACE RESULTS",
+  "shape": "ribbon",
+  "treatment": "on_color",
+  "background": "#3FB6A0",
+  "size_class": "L",
+  "px": [
+   1476,
+   302
+  ],
+  "world_height_m": 0.059,
+  "priority": 1,
+  "letter_px": 120
+ },
+ {
+  "name": "recap_place_1st",
+  "file": "ui2d/recap/recap_place_1st.png",
+  "svg": "ui2d/recap/recap_place_1st.svg",
+  "text": "1ST",
+  "shape": "circle",
+  "treatment": "on_color",
+  "background": "#E8B64C",
+  "size_class": "icon_large",
+  "px": [
+   512,
+   512
+  ],
+  "world_height_m": 0.06,
+  "priority": 1,
+  "letter_px": 120
+ },
+ {
+  "name": "recap_place_2nd",
+  "file": "ui2d/recap/recap_place_2nd.png",
+  "svg": "ui2d/recap/recap_place_2nd.svg",
+  "text": "2ND",
+  "shape": "circle",
+  "treatment": "on_color",
+  "background": "#B8BEC8",
+  "size_class": "icon_large",
+  "px": [
+   512,
+   512
+  ],
+  "world_height_m": 0.06,
+  "priority": 1,
+  "letter_px": 120
+ },
+ {
+  "name": "recap_place_3rd",
+  "file": "ui2d/recap/recap_place_3rd.png",
+  "svg": "ui2d/recap/recap_place_3rd.svg",
+  "text": "3RD",
+  "shape": "circle",
+  "treatment": "on_color",
+  "background": "#C98A5A",
+  "size_class": "icon_large",
+  "px": [
+   512,
+   512
+  ],
+  "world_height_m": 0.06,
+  "priority": 1,
+  "letter_px": 120
+ },
+ {
+  "name": "badge_label_best_comeback",
+  "file": "ui2d/recap/badge_label_best_comeback.png",
+  "svg": "ui2d/recap/badge_label_best_comeback.svg",
+  "text": "BEST COMEBACK",
+  "shape": "ribbon",
+  "treatment": "on_color",
+  "background": "#E8B64C",
+  "size_class": "S",
+  "px": [
+   592,
+   112
+  ],
+  "world_height_m": 0.0257,
+  "priority": 1,
+  "letter_px": 44,
+  "note": "ribbon under rewards/badge_*.glb"
+ },
+ {
+  "name": "badge_label_most_improved",
+  "file": "ui2d/recap/badge_label_most_improved.png",
+  "svg": "ui2d/recap/badge_label_most_improved.svg",
+  "text": "MOST IMPROVED",
+  "shape": "ribbon",
+  "treatment": "on_color",
+  "background": "#E8B64C",
+  "size_class": "S",
+  "px": [
+   578,
+   112
+  ],
+  "world_height_m": 0.0257,
+  "priority": 1,
+  "letter_px": 44,
+  "note": "ribbon under rewards/badge_*.glb"
+ },
+ {
+  "name": "badge_label_sharpest_aim",
+  "file": "ui2d/recap/badge_label_sharpest_aim.png",
+  "svg": "ui2d/recap/badge_label_sharpest_aim.svg",
+  "text": "SHARPEST AIM",
+  "shape": "ribbon",
+  "treatment": "on_color",
+  "background": "#E8B64C",
+  "size_class": "S",
+  "px": [
+   540,
+   112
+  ],
+  "world_height_m": 0.0257,
+  "priority": 1,
+  "letter_px": 44,
+  "note": "ribbon under rewards/badge_*.glb"
+ },
+ {
+  "name": "badge_label_steady_streak",
+  "file": "ui2d/recap/badge_label_steady_streak.png",
+  "svg": "ui2d/recap/badge_label_steady_streak.svg",
+  "text": "STEADY STREAK",
+  "shape": "ribbon",
+  "treatment": "on_color",
+  "background": "#E8B64C",
+  "size_class": "S",
+  "px": [
+   584,
+   112
+  ],
+  "world_height_m": 0.0257,
+  "priority": 1,
+  "letter_px": 44,
+  "note": "ribbon under rewards/badge_*.glb"
+ },
+ {
+  "name": "badge_label_brave_try",
+  "file": "ui2d/recap/badge_label_brave_try.png",
+  "svg": "ui2d/recap/badge_label_brave_try.svg",
+  "text": "BRAVE TRY",
+  "shape": "ribbon",
+  "treatment": "on_color",
+  "background": "#E8B64C",
+  "size_class": "S",
+  "px": [
+   456,
+   112
+  ],
+  "world_height_m": 0.0257,
+  "priority": 1,
+  "letter_px": 44,
+  "note": "ribbon under rewards/badge_*.glb"
+ },
+ {
+  "name": "button_done",
+  "file": "ui2d/recap/button_done.png",
+  "svg": "ui2d/recap/button_done.svg",
+  "text": "DONE",
+  "shape": "rectangle",
+  "treatment": "on_color",
+  "background": "#5DB85B",
+  "size_class": "M",
+  "px": [
+   334,
+   160
+  ],
+  "world_height_m": 0.035,
+  "priority": 1,
+  "letter_px": 72,
+  "note": "replaces the old #81B29A Done button"
+ },
+ {
+  "name": "button_start",
+  "file": "ui2d/web/button_start.png",
+  "svg": "ui2d/web/button_start.svg",
+  "text": "START",
+  "shape": "rectangle",
+  "treatment": "on_color",
+  "background": "#3FB6A0",
+  "size_class": "M",
+  "px": [
+   382,
+   160
+  ],
+  "world_height_m": 0.035,
+  "priority": 1,
+  "letter_px": 72
+ },
+ {
+  "name": "button_enter_xr",
+  "file": "ui2d/web/button_enter_xr.png",
+  "svg": "ui2d/web/button_enter_xr.svg",
+  "text": "ENTER XR",
+  "shape": "rectangle",
+  "treatment": "on_color",
+  "background": "#3469C4",
+  "size_class": "M",
+  "px": [
+   520,
+   160
+  ],
+  "world_height_m": 0.035,
+  "priority": 1,
+  "letter_px": 72
+ },
+ {
+  "name": "pause_paused",
+  "file": "ui2d/pause/pause_paused.png",
+  "svg": "ui2d/pause/pause_paused.svg",
+  "text": "PAUSED",
+  "shape": "circle",
+  "treatment": "on_color",
+  "background": "#3469C4",
+  "size_class": "L",
+  "px": [
+   690,
+   692
+  ],
+  "world_height_m": 0.1352,
+  "priority": 2,
+  "letter_px": 120
+ },
+ {
+  "name": "pause_welcome_back",
+  "file": "ui2d/pause/pause_welcome_back.png",
+  "svg": "ui2d/pause/pause_welcome_back.svg",
+  "text": "WELCOME BACK!",
+  "shape": "rectangle",
+  "treatment": "on_color",
+  "background": "#3FB6A0",
+  "size_class": "M",
+  "px": [
+   796,
+   160
+  ],
+  "world_height_m": 0.035,
+  "priority": 2,
+  "letter_px": 72
+ },
+ {
+  "name": "notice_not_saved",
+  "file": "ui2d/pause/notice_not_saved.png",
+  "svg": "ui2d/pause/notice_not_saved.svg",
+  "text": "PROGRESS NOT SAVED ON THIS DEVICE",
+  "shape": "rectangle",
+  "treatment": "ink_on_paper",
+  "background": "#FFFDF8",
+  "size_class": "XS",
+  "px": [
+   728,
+   64
+  ],
+  "world_height_m": 0.016,
+  "priority": 2,
+  "letter_px": 30
+ },
+ {
+  "name": "button_play",
+  "file": "ui2d/buttons/button_play.png",
+  "svg": "ui2d/buttons/button_play.svg",
+  "text": "PLAY",
+  "shape": "rectangle",
+  "treatment": "on_color",
+  "background": "#5DB85B",
+  "size_class": "M",
+  "px": [
+   430,
+   160
+  ],
+  "world_height_m": 0.035,
+  "priority": 2,
+  "letter_px": 72,
+  "note": "icon play on the left"
+ },
+ {
+  "name": "button_play_again",
+  "file": "ui2d/buttons/button_play_again.png",
+  "svg": "ui2d/buttons/button_play_again.svg",
+  "text": "PLAY AGAIN",
+  "shape": "rectangle",
+  "treatment": "on_color",
+  "background": "#5DB85B",
+  "size_class": "M",
+  "px": [
+   712,
+   160
+  ],
+  "world_height_m": 0.035,
+  "priority": 2,
+  "letter_px": 72,
+  "note": "icon replay on the left"
+ },
+ {
+  "name": "button_next",
+  "file": "ui2d/buttons/button_next.png",
+  "svg": "ui2d/buttons/button_next.svg",
+  "text": "NEXT",
+  "shape": "rectangle",
+  "treatment": "on_color",
+  "background": "#3FB6A0",
+  "size_class": "M",
+  "px": [
+   430,
+   160
+  ],
+  "world_height_m": 0.035,
+  "priority": 2,
+  "letter_px": 72,
+  "note": "icon next on the left"
+ },
+ {
+  "name": "button_back",
+  "file": "ui2d/buttons/button_back.png",
+  "svg": "ui2d/buttons/button_back.svg",
+  "text": "BACK",
+  "shape": "rectangle",
+  "treatment": "on_paper",
+  "background": "#FFFDF8",
+  "size_class": "M",
+  "px": [
+   444,
+   160
+  ],
+  "world_height_m": 0.035,
+  "priority": 2,
+  "letter_px": 72,
+  "note": "icon back on the left"
+ },
+ {
+  "name": "button_menu",
+  "file": "ui2d/buttons/button_menu.png",
+  "svg": "ui2d/buttons/button_menu.svg",
+  "text": "MENU",
+  "shape": "rectangle",
+  "treatment": "on_paper",
+  "background": "#FFFDF8",
+  "size_class": "M",
+  "px": [
+   442,
+   160
+  ],
+  "world_height_m": 0.035,
+  "priority": 2,
+  "letter_px": 72,
+  "note": "icon home on the left"
+ },
+ {
+  "name": "button_resume",
+  "file": "ui2d/buttons/button_resume.png",
+  "svg": "ui2d/buttons/button_resume.svg",
+  "text": "RESUME",
+  "shape": "rectangle",
+  "treatment": "on_color",
+  "background": "#5DB85B",
+  "size_class": "M",
+  "px": [
+   550,
+   160
+  ],
+  "world_height_m": 0.035,
+  "priority": 2,
+  "letter_px": 72,
+  "note": "icon play on the left"
+ },
+ {
+  "name": "button_settings",
+  "file": "ui2d/buttons/button_settings.png",
+  "svg": "ui2d/buttons/button_settings.svg",
+  "text": "SETTINGS",
+  "shape": "rectangle",
+  "treatment": "on_color",
+  "background": "#3469C4",
+  "size_class": "M",
+  "px": [
+   604,
+   160
+  ],
+  "world_height_m": 0.035,
+  "priority": 2,
+  "letter_px": 72,
+  "note": "icon settings on the left"
+ },
+ {
+  "name": "button_skip",
+  "file": "ui2d/buttons/button_skip.png",
+  "svg": "ui2d/buttons/button_skip.svg",
+  "text": "SKIP",
+  "shape": "rectangle",
+  "treatment": "on_paper",
+  "background": "#FFFDF8",
+  "size_class": "M",
+  "px": [
+   400,
+   160
+  ],
+  "world_height_m": 0.035,
+  "priority": 2,
+  "letter_px": 72,
+  "note": "icon skip on the left"
+ },
+ {
+  "name": "button_yes",
+  "file": "ui2d/buttons/button_yes.png",
+  "svg": "ui2d/buttons/button_yes.svg",
+  "text": "YES",
+  "shape": "rectangle",
+  "treatment": "on_color",
+  "background": "#5DB85B",
+  "size_class": "M",
+  "px": [
+   380,
+   160
+  ],
+  "world_height_m": 0.035,
+  "priority": 2,
+  "letter_px": 72,
+  "note": "icon check on the left"
+ },
+ {
+  "name": "button_no",
+  "file": "ui2d/buttons/button_no.png",
+  "svg": "ui2d/buttons/button_no.svg",
+  "text": "NO",
+  "shape": "rectangle",
+  "treatment": "on_paper",
+  "background": "#FFFDF8",
+  "size_class": "M",
+  "px": [
+   326,
+   160
+  ],
+  "world_height_m": 0.035,
+  "priority": 2,
+  "letter_px": 72,
+  "note": "icon cross on the left"
+ },
+ {
+  "name": "button_sound_on",
+  "file": "ui2d/buttons/button_sound_on.png",
+  "svg": "ui2d/buttons/button_sound_on.svg",
+  "text": "SOUND ON",
+  "shape": "rectangle",
+  "treatment": "on_color",
+  "background": "#3469C4",
+  "size_class": "M",
+  "px": [
+   640,
+   160
+  ],
+  "world_height_m": 0.035,
+  "priority": 2,
+  "letter_px": 72,
+  "note": "icon sound_on on the left"
+ },
+ {
+  "name": "button_sound_off",
+  "file": "ui2d/buttons/button_sound_off.png",
+  "svg": "ui2d/buttons/button_sound_off.svg",
+  "text": "SOUND OFF",
+  "shape": "rectangle",
+  "treatment": "on_paper",
+  "background": "#FFFDF8",
+  "size_class": "M",
+  "px": [
+   686,
+   160
+  ],
+  "world_height_m": 0.035,
+  "priority": 2,
+  "letter_px": 72,
+  "note": "icon sound_off on the left"
+ },
+ {
+  "name": "button_music_on",
+  "file": "ui2d/buttons/button_music_on.png",
+  "svg": "ui2d/buttons/button_music_on.svg",
+  "text": "MUSIC ON",
+  "shape": "rectangle",
+  "treatment": "on_color",
+  "background": "#3469C4",
+  "size_class": "M",
+  "px": [
+   610,
+   160
+  ],
+  "world_height_m": 0.035,
+  "priority": 2,
+  "letter_px": 72,
+  "note": "icon music on the left"
+ },
+ {
+  "name": "button_music_off",
+  "file": "ui2d/buttons/button_music_off.png",
+  "svg": "ui2d/buttons/button_music_off.svg",
+  "text": "MUSIC OFF",
+  "shape": "rectangle",
+  "treatment": "on_paper",
+  "background": "#FFFDF8",
+  "size_class": "M",
+  "px": [
+   656,
+   160
+  ],
+  "world_height_m": 0.035,
+  "priority": 2,
+  "letter_px": 72,
+  "note": "icon music_off on the left"
+ },
+ {
+  "name": "button_captions_on",
+  "file": "ui2d/buttons/button_captions_on.png",
+  "svg": "ui2d/buttons/button_captions_on.svg",
+  "text": "CAPTIONS ON",
+  "shape": "rectangle",
+  "treatment": "on_color",
+  "background": "#3469C4",
+  "size_class": "M",
+  "px": [
+   766,
+   160
+  ],
+  "world_height_m": 0.035,
+  "priority": 2,
+  "letter_px": 72,
+  "note": "icon captions on the left"
+ },
+ {
+  "name": "button_captions_off",
+  "file": "ui2d/buttons/button_captions_off.png",
+  "svg": "ui2d/buttons/button_captions_off.svg",
+  "text": "CAPTIONS OFF",
+  "shape": "rectangle",
+  "treatment": "on_paper",
+  "background": "#FFFDF8",
+  "size_class": "M",
+  "px": [
+   812,
+   160
+  ],
+  "world_height_m": 0.035,
+  "priority": 2,
+  "letter_px": 72,
+  "note": "icon captions_off on the left"
+ },
+ {
+  "name": "button_language_en",
+  "file": "ui2d/buttons/button_language_en.png",
+  "svg": "ui2d/buttons/button_language_en.svg",
+  "text": "ENGLISH",
+  "shape": "rectangle",
+  "treatment": "on_color",
+  "background": "#3FB6A0",
+  "size_class": "M",
+  "px": [
+   552,
+   160
+  ],
+  "world_height_m": 0.035,
+  "priority": 2,
+  "letter_px": 72,
+  "note": "icon language on the left"
+ },
+ {
+  "name": "button_language_id",
+  "file": "ui2d/buttons/button_language_id.png",
+  "svg": "ui2d/buttons/button_language_id.svg",
+  "text": "BAHASA INDONESIA",
+  "shape": "rectangle",
+  "treatment": "on_color",
+  "background": "#3FB6A0",
+  "size_class": "M",
+  "px": [
+   1020,
+   160
+  ],
+  "world_height_m": 0.035,
+  "priority": 2,
+  "letter_px": 72,
+  "note": "icon language on the left"
+ },
+ {
+  "name": "icon_back_cobalt",
+  "file": "ui2d/icons/icon_back_cobalt.png",
+  "svg": "ui2d/icons/icon_back_cobalt.svg",
+  "text": "",
+  "shape": "circle",
+  "treatment": "on_color",
+  "background": "#3469C4",
+  "size_class": "icon_small",
+  "px": [
+   128,
+   128
+  ],
+  "world_height_m": 0.02,
+  "priority": 2
+ },
+ {
+  "name": "icon_back_paper",
+  "file": "ui2d/icons/icon_back_paper.png",
+  "svg": "ui2d/icons/icon_back_paper.svg",
+  "text": "",
+  "shape": "circle",
+  "treatment": "ink_on_paper",
+  "background": "#FFFDF8",
+  "size_class": "icon_small",
+  "px": [
+   128,
+   128
+  ],
+  "world_height_m": 0.02,
+  "priority": 2
+ },
+ {
+  "name": "icon_next_cobalt",
+  "file": "ui2d/icons/icon_next_cobalt.png",
+  "svg": "ui2d/icons/icon_next_cobalt.svg",
+  "text": "",
+  "shape": "circle",
+  "treatment": "on_color",
+  "background": "#3469C4",
+  "size_class": "icon_small",
+  "px": [
+   128,
+   128
+  ],
+  "world_height_m": 0.02,
+  "priority": 2
+ },
+ {
+  "name": "icon_next_paper",
+  "file": "ui2d/icons/icon_next_paper.png",
+  "svg": "ui2d/icons/icon_next_paper.svg",
+  "text": "",
+  "shape": "circle",
+  "treatment": "ink_on_paper",
+  "background": "#FFFDF8",
+  "size_class": "icon_small",
+  "px": [
+   128,
+   128
+  ],
+  "world_height_m": 0.02,
+  "priority": 2
+ },
+ {
+  "name": "icon_skip_cobalt",
+  "file": "ui2d/icons/icon_skip_cobalt.png",
+  "svg": "ui2d/icons/icon_skip_cobalt.svg",
+  "text": "",
+  "shape": "circle",
+  "treatment": "on_color",
+  "background": "#3469C4",
+  "size_class": "icon_small",
+  "px": [
+   128,
+   128
+  ],
+  "world_height_m": 0.02,
+  "priority": 2
+ },
+ {
+  "name": "icon_skip_paper",
+  "file": "ui2d/icons/icon_skip_paper.png",
+  "svg": "ui2d/icons/icon_skip_paper.svg",
+  "text": "",
+  "shape": "circle",
+  "treatment": "ink_on_paper",
+  "background": "#FFFDF8",
+  "size_class": "icon_small",
+  "px": [
+   128,
+   128
+  ],
+  "world_height_m": 0.02,
+  "priority": 2
+ },
+ {
+  "name": "icon_home_cobalt",
+  "file": "ui2d/icons/icon_home_cobalt.png",
+  "svg": "ui2d/icons/icon_home_cobalt.svg",
+  "text": "",
+  "shape": "circle",
+  "treatment": "on_color",
+  "background": "#3469C4",
+  "size_class": "icon_small",
+  "px": [
+   128,
+   128
+  ],
+  "world_height_m": 0.02,
+  "priority": 2
+ },
+ {
+  "name": "icon_home_paper",
+  "file": "ui2d/icons/icon_home_paper.png",
+  "svg": "ui2d/icons/icon_home_paper.svg",
+  "text": "",
+  "shape": "circle",
+  "treatment": "ink_on_paper",
+  "background": "#FFFDF8",
+  "size_class": "icon_small",
+  "px": [
+   128,
+   128
+  ],
+  "world_height_m": 0.02,
+  "priority": 2
+ },
+ {
+  "name": "icon_replay_cobalt",
+  "file": "ui2d/icons/icon_replay_cobalt.png",
+  "svg": "ui2d/icons/icon_replay_cobalt.svg",
+  "text": "",
+  "shape": "circle",
+  "treatment": "on_color",
+  "background": "#3469C4",
+  "size_class": "icon_small",
+  "px": [
+   128,
+   128
+  ],
+  "world_height_m": 0.02,
+  "priority": 2
+ },
+ {
+  "name": "icon_replay_paper",
+  "file": "ui2d/icons/icon_replay_paper.png",
+  "svg": "ui2d/icons/icon_replay_paper.svg",
+  "text": "",
+  "shape": "circle",
+  "treatment": "ink_on_paper",
+  "background": "#FFFDF8",
+  "size_class": "icon_small",
+  "px": [
+   128,
+   128
+  ],
+  "world_height_m": 0.02,
+  "priority": 2
+ },
+ {
+  "name": "icon_play_cobalt",
+  "file": "ui2d/icons/icon_play_cobalt.png",
+  "svg": "ui2d/icons/icon_play_cobalt.svg",
+  "text": "",
+  "shape": "circle",
+  "treatment": "on_color",
+  "background": "#3469C4",
+  "size_class": "icon_small",
+  "px": [
+   128,
+   128
+  ],
+  "world_height_m": 0.02,
+  "priority": 2
+ },
+ {
+  "name": "icon_play_paper",
+  "file": "ui2d/icons/icon_play_paper.png",
+  "svg": "ui2d/icons/icon_play_paper.svg",
+  "text": "",
+  "shape": "circle",
+  "treatment": "ink_on_paper",
+  "background": "#FFFDF8",
+  "size_class": "icon_small",
+  "px": [
+   128,
+   128
+  ],
+  "world_height_m": 0.02,
+  "priority": 2
+ },
+ {
+  "name": "icon_pause_cobalt",
+  "file": "ui2d/icons/icon_pause_cobalt.png",
+  "svg": "ui2d/icons/icon_pause_cobalt.svg",
+  "text": "",
+  "shape": "circle",
+  "treatment": "on_color",
+  "background": "#3469C4",
+  "size_class": "icon_small",
+  "px": [
+   128,
+   128
+  ],
+  "world_height_m": 0.02,
+  "priority": 2
+ },
+ {
+  "name": "icon_pause_paper",
+  "file": "ui2d/icons/icon_pause_paper.png",
+  "svg": "ui2d/icons/icon_pause_paper.svg",
+  "text": "",
+  "shape": "circle",
+  "treatment": "ink_on_paper",
+  "background": "#FFFDF8",
+  "size_class": "icon_small",
+  "px": [
+   128,
+   128
+  ],
+  "world_height_m": 0.02,
+  "priority": 2
+ },
+ {
+  "name": "icon_settings_cobalt",
+  "file": "ui2d/icons/icon_settings_cobalt.png",
+  "svg": "ui2d/icons/icon_settings_cobalt.svg",
+  "text": "",
+  "shape": "circle",
+  "treatment": "on_color",
+  "background": "#3469C4",
+  "size_class": "icon_small",
+  "px": [
+   128,
+   128
+  ],
+  "world_height_m": 0.02,
+  "priority": 2
+ },
+ {
+  "name": "icon_settings_paper",
+  "file": "ui2d/icons/icon_settings_paper.png",
+  "svg": "ui2d/icons/icon_settings_paper.svg",
+  "text": "",
+  "shape": "circle",
+  "treatment": "ink_on_paper",
+  "background": "#FFFDF8",
+  "size_class": "icon_small",
+  "px": [
+   128,
+   128
+  ],
+  "world_height_m": 0.02,
+  "priority": 2
+ },
+ {
+  "name": "icon_sound_on_cobalt",
+  "file": "ui2d/icons/icon_sound_on_cobalt.png",
+  "svg": "ui2d/icons/icon_sound_on_cobalt.svg",
+  "text": "",
+  "shape": "circle",
+  "treatment": "on_color",
+  "background": "#3469C4",
+  "size_class": "icon_small",
+  "px": [
+   128,
+   128
+  ],
+  "world_height_m": 0.02,
+  "priority": 2
+ },
+ {
+  "name": "icon_sound_on_paper",
+  "file": "ui2d/icons/icon_sound_on_paper.png",
+  "svg": "ui2d/icons/icon_sound_on_paper.svg",
+  "text": "",
+  "shape": "circle",
+  "treatment": "ink_on_paper",
+  "background": "#FFFDF8",
+  "size_class": "icon_small",
+  "px": [
+   128,
+   128
+  ],
+  "world_height_m": 0.02,
+  "priority": 2
+ },
+ {
+  "name": "icon_sound_off_cobalt",
+  "file": "ui2d/icons/icon_sound_off_cobalt.png",
+  "svg": "ui2d/icons/icon_sound_off_cobalt.svg",
+  "text": "",
+  "shape": "circle",
+  "treatment": "on_color",
+  "background": "#3469C4",
+  "size_class": "icon_small",
+  "px": [
+   128,
+   128
+  ],
+  "world_height_m": 0.02,
+  "priority": 2
+ },
+ {
+  "name": "icon_sound_off_paper",
+  "file": "ui2d/icons/icon_sound_off_paper.png",
+  "svg": "ui2d/icons/icon_sound_off_paper.svg",
+  "text": "",
+  "shape": "circle",
+  "treatment": "ink_on_paper",
+  "background": "#FFFDF8",
+  "size_class": "icon_small",
+  "px": [
+   128,
+   128
+  ],
+  "world_height_m": 0.02,
+  "priority": 2
+ },
+ {
+  "name": "icon_music_cobalt",
+  "file": "ui2d/icons/icon_music_cobalt.png",
+  "svg": "ui2d/icons/icon_music_cobalt.svg",
+  "text": "",
+  "shape": "circle",
+  "treatment": "on_color",
+  "background": "#3469C4",
+  "size_class": "icon_small",
+  "px": [
+   128,
+   128
+  ],
+  "world_height_m": 0.02,
+  "priority": 2
+ },
+ {
+  "name": "icon_music_paper",
+  "file": "ui2d/icons/icon_music_paper.png",
+  "svg": "ui2d/icons/icon_music_paper.svg",
+  "text": "",
+  "shape": "circle",
+  "treatment": "ink_on_paper",
+  "background": "#FFFDF8",
+  "size_class": "icon_small",
+  "px": [
+   128,
+   128
+  ],
+  "world_height_m": 0.02,
+  "priority": 2
+ },
+ {
+  "name": "icon_music_off_cobalt",
+  "file": "ui2d/icons/icon_music_off_cobalt.png",
+  "svg": "ui2d/icons/icon_music_off_cobalt.svg",
+  "text": "",
+  "shape": "circle",
+  "treatment": "on_color",
+  "background": "#3469C4",
+  "size_class": "icon_small",
+  "px": [
+   128,
+   128
+  ],
+  "world_height_m": 0.02,
+  "priority": 2
+ },
+ {
+  "name": "icon_music_off_paper",
+  "file": "ui2d/icons/icon_music_off_paper.png",
+  "svg": "ui2d/icons/icon_music_off_paper.svg",
+  "text": "",
+  "shape": "circle",
+  "treatment": "ink_on_paper",
+  "background": "#FFFDF8",
+  "size_class": "icon_small",
+  "px": [
+   128,
+   128
+  ],
+  "world_height_m": 0.02,
+  "priority": 2
+ },
+ {
+  "name": "icon_captions_cobalt",
+  "file": "ui2d/icons/icon_captions_cobalt.png",
+  "svg": "ui2d/icons/icon_captions_cobalt.svg",
+  "text": "",
+  "shape": "circle",
+  "treatment": "on_color",
+  "background": "#3469C4",
+  "size_class": "icon_small",
+  "px": [
+   128,
+   128
+  ],
+  "world_height_m": 0.02,
+  "priority": 2
+ },
+ {
+  "name": "icon_captions_paper",
+  "file": "ui2d/icons/icon_captions_paper.png",
+  "svg": "ui2d/icons/icon_captions_paper.svg",
+  "text": "",
+  "shape": "circle",
+  "treatment": "ink_on_paper",
+  "background": "#FFFDF8",
+  "size_class": "icon_small",
+  "px": [
+   128,
+   128
+  ],
+  "world_height_m": 0.02,
+  "priority": 2
+ },
+ {
+  "name": "icon_captions_off_cobalt",
+  "file": "ui2d/icons/icon_captions_off_cobalt.png",
+  "svg": "ui2d/icons/icon_captions_off_cobalt.svg",
+  "text": "",
+  "shape": "circle",
+  "treatment": "on_color",
+  "background": "#3469C4",
+  "size_class": "icon_small",
+  "px": [
+   128,
+   128
+  ],
+  "world_height_m": 0.02,
+  "priority": 2
+ },
+ {
+  "name": "icon_captions_off_paper",
+  "file": "ui2d/icons/icon_captions_off_paper.png",
+  "svg": "ui2d/icons/icon_captions_off_paper.svg",
+  "text": "",
+  "shape": "circle",
+  "treatment": "ink_on_paper",
+  "background": "#FFFDF8",
+  "size_class": "icon_small",
+  "px": [
+   128,
+   128
+  ],
+  "world_height_m": 0.02,
+  "priority": 2
+ },
+ {
+  "name": "icon_language_cobalt",
+  "file": "ui2d/icons/icon_language_cobalt.png",
+  "svg": "ui2d/icons/icon_language_cobalt.svg",
+  "text": "",
+  "shape": "circle",
+  "treatment": "on_color",
+  "background": "#3469C4",
+  "size_class": "icon_small",
+  "px": [
+   128,
+   128
+  ],
+  "world_height_m": 0.02,
+  "priority": 2
+ },
+ {
+  "name": "icon_language_paper",
+  "file": "ui2d/icons/icon_language_paper.png",
+  "svg": "ui2d/icons/icon_language_paper.svg",
+  "text": "",
+  "shape": "circle",
+  "treatment": "ink_on_paper",
+  "background": "#FFFDF8",
+  "size_class": "icon_small",
+  "px": [
+   128,
+   128
+  ],
+  "world_height_m": 0.02,
+  "priority": 2
+ },
+ {
+  "name": "icon_check_cobalt",
+  "file": "ui2d/icons/icon_check_cobalt.png",
+  "svg": "ui2d/icons/icon_check_cobalt.svg",
+  "text": "",
+  "shape": "circle",
+  "treatment": "on_color",
+  "background": "#3469C4",
+  "size_class": "icon_small",
+  "px": [
+   128,
+   128
+  ],
+  "world_height_m": 0.02,
+  "priority": 2
+ },
+ {
+  "name": "icon_check_paper",
+  "file": "ui2d/icons/icon_check_paper.png",
+  "svg": "ui2d/icons/icon_check_paper.svg",
+  "text": "",
+  "shape": "circle",
+  "treatment": "ink_on_paper",
+  "background": "#FFFDF8",
+  "size_class": "icon_small",
+  "px": [
+   128,
+   128
+  ],
+  "world_height_m": 0.02,
+  "priority": 2
+ },
+ {
+  "name": "icon_cross_cobalt",
+  "file": "ui2d/icons/icon_cross_cobalt.png",
+  "svg": "ui2d/icons/icon_cross_cobalt.svg",
+  "text": "",
+  "shape": "circle",
+  "treatment": "on_color",
+  "background": "#3469C4",
+  "size_class": "icon_small",
+  "px": [
+   128,
+   128
+  ],
+  "world_height_m": 0.02,
+  "priority": 2
+ },
+ {
+  "name": "icon_cross_paper",
+  "file": "ui2d/icons/icon_cross_paper.png",
+  "svg": "ui2d/icons/icon_cross_paper.svg",
+  "text": "",
+  "shape": "circle",
+  "treatment": "ink_on_paper",
+  "background": "#FFFDF8",
+  "size_class": "icon_small",
+  "px": [
+   128,
+   128
+  ],
+  "world_height_m": 0.02,
+  "priority": 2
+ },
+ {
+  "name": "icon_close_cobalt",
+  "file": "ui2d/icons/icon_close_cobalt.png",
+  "svg": "ui2d/icons/icon_close_cobalt.svg",
+  "text": "",
+  "shape": "circle",
+  "treatment": "on_color",
+  "background": "#3469C4",
+  "size_class": "icon_small",
+  "px": [
+   128,
+   128
+  ],
+  "world_height_m": 0.02,
+  "priority": 2
+ },
+ {
+  "name": "icon_close_paper",
+  "file": "ui2d/icons/icon_close_paper.png",
+  "svg": "ui2d/icons/icon_close_paper.svg",
+  "text": "",
+  "shape": "circle",
+  "treatment": "ink_on_paper",
+  "background": "#FFFDF8",
+  "size_class": "icon_small",
+  "px": [
+   128,
+   128
+  ],
+  "world_height_m": 0.02,
+  "priority": 2
+ },
+ {
+  "name": "icon_star_cobalt",
+  "file": "ui2d/icons/icon_star_cobalt.png",
+  "svg": "ui2d/icons/icon_star_cobalt.svg",
+  "text": "",
+  "shape": "circle",
+  "treatment": "on_color",
+  "background": "#3469C4",
+  "size_class": "icon_small",
+  "px": [
+   128,
+   128
+  ],
+  "world_height_m": 0.02,
+  "priority": 2
+ },
+ {
+  "name": "icon_star_paper",
+  "file": "ui2d/icons/icon_star_paper.png",
+  "svg": "ui2d/icons/icon_star_paper.svg",
+  "text": "",
+  "shape": "circle",
+  "treatment": "ink_on_paper",
+  "background": "#FFFDF8",
+  "size_class": "icon_small",
+  "px": [
+   128,
+   128
+  ],
+  "world_height_m": 0.02,
+  "priority": 2
+ },
+ {
+  "name": "icon_clock_cobalt",
+  "file": "ui2d/icons/icon_clock_cobalt.png",
+  "svg": "ui2d/icons/icon_clock_cobalt.svg",
+  "text": "",
+  "shape": "circle",
+  "treatment": "on_color",
+  "background": "#3469C4",
+  "size_class": "icon_small",
+  "px": [
+   128,
+   128
+  ],
+  "world_height_m": 0.02,
+  "priority": 2
+ },
+ {
+  "name": "icon_clock_paper",
+  "file": "ui2d/icons/icon_clock_paper.png",
+  "svg": "ui2d/icons/icon_clock_paper.svg",
+  "text": "",
+  "shape": "circle",
+  "treatment": "ink_on_paper",
+  "background": "#FFFDF8",
+  "size_class": "icon_small",
+  "px": [
+   128,
+   128
+  ],
+  "world_height_m": 0.02,
+  "priority": 2
+ },
+ {
+  "name": "icon_robot_cobalt",
+  "file": "ui2d/icons/icon_robot_cobalt.png",
+  "svg": "ui2d/icons/icon_robot_cobalt.svg",
+  "text": "",
+  "shape": "circle",
+  "treatment": "on_color",
+  "background": "#3469C4",
+  "size_class": "icon_small",
+  "px": [
+   128,
+   128
+  ],
+  "world_height_m": 0.02,
+  "priority": 2
+ },
+ {
+  "name": "icon_robot_paper",
+  "file": "ui2d/icons/icon_robot_paper.png",
+  "svg": "ui2d/icons/icon_robot_paper.svg",
+  "text": "",
+  "shape": "circle",
+  "treatment": "ink_on_paper",
+  "background": "#FFFDF8",
+  "size_class": "icon_small",
+  "px": [
+   128,
+   128
+  ],
+  "world_height_m": 0.02,
+  "priority": 2
+ },
+ {
+  "name": "icon_you_cobalt",
+  "file": "ui2d/icons/icon_you_cobalt.png",
+  "svg": "ui2d/icons/icon_you_cobalt.svg",
+  "text": "",
+  "shape": "circle",
+  "treatment": "on_color",
+  "background": "#3469C4",
+  "size_class": "icon_small",
+  "px": [
+   128,
+   128
+  ],
+  "world_height_m": 0.02,
+  "priority": 2
+ },
+ {
+  "name": "icon_you_paper",
+  "file": "ui2d/icons/icon_you_paper.png",
+  "svg": "ui2d/icons/icon_you_paper.svg",
+  "text": "",
+  "shape": "circle",
+  "treatment": "ink_on_paper",
+  "background": "#FFFDF8",
+  "size_class": "icon_small",
+  "px": [
+   128,
+   128
+  ],
+  "world_height_m": 0.02,
+  "priority": 2
+ },
+ {
+  "name": "icon_trophy_cobalt",
+  "file": "ui2d/icons/icon_trophy_cobalt.png",
+  "svg": "ui2d/icons/icon_trophy_cobalt.svg",
+  "text": "",
+  "shape": "circle",
+  "treatment": "on_color",
+  "background": "#3469C4",
+  "size_class": "icon_small",
+  "px": [
+   128,
+   128
+  ],
+  "world_height_m": 0.02,
+  "priority": 2
+ },
+ {
+  "name": "icon_trophy_paper",
+  "file": "ui2d/icons/icon_trophy_paper.png",
+  "svg": "ui2d/icons/icon_trophy_paper.svg",
+  "text": "",
+  "shape": "circle",
+  "treatment": "ink_on_paper",
+  "background": "#FFFDF8",
+  "size_class": "icon_small",
+  "px": [
+   128,
+   128
+  ],
+  "world_height_m": 0.02,
+  "priority": 2
+ },
+ {
+  "name": "icon_lock_cobalt",
+  "file": "ui2d/icons/icon_lock_cobalt.png",
+  "svg": "ui2d/icons/icon_lock_cobalt.svg",
+  "text": "",
+  "shape": "circle",
+  "treatment": "on_color",
+  "background": "#3469C4",
+  "size_class": "icon_small",
+  "px": [
+   128,
+   128
+  ],
+  "world_height_m": 0.02,
+  "priority": 2
+ },
+ {
+  "name": "icon_lock_paper",
+  "file": "ui2d/icons/icon_lock_paper.png",
+  "svg": "ui2d/icons/icon_lock_paper.svg",
+  "text": "",
+  "shape": "circle",
+  "treatment": "ink_on_paper",
+  "background": "#FFFDF8",
+  "size_class": "icon_small",
+  "px": [
+   128,
+   128
+  ],
+  "world_height_m": 0.02,
+  "priority": 2
+ },
+ {
+  "name": "icon_info_cobalt",
+  "file": "ui2d/icons/icon_info_cobalt.png",
+  "svg": "ui2d/icons/icon_info_cobalt.svg",
+  "text": "",
+  "shape": "circle",
+  "treatment": "on_color",
+  "background": "#3469C4",
+  "size_class": "icon_small",
+  "px": [
+   128,
+   128
+  ],
+  "world_height_m": 0.02,
+  "priority": 2
+ },
+ {
+  "name": "icon_info_paper",
+  "file": "ui2d/icons/icon_info_paper.png",
+  "svg": "ui2d/icons/icon_info_paper.svg",
+  "text": "",
+  "shape": "circle",
+  "treatment": "ink_on_paper",
+  "background": "#FFFDF8",
+  "size_class": "icon_small",
+  "px": [
+   128,
+   128
+  ],
+  "world_height_m": 0.02,
+  "priority": 2
+ },
+ {
+  "name": "icon_hand_poke_cobalt",
+  "file": "ui2d/icons/icon_hand_poke_cobalt.png",
+  "svg": "ui2d/icons/icon_hand_poke_cobalt.svg",
+  "text": "",
+  "shape": "circle",
+  "treatment": "on_color",
+  "background": "#3469C4",
+  "size_class": "icon_small",
+  "px": [
+   128,
+   128
+  ],
+  "world_height_m": 0.02,
+  "priority": 2
+ },
+ {
+  "name": "icon_hand_poke_paper",
+  "file": "ui2d/icons/icon_hand_poke_paper.png",
+  "svg": "ui2d/icons/icon_hand_poke_paper.svg",
+  "text": "",
+  "shape": "circle",
+  "treatment": "ink_on_paper",
+  "background": "#FFFDF8",
+  "size_class": "icon_small",
+  "px": [
+   128,
+   128
+  ],
+  "world_height_m": 0.02,
+  "priority": 2
+ },
+ {
+  "name": "icon_hand_pinch_cobalt",
+  "file": "ui2d/icons/icon_hand_pinch_cobalt.png",
+  "svg": "ui2d/icons/icon_hand_pinch_cobalt.svg",
+  "text": "",
+  "shape": "circle",
+  "treatment": "on_color",
+  "background": "#3469C4",
+  "size_class": "icon_small",
+  "px": [
+   128,
+   128
+  ],
+  "world_height_m": 0.02,
+  "priority": 2
+ },
+ {
+  "name": "icon_hand_pinch_paper",
+  "file": "ui2d/icons/icon_hand_pinch_paper.png",
+  "svg": "ui2d/icons/icon_hand_pinch_paper.svg",
+  "text": "",
+  "shape": "circle",
+  "treatment": "ink_on_paper",
+  "background": "#FFFDF8",
+  "size_class": "icon_small",
+  "px": [
+   128,
+   128
+  ],
+  "world_height_m": 0.02,
+  "priority": 2
+ },
+ {
+  "name": "icon_robot_race",
+  "file": "ui2d/icons_large/icon_robot_race.png",
+  "svg": "ui2d/icons_large/icon_robot_race.svg",
+  "text": "",
+  "shape": "circle",
+  "treatment": "on_color",
+  "background": "#3FB6A0",
+  "size_class": "icon_large",
+  "px": [
+   512,
+   512
+  ],
+  "world_height_m": 0.06,
+  "priority": 2
+ },
+ {
+  "name": "icon_practice",
+  "file": "ui2d/icons_large/icon_practice.png",
+  "svg": "ui2d/icons_large/icon_practice.svg",
+  "text": "",
+  "shape": "circle",
+  "treatment": "on_color",
+  "background": "#3469C4",
+  "size_class": "icon_large",
+  "px": [
+   512,
+   512
+  ],
+  "world_height_m": 0.06,
+  "priority": 2
+ },
+ {
+  "name": "game_orb_forge",
+  "file": "ui2d/icons_large/game_orb_forge.png",
+  "svg": "ui2d/icons_large/game_orb_forge.svg",
+  "text": "",
+  "shape": "circle",
+  "treatment": "on_color",
+  "background": "#3469C4",
+  "size_class": "icon_large",
+  "px": [
+   512,
+   512
+  ],
+  "world_height_m": 0.06,
+  "priority": 2
+ },
+ {
+  "name": "game_balloon_burst",
+  "file": "ui2d/icons_large/game_balloon_burst.png",
+  "svg": "ui2d/icons_large/game_balloon_burst.svg",
+  "text": "",
+  "shape": "circle",
+  "treatment": "on_color",
+  "background": "#F2716B",
+  "size_class": "icon_large",
+  "px": [
+   512,
+   512
+  ],
+  "world_height_m": 0.06,
+  "priority": 2
+ },
+ {
+  "name": "game_factory_sort",
+  "file": "ui2d/icons_large/game_factory_sort.png",
+  "svg": "ui2d/icons_large/game_factory_sort.svg",
+  "text": "",
+  "shape": "circle",
+  "treatment": "on_color",
+  "background": "#F9C74F",
+  "size_class": "icon_large",
+  "px": [
+   512,
+   512
+  ],
+  "world_height_m": 0.06,
+  "priority": 2
+ },
+ {
+  "name": "game_bridge_builder",
+  "file": "ui2d/icons_large/game_bridge_builder.png",
+  "svg": "ui2d/icons_large/game_bridge_builder.svg",
+  "text": "",
+  "shape": "circle",
+  "treatment": "on_color",
+  "background": "#B198EA",
+  "size_class": "icon_large",
+  "px": [
+   512,
+   512
+  ],
+  "world_height_m": 0.06,
+  "priority": 2
+ },
+ {
+  "name": "game_balance_gate",
+  "file": "ui2d/icons_large/game_balance_gate.png",
+  "svg": "ui2d/icons_large/game_balance_gate.svg",
+  "text": "",
+  "shape": "circle",
+  "treatment": "on_color",
+  "background": "#F2716B",
+  "size_class": "icon_large",
+  "px": [
+   512,
+   512
+  ],
+  "world_height_m": 0.06,
+  "priority": 2
+ },
+ {
+  "name": "game_measure_hunt",
+  "file": "ui2d/icons_large/game_measure_hunt.png",
+  "svg": "ui2d/icons_large/game_measure_hunt.svg",
+  "text": "",
+  "shape": "circle",
+  "treatment": "on_color",
+  "background": "#B198EA",
+  "size_class": "icon_large",
+  "px": [
+   512,
+   512
+  ],
+  "world_height_m": 0.06,
+  "priority": 2
+ },
+ {
+  "name": "mission_place_value",
+  "file": "ui2d/icons_large/mission_place_value.png",
+  "svg": "ui2d/icons_large/mission_place_value.svg",
+  "text": "",
+  "shape": "circle",
+  "treatment": "on_color",
+  "background": "#F2716B",
+  "size_class": "icon_large",
+  "px": [
+   512,
+   512
+  ],
+  "world_height_m": 0.06,
+  "priority": 2
+ },
+ {
+  "name": "mission_multiply_divide",
+  "file": "ui2d/icons_large/mission_multiply_divide.png",
+  "svg": "ui2d/icons_large/mission_multiply_divide.svg",
+  "text": "",
+  "shape": "circle",
+  "treatment": "on_color",
+  "background": "#3469C4",
+  "size_class": "icon_large",
+  "px": [
+   512,
+   512
+  ],
+  "world_height_m": 0.06,
+  "priority": 2
+ },
+ {
+  "name": "mission_fractions",
+  "file": "ui2d/icons_large/mission_fractions.png",
+  "svg": "ui2d/icons_large/mission_fractions.svg",
+  "text": "",
+  "shape": "circle",
+  "treatment": "on_color",
+  "background": "#3FB6A0",
+  "size_class": "icon_large",
+  "px": [
+   512,
+   512
+  ],
+  "world_height_m": 0.06,
+  "priority": 2
+ },
+ {
+  "name": "mission_decimals",
+  "file": "ui2d/icons_large/mission_decimals.png",
+  "svg": "ui2d/icons_large/mission_decimals.svg",
+  "text": "",
+  "shape": "circle",
+  "treatment": "on_color",
+  "background": "#F9C74F",
+  "size_class": "icon_large",
+  "px": [
+   512,
+   512
+  ],
+  "world_height_m": 0.06,
+  "priority": 2
+ },
+ {
+  "name": "mission_measurement",
+  "file": "ui2d/icons_large/mission_measurement.png",
+  "svg": "ui2d/icons_large/mission_measurement.svg",
+  "text": "",
+  "shape": "circle",
+  "treatment": "on_color",
+  "background": "#B198EA",
+  "size_class": "icon_large",
+  "px": [
+   512,
+   512
+  ],
+  "world_height_m": 0.06,
+  "priority": 2
+ }
+]
