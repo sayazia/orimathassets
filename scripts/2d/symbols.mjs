@@ -100,7 +100,28 @@ const LETTERS = {
   N: { w: 4, strokes: [[[0, 6], [0, 0], [4, 6], [4, 0]]] },
   G: { w: 4, strokes: [[[4, 1.2], [2.8, 0], [1.2, 0], [0, 1.2], [0, 4.8], [1.2, 6], [2.8, 6], [4, 4.8], [4, 3.3], [2.2, 3.3]]] },
   S: { w: 4, strokes: [[[4, 1.1], [2.9, 0], [1.1, 0], [0, 1.1], [0, 1.9], [1.1, 3], [2.9, 3], [4, 4.1], [4, 4.9], [2.9, 6], [1.1, 6], [0, 4.9]]] },
+  T: { w: 4, strokes: [[[0, 0], [4, 0]], [[2, 0], [2, 6]]] },
+  A: { w: 4.4, strokes: [[[0, 6], [2.2, 0], [4.4, 6]], [[1, 4], [3.4, 4]]] },
+  R: { w: 4, strokes: [[[0, 6], [0, 0], [2.8, 0], [4, 1.2], [4, 1.9], [2.8, 3.1], [0, 3.1]], [[2.2, 3.1], [4, 6]]] },
+  H: { w: 4, strokes: [[[0, 0], [0, 6]], [[4, 0], [4, 6]], [[0, 3], [4, 3]]] },
+  E: { w: 3.6, strokes: [[[3.6, 0], [0, 0], [0, 6], [3.6, 6]], [[0, 3], [3, 3]]] },
+  Y: { w: 4.4, strokes: [[[0, 0], [2.2, 3.2], [4.4, 0]], [[2.2, 3.2], [2.2, 6]]] },
+  U: { w: 4, strokes: [[[0, 0], [0, 4.8], [1.2, 6], [2.8, 6], [4, 4.8], [4, 0]]] },
+  W: { w: 6, strokes: [[[0, 0], [1.5, 6], [3, 1.6], [4.5, 6], [6, 0]]] },
 };
+// One flat colour, no fold tones: every ribbon quad of the word, for lettering printed on a label.
+export function wordFlat(text, t = 1.3, gap = 1.7) {
+  const quads = [];
+  let x = t / 2;
+  for (const ch of text) {
+    const L = LETTERS[ch];
+    const [x0, x1, y0, y1] = [x - t / 2, x + L.w + t / 2, 0, 6 + t];
+    const box = (pts) => [[[x1, y0], [x0, y0]], [[x0, y0], [x0, y1]], [[x0, y1], [x1, y1]], [[x1, y1], [x1, y0]]].reduce((acc, [a, b]) => clipHalf(acc, a, b), pts);
+    for (const s of L.strokes) for (const quad of ribbon(s.map(([u, v]) => [x + u, v + t / 2]), t, L.closed)) quads.push(box(quad));
+    x += L.w + gap;
+  }
+  return { quads, width: x - gap + t / 2, height: 6 + t };
+}
 // Offsets a polyline to a ribbon of width t with mitred joints; returns one quad per segment.
 function ribbon(pts, t, closed) {
   const n = pts.length, h = t / 2, segs = closed ? n : n - 1;

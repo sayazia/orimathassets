@@ -10,7 +10,7 @@ import { C, S, poly, ngon, svg, g, outline, edge, twoTone, crane, book } from '.
 import { HEADS } from './2d/heads.mjs';
 import { PICTURES, gameBadge, GAME_COLOURS, missionIcon, word } from './2d/symbols.mjs';
 import { MISSIONS } from './lib/palette.mjs';
-import { MENU_COLOURS, MENU_LAYOUTS, MENU_W, MENU_H, menuBackground } from './2d/menu.mjs';
+import { MENU_COLOURS, MENU_LAYOUTS, MENU_W, MENU_H, menuBackground, menuLabel } from './2d/menu.mjs';
 import { TABLE_SCENES } from './game/index.mjs';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
@@ -82,6 +82,12 @@ for (const [layout, slots] of Object.entries(MENU_LAYOUTS)) for (const key of ME
 }
 if (!only || 'backgrounds'.startsWith(only)) {
   write('backgrounds/menu_layout.json', JSON.stringify({ size: [MENU_W, MENU_H], note: 'Slot rectangles [x, y, w, h] in pixels from the top left, same for every colour. Each is the label face exactly; its left edge stays on the sheet and its right side peels up.', layouts: MENU_LAYOUTS }, null, 2) + '\n');
+}
+
+// Menu labels: transparent PNGs of a label with its peel shadow and lettering, to lay on a background.
+for (const [id, shape, lines] of [['start_here', 'square', ['START', 'HERE']], ['you_win', 'circle', ['YOU', 'WIN']]]) {
+  const { body, W, H } = menuLabel('teal', shape, lines);
+  emit(`labels/label_${id}_teal`, W, H, body, [[W * 2, H * 2]], true);
 }
 
 // ---- Rasterise, then render the brand images from the models.

@@ -2,6 +2,7 @@
 // its right side peels up, so the shadow grows from nothing at the left to widest at the bottom right.
 // No text is drawn; the game writes into the slots listed in menu_layout.json.
 import { colourOf } from '../lib/palette.mjs';
+import { wordFlat } from './symbols.mjs';
 
 const mix = (hex, to, t) => {
   const a = parseInt(hex.slice(1), 16), b = parseInt(to.slice(1), 16);
@@ -64,4 +65,53 @@ export function menuBackground(key, slots) {
   body += `<rect width="${W}" height="${H}" fill="#000" filter="url(#grain)" opacity="0.5"/>`;
   body += `<rect width="${W}" height="${H}" filter="url(#fibres)" opacity="0.1"/>`;
   return body;
+}
+
+// Stand-alone labels (transparent PNG) to lay on a menu background of the same colour: the paper face,
+// its peel shadow and white paper lettering. shape 'square' or 'circle'; lines of capitals.
+export function menuLabel(key, shape, lines, size = 360, pad = 48) {
+  const base = colourOf(key), shadow = mix(base, '#000000', 0.42);
+  const P = (pts) => pts.map(([px, py]) => `${px.toFixed(1)},${py.toFixed(1)}`).join(' ');
+  const x = pad, y = pad, w = size, h = size, cx = x + w / 2, cy = y + h / 2, r = size / 2;
+  const lift = Math.min(34, 10 + w * 0.05);
+  let out = `<defs>
+<filter id="soft" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="6"/></filter>
+<filter id="tight" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="3"/></filter>
+<filter id="hair" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation="1.2"/></filter>
+<filter id="drop" x="-10%" y="-10%" width="120%" height="130%"><feDropShadow dx="1.5" dy="3" stdDeviation="2" flood-color="${shadow}" flood-opacity="0.35"/></filter>
+<filter id="grain" x="0" y="0" width="100%" height="100%">
+  <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="7"/>
+  <feColorMatrix type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0.33 0.33 0.33 0 -0.42"/>
+  <feComposite in2="SourceGraphic" operator="in"/>
+</filter>
+<linearGradient id="face" x1="${x}" y1="0" x2="${x + w}" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="${base}"/><stop offset="1" stop-color="${mix(base, '#FFFFFF', 0.06)}"/></linearGradient>
+<clipPath id="clip">${shape === 'circle' ? `<circle cx="${cx}" cy="${cy}" r="${r}"/>` : `<rect x="${x}" y="${y}" width="${w}" height="${h}"/>`}</clipPath>
+</defs>`;
+  if (shape === 'circle') {
+    // crescent: the disc's shadow slid towards the bottom right, so the left rim stays flat on the sheet
+    out += `<circle cx="${cx + lift * 0.35}" cy="${cy + lift * 0.45}" r="${r}" fill="${shadow}" opacity="0.42" filter="url(#soft)"/>`;
+    out += `<circle cx="${cx + lift * 0.18}" cy="${cy + lift * 0.25}" r="${r - 2}" fill="${shadow}" opacity="0.3" filter="url(#tight)"/>`;
+    out += `<circle cx="${cx}" cy="${cy - 1.5}" r="${r}" fill="${shadow}" opacity="0.12" filter="url(#hair)"/>`;
+    out += `<circle cx="${cx}" cy="${cy}" r="${r}" fill="url(#face)"/>`;
+  } else {
+    out += `<polygon points="${P([[x + w * 0.04, y + h - 3], [x + w - 3, y + h * 0.12], [x + w + lift * 0.45, y + h * 0.55], [x + w + lift * 0.6, y + h + lift], [x + w * 0.5, y + h + lift * 0.45]])}" fill="${shadow}" opacity="0.42" filter="url(#soft)"/>`;
+    out += `<polygon points="${P([[x + w * 0.35, y + h - 2], [x + w - 2, y + h * 0.6], [x + w + lift * 0.3, y + h + lift * 0.55], [x + w * 0.75, y + h + lift * 0.3]])}" fill="${shadow}" opacity="0.3" filter="url(#tight)"/>`;
+    out += `<rect x="${x + 3}" y="${y - 1.5}" width="${w - 6}" height="3" fill="${shadow}" opacity="0.12" filter="url(#hair)"/>`;
+    out += `<rect x="${x}" y="${y}" width="${w}" height="${h}" fill="url(#face)"/>`;
+  }
+  out += `<rect x="${x}" y="${y}" width="${w}" height="${h}" fill="#000" filter="url(#grain)" opacity="0.5" clip-path="url(#clip)"/>`;
+  // lettering: centred lines, white paper with a small tinted shadow
+  const words = lines.map((l) => wordFlat(l));
+  const k = (size * (shape === 'circle' ? 0.5 : 0.66)) / Math.max(...words.map((wd) => wd.width));
+  const lineGap = 3.2, total = words.length * words[0].height + (words.length - 1) * lineGap;
+  let ty = cy - (total * k) / 2;
+  let letters = '';
+  for (const wd of words) {
+    const tx = cx - (wd.width * k) / 2;
+    letters += `<g transform="translate(${tx.toFixed(1)} ${ty.toFixed(1)}) scale(${k.toFixed(3)})">${wd.quads.map((q) => `<polygon points="${P(q)}"/>`).join('')}</g>`;
+    ty += (wd.height + lineGap) * k;
+  }
+  const white = colourOf("paper"); // a hairline stroke in the fill colour hides the seams between ribbon pieces
+  out += `<g fill="${white}" stroke="${white}" stroke-width="0.08" stroke-linejoin="round" filter="url(#drop)">${letters}</g>`;
+  return { body: out, W: size + pad * 2, H: size + pad * 2 };
 }
