@@ -1,6 +1,8 @@
 # Revises a screenshot of the Numeria Arena main menu (1600x900):
 #  - the curved connector lines between the PLAY / YOU blocks and the book become straight lines
 #    with right-angle bends (no curves), ending on the same anchor squares at the book;
+#  - the lines run on to the edge of the book's pages and end there on an ink square;
+#  - the purple disc inside the sun turns a soft brick red (not glaring), keeping its two tones;
 #  - the blocks lose their all-round drop shadow and take the global sticker peel effect
 #    (style D, scripts/2d/menu.mjs): one side stays stuck down, the outer side lifts with a soft
 #    tinted shadow, the left side for the left group and the right side for the right group.
@@ -20,12 +22,23 @@ H, W = img.shape[:2]
 TOPS = [360, 450, 540, 630]
 LEFT = [(40, y, 389, y + 77) for y in TOPS]
 RIGHT = [(1210, y, 1559, y + 77) for y in TOPS]
-ANCHOR_L = [(452, 609), (445, 654), (438, 701), (433, 748)]
-ANCHOR_R = [(1150, 609), (1158, 654), (1164, 701), (1170, 748)]
+# heights where the lines meet the book (the old anchor squares); x is found on the page edge below
+ANCHOR_Y = [609, 654, 701, 748]
 TOOLTIP = (213, 528, 392, 550)        # "Enter your student code first", pasted back as it is
 OVERFLOW = (390, 645, 398, 668)       # the D of SMARTBOARD sticks out of its block
 
 orig = img.copy()
+
+
+# sun disc: purple -> soft brick red, same brightness steps so the two halves still read
+hsv = cv2.cvtColor(img, cv2.COLOR_RGB2HSV).astype(float)
+reg = np.zeros((H, W), bool); reg[370:560, 710:910] = True
+purple = reg & (hsv[..., 0] > 118) & (hsv[..., 0] < 165) & (hsv[..., 1] > 12)
+hsv[..., 0][purple] = 2                                            # red, a touch towards orange
+hsv[..., 1][purple] = np.minimum(hsv[..., 1][purple] * 2.3, 140)  # about 0.5 saturation: muted, not glaring
+hsv[..., 2][purple] *= 0.93
+img = cv2.cvtColor(hsv.astype(np.uint8), cv2.COLOR_HSV2RGB)
+orig = np.where(purple[..., None], img, orig)
 blur = cv2.medianBlur(img, 21).astype(int)
 diff = np.abs(img.astype(int) - blur).sum(-1)
 
@@ -47,6 +60,16 @@ mask[book > 0] = 0
 clean = cv2.inpaint(img, mask, 15, cv2.INPAINT_TELEA)
 clean = cv2.GaussianBlur(clean, (0, 0), 1.2) * (mask[..., None] > 0) + clean * (mask[..., None] == 0)
 base = Image.fromarray(clean.astype(np.uint8))
+
+def page_edge(y, x_from, step):
+    # first page pixel (light cream) along row y of the cleaned image, walking towards the book
+    row = np.array(base)[y].astype(int).sum(-1)
+    x = x_from
+    while row[x] <= 690: x += step
+    return x
+ANCHOR_L = [(page_edge(y, 400, 1) - 1, y) for y in ANCHOR_Y]
+ANCHOR_R = [(page_edge(y, 1205, -1) + 1, y) for y in ANCHOR_Y]
+print('anchors', ANCHOR_L, ANCHOR_R)
 
 def shade_of(x0, y0, x1, y1):
     # the background under a block, darkened 42%: the shadow is tinted, never black (menu.mjs)
@@ -88,7 +111,7 @@ def connect(blocks, anchors, side):
     for i, ((x0, y0, x1, y1), (ax, ay)) in enumerate(zip(blocks, anchors)):
         ym = (y0 + y1) // 2
         sx = x1 + 1 if side == 'left' else x0 - 1
-        lane = (ax - 10 - 6 * i) if side == 'left' else (ax + 10 + 6 * i)
+        lane = (440 - 12 * i) if side == 'left' else (1160 + 12 * i)
         pts = [(sx, ym), (lane, ym), (lane, ay), (ax, ay)]
         d.line(pts, fill=LINE, width=3, joint=None)
         for (px, py) in pts[1:3]:
