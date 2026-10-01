@@ -4,6 +4,10 @@
 // shade so neighbouring plates differ. No textures; KHR_mesh_quantization.
 // Run: npm i --no-save @gltf-transform/core @gltf-transform/functions @gltf-transform/extensions meshoptimizer
 //      node scripts/tools/scan-to-plates.mjs in.glb out.glb [targetTris=5000] [angleDeg=22] [minAreaFrac=0.004] [palette=brown|brown_soft|orange_soft|grey]
+// Env PLATE_IDS=1 writes one material per plate named plate_<id> (to find a plate in a render);
+// env PLATE_COLORS=id:material,... then repaints those plates with a palette entry, e.g. 12:paper_orange.
+// models/custom: kelinci = brown_soft; kucing = orange_soft; ayam = orange_soft with
+//   PLATE_COLORS=25:paper_orange,29:paper_orange,32:paper_orange_pale,28:paper_orange_light
 import { NodeIO, Document } from '@gltf-transform/core';
 import { ALL_EXTENSIONS } from '@gltf-transform/extensions';
 import { MeshoptSimplifier } from 'meshoptimizer';
@@ -108,6 +112,14 @@ for (const i of [...live].sort((a,b)=>regions[b].area-regions[a].area)) {
   const bad = new Set([...rAdj.get(i).keys()].map(j=>col.get(j)).filter(x=>x!==undefined));
   let best=-1; for (let c=0;c<palette.length;c++) if(!bad.has(c) && (best<0 || use[c]<use[best])) best=c;
   if (best<0) best = i % palette.length; col.set(i,best); use[best]+=regions[i].area; }
+for (const pair of (process.env.PLATE_COLORS || '').split(',').filter(Boolean)) {
+  const [id, name] = pair.split(':'); const c = palette.findIndex(p => p[0] === name);
+  if (!col.has(+id) || c < 0) throw new Error(`bad PLATE_COLORS entry ${pair}`); col.set(+id, c);
+}
+if (process.env.PLATE_IDS) {
+  palette.length = 0;
+  for (const i of live) { col.set(i, palette.length); palette.push([`plate_${i}`, [((i+1)&255)/255, ((i+1)>>8)/255, 0]]); }
+}
 // build output: one primitive per colour, vertices split per region, flat region normal
 const out = new Document(); const buf = out.createBuffer(); const mesh = out.createMesh(NAME);
 for (let c = 0; c < palette.length; c++) {
