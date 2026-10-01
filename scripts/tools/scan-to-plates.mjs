@@ -3,10 +3,10 @@
 // face normal, merges thin strips into their neighbours and paints each plate one brown
 // shade so neighbouring plates differ. No textures; KHR_mesh_quantization.
 // Run: npm i --no-save @gltf-transform/core @gltf-transform/functions @gltf-transform/extensions meshoptimizer
-//      node scripts/tools/scan-to-plates.mjs in.glb out.glb [targetTris=5000] [angleDeg=22] [minAreaFrac=0.004] [palette=brown|brown_soft|orange_soft|grey]
+//      node scripts/tools/scan-to-plates.mjs in.glb out.glb [targetTris=5000] [angleDeg=22] [minAreaFrac=0.004] [palette=brown|brown_soft|orange_soft|sky_soft|grey]
 // Env PLATE_IDS=1 writes one material per plate named plate_<id> (to find a plate in a render);
 // env PLATE_COLORS=id:material,... then repaints those plates with a palette entry, e.g. 12:paper_orange.
-// models/custom: kelinci = brown_soft; kucing = orange_soft; ayam = orange_soft with
+// models/custom: kelinci = brown_soft; kucing = orange_soft; gajah = sky_soft; ayam = orange_soft with
 //   PLATE_COLORS=25:paper_orange,29:paper_orange,32:paper_orange_pale,28:paper_orange_light
 import { NodeIO, Document } from '@gltf-transform/core';
 import { ALL_EXTENSIONS } from '@gltf-transform/extensions';
@@ -94,6 +94,13 @@ const palettes = {
     ['paper_orange_pale',  [0.973,0.690,0.408]],
     ['paper_orange_warm',  [0.890,0.490,0.196]],
     ['paper_orange_deep',  [0.851,0.443,0.165]],
+  ],
+  sky_soft: [
+    ['paper_sky',       [0.478,0.749,0.918]],
+    ['paper_sky_light', [0.561,0.800,0.945]],
+    ['paper_sky_pale',  [0.659,0.851,0.965]],
+    ['paper_sky_warm',  [0.412,0.698,0.890]],
+    ['paper_sky_deep',  [0.357,0.651,0.859]],
   ],
   grey: [
     ['paper_grey',        [0.545,0.557,0.573]],
