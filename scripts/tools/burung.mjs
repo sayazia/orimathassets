@@ -29,11 +29,12 @@ const tri = (c, a, b, d) => { if (!tris.has(c)) tris.set(c, []); tris.get(c).pus
 const mirror = (p) => [p[0], p[1], -p[2]];
 
 // --- head and body: silhouette points sit on z = 0, inner points bulge to ±z ---
-const Bt = [32, 188, 0], B2 = [78, 105, 0], B3 = [100, 176, 0], Bm = [80, 162, 7]; // beak
+// Bm sits just behind the head's front edge B2-B3 so the beak overlaps the head and leaves no gap.
+const Bt = [32, 188, 0], B2 = [78, 105, 0], B3 = [100, 176, 0], Bm = [97, 160, 7]; // beak
 const H2 = [165, 82, 0], H3 = [222, 112, 0], H4 = [127, 268, 0], Hc = [158, 168, 22]; // head
 const R = [322, 210, 0], T = [445, 382, 0], Be = [340, 345, 0], Bc = [262, 262, 36]; // body
 const side = [
-  ['paper_teal_beak', Bt, B2, Bm], ['paper_teal_dark', Bt, Bm, B3],
+  ['paper_teal_beak', Bt, B2, Bm], ['paper_teal_dark', Bt, Bm, B3], ['paper_teal_mid', B2, B3, Bm],
   ['paper_teal_light', B2, H2, Hc], ['paper_teal_light', H2, H3, Hc],
   ['paper_teal_mid', B2, Hc, B3], ['paper_teal_mid', B3, Hc, H4],
   ['paper_teal', H3, R, Bc], ['paper_teal_dark', R, T, Bc],
