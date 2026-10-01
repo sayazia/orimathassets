@@ -2,17 +2,21 @@
 // welds and simplifies the mesh (crease grooves disappear), splits it into flat plates by
 // face normal, merges thin strips into their neighbours and paints each plate one brown
 // shade so neighbouring plates differ. No textures; KHR_mesh_quantization.
-// Run: npm i --no-save @gltf-transform/core @gltf-transform/functions @gltf-transform/extensions meshoptimizer
+// Run: npm i --no-save @gltf-transform/core @gltf-transform/functions @gltf-transform/extensions meshoptimizer jpeg-js
 //      node scripts/tools/scan-to-plates.mjs in.glb out.glb [targetTris=5000] [angleDeg=22] [minAreaFrac=0.004] [palette=brown|brown_soft|orange_soft|sky_soft|grey]
 // Env PLATE_IDS=1 writes one material per plate named plate_<id> (to find a plate in a render);
 // env PLATE_COLORS=id:material,... then repaints those plates with a palette entry, e.g. 12:paper_orange.
-// models/custom (kelinci, kucing, ayam built with PLATE_ADJ=edge): kelinci = brown_soft; kucing = orange_soft; gajah = sky_soft; ayam = orange_soft with
+// Env PLATE_AO=<strength 0..1> bakes a soft fold shadow into a small JPEG used as baseColorTexture
+//   (off by default; needs jpeg-js). PLATE_AO_SIZE sets the texture size (512).
+// models/custom (kelinci, kucing, ayam built with PLATE_ADJ=edge): kelinci = brown_soft; kucing = orange_soft; ayam = orange_soft with
 //   PLATE_COLORS=25:paper_orange,29:paper_orange,32:paper_orange_pale,28:paper_orange_light
+// gajah = 3500 triangles, sky_soft, PLATE_AO=0.45 (fold shadow)
 import { NodeIO, Document } from '@gltf-transform/core';
 import { ALL_EXTENSIONS } from '@gltf-transform/extensions';
 import { MeshoptSimplifier } from 'meshoptimizer';
 import { writeFileSync } from 'node:fs';
 import { quantize, dedup, prune } from '@gltf-transform/functions';
+import { bakeFoldShadow } from './fold-shadow.mjs';
 const [,, input, output, TARGET = '6000', ANG = '22', MINAREA = '0.004', PALETTE = 'brown'] = process.argv;
 const NAME = output.split('/').pop().replace(/\.glb$/, '');
 await MeshoptSimplifier.ready;
@@ -150,27 +154,40 @@ if (process.env.PLATE_IDS) {
   palette.length = 0;
   for (const i of live) { col.set(i, palette.length); palette.push([`plate_${i}`, [((i+1)&255)/255, ((i+1)>>8)/255, 0]]); }
 }
+// Soft fold shadow baked into a small shared texture (see fold-shadow.mjs).
+const AO = +(process.env.PLATE_AO || 0);
+let shadow = null;
+if (AO > 0) {
+  const plates = live.map(i => { const r = regions[i]; const l = Math.hypot(...r.n);
+    const faces = r.faces.filter(f => A[f] > 1e-10).map(f => [I1[3*f], I1[3*f+1], I1[3*f+2]]);
+    return { id: i, faces, normal: l > 1e-9 ? r.n : [N[3*r.faces[0]], N[3*r.faces[0]+1], N[3*r.faces[0]+2]] }; });
+  shadow = bakeFoldShadow(P, plates, { size: +(process.env.PLATE_AO_SIZE || 512), strength: AO });
+}
 // build output: one primitive per colour, vertices split per region, flat region normal
 const out = new Document(); const buf = out.createBuffer(); const mesh = out.createMesh(NAME);
+const shadowTex = shadow && out.createTexture('fold_shadow').setImage(shadow.image).setMimeType('image/jpeg');
 for (let c = 0; c < palette.length; c++) {
-  const vp=[], vn=[], ix=[];
+  const vp=[], vn=[], ix=[], vt=[];
   for (const i of live) { if (col.get(i)!==c) continue; const r=regions[i];
     const l=Math.hypot(...r.n); const vm=new Map();
     const big=r.faces.reduce((a,f)=>A[f]>A[a]?f:a,r.faces[0]);
     const rn=l>1e-9?r.n.map(x=>x/l):[N[3*big],N[3*big+1],N[3*big+2]];
     for (const f of r.faces) if (A[f] > 1e-10) for (let k=0;k<3;k++){ const v=I1[3*f+k]; let w=vm.get(v);
       if (w===undefined){ w=vp.length/3; vm.set(v,w); vp.push(P[3*v],P[3*v+1],P[3*v+2]);
-        // blend face normal toward region normal: flat look but keeps slight fold shading
-        vn.push(...rn); }
+        vn.push(...rn); if (shadow) vt.push(...shadow.uv.get(`${i}/${v}`)); }
       ix.push(w);} }
   if (!ix.length) continue;
   const mat = out.createMaterial(palette[c][0]).setBaseColorFactor([...palette[c][1].map(x=>Math.pow(x,2.2)),1]).setMetallicFactor(0).setRoughnessFactor(0.95).setDoubleSided(true);
   const p = out.createPrimitive().setMaterial(mat)
     .setAttribute('POSITION', out.createAccessor().setType('VEC3').setArray(new Float32Array(vp)).setBuffer(buf))
-    .setAttribute('NORMAL', out.createAccessor().setType('VEC3').setArray(new Float32Array(vn)).setBuffer(buf))
-    .setIndices(out.createAccessor().setType('SCALAR').setArray(vp.length/3>65535?new Uint32Array(ix):new Uint16Array(ix)).setBuffer(buf));
+    .setAttribute('NORMAL', out.createAccessor().setType('VEC3').setArray(new Float32Array(vn)).setBuffer(buf));
+  if (shadow) {
+    p.setAttribute('TEXCOORD_0', out.createAccessor().setType('VEC2').setArray(new Float32Array(vt)).setBuffer(buf));
+    mat.setBaseColorTexture(shadowTex);
+  }
+  p.setIndices(out.createAccessor().setType('SCALAR').setArray(vp.length/3>65535?new Uint32Array(ix):new Uint16Array(ix)).setBuffer(buf));
   mesh.addPrimitive(p);
 }
 out.createScene().addChild(out.createNode(NAME).setMesh(mesh));
-await out.transform(dedup(), prune(), quantize({ quantizePosition: 14, quantizeNormal: 8 }));
+await out.transform(dedup(), prune(), quantize({ quantizePosition: 14, quantizeNormal: 8, pattern: /^(POSITION|NORMAL|TEXCOORD_0)$/, quantizeTexcoord: 12 }));
 await new NodeIO().registerExtensions(ALL_EXTENSIONS).write(output, out);
