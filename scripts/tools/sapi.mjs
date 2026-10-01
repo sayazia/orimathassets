@@ -1,8 +1,8 @@
-// Origami cow (sapi) after a teal low-poly illustration (about 610x610 px, three-quarter view, head
+// Origami cow (sapi) traced from a teal low-poly illustration (610x588 px, three-quarter view, head
 // right), built like anjing.mjs: the body, neck and head are plates of the near side (image pixels
 // with a depth z), mirrored to the far side and closed with seams along the outline; legs, hooves,
-// horns, ears and tail are faceted convex hulls on both sides. Each plate has its own colour
-// read off the illustration, stored as COLOR_0 on one material. Two eyes; no base plate.
+// horns, ears and tail are faceted convex hulls on both sides. Each plate has the colour
+// sampled from the illustration, stored as COLOR_0 on one material. Two eyes; no base plate.
 // Points are [x, y, z] in image pixels (y down, z sideways); the model is in metres, y up, facing +x.
 // Run: npm i --no-save @gltf-transform/core @gltf-transform/functions @gltf-transform/extensions
 //      node scripts/tools/sapi.mjs models/custom/sapi.glb
@@ -15,30 +15,61 @@ const output = process.argv[2] || 'models/custom/sapi.glb';
 const NAME = output.split('/').pop().replace(/\.glb$/, '');
 const PX = 0.0005; // metres per image pixel: about 0.29 m long, 0.25 m to the horn tips
 
-// Teal shades of the illustration, darkest to lightest.
-const C = {
-  deep: '#1d736d', dark: '#24857e', teal: '#2c958c', mid: '#38a597', soft: '#56b9a6',
-  mint: '#7fd0b6', pale: '#9fe0c8', hoof: '#2a8a80', horn: '#a9e6d0', ear_in: '#5fae9f',
-  black: '#17191c', white: '#fbfbf8',
-};
+// Fixed colours; every plate's colour is sampled from the illustration (PLATE_COLOURS below).
+const C = { black: '#17191c', white: '#fbfbf8' };
 
-// Near-side points of the body, neck and head: [x, y, z]
+// Near-side points of the body, neck and head: [x, y, z], traced from the illustration (610x588 px)
 const V = {
-  // hindquarter
-  R0: [52, 240, 22], R1: [150, 176, 28], R2: [100, 262, 56], R3: [58, 332, 36], R4: [176, 312, 54], R5: [112, 368, 44],
+  // hindquarter and thigh
+  R0: [52, 232, 20], R1: [157, 167, 26], R6: [125, 237, 48], R2: [67, 278, 36], R3: [88, 350, 38],
+  Ta: [178, 300, 52], Tb: [112, 330, 56],
   // back and barrel
-  B1: [238, 196, 30], B2: [332, 160, 30], M1: [252, 288, 72], M2: [182, 250, 62], M3: [322, 250, 70],
-  U0: [172, 372, 46], U1: [218, 402, 44], U2: [302, 412, 44],
-  // shoulder and chest
-  S1: [384, 232, 58], S2: [432, 332, 34], S3: [382, 420, 44],
-  // neck and head
-  N1: [414, 150, 26], N2: [452, 254, 38],
-  H1: [456, 140, 26], H2: [502, 128, 22], H3: [560, 165, 18], H4: [596, 210, 12], H5: [597, 232, 10],
-  H6: [562, 243, 13], H7: [502, 252, 24], H8: [470, 254, 30], Hc: [514, 196, 34], Hm: [566, 205, 22],
+  B1: [240, 192, 28], B2: [350, 152, 30], Mb: [320, 200, 50], M1: [270, 290, 66], M2: [190, 252, 58], M3: [332, 245, 66],
+  U0: [180, 357, 44], U1: [212, 392, 44], U2: [318, 372, 46],
+  // shoulder, chest and neck
+  S1: [395, 230, 56], S2: [425, 365, 32], S3: [372, 380, 44], S4: [450, 300, 34], N1: [420, 145, 28],
+  // head: poll, forehead, face, nose, jaw; E/F/G/K are the folds across the face and cheek
+  H1: [452, 128, 24], H2: [486, 100, 20], H3: [553, 140, 17], H4: [598, 203, 13], H5: [597, 230, 11],
+  NA: [572, 206, 17], NB: [578, 235, 14], H6: [558, 238, 15], H7: [527, 225, 20], H8: [468, 272, 30],
+  E: [500, 143, 30], F: [520, 158, 27], G: [487, 212, 33], K: [443, 195, 34],
 };
 // The picture gives no depth, so z is a guess; ZS sets how broad the cow is from the front.
 const ZS = 1.55;
 for (const p of Object.values(V)) p[2] *= ZS;
+
+const PLATES = [
+  // hindquarter and thigh
+  ['R0', 'R1', 'R6'], ['R0', 'R6', 'R2'], ['R2', 'R6', 'Tb'], ['R2', 'Tb', 'R3'], ['R1', 'M2', 'R6'], ['R6', 'M2', 'Ta'],
+  ['R6', 'Ta', 'Tb'], ['Tb', 'Ta', 'U0'], ['R3', 'Tb', 'U0'],
+  // back and barrel
+  ['R1', 'B1', 'M2'], ['B1', 'M1', 'M2'], ['B1', 'B2', 'Mb'], ['B1', 'Mb', 'M1'], ['Mb', 'M3', 'M1'],
+  ['B2', 'S1', 'Mb'], ['Mb', 'S1', 'M3'], ['M2', 'M1', 'U1'], ['M2', 'U1', 'U0'], ['M2', 'U0', 'Ta'],
+  ['M1', 'M3', 'U2'], ['M1', 'U2', 'U1'], ['M3', 'S1', 'S3'], ['M3', 'S3', 'U2'],
+  // chest and neck
+  ['S1', 'S2', 'S3'], ['S1', 'S4', 'S2'], ['B2', 'N1', 'S1'], ['N1', 'H1', 'K'], ['N1', 'K', 'S1'], ['S1', 'K', 'H8'], ['S1', 'H8', 'S4'],
+  // head
+  ['H1', 'H2', 'E'], ['H2', 'H3', 'F'], ['H2', 'F', 'E'], ['H3', 'H4', 'NA'], ['H3', 'NA', 'F'], ['NA', 'H4', 'H5', 'NB'],
+  ['F', 'NA', 'NB'], ['F', 'NB', 'H6'], ['F', 'H6', 'H7'], ['E', 'F', 'G'], ['F', 'H7', 'G'], ['K', 'E', 'G'], ['H1', 'E', 'K'],
+  ['G', 'H7', 'H8'], ['K', 'G', 'H8'],
+];
+// PLATE_COLOURS:BEGIN (sampled from the illustration at each plate's centre)
+const PLATE_COLOURS = {
+  'R0-R1-R6': '#4fb8ac', 'R0-R6-R2': '#288f8e', 'R2-R6-Tb': '#288f8e', 'R2-Tb-R3': '#2a8f8e',
+  'R1-M2-R6': '#187071', 'R6-M2-Ta': '#0f5658', 'R6-Ta-Tb': '#1a7072', 'Tb-Ta-U0': '#98ddbe',
+  'R3-Tb-U0': '#98ddc0', 'R1-B1-M2': '#187072', 'B1-M1-M2': '#288f8e', 'B1-B2-Mb': '#288f8d',
+  'B1-Mb-M1': '#288f8e', 'Mb-M3-M1': '#288f8e', 'B2-S1-Mb': '#4db7ac', 'Mb-S1-M3': '#4eb8ac',
+  'M2-M1-U1': '#1b7072', 'M2-U1-U0': '#186b6f', 'M2-U0-Ta': '#56aca2', 'M1-M3-U2': '#238080',
+  'M1-U2-U1': '#0f5558', 'M3-S1-S3': '#278e8b', 'M3-S3-U2': '#4eb7a7', 'S1-S2-S3': '#1a7071',
+  'S1-S4-S2': '#1b7073', 'B2-N1-S1': '#288f8e', 'N1-H1-K': '#69bba3', 'N1-K-S1': '#288f8e',
+  'S1-K-H8': '#187072', 'S1-H8-S4': '#197173', 'H1-H2-E': '#65bda8', 'H2-H3-F': '#98ddc0',
+  'H2-F-E': '#83d0b8', 'H3-H4-NA': '#99dcc0', 'H3-NA-F': '#98ddbe', 'NA-H4-H5-NB': '#125a5a',
+  'F-NA-NB': '#66beab', 'F-NB-H6': '#66bfa9', 'F-H6-H7': '#66bfa9', 'E-F-G': '#2c9591',
+  'F-H7-G': '#66bfa9', 'K-E-G': '#98ddc0', 'H1-E-K': '#afe5d5', 'G-H7-H8': '#0f5756',
+  'K-G-H8': '#248385',
+};
+// PLATE_COLOURS:END
+const PART = { leg_upper: '#98ddc0', leg_lower: '#66bfa9', hoof: '#2b8a82', horn: '#aadfd5', horn_tip: '#7cc7b5',
+  ear: '#2e8f88', ear_in: '#86c2b8', tail: '#1f7a74', tuft: '#1c6c67', seam_top: '#2e958c', seam_low: '#1c6c67', nose: '#1e6a66' };
 
 const tris = new Map();
 const put = (c, a, b, d) => { if (!tris.has(c)) tris.set(c, []); tris.get(c).push(...a, ...b, ...d); };
@@ -48,59 +79,39 @@ const plate = (c, ks) => { const pts = ks.map(k => V[k]);
 const seam = (c, ks) => { for (let i = 0; i < ks.length - 1; i++) {
   const a = V[ks[i]], b = V[ks[i + 1]]; put(c, a, b, mir(b)); put(c, a, mir(b), mir(a)); } };
 
-// hindquarter
-plate(C.teal, ['R0', 'R1', 'R2']); plate(C.dark, ['R0', 'R2', 'R3']);
-plate(C.mid, ['R1', 'M2', 'R2']); plate(C.soft, ['R2', 'M2', 'R4']);
-plate(C.teal, ['R2', 'R4', 'R5']); plate(C.deep, ['R2', 'R5', 'R3']);
-// back and barrel
-plate(C.mid, ['R1', 'B1', 'M2']); plate(C.teal, ['B1', 'M1', 'M2']);
-plate(C.dark, ['B1', 'B2', 'M3']); plate(C.teal, ['B1', 'M3', 'M1']);
-plate(C.dark, ['M2', 'M1', 'U1']); plate(C.deep, ['M2', 'U1', 'U0']);
-plate(C.dark, ['M2', 'U0', 'R4']); plate(C.deep, ['R4', 'U0', 'R5']);
-plate(C.teal, ['M1', 'M3', 'U2']); plate(C.deep, ['M1', 'U2', 'U1']);
-// shoulder and chest
-plate(C.soft, ['B2', 'S1', 'M3']); plate(C.teal, ['M3', 'S1', 'S3']); plate(C.dark, ['M3', 'S3', 'U2']);
-plate(C.deep, ['S1', 'S2', 'S3']);
-// neck
-plate(C.mid, ['B2', 'N1', 'S1']); plate(C.mint, ['N1', 'H1', 'H8']); plate(C.teal, ['N1', 'H8', 'S1']);
-plate(C.dark, ['S1', 'H8', 'N2']); plate(C.deep, ['S1', 'N2', 'S2']);
-// head
-plate(C.pale, ['H1', 'H2', 'Hc']); plate(C.mint, ['H2', 'H3', 'Hc']); plate(C.pale, ['H3', 'Hm', 'Hc']);
-plate(C.mint, ['H3', 'H4', 'Hm']); plate(C.soft, ['H4', 'H5', 'Hm']); plate(C.mid, ['H5', 'H6', 'Hm']);
-plate(C.soft, ['H6', 'Hc', 'Hm']); plate(C.mid, ['H6', 'H7', 'Hc']); plate(C.teal, ['H7', 'H8', 'Hc']); plate(C.soft, ['H8', 'H1', 'Hc']);
-// seams: along the back and over the head, round the muzzle and down the throat and chest, under the belly, behind the rump
-seam(C.mid, ['R0', 'R1', 'B1', 'B2', 'N1', 'H1', 'H2', 'H3', 'H4']);
-seam(C.teal, ['H4', 'H5']); seam(C.mid, ['H5', 'H6', 'H7', 'H8', 'N2', 'S2']);
-seam(C.deep, ['S2', 'S3', 'U2', 'U1', 'U0', 'R5']); seam(C.dark, ['R5', 'R3', 'R0']);
+for (const ks of PLATES) plate(PLATE_COLOURS[ks.join('-')] || PART.seam_top, ks);
+// seams: along the back and over the head, across the nose, under the jaw, throat, chest and belly, behind the rump
+seam(PART.seam_top, ['R0', 'R1', 'B1', 'B2', 'N1', 'H1', 'H2', 'H3', 'H4']);
+seam(PART.nose, ['H4', 'H5']);
+seam(PART.seam_low, ['H5', 'NB', 'H6', 'H7', 'H8', 'S4', 'S2', 'S3', 'U2', 'U1', 'U0', 'R3', 'R2', 'R0']);
 
 // hulls for legs, hooves, horns, ears and tail, on both sides
 const m = new Model(NAME);
-const both = (fn) => { for (const s of [1, -1]) fn(s); };
-const hull = (c, pts) => m.hull(c, pts);
 const ring = (x0, x1, y, z0, z1) => [[x0, y, z0], [x1, y, z0], [x1, y, z1], [x0, y, z1]];
-both((s) => {
+for (const s of [1, -1]) {
   const Z = (z) => s * z * ZS;
-  // front leg: upper, lower, hoof
-  hull(C.mint, [...ring(316, 374, 330, Z(26), Z(52)), [316, 446, Z(28)], [360, 446, Z(28)], [316, 446, Z(48)], [360, 446, Z(48)]]);
-  hull(C.soft, [[318, 446, Z(28)], [360, 446, Z(28)], [318, 446, Z(48)], [360, 446, Z(48)], ...ring(322, 352, 520, Z(30), Z(46))]);
-  hull(C.hoof, [...ring(322, 352, 520, Z(30), Z(46)), ...ring(316, 360, 550, Z(28), Z(48)), [362, 550, Z(38)]]);
-  // hind leg: thigh down to the hock, cannon, hoof
-  hull(C.mint, [[62, 330, Z(30)], [62, 330, Z(48)], [150, 340, Z(30)], [150, 340, Z(50)], [72, 446, Z(30)], [72, 446, Z(46)], [112, 446, Z(30)], [112, 446, Z(46)]]);
-  hull(C.soft, [[72, 446, Z(30)], [72, 446, Z(46)], [112, 446, Z(30)], [112, 446, Z(46)], ...ring(86, 114, 516, Z(31), Z(45))]);
-  hull(C.hoof, [...ring(86, 114, 516, Z(31), Z(45)), ...ring(82, 124, 548, Z(29), Z(47)), [128, 548, Z(38)]]);
-  // horn: a four-sided cone curving up from the poll
-  hull(C.horn, [[444, 138, Z(12)], [474, 138, Z(12)], [444, 132, Z(26)], [474, 132, Z(26)], [452, 98, Z(30)], [464, 98, Z(24)]]);
-  hull(C.pale, [[452, 98, Z(30)], [464, 98, Z(24)], [452, 100, Z(22)], [462, 46, Z(40)]]);
-  // ear: a folded leaf pointing back and out
-  hull(C.ear_in, [[444, 140, Z(26)], [450, 166, Z(28)], [396, 120, Z(62)], [412, 172, Z(58)], [426, 148, Z(40)], [420, 146, Z(52)]]);
-});
+  // front leg: upper to the knee, lower to the fetlock, hoof
+  m.hull(PART.leg_upper, [...ring(318, 377, 335, Z(24), Z(50)), ...ring(325, 362, 436, Z(26), Z(46))]);
+  m.hull(PART.leg_lower, [...ring(325, 362, 436, Z(26), Z(46)), ...ring(331, 355, 512, Z(28), Z(44))]);
+  m.hull(PART.hoof, [...ring(331, 355, 512, Z(28), Z(44)), ...ring(328, 372, 542, Z(26), Z(46)), [376, 542, Z(36)]]);
+  // hind leg: from under the thigh to the hock, cannon, hoof
+  m.hull(PART.leg_upper, [...ring(92, 160, 345, Z(28), Z(50)), ...ring(73, 110, 426, Z(28), Z(46))]);
+  m.hull(PART.leg_lower, [...ring(73, 110, 426, Z(28), Z(46)), ...ring(84, 115, 512, Z(29), Z(44))]);
+  m.hull(PART.hoof, [...ring(84, 115, 512, Z(29), Z(44)), ...ring(90, 135, 538, Z(27), Z(46)), [138, 538, Z(36)]]);
+  // horn: up and back to a bend, then up and forward to the tip
+  m.hull(PART.horn, [...ring(448, 472, 134, Z(12), Z(24)), [440, 88, Z(26)], [452, 86, Z(22)], [446, 92, Z(30)]]);
+  m.hull(PART.horn_tip, [[440, 88, Z(26)], [452, 86, Z(22)], [446, 92, Z(30)], [467, 40, Z(32)]]);
+  // ear: a leaf sticking out sideways, rim and lighter inside
+  m.hull(PART.ear, [[456, 134, Z(24)], [458, 152, Z(26)], [402, 111, Z(60)], [440, 112, Z(48)], [462, 140, Z(40)], [447, 157, Z(46)], [418, 157, Z(58)], [430, 135, Z(56)]]);
+  m.hull(PART.ear_in, [[410, 117, Z(61)], [438, 118, Z(51)], [455, 140, Z(43)], [444, 151, Z(48)], [420, 151, Z(59)], [430, 132, Z(58)]]);
+}
 // tail: hangs from the rump to a tuft
-hull(C.dark, [[52, 238, 6], [52, 238, -6], [60, 250, 0], [26, 380, 4], [26, 380, -4], [34, 382, 0]]);
-hull(C.teal, [[24, 376, 6], [24, 376, -6], [40, 380, 0], [10, 420, 0], [18, 412, 5], [18, 412, -5]]);
+m.hull(PART.tail, [[54, 236, 6], [54, 236, -6], [62, 246, 0], [44, 368, 4], [44, 368, -4], [50, 370, 0]]);
+m.hull(PART.tuft, [[42, 362, 7], [42, 362, -7], [48, 376, 0], [15, 412, 0], [24, 396, 5], [24, 396, -5]]);
 for (const [c, a] of m.groups) { if (!tris.has(c)) tris.set(c, []); tris.get(c).push(...a); }
 
 // eyes: white eyeball, black pupil looking forward, white glint (as on anjing)
-const headPlates = [['H1', 'H2', 'Hc'], ['H2', 'H3', 'Hc'], ['H3', 'Hm', 'Hc']];
+const headPlates = [['H2', 'F', 'E'], ['E', 'F', 'G'], ['H2', 'H3', 'F'], ['H1', 'H2', 'E'], ['H1', 'E', 'K']];
 const zOn = (x, y) => { for (const ks of headPlates) { const [a, b, c] = ks.map(k => V[k]);
   const d = (b[1]-c[1])*(a[0]-c[0]) + (c[0]-b[0])*(a[1]-c[1]);
   const u = ((b[1]-c[1])*(x-c[0]) + (c[0]-b[0])*(y-c[1])) / d, v = ((c[1]-a[1])*(x-c[0]) + (a[0]-c[0])*(y-c[1])) / d, w = 1-u-v;
@@ -109,10 +120,10 @@ const eye = (cx, cy, r) => { const n = 12, z0 = zOn(cx, cy) + 0.8;
   const rg = (rad, zz, ox = 0, oy = 0) => Array.from({ length: n }, (_, i) => [cx + ox + rad*Math.cos(2*Math.PI*i/n), cy + oy + rad*Math.sin(2*Math.PI*i/n), zz]);
   const cone = (c, rim, top) => { for (let i = 0; i < n; i++) { put(c, rim[i], rim[(i+1)%n], top); put(c, mir(rim[(i+1)%n]), mir(rim[i]), mir(top)); } };
   cone(C.white, rg(r, z0), [cx, cy, z0 + r*0.3]);
-  const px = r*0.18, pr = r*0.62;
+  const px = r*0.18, pr = r*0.62; // pupil looks forward (+x)
   cone(C.black, rg(pr, z0 + r*0.22, px, 0), [cx + px, cy, z0 + r*0.42]);
   cone(C.white, rg(r*0.2, z0 + r*0.4, px - pr*0.35, -pr*0.35), [cx + px - pr*0.35, cy - pr*0.35, z0 + r*0.46]); };
-eye(518, 160, 11);
+eye(511, 151, 9);
 
 // write: one primitive with per-vertex colours; centre on x/z, hooves on y = 0, pixels -> metres
 const srgb = (h) => [1, 3, 5].map(i => parseInt(h.slice(i, i+2), 16) / 255).map(c => c <= 0.04045 ? c/12.92 : ((c+0.055)/1.055) ** 2.4);
