@@ -1,7 +1,9 @@
 # Revises a screenshot of the Numeria Arena main menu (1600x900):
 #  - the curved connector lines between the PLAY / YOU blocks and the book become straight lines
 #    with right-angle bends (no curves), ending on the same anchor squares at the book;
-#  - the lines run on to the edge of the book's pages and end there on an ink square;
+#  - the lines run on to the edge of the book's pages and end there on a square in the colour of
+#    their block (left group) or of the block's icon tile (right group);
+#  - the line and dot from the hint text down to the sun are removed;
 #  - the purple disc inside the sun turns a soft brick red (not glaring), keeping its two tones;
 #  - the blocks lose their all-round drop shadow and take the global sticker peel effect
 #    (style D, scripts/2d/menu.mjs): one side stays stuck down, the outer side lifts with a soft
@@ -54,11 +56,30 @@ mask = cv2.dilate(mask, np.ones((5, 5), np.uint8))
 # the blocks themselves are masked too, so the fill only borrows background colour (they go back on top)
 for x0, y0, x1, y1 in LEFT + RIGHT + [TOOLTIP]:
     mask[y0:y1 + 1, x0:x1 + 1] = 255
+# line from the hint text down to the sun, and its dot on the sun's top point
+mask[257:348, 788:814] = 255   # the line and its soft shadow
+mask[344:359, 792:809] = 255
 book = np.zeros((H, W), np.uint8)
 cv2.fillPoly(book, [np.array([[440, 742], [800, 560], [1160, 742], [1205, 790], [400, 790]])], 255)
 mask[book > 0] = 0
-clean = cv2.inpaint(img, mask, 15, cv2.INPAINT_TELEA)
-clean = cv2.GaussianBlur(clean, (0, 0), 1.2) * (mask[..., None] > 0) + clean * (mask[..., None] == 0)
+# the old anchor squares at the bottom corners sit on the book's edge
+mask[741:756, 426:441] = 255
+mask[741:756, 1163:1178] = 255
+# Fill the holes with the blurred background around them (normalised convolution). Only plain
+# background counts: light paper (book pages, text boxes, lines) and dark parts (the sun) are left
+# out, so nothing bright or dark bleeds into the fill.
+tot = orig.astype(int).sum(-1)
+wgt = ((mask == 0) & (tot > 330) & (tot < 640)).astype(np.float32)
+clean = img.astype(np.float32)
+for sigma in (10, 24, 60):
+    num = cv2.GaussianBlur(clean * wgt[..., None], (0, 0), sigma)
+    den = cv2.GaussianBlur(wgt, (0, 0), sigma)[..., None]
+    fill = num / np.maximum(den, 1e-6)
+    todo = (mask > 0) & (den[..., 0] > 0.02)
+    clean[todo] = fill[todo]
+    wgt = np.maximum(wgt, todo.astype(np.float32))
+    mask = np.where(todo, 0, mask).astype(np.uint8)
+clean = clean.astype(np.uint8)
 base = Image.fromarray(clean.astype(np.uint8))
 
 def page_edge(y, x_from, step):
@@ -70,6 +91,11 @@ def page_edge(y, x_from, step):
 ANCHOR_L = [(page_edge(y, 400, 1) - 1, y) for y in ANCHOR_Y]
 ANCHOR_R = [(page_edge(y, 1205, -1) + 1, y) for y in ANCHOR_Y]
 print('anchors', ANCHOR_L, ANCHOR_R)
+# the sun's top point, which sat under the removed dot
+ImageDraw.Draw(base).polygon([(800, 351), (787, 364), (813, 364)], fill=tuple(int(v) for v in orig[368, 800]))
+# dot colours: the block itself on the left, the icon tile on the right
+DOT_L = [tuple(int(v) for v in orig[y0 + 10, 380]) for (_, y0, _, _) in LEFT]
+DOT_R = [tuple(int(v) for v in orig[y0 + 15, 1236]) for (_, y0, _, _) in RIGHT]
 
 def shade_of(x0, y0, x1, y1):
     # the background under a block, darkened 42%: the shadow is tinted, never black (menu.mjs)
@@ -105,10 +131,10 @@ for b in RIGHT: peel(base, b, 'right')
 # straight connector lines with right-angle bends: out from the block's inner edge, along to a lane,
 # down to the anchor's height, across to the anchor. Top block takes the lane nearest the book, so
 # no line crosses another.
-LINE, INK = (250, 246, 236), (58, 63, 75)
+LINE = (250, 246, 236)
 d = ImageDraw.Draw(base)
-def connect(blocks, anchors, side):
-    for i, ((x0, y0, x1, y1), (ax, ay)) in enumerate(zip(blocks, anchors)):
+def connect(blocks, anchors, dots, side):
+    for i, ((x0, y0, x1, y1), (ax, ay), dot) in enumerate(zip(blocks, anchors, dots)):
         ym = (y0 + y1) // 2
         sx = x1 + 1 if side == 'left' else x0 - 1
         lane = (440 - 12 * i) if side == 'left' else (1160 + 12 * i)
@@ -116,9 +142,9 @@ def connect(blocks, anchors, side):
         d.line(pts, fill=LINE, width=3, joint=None)
         for (px, py) in pts[1:3]:
             d.rectangle((px - 1, py - 1, px + 1, py + 1), fill=LINE)
-        d.rectangle((ax - 4, ay - 4, ax + 4, ay + 4), fill=INK)
-connect(LEFT, ANCHOR_L, 'left')
-connect(RIGHT, ANCHOR_R, 'right')
+        d.rectangle((ax - 5, ay - 5, ax + 5, ay + 5), fill=dot)
+connect(LEFT, ANCHOR_L, DOT_L, 'left')
+connect(RIGHT, ANCHOR_R, DOT_R, 'right')
 
 # blocks, the tooltip and the overflowing letter back on top, exactly as they were
 res = np.array(base)
