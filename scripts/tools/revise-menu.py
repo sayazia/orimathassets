@@ -5,13 +5,16 @@
 #    their block (left group) or of the block's icon tile (right group);
 #  - the line and dot from the hint text down to the sun are removed;
 #  - the purple disc inside the sun turns a soft brick red (not glaring), keeping its two tones;
+#  - the blurred number ornaments in the background are redrawn crisp, as folded paper ribbons (the
+#    paper glyphs of scripts/ui/glyphs.mjs, each segment alternating light and shade), a little see-through;
+#  - the maths sketched on the book's pages gets more contrast so it reads clearly;
 #  - the blocks lose their all-round drop shadow and take the global sticker peel effect
 #    (style D, scripts/2d/menu.mjs): one side stays stuck down, the outer side lifts with a soft
 #    tinted shadow, the left side for the left group and the right side for the right group.
 # The old lines and shadows are removed by inpainting the blurred background.
 # Run: pip install pillow numpy opencv-python-headless
 #      python3 scripts/tools/revise-menu.py menu.webp out.png
-import sys
+import sys, os, json, subprocess
 import numpy as np
 import cv2
 from PIL import Image, ImageDraw, ImageFilter
@@ -80,7 +83,61 @@ for sigma in (10, 24, 60):
     wgt = np.maximum(wgt, todo.astype(np.float32))
     mask = np.where(todo, 0, mask).astype(np.uint8)
 clean = clean.astype(np.uint8)
-base = Image.fromarray(clean.astype(np.uint8))
+
+# --- background: a smooth sand gradient fitted to the plain background, then crisp paper ornaments ---
+hsv0 = cv2.cvtColor(orig, cv2.COLOR_RGB2HSV)
+UI = [(585, 15, 1012, 95), (405, 110, 1195, 172), (512, 172, 775, 230), (805, 172, 1030, 230), (425, 228, 1176, 264),
+      (35, 312, 135, 358), (1205, 312, 1290, 358), (685, 338, 935, 570), (412, 548, 1210, 792), (465, 838, 1135, 888)]
+keep = np.zeros((H, W), np.float32)
+for x0, y0, x1, y1 in UI: keep[y0:y1, x0:x1] = 1
+sand = (hsv0[..., 0] >= 17) & (hsv0[..., 0] <= 25) & (hsv0[..., 1] > 85) & (hsv0[..., 2] > 150) & (keep == 0) & (mask == 0)
+ys, xs = np.nonzero(sand); pick = np.arange(0, len(xs), 7)
+u, v = xs[pick] / W - 0.5, ys[pick] / H - 0.5
+terms = lambda u, v: np.stack([u ** i * v ** j for i in range(5) for j in range(5 - i)], -1)
+A = terms(u, v)
+gu, gv = np.meshgrid(np.arange(W) / W - 0.5, np.arange(H) / H - 0.5)
+G2 = terms(gu.ravel(), gv.ravel())
+smooth = np.stack([(G2 @ np.linalg.lstsq(A, clean[ys[pick], xs[pick], c].astype(float), rcond=None)[0]).reshape(H, W) for c in range(3)], -1)
+grain = cv2.GaussianBlur(np.random.default_rng(7).normal(0, 2.2, (H, W)).astype(np.float32), (0, 0), 0.8)[..., None]
+bg = Image.fromarray(np.clip(smooth + grain, 0, 255).astype(np.uint8))
+
+# glyph ribbons from the repo's paper glyphs (one quad per segment), drawn at 3x and scaled down
+here = os.path.dirname(os.path.abspath(__file__))
+GL = json.loads(subprocess.check_output(['node', '--input-type=module', '-e',
+    "const m = await import(process.argv[1]); console.log(JSON.stringify(Object.fromEntries([...'235817×+'].map(c => [c, m.glyph(c).polys]))))",
+    os.path.join(here, '..', 'ui', 'glyphs.mjs')]))
+INK_H = 7.3
+def hexc(h): return tuple(int(h[i:i + 2], 16) for i in (1, 3, 5))
+def darker(c, f): return tuple(int(x * (1 - f)) for x in c)
+# (char, centre x, centre y, letter height px, rotation deg, colour), placed where the blurred ones were
+ORN = [('2', 195, 58, 165, -4, '#E6D8CA'), ('7', 425, 85, 64, 10, '#86C48F'), ('×', 386, 128, 118, 12, '#93A39A'),
+       ('+', 265, 256, 78, 0, '#86C48F'), ('1', 12, 160, 92, 14, '#86C48F'), ('3', 1040, 56, 140, 0, '#EFA97E'),
+       ('×', 1214, 126, 110, -10, '#93A39A'), ('5', 1408, 62, 165, 3, '#E6D8CA'), ('+', 1336, 258, 78, 0, '#86C48F'),
+       ('7', 1590, 160, 92, -12, '#86C48F'), ('8', 1460, 832, 180, 4, '#BDBAAE'), ('1', 18, 830, 170, 8, '#86C48F'),
+       ('1', 815, 2, 64, 0, '#86C48F')]
+S3 = 3
+orn = Image.new('RGBA', (W * S3, H * S3), (0, 0, 0, 0))
+od = ImageDraw.Draw(orn)
+for ch, cx, cy, hpx, rot, col in ORN:
+    k, a = hpx / INK_H * S3, np.radians(rot)
+    polys = GL[ch]
+    allp = np.array([p for q in polys for p in q]); mx, my = allp.mean(0)
+    light, shade = hexc(col), darker(hexc(col), 0.16)
+    for i, q in enumerate(polys):
+        pts = []
+        for x, y in q:
+            dx, dy = (x - mx) * k, (y - my) * k
+            pts.append((cx * S3 + dx * np.cos(a) - dy * np.sin(a), cy * S3 + dx * np.sin(a) + dy * np.cos(a)))
+        od.polygon(pts, fill=(light if i % 2 == 0 else shade) + (255,))
+        od.line(pts + [pts[0]], fill=darker(hexc(col), 0.22) + (255,), width=S3)   # crisp folded edge
+orn = orn.resize((W, H), Image.LANCZOS)
+al = np.array(orn)[..., 3:4].astype(np.float32) / 255 * 0.62          # a little see-through
+bgn = np.array(bg).astype(np.float32) * (1 - al) + np.array(orn)[..., :3].astype(np.float32) * al
+
+# UI stays as it was (feathered at the edges), everything else takes the new background
+keep = cv2.GaussianBlur(keep, (0, 0), 4)[..., None]
+clean = (clean.astype(np.float32) * keep + bgn * (1 - keep)).astype(np.uint8)
+base = Image.fromarray(clean)
 
 def page_edge(y, x_from, step):
     # first page pixel (light cream) along row y of the cleaned image, walking towards the book
@@ -154,5 +211,15 @@ x0, y0, x1, y1 = OVERFLOW
 reg = orig[y0:y1 + 1, x0:x1 + 1]
 txt = reg.min(-1) > 225
 res[y0:y1 + 1, x0:x1 + 1][txt] = reg[txt]
+# maths on the book's pages: stronger ink against the paper, so it reads clearly
+pages = np.zeros((H, W), np.uint8)
+cv2.fillPoly(pages, [np.array([[570, 570], [798, 570], [798, 755], [458, 742]]), np.array([[818, 570], [1046, 570], [1158, 742], [818, 755]])], 255)
+pages = cv2.erode(pages, np.ones((7, 7), np.uint8)) > 0
+paper = cv2.dilate(res, np.ones((9, 9), np.uint8)).astype(np.float32)   # local paper colour
+ink = np.clip(paper - res.astype(np.float32), 0, 255)
+sharp = cv2.addWeighted(res.astype(np.float32), 1.8, cv2.GaussianBlur(res, (0, 0), 1.2).astype(np.float32), -0.8, 0)
+ink = np.clip(paper - sharp, 0, 255)
+boost = np.clip(paper - ink * 2.4, 0, 255)
+res = np.where(pages[..., None] & (ink.sum(-1, keepdims=True) > 12), boost, res).astype(np.uint8)
 Image.fromarray(res).save(out)
 print('saved', out)
