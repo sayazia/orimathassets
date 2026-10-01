@@ -3,7 +3,7 @@
 // face normal, merges thin strips into their neighbours and paints each plate one brown
 // shade so neighbouring plates differ. No textures; KHR_mesh_quantization.
 // Run: npm i --no-save @gltf-transform/core @gltf-transform/functions @gltf-transform/extensions meshoptimizer jpeg-js
-//      node scripts/tools/scan-to-plates.mjs in.glb out.glb [targetTris=5000] [angleDeg=22] [minAreaFrac=0.004] [palette=brown|brown_soft|orange_soft|sky_soft|grey]
+//      node scripts/tools/scan-to-plates.mjs in.glb out.glb [targetTris=5000] [angleDeg=22] [minAreaFrac=0.004] [palette=brown|brown_soft|orange_soft|sky_soft|blue_soft|grey]
 // Env PLATE_IDS=1 writes one material per plate named plate_<id> (to find a plate in a render);
 // env PLATE_COLORS=id:material,... then repaints those plates with a palette entry, e.g. 12:paper_orange.
 // Env PLATE_AO=<strength 0..1> bakes a soft fold shadow into a small JPEG used as baseColorTexture
@@ -11,12 +11,19 @@
 // models/custom (kelinci, kucing, ayam built with PLATE_ADJ=edge): kelinci = brown_soft; kucing = orange_soft; ayam = orange_soft with
 //   PLATE_COLORS=25:paper_orange,29:paper_orange,32:paper_orange_pale,28:paper_orange_light
 // gajah = 3500 triangles, sky_soft, PLATE_AO=0.45 (fold shadow)
+// Env PLATE_SCAN_COLOR=1 keeps the scan's colour layout (needs pngjs): the base colour texture is
+//   sampled per vertex, the simplifier and plate growing respect colour edges, dark parts (eyes)
+//   stay their own plates in paper_black, and every other plate is painted from the palette:
+//   plates whose scan hue is below PLATE_SCAN_SPLIT degrees (195, i.e. greens and teals) take the
+//   two lightest shades, the rest the three darker ones.
+// ikan = 3500 triangles, blue_soft, PLATE_SCAN_COLOR=1, PLATE_AO=0.45 (green fins become light blue)
 import { NodeIO, Document } from '@gltf-transform/core';
 import { ALL_EXTENSIONS } from '@gltf-transform/extensions';
 import { MeshoptSimplifier } from 'meshoptimizer';
 import { writeFileSync } from 'node:fs';
 import { quantize, dedup, prune } from '@gltf-transform/functions';
 import { bakeFoldShadow } from './fold-shadow.mjs';
+const SCAN = !!process.env.PLATE_SCAN_COLOR;
 const [,, input, output, TARGET = '6000', ANG = '22', MINAREA = '0.004', PALETTE = 'brown'] = process.argv;
 const NAME = output.split('/').pop().replace(/\.glb$/, '');
 await MeshoptSimplifier.ready;
@@ -28,16 +35,37 @@ const M = node.getWorldMatrix();
 const pa = prim.getAttribute('POSITION'), ia = prim.getIndices();
 // weld by position, baking world transform
 const map = new Map(), pos = [], remap = new Uint32Array(pa.getCount()); const e = [];
+// With PLATE_SCAN_COLOR, sample the base colour texture at every vertex (KHR_texture_transform, repeat wrap).
+let sample = null;
+if (SCAN) {
+  const { PNG } = await import('pngjs');
+  const info = prim.getMaterial().getBaseColorTextureInfo(), tex = prim.getMaterial().getBaseColorTexture();
+  const img = PNG.sync.read(Buffer.from(tex.getImage()));
+  const tt = info.getExtension('KHR_texture_transform');
+  const off = tt ? tt.getOffset() : [0,0], sc = tt ? tt.getScale() : [1,1];
+  const ta = prim.getAttribute('TEXCOORD_0'), t = [];
+  const fr = (x)=>x-Math.floor(x);
+  sample = (i) => { ta.getElement(i, t);
+    const x = Math.min(img.width-1, Math.floor(fr(t[0]*sc[0]+off[0])*img.width)), y = Math.min(img.height-1, Math.floor(fr(t[1]*sc[1]+off[1])*img.height));
+    const o = 4*(y*img.width+x); return [img.data[o]/255, img.data[o+1]/255, img.data[o+2]/255]; };
+}
+const colSum = [];
 for (let i = 0; i < pa.getCount(); i++) {
   pa.getElement(i, e); const k = e.join(',');
   let v = map.get(k); if (v === undefined) { v = pos.length / 3; map.set(k, v);
-    pos.push(M[0]*e[0]+M[4]*e[1]+M[8]*e[2]+M[12], M[1]*e[0]+M[5]*e[1]+M[9]*e[2]+M[13], M[2]*e[0]+M[6]*e[1]+M[10]*e[2]+M[14]); }
+    pos.push(M[0]*e[0]+M[4]*e[1]+M[8]*e[2]+M[12], M[1]*e[0]+M[5]*e[1]+M[9]*e[2]+M[13], M[2]*e[0]+M[6]*e[1]+M[10]*e[2]+M[14]);
+    if (sample) colSum.push(0,0,0,0); }
+  if (sample) { const c = sample(i); for (let k=0;k<3;k++) colSum[4*v+k]+=c[k]; colSum[4*v+3]++; }
   remap[i] = v;
 }
-const P = new Float32Array(pos); const src = ia.getArray(); const I0 = new Uint32Array(src.length);
+const P = new Float32Array(pos);
+const VC = new Float32Array(P.length); // welded vertex colour (sRGB 0..1)
+if (sample) for (let v = 0; v < P.length/3; v++) for (let k=0;k<3;k++) VC[3*v+k] = colSum[4*v+k]/colSum[4*v+3]; const src = ia.getArray(); const I0 = new Uint32Array(src.length);
 for (let i = 0; i < src.length; i++) I0[i] = remap[src[i]];
 console.log('welded verts', P.length/3, 'tris', I0.length/3);
-const [I1, err] = MeshoptSimplifier.simplify(I0, P, 3, +TARGET * 3, 0.05, []);
+const [I1, err] = SCAN
+  ? MeshoptSimplifier.simplifyWithAttributes(I0, P, 3, VC, 3, [1,1,1], null, +TARGET * 3, 0.05, [])
+  : MeshoptSimplifier.simplify(I0, P, 3, +TARGET * 3, 0.05, []);
 console.log('simplified tris', I1.length/3, 'err', err);
 // faces
 const F = I1.length / 3, N = new Float32Array(F*3), A = new Float32Array(F);
@@ -48,6 +76,14 @@ for (let f = 0; f < F; f++) {
   const n=[u[1]*v[2]-u[2]*v[1],u[2]*v[0]-u[0]*v[2],u[0]*v[1]-u[1]*v[0]]; const l=Math.hypot(...n)||1e-12;
   N.set([n[0]/l,n[1]/l,n[2]/l],3*f); A[f]=l/2; totalA+=l/2;
 }
+// scan colour per face and its class: 0 = dark (eyes), 1 = below the hue split (greens), 2 = the rest
+const FC = new Float32Array(F*3);
+for (let f = 0; f < F; f++) for (let k=0;k<3;k++) FC[3*f+k] = (VC[3*I1[3*f]+k]+VC[3*I1[3*f+1]+k]+VC[3*I1[3*f+2]+k])/3;
+const SPLIT = +(process.env.PLATE_SCAN_SPLIT || 195);
+const hue = ([r,g,b]) => { const mx=Math.max(r,g,b), mn=Math.min(r,g,b), d=mx-mn; if (!d) return 0;
+  const h = mx===r ? ((g-b)/d)%6 : mx===g ? (b-r)/d+2 : (r-g)/d+4; return (h*60+360)%360; };
+const cls = (c) => (0.2126*c[0]+0.7152*c[1]+0.0722*c[2]) < 0.12 ? 0 : hue(c) < SPLIT ? 1 : 2;
+const FK = new Int8Array(F); if (SCAN) for (let f = 0; f < F; f++) FK[f] = cls([FC[3*f],FC[3*f+1],FC[3*f+2]]);
 // face adjacency via edges
 const edges = new Map(); const adj = Array.from({length:F},()=>[]);
 for (let f = 0; f < F; f++) for (let k = 0; k < 3; k++) {
@@ -62,7 +98,7 @@ for (const s of order) { if (R[s] >= 0) continue;
   const q=[s]; R[s]=id;
   while (q.length) { const f=q.pop(); r.faces.push(f); r.area+=A[f]; for(let k=0;k<3;k++) r.n[k]+=N[3*f+k]*A[f];
     const l=Math.hypot(...r.n); const m=r.n.map(x=>x/l);
-    for (const g of adj[f]) if (R[g]<0 && N[3*g]*m[0]+N[3*g+1]*m[1]+N[3*g+2]*m[2] > cosT) { R[g]=id; q.push(g); } }
+    for (const g of adj[f]) if (R[g]<0 && FK[g]===FK[s] && N[3*g]*m[0]+N[3*g+1]*m[1]+N[3*g+2]*m[2] > cosT) { R[g]=id; q.push(g); } }
 }
 // merge small regions into the neighbour sharing the longest border
 const minA = +MINAREA * totalA;
@@ -70,6 +106,7 @@ for (let pass = 0; pass < 10; pass++) { let changed = 0;
   const idx = regions.map((r,i)=>i).filter(i=>regions[i].faces.length && regions[i].area < minA).sort((a,b)=>regions[a].area-regions[b].area);
   for (const i of idx) { const r = regions[i]; if (!r.faces.length || r.area >= minA) continue;
     const cnt = new Map(); for (const f of r.faces) for (const g of adj[f]) if (R[g]!==i) cnt.set(R[g],(cnt.get(R[g])||0)+1);
+    if (SCAN) { if (FK[r.faces[0]] === 0) continue; for (const k of [...cnt.keys()]) if (FK[regions[k].faces[0]] !== FK[r.faces[0]]) cnt.delete(k); }
     if (!cnt.size) continue; const j=[...cnt].sort((a,b)=>b[1]-a[1])[0][0];
     for (const f of r.faces) R[f]=j; const t=regions[j]; t.faces.push(...r.faces); t.area+=r.area; for(let k=0;k<3;k++) t.n[k]+=r.n[k]; r.faces=[]; r.area=0; changed++; }
   if (!changed) break; }
@@ -106,6 +143,14 @@ const palettes = {
     ['paper_sky_warm',  [0.412,0.698,0.890]],
     ['paper_sky_deep',  [0.357,0.651,0.859]],
   ],
+  // Deeper blues than sky_soft, close to a blue origami fish.
+  blue_soft: [
+    ['paper_blue',       [0.235,0.494,0.776]],
+    ['paper_blue_light', [0.333,0.600,0.855]],
+    ['paper_blue_pale',  [0.475,0.702,0.910]],
+    ['paper_blue_warm',  [0.180,0.420,0.710]],
+    ['paper_blue_deep',  [0.137,0.353,0.639]],
+  ],
   grey: [
     ['paper_grey',        [0.545,0.557,0.573]],
     ['paper_grey_light',  [0.800,0.808,0.816]],
@@ -116,6 +161,7 @@ const palettes = {
 };
 const palette = palettes[PALETTE];
 if (!palette) throw new Error(`unknown palette ${PALETTE}`);
+if (SCAN) palette.push(['paper_black', [0.075,0.075,0.085]]);
 const rAdj = new Map(live.map(i=>[i,new Map()]));
 for (let f=0; f<F; f++) for (const g of adj[f]) if (R[f]!==R[g]) { const m=rAdj.get(R[f]); m.set(R[g],(m.get(R[g])||0)+1); }
 // Plates that only touch in space (a flap lying on another flap) are not joined in the mesh,
@@ -139,9 +185,12 @@ if ((process.env.PLATE_ADJ || 'near') === 'near') {
 const lum = palette.map(([,c])=>0.2126*c[0]+0.7152*c[1]+0.0722*c[2]);
 const rank = lum.map(l=>lum.filter(m=>m<l).length);
 const col = new Map(); const use = new Array(palette.length).fill(0);
+// PLATE_SCAN_COLOR: dark plates take paper_black (lowest rank), class 1 the two lightest shades, class 2 the others.
+const allowed = (i, c) => { if (!SCAN) return true; const k = FK[regions[i].faces[0]];
+  return k === 0 ? rank[c] === 0 : k === 1 ? rank[c] >= palette.length - 2 : rank[c] > 0 && rank[c] < palette.length - 2; };
 for (const i of [...live].sort((a,b)=>regions[b].area-regions[a].area)) {
   let best=-1, bestCost=Infinity;
-  for (let c=0;c<palette.length;c++) {
+  for (let c=0;c<palette.length;c++) { if (!allowed(i, c)) continue;
     let cost = use[c]/totalA;
     for (const [j,w] of rAdj.get(i)) { if (!col.has(j)) continue; const d=Math.abs(rank[c]-rank[col.get(j)]); cost += Math.sqrt(w)*(d===0?100:d===1?3:0); }
     if (cost<bestCost) { bestCost=cost; best=c; } }
