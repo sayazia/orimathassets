@@ -4,14 +4,18 @@
 // Legs are thick plates (an inner copy plus a seam), ears and tail are folded sheets, and each
 // side of the head gets an eye. No base plate: the paws stand on y = 0.
 // Points are [x, y, z] in image pixels (y down, z sideways); the model is in metres, y up, facing -x.
+// Colour schemes: toska (default) paints every plate with the colour sampled from a teal
+// version of the same drawing (577x613 px); putih is white paper with the drawing's two greys.
 // Run: npm i --no-save @gltf-transform/core @gltf-transform/functions @gltf-transform/extensions
-//      node scripts/tools/anjing.mjs models/custom/anjing.glb
+//      node scripts/tools/anjing.mjs models/custom/anjing.glb [toska|putih]
 import { NodeIO, Document } from '@gltf-transform/core';
 import { ALL_EXTENSIONS } from '@gltf-transform/extensions';
 import { dedup, prune, quantize } from '@gltf-transform/functions';
 
 const output = process.argv[2] || 'models/custom/anjing.glb';
 const NAME = output.split('/').pop().replace(/\.glb$/, '');
+const SCHEME = process.argv[3] || 'toska';
+if (!['toska', 'putih'].includes(SCHEME)) throw new Error(`unknown colour scheme ${SCHEME}`);
 const PX = 0.0004; // metres per image pixel: about 0.22 m long and 0.23 m to the ear tips
 
 // Paper white and the two greys of the drawing's shaded plates.
@@ -20,8 +24,27 @@ const COLOURS = {
   paper_grey_light: '#e4e3df',
   paper_grey: '#cdccc8',
   paper_black: '#1a1b1e',
-  paper_eye_glint: '#f6f4ee',
+  paper_eye_white: '#fbfbf8',
+  paper_eye_glint: '#ffffff',
 };
+// toska: each plate's colour, sampled from the teal drawing (keyed by the plate's points);
+// seams and leg rims take the tone colour for their white / light grey / grey key.
+const TOSKA = {
+  'S1-H1-H2': '#349ca0', 'S1-H2-H4': '#2a8f95', 'H2-H3-H4': '#639f91', 'S1-H4-S2': '#16737a',
+  'S2-H4-J3': '#177179', 'S2-J3-J2': '#114e53', 'S2-J2-J1': '#145760',
+  'E1-H1-E1m': '#2da7a6', 'E1-E1m-H2': '#1d7f80', 'E2-H2-E2m': '#86c5b0', 'E2-E2m-H3': '#92cdbb',
+  'J3-H4-B1': '#38bebf', 'J2-J3-C2': '#6fb39c', 'J2-C2-C1': '#79bca5', 'J3-B1-C2': '#29a9ac',
+  'C2-B1-P1': '#91e6df', 'C1-C2-P1': '#71d3d4', 'C1-P1-K0': '#71d3d4', 'K0-P1-P2': '#72d1d3', 'K0-P2-K1': '#3f7478',
+  'P2-P1-P3': '#45bbab', 'P1-B1-Q1': '#95d7c1', 'B1-B2-Q2-Q1': '#ade4cf', 'P1-Q1-Q3': '#91c6b4',
+  'P1-Q3-P3': '#1f8788', 'P3-Q3-U2-U1': '#1c888a', 'Q1-Q2-Q3': '#90c5b3', 'Q2-Q4-Q3': '#ace6d0',
+  'Q2-B2-Q4': '#8dd3b9', 'B2-R1-Q4': '#83b8b3',
+  'T1-T2-T4': '#87a49f', 'T2-T3-T4': '#83b8b3', 'T4-T3-T5': '#43877a', 'B2-T1-T5': '#8bd2bb',
+  'P2-P3-U1': '#34a997', 'P2-U1-L2': '#2e9e8e', 'P2-L2-L1': '#2a9486', 'L1-L2-Pf': '#299f91', 'L1-Pf-Pb': '#66bbb0',
+  'Q3-Q4-H6': '#4f817c', 'Q4-R1-R2': '#679b96', 'Q4-R2-H5': '#689b96', 'Q4-H5-H6': '#5a8f8a', 'H6-H5-Hp1-Hp2': '#6b9c98',
+};
+const TOSKA_TONE = { paper_white: '#8fd3c0', paper_grey_light: '#4fa9a3', paper_grey: '#2b7f80' };
+// colour (a palette key or '#hex') for a plate of tone `c` with points `ks`
+const tone = (c, ks) => SCHEME === 'putih' || !(c in TOSKA_TONE) ? c : (ks && TOSKA[ks.join('-')]) || TOSKA_TONE[c];
 const Wh = 'paper_white', Gl = 'paper_grey_light', G = 'paper_grey';
 
 // Near-side points: [x, y, z]
@@ -53,19 +76,19 @@ const put = (c, a, b, d) => { if (!tris.has(c)) tris.set(c, []); tris.get(c).pus
 const mir = (p) => [p[0], p[1], -p[2]];
 const P = (k, dz = 0) => { const p = V[k]; return [p[0], p[1], p[2] + dz]; };
 // a convex plate on the near side and its mirror on the far side (sides: 1 near only, -1 far only)
-const plate = (c, ks, dz = 0, sides = 0) => { const pts = ks.map(k => P(k, dz));
+const plate = (c, ks, dz = 0, sides = 0) => { c = tone(c, ks); const pts = ks.map(k => P(k, dz));
   for (let i = 1; i < pts.length - 1; i++) {
     if (sides >= 0) put(c, pts[0], pts[i], pts[i + 1]);
     if (sides <= 0) put(c, mir(pts[0]), mir(pts[i + 1]), mir(pts[i])); } };
 // seam joining the two sides along a chain of outline points
-const seam = (c, ks) => { for (let i = 0; i < ks.length - 1; i++) {
+const seam = (c, ks) => { c = tone(c); for (let i = 0; i < ks.length - 1; i++) {
   const a = P(ks[i]), b = P(ks[i + 1]); put(c, a, b, mir(b)); put(c, a, mir(b), mir(a)); } };
 // a thick plate (legs): the plates, an inner copy pushed in by t, and a rim along the outline
 const slab = (faces, outline, t) => {
   for (const [c, ...ks] of faces) { plate(c, ks); plate(c, ks, -t); }
   for (let i = 0; i < outline.length - 1; i++) {
     const a = P(outline[i]), b = P(outline[i + 1]), ai = P(outline[i], -t), bi = P(outline[i + 1], -t);
-    put(G, a, b, bi); put(G, a, bi, ai); put(G, mir(a), mir(bi), mir(b)); put(G, mir(a), mir(ai), mir(bi));
+    const r = tone(G); put(r, a, b, bi); put(r, a, bi, ai); put(r, mir(a), mir(bi), mir(b)); put(r, mir(a), mir(ai), mir(bi));
   }
 };
 
@@ -98,18 +121,21 @@ seam(Gl, ['B2', 'T1']); seam(Wh, ['T1', 'T2', 'T3']); seam(G, ['T3', 'T5', 'B2']
 seam(G, ['U1', 'U2', 'Q3']);
 seam(G, ['P2', 'K1', 'K0', 'C1', 'J2', 'J1', 'S2', 'N4']); seam('paper_black', ['N4', 'N1']);
 
-// eyes: a black cone with a white glint, sitting on the head plates
+// eyes sit on the head plates: zOn gives the plate depth under the eye centre
 const headPlates = [['S1', 'H2', 'H4'], ['S1', 'H4', 'S2'], ['S1', 'H1', 'H2']];
 const zOn = (x, y) => { for (const ks of headPlates) { const [a, b, c] = ks.map(k => V[k]);
   const d = (b[1]-c[1])*(a[0]-c[0]) + (c[0]-b[0])*(a[1]-c[1]);
   const u = ((b[1]-c[1])*(x-c[0]) + (c[0]-b[0])*(y-c[1])) / d, v = ((c[1]-a[1])*(x-c[0]) + (a[0]-c[0])*(y-c[1])) / d, w = 1-u-v;
   if (u >= -1e-6 && v >= -1e-6 && w >= -1e-6) return u*a[2] + v*b[2] + w*c[2]; } throw new Error('eye off the head'); };
-const eye = (cx, cy, r) => { const n = 10, z0 = zOn(cx, cy) + 0.8;
+// eyes: a white eyeball, a black pupil looking forward and a white glint, like the teal drawing
+const eye = (cx, cy, r) => { const n = 12, z0 = zOn(cx, cy) + 0.8;
   const ring = (rad, zz, ox = 0, oy = 0) => Array.from({ length: n }, (_, i) => [cx + ox + rad*Math.cos(2*Math.PI*i/n), cy + oy + rad*Math.sin(2*Math.PI*i/n), zz]);
   const cone = (c, rim, top) => { for (let i = 0; i < n; i++) { put(c, rim[i], rim[(i+1)%n], top); put(c, mir(rim[(i+1)%n]), mir(rim[i]), mir(top)); } };
-  cone('paper_black', ring(r, z0), [cx, cy, z0 + r*0.45]);
-  cone('paper_eye_glint', ring(r*0.32, z0 + r*0.3, -r*0.3, -r*0.3), [cx - r*0.3, cy - r*0.3, z0 + r*0.42]); };
-eye(150, 116, 9);
+  cone('paper_eye_white', ring(r, z0), [cx, cy, z0 + r*0.3]);
+  const px = -r*0.18, pr = r*0.62;
+  cone('paper_black', ring(pr, z0 + r*0.22, px, 0), [cx + px, cy, z0 + r*0.42]);
+  cone('paper_eye_glint', ring(r*0.2, z0 + r*0.4, px - pr*0.35, -pr*0.35), [cx + px - pr*0.35, cy - pr*0.35, z0 + r*0.46]); };
+eye(140, 104, 14);
 
 // write: centre on x/z, paws on y = 0, pixels -> metres
 let maxY = -Infinity, cx = 0, n = 0;
@@ -117,6 +143,10 @@ for (const a of tris.values()) for (let i = 0; i < a.length; i += 3) { maxY = Ma
 cx /= n;
 const srgb = (h) => [1, 3, 5].map(i => parseInt(h.slice(i, i+2), 16) / 255).map(c => c <= 0.04045 ? c/12.92 : ((c+0.055)/1.055) ** 2.4);
 const doc = new Document(); const buf = doc.createBuffer(); const mesh = doc.createMesh(NAME);
+// putih: one primitive and one named material per colour, like the other models.
+// toska has ~45 plate colours, so it uses a single material with the colours as COLOR_0 instead.
+const VERTEX_COLOURS = SCHEME === 'toska';
+const all = { pos: [], nor: [], col: [] };
 let count = 0;
 for (const [c, a] of [...tris.entries()].sort(([x], [y]) => x.localeCompare(y))) {
   const pos = new Float32Array(a.length), nor = new Float32Array(a.length);
@@ -127,10 +157,23 @@ for (const [c, a] of [...tris.entries()].sort(([x], [y]) => x.localeCompare(y)))
     for (let k = 0; k < 3; k++) nor.set(q.map(x => x / l), i + 3*k);
   }
   count += pos.length / 9;
-  const mat = doc.createMaterial(c).setBaseColorFactor([...srgb(COLOURS[c]), 1]).setMetallicFactor(0).setRoughnessFactor(0.95).setDoubleSided(true);
+  const rgb = srgb(c.startsWith('#') ? c : COLOURS[c]);
+  if (VERTEX_COLOURS) {
+    all.pos.push(...pos); all.nor.push(...nor);
+    for (let i = 0; i < pos.length / 3; i++) all.col.push(...rgb.map(x => Math.round(x * 65535)), 65535);
+    continue;
+  }
+  const mat = doc.createMaterial(c).setBaseColorFactor([...rgb, 1]).setMetallicFactor(0).setRoughnessFactor(0.95).setDoubleSided(true);
   mesh.addPrimitive(doc.createPrimitive().setMaterial(mat)
     .setAttribute('POSITION', doc.createAccessor().setType('VEC3').setArray(pos).setBuffer(buf))
     .setAttribute('NORMAL', doc.createAccessor().setType('VEC3').setArray(nor).setBuffer(buf)));
+}
+if (VERTEX_COLOURS) {
+  const mat = doc.createMaterial('paper_toska').setMetallicFactor(0).setRoughnessFactor(0.95).setDoubleSided(true);
+  mesh.addPrimitive(doc.createPrimitive().setMaterial(mat)
+    .setAttribute('POSITION', doc.createAccessor().setType('VEC3').setArray(new Float32Array(all.pos)).setBuffer(buf))
+    .setAttribute('NORMAL', doc.createAccessor().setType('VEC3').setArray(new Float32Array(all.nor)).setBuffer(buf))
+    .setAttribute('COLOR_0', doc.createAccessor().setType('VEC4').setArray(new Uint16Array(all.col)).setNormalized(true).setBuffer(buf)));
 }
 doc.createScene().addChild(doc.createNode(NAME).setMesh(mesh));
 await doc.transform(dedup(), prune(), quantize({ quantizePosition: 14, quantizeNormal: 8 }));
