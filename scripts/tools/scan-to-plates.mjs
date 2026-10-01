@@ -6,7 +6,7 @@
 //      node scripts/tools/scan-to-plates.mjs in.glb out.glb [targetTris=5000] [angleDeg=22] [minAreaFrac=0.004] [palette=brown|brown_soft|orange_soft|sky_soft|grey]
 // Env PLATE_IDS=1 writes one material per plate named plate_<id> (to find a plate in a render);
 // env PLATE_COLORS=id:material,... then repaints those plates with a palette entry, e.g. 12:paper_orange.
-// models/custom: kelinci = brown_soft; kucing = orange_soft; gajah = sky_soft; ayam = orange_soft with
+// models/custom (kelinci, kucing, ayam built with PLATE_ADJ=edge): kelinci = brown_soft; kucing = orange_soft; gajah = sky_soft; ayam = orange_soft with
 //   PLATE_COLORS=25:paper_orange,29:paper_orange,32:paper_orange_pale,28:paper_orange_light
 import { NodeIO, Document } from '@gltf-transform/core';
 import { ALL_EXTENSIONS } from '@gltf-transform/extensions';
@@ -114,11 +114,34 @@ const palette = palettes[PALETTE];
 if (!palette) throw new Error(`unknown palette ${PALETTE}`);
 const rAdj = new Map(live.map(i=>[i,new Map()]));
 for (let f=0; f<F; f++) for (const g of adj[f]) if (R[f]!==R[g]) { const m=rAdj.get(R[f]); m.set(R[g],(m.get(R[g])||0)+1); }
+// Plates that only touch in space (a flap lying on another flap) are not joined in the mesh,
+// so with PLATE_ADJ=near (default) any two plates with vertices within 2% of the model size
+// also count as neighbours. PLATE_ADJ=edge keeps mesh-edge neighbours only (older outputs).
+if ((process.env.PLATE_ADJ || 'near') === 'near') {
+  let lo=[Infinity,Infinity,Infinity], hi=[-Infinity,-Infinity,-Infinity];
+  for (let v=0; v<P.length/3; v++) for (let k=0;k<3;k++){ lo[k]=Math.min(lo[k],P[3*v+k]); hi[k]=Math.max(hi[k],P[3*v+k]); }
+  const eps = 0.02 * Math.hypot(hi[0]-lo[0],hi[1]-lo[1],hi[2]-lo[2]);
+  const pts = new Map(); // vertex -> set of regions using it
+  for (let f=0; f<F; f++) for (let k=0;k<3;k++){ const v=I1[3*f+k]; if(!pts.has(v)) pts.set(v,new Set()); pts.get(v).add(R[f]); }
+  const cell = (x)=>Math.floor(x/eps); const grid = new Map();
+  for (const v of pts.keys()) { const key=cell(P[3*v])+','+cell(P[3*v+1])+','+cell(P[3*v+2]); if(!grid.has(key)) grid.set(key,[]); grid.get(key).push(v); }
+  for (const [v, rs] of pts) { const cx=cell(P[3*v]), cy=cell(P[3*v+1]), cz=cell(P[3*v+2]);
+    for (let dx=-1;dx<=1;dx++) for (let dy=-1;dy<=1;dy++) for (let dz=-1;dz<=1;dz++) for (const u of grid.get((cx+dx)+','+(cy+dy)+','+(cz+dz)) || []) {
+      if (u<=v || Math.hypot(P[3*u]-P[3*v],P[3*u+1]-P[3*v+1],P[3*u+2]-P[3*v+2]) > eps) continue;
+      for (const a of rs) for (const b of pts.get(u)) if (a!==b) { const m=rAdj.get(a); m.set(b,(m.get(b)||0)+1); const n=rAdj.get(b); n.set(a,(n.get(a)||0)+1); } } }
+}
+// Greedy colouring, largest plate first. Neighbours must not share a colour and should not be
+// the next shade either (rank by lightness), so every fold line stays visible.
+const lum = palette.map(([,c])=>0.2126*c[0]+0.7152*c[1]+0.0722*c[2]);
+const rank = lum.map(l=>lum.filter(m=>m<l).length);
 const col = new Map(); const use = new Array(palette.length).fill(0);
 for (const i of [...live].sort((a,b)=>regions[b].area-regions[a].area)) {
-  const bad = new Set([...rAdj.get(i).keys()].map(j=>col.get(j)).filter(x=>x!==undefined));
-  let best=-1; for (let c=0;c<palette.length;c++) if(!bad.has(c) && (best<0 || use[c]<use[best])) best=c;
-  if (best<0) best = i % palette.length; col.set(i,best); use[best]+=regions[i].area; }
+  let best=-1, bestCost=Infinity;
+  for (let c=0;c<palette.length;c++) {
+    let cost = use[c]/totalA;
+    for (const [j,w] of rAdj.get(i)) { if (!col.has(j)) continue; const d=Math.abs(rank[c]-rank[col.get(j)]); cost += Math.sqrt(w)*(d===0?100:d===1?3:0); }
+    if (cost<bestCost) { bestCost=cost; best=c; } }
+  col.set(i,best); use[best]+=regions[i].area; }
 for (const pair of (process.env.PLATE_COLORS || '').split(',').filter(Boolean)) {
   const [id, name] = pair.split(':'); const c = palette.findIndex(p => p[0] === name);
   if (!col.has(+id) || c < 0) throw new Error(`bad PLATE_COLORS entry ${pair}`); col.set(+id, c);
