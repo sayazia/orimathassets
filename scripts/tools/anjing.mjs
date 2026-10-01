@@ -39,7 +39,7 @@ const TOSKA = {
   'P1-Q3-P3': '#1f8788', 'P3-Q3-U2-U1': '#1c888a', 'Q1-Q2-Q3': '#90c5b3', 'Q2-Q4-Q3': '#ace6d0',
   'Q2-B2-Q4': '#8dd3b9', 'B2-R1-Q4': '#83b8b3',
   'T1-T2-T4': '#87a49f', 'T2-T3-T4': '#83b8b3', 'T4-T3-T5': '#43877a', 'B2-T1-T5': '#8bd2bb', 'T1-T4-T5': '#5f9e93',
-  'P2-P3-U1': '#34a997', 'P2-U1-L2': '#2e9e8e', 'P2-L2-L1': '#2a9486', 'L1-L2-Pf': '#299f91', 'L1-Pf-Pb': '#66bbb0',
+  'P2-P3-U1': '#34a997', 'P2-U1-L2': '#2e9e8e', 'P2-L2-L1': '#2a9486', 'L1-L2-Pt': '#299f91', 'L1-Pt-Pf-Pb': '#66bbb0',
   'Q3-Q4-H6': '#4f817c', 'Q4-R1-R2': '#679b96', 'Q4-R2-H5': '#689b96', 'Q4-H5-H6': '#5a8f8a', 'H6-H5-Hp1-Hp2': '#6b9c98',
 };
 const TOSKA_TONE = { paper_white: '#8fd3c0', paper_grey_light: '#4fa9a3', paper_grey: '#2b7f80' };
@@ -56,14 +56,14 @@ const V = {
   // ears: tip and the rib they fold along
   E1: [77, 37, 16], E1m: [109, 92, 24], E2: [175, 33, 24], E2m: [176, 87, 32],
   // neck, chest and body
-  C1: [115, 253, 30], C2: [145, 262, 40], B1: [242, 241, 36], P1: [248, 300, 52],
-  K0: [104, 300, 32], K1: [90, 352, 28], P2: [98, 384, 40], P3: [248, 420, 48],
-  Q1: [408, 332, 46], Q2: [421, 360, 50], B2: [470, 368, 30], R1: [494, 461, 32],
-  Q3: [352, 422, 46], Q4: [400, 455, 46], U1: [242, 457, 40], U2: [290, 452, 38],
+  C1: [115, 253, 30], C2: [145, 262, 40], B1: [242, 241, 36], P1: [248, 300, 56],
+  K0: [104, 300, 32], K1: [90, 352, 28], P2: [98, 384, 40], P3: [248, 428, 54],
+  Q1: [408, 332, 52], Q2: [421, 360, 55], B2: [470, 368, 30], R1: [494, 461, 32],
+  Q3: [352, 446, 50], Q4: [400, 462, 48], U1: [242, 470, 44], U2: [295, 474, 44],
   // front leg and paw
-  L1: [134, 540, 38], L2: [225, 542, 38], Pf: [178, 616, 38], Pb: [137, 600, 38],
+  L1: [135, 545, 38], L2: [178, 545, 38], Pt: [190, 585, 38], Pf: [198, 612, 38], Pb: [128, 612, 38],
   // hind leg and paw
-  R2: [488, 560, 34], H5: [469, 582, 36], H6: [430, 567, 38], Hp1: [455, 606, 38], Hp2: [413, 592, 38],
+  R2: [488, 560, 34], H5: [469, 582, 36], H6: [430, 567, 38], Hp1: [455, 612, 38], Hp2: [410, 610, 38],
   // tail
   T1: [452, 355, 14], T2: [477, 259, 8], T3: [570, 326, 5], T4: [500, 348, 14], T5: [480, 397, 14],
 };
@@ -74,21 +74,25 @@ for (const p of Object.values(V)) p[2] *= ZS;
 const tris = new Map();
 const put = (c, a, b, d) => { if (!tris.has(c)) tris.set(c, []); tris.get(c).push(...a, ...b, ...d); };
 const mir = (p) => [p[0], p[1], -p[2]];
-const P = (k, dz = 0) => { const p = V[k]; return [p[0], p[1], p[2] + dz]; };
+// dx is a number, or a function of y (a leg swinging forward from its top)
+const P = (k, dz = 0, dx = 0) => { const p = V[k]; return [p[0] + (typeof dx === 'function' ? dx(p[1]) : dx), p[1], p[2] + dz]; };
 // a convex plate on the near side and its mirror on the far side (sides: 1 near only, -1 far only)
-const plate = (c, ks, dz = 0, sides = 0) => { c = tone(c, ks); const pts = ks.map(k => P(k, dz));
+const plate = (c, ks, dz = 0, sides = 0, dx = 0) => { c = tone(c, ks); const pts = ks.map(k => P(k, dz, dx));
   for (let i = 1; i < pts.length - 1; i++) {
     if (sides >= 0) put(c, pts[0], pts[i], pts[i + 1]);
     if (sides <= 0) put(c, mir(pts[0]), mir(pts[i + 1]), mir(pts[i])); } };
 // seam joining the two sides along a chain of outline points
 const seam = (c, ks) => { c = tone(c); for (let i = 0; i < ks.length - 1; i++) {
   const a = P(ks[i]), b = P(ks[i + 1]); put(c, a, b, mir(b)); put(c, a, mir(b), mir(a)); } };
-// a thick plate (legs): the plates, an inner copy pushed in by t, and a rim along the outline
-const slab = (faces, outline, t) => {
-  for (const [c, ...ks] of faces) { plate(c, ks); plate(c, ks, -t); }
+// a thick plate (legs): the plates, an inner copy pushed in by t, and a rim along the outline.
+// sides: 1 near leg only, -1 far leg only; dx (a function of y) swings the leg along the body.
+const slab = (faces, outline, t, sides = 0, dx = 0) => {
+  for (const [c, ...ks] of faces) { plate(c, ks, 0, sides, dx); plate(c, ks, -t, sides, dx); }
+  const r = tone(G);
   for (let i = 0; i < outline.length - 1; i++) {
-    const a = P(outline[i]), b = P(outline[i + 1]), ai = P(outline[i], -t), bi = P(outline[i + 1], -t);
-    const r = tone(G); put(r, a, b, bi); put(r, a, bi, ai); put(r, mir(a), mir(bi), mir(b)); put(r, mir(a), mir(ai), mir(bi));
+    const a = P(outline[i], 0, dx), b = P(outline[i + 1], 0, dx), ai = P(outline[i], -t, dx), bi = P(outline[i + 1], -t, dx);
+    if (sides >= 0) { put(r, a, b, bi); put(r, a, bi, ai); }
+    if (sides <= 0) { put(r, mir(a), mir(bi), mir(b)); put(r, mir(a), mir(ai), mir(bi)); }
   }
 };
 
@@ -111,10 +115,16 @@ plate(Wh, ['Q1', 'Q2', 'Q3']); plate(Wh, ['Q2', 'Q4', 'Q3']); plate(Wh, ['Q2', '
 // tail
 plate(Gl, ['T1', 'T2', 'T4']); plate(Wh, ['T2', 'T3', 'T4']); plate(G, ['T4', 'T3', 'T5']); plate(Wh, ['B2', 'T1', 'T5']); plate(Gl, ['T1', 'T4', 'T5']);
 // legs
-slab([[Wh, 'P2', 'P3', 'U1'], [Wh, 'P2', 'U1', 'L2'], [Gl, 'P2', 'L2', 'L1'], [Wh, 'L1', 'L2', 'Pf'], [G, 'L1', 'Pf', 'Pb']],
-  ['P2', 'L1', 'Pb', 'Pf', 'L2', 'U1'], 26);
-slab([[Wh, 'Q3', 'Q4', 'H6'], [Gl, 'Q4', 'R1', 'R2'], [Wh, 'Q4', 'R2', 'H5'], [Wh, 'Q4', 'H5', 'H6'], [G, 'H6', 'H5', 'Hp1', 'Hp2']],
-  ['Q3', 'H6', 'Hp2', 'Hp1', 'H5', 'R2', 'R1'], 26);
+// legs: like the drawings, the far legs stand a step ahead of the near ones, so the two front
+// legs (and the two hind legs) read apart from the side
+const frontLeg = [[[Wh, 'P2', 'P3', 'U1'], [Wh, 'P2', 'U1', 'L2'], [Gl, 'P2', 'L2', 'L1'], [Wh, 'L1', 'L2', 'Pt'], [G, 'L1', 'Pt', 'Pf', 'Pb']],
+  ['P2', 'L1', 'Pb', 'Pf', 'Pt', 'L2', 'U1'], 26];
+const hindLeg = [[[Wh, 'Q3', 'Q4', 'H6'], [Gl, 'Q4', 'R1', 'R2'], [Wh, 'Q4', 'R2', 'H5'], [Wh, 'Q4', 'H5', 'H6'], [G, 'H6', 'H5', 'Hp1', 'Hp2']],
+  ['Q3', 'H6', 'Hp2', 'Hp1', 'H5', 'R2', 'R1'], 26];
+// the leg top stays in the body, the paw moves `step` pixels forward
+const swing = (yTop, step) => (y) => step * Math.max(0, (y - yTop) / (612 - yTop));
+slab(...frontLeg, 1); slab(...frontLeg, -1, swing(400, -40));
+slab(...hindLeg, 1); slab(...hindLeg, -1, swing(450, -60));
 // seams between the two sides: over the head and back, round the tail, under the belly, down the chest and jaw
 seam(Wh, ['N1', 'S1', 'H1', 'H2', 'H3', 'H4', 'B1', 'B2']);
 seam(Gl, ['B2', 'T1']); seam(Wh, ['T1', 'T2', 'T3']); seam(G, ['T3', 'T5', 'B2']); seam(Gl, ['B2', 'R1']);
